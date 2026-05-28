@@ -53,7 +53,7 @@ import FeatureWithBulletGroup from '@/components/FeatureWithBulletGroup';
 import Hero from '@/components/IntegrationComp/Hero/Hero';
 import ProblemSolution from '@/components/IntegrationComp/ProblemSolution/ProblemSolution';
 import Benefits from '@/components/IntegrationComp/Benefits/Benefits';
-import Features from '@/components/IntegrationComp/Features/Features';
+import IntegrationFeatures from '@/components/IntegrationComp/Features/Features';
 import UseCases from '@/components/IntegrationComp/UseCases/UseCases';
 import HowItWorks from '@/components/IntegrationComp/HowItWorks/HowItWorks';
 import CTA from '@/components/IntegrationComp/CTA/CTA';
@@ -61,6 +61,16 @@ import SEOFooter from '@/components/IntegrationComp/SEOFooter/SEOFooter';
 
 // New Components
 import Banner from '@/components/UpdatedComp/Banner';
+import HelloBanner from '@/components/HelloBrComp/BannerComp/Banner';
+import HelloBrFeatures from '@/components/HelloBrComp/FeaturesComp/Features';
+import HelloBrChallenges from '@/components/HelloBrComp/ChallengesComp/Challenges';
+import RoiStats from '@/components/HelloBrComp/StatsComp/RoiStats';
+import Security from '@/components/HelloBrComp/SecurityComp/SecurityCompliance';
+import Steps from '@/components/HelloBrComp/StepsComp/StepsSetup';
+import Testimonials from '@/components/HelloBrComp/TestimonialsComp/Testimonials';
+import FooterCta from '@/components/HelloBrComp/FooterCtaComp/FooterCta';
+import Faqs from '@/components/HelloBrComp/FaqsComp/Faqs';
+import Pricing from '@/components/HelloBrComp/PricingComp/Pricing';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -109,7 +119,7 @@ const Components = {
     Hero,
     ProblemSolution,
     Benefits,
-    Features,
+    Features: IntegrationFeatures,
     UseCases,
     HowItWorks,
     CTA,
@@ -118,7 +128,7 @@ const Components = {
     IntegrationResponseSection: ProblemSolution,
     IntegrationInstantReplySection: Benefits,
     IntegrationInstantReplySectionComparison: Benefits,
-    IntegrationFeatureBulletSection: Features,
+    IntegrationFeatureBulletSection: IntegrationFeatures,
     IntegrationSolutionsGrid: UseCases,
     IntegrationStepsStrip: HowItWorks,
     IntegrationCtaBand: CTA,
@@ -144,7 +154,15 @@ const Components = {
     FeatureWithBulletGroup,
 
     // New Components
+    Challenges: HelloBrChallenges,
     Banner,
+    RoiStats,
+    Security,
+    Steps,
+    Testimonials,
+    FooterCta,
+    Faqs,
+    Pricing,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
@@ -174,6 +192,20 @@ export default function Page({ data, commonData, pageInfo }) {
                 Object.keys(data).map((key) => {
                     const pageData = data[key];
                     var Component = Components[key];
+                    if (
+                        key === 'Banner' &&
+                        pageInfo?.page === 'hello' &&
+                        (pageInfo?.country === 'br' || pageInfo?.country === 'br-pt')
+                    ) {
+                        Component = HelloBanner;
+                    }
+                    if (
+                        key === 'Features' &&
+                        pageInfo?.page === 'hello' &&
+                        (pageInfo?.country === 'br' || pageInfo?.country === 'br-pt')
+                    ) {
+                        Component = HelloBrFeatures;
+                    }
                     if (!Component) {
                         console.error(`Component "${key}" is undefined. Check your imports and component exports.`);
                         return;
@@ -220,13 +252,30 @@ export const getStaticProps = async (context) => {
         return {
             notFound: true,
         };
-    } else {
-        return {
-            props: {
-                data: data || {},
-                commonData: commonData || {},
-                pageInfo,
-            },
-        };
     }
+
+    const helloBrCountries = ['br', 'br-pt'];
+    if (data?.Pricing && pageInfo?.page === 'hello' && helloBrCountries.includes(pageInfo?.country)) {
+        try {
+            const getPricing = (await import('@/utils/pricing/getPricing')).default;
+            const rows = await getPricing(pageInfo.country, 'hello');
+            if (Array.isArray(rows) && rows.length > 0) {
+                data.Pricing = {
+                    ...data.Pricing,
+                    initialPricingData: rows,
+                    initialCurrency: 'USD',
+                };
+            }
+        } catch (e) {
+            console.error('Pricing: getPricing failed', e);
+        }
+    }
+
+    return {
+        props: {
+            data: data || {},
+            commonData: commonData || {},
+            pageInfo,
+        },
+    };
 };

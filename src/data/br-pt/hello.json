@@ -1,238 +1,228 @@
 {
     "HeadComp": {
-        "title": "Melhor Software de Suporte ao Cliente no Brasil | Plataforma de Atendimento Digital ao Cliente | MSG91-Brasil",
-        "description": "Somos a principal plataforma de atendimento ao cliente em nuvem. Confira o melhor software de atendimento ao cliente no Brasil para engajar proativamente os clientes e responder a todas as suas dúvidas com a MSG91."
+        "title": "Melhor Software de Atendimento ao Cliente no Brasil | Plataforma Digital de Atendimento | MSG91",
+        "description": "Somos a principal plataforma de atendimento ao cliente em nuvem. Conheça o melhor software de atendimento no Brasil para engajar clientes de forma proativa e responder a todas as dúvidas com a MSG91."
     },
     "Banner": {
-        "slug": "hello",
-        "product": {
-            "name": "Hello",
-            "icon": "/assets/icons/products/hello.svg"
-        },
-        "tagline": "Software de Suporte ao Cliente",
-        "heading": "Central de Atendimento com IA",
-        "subheading": "Nunca perca de vista o que é importante. Não apenas resolva tickets, construa relacionamentos com clientes",
-        "lottie": "/assets/global/hello/new_webp/hello_hero.json",
-        "getstarted_btn": "Comece agora",
-        "chatbot": "Chatbot"
+        "heading": "Atendimento ao cliente|que transforma|seu negócio",
+        "description": "Plataforma omnicanal completa com IA. Gerencie todos os seus canais — WhatsApp, Instagram, e-mail, Webchat, RCS, chamadas de voz e muito mais — em uma caixa de entrada inteligente. Simples, sem complicações.",
+        "video": "/assets/hello-br/br-pt/dashboard.webm",
+        "videoAlt": "Prévia do painel e da caixa de entrada Hello",
+        "getstarted_btn": "Começar agora",
+        "getstarted_btn_link": "https://web.msg91.com/signup",
+        "specialist_btn": "Agendar uma demo",
+        "specialist_btn_link": "https://calendly.com/hello-shared-inbox/hello-meeting"
     },
-    "FeatureWithBulletGroup": {
-        "heading": "Funcionalidades",
-        "iconColor": "text-campaign",
-        "features": [
+    "Features": {
+        "label": "RECURSOS",
+        "heading": "Tudo o que sua equipe precisa",
+        "rows": [
             {
-                "name": "Unifique Todas as Conversas, Empodere Toda a Equipe",
-                "subtitle": "Caixa de Entrada Multicanal Integrada para Seu Negócio",
-                "content": "Reúna todas as conversas com clientes—WhatsApp, Email, Instagram, Facebook, Site e mais—em uma plataforma centralizada e fácil de usar. Chega de alternar abas ou perder solicitações. Com o Hello, equipes de vendas e suporte colaboram facilmente, lidam com todos os leads, solicitações e feedbacks, sem perder o histórico de nenhum cliente.",
-                "more_content": {
-                    "features": [
-                        "Visualize todas as mensagens de todos os canais em um só lugar e mantenha cada conversa ao alcance.",
-                        "Atribua e priorize conversas para os membros certos da equipe com um clique.",
-                        "Pesquise, filtre e marque comunicações para contexto instantâneo usando chatbots inteligentes.",
-                        "Tenha o histórico completo dos clientes sempre disponível."
-                    ]
-                },
-                "footer": "Alcance colaboração e visibilidade de clientes em outro nível, unificando todos os canais para um atendimento perfeito. Suas equipes trabalham como uma só, com acesso instantâneo ao contexto do cliente—empoderando suporte proativo e engajamento significativo em escala.",
-                "img": "/assets/global/hello/new_webp/unify_every_conversation_empower_every_team.webp"
+                "eyebrow": "OMNICANAL",
+                "title": "Omnicanal de verdade: transforme cada conversa em receita",
+                "description": "À medida que seu negócio cresce, conversas espalhadas geram fluxos de trabalho quebrados. Não apenas responda — cresça. A Hello unifica toda a jornada do cliente em um único centro de comando de alto desempenho.",
+                "bullets": [
+                    "WhatsApp, e-mail, chamadas de voz, RCS, WebChat e todas as redes sociais — unificados em uma caixa de entrada",
+                    "Atribuição e priorização de conversas em um clique",
+                    "Busca inteligente, filtros e etiquetas de conversa",
+                    "Histórico unificado do cliente em todos os canais"
+                ],
+                "video": "/assets/hello-br/br-pt/omni-channel.webm",
+                "videoAlt": "Equipe unida representando suporte omnicanal"
             },
             {
-                "name": "Conecte, Engaje e Converta Instantaneamente",
-                "subtitle": "Widget de Chat Que Converte—Do Primeiro Olá à Fidelidade",
-                "content": "O widget de chat ao vivo do Hello fica em seu site, tornando-se a ponte instantânea entre sua empresa e visitantes curiosos. Clientes podem conversar, compartilhar arquivos, enviar áudios ou até mudar para chamada de voz—tudo sem sair da página, com inteligência artificial.",
-                "more_content": {
-                    "features": [
-                        "Visitantes do site iniciam chat ou chamada com um clique",
-                        "Escalone dúvidas do chat para chamada de voz, facilmente com Agente de Voz IA",
-                        "Widget totalmente personalizável para combinar com sua marca e fluxo de trabalho",
-                        "Reduza taxas de abandono, capture mais leads e crie primeiras impressões memoráveis"
-                    ]
-                },
-                "img": "/assets/global/hello/new_webp/roles_permissions_ticket_assignment.webp"
+                "eyebrow": "INTELIGÊNCIA ARTIFICIAL",
+                "title": "Automação inteligente com IA",
+                "description": "Da IA que sugere respostas em tempo real ao agente de voz automatizado — a plataforma aprende com cada interação para entregar experiências cada vez melhores.",
+                "bullets": [
+                    "Chatbot sem código em minutos",
+                    "Sugestões de resposta com IA em tempo real",
+                    "Agente de voz com IA e URA automatizada",
+                    "Tradução automática em mais de 100 idiomas"
+                ],
+                "video": "/assets/hello-br/br-pt/intelligent-ai.webm",
+                "videoAlt": "Equipe colaborando com notebooks"
             },
             {
-                "name": "Atenda Até as Chamadas Mais Difíceis com Facilidade",
-                "subtitle": "Bot de Voz e Automação IVR Que Nunca Dorme",
-                "content": "Ofereça suporte telefônico e de voz de nível mundial. Com o Agente de Voz IA avançado do Hello, cada chamada é atendida, guiada e resolvida—sem filas ou transferências erradas.",
-                "more_content": {
-                    "features": [
-                        "Menus multiníveis e fluxos personalizados direcionam o cliente ao agente ou setor certo",
-                        "Toque saudações personalizadas e colete informações essenciais logo no início",
-                        "Grave chamadas para treinamento, compliance ou garantia de qualidade",
-                        "Integração fácil com seu CRM e helpdesk para conversas ricas em contexto",
-                        "Reduza drasticamente o tempo de espera mantendo uma experiência de voz acolhedora e personalizada"
-                    ]
-                },
-                "img": "/assets/global/hello/new_webp/handle_even_the_toughest_calls_with_ease.webp"
+                "eyebrow": "VOZ COM IA",
+                "title": "IA de voz que entende clientes e acaba com os atrasos no suporte",
+                "description": "Potencialize seu contact center com um sistema de voz sempre ativo que entende os clientes, conduz as conversas e mantém sua operação fluindo — sem adicionar complexidade.",
+                "bullets": [
+                    "Conversas naturais",
+                    "Atendimento automático de chamadas",
+                    "Respostas instantâneas",
+                    "Interações com contexto",
+                    "Suporte multilíngue"
+                ],
+                "image": "/assets/hello-br/br-pt/voice.png",
+                "imageAlt": "Experiência de voz e chamadas com suporte por IA"
             },
             {
-                "name": "Responda de Forma Mais Inteligente e Rápida—Sempre",
-                "subtitle": "Sugestões Inteligentes com IA para Suporte Humanizado",
-                "content": "Com AI integrado, cada interação com o cliente é elevada. Agentes recebem sugestões de resposta instantâneas, contextuais, profissionais e empáticas, personalizadas para cada chat graças à inteligência artificial. Isso acelera o atendimento e garante comunicação consistente e alinhada à marca, mesmo para novos membros.",
-                "more_content": {
-                    "features": [
-                        "Respostas inteligentes e prontas para enviar ao seu alcance",
-                        "Reduza o cansaço de digitação e o tempo de treinamento de novos agentes",
-                        "Identifique problemas de clareza para ajudar agentes a entregar respostas perfeitas"
-                    ]
-                },
-                "footer": "Seus agentes viram superagentes—oferecendo atendimento rápido e consistente em escala com chatbots inteligentes.",
-                "lottie": "/assets/global/hello/new_webp/smartcue_ai.json"
+                "eyebrow": "ANÁLISES",
+                "title": "Analytics e relatórios avançados",
+                "description": "Decisões com dados reais. Monitore desempenho, identifique gargalos e otimize o suporte com painéis em tempo real e relatórios personalizáveis.",
+                "bullets": [
+                    "Painel em tempo real",
+                    "Relatórios por agente e canal",
+                    "Analise operações — identifique problemas e oportunidades de crescimento",
+                    "Analise o desempenho de resolução da IA em todos os chats"
+                ],
+                "video": "/assets/hello-br/br-pt/Analytics.webm",
+                "videoAlt": "Analytics em dispositivo móvel"
             },
             {
-                "name": "Fale a Língua do Cliente—Quebre Barreiras, Construa Confiança",
-                "subtitle": "Mensagens Multilíngues Globais de Forma Simples",
-                "content": "Não deixe o idioma limitar seu alcance. O Hello traduz conversas em tempo real, permitindo que sua equipe responda em qualquer idioma, sem esforço.",
-                "more_content": {
-                    "features": [
-                        "Traduções bidirecionais em mais de 100 idiomas globais e regionais",
-                        "Clientes conversam, perguntam e compram no idioma preferido",
-                        "Sua equipe expande internacionalmente—sem necessidade de novos funcionários ou treinamento linguístico"
-                    ]
-                },
-                "img": "/assets/global/hello/new_webp/multilingual_capabilities.webp"
-            },
-            {
-                "name": "Mantenha o Suporte Fluindo, Mesmo em Escala",
-                "subtitle": "Gestão Avançada de Tickets e Automação Sem Esforço",
-                "content": "Cada ticket de suporte é mais que uma mensagem—é uma chance de impressionar. Com o Hello, dúvidas são automaticamente organizadas por urgência, tema ou perfil do cliente, garantindo que a pessoa certa atenda cada situação. Defina regras inteligentes para que problemas comuns sejam resolvidos por bots e casos complexos sejam priorizados ou escalados em tempo real.",
-                "more_content": {
-                    "features": [
-                        "Direcione tickets por habilidade, departamento ou status VIP",
-                        "Resolva automaticamente questões repetitivas, liberando tempo do agente com chatbots especializados",
-                        "Dispare escalonamentos e ações com lógica personalizada",
-                        "Escalone facilmente de dezenas para milhares de solicitações por dia"
-                    ]
-                },
-                "img": "/assets/global/hello/new_webp/keep_support_flowing.webp"
-            },
-            {
-                "name": "Tenha a Visão Completa, Instantaneamente",
-                "subtitle": "Dashboard Analítico Avançado para Decisões Inteligentes",
-                "content": "Desbloqueie insights acionáveis sobre tudo que acontece nos seus canais de comunicação. O dashboard do Hello traz estatísticas em tempo real sobre volume de mensagens, desempenho de agentes, tempos de resposta, resoluções no primeiro contato, satisfação do cliente e mais. Visualize toda a operação com gráficos e relatórios dinâmicos apoiados por IA.",
-                "more_content": {
-                    "features": [
-                        "Acompanhe SLAs, sentimento e produtividade dos agentes",
-                        "Identifique problemas, destaques e oportunidades de crescimento",
-                        "Exporte e compartilhe insights acionáveis em toda a empresa"
-                    ]
-                },
-                "img": "/assets/global/hello/new_webp/analytics.webp"
-            },
-            {
-                "name": "Trabalhe Sem Limites—Onde Quer que Esteja",
-                "subtitle": "App Mobile que Coloca Conversas com Clientes no Bolso",
-                "content": "Nunca perca um cliente, mesmo fora do escritório. Com o app mobile completo do Hello (iOS e Android), sua equipe recebe notificações instantâneas, responde chats, atribui casos e pode até iniciar chamadas—com toda a segurança e confiabilidade da plataforma principal.",
-                "more_content": {
-                    "features": [
-                        "Alertas push em tempo real para cada nova mensagem",
-                        "Acesse todas as funções—chat, chamadas, atribuições, históricos—de qualquer lugar",
-                        "Seguro e confiável, feito para equipes móveis",
-                        "Perfeito para representantes em viagem, agentes remotos e empresários em movimento"
-                    ]
-                },
-                "img": "/assets/global/hello/new_webp/mobile.webp"
-            },
-            {
-                "name": "Converta Conversas em Vendas—Checkout Sem Complicação",
-                "subtitle": "Chat para Checkout: Aumente a Receita Diretamente pelo Chat",
-                "content": "Transforme qualquer conversa em uma venda! Com o Hello, clientes navegam, escolhem e compram direto no widget de chat ou WhatsApp. Mostre cartões de produtos, estoque em tempo real e botões de compra ou pagamento instantâneos—cada dúvida pode virar uma conversão.",
-                "more_content": {
-                    "features": [
-                        "Exiba produtos e variações com estoque ao vivo",
-                        "Gateway de pagamento integrado para checkout fluido e seguro",
-                        "Acompanhe pedidos da conversa à entrega",
-                        "Sem links, sem redirecionamentos, zero desistências—só conversão"
-                    ]
-                },
-                "lottie": "/assets/global/hello/new_webp/chat_to_checkout.json"
-            },
-            {
-                "name": "Suporte Automatizado e Sempre Ativo Que Cresce com Você",
-                "subtitle": "Construtor de Chatbot IA Sem Código para Automação Fácil",
-                "content": "Dê poder ao seu negócio com respostas instantâneas 24/7 e ações automatizadas—sem precisar programar. O construtor de chatbot do Hello permite criar fluxos personalizados para FAQs, captação de leads, agendamento e mais. Lance bots poderosos que escalam o atendimento, impulsionam vendas e qualificam leads a qualquer hora.",
-                "more_content": {
-                    "features": [
-                        "Crie e publique chatbots em minutos—sem habilidades técnicas",
-                        "Automatize tarefas e fluxos comuns, liberando agentes humanos",
-                        "Integre com CRMs, agendas e gateways de pagamento",
-                        "Aprimore bots continuamente com análises e feedbacks"
-                    ]
-                },
-                "img": "/assets/global/hello/new_webp/unlimited_agents.webp"
-            },
-            {
-                "name": "Direcione Dúvidas ao Agente Certo Sempre",
-                "content": "Com o Hello, você tem controle total do suporte ao cliente. Como administrador, defina funções e permissões personalizadas—assim cada agente foca no que faz melhor, seja operações, vendas ou suporte. Toda mensagem vai para o especialista certo e você acompanha cada ação para máxima responsabilidade.",
-                "more_content": {
-                    "features": [
-                        "Defina funções e permissões por equipe ou usuário",
-                        "Especialize o acesso dos agentes por função",
-                        "Atribuição inteligente—por canal, expertise ou rodízio"
-                    ]
-                },
-                "lottie": "/assets/global/hello/new_webp/workflow_automation.json"
-            },
-            {
-                "name": "Suporte Automatizado e Sempre Ativo Que Cresce com Você",
-                "subtitle": "Construtor de Chatbot IA Sem Código para Todo Canal",
-                "content": "Capacite sua marca para oferecer suporte instantâneo dia e noite—em escala. O criador intuitivo de chatbots do Hello permite que qualquer um crie e publique bots altamente capazes no WhatsApp, Instagram, Facebook, site e mais. Colete leads, responda FAQs, processe pedidos e faça repasses para humanos quando necessário.",
-                "more_content": {
-                    "features": [
-                        "Construtor visual: Crie fluxos sem programar",
-                        "Implantação multicanal em minutos",
-                        "Suporte multilíngue e escalonamento fácil",
-                        "Disponível 24/7—entregando respostas, leads e clientes satisfeitos"
-                    ]
-                },
-                "img": "/assets/global/hello/new_webp/chatbot.webp"
-            },
-            {
-                "name": "Controle de Tela",
-                "content": "Controle a tela do seu cliente de onde estiver. Trabalhe na tela remota como se estivesse realmente lá. Assim que tiver acesso, tenha controle total da tela, mouse e teclado do cliente para resolver problemas rapidamente.",
-                "img": "/assets/global/hello/new_webp/screen_control.webp"
+                "eyebrow": "MOBILE",
+                "title": "Trabalhe sem limites—onde quer que esteja",
+                "description": "Aplicativo móvel que coloca as conversas com clientes no seu bolso. Nunca perca um cliente, mesmo em movimento. Com o aplicativo completo da Hello (iOS e Android), sua equipe recebe notificações instantâneas, responde chats, atribui casos e até inicia chamadas — com a segurança e a confiabilidade da plataforma principal.",
+                "bullets": [
+                    "Alertas push em tempo real para cada nova mensagem do cliente",
+                    "Acesso ao conjunto completo de recursos — chat, chamadas, atribuição e históricos — em qualquer lugar",
+                    "Seguro e confiável, feito para equipes em campo",
+                    "Ideal para representantes em viagem, agentes remotos e donos de negócio em movimento"
+                ],
+                "video": "/assets/hello-br/br-pt/work-smarted.webm",
+                "videoAlt": "Aplicativo móvel Hello para suporte ao cliente em iOS e Android"
             }
         ]
     },
-    "FaqsComp": {
-        "heading": "Perguntas Frequentes",
-        "faqs": [
+    "Challenges": {
+        "label": "Desafios",
+        "heading": "Transforme desafios em ideias",
+        "video": "/assets/hello-br/br-pt/challenges.webm",
+        "videoAlt": "Transforme desafios do suporte ao cliente em ideias com a Hello"
+    },
+    "RoiStats": {
+        "label": "Métricas",
+        "heading": "Maximize o ROI com a Hello",
+        "subheading": "Empresas que usam a Hello relatam resultados mensuráveis em menos de 30 dias.",
+        "stats": [
             {
-                "question": "Como assinar o seu Plano Hello.",
-                "answer": "No painel Hello, clique na aba de assinatura, que está disponível no canto esquerdo. Isso abrirá a página do plano atual e também a opção de adquirir um novo plano. Clique nisso e você poderá selecionar entre opções mensais e anuais. Você pode assinar o plano diretamente do site. Lá vá para o Serviço Hello, clique em Começar, preencha os detalhes necessários e assine o plano."
+                "value": "65%",
+                "label": "Redução na carga de trabalho do suporte",
+                "accent": "emerald"
             },
             {
-                "question": "Existem cobranças extras para a Caixa de Entrada do Instagram/Facebook?",
-                "answer": "Você pode usar caixas de entrada que estão disponíveis no seu Plano Hello para Instagram ou Whatsapp. O número de caixas de entrada atribuídas em cada plano.<ul><li><strong>Plano Gratuito-</strong> 2 caixas de entrada</li><li><strong>Plano Básico-</strong> 2 caixas de entrada</li><li><strong><strong>Plano Premium-</strong></strong> 3 caixas de entrada</li></ul>Mas, caso você já tenha usado as caixas de entrada atribuídas, você sempre pode comprar uma nova caixa de entrada nos planos básico e premium por 500 rúpias cada."
+                "value": "3X",
+                "label": "Aumento na eficiência dos agentes",
+                "accent": "indigo"
             },
             {
-                "question": "Existem cobranças pelo chatbot de IA?",
-                "answer": "Não, não há cobranças pelo Chat Bot, somos cobrados apenas pelos planos básico e premium. Você pode usar o chatbot em um plano gratuito até 50 tickets no Hello, depois disso, você precisa atualizar seu plano Hello. Basicamente, estamos fornecendo o chatbot gratuitamente para fins de teste.  Você pode usar este Chat Bot no WhatsApp, Instagram, Widget de Chat no seu site, Facebook e assim por diante. Então teste o Chat Bot agora."
+                "value": "85%",
+                "label": "Melhora na taxa da primeira resposta",
+                "accent": "violet"
             },
             {
-                "question": "Quais são as cobranças por tickets e tickets extras no Hello?",
-                "answer": "Estamos fornecendo tickets mensais com cada plano e, caso eles terminem, você também pode usar tickets extras que você paga na cobrança pós-paga. Aqui estão o número de tickets atribuídos em cada plano:<ul><li><strong>Plano Gratuito-</strong> 150 tickets/mensal</li><li><strong>Plano Básico-</strong> 1000 tickets/mensal</li><li><strong>Plano Premium-</strong> 2000 tickets/mensal</li></ul>Cobranças Extras por cada ticket em diferentes planos:<ul><li><strong>Plano Gratuito-</strong> Não há opção para mais tickets em planos gratuitos, pois você tem que atualizar o Plano Hello para Básico ou Premium conforme sua escolha.</li><li><strong>Plano Básico-</strong> ₹0,50 por ticket</li><li><strong>Plano Premium-</strong></li> ₹0,75 por ticket</ul>"
-            },
-            {
-                "question": "Posso personalizar o Plano Hello?",
-                "answer": "Sim, você pode ter um plano personalizado para o hello. Clique no link para <a href='/contact-us'>agendar a reunião</a> com os chefes de vendas."
+                "value": "2X",
+                "label": "Tempo de resolução de consultas mais rápido",
+                "accent": "amber"
             }
         ]
     },
-    "PreFooterComp": {
-        "content": "Comece a construir a experiência de engajamento do cliente ideal",
-        "buttons": {
-            "contactSales": {
-                "text": "Fale com as vendas",
-                "link": "/contact-us"
+    "Security": {
+        "label": "SEGURANÇA EMPRESARIAL",
+        "heading": "Segurança e conformidade de nível enterprise",
+        "items": [
+            {
+                "icon": "lock",
+                "title": "ISO 27001 Certified",
+                "description": "Global standard for secure data handling, access control, and risk management."
             },
-            "pricing": {
-                "text": "tarifária",
-                "link": "/pricing/"
+            {
+                "icon": "shield",
+                "title": "SOC 2 Type II Audited",
+                "description": "Independently audited to ensure reliable, secure, and consistent system performance."
             },
-            "getStarted": {
-                "text": "Comece agora",
-                "link": "https://control.msg91.com/signup/"
+            {
+                "icon": "vapt",
+                "title": "VAPT Certified",
+                "description": "Regularly tested to detect and fix security vulnerabilities before they impact your business."
+            }
+        ]
+    },
+    "Steps": {
+        "label": "CONFIGURAÇÃO SIMPLES",
+        "heading": "No ar em 3 passos",
+        "subheading": "Deixe seu suporte omnicanal pronto mais rápido que o café da manhã.",
+        "steps": [
+            {
+                "title": "Conecte seus canais",
+                "description": "WhatsApp, e-mail e Instagram em minutos. Sem código e sem equipe técnica."
+            },
+            {
+                "title": "Configure com IA",
+                "description": "Monte fluxos de suporte, chatbots e regras de automação no nosso construtor visual."
+            },
+            {
+                "title": "Escale o suporte",
+                "description": "Monitore, otimize e cresça com dados em tempo real. Adicione agentes quando quiser."
+            }
+        ],
+        "ctaLabel": "Começar agora",
+        "ctaHref": "https://web.msg91.com/signup"
+    },
+    "Pricing": {
+        "label": "PLANOS E PREÇOS",
+        "heading": "Preços transparentes,|sem surpresas.",
+        "subheading": "Escolha o plano certo para o seu volume. Cresça com paridade de poder de compra.",
+        "currencyUsdLabel": "USD",
+        "currencyBrlLabel": "BRL",
+        "billingMonthlyLabel": "Mensal",
+        "billingYearlyLabel": "Anual",
+        "fullPricingPath": "pricing/hello",
+        "comparePlansLabel": "Calcule o preço e compare todos os recursos na página de preços Hello",
+        "planCopy": {
+            "Live Chat": {
+                "description": "Conecte-se na hora com visitantes do site.",
+                "cta": "Começar grátis",
+                "ctaVariant": "dark"
+            },
+            "Free": {
+                "description": "Comece com o essencial.",
+                "cta": "Começar grátis",
+                "ctaVariant": "dark"
+            },
+            "Basic": {
+                "description": "Automação para equipes em crescimento.",
+                "cta": "Testar grátis",
+                "ctaVariant": "indigo",
+                "badge": "Mais popular"
+            },
+            "Premium": {
+                "description": "Operações de suporte em escala.",
+                "cta": "Plano Business",
+                "ctaVariant": "dark"
             }
         }
+    },
+    "Faqs": {
+        "label": "FAQ",
+        "heading": "Perguntas frequentes",
+        "items": [
+            {
+                "question": "O que é uma plataforma de suporte ao cliente omnicanal?",
+                "answer": "Uma plataforma de suporte omnicanal unifica todos os canais de comunicação com o cliente — como WhatsApp, Instagram, e-mail, Webchat, chamadas de voz, Facebook e Twitter — em uma única interface. A Hello oferece isso com IA integrada, permitindo que sua equipe atenda mais clientes com menos esforço, mantendo o histórico completo de cada conversa."
+            },
+            {
+                "question": "Como funciona a integração com a API do WhatsApp Business?",
+                "answer": "A Hello conecta-se pela API oficial do WhatsApp Business. Você verifica sua empresa, escolhe ou traz seu número e gerencia as conversas na caixa de entrada da Hello — com métricas de entrega e qualidade integradas. Nossa equipe ajuda você a entrar no ar sem precisar alternar entre várias ferramentas."
+            },
+            {
+                "question": "Posso automatizar o atendimento ao cliente com IA?",
+                "answer": "Sim. Com a Hello, você pode implantar chatbots sem código, usar respostas sugeridas por IA para agentes, automatizar roteamento e etiquetas e escalar com ferramentas de voz e fluxos de trabalho — para que perguntas repetitivas sejam resolvidas na hora enquanto os humanos focam nos casos complexos."
+            },
+            {
+                "question": "Quanto tempo leva para implementar a Hello?",
+                "answer": "Muitas equipes conectam os primeiros canais em poucas horas. A implantação completa — agentes treinados, automações no ar, WhatsApp aprovado — costuma levar de alguns dias, dependendo dos canais, modelos e aprovações internas."
+            }
+        ]
+    },
+    "FooterCta": {
+        "label": "COMECE HOJE",
+        "heading": "Veja a plataforma em ação",
+        "description": "Agende uma demonstração gratuita e veja como a Hello transforma o suporte da sua empresa em minutos.",
+        "primaryLabel": "Começar agora",
+        "primaryHref": "https://web.msg91.com/signup",
+        "secondaryLabel": "Agendar uma demo",
+        "secondaryHref": "https://calendly.com/hello-shared-inbox/hello-meeting"
     }
 }

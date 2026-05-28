@@ -29,6 +29,7 @@ export const initialState = {
     emailToken: null,
     emailVerified: false,
 
+    signupByGitHub: false,
     githubCode: null,
     githubState: null,
 

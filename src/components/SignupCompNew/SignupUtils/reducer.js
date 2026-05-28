@@ -221,6 +221,13 @@ export function reducer(state, action) {
                 ...state,
                 ipData: action.payload,
             };
+        case 'RESET_GITHUB_SIGNUP':
+            return {
+                ...state,
+                signupByGitHub: false,
+                githubCode: null,
+                githubState: null,
+            };
         case 'RESET':
             return initialState;
         default:

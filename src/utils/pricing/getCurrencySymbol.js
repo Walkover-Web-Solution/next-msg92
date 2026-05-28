@@ -4,6 +4,7 @@ const localeMap = {
     INR: 'en-IN',
     GBP: 'en-GB',
     USD: 'en-US',
+    AED: 'en-AE',
 };
 
 export default function GetCurrencySymbol(country) {
@@ -22,6 +23,8 @@ export default function GetCurrencySymbol(country) {
                     return { symbol: '£', currency: currency, locale };
                 case 'INR':
                     return { symbol: '₹', currency: currency, locale };
+                case 'AED':
+                    return { symbol: 'د.إ', currency: currency, locale };
                 default:
                     return { symbol: '$', currency: currency, locale };
             }

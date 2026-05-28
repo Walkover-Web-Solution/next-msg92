@@ -19,6 +19,7 @@ export default function FeatureWithBulletGroup({ data }) {
 
     return (
         <div className='container cont gap-10 md:gap-16 cont_p'>
+            {data?.heading && <h2 className='text-3xl font-bold text-center'>{data.heading}</h2>}
             {data.features.map((group, index) => {
                 return (
                     <div

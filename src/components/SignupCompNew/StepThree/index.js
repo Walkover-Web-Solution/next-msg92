@@ -8,6 +8,7 @@ import { useGstLookup } from '../hooks/useGstLookup';
 import { fetchCitiesByState, fetchCountries, fetchStatesByCountry, autoPopulateFromIP } from '../SignupUtils/apiUtils';
 import { updateSourceInUrlAndCookie } from '../SignupUtils/cookieUtils';
 import { GST_STATE_CODE_MAP } from '../SignupUtils/gstUtils';
+import { setSharedCookie } from '@/utils/utilis';
 
 const sourceData = [
     { value: 'search_engine', label: 'Search engine (Google, Bing, Yahoo, etc)' },
@@ -214,6 +215,11 @@ export default function StepThree({ data }) {
     }
 
     const handleFinalRegistration = () => {
+        setSharedCookie('signup_date', new Date().toISOString().split('T')[0], 30);
+        const serviceLabels = selectedServices.map((key) => services[key]).filter(Boolean);
+        if (serviceLabels.length) {
+            setSharedCookie('interested_services', JSON.stringify(serviceLabels), 30);
+        }
         finalRegistration(dispatch, state);
     };
 

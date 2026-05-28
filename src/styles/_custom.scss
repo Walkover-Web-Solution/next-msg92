@@ -335,3 +335,36 @@ $button-transition-timing: 100ms;
 .input, select{
     @apply focus:!outline-none;
 }
+
+.contact-chat-widget {
+    width: 100%;
+
+    > * {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    iframe {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    @media (max-width: 1023px) {
+        position: relative;
+        overflow: hidden;
+        contain: layout paint;
+
+        > * {
+            position: relative !important;
+            inset: auto !important;
+            height: 100% !important;
+            max-height: 500px !important;
+        }
+
+        iframe {
+            height: 100% !important;
+            max-height: 500px !important;
+        }
+    }
+}

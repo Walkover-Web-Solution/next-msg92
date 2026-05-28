@@ -8,6 +8,7 @@ import OTPInput from '../components/OTPInput';
 import ResendOTP from '../components/ResendOTP';
 import PhoneInput from '../components/PhoneInput';
 import FormInput from '../components/FormInput';
+import CountrySearchSelect from '../components/CountrySearchSelect';
 import { useCountrySelector } from '../hooks/useCountrySelector';
 
 export default function StepTwo() {
@@ -101,8 +102,7 @@ export default function StepTwo() {
         verifyOtp(otpValue, requestId, true, dispatch, state, onSuccess, onError);
     };
 
-    const handleOnSelect = (e) => {
-        const country = countries.find((c) => String(c.id) === e.target.value);
+    const handleCountrySelect = (country) => {
         dispatch({ type: 'SET_SELECTED_COUNTRY', payload: country || null });
         setLocalSelectedCountry(country || null);
     };
@@ -118,14 +118,36 @@ export default function StepTwo() {
     };
 
     const handleContinue = () => {
-        if (continueAllowed) {
-            setDetails('companyName', dispatch, companyName);
-            if (state.session) {
-                dispatch({ type: 'SET_ACTIVE_STEP', payload: 3 });
-            } else {
-                validateSignUp(dispatch, state);
-            }
+        if (!continueAllowed) return;
+
+        if (state.signupByGitHub && !state.githubCode) {
+            dispatch({ type: 'SET_ACTIVE_STEP', payload: 1 });
+            return;
         }
+
+        setDetails('companyName', dispatch, companyName);
+
+        if (state.session) {
+            dispatch({ type: 'SET_ACTIVE_STEP', payload: 3 });
+        } else {
+            validateSignUp(dispatch, state);
+        }
+    };
+    const clearGithubUrlParams = () => {
+        if (typeof window === 'undefined') return;
+        const currentUrl = new URL(window.location.href);
+        currentUrl.searchParams.delete('githubsignup');
+        currentUrl.searchParams.delete('code');
+        currentUrl.searchParams.delete('state');
+        window.history.replaceState(null, '', currentUrl.toString());
+    };
+
+    const handleBack = () => {
+        if (state.signupByGitHub) {
+            dispatch({ type: 'RESET_GITHUB_SIGNUP' });
+            clearGithubUrlParams();
+        }
+        dispatch({ type: 'SET_ACTIVE_STEP', payload: 1 });
     };
 
     const handleEditPhone = () => {
@@ -146,6 +168,8 @@ export default function StepTwo() {
             <Image width={160} height={80} className='w-fit h-12' src={'/assets/brand/msg91.svg'} alt='MSG91 Logo' />
             <div className='cont gap-2'>
                 <h1 className='text-2xl text-primary'>Personal Details</h1>
+                <p className='text-sm text-gray-500'>Verify your mobile number to secure and activate your account</p>
+                {state.signupByGitHub && <p className='text-sm text-success'>Email verified via GitHub</p>}
             </div>
             <div className='cont gap-3'>
                 <FormInput
@@ -172,18 +196,12 @@ export default function StepTwo() {
 
                 <div className='cont gap-1'>
                     <p className='text-gray-500'>Country</p>
-                    <select
-                        className='select select-bordered text-base w-full max-w-[420px] outline-none focus-within:outline-none'
-                        value={selectedCountry?.id || ''}
-                        onChange={handleOnSelect}
-                    >
-                        <option value=''>Select Country</option>
-                        {countries?.map((country) => (
-                            <option key={country.id} value={country.id}>
-                                {country.name}
-                            </option>
-                        ))}
-                    </select>
+                    <CountrySearchSelect
+                        countries={countries}
+                        value={selectedCountry}
+                        onChange={handleCountrySelect}
+                        placeholder='Search country...'
+                    />
                 </div>
 
                 {state.otpSent && otpLength ? (
@@ -259,12 +277,7 @@ export default function StepTwo() {
                 )}
             </div>
             <div className='flex gap-4'>
-                <button
-                    className='btn btn-primary btn-outline btn-md'
-                    onClick={() => {
-                        dispatch({ type: 'SET_ACTIVE_STEP', payload: 1 });
-                    }}
-                >
+                <button className='btn btn-primary btn-outline btn-md' onClick={handleBack}>
                     Back
                 </button>
                 <button onClick={handleContinue} className='btn btn-accent btn-md' disabled={!continueAllowed}>

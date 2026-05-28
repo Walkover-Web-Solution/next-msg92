@@ -1,7 +1,13 @@
 import axios from 'axios';
 import getCountyFromIP from '@/utils/getCountyFromIP';
 import { appendMsg91QueryToUrl } from './cookieUtils';
-import { getCookie, setCookie, getUtmFromCookies } from '@/utils/utilis';
+import {
+    getCookie,
+    setCookie,
+    getUtmFromCookies,
+    parseMsg91QueryCookie,
+    sanitizeMsg91QuerySearch,
+} from '@/utils/utilis';
 
 /**
  * Check if user has an active session
@@ -54,20 +60,21 @@ export function validateSignUp(dispatch, state) {
         return;
     }
 
-    const isGithubFlow = state?.githubCode;
+    const isGithubFlow = state?.githubCode && state?.signupByGitHub;
+
+    if (!state?.mobileToken) {
+        dispatch({ type: 'SET_ERROR', payload: 'Email and Mobile should be verified.' });
+        return;
+    }
+
+    if (!isGithubFlow && !state?.emailToken) {
+        dispatch({ type: 'SET_ERROR', payload: 'Email and Mobile should be verified.' });
+        return;
+    }
+
     let url = process.env.API_BASE_URL + '/api/v5/nexus/validateEmailSignUp';
 
-    const utmRaw = Object.fromEntries(
-        getCookie('msg91_query')
-            ?.replace('?', '')
-            ?.split('&')
-            ?.map((val) => val.split('=')) ?? []
-    );
-
-    // msg91_query mirrors full location.search; it can include `session` from post-login redirects.
-    // Those keys must never overwrite signup-only fields or the API can return misleading errors (e.g. "Invalid email").
-    const SIGNUP_PAYLOAD_KEYS = new Set(['session', 'mobileToken', 'emailToken', 'useV2signup', 'code', 'state']);
-    const utmObj = Object.fromEntries(Object.entries(utmRaw).filter(([key]) => !SIGNUP_PAYLOAD_KEYS.has(key)));
+    const utmObj = parseMsg91QueryCookie();
 
     const payload = {
         ...utmObj,
@@ -79,20 +86,22 @@ export function validateSignUp(dispatch, state) {
         reference: state?.reference ?? utmObj.reference,
     };
 
-    if (state?.session) {
-        payload.session = state.session;
-    }
-
     if (isGithubFlow) {
         payload.code = state.githubCode;
         payload.state = state.githubState;
         url = process.env.API_BASE_URL + '/api/v5/nexus/validateGithubSignUp';
+        const sessionFromCookie = getCookie('sessionId');
+        if (sessionFromCookie) {
+            payload.session = sessionFromCookie;
+        }
     } else {
         payload.emailToken = state?.emailToken;
-    }
-
-    if (!state?.session) {
-        clearStaleSignupSessionCookies();
+        if (state?.session) {
+            payload.session = state.session;
+        }
+        if (!state?.session) {
+            clearStaleSignupSessionCookies();
+        }
     }
 
     url = appendUseV2SignupQuery(url);
@@ -108,9 +117,40 @@ export function validateSignUp(dispatch, state) {
         .then((result) => {
             if (result?.status === 'success') {
                 const sid = result?.data?.sessionDetails?.PHPSESSID;
+                const nextStep = result?.data?.data?.nextStep;
+
                 if (sid && typeof document !== 'undefined') {
                     setCookie('sessionId', sid, 30);
                 }
+
+                if (nextStep === 'loginIntoExistingAccount' && sid) {
+                    let redirectUrl =
+                        process.env.API_BASE_URL + '/api/nexusRedirection.php?session=' + encodeURIComponent(sid);
+                    const msg91Query = sanitizeMsg91QuerySearch(getCookie('msg91_query') || '');
+                    if (msg91Query) {
+                        redirectUrl += msg91Query.startsWith('?') ? msg91Query.replace('?', '&') : `&${msg91Query}`;
+                    }
+                    const signupDate = getCookie('signup_date');
+                    const interestedServices = getCookie('interested_services');
+                    if (signupDate) {
+                        redirectUrl += `&signup_date=${encodeURIComponent(signupDate)}`;
+                    }
+                    if (interestedServices) {
+                        redirectUrl += `&interested_services=${encodeURIComponent(interestedServices)}`;
+                    }
+                    Object.entries(getUtmFromCookies()).forEach(([key, value]) => {
+                        if (value) {
+                            redirectUrl += `&${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
+                        }
+                    });
+                    window.location.href = redirectUrl;
+                    return;
+                }
+
+                if (isGithubFlow) {
+                    dispatch({ type: 'RESET_GITHUB_SIGNUP' });
+                }
+
                 dispatch({
                     type: 'SET_SESSION',
                     payload: { session: sid, step: 3 },
@@ -121,6 +161,10 @@ export function validateSignUp(dispatch, state) {
                     type: 'SET_ERROR',
                     payload: result?.errors?.[0] ?? result?.errors ?? 'Failed to validate signup',
                 });
+                if (isGithubFlow) {
+                    dispatch({ type: 'RESET_GITHUB_SIGNUP' });
+                    dispatch({ type: 'SET_ACTIVE_STEP', payload: 1 });
+                }
             } else {
                 dispatch({ type: 'SET_ERROR', payload: result?.errors || 'Failed to validate signup' });
             }
@@ -272,10 +316,11 @@ export function finalRegistration(dispatch, state) {
 
                 // Same target as legacy SignUp.js `SUCCESS_REDIRECTION_URL` (not marketing `REDIRECT_URL`).
                 let successRedirectionUrl = process.env.API_BASE_URL + '/api/nexusRedirection.php?session=:session';
-                const msg91Query = getCookie('msg91_query');
+                const msg91Query = sanitizeMsg91QuerySearch(getCookie('msg91_query') || '');
                 if (msg91Query) {
-                    const queryParams = msg91Query.startsWith('?') ? msg91Query.replace('?', '&') : '&' + msg91Query;
-                    successRedirectionUrl += queryParams;
+                    successRedirectionUrl += msg91Query.startsWith('?')
+                        ? msg91Query.replace('?', '&')
+                        : `&${msg91Query}`;
                 }
                 let redirectUrl = successRedirectionUrl.replace(':session', encodeURIComponent(sid));
 

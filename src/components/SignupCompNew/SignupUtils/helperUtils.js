@@ -1,5 +1,5 @@
 import getURLParams from '@/utils/getURLParams';
-import { getCookie } from '@/utils/utilis';
+import { getCookie, loginWithGitHubAccount, persistAbSignupFlag, isAbSignupActive } from '@/utils/utilis';
 
 /**
  * Set initial states from URL parameters
@@ -18,6 +18,7 @@ export function setInitialStates(dispatch, state, urlParams) {
         }
 
         const githubSignup = urlParams?.githubsignup;
+        const signupByGitHub = githubSignup === true || githubSignup === 'true';
         const githubCode = urlParams?.code;
         const githubState = urlParams?.state;
 
@@ -35,7 +36,7 @@ export function setInitialStates(dispatch, state, urlParams) {
             type: 'SET_INITIAL_STATES',
             payload: {
                 ...state,
-                githubSignup: githubSignup,
+                signupByGitHub,
                 githubCode: githubCode,
                 githubState: githubState,
                 source: sourceValue,
@@ -51,7 +52,17 @@ export function setInitialStates(dispatch, state, urlParams) {
                 activeStep: 1,
             },
         });
-        if (githubCode && githubState) {
+        if (signupByGitHub && githubCode && githubState) {
+            if (typeof window !== 'undefined') {
+                const currentUrl = new URL(window.location.href);
+                currentUrl.searchParams.delete('githubsignup');
+                currentUrl.searchParams.delete('code');
+                currentUrl.searchParams.delete('state');
+                if (isAbSignupActive() && !currentUrl.searchParams.get('absignup')) {
+                    currentUrl.searchParams.set('absignup', 'a');
+                }
+                window.history.replaceState(null, '', currentUrl.toString());
+            }
             dispatch({
                 type: 'SET_ACTIVE_STEP',
                 payload: 2,
@@ -65,11 +76,13 @@ export function setInitialStates(dispatch, state, urlParams) {
 }
 
 /**
- * Handle GitHub signup redirect
+ * Handle GitHub signup redirect (same OAuth flow as legacy signup)
  */
 export function handleGithubSignup() {
-    const randomState = Math.floor(100000000 + Math.random() * 900000000);
-    window.location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&allow_signup=true&scope=user&redirect_uri=${process.env.REDIRECT_URL}/github-auth-token?githubsignup=true&state=${randomState}&absignup=a`;
+    if (typeof window !== 'undefined') {
+        persistAbSignupFlag(7);
+    }
+    loginWithGitHubAccount(false);
 }
 
 /**

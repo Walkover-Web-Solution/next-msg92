@@ -70,6 +70,12 @@ export default function StepOne() {
         }
     }, [otpSent]);
 
+    useEffect(() => {
+        if (state.signupByGitHub && state.githubCode && state.activeStep === 1) {
+            dispatch({ type: 'SET_ACTIVE_STEP', payload: 2 });
+        }
+    }, [state.signupByGitHub, state.githubCode, state.activeStep, dispatch]);
+
     const handleSendOtp = () => {
         if (!email?.trim()) {
             dispatch({ type: 'SET_ERROR', payload: 'Please enter email' });
@@ -145,12 +151,14 @@ export default function StepOne() {
             />
             <div className='cont gap-1'>
                 <h1 className='text-xl sm:text-2xl text-primary'>Create an Account</h1>
+
                 <p className='text-sm text-gray-500'>
                     Already have an account?{' '}
                     <a className='text-link active-link' href={loginUrl}>
                         Login
                     </a>
                 </p>
+                <p className='text-sm text-gray-500'>Verify your email to secure and activate your account</p>
             </div>
 
             {emailVerified ? (
