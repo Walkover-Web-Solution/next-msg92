@@ -1,11 +1,8 @@
 import { useRef, useMemo, useState, useEffect } from 'react';
 import { MdCheck, MdClose, MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import { formatPriceAmount } from '@/utils/pricing/formatPrice';
 
 const SCROLL_DISTANCE = 300;
-
-function formatAmount(amount, symbol, locale) {
-    return `${symbol}${Number(amount).toLocaleString(locale || 'en-IN')}`;
-}
 
 function getDiscountedAmount(amount, discounts) {
     if (!amount || !discounts || discounts.length === 0) return null;
@@ -18,13 +15,16 @@ function getDiscountedAmount(amount, discounts) {
     return null;
 }
 
-function getDiscountLabel(discount, symbol, locale) {
+function getDiscountLabel(discount, currency, locale) {
     if (!discount) return null;
     const typeId = discount?.discount_type_id ?? discount?.type_id;
     const value = Number(discount?.value ?? 0);
     const duration = discount?.duration ?? 0;
     const durationText = duration === 0 ? '' : ` for ${duration} month${duration !== 1 ? 's' : ''}`;
-    if (typeId === 1) return `${symbol}${value.toLocaleString(locale || 'en-IN')} off${durationText}`;
+    if (typeId === 1) {
+        const offAmount = value.toLocaleString(locale || 'en-IN');
+        return currency ? `${offAmount} ${currency} off${durationText}` : `${offAmount} off${durationText}`;
+    }
     if (typeId === 2) return `${value >= 100 ? 100 : value}% off${durationText}`;
     return null;
 }
@@ -119,7 +119,7 @@ function CompareTable({ tableRef, planNames, rows, tabtype, featuresColumnLabel 
     );
 }
 
-function buildTableData(pricingData, tabtype, symbol, locale) {
+function buildTableData(pricingData, tabtype, currency, locale) {
     if (!Array.isArray(pricingData) || pricingData.length === 0) return null;
     const plans = pricingData.filter((p) => p?.type === tabtype);
     if (plans.length === 0) return null;
@@ -179,10 +179,10 @@ function buildTableData(pricingData, tabtype, symbol, locale) {
             const discountedAmt = getDiscountedAmount(plan?.amount, plan?.discount);
             const display =
                 discountedAmt != null
-                    ? formatAmount(discountedAmt, symbol, locale)
-                    : formatAmount(plan?.amount, symbol, locale);
-            const original = discountedAmt != null ? formatAmount(plan?.amount, symbol, locale) : null;
-            const label = getDiscountLabel(plan?.discount?.[0], symbol, locale);
+                    ? formatPriceAmount(discountedAmt, currency, locale)
+                    : formatPriceAmount(plan?.amount, currency, locale);
+            const original = discountedAmt != null ? formatPriceAmount(plan?.amount, currency, locale) : null;
+            const label = getDiscountLabel(plan?.discount?.[0], currency, locale);
             return { display, original, label };
         }),
     };
@@ -191,7 +191,7 @@ function buildTableData(pricingData, tabtype, symbol, locale) {
     return { planNames, rows };
 }
 
-export default function ComparePlans({ pricingData, symbol, locale, pageData }) {
+export default function ComparePlans({ pricingData, currency, locale, pageData }) {
     const monthlyRef = useRef(null);
     const yearlyRef = useRef(null);
     const [activeTab, setActiveTab] = useState('Monthly');
@@ -202,10 +202,10 @@ export default function ComparePlans({ pricingData, symbol, locale, pageData }) 
 
     const { monthlyData, yearlyData } = useMemo(
         () => ({
-            monthlyData: buildTableData(pricingData, 'Monthly', symbol, locale),
-            yearlyData: buildTableData(pricingData, 'Yearly', symbol, locale),
+            monthlyData: buildTableData(pricingData, 'Monthly', currency, locale),
+            yearlyData: buildTableData(pricingData, 'Yearly', currency, locale),
         }),
-        [pricingData, symbol, locale]
+        [pricingData, currency, locale]
     );
 
     // Listen for tab changes from the parent pricing wrapper

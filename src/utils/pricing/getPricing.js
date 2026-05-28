@@ -19,14 +19,6 @@ const currencyByCountry = {
     ae: 'AED',
 };
 
-/** @type {Record<string, string>} Map of currency codes to symbols. */
-const currencySymbols = {
-    INR: '₹',
-    USD: '$',
-    GBP: '£',
-    AED: 'د.إ',
-};
-
 /** @type {Record<string, string>} Map of country codes to locales for number formatting. */
 const localeByCountry = {
     in: 'en-IN',

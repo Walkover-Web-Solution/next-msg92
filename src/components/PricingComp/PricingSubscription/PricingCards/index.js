@@ -1,4 +1,5 @@
 import getURL from '@/utils/getURL';
+import { formatPriceAmount, formatUnitPrice, formatZeroPrice } from '@/utils/pricing/formatPrice';
 import { useMemo, useRef, useCallback, useState } from 'react';
 import {
     MdChevronLeft,
@@ -22,7 +23,7 @@ const SCROLL_DISTANCE = 360;
 
 export default function PricingCards({
     pricingData,
-    symbol,
+    currency,
     locale,
     onViewRateCard,
     onCalculateClick,
@@ -183,7 +184,7 @@ export default function PricingCards({
                             key={plan?.name ?? index}
                             plan={plan}
                             tabtype='Monthly'
-                            symbol={symbol}
+                            currency={currency}
                             locale={locale}
                             isFeatured={false}
                             isSelected={selectedPlanName === plan?.name}
@@ -212,7 +213,7 @@ export default function PricingCards({
                                 key={plan?.name ?? index}
                                 plan={plan}
                                 tabtype='Yearly'
-                                symbol={symbol}
+                                currency={currency}
                                 locale={locale}
                                 isSelected={selectedPlanName === plan?.name}
                                 onSelect={() => setSelectedPlanName(plan?.name)}
@@ -304,18 +305,6 @@ function getBadgeLabel(service) {
     return 'QUOTA';
 }
 
-function formatAmount(amount, symbol, locale) {
-    if (!amount || Number(amount) === 0) return 'Free';
-    return `${symbol}${Number(amount).toLocaleString(locale || 'en-IN')}`;
-}
-
-function formatUnitPrice(rate, symbol, locale) {
-    const n = Number(rate);
-    if (Number.isNaN(n)) return `${symbol}0`;
-    const options = n >= 1 ? { maximumFractionDigits: 2 } : { minimumFractionDigits: 2, maximumFractionDigits: 6 };
-    return `${symbol}${n.toLocaleString(locale || 'en-IN', options)}`;
-}
-
 function getAllowanceSectionLabel(base, tabtype) {
     return tabtype === 'Yearly' ? `${base} (Monthly)` : base;
 }
@@ -333,16 +322,16 @@ function formatIncludedAllowance(service, locale) {
     return name;
 }
 
-/** Wallet / dial-plan included credit, e.g. "د.إ500 RCS wallet" */
-function formatWalletAllowance(service, symbol, locale, isUnlimited) {
+/** Wallet / dial-plan included credit, e.g. "500 AED RCS wallet" */
+function formatWalletAllowance(service, currency, locale, isUnlimited) {
     const name = service?.name?.trim();
     if (isUnlimited) return `Unlimited ${name} wallet`;
     const credit = Number(service?.freeCredit).toLocaleString(locale || 'en-IN');
-    return `${symbol}${credit} ${name} wallet`;
+    return currency ? `${credit} ${currency} ${name} wallet` : `${credit} ${name} wallet`;
 }
 
-/** Overage / per-use lines, e.g. "Contacts — د.إ25 per 1,000" */
-function formatExtraCharge(service, symbol, locale) {
+/** Overage / per-use lines, e.g. "Contacts — 25 AED per 1,000" */
+function formatExtraCharge(service, currency, locale) {
     const name = service?.name?.trim();
     const rate = service?.followUpRate;
     const chunkSize = Number(service?.chunkSize ?? 1) || 1;
@@ -351,7 +340,7 @@ function formatExtraCharge(service, symbol, locale) {
 
     if (isNotAllowed) return `${name} — not available on this plan`;
 
-    const price = formatUnitPrice(rate, symbol, locale);
+    const price = formatUnitPrice(rate, currency, locale);
     if (chunkSize > 1) {
         const bundle = chunkSize.toLocaleString(locale || 'en-IN');
         return `${name} — ${price} per ${bundle}`;
@@ -373,7 +362,7 @@ function getDiscountedAmount(amount, discounts) {
 function PlanCard({
     plan,
     tabtype,
-    symbol,
+    currency,
     locale,
     isFeatured,
     isSelected,
@@ -387,9 +376,9 @@ function PlanCard({
     const discountedAmount = getDiscountedAmount(amount, plan?.discount);
     const displayPrice =
         discountedAmount != null
-            ? formatAmount(discountedAmount, symbol, locale)
-            : formatAmount(amount, symbol, locale);
-    const originalPrice = discountedAmount != null ? formatAmount(amount, symbol, locale) : null;
+            ? formatPriceAmount(discountedAmount, currency, locale)
+            : formatPriceAmount(amount, currency, locale);
+    const originalPrice = discountedAmount != null ? formatPriceAmount(amount, currency, locale) : null;
 
     const services = plan?.services ?? [];
     const features = plan?.features ?? [];
@@ -411,7 +400,7 @@ function PlanCard({
     );
     const extraServices = services.filter((s) => !hasDialPlan(s) && !(s?.freeCredit === -1 || s?.freeCredit === '-1'));
 
-    const isFree = displayPrice === 'Free';
+    const isFree = !amount || Number(amount) === 0;
 
     const discountDuration = plan?.discount?.[0]?.duration ?? 0;
     const saveLabel = (() => {
@@ -421,7 +410,10 @@ function PlanCard({
         const value = Number(discount?.value ?? 0);
         const durationText =
             discountDuration > 0 ? ` for first ${discountDuration} month${discountDuration !== 1 ? 's' : ''}` : '';
-        if (typeId === 1) return `${symbol}${value.toLocaleString(locale || 'en-IN')} off${durationText}`;
+        if (typeId === 1) {
+            const offAmount = value.toLocaleString(locale || 'en-IN');
+            return currency ? `${offAmount} ${currency} off${durationText}` : `${offAmount} off${durationText}`;
+        }
         if (typeId === 2) return `${value >= 100 ? 100 : value}% off${durationText}`;
         return null;
     })();
@@ -455,7 +447,7 @@ function PlanCard({
                 )}
                 <div className='flex items-baseline gap-1.5 mb-1'>
                     <span className='text-4xl font-extrabold tracking-tight text-slate-900'>
-                        {isFree ? `${symbol}0` : displayPrice}
+                        {isFree ? formatZeroPrice(currency) : displayPrice}
                     </span>
                     <span className='text-sm font-medium text-slate-400'>
                         {discountDuration > 0
@@ -504,7 +496,7 @@ function PlanCard({
                                     <li key={`dp-${i}`} className='flex items-start gap-2 text-sm text-slate-600'>
                                         <MdCheck size={15} className='text-indigo-400 shrink-0 mt-0.5' />
                                         <span className='flex items-center gap-1'>
-                                            {formatWalletAllowance(service, symbol, locale, isUnlimited)}
+                                            {formatWalletAllowance(service, currency, locale, isUnlimited)}
                                             {!isUnlimited && (
                                                 <MdInfoOutline
                                                     size={13}
@@ -535,7 +527,7 @@ function PlanCard({
                             {extraServices.map((service, i) => (
                                 <li key={i} className='flex items-start gap-2 text-sm text-slate-600'>
                                     <MdCheck size={15} className='text-indigo-400 shrink-0 mt-0.5' />
-                                    <span>{formatExtraCharge(service, symbol, locale)}</span>
+                                    <span>{formatExtraCharge(service, currency, locale)}</span>
                                 </li>
                             ))}
                             {[...dialPlanServicesWithCredit, ...dialPlanServicesNoCredit].map((service, i) => {
