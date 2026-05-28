@@ -119,6 +119,7 @@ export default function StepTwo() {
 
     const handleContinue = () => {
         if (continueAllowed) {
+            setDetails('companyName', dispatch, companyName);
             if (state.session) {
                 dispatch({ type: 'SET_ACTIVE_STEP', payload: 3 });
             } else {

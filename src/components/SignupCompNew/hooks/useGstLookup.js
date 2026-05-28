@@ -15,8 +15,8 @@ import { normalizeGstin, parseGstLookupResponse, validateGstinFormat } from '../
  * GSTIN input, validation, debounced lookup, and cache
  * @param {UseGstLookupOptions} options
  */
-export function useGstLookup({ dispatch, onAutofill, prefillGstCountryData, initialGstNo = '' }) {
-    const [gstNumber, setGstNumber] = useState(initialGstNo || '');
+export function useGstLookup({ dispatch, onAutofill, prefillGstCountryData, initialGstNo }) {
+    const [gstNumber, setGstNumber] = useState(initialGstNo);
     const [validationError, setValidationError] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
@@ -39,8 +39,8 @@ export function useGstLookup({ dispatch, onAutofill, prefillGstCountryData, init
     const applyAutofill = useCallback(
         async (data) => {
             onAutofill({
-                address: data.address || '',
-                postalCode: data.postalCode || '',
+                address: data.address,
+                postalCode: data.postalCode,
                 gstNo: data.gstNo,
             });
 
@@ -95,9 +95,7 @@ export function useGstLookup({ dispatch, onAutofill, prefillGstCountryData, init
                 }
 
                 if (parsed.type === 'api_error') {
-                    if (parsed.message) {
-                        dispatch({ type: 'SET_ERROR', payload: parsed.message });
-                    }
+                    dispatch({ type: 'SET_ERROR', payload: parsed.message });
                     return;
                 }
 
@@ -108,7 +106,7 @@ export function useGstLookup({ dispatch, onAutofill, prefillGstCountryData, init
                     return;
                 }
 
-                if (error instanceof GstApiError && error.message) {
+                if (error instanceof GstApiError) {
                     dispatch({ type: 'SET_ERROR', payload: error.message });
                 }
             } finally {
@@ -128,7 +126,7 @@ export function useGstLookup({ dispatch, onAutofill, prefillGstCountryData, init
 
             dispatch({
                 type: 'SET_COMPANY_DETAILS',
-                payload: { gstNo: normalized || null },
+                payload: { gstNo: normalized },
             });
 
             if (debounceRef.current) {

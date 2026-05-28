@@ -2,8 +2,6 @@
  * Client-side GST lookup — calls Next.js API route only (no secrets in browser)
  */
 
-import { extractApiErrorMessage } from './gstUtils';
-
 export class GstApiError extends Error {
     /**
      * @param {string} message
@@ -37,7 +35,7 @@ export async function fetchGstDetails(gstCode, signal) {
     }
 
     if (!response.ok) {
-        throw new GstApiError(extractApiErrorMessage(body), response.status);
+        throw new GstApiError(body?.error, response.status);
     }
 
     return body;

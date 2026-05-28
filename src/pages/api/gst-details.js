@@ -1,6 +1,6 @@
 import { getGstAuthToken } from '@/lib/gst/jwtUtils';
 import { GSTIN_LENGTH, GSTIN_REGEX } from '@/components/SignupCompNew/SignupUtils/gstConstants';
-import { extractApiErrorMessage, normalizeGstin } from '@/components/SignupCompNew/SignupUtils/gstUtils';
+import { normalizeGstin } from '@/components/SignupCompNew/SignupUtils/gstUtils';
 
 const GST_API_TIMEOUT_MS = 15000;
 
@@ -48,20 +48,24 @@ export default async function handler(req, res) {
         }
 
         if (!upstream.ok) {
-            const message = extractApiErrorMessage(body);
+            const fullErrorMessage =
+                (typeof body?.error === 'string' && body.error) ||
+                (typeof body?.message === 'string' && body.message) ||
+                (Array.isArray(body?.errors) ? body.errors.map((error) => String(error)).join(', ') : '');
+
             return res.status(upstream.status).json({
-                error: message,
                 ...(body && typeof body === 'object' ? body : {}),
+                error: fullErrorMessage,
             });
         }
 
         return res.status(200).json(body);
     } catch (error) {
         if (error?.name === 'AbortError') {
-            return res.status(504).json({ error: '' });
+            return res.status(504).json({ error: error.message });
         }
 
-        return res.status(500).json({ error: '' });
+        return res.status(500).json({ error: error?.message });
     } finally {
         clearTimeout(timeoutId);
     }

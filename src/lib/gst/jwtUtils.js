@@ -19,7 +19,12 @@ export function createHs256Jwt(payload, secret) {
  * @returns {string} JWT token
  */
 export function getGstAuthToken() {
-    const companyId = process.env.GST_JWT_COMPANY_ID || '125';
-    const secret = process.env.GST_JWT_SECRET || 'secret';
+    const companyId = process.env.GST_JWT_COMPANY_ID;
+    const secret = process.env.GST_JWT_SECRET;
+
+    if (!companyId || !secret) {
+        throw new Error('Missing GST JWT configuration: GST_JWT_COMPANY_ID and GST_JWT_SECRET are required.');
+    }
+
     return createHs256Jwt({ company_id: companyId }, secret);
 }
