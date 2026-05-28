@@ -125,13 +125,14 @@ export default function StepTwo() {
             return;
         }
 
+        setDetails('companyName', dispatch, companyName);
+
         if (state.session) {
             dispatch({ type: 'SET_ACTIVE_STEP', payload: 3 });
         } else {
             validateSignUp(dispatch, state);
         }
     };
-
     const clearGithubUrlParams = () => {
         if (typeof window === 'undefined') return;
         const currentUrl = new URL(window.location.href);
