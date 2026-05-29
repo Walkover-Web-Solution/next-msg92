@@ -11,7 +11,6 @@ import countries from '@/data/countries.json';
 import CalculateVoicePricing from './CalculateVoicePricing/CalculateVoicePricing';
 
 export default function PricingVoice({ data, country, initialData }) {
-    console.log('⚡️ ~ :14 ~ PricingVoice ~ initialData:', initialData);
     const [countryData, setCountryData] = useState(initialData?.countryData || []);
     const currentCountry = GetCountryDetails({ shortname: country, type: 'shortname' });
     const [selectedCountry, setSelectedCountry] = useState(initialData?.selectedCountry || null);
@@ -64,7 +63,7 @@ export default function PricingVoice({ data, country, initialData }) {
         if (!countryObj?.id) return;
         setLoading(true);
         try {
-            const { currency: rawCurrency } = GetCurrencySymbol(countryObj?.country_code);
+            const { currency: rawCurrency } = GetCurrencySymbol(country);
             const newCurrency = rawCurrency === 'INR' ? 'INR' : 'USD';
             const newSymbol = newCurrency === 'INR' ? '₹' : '$';
             setCurrency(newCurrency);
