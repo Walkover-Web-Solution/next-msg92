@@ -170,6 +170,7 @@
                 "title": "Presyo ng otpwidget sa Pilipinas | MSG91-Pilipinas",
                 "description": "Mararanasan mo ang maaasahan at makapangyarihang mga serbisyo tulad ng transactional otpwidget, communication APIs, at iba pa, na inaalok sa magagandang presyo. Tingnan ang presyo ngayon."
             },
+            "heading": "OTP Widget Pricing",
             "get_started": "Magsimula",
             "connectComp": {
                 "content": "Libre ang paggamit ng OTP widget/SDK.",
