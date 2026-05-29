@@ -1,4 +1,5 @@
 import getURL from '@/utils/getURL';
+import { formatPriceAmount, formatUnitPrice, formatZeroPrice } from '@/utils/pricing/formatPrice';
 import { useMemo, useRef, useCallback, useState } from 'react';
 import {
     MdChevronLeft,
@@ -22,7 +23,7 @@ const SCROLL_DISTANCE = 360;
 
 export default function PricingCards({
     pricingData,
-    symbol,
+    currency,
     locale,
     onViewRateCard,
     onCalculateClick,
@@ -36,14 +37,25 @@ export default function PricingCards({
     const [activeTab, setActiveTab] = useState('Monthly');
     const [monthlyShowFade, setMonthlyShowFade] = useState(false);
     const [yearlyShowFade, setYearlyShowFade] = useState(false);
+    const [monthlyHasOverflow, setMonthlyHasOverflow] = useState(false);
+    const [yearlyHasOverflow, setYearlyHasOverflow] = useState(false);
+    const [monthlyAtStart, setMonthlyAtStart] = useState(true);
+    const [monthlyAtEnd, setMonthlyAtEnd] = useState(false);
+    const [yearlyAtStart, setYearlyAtStart] = useState(true);
+    const [yearlyAtEnd, setYearlyAtEnd] = useState(false);
     const [selectedPlanName, setSelectedPlanName] = useState(featuredPlanName);
 
     const activeScrollRef = activeTab === 'Yearly' ? yearlyScrollRef : monthlyScrollRef;
 
-    const checkFade = useCallback((el, setFade) => {
+    const updateScrollState = useCallback((el, setFade, setOverflow, setAtStart, setAtEnd) => {
         if (!el) return;
+        const hasOverflow = el.scrollWidth > el.clientWidth;
+        const atStart = el.scrollLeft <= 4;
         const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
-        setFade(!atEnd && el.scrollWidth > el.clientWidth);
+        setOverflow(hasOverflow);
+        setFade(hasOverflow && !atEnd);
+        setAtStart(atStart);
+        setAtEnd(atEnd);
     }, []);
 
     const scrollLeft = useCallback(() => {
@@ -101,7 +113,8 @@ export default function PricingCards({
     useEffect(() => {
         const el = monthlyScrollRef.current;
         if (!el) return;
-        const handler = () => checkFade(el, setMonthlyShowFade);
+        const handler = () =>
+            updateScrollState(el, setMonthlyShowFade, setMonthlyHasOverflow, setMonthlyAtStart, setMonthlyAtEnd);
         handler();
         el.addEventListener('scroll', handler);
         window.addEventListener('resize', handler);
@@ -109,12 +122,13 @@ export default function PricingCards({
             el.removeEventListener('scroll', handler);
             window.removeEventListener('resize', handler);
         };
-    }, [monthlyPlans, checkFade]);
+    }, [monthlyPlans, updateScrollState]);
 
     useEffect(() => {
         const el = yearlyScrollRef.current;
         if (!el) return;
-        const handler = () => checkFade(el, setYearlyShowFade);
+        const handler = () =>
+            updateScrollState(el, setYearlyShowFade, setYearlyHasOverflow, setYearlyAtStart, setYearlyAtEnd);
         handler();
         el.addEventListener('scroll', handler);
         window.addEventListener('resize', handler);
@@ -122,11 +136,18 @@ export default function PricingCards({
             el.removeEventListener('scroll', handler);
             window.removeEventListener('resize', handler);
         };
-    }, [yearlyPlans, checkFade]);
+    }, [yearlyPlans, updateScrollState]);
 
     if (!monthlyPlans.length && !yearlyPlans.length) return null;
 
-    const showArrows = activeTab === 'Yearly' ? yearlyShowFade : monthlyShowFade;
+    const showArrows = activeTab === 'Yearly' ? yearlyHasOverflow : monthlyHasOverflow;
+    const atStart = activeTab === 'Yearly' ? yearlyAtStart : monthlyAtStart;
+    const atEnd = activeTab === 'Yearly' ? yearlyAtEnd : monthlyAtEnd;
+
+    const arrowBtnClass = (disabled) =>
+        `w-8 h-8 flex items-center justify-center rounded transition-colors ${
+            disabled ? 'text-gray-300 cursor-not-allowed' : 'text-gray-600 hover:bg-gray-100'
+        }`;
 
     return (
         <div className='flex flex-col gap-3'>
@@ -137,16 +158,18 @@ export default function PricingCards({
                         <button
                             type='button'
                             onClick={scrollLeft}
+                            disabled={atStart}
                             aria-label='Scroll left'
-                            className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
+                            className={arrowBtnClass(atStart)}
                         >
                             <MdChevronLeft size={20} />
                         </button>
                         <button
                             type='button'
                             onClick={scrollRight}
+                            disabled={atEnd}
                             aria-label='Scroll right'
-                            className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
+                            className={arrowBtnClass(atEnd)}
                         >
                             <MdChevronRight size={20} />
                         </button>
@@ -183,7 +206,7 @@ export default function PricingCards({
                             key={plan?.name ?? index}
                             plan={plan}
                             tabtype='Monthly'
-                            symbol={symbol}
+                            currency={currency}
                             locale={locale}
                             isFeatured={false}
                             isSelected={selectedPlanName === plan?.name}
@@ -191,7 +214,7 @@ export default function PricingCards({
                             onViewRateCard={(serviceName) => onViewRateCard?.(serviceName)}
                             pageInfo={pageInfo}
                             hasDiscount={monthlyHasDiscount}
-                            isOverflow={monthlyShowFade}
+                            isOverflow={monthlyHasOverflow}
                         />
                     ))}
                 </div>
@@ -212,14 +235,14 @@ export default function PricingCards({
                                 key={plan?.name ?? index}
                                 plan={plan}
                                 tabtype='Yearly'
-                                symbol={symbol}
+                                currency={currency}
                                 locale={locale}
                                 isSelected={selectedPlanName === plan?.name}
                                 onSelect={() => setSelectedPlanName(plan?.name)}
                                 onViewRateCard={(serviceName) => onViewRateCard?.(serviceName)}
                                 pageInfo={pageInfo}
                                 hasDiscount={yearlyHasDiscount}
-                                isOverflow={yearlyShowFade}
+                                isOverflow={yearlyHasOverflow}
                             />
                         ))}
                     </div>
@@ -304,9 +327,47 @@ function getBadgeLabel(service) {
     return 'QUOTA';
 }
 
-function formatAmount(amount, symbol, locale) {
-    if (!amount || Number(amount) === 0) return 'Free';
-    return `${symbol}${Number(amount).toLocaleString(locale || 'en-IN')}`;
+function getAllowanceSectionLabel(base, tabtype) {
+    return tabtype === 'Yearly' ? `${base} (Monthly)` : base;
+}
+
+/** Included quota lines, e.g. "2,000 contacts" — no "/ month" (yearly cards use section heading instead) */
+function formatIncludedAllowance(service, locale) {
+    const name = service?.name?.trim();
+    const qty = service?.freeCredit;
+    const isUnlimited = qty === -1 || qty === '-1';
+    if (isUnlimited) return `Unlimited ${name}`;
+    if (qty != null && Number(qty) !== 0) {
+        const count = Number(qty).toLocaleString(locale || 'en-IN');
+        return `${count} ${name}`;
+    }
+    return name;
+}
+
+/** Wallet / dial-plan included credit, e.g. "500 AED RCS wallet" */
+function formatWalletAllowance(service, currency, locale, isUnlimited) {
+    const name = service?.name?.trim();
+    if (isUnlimited) return `Unlimited ${name} wallet`;
+    const credit = Number(service?.freeCredit).toLocaleString(locale || 'en-IN');
+    return currency ? `${credit} ${currency} ${name} wallet` : `${credit} ${name} wallet`;
+}
+
+/** Overage / per-use lines, e.g. "Contacts — 25 AED per 1,000" */
+function formatExtraCharge(service, currency, locale) {
+    const name = service?.name?.trim();
+    const rate = service?.followUpRate;
+    const chunkSize = Number(service?.chunkSize ?? 1) || 1;
+    const hasRate = rate != null && Number(rate) > 0;
+    const isNotAllowed = !service?.postPaidAllowed || !hasRate;
+
+    if (isNotAllowed) return `${name} — not available on this plan`;
+
+    const price = formatUnitPrice(rate, currency, locale);
+    if (chunkSize > 1) {
+        const bundle = chunkSize.toLocaleString(locale || 'en-IN');
+        return `${name} — ${price} per ${bundle}`;
+    }
+    return `${name} — ${price} per unit`;
 }
 
 function getDiscountedAmount(amount, discounts) {
@@ -323,7 +384,7 @@ function getDiscountedAmount(amount, discounts) {
 function PlanCard({
     plan,
     tabtype,
-    symbol,
+    currency,
     locale,
     isFeatured,
     isSelected,
@@ -337,9 +398,9 @@ function PlanCard({
     const discountedAmount = getDiscountedAmount(amount, plan?.discount);
     const displayPrice =
         discountedAmount != null
-            ? formatAmount(discountedAmount, symbol, locale)
-            : formatAmount(amount, symbol, locale);
-    const originalPrice = discountedAmount != null ? formatAmount(amount, symbol, locale) : null;
+            ? formatPriceAmount(discountedAmount, currency, locale)
+            : formatPriceAmount(amount, currency, locale);
+    const originalPrice = discountedAmount != null ? formatPriceAmount(amount, currency, locale) : null;
 
     const services = plan?.services ?? [];
     const features = plan?.features ?? [];
@@ -361,7 +422,7 @@ function PlanCard({
     );
     const extraServices = services.filter((s) => !hasDialPlan(s) && !(s?.freeCredit === -1 || s?.freeCredit === '-1'));
 
-    const isFree = displayPrice === 'Free';
+    const isFree = !amount || Number(amount) === 0;
 
     const discountDuration = plan?.discount?.[0]?.duration ?? 0;
     const saveLabel = (() => {
@@ -371,7 +432,10 @@ function PlanCard({
         const value = Number(discount?.value ?? 0);
         const durationText =
             discountDuration > 0 ? ` for first ${discountDuration} month${discountDuration !== 1 ? 's' : ''}` : '';
-        if (typeId === 1) return `${symbol}${value.toLocaleString(locale || 'en-IN')} off${durationText}`;
+        if (typeId === 1) {
+            const offAmount = value.toLocaleString(locale || 'en-IN');
+            return currency ? `${offAmount} ${currency} off${durationText}` : `${offAmount} off${durationText}`;
+        }
         if (typeId === 2) return `${value >= 100 ? 100 : value}% off${durationText}`;
         return null;
     })();
@@ -405,7 +469,7 @@ function PlanCard({
                 )}
                 <div className='flex items-baseline gap-1.5 mb-1'>
                     <span className='text-4xl font-extrabold tracking-tight text-slate-900'>
-                        {isFree ? `${symbol}0` : displayPrice}
+                        {isFree ? formatZeroPrice(currency) : displayPrice}
                     </span>
                     <span className='text-sm font-medium text-slate-400'>
                         {discountDuration > 0
@@ -438,24 +502,15 @@ function PlanCard({
                 {hasIncluded && (
                     <div>
                         <p className='text-[11px] font-semibold uppercase tracking-wider mb-2 text-slate-400'>
-                            Included
+                            {getAllowanceSectionLabel('Included', tabtype)}
                         </p>
                         <ul className='flex flex-col gap-1.5'>
-                            {includedServices.map((service, i) => {
-                                const qty = service?.freeCredit;
-                                const isUnlimited = qty === -1 || qty === '-1';
-                                const displayQty = isUnlimited
-                                    ? 'Unlimited'
-                                    : qty != null
-                                      ? `${Number(qty).toLocaleString(locale || 'en-IN')} / month`
-                                      : null;
-                                return (
-                                    <li key={i} className='flex items-start gap-2 text-sm text-slate-600'>
-                                        <MdCheck size={15} className='text-indigo-400 shrink-0 mt-0.5' />
-                                        {displayQty ? `${displayQty} ${service?.name}` : service?.name}
-                                    </li>
-                                );
-                            })}
+                            {includedServices.map((service, i) => (
+                                <li key={i} className='flex items-start gap-2 text-sm text-slate-600'>
+                                    <MdCheck size={15} className='text-indigo-400 shrink-0 mt-0.5' />
+                                    <span>{formatIncludedAllowance(service, locale)}</span>
+                                </li>
+                            ))}
                             {dialPlanServicesWithCredit.map((service, i) => {
                                 const walletCredit = service?.freeCredit;
                                 const isUnlimited = isUnlimitedFreeCredit(walletCredit);
@@ -463,9 +518,7 @@ function PlanCard({
                                     <li key={`dp-${i}`} className='flex items-start gap-2 text-sm text-slate-600'>
                                         <MdCheck size={15} className='text-indigo-400 shrink-0 mt-0.5' />
                                         <span className='flex items-center gap-1'>
-                                            {isUnlimited
-                                                ? `Unlimited ${service?.name}`
-                                                : `${symbol}${Number(walletCredit).toLocaleString(locale || 'en-IN')} ${service?.name} wallet`}
+                                            {formatWalletAllowance(service, currency, locale, isUnlimited)}
                                             {!isUnlimited && (
                                                 <MdInfoOutline
                                                     size={13}
@@ -490,37 +543,27 @@ function PlanCard({
                 {hasOverage && (
                     <div>
                         <p className='text-[11px] font-semibold uppercase tracking-wider mb-2 text-slate-400'>
-                            Extra charges
+                            {getAllowanceSectionLabel('Extra charges', tabtype)}
                         </p>
                         <ul className='flex flex-col gap-1.5'>
-                            {extraServices.map((service, i) => {
-                                const rate = service?.followUpRate;
-                                const chunkSize = service?.chunkSize ?? 1;
-                                const hasRate = rate != null && Number(rate) > 0;
-                                const isNotAllowed = !service?.postPaidAllowed || !hasRate;
-                                const unitLabel = chunkSize > 1 ? `${chunkSize} units` : 'unit';
-                                return (
-                                    <li key={i} className='flex items-start gap-2 text-sm text-slate-600'>
-                                        <MdCheck size={15} className='text-indigo-400 shrink-0 mt-0.5' />
-                                        {isNotAllowed
-                                            ? `${service?.name}: Not allowed`
-                                            : `${service?.name}: ${symbol}${Number(rate)} / ${unitLabel} / month`}
-                                    </li>
-                                );
-                            })}
+                            {extraServices.map((service, i) => (
+                                <li key={i} className='flex items-start gap-2 text-sm text-slate-600'>
+                                    <MdCheck size={15} className='text-indigo-400 shrink-0 mt-0.5' />
+                                    <span>{formatExtraCharge(service, currency, locale)}</span>
+                                </li>
+                            ))}
                             {[...dialPlanServicesWithCredit, ...dialPlanServicesNoCredit].map((service, i) => {
                                 const hasWalletCredit = service?.freeCredit != null && Number(service.freeCredit) > 0;
                                 const isDemoOnly = hasWalletCredit && !service?.postPaidAllowed;
                                 return (
                                     <li key={`dp-extra-${i}`} className='flex items-start gap-2 text-sm text-slate-600'>
                                         <MdCheck size={15} className='text-indigo-400 shrink-0 mt-0.5' />
-                                        <span className='flex items-center gap-1'>
-                                            {service?.name}:{' '}
+                                        <span className='flex flex-wrap items-center gap-x-1 gap-y-0.5'>
                                             {isDemoOnly ? (
-                                                'Demo only'
+                                                <>{service?.name?.trim()} — demo only</>
                                             ) : (
                                                 <>
-                                                    As per rate card
+                                                    {service?.name?.trim()} — billed per rate card
                                                     <button
                                                         type='button'
                                                         onClick={() =>
@@ -531,7 +574,7 @@ function PlanCard({
                                                         }
                                                         className='font-medium text-xs text-indigo-600 hover:text-indigo-800 transition-colors'
                                                     >
-                                                        view
+                                                        View rates
                                                     </button>
                                                 </>
                                             )}

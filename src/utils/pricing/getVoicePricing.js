@@ -16,9 +16,7 @@ export default async function getVoicePricing(country) {
 
         if (!selectedCountry?.id) return { countryData };
 
-        const { currency: rawCurrency } = GetCurrencySymbol(selectedCountry.country_code);
-        const currency = rawCurrency === 'INR' ? 'INR' : 'USD';
-        const symbol = currency === 'INR' ? '₹' : '$';
+        const { currency, symbol } = GetCurrencySymbol(selectedCountry.country_code);
 
         const dialPlanRes = await axios.get(
             `${process.env.VOICE_API_URL}/public/dialplanPricing/?currency=${currency}`
