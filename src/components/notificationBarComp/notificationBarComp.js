@@ -29,7 +29,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
     // Store the 'country' cookie value
     if (componentData && !hidden) {
         return (
-            <div className='py-3 border border-b flex'>
+            <div className='py-3 border border-b flex my-0'>
                 <div className='container flex items-center gap-2 justify-between  flex-col md:flex-row'>
                     <span className='text-red-500 flex items-center gap-1'></span>
                     <div className='flex  gap-6 justify-end w-full md:w-auto'>
