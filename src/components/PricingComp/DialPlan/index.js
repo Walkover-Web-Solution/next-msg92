@@ -222,9 +222,11 @@ export default function DialPlan({ pricingData, selectedServiceName, selectedPla
         return extractAllDialPlans(pricingData);
     }, [pricingData]);
 
+    const searchTerm = search.trim() === '' ? '' : debouncedSearch;
+
     const filteredDataByPlan = useMemo(() => {
-        return dialPlans.map((dialPlan) => filterRowsBySearch(dialPlan.data, dialPlan.columns, debouncedSearch));
-    }, [dialPlans, debouncedSearch]);
+        return dialPlans.map((dialPlan) => filterRowsBySearch(dialPlan.data, dialPlan.columns, searchTerm));
+    }, [dialPlans, searchTerm]);
 
     useEffect(() => {
         setSearch('');

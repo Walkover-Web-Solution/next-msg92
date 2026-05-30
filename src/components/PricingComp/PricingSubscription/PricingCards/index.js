@@ -523,12 +523,13 @@ function PlanCard({
                                                 <MdInfoOutline
                                                     size={13}
                                                     className='text-slate-400 hover:text-indigo-600 cursor-pointer transition-colors'
-                                                    onClick={() =>
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
                                                         onViewRateCard?.({
                                                             serviceName: service?.name,
                                                             planName: plan?.name,
-                                                        })
-                                                    }
+                                                        });
+                                                    }}
                                                 />
                                             )}
                                         </span>
@@ -566,12 +567,13 @@ function PlanCard({
                                                     {service?.name?.trim()} — billed per rate card
                                                     <button
                                                         type='button'
-                                                        onClick={() =>
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
                                                             onViewRateCard?.({
                                                                 serviceName: service?.name,
                                                                 planName: plan?.name,
-                                                            })
-                                                        }
+                                                            });
+                                                        }}
                                                         className='font-medium text-xs text-indigo-600 hover:text-indigo-800 transition-colors'
                                                     >
                                                         View rates
