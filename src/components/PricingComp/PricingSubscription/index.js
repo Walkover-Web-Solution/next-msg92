@@ -8,7 +8,7 @@ import CalculatePricingModal from './CalculatePricingModal';
 import PricingCards, { FEATURED_PLAN_MAP } from './PricingCards';
 
 export default function PricingSubscription({ pageData, pricingData, pageInfo }) {
-    const { symbol, currency, locale } = GetCurrencySymbol(pageInfo?.country);
+    const { currency, locale } = GetCurrencySymbol(pageInfo?.country);
     const [tabtype, setTabtype] = useState('Monthly');
     const [selectedServiceName, setSelectedServiceName] = useState(() => {
         const featuredPlanName = FEATURED_PLAN_MAP[pageInfo?.product] ?? null;
@@ -106,7 +106,6 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
             <div className='flex flex-col gap-6 w-full overflow-hidden' ref={pricingWrapperRef}>
                 <PricingCards
                     pricingData={pricingData}
-                    symbol={symbol}
                     currency={currency}
                     locale={locale}
                     onViewRateCard={onViewRateCard}
@@ -117,7 +116,7 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                 />
                 <ComparePlans
                     pricingData={pricingData}
-                    symbol={symbol}
+                    currency={currency}
                     locale={locale}
                     pageData={pageData?.comparePlans}
                 />
@@ -134,7 +133,7 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                                 typeof selectedServiceName === 'object' ? selectedServiceName?.planName : null
                             }
                             pageData={pageData?.dialPlan}
-                            symbol={symbol}
+                            currency={currency}
                         />
                     </div>
                 )}
@@ -152,9 +151,8 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
             <dialog ref={calculateModalRef} className='modal'>
                 <CalculatePricingModal
                     plans={pricingData}
-                    symbol={symbol}
-                    tabtype={tabtype}
                     currency={currency}
+                    tabtype={tabtype}
                     locale={locale}
                     onClose={onCloseCalculateModal}
                 />

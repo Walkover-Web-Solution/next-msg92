@@ -66,10 +66,9 @@
     ],
     "justNested": [
         "partners-and-integrations/tally",
-        "partners-and-integrations/zapier",
         "partners-and-integrations/freshworks",
-        "partners-and-integrations/firebase",
         "partners-and-integrations/hubspot",
+        "partners-and-integrations/shopify",
         "whatsapp/compare/msg91-vs-twilio",
         "whatsapp/compare/msg91-vs-aisensy",
         "whatsapp/compare/msg91-vs-delightchat",
