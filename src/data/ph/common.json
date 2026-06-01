@@ -61,6 +61,10 @@
                     {
                         "name": "Numbers",
                         "slug": "numbers"
+                    },
+                    {
+                        "name": "Push Notification",
+                        "slug": "push-notification"
                     }
                 ]
             },

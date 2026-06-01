@@ -153,6 +153,7 @@ const Components = {
     WhatsAppIntegrations,
     WhatsAppAccountVerification,
     FeatureWithBulletGroup,
+    GridFeatureComp,
 
     // New Components
     Challenges: HelloBrChallenges,

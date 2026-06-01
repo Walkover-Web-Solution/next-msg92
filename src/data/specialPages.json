@@ -38,7 +38,8 @@
         "voice",
         "numbers",
         "shorturl",
-        "knowledgebase"
+        "knowledgebase",
+        "push-notification"
     ],
     "countries": [
         "in",
