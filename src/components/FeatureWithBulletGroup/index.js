@@ -85,6 +85,12 @@ export default function FeatureWithBulletGroup({ data }) {
                             <div className={`${styles.image}`}>
                                 <LottiePlayer lottie={group?.lottie} />
                             </div>
+                        ) : group?.video ? (
+                            <div className={styles.image}>
+                                <video className='w-full' autoPlay muted loop playsInline aria-label={group?.name}>
+                                    <source src={group.video} type='video/webm' />
+                                </video>
+                            </div>
                         ) : (
                             <Image
                                 width={720}
