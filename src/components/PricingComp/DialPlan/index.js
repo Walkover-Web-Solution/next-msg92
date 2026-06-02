@@ -96,7 +96,7 @@ const DialPlanTable = React.memo(function DialPlanTable({
     search,
     onSearchChange,
     searchPlaceholder,
-    symbol,
+    currency,
 }) {
     const hasData = data.length > 0;
     const visibleColumns = columns.filter((col) => col.key !== 'prefix' && col.key !== 'country_prefix');
@@ -186,8 +186,8 @@ const DialPlanTable = React.memo(function DialPlanTable({
                                                                   return val ?? '-';
                                                               const num = Number(val);
                                                               const isIdCol = col.key.toLowerCase().includes('id');
-                                                              return !Number.isNaN(num) && symbol && !isIdCol
-                                                                  ? `${symbol}${val}`
+                                                              return !Number.isNaN(num) && currency && !isIdCol
+                                                                  ? `${val} ${currency}`
                                                                   : val;
                                                           })()}
                                                 </td>
@@ -213,7 +213,7 @@ const DialPlanTable = React.memo(function DialPlanTable({
     );
 });
 
-export default function DialPlan({ pricingData, selectedServiceName, selectedPlanName, pageData, symbol }) {
+export default function DialPlan({ pricingData, selectedServiceName, selectedPlanName, pageData, currency }) {
     const [search, setSearch] = useState('');
     const debouncedSearch = useDebouncedValue(search, DEBOUNCE_DELAY);
 
@@ -222,9 +222,11 @@ export default function DialPlan({ pricingData, selectedServiceName, selectedPla
         return extractAllDialPlans(pricingData);
     }, [pricingData]);
 
+    const searchTerm = search.trim() === '' ? '' : debouncedSearch;
+
     const filteredDataByPlan = useMemo(() => {
-        return dialPlans.map((dialPlan) => filterRowsBySearch(dialPlan.data, dialPlan.columns, debouncedSearch));
-    }, [dialPlans, debouncedSearch]);
+        return dialPlans.map((dialPlan) => filterRowsBySearch(dialPlan.data, dialPlan.columns, searchTerm));
+    }, [dialPlans, searchTerm]);
 
     useEffect(() => {
         setSearch('');
@@ -277,7 +279,7 @@ export default function DialPlan({ pricingData, selectedServiceName, selectedPla
                 search={search}
                 onSearchChange={handleSearchChange}
                 searchPlaceholder={pageData?.searchPlaceholder}
-                symbol={symbol}
+                currency={currency}
             />
         </section>
     );

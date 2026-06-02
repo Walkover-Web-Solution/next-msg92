@@ -1,13 +1,22 @@
 export default function handlePlanStructure(plans, currency) {
-    const structuredPlans = plans.flatMap((plan) =>
-        (plan?.plan_amounts || []).map((plan_amount) => ({
-            name: plan?.name || null,
-            amount: plan_amount?.plan_amount || null,
-            type: plan_amount?.plan_type?.name || null,
-            discount: plan_amount?.applied_discounts || [],
-            services: handleServices(plan?.plan_services || [], currency),
-            features: handleFeatures(plan?.plan_features || []),
-        }))
+    const sourcePlans =
+        currency === 'AED'
+            ? (plans || []).filter(
+                  (plan) => Array.isArray(plan?.valid_currencies) && plan.valid_currencies.includes('AED')
+              )
+            : plans || [];
+
+    const structuredPlans = sourcePlans.flatMap((plan) =>
+        (plan?.plan_amounts || [])
+            .filter((plan_amount) => plan_amount?.currency?.short_name === currency)
+            .map((plan_amount) => ({
+                name: plan?.name || null,
+                amount: plan_amount?.plan_amount ?? null,
+                type: plan_amount?.plan_type?.name || null,
+                discount: plan_amount?.applied_discounts || [],
+                services: handleServices(plan?.plan_services || [], currency),
+                features: handleFeatures(plan?.plan_features || []),
+            }))
     );
     return structuredPlans;
 }
@@ -26,9 +35,10 @@ function handleServices(services, currency) {
         const allRates = service?.service_credit?.service_credit_rates ?? [];
         const ratesForCurrency = allRates.filter((r) => r?.currency?.short_name === currency);
         const rate = ratesForCurrency[0];
-        // Prefer dial_plan_info from currency-matched rate, fall back to any rate that has it
-        const rateWithDialPlan =
-            ratesForCurrency.find((r) => r?.dial_plan_info) ?? allRates.find((r) => r?.dial_plan_info);
+        const ratesWithDialPlan = [...ratesForCurrency, ...allRates].filter((r) => r?.dial_plan_info?.data?.length);
+        const rateWithDialPlan = ratesWithDialPlan.sort(
+            (a, b) => (b.dial_plan_info?.data?.length ?? 0) - (a.dial_plan_info?.data?.length ?? 0)
+        )[0];
         const dialPlan =
             rateWithDialPlan?.dial_plan_info != null ? normalizeDialPlanInfo(rateWithDialPlan.dial_plan_info) : null;
         return {
