@@ -34,11 +34,11 @@ function handleServices(services, currency) {
     return services.map((service) => {
         const allRates = service?.service_credit?.service_credit_rates ?? [];
         const ratesForCurrency = allRates.filter((r) => r?.currency?.short_name === currency);
-        const rate = ratesForCurrency[0];
-        const ratesWithDialPlan = [...ratesForCurrency, ...allRates].filter((r) => r?.dial_plan_info?.data?.length);
+        const ratesWithDialPlan = ratesForCurrency.filter((r) => r?.dial_plan_info?.data?.length);
         const rateWithDialPlan = ratesWithDialPlan.sort(
             (a, b) => (b.dial_plan_info?.data?.length ?? 0) - (a.dial_plan_info?.data?.length ?? 0)
         )[0];
+        const rate = rateWithDialPlan ?? ratesForCurrency[0];
         const dialPlan =
             rateWithDialPlan?.dial_plan_info != null ? normalizeDialPlanInfo(rateWithDialPlan.dial_plan_info) : null;
         return {
