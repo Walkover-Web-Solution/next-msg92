@@ -43,6 +43,7 @@ export default function StepThree({ data }) {
     const [selectedServices, setSelectedServices] = useState(initialServices);
     const [source, setSource] = useState(() => getInitialSource());
     const [otherSource, setOtherSource] = useState(() => getInitialOtherSource());
+    const [companyName, setCompanyName] = useState(state?.companyDetails?.companyName || '');
     const [address, setAddress] = useState(state?.companyDetails?.address || '');
     const [postalCode, setPostalCode] = useState(state?.companyDetails?.zipcode || '');
     const [isAddressOpen, setIsAddressOpen] = useState(false);
@@ -111,9 +112,12 @@ export default function StepThree({ data }) {
     } = useGstLookup({
         dispatch,
         initialGstNo: state?.companyDetails?.gstNo,
-        onAutofill: ({ address: gstAddress, postalCode: gstPostalCode }) => {
+        onAutofill: ({ address: gstAddress, postalCode: gstPostalCode, companyName: gstCompanyName }) => {
             setAddress(gstAddress);
             setPostalCode(gstPostalCode);
+            if (gstCompanyName) {
+                setCompanyName(gstCompanyName);
+            }
         },
         prefillGstCountryData,
     });
@@ -176,6 +180,10 @@ export default function StepThree({ data }) {
             updateSourceInUrlAndCookie(finalSource);
         }
     }, [dispatch, otherSource, source]);
+
+    useEffect(() => {
+        setDetails('companyName', dispatch, companyName);
+    }, [dispatch, companyName]);
 
     useEffect(() => {
         setDetails('addressDetails', dispatch, {
@@ -316,8 +324,9 @@ export default function StepThree({ data }) {
                                 <input
                                     className='input input-bordered w-full'
                                     type='text'
-                                    value={state?.companyDetails?.companyName}
-                                    readOnly
+                                    placeholder='Company Name'
+                                    value={companyName}
+                                    onChange={(e) => setCompanyName(e.target.value)}
                                     aria-label='Company Name'
                                 />
                             </div>
