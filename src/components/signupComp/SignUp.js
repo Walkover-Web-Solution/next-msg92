@@ -3,7 +3,17 @@ import { MdCheck, MdDone } from 'react-icons/md';
 
 import { toast } from 'react-toastify';
 import { MdCheckCircle } from 'react-icons/md';
-import { getCookie, getQueryParamsDeatils, setCookie, getUtmFromCookies, setSharedCookie } from '@/utils/utilis';
+import {
+    getCookie,
+    getQueryParamsDeatils,
+    setCookie,
+    getUtmFromCookies,
+    clearLegacySharedCookies,
+    parseMsg91QueryCookie,
+    persistAbSignupFlag,
+    refreshMsg91QueryCookieFromRaw,
+    sanitizeMsg91QuerySearch,
+} from '@/utils/utilis';
 import Image from 'next/image';
 import StepOne from './StepOne/StepOne';
 import StepTwo from './StepTwo/StepTwo';
@@ -47,20 +57,21 @@ export default class SignUp extends React.Component {
     }
 
     componentDidMount = () => {
-        this.msg91Query = getCookie('msg91_query');
+        refreshMsg91QueryCookieFromRaw(window.location.search);
+        this.msg91Query = sanitizeMsg91QuerySearch(getCookie('msg91_query') || '');
         if (this.msg91Query) {
-            const queryParams = this.msg91Query.startsWith('?')
+            SUCCESS_REDIRECTION_URL += this.msg91Query.startsWith('?')
                 ? this.msg91Query.replace('?', '&')
-                : '&' + this.msg91Query;
-            SUCCESS_REDIRECTION_URL += queryParams;
+                : `&${this.msg91Query}`;
         }
 
         this.otpWidgetSetup();
 
+        clearLegacySharedCookies();
         const urlParams = new URLSearchParams(window.location.search);
-        urlParams.forEach((value, key) => {
-            setSharedCookie(key, value, 1);
-        });
+        if (urlParams.get('absignup') === 'a') {
+            persistAbSignupFlag(7);
+        }
 
         const queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
         this.setState({ activeStep: queryParams?.code ? 2 : 1 });
@@ -330,12 +341,7 @@ export default class SignUp extends React.Component {
             return;
         }
         let url = process.env.API_BASE_URL + '/api/v5/nexus/validateEmailSignUp';
-        const utmObj = Object.fromEntries(
-            getCookie('msg91_query')
-                ?.replace('?', '')
-                ?.split('&')
-                ?.map((v) => v.split('=')) ?? []
-        );
+        const utmObj = parseMsg91QueryCookie();
         const payload = {
             'session': getCookie('sessionId'),
             'mobileToken': this.state.smsAccessToken,
@@ -514,7 +520,9 @@ export default class SignUp extends React.Component {
     render() {
         return (
             <>
-                <section className='signup d-flex flex-column flex-md-row-reverse '>
+                <section
+                    className={`signup flex flex-col flex-md-row-reverse ${this.props.isAbSignup ? 'hidden' : 'flex'}`}
+                >
                     <div className='flex md:flex-row flex-col-reverse'>
                         <div className='flex flex-col bg-secondary sm:px-10 px-4 sm:py-20 py-10  gap-8 xl:w-1/4 lg:w-1/3 md:w-1/2 w-full md:min-h-dvh'>
                             <div className='md:flex hidden flex-col  gap-5'>

@@ -37,14 +37,25 @@ export default function PricingCards({
     const [activeTab, setActiveTab] = useState('Monthly');
     const [monthlyShowFade, setMonthlyShowFade] = useState(false);
     const [yearlyShowFade, setYearlyShowFade] = useState(false);
+    const [monthlyHasOverflow, setMonthlyHasOverflow] = useState(false);
+    const [yearlyHasOverflow, setYearlyHasOverflow] = useState(false);
+    const [monthlyAtStart, setMonthlyAtStart] = useState(true);
+    const [monthlyAtEnd, setMonthlyAtEnd] = useState(false);
+    const [yearlyAtStart, setYearlyAtStart] = useState(true);
+    const [yearlyAtEnd, setYearlyAtEnd] = useState(false);
     const [selectedPlanName, setSelectedPlanName] = useState(featuredPlanName);
 
     const activeScrollRef = activeTab === 'Yearly' ? yearlyScrollRef : monthlyScrollRef;
 
-    const checkFade = useCallback((el, setFade) => {
+    const updateScrollState = useCallback((el, setFade, setOverflow, setAtStart, setAtEnd) => {
         if (!el) return;
+        const hasOverflow = el.scrollWidth > el.clientWidth;
+        const atStart = el.scrollLeft <= 4;
         const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
-        setFade(!atEnd && el.scrollWidth > el.clientWidth);
+        setOverflow(hasOverflow);
+        setFade(hasOverflow && !atEnd);
+        setAtStart(atStart);
+        setAtEnd(atEnd);
     }, []);
 
     const scrollLeft = useCallback(() => {
@@ -102,7 +113,8 @@ export default function PricingCards({
     useEffect(() => {
         const el = monthlyScrollRef.current;
         if (!el) return;
-        const handler = () => checkFade(el, setMonthlyShowFade);
+        const handler = () =>
+            updateScrollState(el, setMonthlyShowFade, setMonthlyHasOverflow, setMonthlyAtStart, setMonthlyAtEnd);
         handler();
         el.addEventListener('scroll', handler);
         window.addEventListener('resize', handler);
@@ -110,12 +122,13 @@ export default function PricingCards({
             el.removeEventListener('scroll', handler);
             window.removeEventListener('resize', handler);
         };
-    }, [monthlyPlans, checkFade]);
+    }, [monthlyPlans, updateScrollState]);
 
     useEffect(() => {
         const el = yearlyScrollRef.current;
         if (!el) return;
-        const handler = () => checkFade(el, setYearlyShowFade);
+        const handler = () =>
+            updateScrollState(el, setYearlyShowFade, setYearlyHasOverflow, setYearlyAtStart, setYearlyAtEnd);
         handler();
         el.addEventListener('scroll', handler);
         window.addEventListener('resize', handler);
@@ -123,11 +136,18 @@ export default function PricingCards({
             el.removeEventListener('scroll', handler);
             window.removeEventListener('resize', handler);
         };
-    }, [yearlyPlans, checkFade]);
+    }, [yearlyPlans, updateScrollState]);
 
     if (!monthlyPlans.length && !yearlyPlans.length) return null;
 
-    const showArrows = activeTab === 'Yearly' ? yearlyShowFade : monthlyShowFade;
+    const showArrows = activeTab === 'Yearly' ? yearlyHasOverflow : monthlyHasOverflow;
+    const atStart = activeTab === 'Yearly' ? yearlyAtStart : monthlyAtStart;
+    const atEnd = activeTab === 'Yearly' ? yearlyAtEnd : monthlyAtEnd;
+
+    const arrowBtnClass = (disabled) =>
+        `w-8 h-8 flex items-center justify-center rounded transition-colors ${
+            disabled ? 'text-gray-300 cursor-not-allowed' : 'text-gray-600 hover:bg-gray-100'
+        }`;
 
     return (
         <div className='flex flex-col gap-3'>
@@ -138,16 +158,18 @@ export default function PricingCards({
                         <button
                             type='button'
                             onClick={scrollLeft}
+                            disabled={atStart}
                             aria-label='Scroll left'
-                            className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
+                            className={arrowBtnClass(atStart)}
                         >
                             <MdChevronLeft size={20} />
                         </button>
                         <button
                             type='button'
                             onClick={scrollRight}
+                            disabled={atEnd}
                             aria-label='Scroll right'
-                            className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
+                            className={arrowBtnClass(atEnd)}
                         >
                             <MdChevronRight size={20} />
                         </button>
@@ -192,7 +214,7 @@ export default function PricingCards({
                             onViewRateCard={(serviceName) => onViewRateCard?.(serviceName)}
                             pageInfo={pageInfo}
                             hasDiscount={monthlyHasDiscount}
-                            isOverflow={monthlyShowFade}
+                            isOverflow={monthlyHasOverflow}
                         />
                     ))}
                 </div>
@@ -220,7 +242,7 @@ export default function PricingCards({
                                 onViewRateCard={(serviceName) => onViewRateCard?.(serviceName)}
                                 pageInfo={pageInfo}
                                 hasDiscount={yearlyHasDiscount}
-                                isOverflow={yearlyShowFade}
+                                isOverflow={yearlyHasOverflow}
                             />
                         ))}
                     </div>
