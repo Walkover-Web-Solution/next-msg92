@@ -4,8 +4,8 @@
         "description": "We are the leading cloud customer service platform. Check out the best customer service software in Brazil to proactively engage customers and answer all customer queries with MSG91."
     },
     "Banner": {
-        "heading": "Customer Support|That Transforms|Your Business",
-        "description": "Complete omnichannel platform with AI. Manage all your channels — WhatsApp, Instagram, Email, Webchat, RCS, Voice Calls and more — in a single smart inbox. Simple, without complications.",
+        "heading": "Customer Support Software|That Transforms|Your Business",
+        "description": "Complete omnichannel customer service platform with AI. Manage all your channels — WhatsApp, Instagram, Email, Webchat, RCS, Voice Calls and more — in a single smart inbox. Simple, without complications.",
         "video": "/assets/hello-br/br-eng/dashboard.webm",
         "videoAlt": "Hello dashboard and inbox preview",
         "getstarted_btn": "Get Started",
@@ -32,7 +32,7 @@
             },
             {
                 "eyebrow": "ARTIFICIAL INTELLIGENCE",
-                "title": "Intelligent AI Automation",
+                "title": "AI Customer Support Software That Works Smarter",
                 "description": "From AI that suggests real-time responses to the automated voice agent — our platform learns from every interaction to deliver ever-better experiences.",
                 "bullets": [
                     "No-code chatbot in minutes",
@@ -94,7 +94,7 @@
     "RoiStats": {
         "label": "Metrics",
         "heading": "Maximize Your ROI with Hello",
-        "subheading": "Companies using Hello report measurable results in under 30 days.",
+        "subheading": "Improve efficiency with a customer service software designed for scaling teams.",
         "stats": [
             {
                 "value": "65%",
@@ -142,7 +142,7 @@
 
     "Steps": {
         "label": "SIMPLE SETUP",
-        "heading": "Up and Running in 3 Steps",
+        "heading": "Get Started with Customer Service Software in Minutes",
         "subheading": "Get your omnichannel support ready faster than your morning coffee.",
         "steps": [
             {
@@ -201,26 +201,38 @@
         "heading": "Frequently Asked Questions",
         "items": [
             {
-                "question": "What is an omnichannel customer support platform?",
-                "answer": "An omnichannel customer support platform unifies all customer communication channels — such as WhatsApp, Instagram, email, Webchat, voice calls, Facebook, and Twitter — into a single interface. Hello offers this with integrated AI, allowing your team to handle more customers with less effort while maintaining the full history of each conversation."
+                "question": "What is customer support software and how does it help businesses in Brazil?",
+                "answer": "Customer support software helps businesses manage customer conversations across channels like WhatsApp, Instagram, email, webchat, and social media from one platform. For businesses in Brazil, where customers expect fast and personalized responses, support software like Hello helps reduce response times, automate repetitive queries, organize conversations, and improve customer satisfaction — without increasing team workload."
             },
             {
-                "question": "How does the WhatsApp Business API integration work?",
-                "answer": "Hello connects through the official WhatsApp Business API. You verify your business, choose or bring your number, and manage conversations from Hello's inbox — with delivery and quality metrics built in. Our team helps you go live without juggling multiple tools."
+                "question": "How does omnichannel customer service improve customer experience?",
+                "answer": "Omnichannel means your team can handle all communication networks from a single, centralized screen. In Brazil, customers contact businesses using a massive variety of platforms—from WhatsApp and Instagram DMs to Facebook Messenger, Email, and Live Chat. Instead of forcing your agents to constantly switch tabs, open multiple apps, or miss messages in separate tools, Hello brings every single channel together into one smart inbox. This drastically cuts down response times, stops messages from falling through the cracks, and allows your team to manage high-volume customer service smoothly from one place."
             },
             {
-                "question": "Can I automate customer service with AI?",
-                "answer": "Yes. With Hello, you can deploy no-code chatbots, use AI-suggested replies for agents, automate routing and tagging, and scale with voice and workflow tools — so repetitive questions are handled instantly while humans focus on complex cases."
+                "question": "What features should businesses look for in customer support software?",
+                "answer": "Businesses should look for features such as: unified omnichannel inbox, WhatsApp and Instagram integration, AI chatbot automation, shared team inbox, real-time analytics and reporting, automation workflows, customer conversation history, mobile accessibility, official Meta integrations, and easy setup without coding. These features help teams respond faster, automate support, and scale customer communication efficiently."
             },
             {
-                "question": "How long does it take to implement Hello?",
-                "answer": "Many teams connect their first channels in hours. Full rollout — agents trained, automations live, WhatsApp approved — typically ranges from a few days, depending on channels, templates, and internal approvals."
+                "question": "Why are more companies in Brazil adopting AI customer support software?",
+                "answer": "More businesses in Brazil are adopting AI customer support software because customers now expect instant responses at any time of day. AI helps automate repetitive questions, qualify leads, route conversations, and provide 24/7 support without needing large support teams. This reduces operational costs while improving response speed and customer experience."
+            },
+            {
+                "question": "Is Hello suitable for growing businesses and remote teams in Brazil?",
+                "answer": "Yes. Hello is designed for startups, SMBs, growing companies, and distributed teams that manage customer communication across multiple channels. Teams can collaborate from anywhere using a shared inbox, assign conversations internally, automate workflows, and track customer interactions in real time — making it ideal for fast-growing businesses in Brazil."
+            },
+            {
+                "question": "What are the benefits of using a customer engagement platform?",
+                "answer": "A customer engagement platform helps businesses centralize communication, automate responses, improve customer relationships, and increase conversions. Instead of managing separate tools for WhatsApp, Instagram, email, and support, businesses can manage everything from one place while delivering faster and more personalized customer experiences."
+            },
+            {
+                "question": "Does Hello offer flexible pricing for businesses in Brazil?",
+                "answer": "Yes. Hello offers flexible pricing options designed for businesses of different sizes and communication volumes. Whether you are a small business starting with customer automation or a larger company managing high conversation volumes, Hello provides scalable plans that grow with your business needs."
             }
         ]
     },
     "FooterCta": {
         "label": "START TODAY",
-        "heading": "See the Platform in Action",
+        "heading": "See How Hello Simplifies Customer Support",
         "description": "Schedule a free demo and see how Hello transforms your company's customer support in minutes.",
         "primaryLabel": "Get Started",
         "primaryHref": "https://msg91.com/signup",

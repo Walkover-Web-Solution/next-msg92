@@ -58,8 +58,6 @@ import UseCases from '@/components/IntegrationComp/UseCases/UseCases';
 import HowItWorks from '@/components/IntegrationComp/HowItWorks/HowItWorks';
 import CTA from '@/components/IntegrationComp/CTA/CTA';
 import SEOFooter from '@/components/IntegrationComp/SEOFooter/SEOFooter';
-
-// New Components
 import Banner from '@/components/UpdatedComp/Banner';
 import HelloBanner from '@/components/HelloBrComp/BannerComp/Banner';
 import HelloBrFeatures from '@/components/HelloBrComp/FeaturesComp/Features';
