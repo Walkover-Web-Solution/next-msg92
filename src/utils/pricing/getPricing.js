@@ -42,8 +42,7 @@ export default async function getPricing2(countryCode, page) {
     const currency = currencyByCountry[countryCode] || 'USD';
 
     try {
-        const requestCurrency = currency === 'AED' ? null : currency;
-        const plans = await getSubscriptions(requestCurrency, msId);
+        const plans = await getSubscriptions(currency, msId);
         const structuredPlans = handlePlanStructure(plans, currency);
         return structuredPlans;
     } catch (error) {
@@ -54,7 +53,7 @@ export default async function getPricing2(countryCode, page) {
 /**
  * Fetches raw plan data from the subscription pricing API.
  *
- * @param {string|null} currency - Optional query currency (omit for AED pages — API rejects AED and returns full plans without this param).
+ * @param {string} currency - Query currency (e.g. 'INR', 'USD', 'GBP', 'AED').
  * @param {string} msId - Product ms_id used by the subscription API.
  * @returns {Promise<Array<object>>} Raw plan objects from the API, or empty array if no data.
  */
@@ -62,8 +61,8 @@ async function getSubscriptions(currency, msId) {
     const params = {
         ms_id: msId,
         dial_plan_info: true,
+        currency,
     };
-    if (currency) params.currency = currency;
 
     const data = await axios.get(`${process.env.SUBSCRIPTION_PRICING_URL}/plans`, {
         params,
