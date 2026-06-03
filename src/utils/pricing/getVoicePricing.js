@@ -9,14 +9,14 @@ export default async function getVoicePricing(country) {
 
         if (!Array.isArray(countryData) || countryData.length === 0) return {};
 
+        const { currency, symbol } = GetCurrencySymbol(country);
+
         const currentCountry = GetCountryDetails({ shortname: country, type: 'shortname' });
         const normalizedCode = currentCountry?.shortname?.toLowerCase() || country?.toLowerCase();
 
         const selectedCountry = countryData.find((item) => item?.country_code?.toLowerCase() === normalizedCode);
 
-        if (!selectedCountry?.id) return { countryData };
-
-        const { currency, symbol } = GetCurrencySymbol(selectedCountry.country_code);
+        if (!selectedCountry?.id) return { countryData, currency, symbol };
 
         const dialPlanRes = await axios.get(
             `${process.env.VOICE_API_URL}/public/dialplanPricing/?currency=${currency}`
@@ -30,10 +30,14 @@ export default async function getVoicePricing(country) {
         );
         const plans = pricingRes.data?.data;
 
+        if (!Array.isArray(plans) || plans.length === 0) {
+            return { countryData, selectedCountry, currency, symbol };
+        }
+
         return {
             countryData,
             selectedCountry,
-            plans: plans || [],
+            plans,
             dialPlanId,
             currency,
             symbol,

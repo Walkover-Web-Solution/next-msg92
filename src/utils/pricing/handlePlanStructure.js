@@ -1,12 +1,5 @@
 export default function handlePlanStructure(plans, currency) {
-    const sourcePlans =
-        currency === 'AED'
-            ? (plans || []).filter(
-                  (plan) => Array.isArray(plan?.valid_currencies) && plan.valid_currencies.includes('AED')
-              )
-            : plans || [];
-
-    const structuredPlans = sourcePlans.flatMap((plan) =>
+    const structuredPlans = (plans || []).flatMap((plan) =>
         (plan?.plan_amounts || [])
             .filter((plan_amount) => plan_amount?.currency?.short_name === currency)
             .map((plan_amount) => ({
