@@ -4,12 +4,17 @@
         "description": "Need assistance or have feedback? We’re here to help! Reach out via phone, chat, or email anytime."
     },
     "ContactUsComp": {
-        "heading": "Contact Us",
-        "subheading": "Choose the best way to reach out, whether for sales inquiries or technical assistance.",
+        "badge": "GET IN TOUCH",
+        "heading": "How can we help you?",
+        "subheading": "Reach out to our global sales and support teams, or book a direct consultation instantly.",
         "cards": [
             {
                 "key": "sales",
-                "heading": "Sales",
+                "heading": "Sales Team",
+                "features": [
+                    "Explore plans and pricing",
+                    "Find the right fit for your needs"
+                ],
                 "email": "sales@msg91.com",
                 "phone": [
                     {
@@ -21,7 +26,11 @@
             },
             {
                 "key": "support",
-                "heading": "Support",
+                "heading": "Technical Support",
+                "features": [
+                    "Reliable assistance when you need it",
+                    "Clear answers, fewer back-and-forths"
+                ],
                 "email": "support@msg91.com",
                 "phone": [
                     {
@@ -32,8 +41,15 @@
                 ]
             },
             {
-                "key": "chat",
-                "heading": "Chat",
+                "key": "schedule-a-meeting",
+                "heading": "Schedule a Meeting",
+                "description": "Got a question or need to talk to someone? Our assistant answers your query and books the right meeting — all in one place.",
+                "features": [
+                    "Query resolution",
+                    "Real-time slot availability",
+                    "Multilingual support"
+                ],
+                "buttonText": "Book a Slot",
                 "widgetToken": "8e51b"
             }
         ]
