@@ -51,6 +51,7 @@ import WhatsAppIntegrations from '@/components/WhatsAppIntegrations';
 import WhatsAppAccountVerification from '@/components/WhatsAppAccountVerification';
 import FeatureWithBulletGroup from '@/components/FeatureWithBulletGroup';
 import GridFeatureComp from '@/components/GridFeatureComp/GridFeatureComp';
+import FeatureSliderComp from '@/components/FeatureSliderComp/FeatureSliderComp';
 
 // New Components
 import Hero from '@/components/IntegrationComp/Hero/Hero';
@@ -154,6 +155,7 @@ const Components = {
     WhatsAppAccountVerification,
     FeatureWithBulletGroup,
     GridFeatureComp,
+    FeatureSliderComp,
 
     // New Components
     Challenges: HelloBrChallenges,
