@@ -22,9 +22,9 @@
     "not_absolute": "true",
     "getstarted_btn": "Start Engaging Your Users Instantly"
   },
-  "GridFeatureComp": {
+  "FeatureSliderComp": {
     "heading": "Powerful Push Notification Features Designed for Growth",
-    "layout": "bento",
+    "subheading": "Increase engagement, build smart flows, and scale conversion funnels with our sophisticated message suite.",
     "features": [
       {
         "name": "Behavior-Triggered Notifications",
