@@ -336,6 +336,22 @@ $button-transition-timing: 100ms;
     @apply focus:!outline-none;
 }
 
+#contactChatWidget {
+    position: relative;
+
+    #hello-chatbot-iframe-container {
+        z-index: 1 !important;
+
+        &.hello-full-screen-interfaceEmbed {
+            position: absolute !important;
+            inset: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            z-index: 1 !important;
+        }
+    }
+}
+
 .contact-chat-widget {
     width: 100%;
 
