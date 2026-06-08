@@ -29,12 +29,12 @@ export default function BookingModal({ isOpen, onClose, widgetToken, widgetScrip
     if (!isOpen) return null;
 
     return (
-        <dialog className='modal' open>
-            <div className='modal-box p-0 overflow-hidden max-w-4xl w-full'>
+        <dialog className='modal z-[1001]' open>
+            <div className='modal-box relative p-0 overflow-hidden max-w-4xl w-full'>
                 <button
                     type='button'
                     onClick={onClose}
-                    className='btn btn-sm btn-circle btn-ghost absolute right-3 top-3 z-10 bg-white/90'
+                    className='btn btn-sm btn-circle btn-ghost absolute right-3 top-3 z-50 bg-white/90'
                 >
                     ✕
                 </button>
