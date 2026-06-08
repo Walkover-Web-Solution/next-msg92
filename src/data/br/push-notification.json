@@ -128,11 +128,6 @@
         "text": "Contact sales",
         "link": "/contact-us"
       },
-      "pricing": {
-        "text": "Pricing",
-        "link": "/pricing/",
-        "primary": true
-      },
       "getStarted": {
         "text": "Get started",
         "link": "https://control.msg91.com/signup/",
