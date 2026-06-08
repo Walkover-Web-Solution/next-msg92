@@ -3,8 +3,6 @@ import { useEffect, useRef, useState } from 'react';
 import { MdChevronLeft, MdChevronRight, MdOutlineLightbulb, MdShield } from 'react-icons/md';
 import styles from './FeatureSliderComp.module.scss';
 
-const autoPlayInterval = 2500;
-
 function FeatureMedia({ feature }) {
     if (feature?.video) {
         return (
@@ -66,7 +64,6 @@ function FeatureSlide({ feature }) {
 export default function FeatureSliderComp({ data }) {
     const trackRef = useRef(null);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [isPaused, setIsPaused] = useState(false);
 
     const features = data?.features ?? [];
     const totalSlides = features.length;
@@ -100,16 +97,6 @@ export default function FeatureSliderComp({ data }) {
     };
 
     useEffect(() => {
-        if (features.length <= 1 || isPaused) return;
-
-        const timer = setInterval(() => {
-            goToSlide(currentIndex >= lastIndex ? 0 : currentIndex + 1);
-        }, autoPlayInterval);
-
-        return () => clearInterval(timer);
-    }, [currentIndex, isPaused, lastIndex, features.length]);
-
-    useEffect(() => {
         const onKeyDown = (event) => {
             if (event.key === 'ArrowLeft') goToSlide(Math.max(0, currentIndex - 1));
             if (event.key === 'ArrowRight') goToSlide(Math.min(lastIndex, currentIndex + 1));
@@ -138,11 +125,7 @@ export default function FeatureSliderComp({ data }) {
                     )}
                 </div>
 
-                <div
-                    className='group relative px-1 sm:px-4'
-                    onMouseEnter={() => setIsPaused(true)}
-                    onMouseLeave={() => setIsPaused(false)}
-                >
+                <div className='group relative px-1 sm:px-4'>
                     <div className='overflow-hidden rounded-2xl'>
                         <div
                             ref={trackRef}

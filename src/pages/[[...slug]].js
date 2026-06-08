@@ -52,6 +52,8 @@ import WhatsAppAccountVerification from '@/components/WhatsAppAccountVerificatio
 import FeatureWithBulletGroup from '@/components/FeatureWithBulletGroup';
 import GridFeatureComp from '@/components/GridFeatureComp/GridFeatureComp';
 import FeatureSliderComp from '@/components/FeatureSliderComp/FeatureSliderComp';
+
+// New Components
 import Hero from '@/components/IntegrationComp/Hero/Hero';
 import ProblemSolution from '@/components/IntegrationComp/ProblemSolution/ProblemSolution';
 import Benefits from '@/components/IntegrationComp/Benefits/Benefits';
