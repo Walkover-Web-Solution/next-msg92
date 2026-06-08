@@ -50,14 +50,72 @@ export function setCookie(name, value, days) {
     document.cookie = name + '=' + cookieValue + '; path=/';
 }
 
+/** Keys stored in msg91_query / redirects / API must not include UI-only or auth params. */
+export const MSG91_QUERY_EXCLUDE_KEYS = new Set([
+    'absignup',
+    'githubsignup',
+    'githublogin',
+    'code',
+    'state',
+    'session',
+    'sessionId',
+    'useV2signup',
+    'emailToken',
+    'mobileToken',
+]);
+
+const SHARED_COOKIE_EXPIRE = 'expires=Thu, 01 Jan 1970 00:00:00 GMT';
+
+/** Marketing params appended on signup redirects (from msg91_query). */
+export const SIGNUP_MARKETING_QUERY_KEYS = [
+    'utm_source',
+    'utm_medium',
+    'utm_campaign',
+    'utm_term',
+    'utm_content',
+    'utm_matchtype',
+    'ad',
+    'adposition',
+    'reference',
+    'source',
+];
+
+export function sanitizeMsg91QuerySearch(search) {
+    if (!search) return '';
+    const params = new URLSearchParams(search.startsWith('?') ? search : `?${search}`);
+    const kept = new URLSearchParams();
+    params.forEach((value, key) => {
+        if (!MSG91_QUERY_EXCLUDE_KEYS.has(key) && value) {
+            kept.set(key, value);
+        }
+    });
+    const query = kept.toString();
+    return query ? `?${query}` : '';
+}
+
+export function parseMsg91QueryCookie() {
+    const raw = getCookie('msg91_query');
+    if (!raw) return {};
+    const sanitized = sanitizeMsg91QuerySearch(raw);
+    if (!sanitized) return {};
+    const queryString = sanitized.startsWith('?') ? sanitized.substring(1) : sanitized;
+    return Object.fromEntries(new URLSearchParams(queryString).entries());
+}
+
+export function refreshMsg91QueryCookieFromRaw(searchOrCookie) {
+    if (typeof document === 'undefined') return;
+    const sanitized = sanitizeMsg91QuerySearch(searchOrCookie || getCookie('msg91_query') || '');
+    if (sanitized) {
+        setCookie('msg91_query', sanitized, 30);
+    } else if (getCookie('msg91_query')) {
+        document.cookie = `msg91_query=; ${SHARED_COOKIE_EXPIRE}; path=/`;
+    }
+}
+
 export function getUtmFromCookies() {
     if (typeof document === 'undefined') return {};
-    const result = {};
-    document.cookie.split(';').forEach((cookie) => {
-        const [key, value] = cookie.trim().split('=');
-        if (key && value) result[key] = decodeURIComponent(value);
-    });
-    return result;
+    const parsed = parseMsg91QueryCookie();
+    return Object.fromEntries(Object.entries(parsed).filter(([key]) => SIGNUP_MARKETING_QUERY_KEYS.includes(key)));
 }
 
 export function setSharedCookie(name, value, days = 1) {
@@ -78,6 +136,39 @@ export function setSharedCookie(name, value, days = 1) {
     }
 
     document.cookie = cookieParts.join('; ');
+}
+
+/** Expire legacy .msg91.com cookies from old signup forEach (e.g. absignup). */
+export function clearLegacySharedCookies() {
+    if (typeof document === 'undefined') return;
+    const isLocalhost = window.location.hostname === 'localhost';
+    if (isLocalhost) return;
+    const base = `${SHARED_COOKIE_EXPIRE}; path=/; domain=.msg91.com; SameSite=Lax; Secure`;
+    document.cookie = `absignup=; ${base}`;
+    SIGNUP_MARKETING_QUERY_KEYS.forEach((key) => {
+        document.cookie = `${key}=; ${base}`;
+    });
+}
+
+/** Host-scoped only — keeps AB signup UI on marketing site without sending absignup to panel. */
+export function persistAbSignupFlag(days = 7) {
+    if (typeof window === 'undefined') return;
+    const isLocalhost = window.location.hostname === 'localhost';
+    if (!isLocalhost) {
+        document.cookie = `absignup=; ${SHARED_COOKIE_EXPIRE}; path=/; domain=.msg91.com; SameSite=Lax; Secure`;
+    }
+    setCookie('absignup', 'a', days);
+    try {
+        sessionStorage.setItem('absignup', 'a');
+    } catch (_) {}
+}
+
+export function isAbSignupActive() {
+    if (typeof window === 'undefined') return false;
+    try {
+        if (sessionStorage.getItem('absignup') === 'a') return true;
+    } catch (_) {}
+    return getCookie('absignup') === 'a';
 }
 
 export function loginWithGitHubAccount(loginProcess) {

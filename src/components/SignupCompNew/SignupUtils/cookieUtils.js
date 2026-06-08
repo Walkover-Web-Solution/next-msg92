@@ -1,4 +1,4 @@
-import { getCookie, setCookie } from '@/utils/utilis';
+import { getCookie, setCookie, sanitizeMsg91QuerySearch } from '@/utils/utilis';
 
 /**
  * Update the source parameter in the browser URL and msg91_query cookie
@@ -28,8 +28,10 @@ export function updateSourceInUrlAndCookie(newSource) {
         params.set('source', newSource);
 
         // Rebuild query string and update cookie
-        const updatedQuery = '?' + params.toString();
-        setCookie('msg91_query', updatedQuery, 30);
+        const updatedQuery = sanitizeMsg91QuerySearch('?' + params.toString());
+        if (updatedQuery) {
+            setCookie('msg91_query', updatedQuery, 30);
+        }
     } catch (error) {
         console.error('Failed to update source in URL and cookie:', error);
     }
@@ -44,13 +46,12 @@ export function appendMsg91QueryToUrl(baseUrl) {
     if (typeof window === 'undefined') return baseUrl;
 
     try {
-        const msg91Query = getCookie('msg91_query');
+        const msg91Query = sanitizeMsg91QuerySearch(getCookie('msg91_query') || '');
 
         if (!msg91Query) {
             return baseUrl;
         }
 
-        // Remove leading '?' if present in cookie
         const queryString = msg91Query.startsWith('?') ? msg91Query.substring(1) : msg91Query;
 
         // Check if baseUrl already has query parameters

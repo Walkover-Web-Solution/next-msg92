@@ -1,11 +1,14 @@
 import getServices from '@/utils/getServices';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { MdClose, MdOutlineKeyboardArrowDown } from 'react-icons/md';
 import { setDetails, useSignup, finalRegistration } from '../SignupUtils';
 import { useCountrySelector } from '../hooks/useCountrySelector';
-import { fetchCountries, autoPopulateFromIP } from '../SignupUtils/apiUtils';
+import { useGstLookup } from '../hooks/useGstLookup';
+import { fetchCitiesByState, fetchCountries, fetchStatesByCountry, autoPopulateFromIP } from '../SignupUtils/apiUtils';
 import { updateSourceInUrlAndCookie } from '../SignupUtils/cookieUtils';
+import { GST_STATE_CODE_MAP } from '../SignupUtils/gstUtils';
+import { setSharedCookie } from '@/utils/utilis';
 
 const sourceData = [
     { value: 'search_engine', label: 'Search engine (Google, Bing, Yahoo, etc)' },
@@ -40,6 +43,7 @@ export default function StepThree({ data }) {
     const [selectedServices, setSelectedServices] = useState(initialServices);
     const [source, setSource] = useState(() => getInitialSource());
     const [otherSource, setOtherSource] = useState(() => getInitialOtherSource());
+    const [companyName, setCompanyName] = useState(state?.companyDetails?.companyName || '');
     const [address, setAddress] = useState(state?.companyDetails?.address || '');
     const [postalCode, setPostalCode] = useState(state?.companyDetails?.zipcode || '');
     const [isAddressOpen, setIsAddressOpen] = useState(false);
@@ -62,6 +66,61 @@ export default function StepThree({ data }) {
         handleCityChange,
         setSelectedCountry,
     } = useCountrySelector();
+
+    const prefillGstCountryData = useCallback(
+        async (gstStateNameOrCode, gstCityName) => {
+            const normalizedGstState = String(gstStateNameOrCode || '').trim();
+            const normalizedGstCity = String(gstCityName || '').trim();
+
+            const indiaCountry = countries.find((country) => country?.shortName?.toLowerCase() === 'in') || null;
+
+            if (!indiaCountry?.id) return;
+
+            if (!selectedCountry?.id || selectedCountry.id !== indiaCountry.id) {
+                await handleCountryChange([indiaCountry]);
+            }
+
+            const states = await fetchStatesByCountry(indiaCountry.id);
+            const resolvedStateName = GST_STATE_CODE_MAP[normalizedGstState];
+            if (!resolvedStateName) return;
+            const matchedState = states.find(
+                (stateOption) => stateOption?.name?.trim().toLowerCase() === resolvedStateName.trim().toLowerCase()
+            );
+
+            if (!matchedState) return;
+
+            await handleStateChange([matchedState]);
+
+            if (!normalizedGstCity) return;
+
+            const cities = await fetchCitiesByState(matchedState.id);
+            const normalizedCity = normalizedGstCity.split('(')[0].trim().toLowerCase();
+            const matchedCity = cities.find((cityOption) => cityOption?.name?.trim().toLowerCase() === normalizedCity);
+
+            if (!matchedCity) return;
+
+            handleCityChange([matchedCity]);
+        },
+        [countries, handleCityChange, handleCountryChange, handleStateChange, selectedCountry?.id]
+    );
+
+    const {
+        gstNumber,
+        validationError: gstValidationError,
+        isLoading: isGstLoading,
+        handleGstNumberChange,
+    } = useGstLookup({
+        dispatch,
+        initialGstNo: state?.companyDetails?.gstNo,
+        onAutofill: ({ address: gstAddress, postalCode: gstPostalCode, companyName: gstCompanyName }) => {
+            setAddress(gstAddress);
+            setPostalCode(gstPostalCode);
+            if (gstCompanyName) {
+                setCompanyName(gstCompanyName);
+            }
+        },
+        prefillGstCountryData,
+    });
 
     useEffect(() => {
         const initializeData = async () => {
@@ -123,6 +182,10 @@ export default function StepThree({ data }) {
     }, [dispatch, otherSource, source]);
 
     useEffect(() => {
+        setDetails('companyName', dispatch, companyName);
+    }, [dispatch, companyName]);
+
+    useEffect(() => {
         setDetails('addressDetails', dispatch, {
             address,
             zipcode: postalCode,
@@ -160,6 +223,11 @@ export default function StepThree({ data }) {
     }
 
     const handleFinalRegistration = () => {
+        setSharedCookie('signup_date', new Date().toISOString().split('T')[0], 30);
+        const serviceLabels = selectedServices.map((key) => services[key]).filter(Boolean);
+        if (serviceLabels.length) {
+            setSharedCookie('interested_services', JSON.stringify(serviceLabels), 30);
+        }
         finalRegistration(dispatch, state);
     };
 
@@ -243,7 +311,7 @@ export default function StepThree({ data }) {
                             aria-expanded={isAddressOpen}
                             aria-label='Toggle address section'
                         >
-                            <h2 className='text-lg font-medium text-gray-700'>Address (Optional)</h2>
+                            <h2 className='text-lg font-medium text-gray-700'>Company details (Optional)</h2>
                             <MdOutlineKeyboardArrowDown
                                 className={`text-gray-500 text-2xl transition-all duration-100 ${
                                     isAddressOpen ? 'rotate-180' : ''
@@ -251,6 +319,30 @@ export default function StepThree({ data }) {
                             />
                         </button>
                         <div className={`flex-col gap-3 overflow-hidden ${isAddressOpen ? 'flex' : 'hidden'}`}>
+                            <div className='flex flex-col gap-1 w-full'>
+                                <label className='text-sm text-gray-700'>Company Name</label>
+                                <input
+                                    className='input input-bordered w-full'
+                                    type='text'
+                                    placeholder='Company Name'
+                                    value={companyName}
+                                    onChange={(e) => setCompanyName(e.target.value)}
+                                    aria-label='Company Name'
+                                />
+                            </div>
+                            <div className='flex flex-col gap-1 w-full'>
+                                <label className='text-sm text-gray-700'>GST Number</label>
+                                <input
+                                    className='input input-bordered w-full'
+                                    type='text'
+                                    placeholder='29AAWCS1086R2Z2'
+                                    value={gstNumber}
+                                    onChange={(e) => handleGstNumberChange(e.target.value)}
+                                    aria-label='GST Number'
+                                />
+                                {isGstLoading && <p className='text-xs text-gray-500'>Fetching GST details...</p>}
+                                {gstValidationError && <p className='text-xs text-red-600'>{gstValidationError}</p>}
+                            </div>
                             <div className='flex flex-col gap-1 w-full'>
                                 <label className='text-sm text-gray-700'>House / Building / Apartment</label>
                                 <input
