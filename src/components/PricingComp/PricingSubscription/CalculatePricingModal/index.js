@@ -1,5 +1,6 @@
 import { useState, useMemo, useCallback } from 'react';
 import { MdClose, MdInfoOutline } from 'react-icons/md';
+import { formatUnitPrice, formatZeroPrice } from '@/utils/pricing/formatPrice';
 
 const EMPTY_ARRAY = [];
 const UNLIMITED_CREDIT_VALUE = -1;
@@ -17,7 +18,7 @@ const SERVICE_DEFAULTS = {
     'Contacts': 100000,
 };
 
-export default function CalculatePricingModal({ plans, symbol, tabtype, locale = 'en-US', onClose }) {
+export default function CalculatePricingModal({ plans, currency, tabtype, locale = 'en-US', onClose }) {
     const plansForTab = useMemo(() => getPlansForTab(plans, tabtype), [plans, tabtype]);
 
     const visibleServiceNames = useMemo(() => getServiceNamesInAllPlans(plansForTab), [plansForTab]);
@@ -131,7 +132,7 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, locale =
                                 <div className='flex items-center justify-between'>
                                     <span className='font-semibold text-slate-900'>{result.title}</span>
                                     <span className='font-bold text-indigo-600'>
-                                        {formatTotalPrice(symbol, result?.total, locale)}
+                                        {formatTotalPrice(currency, result?.total, locale)}
                                     </span>
                                 </div>
                                 <div className='grid grid-cols-2 gap-3'>
@@ -171,11 +172,11 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, locale =
                                             const isNotAllowed = calculation.isIncluded && calculation.extra > 0;
                                             let valueText;
                                             if (isUnlimited) valueText = 'Unlimited';
-                                            else if (isWithin) valueText = formatPrice(symbol, 0, locale);
+                                            else if (isWithin) valueText = formatPrice(currency, 0, locale);
                                             else if (isNotAllowed) valueText = 'Not allowed';
                                             else
                                                 valueText = formatPrice(
-                                                    symbol,
+                                                    currency,
                                                     result?.overages?.[serviceName],
                                                     locale
                                                 );
@@ -228,12 +229,12 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, locale =
                                                 <div className='flex flex-col gap-0.5'>
                                                     {result?.originalAmount != null && (
                                                         <span className='text-xs text-slate-400 line-through'>
-                                                            {formatPrice(symbol, result.originalAmount, locale)}
+                                                            {formatPrice(currency, result.originalAmount, locale)}
                                                         </span>
                                                     )}
                                                     <div className='flex items-center gap-1'>
                                                         <span className='font-semibold text-slate-900'>
-                                                            {formatPrice(symbol, result?.base, locale)}
+                                                            {formatPrice(currency, result?.base, locale)}
                                                         </span>
                                                         {result?.plan?.discount?.[0] &&
                                                             (() => {
@@ -244,7 +245,7 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, locale =
                                                                 const discountText =
                                                                     typeId === 2
                                                                         ? `${value >= 100 ? 100 : value}% off`
-                                                                        : `${symbol}${value} off`;
+                                                                        : `${value.toLocaleString(locale)} ${currency} off`;
                                                                 const durationText =
                                                                     duration > 0
                                                                         ? ` for ${duration} month${duration !== 1 ? 's' : ''}`
@@ -298,10 +299,10 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, locale =
                                                 </div>
                                             </td>
                                             {visibleServiceNames.map((serviceName) =>
-                                                renderExtraServiceCell(serviceName, result, symbol, locale)
+                                                renderExtraServiceCell(serviceName, result, currency, locale)
                                             )}
                                             <td className='w-[180px] min-w-[100px] px-4 py-3 font-bold text-indigo-600 whitespace-nowrap'>
-                                                {formatTotalPrice(symbol, result?.total, locale)}
+                                                {formatTotalPrice(currency, result?.total, locale)}
                                             </td>
                                         </tr>
                                     );
@@ -351,20 +352,21 @@ function getPlanTitle(plan) {
     return 'Plan';
 }
 
-function formatPrice(symbol, numAmount, locale = 'en-US') {
-    if (numAmount == null || Number.isNaN(numAmount)) return `${symbol}0`;
-    if (numAmount === 0 || Object.is(numAmount, -0)) return `${symbol}0`;
-    return `${symbol}${numAmount.toLocaleString(locale, { notation: 'standard', maximumFractionDigits: 3 })}`;
+function formatPrice(currency, numAmount, locale = 'en-US') {
+    if (numAmount == null || Number.isNaN(numAmount)) return formatZeroPrice(currency);
+    if (numAmount === 0 || Object.is(numAmount, -0)) return formatZeroPrice(currency);
+    const formatted = numAmount.toLocaleString(locale, { notation: 'standard', maximumFractionDigits: 3 });
+    return currency ? `${formatted} ${currency}` : formatted;
 }
 
-function formatTotalPrice(symbol, total, locale = 'en-US') {
+function formatTotalPrice(currency, total, locale = 'en-US') {
     const numTotal = Number(total);
     if (total == null || Number.isNaN(numTotal) || !Number.isFinite(numTotal)) return '—';
-    // Round to 2 decimal places before converting to local
-    return `${symbol}${numTotal.toLocaleString(locale, { notation: 'standard', maximumFractionDigits: 3 })}`;
+    const formatted = numTotal.toLocaleString(locale, { notation: 'standard', maximumFractionDigits: 3 });
+    return currency ? `${formatted} ${currency}` : formatted;
 }
 
-function renderExtraServiceCell(serviceName, result, symbol, locale = 'en-US') {
+function renderExtraServiceCell(serviceName, result, currency, locale = 'en-US') {
     const calculation = result?.calculationByService?.[serviceName];
     const inPlan = calculation != null;
     const isUnlimitedIncluded = result?.includedByService?.[serviceName] == null;
@@ -375,10 +377,11 @@ function renderExtraServiceCell(serviceName, result, symbol, locale = 'en-US') {
 
     const chunkSize = calculation?.chunkSize ?? 1;
     const extraChunks = calculation?.extraChunks ?? calculation?.extra ?? 0;
+    const rateLabel = formatUnitPrice(calculation?.rate, currency, locale);
     const tooltipText =
         chunkSize > 1
-            ? `${extraChunks.toLocaleString(locale, { notation: 'standard' })} Chunks × ${symbol}${calculation?.rate?.toLocaleString(locale, { notation: 'standard' })} (Chunk = ${chunkSize} Units)`
-            : `${extraChunks.toLocaleString(locale, { notation: 'standard' })} × ${symbol}${calculation?.rate?.toLocaleString(locale, { notation: 'standard' })}`;
+            ? `${extraChunks.toLocaleString(locale, { notation: 'standard' })} Chunks × ${rateLabel} (Chunk = ${chunkSize} Units)`
+            : `${extraChunks.toLocaleString(locale, { notation: 'standard' })} × ${rateLabel}`;
 
     return (
         <td key={serviceName} className='w-[140px] min-w-[140px] px-4 py-3 text-gray-700 align-top'>
@@ -389,14 +392,14 @@ function renderExtraServiceCell(serviceName, result, symbol, locale = 'en-US') {
                     <span className='text-gray-600 text-xs'>Unlimited</span>
                 ) : isWithinLimit ? (
                     <span className='text-gray-600 text-xs'>
-                        {formatPrice(symbol, 0, locale)} <span className='text-xs text-gray-500'>(Included)</span>
+                        {formatPrice(currency, 0, locale)} <span className='text-xs text-gray-500'>(Included)</span>
                     </span>
                 ) : isExtraNotAllowed ? (
                     <span className='text-gray-500 text-xs'>Not allowed</span>
                 ) : (
                     <>
                         <span className='text-xs font-medium'>
-                            {formatPrice(symbol, result?.overages?.[serviceName], locale)}
+                            {formatPrice(currency, result?.overages?.[serviceName], locale)}
                         </span>
                         {hasOverageCharge && (
                             <span className='flex items-center gap-1 text-xs text-gray-500'>
@@ -409,10 +412,7 @@ function renderExtraServiceCell(serviceName, result, symbol, locale = 'en-US') {
                                         </span>
                                     </span>
                                 )}
-                                × {symbol}
-                                {calculation?.rate?.toLocaleString(locale, {
-                                    notation: 'standard',
-                                })}
+                                × {rateLabel}
                             </span>
                         )}
                     </>

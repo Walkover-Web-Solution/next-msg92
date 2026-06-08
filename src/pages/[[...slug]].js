@@ -50,6 +50,7 @@ import MigrateFromTextlocal from '@/components/migrateFromTextlocal/migrateFromT
 import WhatsAppIntegrations from '@/components/WhatsAppIntegrations';
 import WhatsAppAccountVerification from '@/components/WhatsAppAccountVerification';
 import FeatureWithBulletGroup from '@/components/FeatureWithBulletGroup';
+import FeatureSliderComp from '@/components/FeatureSliderComp/FeatureSliderComp';
 import Hero from '@/components/IntegrationComp/Hero/Hero';
 import ProblemSolution from '@/components/IntegrationComp/ProblemSolution/ProblemSolution';
 import Benefits from '@/components/IntegrationComp/Benefits/Benefits';
@@ -58,8 +59,6 @@ import UseCases from '@/components/IntegrationComp/UseCases/UseCases';
 import HowItWorks from '@/components/IntegrationComp/HowItWorks/HowItWorks';
 import CTA from '@/components/IntegrationComp/CTA/CTA';
 import SEOFooter from '@/components/IntegrationComp/SEOFooter/SEOFooter';
-
-// New Components
 import Banner from '@/components/UpdatedComp/Banner';
 import HelloBanner from '@/components/HelloBrComp/BannerComp/Banner';
 import HelloBrFeatures from '@/components/HelloBrComp/FeaturesComp/Features';
@@ -152,6 +151,7 @@ const Components = {
     WhatsAppIntegrations,
     WhatsAppAccountVerification,
     FeatureWithBulletGroup,
+    FeatureSliderComp,
 
     // New Components
     Challenges: HelloBrChallenges,

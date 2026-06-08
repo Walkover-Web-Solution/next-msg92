@@ -1,12 +1,5 @@
 export default function handlePlanStructure(plans, currency) {
-    const sourcePlans =
-        currency === 'AED'
-            ? (plans || []).filter(
-                  (plan) => Array.isArray(plan?.valid_currencies) && plan.valid_currencies.includes('AED')
-              )
-            : plans || [];
-
-    const structuredPlans = sourcePlans.flatMap((plan) =>
+    const structuredPlans = (plans || []).flatMap((plan) =>
         (plan?.plan_amounts || [])
             .filter((plan_amount) => plan_amount?.currency?.short_name === currency)
             .map((plan_amount) => ({
@@ -34,10 +27,11 @@ function handleServices(services, currency) {
     return services.map((service) => {
         const allRates = service?.service_credit?.service_credit_rates ?? [];
         const ratesForCurrency = allRates.filter((r) => r?.currency?.short_name === currency);
-        const rate = ratesForCurrency[0];
-        // Prefer dial_plan_info from currency-matched rate, fall back to any rate that has it
-        const rateWithDialPlan =
-            ratesForCurrency.find((r) => r?.dial_plan_info) ?? allRates.find((r) => r?.dial_plan_info);
+        const ratesWithDialPlan = ratesForCurrency.filter((r) => r?.dial_plan_info?.data?.length);
+        const rateWithDialPlan = ratesWithDialPlan.sort(
+            (a, b) => (b.dial_plan_info?.data?.length ?? 0) - (a.dial_plan_info?.data?.length ?? 0)
+        )[0];
+        const rate = rateWithDialPlan ?? ratesForCurrency[0];
         const dialPlan =
             rateWithDialPlan?.dial_plan_info != null ? normalizeDialPlanInfo(rateWithDialPlan.dial_plan_info) : null;
         return {

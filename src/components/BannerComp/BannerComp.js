@@ -130,6 +130,13 @@ export default function BannerComp({ pageInfo, data }) {
                         />
                     </div>
                 )}
+                {!data?.code && data?.banner_video && data?.not_absolute && (
+                    <div className='lg:w-1/2'>
+                        <video className='w-full' autoPlay muted loop playsInline aria-label={data?.tagline}>
+                            <source src={data?.banner_video} type='video/webm' />
+                        </video>
+                    </div>
+                )}
                 {data?.lottie && !data?.code && (
                     <div className={styles.lottie_animation}>
                         <LottiePlayer lottie={data?.lottie} />

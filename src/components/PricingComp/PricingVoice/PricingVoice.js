@@ -11,9 +11,9 @@ import countries from '@/data/countries.json';
 import CalculateVoicePricing from './CalculateVoicePricing/CalculateVoicePricing';
 
 export default function PricingVoice({ data, country, initialData }) {
-    console.log('⚡️ ~ :14 ~ PricingVoice ~ initialData:', initialData);
     const [countryData, setCountryData] = useState(initialData?.countryData || []);
     const currentCountry = GetCountryDetails({ shortname: country, type: 'shortname' });
+    const pageCurrency = GetCurrencySymbol(country);
     const [selectedCountry, setSelectedCountry] = useState(initialData?.selectedCountry || null);
     const [plans, setPlans] = useState(initialData?.plans);
     const [loading, setLoading] = useState(!initialData?.plans);
@@ -64,26 +64,29 @@ export default function PricingVoice({ data, country, initialData }) {
         if (!countryObj?.id) return;
         setLoading(true);
         try {
-            const { currency: rawCurrency } = GetCurrencySymbol(countryObj?.country_code);
-            const newCurrency = rawCurrency === 'INR' ? 'INR' : 'USD';
-            const newSymbol = newCurrency === 'INR' ? '₹' : '$';
-            setCurrency(newCurrency);
-            setSymbol(newSymbol);
+            setCurrency(pageCurrency.currency);
+            setSymbol(pageCurrency.symbol);
 
             const dialPlanRes = await fetch(
-                `${process.env.VOICE_API_URL}/public/dialplanPricing/?currency=${newCurrency}`
+                `${process.env.VOICE_API_URL}/public/dialplanPricing/?currency=${pageCurrency.currency}`
             );
             if (!dialPlanRes.ok) throw new Error('Currently we only have plan for India(91)');
             const dialPlanData = await dialPlanRes.json();
             const newDialPlanId = dialPlanData?.data?.dialplan_id;
             setDialPlan(newDialPlanId);
 
+            if (!newDialPlanId) {
+                setPlans(undefined);
+                return;
+            }
+
             const pricingRes = await fetch(
                 `${process.env.VOICE_API_URL}/public/pricing/?cid=${countryObj.id}&dialplan_id=${newDialPlanId}`
             );
             if (!pricingRes.ok) throw new Error('Currently we only have plan for India(91)');
             const pricingData = await pricingRes.json();
-            setPlans(pricingData?.data);
+            const apiPlans = pricingData?.data;
+            setPlans(Array.isArray(apiPlans) && apiPlans.length > 0 ? apiPlans : undefined);
         } catch (err) {
             setError(err.message);
         } finally {
@@ -210,9 +213,7 @@ export default function PricingVoice({ data, country, initialData }) {
                                                                             <>{` ${symbol}${item?.local_rates_max}`}</>
                                                                         )}
                                                                 </>
-                                                            ) : (
-                                                                'N/A'
-                                                            )}
+                                                            ) : null}
                                                         </td>
                                                         <td className='px-4 py-2.5 text-xs text-slate-600'>
                                                             {item?.international_rates_min ? (
@@ -224,9 +225,7 @@ export default function PricingVoice({ data, country, initialData }) {
                                                                             <>{` ${symbol}${item?.international_rates_max}`}</>
                                                                         )}
                                                                 </>
-                                                            ) : (
-                                                                'N/A'
-                                                            )}
+                                                            ) : null}
                                                         </td>
                                                     </tr>
                                                 );
@@ -248,13 +247,13 @@ export default function PricingVoice({ data, country, initialData }) {
                                                     </td>
                                                 </tr>
                                             ))}
-                                        {!loading && plans?.length === 0 && (
+                                        {!loading && !plans?.length && (
                                             <tr>
                                                 <td
                                                     colSpan={3}
                                                     className='px-4 py-8 text-center text-sm text-slate-400'
                                                 >
-                                                    No plans available for this country.
+                                                    No pricing data available for this country.
                                                 </td>
                                             </tr>
                                         )}
