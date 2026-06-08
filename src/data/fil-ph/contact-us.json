@@ -4,14 +4,18 @@
         "description": "May mga tanong, komento, o suhestiyon? Narito kami upang tumulong. Makipag-ugnayan sa amin sa pamamagitan ng telepono, chat, o email para sa mabilis na suporta."
     },
     "ContactUsComp": {
-        "heading": "Makipag-ugnayan sa Amin",
-        "subheading": "Pumili ng pinakamahusay na paraan upang makipag-ugnayan, maging para sa mga tanong sa pagbebenta o teknikal na tulong.",
+        "badge": "GET IN TOUCH",
+        "heading": "How can we help you?",
+        "subheading": "Reach out to our global sales and support teams, or book a direct consultation instantly.",
         "cards": [
             {
                 "key": "sales",
-                "heading": "Benta",
+                "heading": "Sales Team",
+                "features": [
+                    "Explore plans and pricing",
+                    "Find the right fit for your needs"
+                ],
                 "email": "sales@msg91.com",
-                "calendlyUrl": "https://calendly.com/d/csks-4j4-sy3",
                 "phone": [
                     {
                         "number": "+65 31595004",
@@ -22,9 +26,12 @@
             },
             {
                 "key": "support",
-                "heading": "Suporta",
+                "heading": "Technical Support",
+                "features": [
+                    "Reliable assistance when you need it",
+                    "Clear answers, fewer back-and-forths"
+                ],
                 "email": "support@msg91.com",
-                "calendlyUrl": "https://calendly.com/d/y3n-29s-29h?hide_gdpr_banner=1",
                 "phone": [
                     {
                         "number": "07316914364",
@@ -32,6 +39,18 @@
                         "call": true
                     }
                 ]
+            },
+            {
+                "key": "schedule-a-meeting",
+                "heading": "Schedule a Meeting",
+                "description": "Got a question or need to talk to someone? Our assistant answers your query and books the right meeting — all in one place.",
+                "features": [
+                    "Query resolution",
+                    "Real-time slot availability",
+                    "Multilingual support"
+                ],
+                "buttonText": "Book a Slot",
+                "widgetToken": "8e51b"
             }
         ]
     }

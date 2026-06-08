@@ -1,7 +1,7 @@
 {
     "common": true,
     "notification": {
-        "support": "Contact",
+        "support": "Contact Us",
         "login": "Login",
         "hide": [
             "signup",
