@@ -16,7 +16,7 @@ export default function PricingVoice({ data, country, initialData }) {
     const pageCurrency = GetCurrencySymbol(country);
     const [selectedCountry, setSelectedCountry] = useState(initialData?.selectedCountry || null);
     const [plans, setPlans] = useState(initialData?.plans);
-    const [loading, setLoading] = useState(!initialData?.plans);
+    const [loading, setLoading] = useState(() => !initialData?.plans?.length && !initialData?.selectedCountry);
     const [error, setError] = useState();
     const [dialPlan, setDialPlan] = useState(initialData?.dialPlanId);
     const [loadingExport, setLoadingExport] = useState(false);
