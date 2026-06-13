@@ -31,17 +31,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
         return (
             <div className='py-3 border border-b flex my-0'>
                 <div className='container flex items-center gap-2 justify-between  flex-col md:flex-row'>
-                    <span className='text-red-500 flex items-center gap-1'>
-                        Meta services are currently down — WhatsApp Business API affected. Check status and updates:{' '}
-                        <a
-                            style={{ color: 'blue', textDecoration: 'underline' }}
-                            href='https://metastatus.com/whatsapp-business-api'
-                            target='_blank'
-                            rel='noopener noreferrer'
-                        >
-                            Here
-                        </a>
-                    </span>
+                    <span className='text-red-500 flex items-center gap-1'></span>
                     <div className='flex  gap-6 justify-end w-full md:w-auto'>
                         {currentCountry?.languages && (
                             <div className='dropdown'>
