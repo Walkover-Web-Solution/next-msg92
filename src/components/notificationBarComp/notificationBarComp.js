@@ -179,7 +179,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                         </a>
                         <a
                             className='text-link flex gap-1 items-center'
-                            href={process.env.LOGIN_URL || 'https://control.msg91.com/signin/'}
+                            href={process.env.LOGIN_URL || 'https://msg91.com/signin/'}
                         >
                             <MdLogin className='text-2xl sm:text-xl' />
                             <span className='hidden sm:block'>{componentData?.login}</span>
