@@ -8,7 +8,7 @@ class StepOne extends React.Component {
         loginWithGitHubAccount(false);
     };
     getLoginUrlWithParams = () => {
-        const baseUrl = process.env.LOGIN_URL || 'https://control.msg91.com/signin/';
+        const baseUrl = process.env.LOGIN_URL || 'https://msg91.com/signin/';
         if (typeof window === 'undefined') return baseUrl;
         const params = window.location.search;
         return baseUrl + (params || '');

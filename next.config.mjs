@@ -24,10 +24,10 @@ const securityHeaders = [
         value: 'nosniff',
     },
 
-    // 4️⃣ Isolation and data protection between origins
+    // 4️⃣ Required for Google OAuth popup (useGoogleLogin) to return auth code to parent window
     {
         key: 'Cross-Origin-Opener-Policy',
-        value: 'same-origin',
+        value: 'same-origin-allow-popups',
     },
     {
         key: 'Cross-Origin-Resource-Policy',
@@ -89,6 +89,7 @@ const nextConfig = {
 
         // Widget Config
         OTP_WIDGET_TOKEN: getEnvValue('OTP_WIDGET_TOKEN'),
+        OTP_WIDGET_TOKEN_LOGIN: getEnvValue('OTP_WIDGET_TOKEN_LOGIN'),
         WIDGET_AUTH_TOKEN: getEnvValue('WIDGET_AUTH_TOKEN'),
         WIDGET_SCRIPT: getEnvValue('WIDGET_SCRIPT'),
 
