@@ -2,12 +2,11 @@ import GoogleLoginButton from '@/components/signupComp/utils/GoogleLogin';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import React, { useCallback, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { MdCheck, MdHelpOutline } from 'react-icons/md';
+import { MdHelpOutline } from 'react-icons/md';
 import { getQueryParamsDeatils, setCookie, getCookie, loginWithGitHubAccount } from '@/utils/utilis';
 import {
-    MULTIPLE_ACCOUNTS_MESSAGE,
+    getErrorMessage,
     handleMobileWidgetFailure,
-    isMultipleAccountsError,
     otpWidgetSetup,
     waitForInitSendOTP,
 } from '@/utils/otpSigninWidget';
@@ -15,6 +14,12 @@ import { toast } from 'react-toastify';
 import Image from 'next/image';
 const SUCCESS_REDIRECTION_URL = process.env.API_BASE_URL + '/api/nexusRedirection.php?session=:session';
 const MOBILE_EMAIL_LOGIN_URL = process.env.API_BASE_URL + '/api/v5/nexus/mobileEmailLogin';
+const GOOGLE_LOGIN_URL = process.env.API_BASE_URL + '/api/v5/nexus/googleLogin';
+const GITHUB_LOGIN_URL = process.env.API_BASE_URL + '/api/v5/nexus/githubLogin';
+const ZOHO_LOGIN_URL = process.env.API_BASE_URL + '/api/v5/nexus/zohoLogin';
+const OUTLOOK_LOGIN_URL = process.env.API_BASE_URL + '/api/v5/nexus/outlookLogin';
+const ZOHO_SIGNIN_REDIRECT_URL = `${process.env.REDIRECT_URL}/signin?loginWithZoho=true`;
+const OUTLOOK_SIGNIN_REDIRECT_URL = `${process.env.REDIRECT_URL}/outlook-token`;
 
 export default function SignIn() {
     const router = useRouter();
@@ -34,12 +39,7 @@ export default function SignIn() {
                 if (!result?.hasError && sessionId) {
                     location.href = SUCCESS_REDIRECTION_URL?.replace(':session', sessionId);
                 } else if (showError) {
-                    const errMsg = result?.errors?.[0] ?? result?.errors;
-                    if (isMultipleAccountsError({ message: errMsg, errors: result?.errors })) {
-                        toast.error(MULTIPLE_ACCOUNTS_MESSAGE);
-                    } else {
-                        toast.error(errMsg);
-                    }
+                    toast.error(getErrorMessage(result?.errors));
                 }
             })
             .catch((err) => console.error(err));
@@ -51,30 +51,27 @@ export default function SignIn() {
         const queryParams = getQueryParamsDeatils(router.asPath);
 
         if (queryParams?.githublogin === 'true') {
-            const url = process.env.API_BASE_URL + '/api/v5/nexus/githubLogin';
-            hitLoginAPI(url, {
+            hitLoginAPI(GITHUB_LOGIN_URL, {
                 code: queryParams?.code,
                 state: queryParams?.state,
-                redirectUrl: process.env.REDIRECT_URL,
             });
         } else if (queryParams?.loginWithZoho?.includes('true')) {
-            const request = {
-                ...queryParams,
-                accountsServer: decodeURIComponent(queryParams['accounts-server'] || ''),
-            };
-            delete request.loginWithZoho;
-            delete request['accounts-server'];
-
-            const url = process.env.API_BASE_URL + '/api/v5/nexus/zohoLogin';
-            hitLoginAPI(url, {
-                ...request,
-                redirectUrl: process.env.REDIRECT_URL + '/signin?loginWithZoho=true',
-            });
-        } else if (queryParams?.loginWithOutlook?.includes('true')) {
-            const url = process.env.API_BASE_URL + '/api/v5/nexus/outlookLogin';
-            hitLoginAPI(url, {
+            const accountsServer = queryParams['accounts-server']
+                ? decodeURIComponent(queryParams['accounts-server'])
+                : '';
+            const zohoPayload = {
                 code: queryParams?.code,
-                redirectUrl: process.env.REDIRECT_URL + '/outlook-token',
+                location: queryParams?.location,
+                redirectUrl: ZOHO_SIGNIN_REDIRECT_URL,
+            };
+            if (accountsServer) {
+                zohoPayload.accountsServer = accountsServer;
+            }
+            hitLoginAPI(ZOHO_LOGIN_URL, zohoPayload);
+        } else if (queryParams?.loginWithOutlook?.includes('true')) {
+            hitLoginAPI(OUTLOOK_LOGIN_URL, {
+                code: queryParams?.code,
+                redirectUrl: OUTLOOK_SIGNIN_REDIRECT_URL,
             });
         } else {
             otpWidgetSetup();
@@ -123,60 +120,62 @@ export default function SignIn() {
     }, [hitLoginAPI]);
 
     const loginWithZoho = () => {
-        location.href = `https://accounts.zoho.com/oauth/v2/auth?response_type=code&client_id=${process.env.ZOHO_CLIENT_ID}&scope=aaaserver.profile.READ&redirect_uri=${process.env.REDIRECT_URL}/signin?loginWithZoho=true`;
+        location.href = `https://accounts.zoho.com/oauth/v2/auth?response_type=code&client_id=${process.env.ZOHO_CLIENT_ID}&scope=aaaserver.profile.READ&redirect_uri=${encodeURIComponent(ZOHO_SIGNIN_REDIRECT_URL)}`;
     };
 
     const loginWithGitHub = () => {
         loginWithGitHubAccount(true);
     };
 
-    const googleLogin = (response) => {
-        if (response) {
-            const url = process.env.API_BASE_URL + '/api/v5/nexus/googleLogin';
-            hitLoginAPI(url, { code: response.code, redirectUrl: process.env.REDIRECT_URL });
-        }
-    };
+    const handleGoogleError = useCallback((error) => {
+        console.error('Google sign-in failed:', error);
+        toast.error('Google sign-in failed. Please try again.');
+    }, []);
+
+    const googleLogin = useCallback(
+        (response, redirectUri) => {
+            if (!response?.code) {
+                console.error('Google sign-in: no auth code in response', response);
+                toast.error('Google sign-in did not return a code. Please try again.');
+                return;
+            }
+            const redirectUrl =
+                redirectUri ?? (typeof window !== 'undefined' ? window.location.origin : process.env.REDIRECT_URL);
+            hitLoginAPI(GOOGLE_LOGIN_URL, { code: response.code, redirectUrl });
+        },
+        [hitLoginAPI]
+    );
 
     const loginWithOutlook = () => {
-        location.href = `https://login.microsoftonline.com/common/oauth2/v2.0/authorize?response_type=code&client_id=${process.env.MSAL_CLIENT_ID}&redirect_uri=${process.env.REDIRECT_URL}/outlook-token&scope=User.Read`;
+        location.href = `https://login.microsoftonline.com/common/oauth2/v2.0/authorize?response_type=code&client_id=${process.env.MSAL_CLIENT_ID}&redirect_uri=${encodeURIComponent(OUTLOOK_SIGNIN_REDIRECT_URL)}&scope=User.Read`;
     };
 
     return (
         <>
             <section className='signin flex flex-col-reverse md:flex-row md:items-start'>
-                <div className='flex w-full flex-col gap-8 bg-secondary px-4 py-10 sm:px-10 sm:py-16 md:min-h-screen md:w-1/2 md:py-20 lg:w-1/3 xl:w-1/4'>
-                    <div className='hidden flex-col gap-5 md:flex'>
+                <div className='flex w-full flex-col gap-8 bg-secondary px-2 py-10 sm:px-10 sm:py-16 md:min-h-screen md:w-1/2 md:py-20 lg:w-1/3 xl:w-1/4'>
+                    <div className='flex flex-col gap-6'>
                         <Image
                             src={'/assets/brand/msg91.svg'}
                             width={420}
                             height={420}
-                            className='block h-auto w-32 shrink-0'
+                            className='hidden h-auto w-32 shrink-0 md:block'
                             alt='msg91-logo'
                             loading='lazy'
                         />
-                        <h1 className='text-2xl font-medium'>Signin to avail a complete suite of MSG91 products</h1>
-                    </div>
-                    <div className='flex flex-col gap-5'>
-                        <h2 className='text-xl'>What can you build with MSG91?</h2>
-                        <ul className='flex flex-col gap-3'>
-                            <li className='flex items-center gap-2'>
-                                <MdCheck fontSize={20} className='text-accent' /> Programmable SMS
-                            </li>
-                            <li className='flex items-center gap-2'>
-                                <MdCheck fontSize={20} className='text-accent' /> Customer Contact Center
-                            </li>
-                            <li className='flex items-center gap-2'>
-                                <MdCheck fontSize={20} className='text-accent' /> Virtual Number
-                            </li>
-                            <li className='flex items-center gap-2'>
-                                <MdCheck fontSize={20} className='text-accent' /> Automated user segmentation
-                            </li>
-                            <li className='flex items-center gap-2'>
-                                <MdCheck fontSize={20} className='text-accent' /> OTP Initiate verification
-                            </li>
+                        <h1 className='hidden text-2xl font-medium md:block'>
+                            Signin to avail a complete suite of MSG91 products
+                        </h1>
+                        <ul className='list-disc space-y-3 pl-1 text-sm marker:text-accent'>
+                            <li>Engage users across SMS, WhatsApp, Email, Voice & RCS</li>
+                            <li>Automate journeys with Campaign & Segmento</li>
+                            <li>AI-powered support with Hello Ticketing</li>
+                            <li>Personalize communication using real-time segmentation</li>
+                            <li>Increase retention, engagement & revenue from one platform</li>
+                            <li>APIs built for scale, reliability & speed</li>
                         </ul>
+                        <p className='m-0 text-lg'>Trusted by 30000+ startups and enterprises</p>
                     </div>
-                    <p className='text-lg'>Trusted by 30000+ startups and enterprises</p>
                 </div>
 
                 <div className='flex w-full flex-col px-4 py-14 sm:px-10 sm:py-16 md:py-24 lg:px-22'>
@@ -199,7 +198,10 @@ export default function SignIn() {
                             <div className='flex flex-wrap gap-3'>
                                 <div className='flex h-11 w-11 shrink-0 overflow-hidden rounded-lg border border-slate-300 bg-white transition hover:bg-slate-50'>
                                     <GoogleOAuthProvider clientId={`${process.env.GOOGLE_CLIENT_ID}`}>
-                                        <GoogleLoginButton googleLoginResponse={googleLogin} />
+                                        <GoogleLoginButton
+                                            googleLoginResponse={googleLogin}
+                                            onGoogleError={handleGoogleError}
+                                        />
                                     </GoogleOAuthProvider>
                                 </div>
                                 <button

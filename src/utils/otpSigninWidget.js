@@ -1,7 +1,8 @@
 import { toast } from 'react-toastify';
 
-export const MULTIPLE_ACCOUNTS_MESSAGE =
-    'This mobile number is associated with multiple accounts. Please login using email.';
+export function getErrorMessage(err) {
+    return err?.message;
+}
 
 function injectOtpWidgetScriptIfNeeded() {
     const existingScript = document.getElementById('otpWidgetScript');
@@ -40,30 +41,6 @@ export function otpWidgetSetup() {
     injectOtpWidgetScriptIfNeeded();
 }
 
-export function isMultipleAccountsError(err) {
-    if (err == null) return false;
-    const status = err?.status || err?.data?.status;
-    if (status === 'multiple') return true;
-
-    const str =
-        typeof err === 'string'
-            ? err
-            : err?.message || err?.error || (Array.isArray(err?.errors) ? err.errors[0] : err?.errors) || '';
-
-    return /multiple\s+accounts|associated with multiple|more than one account/i.test(String(str));
-}
-
 export function handleMobileWidgetFailure(err) {
-    if (isMultipleAccountsError(err)) {
-        toast.error(MULTIPLE_ACCOUNTS_MESSAGE);
-        return;
-    }
-    const msg =
-        typeof err === 'string'
-            ? err
-            : err?.message ||
-              err?.error ||
-              (Array.isArray(err?.errors) ? err.errors[0] : err?.errors) ||
-              'Something went wrong. Please try again.';
-    toast.error(msg);
+    toast.error(getErrorMessage(err));
 }
