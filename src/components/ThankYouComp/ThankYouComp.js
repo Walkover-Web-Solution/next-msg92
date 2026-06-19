@@ -5,7 +5,10 @@ export default function ThankYouComp({ data }) {
                 <h1 className='text-5xl text-center font-semibold'>{data}</h1>
                 <p className='text-xl text-center font-medium'>
                     In case you want to login again,{' '}
-                    <a href={process.env.LOGIN_URL || 'https://msg91.com/signin/'} className='text-link active-link '>
+                    <a
+                        href={process.env.LOGIN_URL || 'https://control.msg91.com/signin/'}
+                        className='text-link active-link '
+                    >
                         Click here
                     </a>
                 </p>
