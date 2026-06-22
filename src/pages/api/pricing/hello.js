@@ -22,7 +22,6 @@ export default async function handler(req, res) {
             params: {
                 currency: curr,
                 ms_id: MS_ID,
-                dial_plan_info: true,
             },
         });
         const raw = data?.data?.data || [];
