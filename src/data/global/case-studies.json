@@ -566,11 +566,11 @@
                 {
                     "slug": "letsshave",
                     "name": "Lets Shave",
-                    "title": "TalkCharge updates their customers’ regularly via MSG91",
+                    "title": "LetsShave updates their customers’ regularly via MSG91",
                     "industry": "E-commerce ",
                     "purpose": "Communication APIs",
                     "features": "Programmable SMS",
-                    "caseStudies": "LetsShave is an E-commerce<a class='text-link active-link' href='https://letsshave.com/'>Website</a>which sells shaving accessories manufactured by them. With the vision to offer their customers with quality grooming supplies at their doorsteps, LetsShave has partnered with one of the talented pioneers of razor industry, Dorco. Dorco has been manufacturing world’s finest blades since 1955. Today, they are serving over 100 million people who enjoy the comfortable shave and look their best in more than 130 countries around the world. To ensure a seamless and efficient service, LetsShave has been rigorously working on sending the order updates for their customer’s satisfaction.",
+                    "caseStudies": "LetsShave is an E-commerce <a class='text-link active-link' href='https://letsshave.com/'>Website</a> which sells shaving accessories manufactured by them. With the vision to offer their customers with quality grooming supplies at their doorsteps, LetsShave has partnered with one of the talented pioneers of razor industry, Dorco. Dorco has been manufacturing world’s finest blades since 1955. Today, they are serving over 100 million people who enjoy the comfortable shave and look their best in more than 130 countries around the world. To ensure a seamless and efficient service, LetsShave has been rigorously working on sending the order updates for their customer’s satisfaction.",
                     "problem": "A well-established communication channel with customers is a key requirement to ensure better operations. Setting up seamless operations while maintaining a wide range of customer base without a robust and secure communication channel is a challenge. Thus to convey important information like booking details, offers and updates for building a strong customer relationship, a communication channel targeting wide reach for mass audience (customers) is required.",
                     "solution": {
                         "description": "LetsShave is managing their operations by its website http://www.letsshave.com and customer communication efficiently with SMS communications via MSG91 API. With MSG91 APIs and real-time robust system, SMS is delivered to the customers to build communication at different events such as",
