@@ -16,8 +16,8 @@ export const TAB_TYPES = {
     YEARLY: 'Yearly',
 };
 
-// Searchable fields for dial plan
-export const SEARCHABLE_FIELDS = ['country_name'];
+// Dial plan API
+export const DIAL_PLAN_PER_PAGE = 100;
 
 // Empty arrays for memoization
 export const EMPTY_ARRAY = [];

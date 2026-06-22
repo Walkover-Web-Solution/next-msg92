@@ -1,109 +1,95 @@
-import React, { useEffect, useMemo, useState, useRef, useCallback } from 'react';
+import { useEffect, useMemo, useState, useRef, useCallback } from 'react';
+import { toast } from 'react-toastify';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
-import { DEBOUNCE_DELAY, SEARCHABLE_FIELDS, MAX_TABLE_HEIGHT, EMPTY_ARRAY } from '../constants';
+import normalizeDialPlanInfo from '@/utils/pricing/normalizeDialPlanInfo';
+import { DEBOUNCE_DELAY, DIAL_PLAN_PER_PAGE, EMPTY_ARRAY } from '../constants';
 
 const SCROLL_DISTANCE = 400;
 
-function useDebouncedValue(value, delay) {
-    const [debouncedValue, setDebouncedValue] = useState(value);
-    const timeoutRef = useRef(null);
-
-    useEffect(() => {
-        if (value === debouncedValue) return;
-
-        if (timeoutRef.current) {
-            clearTimeout(timeoutRef.current);
-        }
-
-        if (value === '') {
-            setDebouncedValue('');
-            return;
-        }
-
-        timeoutRef.current = setTimeout(() => {
-            setDebouncedValue(value);
-        }, delay);
-
-        return () => {
-            if (timeoutRef.current) {
-                clearTimeout(timeoutRef.current);
-            }
-        };
-    }, [value, delay, debouncedValue]);
-
-    return debouncedValue;
+function hasDialPlanServices(pricingData) {
+    if (!Array.isArray(pricingData)) return false;
+    return pricingData.some((plan) =>
+        (plan?.services ?? []).some((s) => s?.dialPlan?.serviceId && s?.dialPlan?.dialPlanId)
+    );
 }
 
-function getSearchableKeys(columns) {
-    return columns.filter((col) => SEARCHABLE_FIELDS.includes(col.key)).map((col) => col.key);
-}
+function findActivePlan(pricingData, selection) {
+    if (!selection?.serviceName || !selection?.planName || !Array.isArray(pricingData)) return null;
 
-function matchesSearchQuery(row, searchableKeys, query) {
-    return searchableKeys.some((key) => {
-        const value = String(row[key] ?? '').toLowerCase();
-        return value.includes(query);
-    });
-}
+    const serviceName = selection.serviceName.trim().toLowerCase();
+    const planName = selection.planName.trim().toLowerCase();
+    const planType = selection.planType?.trim().toLowerCase();
 
-function deduplicateRows(data) {
-    const seen = new Set();
-    return data.filter((row) => {
-        const key = `${row.country_name ?? ''}||${row.prefix ?? ''}||${row.country_prefix ?? ''}`;
-        if (seen.has(key)) return false;
-        seen.add(key);
-        return true;
-    });
-}
-
-function filterRowsBySearch(data, columns, searchTerm) {
-    const deduped = deduplicateRows(data);
-    if (!searchTerm?.trim() || !deduped?.length) {
-        return deduped;
-    }
-
-    const query = searchTerm.trim().toLowerCase();
-    const searchableKeys = getSearchableKeys(columns);
-
-    if (searchableKeys.length === 0) {
-        return deduped;
-    }
-
-    return deduped.filter((row) => matchesSearchQuery(row, searchableKeys, query));
-}
-
-function extractAllDialPlans(pricingData) {
-    const seen = new Set();
-    const result = [];
     for (const plan of pricingData) {
-        const planName = plan?.name ?? plan?.slug ?? '';
+        if (plan?.name?.trim().toLowerCase() !== planName) continue;
+        if (planType && plan?.type?.trim().toLowerCase() !== planType) continue;
+
         for (const service of plan?.services ?? []) {
-            const dialPlan = service?.dialPlan;
-            const serviceName = service?.serviceName ?? service?.name;
-            const key = `${serviceName}||${planName}`;
-            if (serviceName && !seen.has(key) && dialPlan?.columns?.length > 0 && dialPlan?.data?.length > 0) {
-                seen.add(key);
-                result.push({ serviceName, planName, columns: dialPlan.columns, data: dialPlan.data });
+            const { serviceId, dialPlanId } = service?.dialPlan ?? {};
+            if (service?.name?.trim().toLowerCase() === serviceName && serviceId && dialPlanId) {
+                return {
+                    serviceName: service.name,
+                    planName: plan.name,
+                    serviceId,
+                    dialPlanId,
+                };
             }
         }
     }
-    return result;
+
+    return null;
 }
 
-const DialPlanTable = React.memo(function DialPlanTable({
+async function fetchDialPlanData({ serviceId, dialPlanId, currency, pageNo, search }) {
+    const params = new URLSearchParams({
+        service_id: String(serviceId),
+        dial_plan_id: String(dialPlanId),
+        currency: String(currency),
+        page_no: String(pageNo),
+        per_page: String(DIAL_PLAN_PER_PAGE),
+    });
+    if (search) params.set('search', search);
+
+    const res = await fetch(`/api/pricing/fetchDialPlanInfo?${params}`);
+    const json = await res.json();
+    if (!res.ok || json.hasError) throw json;
+    return json;
+}
+
+function getDialPlanErrorMessage(err) {
+    if (err?.message) return err.message;
+    return Object.values(err?.errors ?? {}).flat()[0];
+}
+
+function formatCellValue(col, row, currency) {
+    if (col.key === 'country_name' && (row['prefix'] || row['country_prefix'])) {
+        return `${row[col.key] ?? '-'} (${row['prefix'] ?? row['country_prefix']})`;
+    }
+    const val = row[col.key];
+    if (col.key === 'country_name' || val == null || val === '' || val === '-') return val ?? '-';
+    const num = Number(val);
+    if (!Number.isNaN(num) && currency && !col.key.toLowerCase().includes('id')) {
+        return `${val} ${currency}`;
+    }
+    return val;
+}
+
+function DialPlanTable({
     columns,
     data,
-    noResultsText,
     search,
     onSearchChange,
     searchPlaceholder,
     currency,
+    pagination,
+    onPageChange,
+    loading,
+    loaded,
 }) {
-    const hasData = data.length > 0;
     const visibleColumns = columns.filter((col) => col.key !== 'prefix' && col.key !== 'country_prefix');
     const tableRef = useRef(null);
-
-    const scrollLeft = () => tableRef.current?.scrollBy({ left: -SCROLL_DISTANCE, behavior: 'smooth' });
-    const scrollRight = () => tableRef.current?.scrollBy({ left: SCROLL_DISTANCE, behavior: 'smooth' });
+    const { total_pages: totalPages, current_page: currentPage } = pagination ?? {};
+    const colSpan = visibleColumns.length || 1;
 
     return (
         <div className='flex flex-col gap-3'>
@@ -120,7 +106,7 @@ const DialPlanTable = React.memo(function DialPlanTable({
                 <div className='hidden sm:flex items-center gap-2'>
                     <button
                         type='button'
-                        onClick={scrollLeft}
+                        onClick={() => tableRef.current?.scrollBy({ left: -SCROLL_DISTANCE, behavior: 'smooth' })}
                         aria-label='Scroll left'
                         className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
                     >
@@ -128,7 +114,7 @@ const DialPlanTable = React.memo(function DialPlanTable({
                     </button>
                     <button
                         type='button'
-                        onClick={scrollRight}
+                        onClick={() => tableRef.current?.scrollBy({ left: SCROLL_DISTANCE, behavior: 'smooth' })}
                         aria-label='Scroll right'
                         className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
                     >
@@ -148,19 +134,24 @@ const DialPlanTable = React.memo(function DialPlanTable({
                                             colIndex === 0 ? 'min-w-[140px] sticky left-0 bg-slate-50 z-40' : ''
                                         }`}
                                     >
-                                        {column?.label}
+                                        {column.label}
                                     </th>
                                 ))}
                             </tr>
                         </thead>
                         <tbody>
-                            {hasData ? (
+                            {loading ? (
+                                <tr>
+                                    <td colSpan={colSpan} className='px-5 py-8 text-center text-sm text-slate-400'>
+                                        Loading...
+                                    </td>
+                                </tr>
+                            ) : data.length > 0 ? (
                                 data.map((row, index) => {
-                                    const rowKey = `row-${index}`;
                                     const rowBg = index % 2 === 0 ? 'bg-white' : 'bg-slate-50';
                                     return (
                                         <tr
-                                            key={rowKey}
+                                            key={`row-${index}`}
                                             className={`border-b border-slate-100 last:border-b-0 ${rowBg}`}
                                         >
                                             {visibleColumns.map((col, colIndex) => (
@@ -172,114 +163,149 @@ const DialPlanTable = React.memo(function DialPlanTable({
                                                             : ''
                                                     }`}
                                                 >
-                                                    {col.key === 'country_name' &&
-                                                    (row['prefix'] || row['country_prefix'])
-                                                        ? `${row[col.key] ?? '-'} (${row['prefix'] ?? row['country_prefix']})`
-                                                        : (() => {
-                                                              const val = row[col.key];
-                                                              if (
-                                                                  col.key === 'country_name' ||
-                                                                  val == null ||
-                                                                  val === '' ||
-                                                                  val === '-'
-                                                              )
-                                                                  return val ?? '-';
-                                                              const num = Number(val);
-                                                              const isIdCol = col.key.toLowerCase().includes('id');
-                                                              return !Number.isNaN(num) && currency && !isIdCol
-                                                                  ? `${val} ${currency}`
-                                                                  : val;
-                                                          })()}
+                                                    {formatCellValue(col, row, currency)}
                                                 </td>
                                             ))}
                                         </tr>
                                     );
                                 })
-                            ) : (
+                            ) : loaded ? (
                                 <tr>
-                                    <td
-                                        colSpan={visibleColumns.length}
-                                        className='px-5 py-8 text-center text-sm text-slate-400'
-                                    >
-                                        {noResultsText}
+                                    <td colSpan={colSpan} className='px-5 py-8 text-center text-sm text-slate-400'>
+                                        No data available
                                     </td>
                                 </tr>
-                            )}
+                            ) : null}
                         </tbody>
                     </table>
                 </div>
             </div>
+            {totalPages > 1 && (
+                <div className='flex items-center justify-center gap-3'>
+                    <button
+                        type='button'
+                        onClick={() => onPageChange(currentPage - 1)}
+                        disabled={currentPage <= 1 || loading}
+                        className='flex items-center gap-1 px-3 py-2 rounded border border-slate-200 text-sm text-slate-600 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed'
+                        aria-label='Previous page'
+                    >
+                        <MdChevronLeft size={18} />
+                        Previous
+                    </button>
+                    <span className='text-sm text-slate-500'>
+                        Page {currentPage} of {totalPages}
+                    </span>
+                    <button
+                        type='button'
+                        onClick={() => onPageChange(currentPage + 1)}
+                        disabled={currentPage >= totalPages || loading}
+                        className='flex items-center gap-1 px-3 py-2 rounded border border-slate-200 text-sm text-slate-600 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed'
+                        aria-label='Next page'
+                    >
+                        Next
+                        <MdChevronRight size={18} />
+                    </button>
+                </div>
+            )}
         </div>
     );
-});
+}
 
-export default function DialPlan({ pricingData, selectedServiceName, selectedPlanName, pageData, currency }) {
+export default function DialPlan({ pricingData, selection, pageData, currency }) {
     const [search, setSearch] = useState('');
-    const debouncedSearch = useDebouncedValue(search, DEBOUNCE_DELAY);
+    const [searchQuery, setSearchQuery] = useState('');
+    const [pageNo, setPageNo] = useState(1);
+    const [columns, setColumns] = useState(EMPTY_ARRAY);
+    const [data, setData] = useState(EMPTY_ARRAY);
+    const [pagination, setPagination] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [loaded, setLoaded] = useState(false);
 
-    const dialPlans = useMemo(() => {
-        if (!Array.isArray(pricingData) || pricingData.length === 0) return EMPTY_ARRAY;
-        return extractAllDialPlans(pricingData);
-    }, [pricingData]);
+    const activePlan = useMemo(() => findActivePlan(pricingData, selection), [pricingData, selection]);
 
-    const searchTerm = search.trim() === '' ? '' : debouncedSearch;
-
-    const filteredDataByPlan = useMemo(() => {
-        return dialPlans.map((dialPlan) => filterRowsBySearch(dialPlan.data, dialPlan.columns, searchTerm));
-    }, [dialPlans, searchTerm]);
+    useEffect(() => {
+        if (search.trim() === '') {
+            setSearchQuery('');
+            return;
+        }
+        const timeout = setTimeout(() => setSearchQuery(search.trim()), DEBOUNCE_DELAY);
+        return () => clearTimeout(timeout);
+    }, [search]);
 
     useEffect(() => {
         setSearch('');
-    }, [selectedServiceName]);
+        setSearchQuery('');
+        setPageNo(1);
+        setLoaded(false);
+    }, [selection]);
 
-    const handleSearchChange = useCallback((e) => {
-        setSearch(e.target.value);
-    }, []);
+    useEffect(() => {
+        setPageNo(1);
+        setLoaded(false);
+    }, [searchQuery]);
 
-    if (dialPlans.length === 0) {
-        return null;
-    }
+    useEffect(() => {
+        if (!activePlan?.serviceId || !activePlan?.dialPlanId || !currency) return;
 
-    const normalizedSelected = selectedServiceName?.trim().toLowerCase();
-    const normalizedPlan = selectedPlanName?.trim().toLowerCase();
-    const activeIndex = normalizedSelected
-        ? dialPlans.findIndex((d) => {
-              const nameMatch = d.serviceName?.trim().toLowerCase() === normalizedSelected;
-              if (!normalizedPlan) return nameMatch;
-              return nameMatch && d.planName?.trim().toLowerCase() === normalizedPlan;
-          })
-        : -1;
-    const defaultIndex = dialPlans.length - 1;
-    const activePlan = dialPlans[activeIndex >= 0 ? activeIndex : defaultIndex];
-    const activeData = filteredDataByPlan[activeIndex >= 0 ? activeIndex : defaultIndex] ?? [];
+        let cancelled = false;
+        setLoading(true);
+
+        fetchDialPlanData({
+            serviceId: activePlan.serviceId,
+            dialPlanId: activePlan.dialPlanId,
+            currency,
+            pageNo,
+            search: searchQuery,
+        })
+            .then((json) => {
+                if (cancelled) return;
+                const normalized = normalizeDialPlanInfo(json.data);
+                setColumns(normalized.columns);
+                setData(normalized.data);
+                setPagination(json.data.pagination);
+                setLoaded(true);
+            })
+            .catch((err) => {
+                if (!cancelled) toast.error(getDialPlanErrorMessage(err));
+            })
+            .finally(() => {
+                if (!cancelled) setLoading(false);
+            });
+
+        return () => {
+            cancelled = true;
+        };
+    }, [activePlan?.serviceId, activePlan?.dialPlanId, currency, pageNo, searchQuery]);
+
+    const handleSearchChange = useCallback((e) => setSearch(e.target.value), []);
+
+    if (!hasDialPlanServices(pricingData) || !activePlan) return null;
 
     return (
         <section className='w-full py-4 flex flex-col gap-4'>
-            <div className='flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
-                <div>
-                    <h3 className='text-2xl font-semibold text-slate-900'>{pageData?.dialplanRatesHeading}</h3>
-                    {activePlan?.serviceName && (
-                        <p className='text-sm text-slate-500 mt-1'>
-                            {pageData?.showingRatesFor}{' '}
-                            <span className='font-semibold text-slate-700'>{activePlan.serviceName}</span>
-                            {activePlan?.planName && (
-                                <>
-                                    <span className='font-semibold text-slate-700'> ({activePlan.planName})</span>
-                                </>
-                            )}
-                        </p>
-                    )}
-                </div>
+            <div>
+                <h3 className='text-2xl font-semibold text-slate-900'>{pageData?.dialplanRatesHeading}</h3>
+                {activePlan?.serviceName && (
+                    <p className='text-sm text-slate-500 mt-1'>
+                        {pageData?.showingRatesFor}{' '}
+                        <span className='font-semibold text-slate-700'>{activePlan.serviceName}</span>
+                        {activePlan.planName && (
+                            <span className='font-semibold text-slate-700'> ({activePlan.planName})</span>
+                        )}
+                    </p>
+                )}
             </div>
-
             <DialPlanTable
-                columns={activePlan.columns}
-                data={activeData}
-                noResultsText={pageData?.noResults}
+                columns={columns}
+                data={data}
                 search={search}
                 onSearchChange={handleSearchChange}
                 searchPlaceholder={pageData?.searchPlaceholder}
                 currency={currency}
+                pagination={pagination}
+                onPageChange={setPageNo}
+                loading={loading}
+                loaded={loaded}
             />
         </section>
     );
