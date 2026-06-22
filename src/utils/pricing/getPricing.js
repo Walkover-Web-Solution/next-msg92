@@ -45,7 +45,6 @@ export default async function getPricing2(countryCode, page) {
 async function getSubscriptions(currency, msId) {
     const params = {
         ms_id: msId,
-        dial_plan_info: true,
         currency,
     };
 
