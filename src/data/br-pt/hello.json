@@ -194,6 +194,23 @@
             }
         }
     },
+    "G2Badges": {
+        "heading": "Amado pelos clientes, apoiado por especialistas",
+        "badges": [
+            {
+                "src": "/assets/hello-br/g2-badges/WhatsAppMarketing_Leader_Leader.svg",
+                "alt": "G2 Leader — Marketing no WhatsApp"
+            },
+            {
+                "src": "/assets/hello-br/g2-badges/CommunicationPlatformasaService(CPaaS)_BestResults_Total.svg",
+                "alt": "G2 Melhores Resultados — Plataforma de Comunicação como Serviço"
+            },
+            {
+                "src": "/assets/hello-br/g2-badges/CommunicationPlatformasaService(CPaaS)_HighPerformer_HighPerformer.svg",
+                "alt": "G2 Alto Desempenho — Plataforma de Comunicação como Serviço"
+            }
+        ]
+    },
     "Faqs": {
         "label": "FAQ",
         "heading": "Perguntas frequentes",
