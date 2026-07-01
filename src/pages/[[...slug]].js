@@ -55,6 +55,14 @@ import FeatureSliderComp from '@/components/FeatureSliderComp/FeatureSliderComp'
 
 // New Components
 import Hero from '@/components/IntegrationComp/Hero/Hero';
+import CheckoutHero from '@/components/IntegrationComp/CheckoutHero/CheckoutHero';
+import CheckoutStats from '@/components/IntegrationComp/CheckoutStats/CheckoutStats';
+import CheckoutProblem from '@/components/IntegrationComp/CheckoutProblem/CheckoutProblem';
+import CheckoutVerification from '@/components/IntegrationComp/CheckoutVerification/CheckoutVerification';
+import CheckoutHowItWorks from '@/components/IntegrationComp/CheckoutHowItWorks/CheckoutHowItWorks';
+import CheckoutTestimonials from '@/components/IntegrationComp/CheckoutTestimonials/CheckoutTestimonials';
+import CheckoutFaqs from '@/components/IntegrationComp/CheckoutFaqs/CheckoutFaqs';
+import CheckoutCTA from '@/components/IntegrationComp/CheckoutCTA/CheckoutCTA';
 import ProblemSolution from '@/components/IntegrationComp/ProblemSolution/ProblemSolution';
 import Benefits from '@/components/IntegrationComp/Benefits/Benefits';
 import IntegrationFeatures from '@/components/IntegrationComp/Features/Features';
@@ -119,6 +127,14 @@ const Components = {
     StartupFormsComp,
     IntegrationAppComp,
     Hero,
+    CheckoutHero,
+    CheckoutStats,
+    CheckoutProblem,
+    CheckoutVerification,
+    CheckoutHowItWorks,
+    CheckoutTestimonials,
+    CheckoutFaqs,
+    CheckoutCTA,
     ProblemSolution,
     Benefits,
     Features: IntegrationFeatures,

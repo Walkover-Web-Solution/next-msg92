@@ -10,6 +10,16 @@ module.exports = {
     theme: {
         extend: {
             colors: {
+                shopifyCheckout: {
+                    cream: '#F1EDE5',
+                    heading: '#191916',
+                    accent: '#437060',
+                    body: '#88867E',
+                    note: '#B4B2AC',
+                    primary: '#2C4A3C',
+                    primaryFg: '#F1EDE5',
+                    placeholder: '#D9D6CE',
+                },
                 shopifyBanner: {
                     content: '#F0F7E8',
                     visual: '#0A5840',
@@ -26,6 +36,7 @@ module.exports = {
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
                 'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+                'checkout-hero-blend': 'linear-gradient(180deg, #FFFFFF 0%, #F1EDE5 10rem)',
             },
         },
     },

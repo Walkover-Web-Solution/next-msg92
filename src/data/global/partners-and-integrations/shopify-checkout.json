@@ -1,0 +1,316 @@
+{
+    "HeadComp": {
+        "title": "Shopify Checkout App | MSG91",
+        "description": "Five verification channels, Partial COD, and one-tap repeat checkout — built to convert more and ship less back, at a price the whole industry struggles to match."
+    },
+    "CheckoutHero": {
+        "theme": "checkout",
+        "eyebrow": "Shopify Checkout App",
+        "heading_segments": [
+            {
+                "text": "The ",
+                "accent": false
+            },
+            {
+                "text": "complete",
+                "accent": true
+            },
+            {
+                "text": " checkout for Shopify.",
+                "accent": false
+            }
+        ],
+        "subheading_segments": [
+            {
+                "text": "Five verification channels, Partial COD, and one-tap repeat checkout — ",
+                "bold": false
+            },
+            {
+                "text": "built to convert more and ship less back",
+                "bold": true
+            },
+            {
+                "text": ", at a price the whole industry struggles to match.",
+                "bold": false
+            }
+        ],
+        "buttons": [
+            {
+                "label": "Get Started Free →",
+                "url": "https://apps.shopify.com/msg91",
+                "variant": "primary"
+            },
+            {
+                "label": "Book a Demo",
+                "url": "https://calendly.com/kiwi-msg91/shopify-meeting",
+                "variant": "secondary"
+            }
+        ],
+        "note_segments": [
+            {
+                "text": "Free to install",
+                "accent": true
+            },
+            {
+                "text": " · Pay only per message · No monthly minimums",
+                "accent": false
+            }
+        ],
+        "badges": [
+            "5 verification channels",
+            "190+ countries",
+            "Live in 20 minutes",
+            "Up to 30% less RTO"
+        ]
+    },
+    "CheckoutStats": {
+        "theme": "checkout",
+        "items": [
+            {
+                "value": "30%",
+                "label": "Average reduction in return-to-origin rates"
+            },
+            {
+                "value": "5",
+                "label": "Verification channels — SMS, WhatsApp, Email, Voice, Truecaller"
+            },
+            {
+                "value": "190+",
+                "label": "Countries with OTP delivery coverage"
+            },
+            {
+                "value": "4x",
+                "label": "Lower COD rejection with partial payment upfront"
+            }
+        ]
+    },
+    "CheckoutProblem": {
+        "eyebrow": "The Problem",
+        "heading_segments": [
+            {
+                "text": "You don't have a sales problem. ",
+                "accent": false
+            },
+            {
+                "text": "You have a checkout problem.",
+                "accent": true,
+                "block": true
+            }
+        ],
+        "subheading": "Every checkout friction point bleeds revenue. For most Shopify stores selling in India, these four land hardest:",
+        "items": [
+            {
+                "number": "01",
+                "title": "Fake COD orders bleed margins",
+                "description": "15-30% of COD orders never get accepted. You absorb the shipping cost, packaging, and blocked inventory — every single time.",
+                "metric": "Up to 30% of revenue at risk"
+            },
+            {
+                "number": "02",
+                "title": "Carts abandoned at the final step",
+                "description": "A slow, form-heavy checkout turns a ready buyer into a bounce. Most stores lose the customer three fields before the payment page.",
+                "metric": "70% average cart abandonment rate"
+            },
+            {
+                "number": "03",
+                "title": "Returning customers start over every time",
+                "description": "Loyal customers re-enter their name, address, and phone number with every order. The friction is invisible — and it's costing repeat sales.",
+                "metric": "Lower LTV from friction"
+            },
+            {
+                "number": "04",
+                "title": "Too many tools, too much complexity",
+                "description": "Verification, COD management, payments, WhatsApp, chatbots — most stores patch this together with 5-8 separate tools at 2-3x the cost.",
+                "metric": "2-3x higher operational cost"
+            }
+        ]
+    },
+    "CheckoutVerification": {
+        "eyebrow": "Verification",
+        "heading_segments": [
+            {
+                "text": "Five ways to verify.",
+                "accent": false,
+                "block": true
+            },
+            {
+                "text": "Zero reasons to drop off.",
+                "accent": true
+            }
+        ],
+        "intro": "Every channel is a safety net. SMS misses? WhatsApp catches it. WhatsApp down? Voice calls them. Speed is everything? Truecaller confirms in one tap — no code, no wait.",
+        "items": [
+            {
+                "icon": "MdSms",
+                "title": "SMS OTP",
+                "description": "Works on every phone. No app needed, no data required — the universal fallback.",
+                "tag": "Universal"
+            },
+            {
+                "icon": "MdChat",
+                "title": "WhatsApp OTP",
+                "description": "98% open rate in minutes. Familiar interface customers already trust.",
+                "tag": "Highest open rate"
+            },
+            {
+                "icon": "MdEmail",
+                "title": "Email OTP",
+                "description": "Backup when SMS fails. Reach customers on any device, anywhere.",
+                "tag": "Backup channel"
+            },
+            {
+                "icon": "MdCall",
+                "title": "Voice OTP",
+                "description": "Automated call reads the code aloud. Perfect when typing isn't an option.",
+                "tag": "Last resort"
+            },
+            {
+                "icon": "truecaller",
+                "title": "Truecaller",
+                "description": "One-tap verification on 330M+ devices. No code entry, no wait time.",
+                "tag": "Fastest of all"
+            }
+        ]
+    },
+    "CheckoutHowItWorks": {
+        "eyebrow": "How it works",
+        "heading_segments": [
+            {
+                "text": "Up and running in ",
+                "accent": false
+            },
+            {
+                "text": "under five minutes.",
+                "accent": true
+            }
+        ],
+        "steps": [
+            {
+                "step": 1,
+                "title": "Install from Shopify App Store",
+                "description": "One click. No developer needed. The app installs as a native checkout extension — your theme is untouched."
+            },
+            {
+                "step": 2,
+                "title": "Connect your MSG91 account",
+                "description": "Already on MSG91? Link it in seconds. New here? Sign up free — your verification credits are ready to use immediately."
+            },
+            {
+                "step": 3,
+                "title": "Configure your rules",
+                "description": "Enable channels, set partial COD amounts, activate Truecaller, and arrange your fallback order — all from a no-code dashboard."
+            },
+            {
+                "step": 4,
+                "title": "Watch returns fall",
+                "description": "Every order through your new checkout is verified. Your team ships with confidence. RTO falls. Revenue sticks."
+            }
+        ]
+    },
+    "CheckoutTestimonials": {
+        "eyebrow": "From stores using it",
+        "heading_segments": [
+            {
+                "text": "Numbers don't lie.",
+                "accent": false,
+                "block": true
+            },
+            {
+                "text": "Neither do our customers.",
+                "accent": true
+            }
+        ],
+        "items": [
+            {
+                "quote": "We were writing off 25% of our COD orders every month. Partial COD with OTP cut that to under 6% in the first week alone.",
+                "stat": "↓ 76%",
+                "stat_label": "COD rejection reduction in week one",
+                "name": "Priya Mehta",
+                "role": "Owner, Silk Lane Apparel · Surat, India"
+            },
+            {
+                "quote": "Truecaller verify changed how our customers experience checkout. One tap, done. Mobile conversions went up 22% in the first month.",
+                "stat": "+22%",
+                "stat_label": "Mobile checkout conversion lift",
+                "name": "Karan Sinha",
+                "role": "Co-founder, NestGear · Bengaluru, India"
+            },
+            {
+                "quote": "Every other checkout tool wanted a monthly fee before we'd placed 100 orders. MSG91 charges only when we do. That's the only fair model.",
+                "stat": "$0",
+                "stat_label": "Fixed monthly cost",
+                "name": "Fatima Al-Rashidi",
+                "role": "Founder, Saffron House · Dubai, UAE"
+            }
+        ]
+    },
+    "CheckoutFaqs": {
+        "eyebrow": "FAQ",
+        "heading_segments": [
+            {
+                "text": "Questions ",
+                "accent": false
+            },
+            {
+                "text": "we get asked a lot.",
+                "accent": true
+            }
+        ],
+        "items": [
+            {
+                "question": "Is it really free to install?",
+                "answer": "Yes. The app is free to install from the Shopify App Store with no monthly subscription. You only pay per verification message sent — SMS, WhatsApp, email, voice, or Truecaller — at MSG91's standard rates."
+            },
+            {
+                "question": "How does Truecaller verification work?",
+                "answer": "When a customer enters their phone number at checkout, Truecaller verifies their identity in one tap — no OTP code to type. It works on 330M+ devices where Truecaller is installed, making it the fastest verification channel available."
+            },
+            {
+                "question": "What happens if SMS OTP fails to deliver?",
+                "answer": "MSG91 automatically falls back to your next configured channel — WhatsApp, email, or voice call — so customers aren't stuck waiting. You set the fallback order in the dashboard with no code required."
+            },
+            {
+                "question": "How does partial COD work globally?",
+                "answer": "You set a partial payment amount — a percentage or fixed fee — that customers pay upfront before the COD order is confirmed. This filters out fake orders while keeping COD accessible for genuine buyers, in any market where your store operates."
+            },
+            {
+                "question": "Does it work for stores outside India?",
+                "answer": "Yes. MSG91 delivers OTPs in 190+ countries via SMS, WhatsApp, email, and voice. Truecaller verification is available where Truecaller has coverage. Partial COD and checkout rules work for any Shopify store regardless of location."
+            },
+            {
+                "question": "How long does setup take?",
+                "answer": "Most stores are live in under five minutes. Install from the Shopify App Store, connect your MSG91 account, configure your verification channels and COD rules — and you're done. No developer needed."
+            },
+            {
+                "question": "Can I control which channels activate and when?",
+                "answer": "Fully. From the no-code dashboard you enable or disable each channel, set partial COD amounts, activate Truecaller, and define the exact fallback order — SMS first, then WhatsApp, then voice, for example."
+            }
+        ]
+    },
+    "CheckoutCTA": {
+        "heading_segments": [
+            {
+                "text": "Your next order shouldn't come back.",
+                "accent": false,
+                "block": true
+            },
+            {
+                "text": "Start free today.",
+                "accent": true
+            }
+        ],
+        "subheading": "Join thousands of Shopify stores across 190+ countries cutting returns, verifying buyers, and shipping with confidence — at a price that makes every competitor uncomfortable.",
+        "buttons": [
+            {
+                "label": "Get Started Free →",
+                "url": "https://apps.shopify.com/msg91",
+                "variant": "primary"
+            },
+            {
+                "label": "Book a Demo",
+                "url": "https://calendly.com/kiwi-msg91/shopify-meeting",
+                "variant": "secondary"
+            }
+        ]
+    }
+}
