@@ -237,19 +237,24 @@ export default function StepThree({ data }) {
             <div className='cont gap-2 max-w-[820px]'>
                 <div className='cont gap-3'>
                     <div className='cont gap-1'>
-                        <button
-                            className='flex items-center gap-2 cursor-pointer w-fit'
-                            onClick={() => setIsAddressOpen(!isAddressOpen)}
-                            aria-expanded={isAddressOpen}
-                            aria-label='Toggle address section'
-                        >
-                            <h2 className='text-lg font-medium text-gray-700'>Address (Optional)</h2>
-                            <MdOutlineKeyboardArrowDown
-                                className={`text-gray-500 text-2xl transition-all duration-100 ${
-                                    isAddressOpen ? 'rotate-180' : ''
-                                }`}
-                            />
-                        </button>
+                        <div className='flex flex-col gap-0'>
+                            <button
+                                className='flex items-center gap-2 cursor-pointer w-fit'
+                                onClick={() => setIsAddressOpen(!isAddressOpen)}
+                                aria-expanded={isAddressOpen}
+                                aria-label='Toggle company details section'
+                            >
+                                <h2 className='text-lg font-medium text-gray-700 m-0'>Company details (Optional)</h2>
+                                <MdOutlineKeyboardArrowDown
+                                    className={`text-gray-500 text-2xl transition-all duration-100 ${
+                                        isAddressOpen ? 'rotate-180' : ''
+                                    }`}
+                                />
+                            </button>
+                            <p className='text-sm text-gray-500 m-0 leading-tight'>
+                                (This info will be used for billing purpose)
+                            </p>
+                        </div>
                         <div className={`flex-col gap-3 overflow-hidden ${isAddressOpen ? 'flex' : 'hidden'}`}>
                             <div className='flex flex-col gap-1 w-full'>
                                 <label className='text-sm text-gray-700'>House / Building / Apartment</label>

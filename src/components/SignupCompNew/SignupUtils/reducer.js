@@ -1,5 +1,32 @@
 import { initialState } from './constants';
 
+function getGithubResetFields() {
+    return {
+        signupByGitHub: false,
+        githubCode: null,
+        githubState: null,
+        emailVerified: false,
+    };
+}
+
+function getStepTwoResetFields(state) {
+    if (state.mobileOtpVerified) {
+        return {};
+    }
+
+    return {
+        userDetails: { firstName: '', lastName: '' },
+        mobileIdentifier: null,
+        mobileRequestId: null,
+        mobileToken: null,
+        mobileOtpVerified: false,
+        companyDetails: {
+            ...state.companyDetails,
+            companyName: null,
+        },
+    };
+}
+
 export function reducer(state, action) {
     switch (action.type) {
         case 'SET_INITIAL_STATES':
@@ -30,14 +57,20 @@ export function reducer(state, action) {
         case 'CLEAR_ERROR':
             return { ...state, error: null };
 
-        case 'SET_EMAIL_OTP_SUCCESS':
+        case 'SET_EMAIL_OTP_SUCCESS': {
+            const normalizedCurrent = state.emailIdentifier?.trim().toLowerCase();
+            const normalizedNext = action.payload.identifier?.trim().toLowerCase();
+            const emailChanged = normalizedCurrent && normalizedNext !== normalizedCurrent;
+
             return {
                 ...state,
+                ...(emailChanged ? getStepTwoResetFields(state) : {}),
                 emailRequestId: action.payload.requestId,
                 emailIdentifier: action.payload.identifier,
                 isLoading: false,
                 otpSent: true,
             };
+        }
 
         case 'SET_EMAIL_VERIFICATION_SUCCESS':
             return {
@@ -60,9 +93,10 @@ export function reducer(state, action) {
         case 'SET_EMAIL_EDIT_FROM_VERIFIED':
             return {
                 ...state,
+                ...getStepTwoResetFields(state),
+                ...getGithubResetFields(),
                 emailRequestId: null,
                 emailToken: null,
-                emailVerified: false,
                 isLoading: false,
                 otpSent: false,
             };
@@ -224,9 +258,7 @@ export function reducer(state, action) {
         case 'RESET_GITHUB_SIGNUP':
             return {
                 ...state,
-                signupByGitHub: false,
-                githubCode: null,
-                githubState: null,
+                ...getGithubResetFields(),
             };
         case 'RESET':
             return initialState;
