@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { setSharedCookie } from '@/utils/utilis';
+import { clearLegacySharedCookies, persistAbSignupFlag, refreshMsg91QueryCookieFromRaw } from '@/utils/utilis';
 import checkSession, {
     otpWidgetSetup,
     SignupProvider,
@@ -22,10 +22,12 @@ function SignupSteps({ pageInfo, data, isAbSignup }) {
 
     useEffect(() => {
         if (typeof window === 'undefined') return;
-        const sharedParams = new URLSearchParams(window.location.search);
-        sharedParams.forEach((value, key) => {
-            setSharedCookie(key, value, 1);
-        });
+        clearLegacySharedCookies();
+        refreshMsg91QueryCookieFromRaw(window.location.search);
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('absignup') === 'a') {
+            persistAbSignupFlag(7);
+        }
     }, [router.asPath]);
 
     useEffect(() => {

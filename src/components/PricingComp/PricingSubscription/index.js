@@ -1,8 +1,10 @@
 import { useState, useRef, useCallback, useMemo, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import ConnectWithTeam from '../ConnectWithTeam';
 import FaqsComp from '@/components/FaqsComp/FaqsComp';
 import GetCurrencySymbol from '@/utils/pricing/getCurrencySymbol';
-import DialPlan from '../DialPlan';
+
+const DialPlan = dynamic(() => import('../DialPlan'), { ssr: false });
 import ComparePlans from '../ComparePlans';
 import CalculatePricingModal from './CalculatePricingModal';
 import PricingCards, { FEATURED_PLAN_MAP } from './PricingCards';
@@ -17,13 +19,10 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
             (p) => p?.name?.toLowerCase() === featuredPlanName.toLowerCase() && p?.type === 'Monthly'
         );
         if (!featuredPlan) return null;
-        const firstDialPlanService = (featuredPlan?.services ?? []).find(
-            (s) => s?.dialPlan != null && s.dialPlan?.data?.length > 0
-        );
+        const firstDialPlanService = (featuredPlan?.services ?? []).find((s) => s?.dialPlan != null);
         if (!firstDialPlanService) return null;
-        return { serviceName: firstDialPlanService.name, planName: featuredPlan.name };
+        return { serviceName: firstDialPlanService.name, planName: featuredPlan.name, planType: featuredPlan.type };
     });
-    const [showDialPlan, setShowDialPlan] = useState(true);
     const dialPlanRef = useRef(null);
     const calculateModalRef = useRef(null);
     const pricingWrapperRef = useRef(null);
@@ -61,25 +60,12 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
     }, []);
 
     const onViewRateCard = useCallback((selection) => {
-        setSelectedServiceName(selection || null);
-        setShowDialPlan(true);
+        setSelectedServiceName(selection ?? null);
 
         setTimeout(() => {
             dialPlanRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 150);
     }, []);
-
-    // Normalize pricingData from handlePlanStructure shape to DialPlan-compatible shape
-    const dialPlanData = Array.isArray(pricingData)
-        ? pricingData.map((plan) => ({
-              ...plan,
-              slug: plan?.name,
-              services: (plan?.services ?? []).map((s) => ({
-                  ...s,
-                  serviceName: s?.name,
-              })),
-          }))
-        : [];
 
     const onOpenCalculateModal = useCallback(() => {
         calculateModalRef.current?.showModal();
@@ -93,12 +79,7 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
         if (!Array.isArray(pricingData)) return false;
         return pricingData
             .filter((p) => p?.type === tabtype)
-            .some((plan) =>
-                (plan?.services ?? []).some((s) => {
-                    const hasDialPlan = s?.dialPlan != null && s.dialPlan?.data?.length > 0;
-                    return !hasDialPlan;
-                })
-            );
+            .some((plan) => (plan?.services ?? []).some((s) => s?.dialPlan == null));
     }, [pricingData, tabtype]);
 
     return (
@@ -120,23 +101,14 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                     locale={locale}
                     pageData={pageData?.comparePlans}
                 />
-                {showDialPlan && (
-                    <div ref={dialPlanRef}>
-                        <DialPlan
-                            pricingData={dialPlanData}
-                            selectedServiceName={
-                                typeof selectedServiceName === 'object'
-                                    ? selectedServiceName?.serviceName
-                                    : selectedServiceName
-                            }
-                            selectedPlanName={
-                                typeof selectedServiceName === 'object' ? selectedServiceName?.planName : null
-                            }
-                            pageData={pageData?.dialPlan}
-                            currency={currency}
-                        />
-                    </div>
-                )}
+                <div ref={dialPlanRef}>
+                    <DialPlan
+                        pricingData={pricingData}
+                        selection={selectedServiceName}
+                        pageData={pageData?.dialPlan}
+                        currency={currency}
+                    />
+                </div>
                 {pageData?.connectComp && (
                     <ConnectWithTeam
                         product={pageInfo?.product}

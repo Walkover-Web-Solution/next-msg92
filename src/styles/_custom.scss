@@ -1,5 +1,5 @@
 .container {
-    @apply mx-auto px-3 md:px-2 !w-full;
+    @apply mx-auto px-4 md:px-10 !w-full;
 }
 body {
     overflow-x: hidden;
@@ -334,4 +334,53 @@ $button-transition-timing: 100ms;
 
 .input, select{
     @apply focus:!outline-none;
+}
+
+#contactChatWidget {
+    position: relative;
+
+    #hello-chatbot-iframe-container {
+        z-index: 1 !important;
+
+        &.hello-full-screen-interfaceEmbed {
+            position: absolute !important;
+            inset: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            z-index: 1 !important;
+        }
+    }
+}
+
+.contact-chat-widget {
+    width: 100%;
+
+    > * {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    iframe {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    @media (max-width: 1023px) {
+        position: relative;
+        overflow: hidden;
+        contain: layout paint;
+
+        > * {
+            position: relative !important;
+            inset: auto !important;
+            height: 100% !important;
+            max-height: 500px !important;
+        }
+
+        iframe {
+            height: 100% !important;
+            max-height: 500px !important;
+        }
+    }
 }

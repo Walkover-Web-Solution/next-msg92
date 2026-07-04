@@ -1,12 +1,5 @@
 export default function handlePlanStructure(plans, currency) {
-    const sourcePlans =
-        currency === 'AED'
-            ? (plans || []).filter(
-                  (plan) => Array.isArray(plan?.valid_currencies) && plan.valid_currencies.includes('AED')
-              )
-            : plans || [];
-
-    const structuredPlans = sourcePlans.flatMap((plan) =>
+    const structuredPlans = (plans || []).flatMap((plan) =>
         (plan?.plan_amounts || [])
             .filter((plan_amount) => plan_amount?.currency?.short_name === currency)
             .map((plan_amount) => ({
@@ -34,13 +27,14 @@ function handleServices(services, currency) {
     return services.map((service) => {
         const allRates = service?.service_credit?.service_credit_rates ?? [];
         const ratesForCurrency = allRates.filter((r) => r?.currency?.short_name === currency);
-        const rate = ratesForCurrency[0];
-        const ratesWithDialPlan = [...ratesForCurrency, ...allRates].filter((r) => r?.dial_plan_info?.data?.length);
-        const rateWithDialPlan = ratesWithDialPlan.sort(
-            (a, b) => (b.dial_plan_info?.data?.length ?? 0) - (a.dial_plan_info?.data?.length ?? 0)
-        )[0];
-        const dialPlan =
-            rateWithDialPlan?.dial_plan_info != null ? normalizeDialPlanInfo(rateWithDialPlan.dial_plan_info) : null;
+        const rateWithDialPlan = ratesForCurrency.find((r) => r?.dial_plan_id);
+        const rate = rateWithDialPlan ?? ratesForCurrency[0];
+        const dialPlan = rateWithDialPlan?.dial_plan_id
+            ? {
+                  serviceId: service?.service_credit?.service?.id,
+                  dialPlanId: rateWithDialPlan.dial_plan_id,
+              }
+            : null;
         return {
             name: service?.service_credit?.service?.name || null,
             freeCredit: rate?.free_credits || null,
@@ -50,15 +44,4 @@ function handleServices(services, currency) {
             postPaidAllowed: rate?.postpaid_allowed ?? null,
         };
     });
-}
-
-function normalizeDialPlanInfo(dialPlanInfo) {
-    const { headers = [], data = [] } = dialPlanInfo || {};
-    return {
-        columns: headers.map((header) => ({
-            key: header.key,
-            label: header.userFriendlyName || header.key,
-        })),
-        data: data.map((row) => Object.fromEntries(Object.entries(row).map(([key, cell]) => [key, cell?.value ?? '']))),
-    };
 }

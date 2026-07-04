@@ -19,6 +19,7 @@ export default function FeatureWithBulletGroup({ data }) {
 
     return (
         <div className='container cont gap-10 md:gap-16 cont_p'>
+            {data?.heading && <h2 className='text-3xl font-bold text-center'>{data.heading}</h2>}
             {data.features.map((group, index) => {
                 return (
                     <div
@@ -83,6 +84,12 @@ export default function FeatureWithBulletGroup({ data }) {
                         {group?.lottie ? (
                             <div className={`${styles.image}`}>
                                 <LottiePlayer lottie={group?.lottie} />
+                            </div>
+                        ) : group?.video ? (
+                            <div className={styles.image}>
+                                <video className='w-full' autoPlay muted loop playsInline aria-label={group?.name}>
+                                    <source src={group.video} type='video/webm' />
+                                </video>
                             </div>
                         ) : (
                             <Image

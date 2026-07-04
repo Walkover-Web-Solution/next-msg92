@@ -4,14 +4,18 @@
         "description": "Tem dúvidas ou sugestões? Entre em contato por telefone, chat ou e-mail. Estamos aqui para ajudar você rapidamente!"
     },
     "ContactUsComp": {
-        "heading": "Contate-nos",
-        "subheading": "Escolha a melhor forma de entrar em contato, seja para dúvidas sobre vendas ou para assistência técnica.",
+        "badge": "GET IN TOUCH",
+        "heading": "How can we help you?",
+        "subheading": "Reach out to our global sales and support teams, or book a direct consultation instantly.",
         "cards": [
             {
                 "key": "sales",
-                "heading": "Vendas",
+                "heading": "Sales Team",
+                "features": [
+                    "Explore plans and pricing",
+                    "Find the right fit for your needs"
+                ],
                 "email": "sales@msg91.com",
-                "calendlyUrl": "https://calendly.com/d/csks-4j4-sy3",
                 "phone": [
                     {
                         "number": "+44 7418351106",
@@ -22,9 +26,12 @@
             },
             {
                 "key": "support",
-                "heading": "Suporte",
+                "heading": "Technical Support",
+                "features": [
+                    "Reliable assistance when you need it",
+                    "Clear answers, fewer back-and-forths"
+                ],
                 "email": "support@msg91.com",
-                "calendlyUrl": "https://calendly.com/d/y3n-29s-29h?hide_gdpr_banner=1",
                 "phone": [
                     {
                         "number": "07316914364",
@@ -32,6 +39,18 @@
                         "call": true
                     }
                 ]
+            },
+            {
+                "key": "schedule-a-meeting",
+                "heading": "Schedule a Meeting",
+                "description": "Got a question or need to talk to someone? Our assistant answers your query and books the right meeting — all in one place.",
+                "features": [
+                    "Query resolution",
+                    "Real-time slot availability",
+                    "Multilingual support"
+                ],
+                "buttonText": "Book a Slot",
+                "widgetToken": "8e51b"
             }
         ]
     }

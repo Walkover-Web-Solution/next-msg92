@@ -9,7 +9,12 @@ class githubToken extends React.Component {
     componentDidMount() {
         const url = window.location.href;
         const queryParams = getQueryParamsDeatils(url);
-        // let queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
+
+        if (queryParams?.error) {
+            window.location.href = process.env.REDIRECT_URL;
+            return;
+        }
+
         if (queryParams) {
             if (queryParams?.githublogin === 'true') {
                 let queryValue = getQueryStringFromObject(queryParams);

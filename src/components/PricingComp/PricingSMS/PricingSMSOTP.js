@@ -258,7 +258,9 @@ export default function PricingSMSOTP({ data, type, country, initialData }) {
                                 </a>
                             </div>
                         ) : (
-                            <div className='skeleton border h-[282px] bg-white p-8 w-full  rounded '></div>
+                            <div className='flex flex-col gap-4 justify-center items-center h-[282px] bg-white p-8 w-full border rounded'>
+                                <p className='text-center text-sm text-slate-400'>No pricing data available</p>
+                            </div>
                         )
                     ) : (
                         <div className='skeleton border h-[282px] bg-white p-8 w-full  rounded '></div>
