@@ -21,6 +21,7 @@ export default function StepOne() {
     const isLoading = state.isLoading;
     const otpSent = state.otpSent;
     const emailVerified = state.emailVerified;
+    const signupByGitHub = state.signupByGitHub;
     const countries = state.countries;
 
     // Get available retry channels (email usually has only one)
@@ -163,14 +164,29 @@ export default function StepOne() {
 
             {emailVerified ? (
                 <div className='cont gap-2'>
-                    <p className='text-gray-500'>Email Address</p>
-                    <div className='flex items-center gap-2 input input-bordered text-base p-3 h-fit w-full max-w-[420px] bg-success/10 border-success'>
-                        <span className='text-sm sm:text-base flex-1 truncate'>{email}</span>
-                        <span className='flex items-center gap-1 text-success text-xs sm:text-sm font-medium shrink-0'>
-                            <MdCheckCircle className='text-base sm:text-lg' aria-label='Email verified' />
-                            Verified
-                        </span>
-                    </div>
+                    {signupByGitHub ? (
+                        <div className='flex items-center gap-2 input input-bordered text-base p-3 h-fit w-full max-w-[420px] bg-success/10 border-success'>
+                            <span className='text-sm sm:text-base flex-1'>Email verified via GitHub</span>
+                            <span className='flex items-center gap-1 text-success text-xs sm:text-sm font-medium shrink-0'>
+                                <MdCheckCircle
+                                    className='text-base sm:text-lg'
+                                    aria-label='Email verified via GitHub'
+                                />
+                                Verified
+                            </span>
+                        </div>
+                    ) : (
+                        <>
+                            <p className='text-gray-500'>Email Address</p>
+                            <div className='flex items-center gap-2 input input-bordered text-base p-3 h-fit w-full max-w-[420px] bg-success/10 border-success'>
+                                <span className='text-sm sm:text-base flex-1 truncate'>{email}</span>
+                                <span className='flex items-center gap-1 text-success text-xs sm:text-sm font-medium shrink-0'>
+                                    <MdCheckCircle className='text-base sm:text-lg' aria-label='Email verified' />
+                                    Verified
+                                </span>
+                            </div>
+                        </>
+                    )}
                     <div className='flex items-center gap-3 mt-3'>
                         <button
                             onClick={handleEditVerifiedEmail}

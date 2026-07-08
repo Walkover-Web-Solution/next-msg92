@@ -39,6 +39,7 @@ export function setInitialStates(dispatch, state, urlParams) {
                 signupByGitHub,
                 githubCode: githubCode,
                 githubState: githubState,
+                emailVerified: signupByGitHub && githubCode ? true : state.emailVerified,
                 source: sourceValue,
                 utm_term: urlParams?.utm_term,
                 utm_medium: urlParams?.utm_medium,

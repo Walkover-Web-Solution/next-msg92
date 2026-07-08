@@ -121,6 +121,7 @@ export default function StepTwo() {
         if (!continueAllowed) return;
 
         if (state.signupByGitHub && !state.githubCode) {
+            dispatch({ type: 'RESET_GITHUB_SIGNUP' });
             dispatch({ type: 'SET_ACTIVE_STEP', payload: 1 });
             return;
         }
