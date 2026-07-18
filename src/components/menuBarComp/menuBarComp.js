@@ -248,7 +248,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                 {nav === 'show' && (
                     <div
                         role='presentation'
-                        onClick={() => {
+                        onMouseEnter={() => {
                             setNav('hide');
                             setType('products');
                         }}
