@@ -603,7 +603,7 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /tag/food-travel-and-hospitality/ /case-studies/tag/food-travel-and-hospitality
 /blog/so-whats-new-in-msg91/amp/ /guide
 /us/case-studies/indialends/?utm_source=rss&utm_medium=rss&utm_campaign=indialends&amp /case-studies/indialends
-/Login; https://control.msg91.com/signin/
+/Login; https://msg91.com/signin/
 /ph/startups-form/ /startups
 /check_circle/ /
 /longcode /longcode
@@ -1373,3 +1373,4 @@ https://guide.msg91.com/steps-for-dlt-process-registration/msg91.com/contact-us/
 /us/programmable-flow /us/ 301
 /us/startups-form /us/ 301
 /us/pricing/sms](https:/msg91.com/pricing/sms) /us/pricing/sms 301
+/login https://msg91.com/signin/

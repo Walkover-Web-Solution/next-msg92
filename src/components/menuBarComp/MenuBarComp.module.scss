@@ -1,6 +1,6 @@
 .overlay {
     background: rgba(0, 0, 0, 0.2);
-    @apply fixed hidden md:flex top-0 left-0 z-[996] h-dvh w-dvw cursor-pointer pointer-events-auto;
+    @apply fixed hidden md:flex top-0 left-0 z-[996] h-dvh w-dvw pointer-events-auto;
 }
 
 .background {

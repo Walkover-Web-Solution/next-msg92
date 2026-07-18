@@ -332,10 +332,6 @@ $button-transition-timing: 100ms;
     overflow: scroll !important;
 }
 
-.input, select{
-    @apply focus:!outline-none;
-}
-
 #contactChatWidget {
     position: relative;
 
