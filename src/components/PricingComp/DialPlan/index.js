@@ -40,13 +40,14 @@ function findActivePlan(pricingData, selection) {
     return null;
 }
 
-async function fetchDialPlanData({ serviceId, dialPlanId, currency, pageNo, search }) {
+async function fetchDialPlanData({ serviceId, dialPlanId, currency, offset, search }) {
     const params = new URLSearchParams({
         service_id: String(serviceId),
         dial_plan_id: String(dialPlanId),
         currency: String(currency),
-        page_no: String(pageNo),
-        per_page: String(DIAL_PLAN_PER_PAGE),
+        offset: String(offset),
+        limit: String(DIAL_PLAN_PER_PAGE),
+        ui_friendly: '1',
     });
     if (search) params.set('search', search);
 
@@ -82,13 +83,13 @@ function DialPlanTable({
     searchPlaceholder,
     currency,
     pagination,
-    onPageChange,
+    onOffsetChange,
     loading,
     loaded,
 }) {
     const visibleColumns = columns.filter((col) => col.key !== 'prefix' && col.key !== 'country_prefix');
     const tableRef = useRef(null);
-    const { total_pages: totalPages, current_page: currentPage } = pagination ?? {};
+    const { total_pages: totalPages, offset: currentOffset } = pagination ?? {};
     const colSpan = visibleColumns.length || 1;
 
     return (
@@ -184,8 +185,8 @@ function DialPlanTable({
                 <div className='flex items-center justify-center gap-3'>
                     <button
                         type='button'
-                        onClick={() => onPageChange(currentPage - 1)}
-                        disabled={currentPage <= 1 || loading}
+                        onClick={() => onOffsetChange(currentOffset - 1)}
+                        disabled={currentOffset <= 1 || loading}
                         className='flex items-center gap-1 px-3 py-2 rounded border border-slate-200 text-sm text-slate-600 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed'
                         aria-label='Previous page'
                     >
@@ -193,12 +194,12 @@ function DialPlanTable({
                         Previous
                     </button>
                     <span className='text-sm text-slate-500'>
-                        Page {currentPage} of {totalPages}
+                        Page {currentOffset} of {totalPages}
                     </span>
                     <button
                         type='button'
-                        onClick={() => onPageChange(currentPage + 1)}
-                        disabled={currentPage >= totalPages || loading}
+                        onClick={() => onOffsetChange(currentOffset + 1)}
+                        disabled={currentOffset >= totalPages || loading}
                         className='flex items-center gap-1 px-3 py-2 rounded border border-slate-200 text-sm text-slate-600 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed'
                         aria-label='Next page'
                     >
@@ -214,7 +215,7 @@ function DialPlanTable({
 export default function DialPlan({ pricingData, selection, pageData, currency }) {
     const [search, setSearch] = useState('');
     const [searchQuery, setSearchQuery] = useState('');
-    const [pageNo, setPageNo] = useState(1);
+    const [offset, setOffset] = useState(1);
     const [columns, setColumns] = useState(EMPTY_ARRAY);
     const [data, setData] = useState(EMPTY_ARRAY);
     const [pagination, setPagination] = useState(null);
@@ -235,12 +236,12 @@ export default function DialPlan({ pricingData, selection, pageData, currency })
     useEffect(() => {
         setSearch('');
         setSearchQuery('');
-        setPageNo(1);
+        setOffset(1);
         setLoaded(false);
     }, [selection]);
 
     useEffect(() => {
-        setPageNo(1);
+        setOffset(1);
         setLoaded(false);
     }, [searchQuery]);
 
@@ -254,7 +255,7 @@ export default function DialPlan({ pricingData, selection, pageData, currency })
             serviceId: activePlan.serviceId,
             dialPlanId: activePlan.dialPlanId,
             currency,
-            pageNo,
+            offset,
             search: searchQuery,
         })
             .then((json) => {
@@ -262,7 +263,7 @@ export default function DialPlan({ pricingData, selection, pageData, currency })
                 const normalized = normalizeDialPlanInfo(json.data);
                 setColumns(normalized.columns);
                 setData(normalized.data);
-                setPagination(json.data.pagination);
+                setPagination(json.data.metadata);
                 setLoaded(true);
             })
             .catch((err) => {
@@ -275,7 +276,7 @@ export default function DialPlan({ pricingData, selection, pageData, currency })
         return () => {
             cancelled = true;
         };
-    }, [activePlan?.serviceId, activePlan?.dialPlanId, currency, pageNo, searchQuery]);
+    }, [activePlan?.serviceId, activePlan?.dialPlanId, currency, offset, searchQuery]);
 
     const handleSearchChange = useCallback((e) => setSearch(e.target.value), []);
 
@@ -303,7 +304,7 @@ export default function DialPlan({ pricingData, selection, pageData, currency })
                 searchPlaceholder={pageData?.searchPlaceholder}
                 currency={currency}
                 pagination={pagination}
-                onPageChange={setPageNo}
+                onOffsetChange={setOffset}
                 loading={loading}
                 loaded={loaded}
             />

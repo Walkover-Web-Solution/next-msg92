@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default async function handler(req, res) {
-    const { service_id, dial_plan_id, currency, page_no, per_page, search } = req.query;
+    const { service_id, dial_plan_id, currency, limit, offset, search } = req.query;
     const baseUrl = process.env.SUBSCRIPTION_PRICING_URL;
 
     try {
@@ -11,8 +11,8 @@ export default async function handler(req, res) {
                 dial_plan_id,
                 currency,
                 ui_friendly: 1,
-                page: page_no,
-                per_page,
+                limit,
+                offset,
                 search,
             },
         });
