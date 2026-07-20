@@ -67,8 +67,10 @@ function formatCellValue(col, row, currency) {
         return `${row[col.key] ?? '-'} (${row['prefix'] ?? row['country_prefix']})`;
     }
     const val = row[col.key];
+
     if (col.key === 'country_name' || val == null || val === '' || val === '-') return val ?? '-';
     const num = Number(val);
+
     if (!Number.isNaN(num) && currency && !col.key.toLowerCase().includes('id')) {
         return `${val} ${currency}`;
     }
