@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import LottiePlayer from '@/components/LottiePlayer/LottiePlayer';
+import TrustedByComp from '@/components/TrustedByComp/TrustedByComp';
 
 export default function Hero({ data }) {
     return (
         <section className={`container cont_p cont banner--${data.theme} bg-green`}>
             <div className='flex flex-col gap-8 lg:flex-row lg:items-center'>
-                <div className='banner_content flex flex-1 flex-col justify-center gap-4 p-6'>
+                <div className='banner_content flex flex-1 flex-col justify-center gap-6 p-6'>
                     {data?.logo?.src && (
                         <div className='flex items-center gap-2'>
                             <Image
@@ -44,6 +45,12 @@ export default function Hero({ data }) {
                                     </a>
                                 )
                             )}
+                        </div>
+                    )}
+
+                    {data?.trustedByComp && (
+                        <div className='mt-2'>
+                            <TrustedByComp data={data.trustedByComp} />
                         </div>
                     )}
                 </div>

@@ -68,6 +68,38 @@
     }
 }
 
+/* WhyTrust/WhyTrust.js */
+.why-trust {
+    &--shopify {
+        @apply bg-shopifyBanner-content;
+
+        .why-trust_eyebrow {
+            @apply uppercase text-shopifyBanner-headingAccent;
+        }
+        .why-trust_heading {
+            @apply text-shopifyBanner-heading;
+        }
+        .why-trust_heading-accent {
+            @apply text-shopifyBanner-headingAccent;
+        }
+        .why-trust_intro {
+            @apply text-shopifyBanner-body;
+        }
+        .why-trust_card {
+            @apply shadow-sm;
+        }
+        .why-trust_icon {
+            @apply border border-shopifyBanner-primary/25 bg-shopifyBanner-content text-shopifyBanner-visual;
+        }
+        .why-trust_card-title {
+            @apply text-shopifyBanner-heading;
+        }
+        .why-trust_card-body {
+            @apply text-shopifyBanner-body;
+        }
+    }
+}
+
 /* Features/Features.js */
 .features {
     &--shopify {

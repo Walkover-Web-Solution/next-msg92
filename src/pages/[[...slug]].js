@@ -58,8 +58,10 @@ import Hero from '@/components/IntegrationComp/Hero/Hero';
 import ProblemSolution from '@/components/IntegrationComp/ProblemSolution/ProblemSolution';
 import Benefits from '@/components/IntegrationComp/Benefits/Benefits';
 import IntegrationFeatures from '@/components/IntegrationComp/Features/Features';
+import WhyTrust from '@/components/IntegrationComp/WhyTrust/WhyTrust';
 import UseCases from '@/components/IntegrationComp/UseCases/UseCases';
 import HowItWorks from '@/components/IntegrationComp/HowItWorks/HowItWorks';
+import IntegrationFAQs from '@/components/IntegrationComp/FAQs/FAQs';
 import CTA from '@/components/IntegrationComp/CTA/CTA';
 import SEOFooter from '@/components/IntegrationComp/SEOFooter/SEOFooter';
 import Banner from '@/components/UpdatedComp/Banner';
@@ -122,8 +124,10 @@ const Components = {
     ProblemSolution,
     Benefits,
     Features: IntegrationFeatures,
+    WhyTrust,
     UseCases,
     HowItWorks,
+    IntegrationFAQs,
     CTA,
     SEOFooter,
     IntegrationBanner: Hero,
