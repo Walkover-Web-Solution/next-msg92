@@ -265,7 +265,11 @@ export default function StepOne() {
                                 Sending OTP...
                             </div>
                         ) : (
-                            <button onClick={handleSendOtp} className='btn btn-accent font-normal w-full sm:w-auto'>
+                            <button
+                                onClick={handleSendOtp}
+                                className='btn btn-accent font-normal w-full sm:w-auto'
+                                disabled={!email?.trim()}
+                            >
                                 Create Account
                             </button>
                         )}
