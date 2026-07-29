@@ -269,7 +269,11 @@ export default function StepTwo() {
                                     Sending OTP...
                                 </div>
                             ) : (
-                                <button onClick={handleSendOtp} className='btn btn-accent font-normal'>
+                                <button
+                                    onClick={handleSendOtp}
+                                    className='btn btn-accent font-normal'
+                                    disabled={!phone?.trim()}
+                                >
                                     Verify
                                 </button>
                             )}
