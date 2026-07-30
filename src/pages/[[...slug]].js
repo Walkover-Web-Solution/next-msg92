@@ -97,6 +97,7 @@ const Components = {
     TrustedByComp,
     HeadComp,
     FeatureComp,
+    IndustryFeatureComp: FeatureComp,
     PricingComp,
     AboutUsComp,
     DevelopersComp,
