@@ -69,6 +69,7 @@ import Steps from '@/components/HelloBrComp/StepsComp/StepsSetup';
 import Testimonials from '@/components/HelloBrComp/TestimonialsComp/Testimonials';
 import FooterCta from '@/components/HelloBrComp/FooterCtaComp/FooterCta';
 import Faqs from '@/components/HelloBrComp/FaqsComp/Faqs';
+import G2Badges from '@/components/HelloBrComp/G2BadgesComp/G2Badges';
 import Pricing from '@/components/HelloBrComp/PricingComp/Pricing';
 
 /* files */
@@ -162,6 +163,7 @@ const Components = {
     Testimonials,
     FooterCta,
     Faqs,
+    G2Badges,
     Pricing,
 };
 
