@@ -327,25 +327,7 @@ const MobileNumberInput = ({
                     aria-haspopup='listbox'
                     aria-expanded={isDropdownOpen}
                     aria-label={`Selected country ${selectedCountry.name}, ${selectedCountry.dialCode}`}
-                    className={`
-                        flex
-                        shrink-0
-                        items-center
-                        gap-2
-                        rounded-l-md
-                        border
-                        border-r-0
-                        px-3
-                        py-2
-                        transition-colors
-                        focus:outline-none
-                        focus:ring-2
-                        focus:ring-blue-500
-                        disabled:cursor-not-allowed
-                        disabled:opacity-50
-
-                        ${validationError ? 'border-red-500' : 'border-gray-300'}
-                    `}
+                    className={`flex shrink-0 items-center gap-2 rounded-l-md border border-r-0 px-3 py-2 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 ${validationError ? 'border-red-500' : 'border-gray-300'}`}
                 >
                     {/* Flag */}
 
@@ -369,12 +351,7 @@ const MobileNumberInput = ({
                         strokeLinecap='round'
                         strokeLinejoin='round'
                         aria-hidden='true'
-                        className={`
-                            text-gray-500
-                            transition-transform
-
-                            ${isDropdownOpen ? 'rotate-180' : ''}
-                        `}
+                        className={`text-gray-500 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
                     >
                         <path d='m6 9 6 6 6-6' />
                     </svg>
@@ -395,52 +372,17 @@ const MobileNumberInput = ({
                     placeholder={placeholder}
                     autoComplete={autoComplete}
                     aria-invalid={Boolean(validationError)}
-                    className={`
-                        min-w-0
-                        flex-1
-                        rounded-r-md
-                        border
-                        px-3
-                        py-2
-                        text-sm
-                        outline-none
-                        transition
-                        focus:ring-2
-                        disabled:cursor-not-allowed
-                        disabled:bg-gray-100
-                        disabled:opacity-50
-
-                        ${
-                            validationError
-                                ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20'
-                                : 'border-gray-300 focus:border-blue-500 focus:ring-blue-500/20'
-                        }
-
-                        ${inputClassName}
-                    `}
+                    className={`min-w-0 flex-1 rounded-r-md border px-3 py-2 text-sm outline-none transition focus:ring-2 disabled:cursor-not-allowed disabled:bg-gray-100 disabled:opacity-50 ${
+                        validationError
+                            ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20'
+                            : 'border-gray-300 focus:border-blue-500 focus:ring-blue-500/20'
+                    } ${inputClassName}`}
                 />
 
                 {/* Country dropdown */}
 
                 {isDropdownOpen && (
-                    <div
-                        className='
-                            absolute
-                            left-0
-                            top-full
-                            z-50
-                            mt-1
-                            w-full
-                            min-w-[280px]
-                            max-w-[360px]
-                            overflow-hidden
-                            rounded-md
-                            border
-                            border-gray-200
-                            bg-white
-                            shadow-lg
-                        '
-                    >
+                    <div className='absolute left-0 top-full z-50 mt-1 w-full min-w-[280px] max-w-[360px] overflow-hidden rounded-md border border-gray-200 bg-white shadow-lg'>
                         {/* Search */}
 
                         <div className='border-b border-gray-100 p-2'>
@@ -458,19 +400,7 @@ const MobileNumberInput = ({
                                 }}
                                 placeholder={searchPlaceholder}
                                 autoComplete='off'
-                                className='
-                                    w-full
-                                    rounded-md
-                                    border
-                                    border-gray-300
-                                    px-3
-                                    py-2
-                                    text-sm
-                                    outline-none
-                                    focus:border-blue-500
-                                    focus:ring-2
-                                    focus:ring-blue-500/20
-                                '
+                                className='w-full rounded-md border border-gray-300 px-3 py-2 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20'
                             />
                         </div>
 
@@ -479,11 +409,7 @@ const MobileNumberInput = ({
                         <div
                             role='listbox'
                             aria-label='Countries'
-                            className='
-                                max-h-64
-                                overflow-y-auto
-                                overscroll-contain
-                            '
+                            className='max-h-64 overflow-y-auto overscroll-contain'
                         >
                             {filteredCountries.length > 0 ? (
                                 filteredCountries.map((country) => {
@@ -496,62 +422,22 @@ const MobileNumberInput = ({
                                             role='option'
                                             aria-selected={isSelected}
                                             onClick={() => handleCountrySelect(country)}
-                                            className={`
-                                                    flex
-                                                    w-full
-                                                    items-center
-                                                    gap-3
-                                                    px-3
-                                                    py-2.5
-                                                    text-left
-                                                    transition-colors
-                                                    hover:bg-gray-50
-                                                    focus:bg-gray-50
-                                                    focus:outline-none
-
-                                                    ${isSelected ? 'bg-gray-50' : ''}
-                                                `}
+                                            className={`flex w-full items-center gap-3 px-3 py-2.5 text-left transition-colors hover:bg-gray-50 focus:bg-gray-50 focus:outline-none ${isSelected ? 'bg-gray-50' : ''}`}
                                         >
                                             <span className='shrink-0 text-xl leading-none' aria-hidden='true'>
                                                 {country.flag}
                                             </span>
 
-                                            <span
-                                                className='
-                                                        min-w-0
-                                                        flex-1
-                                                        truncate
-                                                        text-sm
-                                                        text-gray-700
-                                                    '
-                                            >
+                                            <span className='min-w-0 flex-1 truncate text-sm text-gray-700'>
                                                 {country.name}
                                             </span>
 
-                                            <span
-                                                className='
-                                                        shrink-0
-                                                        text-sm
-                                                        text-gray-500
-                                                    '
-                                            >
-                                                {country.dialCode}
-                                            </span>
+                                            <span className='shrink-0 text-sm text-gray-500'>{country.dialCode}</span>
                                         </button>
                                     );
                                 })
                             ) : (
-                                <div
-                                    className='
-                                        px-3
-                                        py-6
-                                        text-center
-                                        text-sm
-                                        text-gray-500
-                                    '
-                                >
-                                    No countries found
-                                </div>
+                                <div className='px-3 py-6 text-center text-sm text-gray-500'>No countries found</div>
                             )}
                         </div>
                     </div>
