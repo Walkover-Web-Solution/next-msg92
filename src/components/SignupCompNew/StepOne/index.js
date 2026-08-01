@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useSignup, sendOtp, handleGithubSignup, validateEmailSignup, resetEmailOtp } from '../SignupUtils';
+import { useSignup, sendOtp, retryOtp, handleGithubSignup, validateEmailSignup, resetEmailOtp } from '../SignupUtils';
 import { useEffect, useState, useRef, useMemo } from 'react';
 import { MdCheckCircle, MdEdit } from 'react-icons/md';
 import OTPInput from '../components/OTPInput';
@@ -117,7 +117,13 @@ export default function StepOne() {
     };
 
     const handleResendOtp = () => {
-        sendOtp(email, false, dispatch);
+        const requestId = state.emailRequestId;
+        if (!requestId) {
+            dispatch({ type: 'SET_ERROR', payload: 'No email request ID found. Please send OTP again.' });
+            return;
+        }
+        const channel = secondaryChannels[0]?.channel || 'email';
+        retryOtp(channel, requestId, dispatch);
     };
 
     const socialIcons = [
@@ -224,12 +230,12 @@ export default function StepOne() {
                             onVerify={handleVerifyOtp}
                             showVerifyButton={true}
                             autoFocus={true}
-                            disabled={isLoading}
+                            disabled={state.loadingType === 'verify'}
                         />
                         {isLoading && (
                             <div className='flex items-center gap-2 text-accent text-sm'>
                                 <div className='loading loading-spinner loading-sm'></div>
-                                Verifying OTP...
+                                {state.loadingType === 'send' ? 'Sending OTP...' : 'Verifying OTP...'}
                             </div>
                         )}
                     </div>
