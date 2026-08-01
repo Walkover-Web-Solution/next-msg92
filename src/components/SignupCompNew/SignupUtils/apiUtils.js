@@ -205,7 +205,7 @@ function appendUseV2SignupQuery(endpoint) {
 export async function validateEmailSignup(otp, dispatch, state) {
     const signupState = state || {};
 
-    dispatch({ type: 'SET_LOADING', payload: true });
+    dispatch({ type: 'SET_LOADING', payload: { isLoading: true, loadingType: 'verify' } });
     dispatch({ type: 'CLEAR_ERROR' });
 
     try {

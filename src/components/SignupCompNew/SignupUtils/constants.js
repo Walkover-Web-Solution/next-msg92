@@ -20,6 +20,7 @@ export const initialState = {
     widgetData: null,
     allowedRetry: null,
     isLoading: false,
+    loadingType: null, // 'send' | 'verify' | null
     source: null,
     session: null,
     error: null,
