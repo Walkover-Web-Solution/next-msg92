@@ -1,7 +1,7 @@
 import React from 'react';
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft, MdCheckCircle, MdCheckCircleOutline } from 'react-icons/md';
 import Otpinput from '../utils/InputOTP';
-import MobileInputComponent from '../utils/MobileInputComponent';
+import { MobileNumberInput } from '@/components/mobile-number-input';
 import { toast } from 'react-toastify';
 import RetryOtp from '../utils/RetryOTP';
 import { getCookie, setCookie } from '@/utils/utilis';
@@ -9,6 +9,7 @@ import GmailWarningModal from '../utils/GmailWarningModal';
 
 var smsIdentifier = '';
 var mobileInvalid = false;
+var mobileNumberData = null;
 
 class StepTwo extends React.Component {
     constructor(props) {
@@ -250,9 +251,11 @@ class StepTwo extends React.Component {
                                 <div className='flex sm:flex-row flex-col w-fit gap-4 '>
                                     <div className='flex flex-col items-start gap-6 w-[300px] '>
                                         <div className='flex gap-2 max-h-10 w-full'>
-                                            <MobileInputComponent
-                                                onInput={(event) => {
-                                                    const value = event?.replace('+', '');
+                                            <MobileNumberInput
+                                                value={smsIdentifier ? '+' + smsIdentifier : ''}
+                                                onChange={(data) => {
+                                                    mobileNumberData = data;
+                                                    const value = data.fullNumber?.replace('+', '');
                                                     if (value !== smsIdentifier) {
                                                         smsIdentifier = value;
                                                         this.props.identifierChange(true);
@@ -260,9 +263,10 @@ class StepTwo extends React.Component {
                                                 }}
                                                 required={true}
                                                 disabled={this.props?.smsAccessToken}
-                                                defaultValue={smsIdentifier ? '+' + smsIdentifier : ''}
-                                                setInvalid={(event) => (mobileInvalid = event)}
+                                                defaultCountry='IN'
                                                 placeholder='Mobile Number*'
+                                                className='w-full'
+                                                inputClassName='h-10'
                                             />
 
                                             <span className='mt-3'>
@@ -275,8 +279,8 @@ class StepTwo extends React.Component {
                                         this.props?.smsSuccessMessage &&
                                         !this.props?.smsAccessToken ? (
                                             <p className='text-success text-sm'>
-                                                {this.props?.smsSuccessMessage} +
-                                                {this.props?.smsIdentifier?.replace('+', '')}
+                                                {this.props?.smsSuccessMessage}{' '}
+                                                {mobileNumberData?.fullNumber || '+' + this.props?.smsIdentifier}
                                             </p>
                                         ) : null}
                                     </div>
@@ -291,11 +295,15 @@ class StepTwo extends React.Component {
                                     ) : (
                                         <button
                                             className='btn btn-accent btn-otp btn-outline'
-                                            onClick={() =>
-                                                mobileInvalid
-                                                    ? toast.error('Invalid mobile number.')
-                                                    : this.props.sendOtp(smsIdentifier, true)
-                                            }
+                                            onClick={() => {
+                                                if (mobileNumberData && !mobileNumberData.isValid) {
+                                                    toast.error('Invalid mobile number.');
+                                                } else if (!smsIdentifier) {
+                                                    toast.error('Please enter a mobile number.');
+                                                } else {
+                                                    this.props.sendOtp(smsIdentifier, true);
+                                                }
+                                            }}
                                             disabled={this.props?.isLoading || isLoading}
                                         >
                                             Get OTP
