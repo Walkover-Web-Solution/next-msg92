@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useSignup, sendOtp, verifyOtp, setDetails, validateSignUp, resetPhoneOtp } from '../SignupUtils';
+import { useSignup, sendOtp, retryOtp, verifyOtp, setDetails, validateSignUp, resetPhoneOtp } from '../SignupUtils';
 import { getAvailableOtpMethods } from '../SignupUtils/otpUtils';
 import { fetchCountries } from '../SignupUtils/apiUtils';
 import { useEffect, useState, useRef, useMemo } from 'react';
@@ -24,11 +24,6 @@ export default function StepTwo() {
     const [continueAllowed, setContinueAllowed] = useState(false);
 
     const otpLength = state.widgetData?.otpLength || 6;
-
-    const primaryChannels = useMemo(
-        () => getAvailableOtpMethods(state?.allowedRetry?.mobile?.primary, phoneCountry),
-        [state?.allowedRetry?.mobile?.primary, phoneCountry]
-    );
 
     const secondaryChannels = useMemo(
         () => getAvailableOtpMethods(state?.allowedRetry?.mobile?.secondary, phoneCountry),
@@ -77,15 +72,12 @@ export default function StepTwo() {
     };
 
     const handleResendWithChannel = (channel) => {
-        const phoneNumber = phone?.trim();
-
-        if (!phoneNumber) {
-            dispatch({ type: 'SET_ERROR', payload: 'Please enter a phone number' });
+        const requestId = state.mobileRequestId;
+        if (!requestId) {
+            dispatch({ type: 'SET_ERROR', payload: 'No phone request ID found. Please send OTP again.' });
             return;
         }
-
-        // Phone is already in E.164 format from react-phone-number-input (e.g., +919876543210)
-        sendOtp(phoneNumber, true, dispatch, channel);
+        retryOtp(channel, requestId, dispatch);
     };
 
     const handleVerifyOtp = (otpValue) => {
@@ -161,7 +153,8 @@ export default function StepTwo() {
     };
 
     const handleResendOtp = () => {
-        handleSendOtp();
+        const channel = secondaryChannels[0]?.channel || null;
+        handleResendWithChannel(channel);
     };
 
     return (
@@ -226,17 +219,17 @@ export default function StepTwo() {
                                 onVerify={handleVerifyOtp}
                                 showVerifyButton={true}
                                 autoFocus={true}
-                                disabled={state.isLoading}
+                                disabled={state.loadingType === 'verify'}
                             />
                             {state.isLoading && (
                                 <div className='flex items-center gap-2 text-accent'>
                                     <div className='loading loading-spinner loading-sm'></div>
-                                    Verifying OTP...
+                                    {state.loadingType === 'send' ? 'Sending OTP...' : 'Verifying OTP...'}
                                 </div>
                             )}
                         </div>
                         <ResendOTP
-                            onResend={handleSendOtp}
+                            onResend={handleResendOtp}
                             onResendWithChannel={handleResendWithChannel}
                             onReset={() => otpInputRef.current?.resetOtp()}
                             secondaryChannels={secondaryChannels}
