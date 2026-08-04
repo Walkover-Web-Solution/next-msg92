@@ -455,7 +455,7 @@ const MobileNumberInput = ({
             {/* Error */}
 
             {validationError && (
-                <p role='alert' className='mt-1.5 text-sm text-red-600'>
+                <p role='alert' className='mt-1.5 mb-4 text-sm text-red-600'>
                     {validationError}
                 </p>
             )}
