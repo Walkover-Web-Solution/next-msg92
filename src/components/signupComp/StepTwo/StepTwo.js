@@ -248,7 +248,7 @@ class StepTwo extends React.Component {
                         <div className='w-full flex flex-col gap-2 clint-input-container'>
                             <label htmlFor='contact'>Verify Mobile number</label>
                             <div className='flex xl:flex-row flex-col gap-10'>
-                                <div className='flex sm:flex-row flex-col w-fit gap-4 '>
+                                <div className='flex sm:flex-row flex-col w-fit gap-8 sm:gap-4 '>
                                     <div className='flex flex-col items-start gap-6 w-[300px] '>
                                         <div className='flex gap-2 max-h-10 w-full'>
                                             <MobileNumberInput
