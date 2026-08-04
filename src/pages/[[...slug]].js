@@ -31,6 +31,7 @@ import SignUp from '@/components/signupComp/SignUp';
 import ChatBotComp from '@/components/ChatBotComp/ChatBotComp';
 import MagicLinkComp from '@/components/MagicLinkComp/MagicLinkComp';
 import WhatsappLinkComp from '@/components/WhatsappLinkComp/WhatsappLinkComp';
+import AppleMessagesLinkComp from '@/components/AppleMessagesLinkComp/AppleMessagesLinkComp';
 import IntegrationAppComp from '@/components/IntegrationsComp/IntegrationAppComp';
 import ThankYouComp from '@/components/ThankYouComp/ThankYouComp';
 import StartupFormsComp from '@/components/StartupFormsComp/StartupFormsComp';
@@ -113,6 +114,7 @@ const Components = {
     ChatBotComp,
     MagicLinkComp,
     WhatsappLinkComp,
+    AppleMessagesLinkComp,
     ThankYouComp,
     StartupFormsComp,
     IntegrationAppComp,

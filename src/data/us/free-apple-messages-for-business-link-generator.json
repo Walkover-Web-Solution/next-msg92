@@ -1,0 +1,139 @@
+{
+    "HeadComp": {
+        "title": "Free Apple Messages for Business Link Generator | MSG91",
+        "description": "Create Apple Messages for Business click-to-chat links and QR codes in seconds. Add Intent ID and Group ID to route conversations automatically, and let customers start chatting with one tap.",
+        "ogTitle": "Create an Apple Messages for Business Link | Free Generator",
+        "ogDescription": "Generate Apple Messages for Business links and QR codes for your website, emails, or print materials — free, no sign-up required."
+    },
+    "AppleMessagesLinkComp": {
+        "slug": "free-apple-messages-for-business-link-generator",
+        "product": {
+            "name": "Free Apple Messages for Business Link Generator",
+            "icon": "/assets/icons/products/whatsapp.svg"
+        },
+        "tagline": "APPLE MESSAGES FOR BUSINESS",
+        "heading": "Generate Apple Messages for Business click-to-chat links and QR codes",
+        "subheading": "Turn any website, email, or QR code into a one-tap Apple Messages for Business conversation — pre-filled and routed to the right team automatically.",
+        "getstarted_btn": "Generate",
+        "note": "Free to use. No MSG91 account required to generate a link.",
+        "steps": {
+            "heading": "3 steps to creating a QR code/Link",
+            "cards": [
+                {
+                    "title": "Step 1",
+                    "description": "Enter your Apple Messages for Business ID that Apple issued after you registered your business.",
+                    "icon": "MdDialpad"
+                },
+                {
+                    "title": "Step 2",
+                    "description": "Add an Intent ID and Group ID if you want this entry point to route conversations automatically, and a pre-filled message so customers only need to tap Send.",
+                    "icon": "MdOutlineDashboardCustomize"
+                },
+                {
+                    "title": "Step 3",
+                    "description": "Click 'Generate' to create your link and QR code — ready to add to your website, emails, or print materials.",
+                    "icon": "MdOutlineAutoAwesome"
+                }
+            ]
+        },
+        "create": {
+            "heading": "Create your Apple Messages for Business link / QR code",
+            "generate_btn": "Generate now",
+            "validationNote": "Intent ID, Group ID, and message text can't contain the characters & # [ ] ( ) { } or /.",
+            "content": [
+                {
+                    "title": "Business ID (required)",
+                    "description": "Enter the unique Business ID Apple assigned you after registering for Messages for Business.",
+                    "feilds": [
+                        {
+                            "name": "Apple Messages for Business ID",
+                            "placeholder": "e.g. 22222222-dddd-4444-bbbb-777777777777",
+                            "description": "Enter the unique Business ID Apple assigned you after registering for Messages for Business."
+                        }
+                    ]
+                },
+                {
+                    "title": "Routing and Message (optional)",
+                    "description": "",
+                    "feilds": [
+                        {
+                            "name": "Intent ID (optional)",
+                            "placeholder": "e.g. account_question",
+                            "description": "Define the purpose of the chat. Used together with Group ID to route the conversation the moment a customer taps this link."
+                        },
+                        {
+                            "name": "Group ID (optional)",
+                            "placeholder": "e.g. billing_department",
+                            "description": "Define the department or team best suited to handle this conversation."
+                        },
+                        {
+                            "name": "Pre-filled message (optional)",
+                            "placeholder": "e.g. I have a question about my order",
+                            "description": "Automatically fill this text in when a customer taps your link, so all they need to do is tap Send."
+                        }
+                    ]
+                }
+            ]
+        },
+        "preview": {
+            "heading": "Your link is ready",
+            "linkLabel": "Apple Messages for Business link",
+            "downloadBtn": "Download QR code",
+            "caption": "Scan this QR code or tap the link to start an Apple Messages for Business conversation.",
+            "disclaimer": "This is a design preview only. The exact Messages app appearance is set by Apple and may differ.",
+            "editBtn": "Create new link"
+        },
+        "secondary": {
+            "heading": "Want a Messages button on your website?",
+            "body": "Beyond a link or QR code, Apple also supports an embeddable Messages button using Apple's official Messages for Business JavaScript library and a business ID. Our team can help you set this up alongside your MSG91 integration.",
+            "ctaText": "Talk to us about website integration",
+            "ctaLink": "/contact-us"
+        }
+    },
+    "FaqsComp": {
+        "heading": "FAQ",
+        "faqs": [
+            {
+                "question": "What is Apple Messages for Business?",
+                "answer": "It's a service that lets businesses message customers directly inside the Messages app on iPhone and Mac, without customers needing to download a separate app."
+            },
+            {
+                "question": "How do I get a Business ID?",
+                "answer": "You receive a Business ID from Apple after registering your company for Messages for Business through Apple's registration program."
+            },
+            {
+                "question": "What do Intent ID and Group ID do?",
+                "answer": "They let you tell Apple Messages for Business the purpose of the chat and which department should handle it, so the conversation can be routed correctly from the very first message."
+            },
+            {
+                "question": "Can I pre-fill a message for customers?",
+                "answer": "Yes. Add a message and it will be pre-filled in the Messages app, so the customer only needs to tap Send to start the conversation."
+            },
+            {
+                "question": "Are there any character restrictions?",
+                "answer": "Yes. Intent ID, Group ID, and the pre-filled message can't contain the reserved characters & # [ ] ( ) { } or /."
+            },
+            {
+                "question": "Does every entry point support Intent ID and Group ID routing?",
+                "answer": "No. The Spotlight entry point does not support Intent or Group values. The link and QR code generated by this tool use the URL-based entry point, which does support both."
+            },
+            {
+                "question": "Can I use this link on both iPhone and Mac?",
+                "answer": "Yes. Apple Messages for Business is supported on iPhones and Macs running compatible versions of iOS and macOS."
+            }
+        ]
+    },
+    "PreFooterComp": {
+        "content": "Bring Apple Messages for Business into your customer engagement stack",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}
