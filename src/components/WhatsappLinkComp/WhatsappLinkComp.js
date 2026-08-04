@@ -2,7 +2,21 @@ import Image from 'next/image';
 import React, { useEffect, useState, useRef } from 'react';
 import style from './WhatsappLinkComp.module.scss';
 import GetMdIcons from '@/utils/getMdIcons';
-import { MdChevronRight, MdCopyAll, MdDownload } from 'react-icons/md';
+import {
+    MdChevronRight,
+    MdCopyAll,
+    MdDownload,
+    MdContentCopy,
+    MdKeyboardArrowDown as MdChevronDown,
+} from 'react-icons/md';
+import WidgetPreview from '@/components/Shared/WidgetPreview';
+import WidgetCodeSnippet from '@/components/Shared/WidgetCodeSnippet';
+import TabNavigation from '@/components/Shared/TabNavigation';
+import HeroSection from '@/components/Shared/HeroSection';
+import StepsSection from '@/components/Shared/StepsSection';
+import SecondaryCTA from '@/components/Shared/SecondaryCTA';
+import FAQSection from '@/components/Shared/FAQSection';
+import PreFooter from '@/components/Shared/PreFooter';
 
 const loadScript = (src) => {
     return new Promise((resolve, reject) => {
@@ -21,6 +35,7 @@ const WhatsappLinkComp = ({ data }) => {
     const [copyLinkSuccess, setCopyLinkSuccess] = useState(false);
     const [copyCodeSuccess, setCopyCodeSuccess] = useState(false);
     const [scriptLoaded, setScriptLoaded] = useState(false);
+    const [hasGenerated, setHasGenerated] = useState(false);
 
     const [formData, setFormData] = useState({
         phoneNumber: '',
@@ -28,6 +43,27 @@ const WhatsappLinkComp = ({ data }) => {
         welcomeText: 'Hi there!\nHow can I help you?',
         brandImage: '',
     });
+
+    // Initialize formData from data structure
+    useEffect(() => {
+        if (data?.create?.content) {
+            const fieldMapping = {
+                'whatsapp number': 'phoneNumber',
+                'pre-filled message(optional)': 'preFilledMessage',
+                'welcome text': 'welcomeText',
+                'brand image url(optional)': 'brandImage',
+            };
+            const initialFormData = {};
+            data.create.content.forEach((section) => {
+                section.feilds?.forEach((field) => {
+                    const key = field.name.toLowerCase();
+                    const fieldName = fieldMapping[key] || key.replace(/[^a-z0-9]/g, '');
+                    initialFormData[fieldName] = initialFormData[fieldName] || '';
+                });
+            });
+            setFormData(initialFormData);
+        }
+    }, [data]);
 
     const [generatedLink, setGeneratedLink] = useState('');
     const [widgetCode, setWidgetCode] = useState('');
@@ -59,12 +95,13 @@ const WhatsappLinkComp = ({ data }) => {
                     height: 150,
                     colorDark: '#000000',
                     colorLight: '#ffffff',
+                    correctLevel: QRCode.CorrectLevel.L,
                 });
                 qrCodeInstance.current.makeCode(generatedLink);
                 setQrCodeReady(true);
 
                 // Generate widget code
-                const widgetCodeHtml = `<script>
+                const widgetCodeHtml = `&lt;script&gt;
 var options = {
   brandSetting: {
     brandImg: "${formData.brandImage}",
@@ -83,22 +120,15 @@ var options = {
   enabled: true,
   isNewChatWidget: true
 }
-<\/script>
-<script type="text/javascript" onload="CreateWhatsappChatWidget(options)" src="https://msg91.com/js/waWidget.js"><\/script>`;
+&lt;/script&gt;
+&lt;script type="text/javascript" onload="CreateWhatsappChatWidget(options)" src="https://msg91.com/js/waWidget.js"&gt;&lt;/script&gt;`;
 
                 setWidgetCode(widgetCodeHtml);
             } catch (error) {
                 console.error('Error generating QR code:', error);
             }
         }
-    }, [
-        showPreview,
-        generatedLink,
-        formData.brandImage,
-        formData.welcomeText,
-        formData.preFilledMessage,
-        formData.phoneNumber,
-    ]);
+    }, [showPreview, generatedLink, Object.keys(formData)]);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -122,10 +152,21 @@ var options = {
 
         setGeneratedLink(wp_end_url);
         setShowPreview(true);
+        setHasGenerated(true);
         setCopyLinkSuccess(false);
         setCopyCodeSuccess(false);
         setQrCodeReady(false);
     };
+
+    // Auto-update the generated link when switching tabs after first generation
+    useEffect(() => {
+        if (hasGenerated) {
+            const wp_end_url = `https://wa.me/${formData.phoneNumber}?text=${encodeURIComponent(
+                formData.preFilledMessage
+            )}`;
+            setGeneratedLink(wp_end_url);
+        }
+    }, [showPreview]);
 
     const copyLink = () => {
         navigator.clipboard.writeText(generatedLink);
@@ -175,291 +216,173 @@ var options = {
         canvas.height = originalHeight;
     };
 
-    const editForm = () => {
-        setShowPreview(false);
-        setQrCodeReady(false);
-    };
-
     const brandImageSrc = formData.brandImage || 'https://msg91.com/img/icon/walink-whatsapp.svg';
 
     return (
         <>
             <script type='text/javascript' src='/js/qrcode.js' defer></script>
             <link rel='stylesheet' href='/walink.css' />
-            <div className='container flex items-center flex-col gap-10'>
-                <div className='flex w-full md:items-center flex-col gap-6'>
-                    <div className='flex lg:flex-row flex-col md:items-center gap-2'>
-                        <Image width={66} height={66} src={data?.product?.icon} alt='whatsapp logo' loading='lazy' />
-                        <h1 className='text-5xl font-semibold'>{data?.product?.name}</h1>
-                    </div>
-                    <p className={style.tagline}>{data?.tagline}</p>
-                    <p className='text-3xl md:w-3/5 md:text-center '>{data?.heading}</p>
-                    <a href='#generate'>
-                        <button className='btn btn-primary btn-md'>{data?.getstarted_btn}</button>
-                    </a>
-                </div>
-                <Image
-                    width={1080}
-                    height={1080}
-                    className='ms:w-4/5'
-                    src={data?.banner_img}
-                    alt='Whatsapp link generator'
-                    loading='lazy'
-                />
-            </div>
+
+            {/* Hero Section */}
+            <HeroSection
+                badge={data?.tagline}
+                title={data?.product?.name}
+                subtitle={data?.heading}
+                description='Simple tool to create WhatsApp click to chat QR code/Widget/Link for your website or landing pages.'
+                buttonText={data?.getstarted_btn}
+                buttonAction={() => document.getElementById('generate')?.scrollIntoView({ behavior: 'smooth' })}
+                themeColor='green'
+            />
+
+            {/* Steps Section */}
             {data?.steps?.cards?.length > 0 && (
-                <div className='container flex flex-col  cont_p gap-8'>
-                    <h2 className='text-3xl'>{data?.steps?.heading}</h2>
-                    <div className='grid gap-10 grid-cols-3'>
-                        {data?.steps?.cards?.map((step, i) => {
-                            const Icon = GetMdIcons(step?.icon);
-                            return (
-                                <div key={i} className='md:col-span-2 col-span-3 lg:col-span-1 flex flex-col gap-2'>
-                                    <Icon fontSize={66} className='text-gray-500' />
-                                    <h3 className='text-2xl font-semibold'>{step?.title}</h3>
-                                    <p className='text-lg'>{step?.description}</p>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
+                <StepsSection
+                    heading={data?.steps?.heading}
+                    steps={data?.steps?.cards?.map((card) => ({
+                        title: card.title,
+                        description: card.description,
+                    }))}
+                    themeColor='green'
+                />
             )}
 
             <div className='container flex flex-col cont_p cont_gap' id='generate'>
                 <h3 className='text-3xl'>{data?.create?.heading}</h3>
-                <div>
+
+                {/* Tabs */}
+                <TabNavigation showPreview={showPreview} setShowPreview={setShowPreview} hasGenerated={hasGenerated} />
+
+                {/* Edit Tab */}
+                {!showPreview && (
                     <div className='flex gap-8 flex-col lg:flex-row'>
                         <div className='w-full'>
-                            {showPreview && (
-                                <button onClick={editForm} className='text-link active-link mb-4'>
-                                    Edit
-                                </button>
-                            )}
                             <form className='flex flex-col gap-6' onSubmit={generateLink} noValidate=''>
-                                <span className='text-xl font-semibold'>Type your WhatsApp Number</span>
-                                <p>
-                                    Enter your WhatsApp number along with your country code (without the '+' symbol).
-                                    For instance, if your country code is +91 and your WhatsApp number is 872849182,
-                                    just type 91872849182.
-                                </p>
-                                <div className='flex flex-col gap-2'>
-                                    <label htmlFor='phoneNumber'>WhatsApp number</label>
-                                    <input
-                                        className='input input-bordered max-w-lg'
-                                        type='text'
-                                        name='phoneNumber'
-                                        placeholder='eg. 919000012345'
-                                        value={formData.phoneNumber}
-                                        onChange={handleInputChange}
-                                        required=''
-                                    />
-                                </div>
-
-                                <p>
-                                    Automatically send this text when a user clicks on your chat link, making it easier
-                                    to start a conversation.
-                                </p>
-                                <div className='flex flex-col gap-2'>
-                                    <label htmlFor='preFilledMessage'>
-                                        Pre-Filled Message <span>(Optional)</span>
-                                    </label>
-                                    <textarea
-                                        className='input input-bordered max-w-lg'
-                                        name='preFilledMessage'
-                                        placeholder='eg. Hello, I have a question about your service. Can you please help me?'
-                                        value={formData.preFilledMessage}
-                                        onChange={handleInputChange}
-                                    />
-
-                                    <div>Please enter a valid email address for shipping updates.</div>
-                                </div>
-
-                                <span className='text-xl font-semibold'>Widget Customisation</span>
-
-                                <div className='flex flex-col gap-2'>
-                                    <label htmlFor='welcomeText'>Welcome text</label>
-                                    <textarea
-                                        className='input input-bordered max-w-lg'
-                                        name='welcomeText'
-                                        placeholder='Hi there! How can I help you?'
-                                        value={formData.welcomeText}
-                                        onChange={handleInputChange}
-                                        required=''
-                                    />
-                                </div>
-                                <div className='flex flex-col gap-2'>
-                                    <label htmlFor='brandImage'>
-                                        Brand image URL
-                                        <span>(Optional)</span>
-                                    </label>
-                                    <input
-                                        className='input input-bordered max-w-lg'
-                                        type='text'
-                                        name='brandImage'
-                                        placeholder='https://storage.googleapis.com/92283/image.png'
-                                        value={formData.brandImage}
-                                        onChange={handleInputChange}
-                                    />
-                                </div>
+                                {data?.create?.content?.map((section, sectionIndex) => (
+                                    <div key={sectionIndex} className='flex flex-col gap-6'>
+                                        {section.title && (
+                                            <span className='text-xl font-semibold'>{section.title}</span>
+                                        )}
+                                        {section.description && <p>{section.description}</p>}
+                                        {section.feilds?.map((field, fieldIndex) => {
+                                            const fieldMapping = {
+                                                'whatsapp number': 'phoneNumber',
+                                                'pre-filled message(optional)': 'preFilledMessage',
+                                                'welcome text': 'welcomeText',
+                                                'brand image url(optional)': 'brandImage',
+                                            };
+                                            const key = field.name.toLowerCase();
+                                            const fieldName = fieldMapping[key] || key.replace(/[^a-z0-9]/g, '');
+                                            const isRequired = field.name.includes('(required)');
+                                            return (
+                                                <div key={fieldIndex} className='flex flex-col gap-2'>
+                                                    <label htmlFor={fieldName} className='font-semibold'>
+                                                        {field.name}
+                                                        {isRequired && <span className='text-red-500'>*</span>}
+                                                    </label>
+                                                    {field.placeholder?.includes('\n') ||
+                                                    field.placeholder.length > 30 ? (
+                                                        <textarea
+                                                            className='input input-bordered max-w-lg'
+                                                            name={fieldName}
+                                                            rows={3}
+                                                            style={{ minHeight: '100px' }}
+                                                            placeholder={field.placeholder}
+                                                            value={formData[fieldName] || ''}
+                                                            onChange={handleInputChange}
+                                                            required={isRequired}
+                                                        />
+                                                    ) : (
+                                                        <input
+                                                            className='input input-bordered max-w-lg'
+                                                            type='text'
+                                                            name={fieldName}
+                                                            placeholder={field.placeholder}
+                                                            value={formData[fieldName] || ''}
+                                                            onChange={handleInputChange}
+                                                            required={isRequired}
+                                                        />
+                                                    )}
+                                                    <p className='text-xs text-gray-600'>{field.description}</p>
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
+                                ))}
 
                                 <button type='submit' className='btn btn-voice btn-primary btn-md'>
-                                    Generate Now
+                                    {data?.create?.generate_btn}
                                 </button>
                             </form>
                         </div>
 
-                        {!showPreview ? (
-                            <div className='w-full flex gap-4 flex-col'>
-                                <span className='text-xl font-semibold'>
-                                    <span>Widget preview</span>
-                                </span>
+                        {/* Widget Skeleton Preview in Edit Tab */}
+                        <WidgetPreview
+                            isSkeleton={true}
+                            logoSrc={brandImageSrc}
+                            welcomeMessage="Got any questions?\nWe're here to help."
+                            qrCodeRef={qrCodeRef}
+                            scanInstruction='Scan this QR code to start a WhatsApp conversation with us.'
+                            buttonText='Chat With Us'
+                            buttonHref='#'
+                            buttonGradient='linear-gradient(135deg, #25D366 0%, #128C7E 100%)'
+                            iconInButton={
                                 <img
-                                    className='max-w-[460px]'
-                                    src='/img/widget-preview.svg'
-                                    alt='widget preview logo'
+                                    src='/assets/global/whatsapp-link/whatsapp-icon-white.svg'
+                                    alt='WhatsApp'
+                                    className='w-full h-full'
                                 />
-                            </div>
-                        ) : (
-                            <div className='w-full flex gap-4 flex-col'>
-                                <span className='flex gap-4'>
-                                    <span className='text-xl font-semibold'>Widget preview</span>
-                                </span>
-                                <div className='my-4'>
-                                    <div>{generatedLink}</div>
-                                </div>
-                                <div className='flex gap-8 flex-col lg:flex-row'>
-                                    <div className=' lg:w-1/2 flex flex-col gap-6 p-8 bg-gray-200'>
-                                        <div className='flex md:flex-row flex-col gap-4 justify-between w-full'>
-                                            <button onClick={copyLink} className='btn btn-primaryb btn-md btn-outline'>
-                                                <MdCopyAll />
-                                                <span>{copyLinkSuccess ? 'Copied!' : 'Copy Link'}</span>
-                                            </button>
-                                            <button
-                                                onClick={downloadQRCode}
-                                                className='btn btn-primaryb btn-md btn-outline'
-                                            >
-                                                <MdDownload />
-                                                Download QR Code
-                                            </button>
-                                        </div>
-                                        <div className='flex flex-col gap-4 w-fit max-w-[340px]'>
-                                            <div className='flex flex-col gap-2 rounded-2xl w-fit border-2 p-8 border-black bg-white'>
-                                                <div
-                                                    style={{
-                                                        backgroundColor: '#fff',
-                                                        height: '50px',
-                                                        width: '50px',
-                                                        display: 'flex',
-                                                        alignItems: 'center',
-                                                        justifyContent: 'center',
-                                                    }}
-                                                >
-                                                    <img
-                                                        src={brandImageSrc}
-                                                        alt='Brand Image'
-                                                        style={{
-                                                            height: '100%',
-                                                        }}
-                                                    />
-                                                </div>
-                                                <div className='flex flex-col gap-3'>
-                                                    <div
-                                                        style={{
-                                                            backgroundColor: 'white',
-                                                            display: 'inline-block',
-                                                            margin: '0px 0px',
-                                                            padding: '10px 0px',
-                                                            borderRadius: 10,
-                                                        }}
-                                                    >
-                                                        <div
-                                                            style={{
-                                                                fontSize: '20px',
-                                                                lineHeight: '26px',
-                                                                marginTop: '4px',
-                                                                color: 'rgb(17, 17, 17)',
-                                                                whiteSpace: 'pre-line',
-                                                            }}
-                                                        >
-                                                            {formData.welcomeText}
-                                                        </div>
-                                                    </div>
-                                                    <div ref={qrCodeRef}></div>
-                                                    <div>Scan this QR code to initiate a WhatsApp chat with us.</div>
-                                                </div>
-                                                <div>
-                                                    <a
-                                                        href={generatedLink}
-                                                        role='button'
-                                                        target='_blank'
-                                                        rel='noopener'
-                                                        title='WhatsApp'
-                                                        className='btn btn-primary'
-                                                    >
-                                                        <img
-                                                            src='/assets/global/whatsapp-link/whatsapp-icon-white.svg'
-                                                            alt='WhatsApp Link '
-                                                        />
-                                                        <span
-                                                            style={{
-                                                                marginLeft: 8,
-                                                                marginRight: 8,
-                                                                zIndex: 1,
-                                                                color: 'rgb(255, 255, 255)',
-                                                            }}
-                                                        >
-                                                            Chat With Us
-                                                        </span>
-                                                        <MdChevronRight fontSize={26} />
-                                                    </a>
-                                                </div>
-                                                <div>
-                                                    <img src='https://msg91.com/img/poweredby.svg' alt='Powered By' />
-                                                </div>
-                                            </div>
-                                            <div className='ml-auto bg-green-400 rounded-full h-[44px] w-[44px] flex items-center justify-center'>
-                                                <svg
-                                                    width={23}
-                                                    height={13}
-                                                    viewBox='0 0 23 13'
-                                                    fill='none'
-                                                    style={{ pointerEvents: 'none', display: 'block' }}
-                                                    xmlns='http://www.w3.org/2000/svg'
-                                                >
-                                                    <path
-                                                        d='M2.20001 1.7334L11.6154 11.1488L21.0308 1.7334'
-                                                        stroke='#000'
-                                                        strokeWidth={2}
-                                                        strokeLinecap='square'
-                                                    />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className='lg:w-1/2'>
-                                        <div>
-                                            <span style={{ lineHeight: '38px' }}>
-                                                <span className='text-xl font-semibold'>Widget code snippet</span>
-                                            </span>
-                                        </div>
-                                        <p>Copy and paste this code on every page of your website.</p>
-                                        <pre style={{ position: 'relative' }}>
-                                            <div className='absolute right-0 '>
-                                                <button onClick={copyCode} className='btn btn-md btn-white btn-outline'>
-                                                    <MdCopyAll />
-                                                    <span>{copyCodeSuccess ? 'Copied!' : 'Copy code'}</span>
-                                                </button>
-                                            </div>
-                                            <code className='language-javascript hljs'>{widgetCode}</code>
-                                        </pre>
-                                    </div>
-                                </div>
-                            </div>
-                        )}
+                            }
+                            bubbleColor='green-500'
+                        />
                     </div>
-                </div>
+                )}
+
+                {/* Preview Tab */}
+                {showPreview && (
+                    <div className='flex gap-8 flex-col lg:flex-row'>
+                        {/* Left: Widget Code Snippet */}
+                        <WidgetCodeSnippet widgetCode={widgetCode} onCopy={copyCode} copySuccess={copyCodeSuccess} />
+
+                        {/* Right: Widget Preview */}
+                        <WidgetPreview
+                            isSkeleton={false}
+                            logoSrc={brandImageSrc}
+                            welcomeMessage={formData.welcomeText || "Got any questions?\nWe're here to help."}
+                            qrCodeRef={qrCodeRef}
+                            scanInstruction='Scan this QR code to start a WhatsApp conversation with us.'
+                            buttonText='Chat With Us'
+                            buttonHref={generatedLink}
+                            buttonGradient='linear-gradient(135deg, #25D366 0%, #128C7E 100%)'
+                            iconInButton={
+                                <img
+                                    src='/assets/global/whatsapp-link/whatsapp-icon-white.svg'
+                                    alt='WhatsApp'
+                                    className='w-full h-full'
+                                />
+                            }
+                            onCopyLink={copyLink}
+                            onDownloadQR={downloadQRCode}
+                            copyLinkSuccess={copyLinkSuccess}
+                            qrCodeReady={qrCodeReady}
+                            bubbleColor='green-500'
+                        />
+                    </div>
+                )}
             </div>
+
+            {/* FAQ Section */}
+            {data?.FaqsComp && (
+                <FAQSection heading={data?.FaqsComp?.heading} faqs={data?.FaqsComp?.faqs} themeColor='green' />
+            )}
+
+            {/* PreFooter Section */}
+            {data?.PreFooterComp && (
+                <PreFooter
+                    content={data?.PreFooterComp?.content}
+                    buttons={data?.PreFooterComp?.buttons}
+                    themeColor='green'
+                />
+            )}
         </>
     );
 };

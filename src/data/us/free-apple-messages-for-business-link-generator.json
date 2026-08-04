@@ -85,7 +85,7 @@
         },
         "secondary": {
             "heading": "Want a Messages button on your website?",
-            "body": "Beyond a link or QR code, Apple also supports an embeddable Messages button using Apple's official Messages for Business JavaScript library and a business ID. Our team can help you set this up alongside your MSG91 integration.",
+            "body": "Beyond a link or QR code, Apple also supports an embeddable Messages button using the official Messages for Business JavaScript library and a business ID. Our team can help you set this up alongside your MSG91 integration.",
             "ctaText": "Talk to us about website integration",
             "ctaLink": "/contact-us"
         }
