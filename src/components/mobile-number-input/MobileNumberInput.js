@@ -4,6 +4,8 @@ import { countries, getCountryByCode } from './countries-data';
 
 import { buildFullPhoneNumber, formatPhoneNumber, parseFullPhoneNumber, validatePhoneNumber } from './phone-utils';
 
+import FlagImage from './FlagImage';
+
 const MobileNumberInput = ({
     value = '',
     onChange,
@@ -327,23 +329,26 @@ const MobileNumberInput = ({
                     aria-haspopup='listbox'
                     aria-expanded={isDropdownOpen}
                     aria-label={`Selected country ${selectedCountry.name}, ${selectedCountry.dialCode}`}
-                    className={`flex shrink-0 items-center gap-2 rounded-l-md border border-r-0 px-3 py-2 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 ${validationError ? 'border-red-500' : 'border-gray-300'}`}
+                    className={`flex shrink-0 items-center gap-1 rounded-l-md border border-r-0 px-2 py-1 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50 bg-gray-50 ${validationError ? 'border-red-500' : 'border-gray-300'}`}
                 >
                     {/* Flag */}
 
-                    <span className='text-xl leading-none' aria-hidden='true'>
-                        {selectedCountry.flag}
-                    </span>
+                    <FlagImage
+                        flagUrl={selectedCountry.flagUrl}
+                        flag={selectedCountry.flag}
+                        countryName={selectedCountry.name}
+                        className='h-4 w-6 object-cover rounded-sm '
+                    />
 
                     {/* Dial code */}
 
-                    <span className='text-sm text-gray-700'>{selectedCountry.dialCode}</span>
+                    <span className='text-xs text-gray-700'>{selectedCountry.dialCode}</span>
 
                     {/* Arrow */}
 
                     <svg
-                        width='16'
-                        height='16'
+                        width='14'
+                        height='14'
                         viewBox='0 0 24 24'
                         fill='none'
                         stroke='currentColor'
@@ -424,9 +429,12 @@ const MobileNumberInput = ({
                                             onClick={() => handleCountrySelect(country)}
                                             className={`flex w-full items-center gap-3 px-3 py-2.5 text-left transition-colors hover:bg-gray-50 focus:bg-gray-50 focus:outline-none ${isSelected ? 'bg-gray-50' : ''}`}
                                         >
-                                            <span className='shrink-0 text-xl leading-none' aria-hidden='true'>
-                                                {country.flag}
-                                            </span>
+                                            <FlagImage
+                                                flagUrl={country.flagUrl}
+                                                flag={country.flag}
+                                                countryName={country.name}
+                                                className='h-4 w-6 object-cover rounded-sm shrink-0'
+                                            />
 
                                             <span className='min-w-0 flex-1 truncate text-sm text-gray-700'>
                                                 {country.name}
