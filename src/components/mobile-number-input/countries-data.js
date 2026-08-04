@@ -161,7 +161,7 @@ export const countries = [
     { code: 'MQ', name: 'Martinique', dialCode: '+596', flag: '🇲🇶', flagUrl: '/assets/flags/mq.png' },
     { code: 'MR', name: 'Mauritania', dialCode: '+222', flag: '🇲🇷', flagUrl: '/assets/flags/mr.png' },
     { code: 'MU', name: 'Mauritius', dialCode: '+230', flag: '🇲🇺', flagUrl: '/assets/flags/mu.png' },
-    { code: 'YT', name: 'Mayotte', dialCode: '+262', flag: '🇾🇹', flagUrl: '/assets/flags/yt.png' },
+    { code: 'YT', name: 'Mayotte', dialCode: '+262', flag: '🇾🇹', flagUrl: '/assets/flags/fr.png' },
     { code: 'MX', name: 'Mexico', dialCode: '+52', flag: '🇲🇽', flagUrl: '/assets/flags/mx.png' },
     { code: 'FM', name: 'Micronesia', dialCode: '+691', flag: '🇫🇲', flagUrl: '/assets/flags/fm.png' },
     { code: 'MD', name: 'Moldova', dialCode: '+373', flag: '🇲🇩', flagUrl: '/assets/flags/md.png' },
@@ -210,12 +210,12 @@ export const countries = [
     { code: 'RU', name: 'Russia', dialCode: '+7', flag: '🇷🇺', flagUrl: '/assets/flags/ru.png' },
     { code: 'RW', name: 'Rwanda', dialCode: '+250', flag: '🇷🇼', flagUrl: '/assets/flags/rw.png' },
 
-    { code: 'BL', name: 'Saint Barthélemy', dialCode: '+590', flag: '🇧🇱', flagUrl: '/assets/flags/bl.png' },
+    { code: 'BL', name: 'Saint Barthélemy', dialCode: '+590', flag: '🇧🇱', flagUrl: '/assets/flags/fr.png' },
     { code: 'SH', name: 'Saint Helena', dialCode: '+290', flag: '🇸🇭', flagUrl: '/assets/flags/sh.png' },
     { code: 'KN', name: 'Saint Kitts and Nevis', dialCode: '+1869', flag: '🇰🇳', flagUrl: '/assets/flags/kn.png' },
     { code: 'LC', name: 'Saint Lucia', dialCode: '+1758', flag: '🇱🇨', flagUrl: '/assets/flags/lc.png' },
     { code: 'MF', name: 'Saint Martin', dialCode: '+590', flag: '🇲🇫', flagUrl: '/assets/flags/mf.png' },
-    { code: 'PM', name: 'Saint Pierre and Miquelon', dialCode: '+508', flag: '🇵🇲', flagUrl: '/assets/flags/pm.png' },
+    { code: 'PM', name: 'Saint Pierre and Miquelon', dialCode: '+508', flag: '🇵🇲', flagUrl: '/assets/flags/fr.png' },
     {
         code: 'VC',
         name: 'Saint Vincent and the Grenadines',
@@ -277,7 +277,7 @@ export const countries = [
     { code: 'VE', name: 'Venezuela', dialCode: '+58', flag: '🇻🇪', flagUrl: '/assets/flags/ve.png' },
     { code: 'VN', name: 'Vietnam', dialCode: '+84', flag: '🇻🇳', flagUrl: '/assets/flags/vn.png' },
 
-    { code: 'WF', name: 'Wallis and Futuna', dialCode: '+681', flag: '🇼🇫', flagUrl: '/assets/flags/wf.png' },
+    { code: 'WF', name: 'Wallis and Futuna', dialCode: '+681', flag: '🇼🇫', flagUrl: '/assets/flags/fr.png' },
 
     { code: 'YE', name: 'Yemen', dialCode: '+967', flag: '🇾🇪', flagUrl: '/assets/flags/ye.png' },
 
