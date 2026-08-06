@@ -1,7 +1,7 @@
 async function CreateWhatsappChatWidget(
     option = {
         brandSetting: {
-            brandImg: 'https://msg91.com/img/icon/walink-whatsapp.svg',
+            brandImg: '/img/icon/walink-whatsapp.svg',
             welcomeText: 'I have some questions about MSG91, \ncan you help?',
             messageText: 'I’ve some questions about MSG91, can you help?',
             phoneNumber: '85252859384',
@@ -17,24 +17,22 @@ async function CreateWhatsappChatWidget(
         enabled: true,
     }
 ) {
-    if (option.enabled == false) {
+    // Wait for DOM to be ready before initializing
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function () {
+            initWidgetLogic(option);
+        });
         return;
     }
-    if (typeof QRCode === 'undefined') {
-        var qrScript = document.createElement('script');
-        qrScript.src = 'https://msg91.com/js/qrcode.js';
-        qrScript.onload = function () {
-            var qrcode = new QRCode(document.getElementById('qrcode'), {
-                width: 150,
-                height: 150,
-                colorDark: '#000000',
-                colorLight: '#ffffff',
-            });
-            qrcode.makeCode(
-                `https://wa.me/${option.brandSetting.phoneNumber.replace(/\+/g, '')}?text=${option.brandSetting.messageText ? option.brandSetting.messageText : ''}`
-            );
-        };
-        document.body.appendChild(qrScript);
+
+    initWidgetLogic(option);
+}
+
+function initWidgetLogic(option) {
+    console.log('initWidgetLogic called with option:', option);
+    if (option.enabled == false) {
+        console.log('Widget disabled, returning');
+        return;
     }
     if (!option.chatButtonSetting.position) {
         option.chatButtonSetting.position = 'right';
@@ -57,6 +55,7 @@ async function CreateWhatsappChatWidget(
       </svg>`;
 
     initWidget();
+
     function initWidget() {
         if (option.brandSetting.messageText) {
             option.brandSetting.messageText = option.brandSetting.messageText.replaceAll(
@@ -78,6 +77,7 @@ async function CreateWhatsappChatWidget(
             option.brandSetting.messageText = option.brandSetting.messageText.replaceAll('\n', '%0A');
         }
 
+        console.log('About to insert widget HTML');
         document.body.insertAdjacentHTML(
             'beforeend',
             `<div id="whatsapp-chat-widget">
@@ -85,11 +85,14 @@ async function CreateWhatsappChatWidget(
                     ${defaultSvg}
                     <svg id="wa-widget-opened-svg" width="23" height="13" viewBox="0 0 23 13" fill="none" style="pointer-events: none"
                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.20001 1.7334L11.6154 11.1488L21.0308 1.7334" stroke="#000" stroke-width="2" stroke-linecap="square"/>
+                        <path d="M2.20001 1.7334L11.6154 11.1488L21.0308 1.7334" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"/>
                     </svg>
                 </div>
             </div>`
         );
+        console.log('Widget HTML inserted');
+        const widget = document.querySelector('#whatsapp-chat-widget');
+        console.log('Widget element found:', widget);
         document.querySelector('#whatsapp-chat-widget')?.insertAdjacentHTML(
             'beforeend',
             `<div class='wa-chat-bubble'>
@@ -108,7 +111,7 @@ async function CreateWhatsappChatWidget(
             'beforeend',
             `<div class='wa-chat-box'>
                  <img class='wa-chat-box-brand'
-                    onError='this.src= "https://msg91.com/img/icon/walink-whatsapp.svg";' 
+                    onError='this.src= "/img/icon/walink-whatsapp.svg";' 
                     src='${option.brandSetting.brandImg}'/> 
     
                  <div class='wa-chat-box-content-chat-welcome'>
@@ -141,7 +144,7 @@ async function CreateWhatsappChatWidget(
     
                 <div class='wa-chat-box-poweredby'>                    
                     <a href="https://msg91.com" target="_blank" class="wa-chat-box-poweredby-link">
-                      <img src="https://msg91.com/img/poweredby.svg">
+                      <img src="/img/poweredby.svg">
                     </a>
                 </div>
             </div>
@@ -179,6 +182,40 @@ async function CreateWhatsappChatWidget(
                 document.querySelector('.wa-chat-box').classList.add('wa-chat-box-transition');
             }, 100);
         };
+
+        // Load QR code after widget HTML is inserted
+        setTimeout(function () {
+            loadQRCodeLibrary();
+        }, 100);
+    }
+
+    function loadQRCodeLibrary() {
+        if (typeof QRCode === 'undefined') {
+            var qrScript = document.createElement('script');
+            // Use relative path for QR code library
+            qrScript.src = '/js/qrcode.js';
+            qrScript.onload = function () {
+                generateQRCode();
+            };
+            document.body.appendChild(qrScript);
+        } else {
+            generateQRCode();
+        }
+    }
+
+    function generateQRCode() {
+        var qrcodeElement = document.getElementById('qrcode');
+        if (qrcodeElement) {
+            var qrcode = new QRCode(qrcodeElement, {
+                width: 150,
+                height: 150,
+                colorDark: '#000000',
+                colorLight: '#ffffff',
+            });
+            qrcode.makeCode(
+                `https://wa.me/${option.brandSetting.phoneNumber.replace(/\+/g, '')}?text=${option.brandSetting.messageText ? option.brandSetting.messageText : ''}`
+            );
+        }
     }
 
     var styles = `          
@@ -285,9 +322,7 @@ async function CreateWhatsappChatWidget(
               align-items: center;
               justify-content: center;
           }
-          .wa-widget-send-button-clicked {
-            border: 2px solid #363636;
-          }
+         
           .wa-chat-box-poweredby{
               margin-left: auto;
               margin-right: auto;
@@ -367,5 +402,6 @@ async function CreateWhatsappChatWidget(
 
     var styleSheet = document.createElement('style');
     styleSheet.innerText = styles;
-    document.getElementsByTagName('head')[0].appendChild(styleSheet);
+    document.head.appendChild(styleSheet);
+    console.log('Stylesheet inserted');
 }
