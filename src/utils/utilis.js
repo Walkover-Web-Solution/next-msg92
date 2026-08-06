@@ -115,3 +115,25 @@ export function setUtm() {
         }
     }
 }
+
+export function isIOS() {
+    if (typeof window === 'undefined') return false;
+
+    return (
+        ['iPad Simulator', 'iPhone Simulator', 'iPod Simulator', 'iPad', 'iPhone', 'iPod'].includes(
+            navigator.platform
+        ) ||
+        // iPad on iOS 13+ detection
+        (navigator.userAgent.includes('Mac') && navigator.maxTouchPoints > 1)
+    );
+}
+
+export function isMacOS() {
+    if (typeof window === 'undefined') return false;
+
+    return navigator.platform === 'MacIntel' && !isIOS();
+}
+
+export function isAppleDevice() {
+    return isIOS() || isMacOS();
+}

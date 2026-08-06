@@ -2,8 +2,11 @@ import React from 'react';
 import { MdContentCopy } from 'react-icons/md';
 
 const WidgetCodeSnippet = ({ widgetCode, onCopy, copySuccess }) => {
+    // Encode HTML entities for display
+    const displayCode = widgetCode.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
     return (
-        <div className='lg:w-1/2 flex flex-col gap-4'>
+        <div className='w-full flex flex-col gap-4'>
             <span className='text-xl font-semibold'>Widget code snippet</span>
             <pre
                 style={{
@@ -31,7 +34,7 @@ const WidgetCodeSnippet = ({ widgetCode, onCopy, copySuccess }) => {
                         background: 'transparent',
                         color: 'inherit',
                     }}
-                    dangerouslySetInnerHTML={{ __html: widgetCode }}
+                    dangerouslySetInnerHTML={{ __html: displayCode }}
                 ></code>
             </pre>
             <p>Copy and paste this code on every page of your website.</p>

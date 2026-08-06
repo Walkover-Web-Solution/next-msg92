@@ -8,6 +8,7 @@ import StepsSection from '@/components/Shared/StepsSection';
 import SecondaryCTA from '@/components/Shared/SecondaryCTA';
 import FAQSection from '@/components/Shared/FAQSection';
 import PreFooter from '@/components/Shared/PreFooter';
+import { generateWidgetScript } from '@/utils/generateWidgetScript';
 
 const loadScript = (src) => {
     return new Promise((resolve, reject) => {
@@ -177,17 +178,17 @@ export default function MSG91AppleMessagesLinkGenerator({ data }) {
                 qrCodeInstance.current.makeCode(generatedLink);
                 setQrCodeReady(true);
 
-                // Generate widget code
-                const widgetCodeHtml = `&lt;script&gt;
-var options = {
-  businessId: "${formData.businessId}",
-  intentId: "${formData.intentId}",
-  groupId: "${formData.groupId}",
-  preFilledMessage: \`${formData.preFilledMessage}\`,
-  enabled: true
-}
-&lt;/script&gt;
-&lt;script type="text/javascript" onload="CreateAppleMessagesWidget(options)" src="https://msg91.com/js/appleMessagesWidget.js"&gt;&lt;/script&gt;`;
+                // Generate widget code using common function
+                const widgetCodeHtml = generateWidgetScript(
+                    'apple',
+                    {
+                        businessId: formData.businessId,
+                        intentId: formData.intentId,
+                        groupId: formData.groupId,
+                        preFilledMessage: formData.preFilledMessage,
+                    },
+                    process.env.BASE_URL
+                );
 
                 setWidgetCode(widgetCodeHtml);
             } catch (error) {
@@ -225,7 +226,9 @@ var options = {
     const handleCopyCode = () => {
         if (!widgetCode) return;
         const tempInput = document.createElement('input');
-        tempInput.value = widgetCode;
+        // Decode HTML entities for copying
+        const decodedCode = widgetCode.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+        tempInput.value = decodedCode;
         document.body.appendChild(tempInput);
         tempInput.select();
         document.execCommand('copy');
@@ -342,14 +345,14 @@ var options = {
                                             const key = field.name.toLowerCase();
                                             const fieldName = fieldMapping[key] || key.replace(/[^a-z0-9]/g, '');
                                             const isRequired = field.name.includes('(required)');
+                                            const isTextarea = fieldName === 'preFilledMessage';
                                             return (
                                                 <div key={fieldIndex} className='flex flex-col gap-2'>
                                                     <label htmlFor={fieldName} className='font-semibold'>
                                                         {field.name}
                                                         {isRequired && <span className='text-red-500'>*</span>}
                                                     </label>
-                                                    {field.placeholder?.includes('e.g.') &&
-                                                    field.placeholder.length > 30 ? (
+                                                    {isTextarea ? (
                                                         <textarea
                                                             className='input input-bordered max-w-lg'
                                                             name={fieldName}
@@ -404,15 +407,31 @@ var options = {
                             scanInstruction='Scan this QR code to start an Apple Messages for Business conversation.'
                             buttonText='Message Us'
                             buttonHref='#'
-                            buttonColor='#007AFF'
+                            buttonColor='#50EE6A'
                             iconInButton={
-                                <img
-                                    src='/assets/icons/products/imessage.svg'
-                                    alt='Apple Messages'
+                                <svg
+                                    width='24'
+                                    height='24'
+                                    viewBox='0 0 38 38'
+                                    xmlns='http://www.w3.org/2000/svg'
                                     className='w-full h-full'
-                                />
+                                >
+                                    <circle cx='19' cy='19' r='19' fill='#50EE6A' />
+                                    <path
+                                        d='M19 6.57
+                                           C11.32 6.57 5.07 11.78 5.07 18.39
+                                           C5.07 22.52 7.5 26.16 11.85 28.54
+                                           C11.29 29.9 10.48 31.04 9.42 31.96
+                                           C11.5 31.77 13.39 31.02 15.12 29.75
+                                           C16.37 30.06 17.68 30.21 19 30.21
+                                           C26.68 30.21 32.93 25 32.93 18.39
+                                           C32.93 11.78 26.68 6.57 19 6.57Z'
+                                        fill='#ffffff'
+                                    />
+                                </svg>
                             }
-                            bubbleColor='blue-500'
+                            bubbleColor='green-500'
+                            showButton={true}
                         />
                     </div>
                 )}
@@ -432,19 +451,35 @@ var options = {
                             scanInstruction='Scan this QR code to start an Apple Messages for Business conversation.'
                             buttonText='Message Us'
                             buttonHref={generatedLink}
-                            buttonColor='#007AFF'
+                            buttonColor='#50EE6A'
                             iconInButton={
-                                <img
-                                    src='/assets/icons/products/imessage.svg'
-                                    alt='Apple Messages'
+                                <svg
+                                    width='24'
+                                    height='24'
+                                    viewBox='0 0 38 38'
+                                    xmlns='http://www.w3.org/2000/svg'
                                     className='w-full h-full'
-                                />
+                                >
+                                    <circle cx='19' cy='19' r='19' fill='#50EE6A' />
+                                    <path
+                                        d='M19 6.57
+                                           C11.32 6.57 5.07 11.78 5.07 18.39
+                                           C5.07 22.52 7.5 26.16 11.85 28.54
+                                           C11.29 29.9 10.48 31.04 9.42 31.96
+                                           C11.5 31.77 13.39 31.02 15.12 29.75
+                                           C16.37 30.06 17.68 30.21 19 30.21
+                                           C26.68 30.21 32.93 25 32.93 18.39
+                                           C32.93 11.78 26.68 6.57 19 6.57Z'
+                                        fill='#ffffff'
+                                    />
+                                </svg>
                             }
                             onCopyLink={handleCopyLink}
                             onDownloadQR={handleDownloadQR}
                             copyLinkSuccess={copied}
                             qrCodeReady={qrCodeReady}
-                            bubbleColor='blue-500'
+                            bubbleColor='green-500'
+                            showButton={true}
                         />
                     </div>
                 )}

@@ -21,7 +21,7 @@ const WidgetPreview = ({
     const buttonStyle = buttonGradient ? { background: buttonGradient } : { backgroundColor: buttonColor };
 
     return (
-        <div className='lg:w-1/2 flex flex-col gap-6 p-8 bg-slate-100 rounded-2xl'>
+        <div className='w-full flex flex-col gap-6 p-8 bg-slate-100 rounded-2xl'>
             {/* Action Buttons */}
             <div className='flex md:flex-row flex-col gap-3 justify-between w-full'>
                 {isSkeleton ? (
@@ -151,7 +151,7 @@ const WidgetPreview = ({
                     <div
                         className={`ms-auto bg-${bubbleColor} rounded-full h-10 w-10 flex items-center justify-center shadow-md cursor-pointer hover:scale-110 transition-transform`}
                     >
-                        <MdChevronDown className='w-6 h-6 text-slate-900' strokeWidth={3} />
+                        <MdChevronDown className='w-6 h-6 text-slate-900' />
                     </div>
                 )}
             </div>

@@ -17,6 +17,7 @@ import StepsSection from '@/components/Shared/StepsSection';
 import SecondaryCTA from '@/components/Shared/SecondaryCTA';
 import FAQSection from '@/components/Shared/FAQSection';
 import PreFooter from '@/components/Shared/PreFooter';
+import { generateWidgetScript } from '@/utils/generateWidgetScript';
 
 const loadScript = (src) => {
     return new Promise((resolve, reject) => {
@@ -100,28 +101,19 @@ const WhatsappLinkComp = ({ data }) => {
                 qrCodeInstance.current.makeCode(generatedLink);
                 setQrCodeReady(true);
 
-                // Generate widget code
-                const widgetCodeHtml = `&lt;script&gt;
-var options = {
-  brandSetting: {
-    brandImg: "${formData.brandImage}",
-    welcomeText: \`${formData.welcomeText}\`, 
-    messageText: \`${formData.preFilledMessage}\`,
-    phoneNumber: "${formData.phoneNumber}",
-  },
-  chatButtonSetting: {
-    backgroundColor: "#24d366",
-    ctaText: 'Chat with us',
-    marginLeft: "0",
-    marginRight: "20",
-    marginBottom: "20",
-    position: "right",
-  },
-  enabled: true,
-  isNewChatWidget: true
-}
-&lt;/script&gt;
-&lt;script type="text/javascript" onload="CreateWhatsappChatWidget(options)" src="https://msg91.com/js/waWidget.js"&gt;&lt;/script&gt;`;
+                // Generate widget code using common function
+                const widgetCodeHtml = generateWidgetScript(
+                    'whatsapp',
+                    {
+                        brandSetting: {
+                            brandImg: formData.brandImage,
+                            welcomeText: formData.welcomeText,
+                            messageText: formData.preFilledMessage,
+                            phoneNumber: formData.phoneNumber,
+                        },
+                    },
+                    process.env.BASE_URL
+                );
 
                 setWidgetCode(widgetCodeHtml);
             } catch (error) {
@@ -175,7 +167,14 @@ var options = {
     };
 
     const copyCode = () => {
-        navigator.clipboard.writeText(widgetCode);
+        if (!widgetCode) return;
+        const tempInput = document.createElement('input');
+        tempInput.value = widgetCode;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+
         setCopyCodeSuccess(true);
         setTimeout(() => setCopyCodeSuccess(false), 2000);
     };
