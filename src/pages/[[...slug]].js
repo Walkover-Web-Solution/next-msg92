@@ -75,6 +75,7 @@ import FooterCta from '@/components/HelloBrComp/FooterCtaComp/FooterCta';
 import Faqs from '@/components/HelloBrComp/FaqsComp/Faqs';
 import G2Badges from '@/components/HelloBrComp/G2BadgesComp/G2Badges';
 import Pricing from '@/components/HelloBrComp/PricingComp/Pricing';
+import CostComparisionComp from '@/components/CostComparisionComp/CostComparisionComp';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -171,7 +172,7 @@ const Components = {
     Faqs,
     G2Badges,
     Pricing,
-    G2Badges,
+    CostComparisionComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
