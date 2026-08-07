@@ -9,6 +9,7 @@ import SecondaryCTA from '@/components/Shared/SecondaryCTA';
 import FAQSection from '@/components/Shared/FAQSection';
 import PreFooter from '@/components/Shared/PreFooter';
 import { generateWidgetScript } from '@/utils/generateWidgetScript';
+import axios from 'axios';
 
 const loadScript = (src) => {
     return new Promise((resolve, reject) => {
@@ -52,6 +53,7 @@ export default function MSG91AppleMessagesLinkGenerator({ data }) {
 
     const [errors, setErrors] = useState({});
     const [generatedLink, setGeneratedLink] = useState('');
+    const [apiError, setApiError] = useState('');
     const [copied, setCopied] = useState(false);
     const [copiedCode, setCopiedCode] = useState(false);
     const [openFaqIndex, setOpenFaqIndex] = useState(null);
@@ -61,6 +63,8 @@ export default function MSG91AppleMessagesLinkGenerator({ data }) {
     const [widgetCode, setWidgetCode] = useState('');
     const [showPreview, setShowPreview] = useState(false);
     const [hasGenerated, setHasGenerated] = useState(false);
+    const [apiResponse, setApiResponse] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
     const qrCodeRef = useRef(null);
     const qrCodeInstance = useRef(null);
     const generatorRef = useRef(null);
@@ -87,27 +91,7 @@ export default function MSG91AppleMessagesLinkGenerator({ data }) {
         setErrors((prev) => ({ ...prev, [name]: err }));
     };
 
-    // Construct URL based on Apple specifications
-    const buildAppleLink = (data) => {
-        if (!data.businessId.trim()) return '';
-        let url = `https://bcrw.apple.com/urn:biz:${data.businessId.trim()}`;
-        const params = [];
-        if (data.intentId.trim()) {
-            params.push(`biz-intent-id=${encodeURIComponent(data.intentId.trim())}`);
-        }
-        if (data.groupId.trim()) {
-            params.push(`biz-group-id=${encodeURIComponent(data.groupId.trim())}`);
-        }
-        if (data.preFilledMessage.trim()) {
-            params.push(`body=${encodeURIComponent(data.preFilledMessage.trim())}`);
-        }
-        if (params.length > 0) {
-            url += '?' + params.join('&');
-        }
-        return url;
-    };
-
-    const handleGenerate = (e) => {
+    const handleGenerate = async (e) => {
         if (e) e.preventDefault();
 
         let hasError = false;
@@ -122,24 +106,42 @@ export default function MSG91AppleMessagesLinkGenerator({ data }) {
         });
 
         setErrors(newErrors);
+        setApiError(''); // Clear previous API errors
 
         if (!hasError) {
-            const link = buildAppleLink(formData);
-            setGeneratedLink(link);
-            setShowPreview(true);
-            setHasGenerated(true);
-            showToast('Apple Messages link & QR code updated successfully!');
+            setIsLoading(true);
+            try {
+                const response = await axios.post('/api/apple-messages/url', {
+                    businessId: formData.businessId,
+                    intentId: formData.intentId,
+                    groupId: formData.groupId,
+                    preFilledMessage: formData.preFilledMessage,
+                });
+
+                if (response.data.success && response.data.url) {
+                    setApiResponse(response.data);
+                    setGeneratedLink(response.data.url);
+                    setShowPreview(true);
+                    setHasGenerated(true);
+                    setApiError('');
+                    showToast('Apple Messages link & QR code generated successfully!');
+                } else {
+                    const errorMessage = response.data.message || 'Failed to generate link. Please try again.';
+                    setApiError(errorMessage);
+                    showToast(errorMessage);
+                }
+            } catch (error) {
+                console.error('API Error:', error);
+                const errorMessage = 'Network error. Please check your internet connection.';
+                setApiError(errorMessage);
+                showToast(errorMessage);
+            } finally {
+                setIsLoading(false);
+            }
         } else {
             showToast('Please resolve validation errors in the form.');
         }
     };
-
-    // Auto-update the generated link when switching tabs after first generation
-    useEffect(() => {
-        if (hasGenerated) {
-            setGeneratedLink(buildAppleLink(formData));
-        }
-    }, [showPreview]);
 
     const editForm = () => {
         setShowPreview(false);
@@ -155,10 +157,6 @@ export default function MSG91AppleMessagesLinkGenerator({ data }) {
             .catch((error) => {
                 console.error('Failed to load QRCode library:', error);
             });
-    }, []);
-
-    useEffect(() => {
-        setGeneratedLink(buildAppleLink(formData));
     }, []);
 
     // Generate QR code when link is generated
@@ -383,6 +381,14 @@ export default function MSG91AppleMessagesLinkGenerator({ data }) {
                                     </div>
                                 ))}
 
+                                {/* API Error Display */}
+                                {apiError && (
+                                    <div className='flex items-start gap-2 bg-red-50 border border-red-200 rounded-lg p-3'>
+                                        <MdWarning className='w-4 h-4 text-red-600 shrink-0 mt-0.5' />
+                                        <p className='text-xs text-red-800'>{apiError}</p>
+                                    </div>
+                                )}
+
                                 {/* Validation Note */}
                                 {data?.create?.validationNote && (
                                     <div className='flex items-center gap-2'>
@@ -392,8 +398,34 @@ export default function MSG91AppleMessagesLinkGenerator({ data }) {
                                 )}
 
                                 {/* Submit Button */}
-                                <button type='submit' className='btn btn-primary btn-md w-fit'>
-                                    {data?.create?.generate_btn}
+                                <button type='submit' className='btn btn-primary btn-md w-fit' disabled={isLoading}>
+                                    {isLoading ? (
+                                        <span className='flex items-center gap-2'>
+                                            <svg
+                                                className='animate-spin h-4 w-4'
+                                                xmlns='http://www.w3.org/2000/svg'
+                                                fill='none'
+                                                viewBox='0 0 24 24'
+                                            >
+                                                <circle
+                                                    className='opacity-25'
+                                                    cx='12'
+                                                    cy='12'
+                                                    r='10'
+                                                    stroke='currentColor'
+                                                    strokeWidth='4'
+                                                ></circle>
+                                                <path
+                                                    className='opacity-75'
+                                                    fill='currentColor'
+                                                    d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'
+                                                ></path>
+                                            </svg>
+                                            Generating...
+                                        </span>
+                                    ) : (
+                                        data?.create?.generate_btn
+                                    )}
                                 </button>
                             </form>
                         </div>
@@ -463,13 +495,13 @@ export default function MSG91AppleMessagesLinkGenerator({ data }) {
                                     <circle cx='19' cy='19' r='19' fill='#50EE6A' />
                                     <path
                                         d='M19 6.57
-                                           C11.32 6.57 5.07 11.78 5.07 18.39
-                                           C5.07 22.52 7.5 26.16 11.85 28.54
-                                           C11.29 29.9 10.48 31.04 9.42 31.96
-                                           C11.5 31.77 13.39 31.02 15.12 29.75
-                                           C16.37 30.06 17.68 30.21 19 30.21
-                                           C26.68 30.21 32.93 25 32.93 18.39
-                                           C32.93 11.78 26.68 6.57 19 6.57Z'
+                                               C11.32 6.57 5.07 11.78 5.07 18.39
+                                               C5.07 22.52 7.5 26.16 11.85 28.54
+                                               C11.29 29.9 10.48 31.04 9.42 31.96
+                                               C11.5 31.77 13.39 31.02 15.12 29.75
+                                               C16.37 30.06 17.68 30.21 19 30.21
+                                               C26.68 30.21 32.93 25 32.93 18.39
+                                               C32.93 11.78 26.68 6.57 19 6.57Z'
                                         fill='#ffffff'
                                     />
                                 </svg>
