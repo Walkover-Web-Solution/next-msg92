@@ -3,7 +3,10 @@
     "notification": {
         "support": "Contact Us",
         "login": "LOG IN",
-        "hide": ["signup", "singin"]
+        "hide": [
+            "signup",
+            "singin"
+        ]
     },
     "menu": {
         "products": "Products",
@@ -197,10 +200,16 @@
         ],
         "apidocs": "API Docs",
         "signup_btn": "Sign Up",
-        "hide": ["signup", "singin"]
+        "hide": [
+            "signup",
+            "singin"
+        ]
     },
     "footer": {
-        "hide": ["signup", "singin"],
+        "hide": [
+            "signup",
+            "singin"
+        ],
         "products": {
             "name": "Our Products",
             "links": [
@@ -344,6 +353,10 @@
                 {
                     "name": "Compare",
                     "link": "compare"
+                },
+                {
+                    "name": "Cost comparison",
+                    "link": "cost-comparision"
                 }
             ]
         },
