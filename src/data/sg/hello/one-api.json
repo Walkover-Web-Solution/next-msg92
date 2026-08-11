@@ -13,6 +13,8 @@
         "heading": "Make Messaging Changes Instantly - Without Repeated Deployment",
         "subheading": "Switching channels, updating templates, or adding fallback logic should not require code changes and deployment cycles. ONE API by MSG91 makes your communication layer dynamic so you can adapt delivery logic and content in real time without touching backend systems.",
         "banner_img": "",
+        "banner_video": "/assets/one-api/hero-section.mp4",
+        "not_absolute": true,
         "getstarted_btn": "Get Started",
         "trustedByComp": {
             "heading": "",
