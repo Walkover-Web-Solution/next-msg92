@@ -76,6 +76,7 @@ import Faqs from '@/components/HelloBrComp/FaqsComp/Faqs';
 import G2Badges from '@/components/HelloBrComp/G2BadgesComp/G2Badges';
 import Pricing from '@/components/HelloBrComp/PricingComp/Pricing';
 import CostComparisionComp from '@/components/CostComparisionComp/CostComparisionComp';
+import EventRegistrationComp from '@/components/EventRegistrationComp';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -173,6 +174,7 @@ const Components = {
     G2Badges,
     Pricing,
     CostComparisionComp,
+    EventRegistrationComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
