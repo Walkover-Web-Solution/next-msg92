@@ -1,0 +1,69 @@
+{
+    "HeadComp": {
+        "title": "MSG91 Summit Registration | E-Commerce Edition",
+        "description": "Register for the MSG91 Summit - E-Commerce Edition in Indore. An evening of good company and better conversations for Shopify folks."
+    },
+    "EventRegistrationComp": {
+        "heading": "MSG91 Summit",
+        "badge": "For Shopify folks in Indore",
+        "edition": "E-Commerce Edition",
+        "tagline": "An Evening of Good Company & Better Conversations",
+        "note": "Snacks Included",
+        "event": {
+            "label": "Event date & venue",
+            "date": "5th September 2026",
+            "time": "After 6:30 PM IST",
+            "address": "5th Floor, LIC Tower PU - 03, Wing B, Scheme No 54, Indore, MP 452011"
+        },
+        "countdown": {
+            "date": "2026-09-05T18:30:00+05:30",
+            "days": "Days",
+            "hours": "Hours",
+            "minutes": "Mins",
+            "seconds": "Secs"
+        },
+        "form": {
+            "heading": "Registration form",
+            "submit_url": "https://flow.sokt.io/func/scri0W056f9c",
+            "fields": [
+                {
+                    "name": "fullName",
+                    "label": "Name",
+                    "type": "text",
+                    "placeholder": "Enter your full name"
+                },
+                {
+                    "name": "phoneNumber",
+                    "label": "Phone",
+                    "type": "tel",
+                    "placeholder": "+91 98765 43210"
+                },
+                {
+                    "name": "email",
+                    "label": "Email",
+                    "type": "email",
+                    "placeholder": "you@company.com"
+                },
+                {
+                    "name": "website",
+                    "label": "Website",
+                    "type": "text",
+                    "placeholder": "www.yourbrand.com"
+                }
+            ],
+            "travel": {
+                "label": "How will you be traveling to the venue?",
+                "options": ["Public Transport", "Own car"]
+            },
+            "submit_btn": "Submit",
+            "submitting_btn": "Submitting...",
+            "success_message": "Registration Successful",
+            "errors": {
+                "required": "Please fill all the required fields.",
+                "mobile": "Please enter a valid mobile number.",
+                "email": "Please enter a valid email address.",
+                "submit": "Something went wrong. Please try again."
+            }
+        }
+    }
+}
