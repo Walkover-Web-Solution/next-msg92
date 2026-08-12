@@ -67,6 +67,19 @@ export default function RegistrationForm({ data }) {
             });
             if (!response?.ok) throw new Error('Sheet submission failed');
 
+            try {
+                await fetch('/api/send-summit-whatsapp', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: formValues?.fullName,
+                        phone: formValues?.phoneNumber,
+                    }),
+                });
+            } catch (waError) {
+                console.error('[WhatsApp Trigger Error]:', waError);
+            }
+
             setFormValues({ travelMode: defaultTravelMode });
             setIsMobileVerified(false);
             setIsSubmitted(true);
