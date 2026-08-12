@@ -6,12 +6,12 @@ import { waitForInitSendOTP } from '@/utils/otpSigninWidget';
 import { OTPRetryModes } from '@/components/SignupCompNew/SignupUtils/constants';
 
 const RESEND_SECONDS = 30;
-const DEFAULT_OTP_LENGTH = 6;
+const DEFAULT_OTP_LENGTH = 4;
 const WIDGET_METHOD_POLL_MS = 100;
 const WIDGET_METHOD_TIMEOUT_MS = 15000;
 const AUTO_SEND_DELAY_MS = 700;
 
-function EventOtpInput({ length = 6, onVerify, disabled }) {
+function EventOtpInput({ length, onVerify, disabled }) {
     const [digits, setDigits] = useState(Array(length).fill(''));
     const inputRefs = useRef([]);
 
@@ -193,7 +193,7 @@ export default function MobileOtpField({ field, value, onChange, data, disabled,
                     setIsSending(false);
                 },
                 (error) => {
-                    toast.error(error?.message || data?.errors?.send_failed);
+                    toast.error(error?.message);
                     sentNumberRef.current = null;
                     setIsSending(false);
                 }
@@ -218,7 +218,7 @@ export default function MobileOtpField({ field, value, onChange, data, disabled,
 
     const handleMobileNumberChange = (mobileNumberData) => {
         setMobileNumber(mobileNumberData);
-        onChange?.({ target: { name: field?.name, value: mobileNumberData?.fullNumber || '' } });
+        onChange?.({ target: { name: field?.name, value: mobileNumberData?.fullNumber } });
     };
 
     const handleResendOtp = () => {
@@ -227,7 +227,7 @@ export default function MobileOtpField({ field, value, onChange, data, disabled,
         window.retryOtp(
             OTPRetryModes.Sms,
             () => {},
-            (error) => toast.error(error?.message || data?.errors?.send_failed),
+            (error) => toast.error(error?.message),
             requestId
         );
     };
@@ -243,7 +243,7 @@ export default function MobileOtpField({ field, value, onChange, data, disabled,
             },
             (error) => {
                 setIsVerifying(false);
-                toast.error(error?.message || data?.errors?.verify_failed);
+                toast.error(error?.message);
             },
             otpRequestId
         );
@@ -258,7 +258,7 @@ export default function MobileOtpField({ field, value, onChange, data, disabled,
             <MobileNumberInput
                 id={field?.name}
                 name={field?.name}
-                value={value || ''}
+                value={value}
                 onChange={handleMobileNumberChange}
                 defaultCountry={data?.default_country}
                 placeholder={field?.placeholder}
@@ -273,14 +273,14 @@ export default function MobileOtpField({ field, value, onChange, data, disabled,
                     <MdCheckCircle size={14} className='shrink-0' aria-hidden />
                     {data?.verified_label}
                 </span>
-            ) : requestId ? (
-                <div className='flex flex-col gap-2'>
+            ) : requestId || isSending || mobileNumber?.isValid ? (
+                <div className='flex flex-col gap-2 pt-1'>
                     <EventOtpInput
-                        length={otpLength || 6}
+                        length={otpLength}
                         onVerify={(otpValue) => handleVerifyOtp(otpValue, requestId)}
                         disabled={disabled || isVerifying}
                     />
-                    {!resendSeconds && (
+                    {!resendSeconds && requestId && (
                         <button
                             type='button'
                             disabled={disabled}

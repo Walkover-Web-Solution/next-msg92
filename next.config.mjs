@@ -103,6 +103,11 @@ const nextConfig = {
         CHAT_WIDGET_TOKEN: getEnvValue('CHAT_WIDGET_TOKEN'),
         ECOMMERCE_WIDGET_TOKEN: getEnvValue('ECOMMERCE_WIDGET_TOKEN'),
         CHAT_WIDGET_URL: getEnvValue('CHAT_WIDGET_URL'),
+
+        // WhatsApp Outbound Config
+        WHATSAPP_AUTHKEY: getEnvValue('WHATSAPP_AUTHKEY'),
+        SUMMIT_WA_INTEGRATED_NUMBER: getEnvValue('SUMMIT_WA_INTEGRATED_NUMBER'),
+        SUMMIT_WA_API_URL: getEnvValue('SUMMIT_WA_API_URL'),
     },
 };
 
