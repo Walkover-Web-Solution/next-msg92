@@ -10,6 +10,7 @@ module.exports = {
     theme: {
         extend: {
             colors: {
+                darkNavy: '#0e1638',
                 shopifyBanner: {
                     content: '#F0F7E8',
                     visual: '#0A5840',
@@ -39,6 +40,7 @@ module.exports = {
                     accent: '#1E75BA',
                     neutral: '#FAFAFA',
                     hello: '#f2ca55',
+                    darkNavy: '#0e1638',
                     'base-100': '#FFFFFF',
                     '--rounded-btn': '0.2rem',
                     'base-200': '#808080',

@@ -88,7 +88,7 @@
         "integrations": "Integrations",
         "integrations_list": {
             "explore_btn": "Explore More Plugins",
-             "content": [
+            "content": [
                 {
                     "name": "Shopify",
                     "link": "/partners-and-integrations/shopify",
@@ -252,10 +252,7 @@
                     "link": "free-whatsapp-link-generator"
                 },
                 {
-                    "name": "Free Apple Messages for Business link generator",
-                    "link": "free-apple-messages-for-business-link-generator"
-                },
-                 {
+
                     "name": "WhatsApp Chatbot",
                     "link": "whatsapp/chatbot"
                 }
@@ -346,13 +343,17 @@
                     "name": "Career",
                     "link": "https://walkover.in/careers"
                 },
-                      {
+                {
                     "name": "Certificates",
                     "link": "certificates"
                 },
                 {
                     "name": "Compare",
                     "link": "compare"
+                },
+                {
+                    "name": "Cost comparison",
+                    "link": "cost-comparision"
                 }
             ]
         },
