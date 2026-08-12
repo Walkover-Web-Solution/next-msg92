@@ -13,7 +13,8 @@
             "label": "Event date & venue",
             "date": "5th September 2026",
             "time": "After 6:30 PM IST",
-            "address": "5th Floor, LIC Tower PU - 03, Wing B, Scheme No 54, Indore, MP 452011"
+            "map_title": "MSG91 Summit venue location",
+            "map_url": "https://www.google.com/maps?q=5th%20Floor%2C%20LIC%20Tower%20PU-03%2C%20Wing%20B%2C%20Scheme%20No%2054%2C%20Indore%2C%20MP%20452011&output=embed"
         },
         "countdown": {
             "date": "2026-09-05T18:30:00+05:30",
@@ -36,7 +37,7 @@
                     "name": "phoneNumber",
                     "label": "Phone",
                     "type": "tel",
-                    "placeholder": "+91 98765 43210"
+                    "placeholder": "98765 43210"
                 },
                 {
                     "name": "email",
@@ -58,11 +59,28 @@
             "submit_btn": "Submit",
             "submitting_btn": "Submitting...",
             "success_message": "Registration Successful",
+            "success_description": "Thank you for registering for MSG91 Summit. We look forward to hosting you!",
+            "close_btn": "Done",
             "errors": {
                 "required": "Please fill all the required fields.",
                 "mobile": "Please enter a valid mobile number.",
                 "email": "Please enter a valid email address.",
                 "submit": "Something went wrong. Please try again."
+            },
+            "otp": {
+                "sending_label": "Sending OTP...",
+                "sent_label": "Enter the OTP sent to your mobile number.",
+                "verifying_label": "Verifying OTP...",
+                "resend_btn": "Resend OTP",
+                "resend_in": "Resend OTP in {{seconds}}s",
+                "verified_label": "Mobile number verified",
+                "default_country": "IN",
+                "errors": {
+                    "widget": "OTP service unavailable. Please refresh and try again.",
+                    "send_failed": "Failed to send OTP. Please try again.",
+                    "verify_failed": "Invalid OTP. Please try again.",
+                    "not_verified": "Please verify your mobile number before submitting."
+                }
             }
         }
     }

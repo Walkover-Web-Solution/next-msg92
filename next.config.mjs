@@ -94,6 +94,11 @@ const nextConfig = {
         WIDGET_AUTH_TOKEN: getEnvValue('WIDGET_AUTH_TOKEN'),
         WIDGET_SCRIPT: getEnvValue('WIDGET_SCRIPT'),
 
+        //widget config for msg91 submitt 
+        SUMMIT_OTP_WIDGET_TOKEN: getEnvValue('SUMMIT_OTP_WIDGET_TOKEN'),
+        SUMMIT_WIDGET_AUTH_TOKEN: getEnvValue('SUMMIT_WIDGET_AUTH_TOKEN'),
+        SUMMIT_WIDGET_SCRIPT: getEnvValue('SUMMIT_WIDGET_SCRIPT'),
+
         // Chat Widget Config
         CHAT_WIDGET_TOKEN: getEnvValue('CHAT_WIDGET_TOKEN'),
         ECOMMERCE_WIDGET_TOKEN: getEnvValue('ECOMMERCE_WIDGET_TOKEN'),
