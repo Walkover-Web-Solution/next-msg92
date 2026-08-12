@@ -20,22 +20,6 @@ function setValueInInputs(value, tag, otpLength) {
 }
 
 class Otpinput extends React.Component {
-    getEnteredOtp = () => {
-        let valOtp = '';
-        for (let i = 1; i <= +this.props.otpLength; i++) {
-            valOtp += document.getElementById(this.props.tag + i)?.value || '';
-        }
-        return valOtp;
-    };
-
-    autoVerifyOtp = () => {
-        if (!this.props.autoVerify) return;
-        const valOtp = this.getEnteredOtp();
-        if (valOtp?.length !== +this.props.otpLength || valOtp === this.lastAutoVerifiedOtp) return;
-        this.lastAutoVerifiedOtp = valOtp;
-        this.props.verifyOtp(valOtp, this.props.requestId, this.props.notByEmail);
-    };
-
     render() {
         let otpLength = Array.from({ length: this.props.otpLength }, (_, index) => index + 1);
         return (
@@ -59,9 +43,7 @@ class Otpinput extends React.Component {
                                         setValueInInputs(pastedData, this.props.tag, this.props.otpLength);
                                     }
                                     event?.preventDefault();
-                                    setTimeout(this.autoVerifyOtp, 40);
                                 }}
-                                onKeyUp={() => setTimeout(this.autoVerifyOtp, 40)}
                                 onKeyDown={(event) => {
                                     if (event.ctrlKey || event.metaKey) {
                                         return false;
@@ -125,22 +107,20 @@ class Otpinput extends React.Component {
                             />
                         ))}
                     </div>
-                    {!this.props.autoVerify && (
-                        <button
-                            className='btn btn-accent btn-otp btn-outline'
-                            onClick={() => {
-                                let valOtp = '';
-                                for (let i = 1; i <= +this.props.otpLength; i++) {
-                                    valOtp += document.getElementById(this.props.tag + i).value;
-                                }
-                                if (valOtp?.length === +this.props.otpLength) {
-                                    this.props.verifyOtp(valOtp, this.props.requestId, this.props.notByEmail);
-                                }
-                            }}
-                        >
-                            Verify
-                        </button>
-                    )}
+                    <button
+                        className='btn btn-accent btn-otp btn-outline'
+                        onClick={() => {
+                            let valOtp = '';
+                            for (let i = 1; i <= +this.props.otpLength; i++) {
+                                valOtp += document.getElementById(this.props.tag + i).value;
+                            }
+                            if (valOtp?.length === +this.props.otpLength) {
+                                this.props.verifyOtp(valOtp, this.props.requestId, this.props.notByEmail);
+                            }
+                        }}
+                    >
+                        Verify
+                    </button>
                 </div>
             </>
         );

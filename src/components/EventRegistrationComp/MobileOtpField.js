@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { MdCheckCircle } from 'react-icons/md';
 import { toast } from 'react-toastify';
 import { MobileNumberInput } from '@/components/mobile-number-input';
-import Otpinput from '@/components/signupComp/utils/InputOTP';
 import { waitForInitSendOTP } from '@/utils/otpSigninWidget';
 import { OTPRetryModes } from '@/components/SignupCompNew/SignupUtils/constants';
 
@@ -11,6 +10,80 @@ const DEFAULT_OTP_LENGTH = 6;
 const WIDGET_METHOD_POLL_MS = 100;
 const WIDGET_METHOD_TIMEOUT_MS = 15000;
 const AUTO_SEND_DELAY_MS = 700;
+
+function EventOtpInput({ length = 6, onVerify, disabled }) {
+    const [digits, setDigits] = useState(Array(length).fill(''));
+    const inputRefs = useRef([]);
+
+    useEffect(() => {
+        setDigits(Array(length).fill(''));
+    }, [length]);
+
+    const handleChange = (index, value) => {
+        if (disabled) return;
+        const cleanValue = value.replace(/\D/g, '').slice(-1);
+        const newDigits = [...digits];
+        newDigits[index] = cleanValue;
+        setDigits(newDigits);
+
+        if (cleanValue && index < length - 1) {
+            inputRefs.current[index + 1]?.focus();
+        }
+
+        const fullOtp = newDigits.join('');
+        if (fullOtp.length === length && newDigits.every(Boolean)) {
+            onVerify(fullOtp);
+        }
+    };
+
+    const handleKeyDown = (index, e) => {
+        if (disabled) return;
+        if (e.key === 'Backspace' && !digits[index] && index > 0) {
+            inputRefs.current[index - 1]?.focus();
+        }
+    };
+
+    const handlePaste = (e) => {
+        e.preventDefault();
+        if (disabled) return;
+        const pasted = e.clipboardData.getData('text').replace(/\D/g, '').slice(0, length);
+        if (!pasted) return;
+
+        const newDigits = Array(length).fill('');
+        for (let i = 0; i < pasted.length; i++) {
+            newDigits[i] = pasted[i];
+        }
+        setDigits(newDigits);
+
+        const focusIndex = Math.min(pasted.length, length - 1);
+        inputRefs.current[focusIndex]?.focus();
+
+        if (pasted.length === length) {
+            onVerify(pasted);
+        }
+    };
+
+    return (
+        <div className='flex items-center gap-2'>
+            {digits.map((digit, index) => (
+                <input
+                    key={index}
+                    ref={(el) => (inputRefs.current[index] = el)}
+                    type='text'
+                    inputMode='numeric'
+                    maxLength={1}
+                    value={digit}
+                    onChange={(e) => handleChange(index, e.target.value)}
+                    onKeyDown={(e) => handleKeyDown(index, e)}
+                    onPaste={handlePaste}
+                    placeholder='*'
+                    className='h-10 w-10 border border-gray-300 bg-white text-center text-sm font-semibold rounded focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20'
+                    disabled={disabled}
+                />
+            ))}
+        </div>
+    );
+}
 
 function waitForSendOtpMethod(timeoutMs = WIDGET_METHOD_TIMEOUT_MS) {
     return new Promise((resolve, reject) => {
@@ -202,13 +275,10 @@ export default function MobileOtpField({ field, value, onChange, data, disabled,
                 </span>
             ) : requestId ? (
                 <div className='flex flex-col gap-2'>
-                    <Otpinput
-                        tag='eventMobile'
-                        otpLength={otpLength}
-                        requestId={requestId}
-                        verifyOtp={handleVerifyOtp}
-                        notByEmail
-                        autoVerify
+                    <EventOtpInput
+                        length={otpLength || 6}
+                        onVerify={(otpValue) => handleVerifyOtp(otpValue, requestId)}
+                        disabled={disabled || isVerifying}
                     />
                     {!resendSeconds && (
                         <button
