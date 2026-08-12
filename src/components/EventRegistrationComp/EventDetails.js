@@ -1,4 +1,4 @@
-import { MdCalendarToday, MdLocationOn, MdOutlineAccessTime } from 'react-icons/md';
+import { MdCalendarToday, MdOutlineAccessTime } from 'react-icons/md';
 import CountdownTimer from './CountdownTimer';
 
 export default function EventDetails({ data }) {
@@ -6,13 +6,13 @@ export default function EventDetails({ data }) {
         <div className='flex w-full flex-col items-center gap-8 rounded-b-3xl bg-gradient-to-b from-blue-800 to-blue-500 p-6 text-center text-white sm:p-10 md:w-1/2 md:rounded-b-none md:rounded-r-[40%_50%] md:pl-10 md:pr-16'>
             <div className='flex flex-col gap-3'>
                 <h1 className='text-3xl font-bold sm:text-4xl'>{data?.heading}</h1>
-                {data?.badge && (
+                {data?.edition && (
                     <span className='mx-auto rounded-full bg-white/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide'>
-                        {data?.badge}
+                        {data?.edition}
                     </span>
                 )}
-                {data?.edition && (
-                    <p className='text-xs font-bold uppercase tracking-widest text-blue-200'>{data?.edition}</p>
+                {data?.badge && (
+                    <p className='text-xs font-bold uppercase tracking-widest text-blue-200'>{data?.badge}</p>
                 )}
                 {data?.tagline && <p className='text-sm text-blue-100'>{data?.tagline}</p>}
             </div>
@@ -34,11 +34,17 @@ export default function EventDetails({ data }) {
                             {data?.event?.time}
                         </span>
                     )}
-                    {data?.event?.address && (
-                        <span className='flex items-start justify-center gap-1.5 border-t border-white/20 pt-3 text-xs text-blue-100'>
-                            <MdLocationOn size={14} className='mt-0.5 shrink-0 text-amber-300' aria-hidden />
-                            {data?.event?.address}
-                        </span>
+                    {data?.event?.map_url && (
+                        <div className='overflow-hidden rounded-xl border border-white/20'>
+                            <iframe
+                                src={data?.event?.map_url}
+                                title={data?.event?.map_title}
+                                className='h-32 w-full border-0'
+                                loading='lazy'
+                                referrerPolicy='no-referrer-when-downgrade'
+                                allowFullScreen
+                            />
+                        </div>
                     )}
                 </div>
             </div>
