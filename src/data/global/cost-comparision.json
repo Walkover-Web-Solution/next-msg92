@@ -17,14 +17,14 @@
             "plan": "basic",
             "competitor": "zendesk"
         },
-        "footnote": "Competitor figures are published list prices as of July 2026. Brazilian vendors marked (approx) are quote-only. Figures are estimates — please verify with the vendor before purchase.",
+        "footnote": "Competitor figures are published list prices as of July 2026. Brazilian vendors marked (approx) are quote-only.",
         "buttons": {
             "primaryBtn": {
                 "text": "Start free with Hello",
                 "link": "https://control.msg91.com/signup/"
             },
             "secondaryBtn": {
-                "text": "Email me this comparison"
+                "text": "Export PDF"
             }
         },
         "CostSavingBenefits": {
