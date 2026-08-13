@@ -1,14 +1,17 @@
+const getAssetBaseUrl = (baseUrl) => String(baseUrl || process.env.BASE_URL || '').replace(/\/$/, '');
+
 /**
  * Generates widget script code for different messaging platforms
  * @param {string} widgetType - Type of widget ('apple' or 'whatsapp')
  * @param {object} options - Widget configuration options
- * @param {string} baseUrl - Base URL for assets (optional, defaults to relative paths)
+ * @param {string} baseUrl - Base URL for assets (defaults to env BASE_URL)
  * @returns {string} - Generated script HTML
  */
-export const generateWidgetScript = (widgetType, options, baseUrl = '') => {
+export const generateWidgetScript = (widgetType, options, baseUrl = process.env.BASE_URL || '') => {
+    const assetBase = getAssetBaseUrl(baseUrl);
     const widgetConfigs = {
         apple: {
-            scriptSrc: `${baseUrl}/js/appleMessagesWidget.js`,
+            scriptSrc: `${assetBase}/js/appleMessagesWidget.js`,
             onloadFunction: 'CreateAppleMessagesWidget',
             defaultOptions: {
                 businessId: '',
@@ -27,11 +30,11 @@ export const generateWidgetScript = (widgetType, options, baseUrl = '') => {
             },
         },
         whatsapp: {
-            scriptSrc: `${baseUrl || 'https://msg91.com'}/js/waWidget.js`,
+            scriptSrc: `${assetBase}/js/waWidget.js`,
             onloadFunction: 'CreateWhatsappChatWidget',
             defaultOptions: {
                 brandSetting: {
-                    brandImg: `${baseUrl || 'https://msg91.com'}/img/icon/walink-whatsapp.svg`,
+                    brandImg: `${assetBase}/img/icon/walink-whatsapp.svg`,
                     welcomeText: 'Hi there!\nHow can I help you?',
                     messageText: '',
                     phoneNumber: '',
@@ -57,7 +60,7 @@ export const generateWidgetScript = (widgetType, options, baseUrl = '') => {
 
     // Merge provided options with defaults
     const mergedOptions =
-        typeof options === 'object' ? deepMerge(config.defaultOptions, options) : config.defaultOptions;
+        typeof options === 'object' ? deepMerge(config.defaultOptions, options) : { ...config.defaultOptions };
 
     // Generate the options object as a string
     const optionsString = formatOptions(mergedOptions);

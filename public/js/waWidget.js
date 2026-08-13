@@ -1,7 +1,28 @@
+var WIDGET_SCRIPT_BASE = (function () {
+    var script = document.currentScript;
+    if (!script || !script.src) {
+        var scripts = document.getElementsByTagName('script');
+        for (var i = scripts.length - 1; i >= 0; i--) {
+            if ((scripts[i].src || '').indexOf('waWidget.js') !== -1) {
+                script = scripts[i];
+                break;
+            }
+        }
+    }
+    if (script && script.src) {
+        return script.src.replace(/\/js\/[^/?#]+(?:[?#].*)?$/, '');
+    }
+    return '';
+})();
+
+function getWidgetBaseUrl() {
+    return String(WIDGET_SCRIPT_BASE || '').replace(/\/$/, '');
+}
+
 async function CreateWhatsappChatWidget(
     option = {
         brandSetting: {
-            brandImg: '/img/icon/walink-whatsapp.svg',
+            brandImg: '',
             welcomeText: 'I have some questions about MSG91, \ncan you help?',
             messageText: 'I’ve some questions about MSG91, can you help?',
             phoneNumber: '85252859384',
@@ -29,6 +50,15 @@ async function CreateWhatsappChatWidget(
 }
 
 function initWidgetLogic(option) {
+    var widgetBaseUrl = getWidgetBaseUrl();
+    if (!option.brandSetting) {
+        option.brandSetting = {};
+    }
+    if (!option.brandSetting.brandImg) {
+        option.brandSetting.brandImg = widgetBaseUrl + '/img/icon/walink-whatsapp.svg';
+    } else if (option.brandSetting.brandImg.charAt(0) === '/') {
+        option.brandSetting.brandImg = widgetBaseUrl + option.brandSetting.brandImg;
+    }
     console.log('initWidgetLogic called with option:', option);
     if (option.enabled == false) {
         console.log('Widget disabled, returning');
@@ -111,7 +141,7 @@ function initWidgetLogic(option) {
             'beforeend',
             `<div class='wa-chat-box'>
                  <img class='wa-chat-box-brand'
-                    onError='this.src= "/img/icon/walink-whatsapp.svg";' 
+                    onError='this.src= "${widgetBaseUrl}/img/icon/walink-whatsapp.svg";' 
                     src='${option.brandSetting.brandImg}'/> 
     
                  <div class='wa-chat-box-content-chat-welcome'>
@@ -144,7 +174,7 @@ function initWidgetLogic(option) {
     
                 <div class='wa-chat-box-poweredby'>                    
                     <a href="https://msg91.com" target="_blank" class="wa-chat-box-poweredby-link">
-                      <img src="/img/poweredby.svg">
+                      <img src="${widgetBaseUrl}/img/poweredby.svg">
                     </a>
                 </div>
             </div>
@@ -192,8 +222,7 @@ function initWidgetLogic(option) {
     function loadQRCodeLibrary() {
         if (typeof QRCode === 'undefined') {
             var qrScript = document.createElement('script');
-            // Use relative path for QR code library
-            qrScript.src = '/js/qrcode.js';
+            qrScript.src = widgetBaseUrl + '/js/qrcode.js';
             qrScript.onload = function () {
                 generateQRCode();
             };
