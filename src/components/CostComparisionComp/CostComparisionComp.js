@@ -1,4 +1,5 @@
 import React, { useMemo, useState, useEffect, useCallback } from 'react';
+import NotFoundComp from '@/components/NotFoundComp/NotFoundComp';
 import CostComparisonInputs from './CostComparisonInputs';
 import CostComparisonResults from './CostComparisonResults';
 import CostComparisonHeader from './CostComparisonHeader';
@@ -9,7 +10,7 @@ import FaqsComp from '@/components/FaqsComp/FaqsComp';
 import getSubscriptions from '@/utils/pricing/getSubscription';
 import handlePlanStructure from '@/utils/pricing/handlePlanStructure';
 import { HELLO_PLANS, ALL_COMPETITORS, CURRENCY_RATES, HELLO_MS_ID } from './constants';
-import { calculatePlatformCosts, formatCurrencyAmount } from './helpers';
+import { calculatePlatformCosts, formatCurrencyAmount, resolveApiPlan } from './helpers';
 export default function CostComparisionComp({ data, pageInfo }) {
     if (!data) return null;
 
@@ -55,6 +56,12 @@ export default function CostComparisionComp({ data, pageInfo }) {
     const { hello, competitor: competitorResult, savings } = calculation;
 
     const formatCurrency = (value) => formatCurrencyAmount(value, currency, CURRENCY_RATES);
+
+    const apiPlanMatch = resolveApiPlan(plan, apiPlans);
+
+    if (!loadingApi && (!apiPlans || apiPlans.length === 0 || !apiPlanMatch)) {
+        return <NotFoundComp pageInfo={pageInfo} />;
+    }
 
     return (
         <section className='bg-gray-50 text-gray-900'>

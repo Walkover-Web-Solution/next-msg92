@@ -15,6 +15,35 @@ export function formatHeadingWithAccent(rawText) {
     );
 }
 
+export function resolveApiPlan(plan, apiPlans = []) {
+    if (!Array.isArray(apiPlans) || apiPlans.length === 0) return null;
+
+    const targetKey = plan?.key?.toLowerCase() || plan?.name?.toLowerCase() || '';
+
+    const monthlyPlans = apiPlans.filter((p) => p?.type?.toLowerCase() === 'monthly');
+    const plansPool = monthlyPlans.length > 0 ? monthlyPlans : apiPlans;
+
+    const exactMatch =
+        plansPool.find((p) => p?.name?.toLowerCase() === targetKey) ||
+        apiPlans.find((p) => p?.name?.toLowerCase() === targetKey);
+
+    if (exactMatch) {
+        return exactMatch;
+    }
+
+    const paidPlans = plansPool.filter((p) => Number(p?.amount) > 0);
+
+    if (targetKey === 'basic') {
+        return paidPlans[0] || plansPool[0] || null;
+    }
+
+    if (targetKey === 'premium') {
+        return paidPlans[1] || paidPlans[0] || null;
+    }
+
+    return plansPool[0] || null;
+}
+
 export function calculatePlatformCosts(
     plan,
     competitor,
@@ -32,17 +61,16 @@ export function calculatePlatformCosts(
 
     const currencyRate = CURRENCY_RATES[currency].rate;
 
-    const targetPlanName = plan?.key?.toLowerCase() || '';
-    const apiPlanMatch =
-        apiPlans.find(
-            (apiPlan) => apiPlan?.name?.toLowerCase() === targetPlanName && apiPlan?.type?.toLowerCase() === 'monthly'
-        ) || apiPlans.find((apiPlan) => apiPlan?.name?.toLowerCase() === targetPlanName);
+    const apiPlanMatch = resolveApiPlan(plan, apiPlans);
 
     const service = apiPlanMatch?.services?.find((s) => s.name === 'Tickets');
 
-    let helloBase = Number(apiPlanMatch?.amount);
-    let helloExtraRate = Number(service?.followUpRate);
-    let includedTickets = Number(service?.freeCredit);
+    let helloBase = Number(apiPlanMatch?.amount || 0);
+    if (Number.isNaN(helloBase)) helloBase = 0;
+    let helloExtraRate = Number(service?.followUpRate || 0);
+    if (Number.isNaN(helloExtraRate)) helloExtraRate = 0;
+    let includedTickets = Number(service?.freeCredit || 0);
+    if (Number.isNaN(includedTickets)) includedTickets = 0;
 
     if (currency === 'BRL' || currency === 'EUR') {
         helloBase = helloBase * currencyRate;
