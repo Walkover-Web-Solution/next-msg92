@@ -149,7 +149,7 @@ export default function MSG91AppleMessagesLinkGenerator({ data }) {
 
     useEffect(() => {
         // Load qrcode.js library
-        loadScript('/js/qrcode.js')
+        loadScript(`${process.env.BASE_URL}/js/qrcode.js`)
             .then(() => {
                 console.log('QRCode library loaded successfully');
                 setScriptLoaded(true);
@@ -433,7 +433,7 @@ export default function MSG91AppleMessagesLinkGenerator({ data }) {
                         {/* Widget Skeleton Preview in Edit Tab */}
                         <WidgetPreview
                             isSkeleton={true}
-                            logoSrc='/assets/icons/products/imessage.svg'
+                            logoSrc={`${process.env.BASE_URL}/assets/icons/products/imessage.svg`}
                             welcomeMessage="Got any questions?\nWe're here to help."
                             qrCodeRef={qrCodeRef}
                             scanInstruction='Scan this QR code to start an Apple Messages for Business conversation.'
@@ -477,7 +477,7 @@ export default function MSG91AppleMessagesLinkGenerator({ data }) {
                         {/* Right: Widget Preview */}
                         <WidgetPreview
                             isSkeleton={false}
-                            logoSrc='/assets/icons/products/imessage.svg'
+                            logoSrc={`${process.env.BASE_URL}/assets/icons/products/imessage.svg`}
                             welcomeMessage={formData.preFilledMessage || "Got any questions?\nWe're here to help."}
                             qrCodeRef={qrCodeRef}
                             scanInstruction='Scan this QR code to start an Apple Messages for Business conversation.'

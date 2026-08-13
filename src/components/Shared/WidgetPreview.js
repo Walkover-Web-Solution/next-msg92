@@ -134,9 +134,9 @@ const WidgetPreview = ({
                     {isSkeleton ? (
                         <div className='h-4 w-28 bg-slate-200 rounded-md animate-pulse'></div>
                     ) : (
-                        <div className='flex items-center'>
+                        <div className='flex items-center mx-auto'>
                             <img
-                                src='https://msg91.com/img/poweredby.svg'
+                                src={`${process.env.BASE_URL}/img/poweredby.svg`}
                                 alt='Powered By MSG91'
                                 className='opacity-70'
                             />

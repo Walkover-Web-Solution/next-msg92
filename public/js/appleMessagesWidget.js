@@ -1,3 +1,24 @@
+var WIDGET_SCRIPT_BASE = (function () {
+    var script = document.currentScript;
+    if (!script || !script.src) {
+        var scripts = document.getElementsByTagName('script');
+        for (var i = scripts.length - 1; i >= 0; i--) {
+            if ((scripts[i].src || '').indexOf('appleMessagesWidget.js') !== -1) {
+                script = scripts[i];
+                break;
+            }
+        }
+    }
+    if (script && script.src) {
+        return script.src.replace(/\/js\/[^/?#]+(?:[?#].*)?$/, '');
+    }
+    return '';
+})();
+
+function getWidgetBaseUrl() {
+    return String(WIDGET_SCRIPT_BASE || '').replace(/\/$/, '');
+}
+
 async function CreateAppleMessagesWidget(
     option = {
         businessId: '',
@@ -75,12 +96,13 @@ function initWidgetLogic(option) {
         return url;
     }
 
+    var widgetBaseUrl = getWidgetBaseUrl();
+
     // Load QR code library if not defined
     function loadQRCodeLibrary() {
         if (typeof QRCode === 'undefined') {
             var qrScript = document.createElement('script');
-            // Use relative path for QR code library
-            qrScript.src = '/js/qrcode.js';
+            qrScript.src = widgetBaseUrl + '/js/qrcode.js';
             qrScript.onload = function () {
                 // Wait for widget HTML to be inserted before generating QR code
                 setTimeout(function () {
@@ -110,26 +132,7 @@ function initWidgetLogic(option) {
     }
 
     var css = document.createElement('STYLE');
-    var defaultSvg = `<svg
-  id="apple-widget-svg"
-  width="38"
-  height="38"
-  viewBox="0 0 38 38"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <circle cx="19" cy="19" r="19" fill="#50EE6A"/>
-  <path
-    d="M19 6.57
-       C11.32 6.57 5.07 11.78 5.07 18.39
-       C5.07 22.52 7.5 26.16 11.85 28.54
-       C11.29 29.9 10.48 31.04 9.42 31.96
-       C11.5 31.77 13.39 31.02 15.12 29.75
-       C16.37 30.06 17.68 30.21 19 30.21
-       C26.68 30.21 32.93 25 32.93 18.39
-       C32.93 11.78 26.68 6.57 19 6.57Z"
-    fill="#ffffff"
-  />
-</svg>`;
+    var defaultSvg = `<svg   id="apple-widget-svg" width="24" height="24" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" class="w-full h-full"><circle cx="19" cy="19" r="19" fill="${option.chatButtonSetting.backgroundColor}"></circle><path d="M19 6.57 C11.32 6.57 5.07 11.78 5.07 18.39 C5.07 22.52 7.5 26.16 11.85 28.54 C11.29 29.9 10.48 31.04 9.42 31.96 C11.5 31.77 13.39 31.02 15.12 29.75 C16.37 30.06 17.68 30.21 19 30.21 C26.68 30.21 32.93 25 32.93 18.39 C32.93 11.78 26.68 6.57 19 6.57Z" fill="#ffffff"></path></svg>`;
 
     // Wait for DOM to be ready before initializing
     if (document.readyState === 'loading') {
@@ -189,8 +192,8 @@ function initWidgetLogic(option) {
             'beforeend',
             `<div class='apple-chat-box'>
                  <img class='apple-chat-box-brand'
-                    onError='this.src= "/assets/icons/products/imessage.svg";' 
-                    src='/assets/icons/products/imessage.svg'/> 
+                    onError='this.src= "${widgetBaseUrl}/assets/icons/products/imessage.svg";' 
+                    src='${widgetBaseUrl}/assets/icons/products/imessage.svg'/> 
      
                  <div class='apple-chat-box-content-chat-welcome'>
                       Got any questions?<br/>We're here to help.
@@ -221,7 +224,7 @@ function initWidgetLogic(option) {
     
                 <div class='apple-chat-box-poweredby'>                    
                     <a href="https://msg91.com" target="_blank" class="apple-chat-box-poweredby-link">
-                      <img src="/img/poweredby.svg">
+                      <img src="${widgetBaseUrl}/img/poweredby.svg">
                     </a>
                 </div>
             </div>

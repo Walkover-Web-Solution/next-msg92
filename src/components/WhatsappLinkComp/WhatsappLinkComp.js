@@ -74,7 +74,7 @@ const WhatsappLinkComp = ({ data }) => {
 
     useEffect(() => {
         // Load qrcode.js library
-        loadScript('/js/qrcode.js')
+        loadScript(`${process.env.BASE_URL}/js/qrcode.js`)
             .then(() => {
                 console.log('QRCode library loaded successfully');
                 setScriptLoaded(true);
@@ -215,12 +215,12 @@ const WhatsappLinkComp = ({ data }) => {
         canvas.height = originalHeight;
     };
 
-    const brandImageSrc = formData.brandImage || 'https://msg91.com/img/icon/walink-whatsapp.svg';
+    const brandImageSrc = formData.brandImage || `${process.env.BASE_URL}/img/icon/walink-whatsapp.svg`;
 
     return (
         <>
-            <script type='text/javascript' src='/js/qrcode.js' defer></script>
-            <link rel='stylesheet' href='/walink.css' />
+            <script type='text/javascript' src={`${process.env.BASE_URL}/js/qrcode.js`} defer></script>
+            <link rel='stylesheet' href={`${process.env.BASE_URL}/walink.css`} />
 
             {/* Hero Section */}
             <HeroSection
@@ -326,7 +326,7 @@ const WhatsappLinkComp = ({ data }) => {
                             buttonGradient='linear-gradient(135deg, #25D366 0%, #128C7E 100%)'
                             iconInButton={
                                 <img
-                                    src='/assets/global/whatsapp-link/whatsapp-icon-white.svg'
+                                    src={`${process.env.BASE_URL}/assets/global/whatsapp-link/whatsapp-icon-white.svg`}
                                     alt='WhatsApp'
                                     className='w-full h-full'
                                 />
@@ -354,7 +354,7 @@ const WhatsappLinkComp = ({ data }) => {
                             buttonGradient='linear-gradient(135deg, #25D366 0%, #128C7E 100%)'
                             iconInButton={
                                 <img
-                                    src='/assets/global/whatsapp-link/whatsapp-icon-white.svg'
+                                    src={`${process.env.BASE_URL}/assets/global/whatsapp-link/whatsapp-icon-white.svg`}
                                     alt='WhatsApp'
                                     className='w-full h-full'
                                 />
