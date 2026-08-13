@@ -1,9 +1,139 @@
 import { useEffect, useRef, useState } from 'react';
 import { MdCheckCircle } from 'react-icons/md';
 import { toast } from 'react-toastify';
-import { MobileNumberInput } from '@/components/mobile-number-input';
 import { waitForInitSendOTP } from '@/utils/otpSigninWidget';
-import { OTPRetryModes } from '@/components/SignupCompNew/SignupUtils/constants';
+import availableCountries from '@/data/availableCountries.json';
+
+const OTPRetryModes = {
+    Sms: '11',
+    Voice: '4',
+    Email: '3',
+    Whatsapp: '12',
+};
+
+function getFlagEmoji(countryCode) {
+    if (!countryCode || countryCode.length !== 2) return '🌐';
+    const codePoints = countryCode
+        .toUpperCase()
+        .split('')
+        .map((char) => 127397 + char.charCodeAt(0));
+    return String.fromCodePoint(...codePoints);
+}
+
+const COUNTRIES = (availableCountries || [])
+    .filter(
+        (country, index, self) =>
+            country?.shortname &&
+            country?.shortname?.length === 2 &&
+            index === self.findIndex((c) => c.shortname === country.shortname)
+    )
+    .map((country) => ({
+        code: country.shortname,
+        dial: `+${country.code}`,
+        flag: getFlagEmoji(country.shortname),
+        name: country.name,
+    }));
+
+function MobileNumberInput({
+    id,
+    name,
+    value,
+    onChange,
+    defaultCountry = 'IN',
+    placeholder = '98765 43210',
+    disabled,
+}) {
+    const initialCountry =
+        COUNTRIES.find((c) => c.code.toLowerCase() === (defaultCountry || 'in').toLowerCase()) || COUNTRIES[0];
+
+    const [selectedCountry, setSelectedCountry] = useState(initialCountry);
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const dropdownRef = useRef(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsDropdownOpen(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
+
+    const updateParent = (country, num) => {
+        const cleanNumber = num.replace(/\D/g, '');
+        const fullNumber = cleanNumber ? `${country.dial}${cleanNumber}` : '';
+        const isValid = cleanNumber.length >= 7 && cleanNumber.length <= 15;
+        onChange?.({
+            fullNumber,
+            isValid,
+        });
+    };
+
+    const handleNumberChange = (e) => {
+        const val = e.target.value.replace(/\D/g, '');
+        setPhoneNumber(val);
+        updateParent(selectedCountry, val);
+    };
+
+    const handleSelectCountry = (country) => {
+        setSelectedCountry(country);
+        setIsDropdownOpen(false);
+        updateParent(country, phoneNumber);
+    };
+
+    return (
+        <div className='relative flex w-full items-center rounded-lg border border-slate-300 bg-white focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-500/20'>
+            <div className='relative shrink-0' ref={dropdownRef}>
+                <button
+                    type='button'
+                    disabled={disabled}
+                    onClick={() => setIsDropdownOpen((prev) => !prev)}
+                    className='flex h-12 items-center gap-1.5 border-r border-slate-200 px-3 text-sm font-medium text-slate-700 hover:bg-slate-50 focus:outline-none disabled:opacity-60'
+                >
+                    <span className='text-lg leading-none'>{selectedCountry?.flag}</span>
+                    <span className='text-slate-600'>{selectedCountry?.dial}</span>
+                    <svg className='h-4 w-4 text-slate-400' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                        <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M19 9l-7 7-7-7' />
+                    </svg>
+                </button>
+
+                {isDropdownOpen && (
+                    <div className='absolute left-0 top-full z-50 mt-1 max-h-60 w-64 overflow-y-auto rounded-lg border border-slate-200 bg-white py-1 shadow-lg'>
+                        {COUNTRIES.map((c) => (
+                            <button
+                                key={c.code}
+                                type='button'
+                                onClick={() => handleSelectCountry(c)}
+                                className={`flex w-full items-center gap-2.5 px-3 py-2 text-left text-sm hover:bg-slate-100 ${
+                                    selectedCountry?.code === c.code
+                                        ? 'bg-blue-50 font-semibold text-blue-600'
+                                        : 'text-slate-700'
+                                }`}
+                            >
+                                <span className='text-lg leading-none'>{c.flag}</span>
+                                <span className='w-12 font-medium'>{c.dial}</span>
+                                <span className='truncate text-slate-600'>{c.name}</span>
+                            </button>
+                        ))}
+                    </div>
+                )}
+            </div>
+
+            <input
+                id={id}
+                name={name}
+                type='tel'
+                disabled={disabled}
+                placeholder={placeholder || '98765 43210'}
+                value={phoneNumber}
+                onChange={handleNumberChange}
+                className='h-12 w-full bg-transparent px-3 text-sm text-slate-800 focus:outline-none disabled:opacity-60'
+            />
+        </div>
+    );
+}
 
 const RESEND_SECONDS = 30;
 const DEFAULT_OTP_LENGTH = 4;
