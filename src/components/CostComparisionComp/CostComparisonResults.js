@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { FaFilePdf } from 'react-icons/fa';
+import { generateCostComparisonPdf } from './exportPdf';
 
 function TableRow({ title, subtitle, helloClassName, helloContent, competitorValue, competitorDesc }) {
     return (
@@ -31,8 +33,29 @@ export default function CostComparisonResults({
 }) {
     if (!data) return null;
 
+    const [isExporting, setIsExporting] = useState(false);
+
     const { summary, table, savingBox, tableDetails } = data;
     const { primaryBtn, secondaryBtn } = buttons;
+
+    const handleExportPdf = async () => {
+        setIsExporting(true);
+        try {
+            await generateCostComparisonPdf({
+                hello,
+                competitorResult,
+                savings,
+                competitor,
+                plan,
+                agents,
+                currency,
+                formatCurrency,
+                footnote,
+            });
+        } finally {
+            setIsExporting(false);
+        }
+    };
 
     const getBaseSubDesc = () => {
         if (competitorResult.basePlanCost > 0) {
@@ -290,9 +313,12 @@ export default function CostComparisonResults({
                     {secondaryBtn?.text && (
                         <button
                             type='button'
-                            className='flex-1 rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm font-semibold text-gray-800 hover:bg-gray-50'
+                            onClick={handleExportPdf}
+                            disabled={isExporting}
+                            className='flex-1 flex items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm font-semibold text-gray-800 hover:bg-gray-50 disabled:opacity-50'
                         >
-                            {secondaryBtn?.text}
+                            <FaFilePdf className='h-4 w-4 text-red-500' aria-hidden />
+                            {isExporting ? 'Exporting...' : secondaryBtn?.text}
                         </button>
                     )}
                 </div>
