@@ -1,8 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { MdCheckCircle } from 'react-icons/md';
 import { toast } from 'react-toastify';
-import { waitForInitSendOTP } from '@/utils/otpSigninWidget';
-import availableCountries from '@/data/availableCountries.json';
 
 const OTPRetryModes = {
     Sms: '11',
@@ -11,125 +9,167 @@ const OTPRetryModes = {
     Whatsapp: '12',
 };
 
-function getFlagEmoji(countryCode) {
-    if (!countryCode || countryCode.length !== 2) return '🌐';
-    const codePoints = countryCode
-        .toUpperCase()
-        .split('')
-        .map((char) => 127397 + char.charCodeAt(0));
-    return String.fromCodePoint(...codePoints);
+const INTL_TEL_INPUT_JS = 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.17/js/intlTelInput.min.js';
+const INTL_TEL_INPUT_CSS = 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css';
+const INTL_TEL_INPUT_UTILS = 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.17/js/utils.js';
+const INTL_TEL_INPUT_STYLE_ID = 'event-iti-overrides';
+
+const EVENT_ITI_OVERRIDES = `
+.event-iti-wrap .iti { width: 100%; display: block; }
+.event-iti-wrap .iti__flag-container { z-index: 2; }
+.event-iti-wrap .iti__selected-flag { padding: 0 10px 0 12px; border-radius: 0.5rem 0 0 0.5rem; }
+.event-iti-wrap .iti__selected-dial-code { font-size: 0.875rem; font-weight: 500; color: #475569; }
+.event-iti-wrap input[type='tel'] {
+    height: 3rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid #cbd5e1;
+    background: #fff;
+    font-size: 0.875rem;
+    color: #1e293b;
+}
+.event-iti-wrap input[type='tel']:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgb(59 130 246 / 0.2);
+}
+.event-iti-wrap input[type='tel']:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+.iti--container {
+    z-index: 60;
+}
+.iti--container .iti__country-list {
+    max-height: 15rem;
+    border-radius: 0.5rem;
+    border-color: #e2e8f0;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+`;
+
+let intlTelInputLoader;
+
+function loadIntlTelInput() {
+    if (typeof window === 'undefined') return Promise.reject(new Error('window unavailable'));
+    if (window.intlTelInput) return Promise.resolve(window.intlTelInput);
+    if (intlTelInputLoader) return intlTelInputLoader;
+
+    intlTelInputLoader = new Promise((resolve, reject) => {
+        if (!document.getElementById(INTL_TEL_INPUT_STYLE_ID)) {
+            const overrides = document.createElement('style');
+            overrides.id = INTL_TEL_INPUT_STYLE_ID;
+            overrides.textContent = EVENT_ITI_OVERRIDES;
+            document.head.appendChild(overrides);
+        }
+
+        if (!document.querySelector(`link[href="${INTL_TEL_INPUT_CSS}"]`)) {
+            const stylesheet = document.createElement('link');
+            stylesheet.rel = 'stylesheet';
+            stylesheet.href = INTL_TEL_INPUT_CSS;
+            document.head.appendChild(stylesheet);
+        }
+
+        const existingScript = document.querySelector(`script[src*="intlTelInput"]`);
+        if (existingScript) {
+            if (window.intlTelInput) {
+                resolve(window.intlTelInput);
+                return;
+            }
+            existingScript.addEventListener('load', () => resolve(window.intlTelInput));
+            existingScript.addEventListener('error', () => reject(new Error('Failed to load intl-tel-input')));
+            return;
+        }
+
+        const script = document.createElement('script');
+        script.src = INTL_TEL_INPUT_JS;
+        script.async = true;
+        script.onload = () => resolve(window.intlTelInput);
+        script.onerror = () => reject(new Error('Failed to load intl-tel-input'));
+        document.head.appendChild(script);
+    });
+
+    return intlTelInputLoader;
 }
 
-const COUNTRIES = (availableCountries || [])
-    .filter(
-        (country, index, self) =>
-            country?.shortname &&
-            country?.shortname?.length === 2 &&
-            index === self.findIndex((c) => c.shortname === country.shortname)
-    )
-    .map((country) => ({
-        code: country.shortname,
-        dial: `+${country.code}`,
-        flag: getFlagEmoji(country.shortname),
-        name: country.name,
-    }));
+function getPhonePayload(iti, input) {
+    const nationalNumber = (input?.value || '').replace(/\D/g, '');
+    const dialCode = iti?.getSelectedCountryData?.()?.dialCode || '';
+    const fullNumber = nationalNumber && dialCode ? `+${dialCode}${nationalNumber}` : '';
+    const lengthValid = nationalNumber.length >= 10 && nationalNumber.length <= 15;
+    const libValid = window.intlTelInputUtils ? Boolean(iti?.isValidNumber?.()) : false;
+    const isValid = libValid || lengthValid;
 
-function MobileNumberInput({
-    id,
-    name,
-    value,
-    onChange,
-    defaultCountry = 'IN',
-    placeholder = '98765 43210',
-    disabled,
-}) {
-    const initialCountry =
-        COUNTRIES.find((c) => c.code.toLowerCase() === (defaultCountry || 'in').toLowerCase()) || COUNTRIES[0];
+    return { fullNumber, isValid };
+}
 
-    const [selectedCountry, setSelectedCountry] = useState(initialCountry);
-    const [phoneNumber, setPhoneNumber] = useState('');
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const dropdownRef = useRef(null);
+function MobileNumberInput({ id, name, onChange, defaultCountry = 'IN', placeholder = '98765 43210', disabled }) {
+    const inputRef = useRef(null);
+    const itiRef = useRef(null);
+    const onChangeRef = useRef(onChange);
+    onChangeRef.current = onChange;
 
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-                setIsDropdownOpen(false);
-            }
-        };
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => document.removeEventListener('mousedown', handleClickOutside);
+    const emitChange = useCallback(() => {
+        const iti = itiRef.current;
+        const input = inputRef.current;
+        if (!iti || !input) return;
+        onChangeRef.current?.(getPhonePayload(iti, input));
     }, []);
 
-    const updateParent = (country, num) => {
-        const cleanNumber = num.replace(/\D/g, '');
-        const fullNumber = cleanNumber ? `${country.dial}${cleanNumber}` : '';
-        const isValid = cleanNumber.length >= 7 && cleanNumber.length <= 15;
-        onChange?.({
-            fullNumber,
-            isValid,
-        });
-    };
+    useEffect(() => {
+        const input = inputRef.current;
+        if (!input) return undefined;
 
-    const handleNumberChange = (e) => {
-        const val = e.target.value.replace(/\D/g, '');
-        setPhoneNumber(val);
-        updateParent(selectedCountry, val);
-    };
+        let cancelled = false;
 
-    const handleSelectCountry = (country) => {
-        setSelectedCountry(country);
-        setIsDropdownOpen(false);
-        updateParent(country, phoneNumber);
-    };
+        loadIntlTelInput()
+            .then((intlTelInput) => {
+                if (cancelled || !inputRef.current || itiRef.current) return;
+
+                const iti = intlTelInput(inputRef.current, {
+                    initialCountry: (defaultCountry || 'in').toLowerCase(),
+                    separateDialCode: true,
+                    autoHideDialCode: false,
+                    nationalMode: true,
+                    formatOnDisplay: false,
+                    autoPlaceholder: 'off',
+                    placeholderNumberType: 'MOBILE',
+                    utilsScript: INTL_TEL_INPUT_UTILS,
+                    dropdownContainer: document.body,
+                });
+
+                itiRef.current = iti;
+                input.addEventListener('input', emitChange);
+                input.addEventListener('countrychange', emitChange);
+                iti.promise?.then(() => {
+                    if (!cancelled) emitChange();
+                });
+            })
+            .catch((err) => {
+                console.error('[intl-tel-input] load error:', err);
+            });
+
+        return () => {
+            cancelled = true;
+            input.removeEventListener('input', emitChange);
+            input.removeEventListener('countrychange', emitChange);
+            itiRef.current?.destroy();
+            itiRef.current = null;
+        };
+    }, [defaultCountry, emitChange]);
 
     return (
-        <div className='relative flex w-full items-center rounded-lg border border-slate-300 bg-white focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-500/20'>
-            <div className='relative shrink-0' ref={dropdownRef}>
-                <button
-                    type='button'
-                    disabled={disabled}
-                    onClick={() => setIsDropdownOpen((prev) => !prev)}
-                    className='flex h-12 items-center gap-1.5 border-r border-slate-200 px-3 text-sm font-medium text-slate-700 hover:bg-slate-50 focus:outline-none disabled:opacity-60'
-                >
-                    <span className='text-lg leading-none'>{selectedCountry?.flag}</span>
-                    <span className='text-slate-600'>{selectedCountry?.dial}</span>
-                    <svg className='h-4 w-4 text-slate-400' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                        <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M19 9l-7 7-7-7' />
-                    </svg>
-                </button>
-
-                {isDropdownOpen && (
-                    <div className='absolute left-0 top-full z-50 mt-1 max-h-60 w-64 overflow-y-auto rounded-lg border border-slate-200 bg-white py-1 shadow-lg'>
-                        {COUNTRIES.map((c) => (
-                            <button
-                                key={c.code}
-                                type='button'
-                                onClick={() => handleSelectCountry(c)}
-                                className={`flex w-full items-center gap-2.5 px-3 py-2 text-left text-sm hover:bg-slate-100 ${
-                                    selectedCountry?.code === c.code
-                                        ? 'bg-blue-50 font-semibold text-blue-600'
-                                        : 'text-slate-700'
-                                }`}
-                            >
-                                <span className='text-lg leading-none'>{c.flag}</span>
-                                <span className='w-12 font-medium'>{c.dial}</span>
-                                <span className='truncate text-slate-600'>{c.name}</span>
-                            </button>
-                        ))}
-                    </div>
-                )}
-            </div>
-
+        <div className='event-iti-wrap w-full'>
             <input
+                ref={inputRef}
                 id={id}
                 name={name}
                 type='tel'
+                inputMode='numeric'
                 disabled={disabled}
                 placeholder={placeholder || '98765 43210'}
-                value={phoneNumber}
-                onChange={handleNumberChange}
-                className='h-12 w-full bg-transparent px-3 text-sm text-slate-800 focus:outline-none disabled:opacity-60'
+                className='h-12 w-full'
+                autoComplete='tel'
             />
         </div>
     );
@@ -279,7 +319,10 @@ export default function MobileOtpField({ field, value, onChange, data, disabled,
         const widgetId = process.env.SUMMIT_OTP_WIDGET_TOKEN;
         const tokenAuth = process.env.SUMMIT_WIDGET_AUTH_TOKEN;
 
-        if (!scriptUrls.length || !widgetId || !tokenAuth) return;
+        if (!scriptUrls.length || !widgetId || !tokenAuth) {
+            toast.error(data?.errors?.widget);
+            return;
+        }
 
         loadOtpScript(scriptUrls)
             .then(() => {
@@ -308,22 +351,30 @@ export default function MobileOtpField({ field, value, onChange, data, disabled,
 
     /* The OTP goes out on its own once the typed number is valid for the selected country. */
     useEffect(() => {
-        if (!isWidgetReady || requestId || disabled) return;
-        if (!mobileNumber?.isValid || sentNumberRef.current === mobileNumber?.fullNumber) return;
+        if (!mobileNumber?.isValid || requestId || disabled) return;
+        if (!isWidgetReady) return;
+        if (sentNumberRef.current === mobileNumber?.fullNumber) return;
+
+        const identifier = (mobileNumber?.fullNumber || '').replace(/\D/g, '');
+        if (identifier.length < 7) return;
 
         const timer = setTimeout(() => {
+            if (typeof window.sendOtp !== 'function') {
+                toast.error(data?.errors?.widget);
+                return;
+            }
             sentNumberRef.current = mobileNumber?.fullNumber;
             setIsSending(true);
             window.sendOtp(
-                mobileNumber?.fullNumber?.replace('+', ''),
+                identifier,
                 (result) => {
                     setRequestId(result?.message);
-                    setOtpLength(window.getWidgetData?.()?.otpLength);
+                    setOtpLength(window.getWidgetData?.()?.otpLength || DEFAULT_OTP_LENGTH);
                     setResendSeconds(RESEND_SECONDS);
                     setIsSending(false);
                 },
                 (error) => {
-                    toast.error(error?.message);
+                    toast.error(error?.message || data?.errors?.send_failed);
                     sentNumberRef.current = null;
                     setIsSending(false);
                 }
@@ -338,6 +389,7 @@ export default function MobileOtpField({ field, value, onChange, data, disabled,
         mobileNumber?.isValid,
         mobileNumber?.fullNumber,
         data?.errors?.send_failed,
+        data?.errors?.widget,
     ]);
 
     useEffect(() => {
@@ -388,13 +440,9 @@ export default function MobileOtpField({ field, value, onChange, data, disabled,
             <MobileNumberInput
                 id={field?.name}
                 name={field?.name}
-                value={value}
                 onChange={handleMobileNumberChange}
                 defaultCountry={data?.default_country}
                 placeholder={field?.placeholder}
-                className='w-full'
-                inputClassName='h-12 border-gray-300 bg-white text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20'
-                buttonClassName='h-12 border-gray-300 bg-white px-3'
                 disabled={disabled || isSending || Boolean(requestId)}
             />
 
@@ -403,14 +451,17 @@ export default function MobileOtpField({ field, value, onChange, data, disabled,
                     <MdCheckCircle size={14} className='shrink-0' aria-hidden />
                     {data?.verified_label}
                 </span>
-            ) : requestId || isSending || mobileNumber?.isValid ? (
+            ) : isSending ? (
+                <span className='text-xs text-slate-500'>{data?.sending_label}</span>
+            ) : requestId ? (
                 <div className='flex flex-col gap-2 pt-1'>
+                    <span className='text-xs text-slate-500'>{data?.sent_label}</span>
                     <EventOtpInput
                         length={otpLength}
                         onVerify={(otpValue) => handleVerifyOtp(otpValue, requestId)}
                         disabled={disabled || isVerifying}
                     />
-                    {!resendSeconds && requestId && (
+                    {!resendSeconds && (
                         <button
                             type='button'
                             disabled={disabled}
