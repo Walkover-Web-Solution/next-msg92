@@ -78,6 +78,7 @@
         "whatsapp/compare/msg91-vs-interakt",
         "whatsapp/compare/msg91-vs-wati",
         "whatsapp/compare",
-        "sla/hello"
+        "sla/hello",
+        "hello/one-api"
     ]
 }
