@@ -17,14 +17,14 @@
             "plan": "basic",
             "competitor": "zendesk"
         },
-        "footnote": "Competitor figures are published list prices as of July 2026. Brazilian vendors marked (approx) are quote-only. Figures are estimates — please verify with the vendor before purchase.",
+        "footnote": "Competitor figures are published list prices as of July 2026. Brazilian vendors marked (approx) are quote-only.",
         "buttons": {
             "primaryBtn": {
                 "text": "Start free with Hello",
                 "link": "https://control.msg91.com/signup/"
             },
             "secondaryBtn": {
-                "text": "Email me this comparison"
+                "text": "Export PDF"
             }
         },
         "CostSavingBenefits": {
@@ -171,96 +171,6 @@
             "secondaryBtn": {
                 "text": "Book a demo",
                 "link": "/contact-us"
-            }
-        },
-        "CostComparisonFooter": {
-            "logoText": "MSG91",
-            "description": "The cloud communication platform trusted by 30,000+ global businesses for WhatsApp, SMS, Email, Voice, OTP and customer support.",
-            "columns": [
-                {
-                    "title": "Product",
-                    "links": [
-                        {
-                            "name": "Hello",
-                            "url": "/hello"
-                        },
-                        {
-                            "name": "Campaign",
-                            "url": "/campaign"
-                        },
-                        {
-                            "name": "Segmento",
-                            "url": "/segmento"
-                        },
-                        {
-                            "name": "OTP",
-                            "url": "/otp"
-                        }
-                    ]
-                },
-                {
-                    "title": "Discover",
-                    "links": [
-                        {
-                            "name": "About us",
-                            "url": "/about-us"
-                        },
-                        {
-                            "name": "Pricing",
-                            "url": "/pricing"
-                        },
-                        {
-                            "name": "MSG91 for startups",
-                            "url": "/startups"
-                        },
-                        {
-                            "name": "Contact Us",
-                            "url": "/contact-us"
-                        }
-                    ]
-                },
-                {
-                    "title": "Program",
-                    "links": [
-                        {
-                            "name": "Eligibility",
-                            "url": "#eligibility"
-                        },
-                        {
-                            "name": "Terms & Conditions",
-                            "url": "/hello_startups_india_terms.html"
-                        },
-                        {
-                            "name": "Startup policy",
-                            "url": "/startup-policy"
-                        },
-                        {
-                            "name": "Fair pricing policy",
-                            "url": "/fair-pricing-policy"
-                        }
-                    ]
-                }
-            ],
-            "bottom": {
-                "copyright": "Copyright 2008-2026, Superheroes, Inc. | All rights reserved.",
-                "links": [
-                    {
-                        "name": "Terms of use",
-                        "url": "/terms-of-use"
-                    },
-                    {
-                        "name": "Privacy policy",
-                        "url": "/privacy-policy"
-                    },
-                    {
-                        "name": "Refund policy",
-                        "url": "/refund-policy"
-                    },
-                    {
-                        "name": "Program T&C",
-                        "url": "/hello_startups_india_terms.html"
-                    }
-                ]
             }
         }
     }
