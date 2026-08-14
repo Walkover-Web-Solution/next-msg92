@@ -1,4 +1,5 @@
 import React from 'react';
+import { HELLO_PLANS } from './constants';
 
 export function formatHeadingWithAccent(rawText) {
     const parts = String(rawText ?? '')
@@ -31,14 +32,22 @@ export function resolveApiPlan(plan, apiPlans = []) {
         return exactMatch;
     }
 
-    const paidPlans = plansPool.filter((p) => Number(p?.amount) > 0);
+    if (targetKey) {
+        const partialMatch =
+            plansPool.find((p) => p?.name?.toLowerCase().includes(targetKey)) ||
+            apiPlans.find((p) => p?.name?.toLowerCase().includes(targetKey));
 
-    if (targetKey === 'basic') {
-        return paidPlans[0] || plansPool[0] || null;
+        if (partialMatch) {
+            return partialMatch;
+        }
     }
 
-    if (targetKey === 'premium') {
-        return paidPlans[1] || paidPlans[0] || null;
+    const paidPlans = plansPool.filter((p) => Number(p?.amount) > 0);
+    const planKeys = Object.keys(HELLO_PLANS);
+    const slotIndex = planKeys.indexOf(plan?.key || '');
+
+    if (slotIndex >= 0) {
+        return paidPlans[slotIndex] || paidPlans[0] || plansPool[0] || null;
     }
 
     return plansPool[0] || null;
@@ -70,9 +79,11 @@ export function calculatePlatformCosts(
     let helloExtraRate = Number(service?.followUpRate || 0);
     if (Number.isNaN(helloExtraRate)) helloExtraRate = 0;
     let includedTickets = Number(service?.freeCredit || 0);
-    if (Number.isNaN(includedTickets)) includedTickets = 0;
+    if (Number.isNaN(includedTickets) || includedTickets < 0) {
+        includedTickets = includedTickets < 0 ? Infinity : 0;
+    }
 
-    if (currency === 'BRL' || currency === 'EUR') {
+    if (currency === 'BRL') {
         helloBase = helloBase * currencyRate;
         helloExtraRate = helloExtraRate * currencyRate;
     }
@@ -256,8 +267,8 @@ export function formatCurrencyAmount(amount, currencyCode, CURRENCY_RATES) {
         case 'BRL':
             locale = 'pt-BR';
             break;
-        case 'EUR':
-            locale = 'de-DE';
+        case 'GBP':
+            locale = 'en-GB';
             break;
         default:
             locale = 'en-US';
