@@ -16,7 +16,7 @@ export const CURRENCY_RATES = {
     BRL: { symbol: 'R$', rate: 5.12, locale: 'pt-BR' },
     INR: { symbol: '₹', rate: 95.3, locale: 'en-IN' },
     AED: { symbol: 'AED ', rate: 3.6725, locale: 'en-AE' },
-    GBP: { symbol: '£', rate: 0.79, locale: 'en-GB' },
+    GBP: { symbol: 'GBP ', rate: 0.79, locale: 'en-GB' },
 };
 
 export const COMPETITORS = {
