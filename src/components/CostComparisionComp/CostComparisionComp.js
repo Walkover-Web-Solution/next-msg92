@@ -12,21 +12,21 @@ import handlePlanStructure from '@/utils/pricing/handlePlanStructure';
 import { HELLO_PLANS, ALL_COMPETITORS, CURRENCY_RATES, HELLO_MS_ID } from './constants';
 import { calculatePlatformCosts, formatCurrencyAmount, resolveApiPlan } from './helpers';
 export default function CostComparisionComp({ data, pageInfo }) {
-    if (!data) return null;
-
-    const [tickets, setTickets] = useState(data.defaults?.tickets !== undefined ? Number(data.defaults.tickets) : 3000);
-    const [agents, setAgents] = useState(data.defaults?.agents !== undefined ? Number(data.defaults.agents) : 12);
-    const [aiRate, setAiRate] = useState(data.defaults?.aiRate !== undefined ? Number(data.defaults.aiRate) : 50);
-    const [planKey, setPlanKey] = useState(HELLO_PLANS[data.defaults?.plan] ? data.defaults.plan : 'basic');
-    const [competitorKey, setCompetitorKey] = useState(
-        ALL_COMPETITORS[data.defaults?.competitor] ? data.defaults.competitor : 'zendesk'
+    const [tickets, setTickets] = useState(
+        data?.defaults?.tickets !== undefined ? Number(data.defaults.tickets) : 3000
     );
-    const [currency, setCurrency] = useState(CURRENCY_RATES[data.defaultCurrency] ? data.defaultCurrency : 'USD');
+    const [agents, setAgents] = useState(data?.defaults?.agents !== undefined ? Number(data.defaults.agents) : 12);
+    const [aiRate, setAiRate] = useState(data?.defaults?.aiRate !== undefined ? Number(data.defaults.aiRate) : 50);
+    const [planKey, setPlanKey] = useState(HELLO_PLANS[data?.defaults?.plan] ? data.defaults.plan : 'basic');
+    const [competitorKey, setCompetitorKey] = useState(
+        ALL_COMPETITORS[data?.defaults?.competitor] ? data.defaults.competitor : 'zendesk'
+    );
+    const [currency, setCurrency] = useState(CURRENCY_RATES[data?.defaultCurrency] ? data.defaultCurrency : 'USD');
 
     const [apiPlans, setApiPlans] = useState([]);
     const [loadingApi, setLoadingApi] = useState(false);
 
-    const apiCurrency = currency === 'BRL' || currency === 'EUR' ? 'USD' : currency;
+    const apiCurrency = currency === 'BRL' ? 'USD' : currency;
 
     const fetchPlans = useCallback(async () => {
         setLoadingApi(true);
@@ -53,13 +53,15 @@ export default function CostComparisionComp({ data, pageInfo }) {
         return calculatePlatformCosts(plan, competitor, tickets, agents, aiRate, currency, CURRENCY_RATES, apiPlans);
     }, [plan, competitor, tickets, agents, aiRate, currency, apiPlans]);
 
+    if (!data) return null;
+
     const { hello, competitor: competitorResult, savings } = calculation;
 
     const formatCurrency = (value) => formatCurrencyAmount(value, currency, CURRENCY_RATES);
 
     const apiPlanMatch = resolveApiPlan(plan, apiPlans);
 
-    if (!loadingApi && (!apiPlans || apiPlans.length === 0 || !apiPlanMatch)) {
+    if (!loadingApi && (!apiPlans || apiPlans.length === 0)) {
         return <NotFoundComp pageInfo={pageInfo} />;
     }
 
@@ -83,6 +85,7 @@ export default function CostComparisionComp({ data, pageInfo }) {
                         setCurrency={setCurrency}
                         planKey={planKey}
                         setPlanKey={setPlanKey}
+                        apiPlans={apiPlans}
                     />
 
                     <CostComparisonResults

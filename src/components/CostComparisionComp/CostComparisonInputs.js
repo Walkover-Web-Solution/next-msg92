@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaComments, FaUsers, FaRobot, FaGlobe, FaChevronDown, FaCheck } from 'react-icons/fa';
 import { INPUT_MIN, INPUT_MAX, CURRENCY_ORDER, COMPETITORS, HELLO_PLANS, ALL_COMPETITORS } from './constants';
+import { resolveApiPlan } from './helpers';
 
 function NumberInput({ id, label, icon: Icon, iconColor, min, max, step = '1', value, onChange, placeholder }) {
     return (
@@ -113,6 +114,7 @@ export default function CostComparisonInputs({
     setCurrency,
     planKey,
     setPlanKey,
+    apiPlans,
 }) {
     if (!data) return null;
 
@@ -194,19 +196,23 @@ export default function CostComparisonInputs({
             <div className='cont gap-2 border-t border-gray-100 py-5'>
                 <span className='text-xs font-bold uppercase'>{data?.labels?.helloPlan}</span>
                 <div className='grid grid-cols-2 gap-1 rounded-xl border border-gray-200 bg-gray-100 p-1'>
-                    {Object.entries(HELLO_PLANS).map(([key, plan]) => (
-                        <button
-                            key={key}
-                            type='button'
-                            aria-pressed={planKey === key}
-                            onClick={() => setPlanKey(key)}
-                            className={`rounded-xl py-1.5 text-xs font-bold ${
-                                planKey === key ? 'bg-indigo-600 text-white shadow-sm' : 'hover:text-gray-900'
-                            }`}
-                        >
-                            {plan.name}
-                        </button>
-                    ))}
+                    {Object.entries(HELLO_PLANS).map(([key, plan]) => {
+                        const apiPlanMatch = resolveApiPlan(plan, apiPlans);
+                        const displayName = apiPlanMatch?.name || plan.name;
+                        return (
+                            <button
+                                key={key}
+                                type='button'
+                                aria-pressed={planKey === key}
+                                onClick={() => setPlanKey(key)}
+                                className={`rounded-xl py-1.5 text-xs font-bold ${
+                                    planKey === key ? 'bg-indigo-600 text-white shadow-sm' : 'hover:text-gray-900'
+                                }`}
+                            >
+                                {displayName}
+                            </button>
+                        );
+                    })}
                 </div>
             </div>
         </div>
