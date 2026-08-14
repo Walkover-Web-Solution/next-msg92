@@ -16,7 +16,7 @@ export const CURRENCY_RATES = {
     BRL: { symbol: 'R$', rate: 5.12, locale: 'pt-BR' },
     INR: { symbol: '₹', rate: 95.3, locale: 'en-IN' },
     AED: { symbol: 'AED ', rate: 3.6725, locale: 'en-AE' },
-    EUR: { symbol: '€', rate: 0.88, locale: 'de-DE' },
+    GBP: { symbol: 'GBP ', rate: 0.79, locale: 'en-GB' },
 };
 
 export const COMPETITORS = {
@@ -196,6 +196,6 @@ export const ALL_COMPETITORS = [...COMPETITORS.global, ...COMPETITORS.brazil].re
     return accumulator;
 }, {});
 
-export const CURRENCY_ORDER = ['USD', 'BRL', 'INR', 'AED', 'EUR'];
+export const CURRENCY_ORDER = ['USD', 'BRL', 'INR', 'AED', 'GBP'];
 export const INPUT_MIN = 0;
 export const INPUT_MAX = 9999999999;

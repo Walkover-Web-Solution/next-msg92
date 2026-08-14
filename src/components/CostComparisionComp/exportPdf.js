@@ -484,7 +484,11 @@ export async function generateCostComparisonPdf({
         const imageHeight = (canvas.height * imageWidth) / canvas.width;
 
         pdfDocument.addImage(imageData, 'JPEG', 0, 0, imageWidth, imageHeight);
-        pdfDocument.save('support_cost_comparison.pdf');
+
+        const formattedCurrency = (currency || 'USD').toLowerCase();
+        const pdfFileName = `hello_comparison_${formattedCurrency}.pdf`;
+
+        pdfDocument.save(pdfFileName);
     } catch (error) {
         console.error('PDF export failed:', error);
     }

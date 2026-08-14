@@ -1,4 +1,5 @@
 import React from 'react';
+import { HELLO_PLANS } from './constants';
 
 export function formatHeadingWithAccent(rawText) {
     const parts = String(rawText ?? '')
@@ -13,6 +14,43 @@ export function formatHeadingWithAccent(rawText) {
             {restText.length ? ` ${restText.join(' ')}` : null}
         </>
     );
+}
+
+export function resolveApiPlan(plan, apiPlans = []) {
+    if (!Array.isArray(apiPlans) || apiPlans.length === 0) return null;
+
+    const targetKey = plan?.key?.toLowerCase() || plan?.name?.toLowerCase() || '';
+
+    const monthlyPlans = apiPlans.filter((p) => p?.type?.toLowerCase() === 'monthly');
+    const plansPool = monthlyPlans.length > 0 ? monthlyPlans : apiPlans;
+
+    const exactMatch =
+        plansPool.find((p) => p?.name?.toLowerCase() === targetKey) ||
+        apiPlans.find((p) => p?.name?.toLowerCase() === targetKey);
+
+    if (exactMatch) {
+        return exactMatch;
+    }
+
+    if (targetKey) {
+        const partialMatch =
+            plansPool.find((p) => p?.name?.toLowerCase().includes(targetKey)) ||
+            apiPlans.find((p) => p?.name?.toLowerCase().includes(targetKey));
+
+        if (partialMatch) {
+            return partialMatch;
+        }
+    }
+
+    const paidPlans = plansPool.filter((p) => Number(p?.amount) > 0);
+    const planKeys = Object.keys(HELLO_PLANS);
+    const slotIndex = planKeys.indexOf(plan?.key || '');
+
+    if (slotIndex >= 0) {
+        return paidPlans[slotIndex] || paidPlans[0] || plansPool[0] || null;
+    }
+
+    return plansPool[0] || null;
 }
 
 export function calculatePlatformCosts(
@@ -32,19 +70,20 @@ export function calculatePlatformCosts(
 
     const currencyRate = CURRENCY_RATES[currency].rate;
 
-    const targetPlanName = plan?.key?.toLowerCase() || '';
-    const apiPlanMatch =
-        apiPlans.find(
-            (apiPlan) => apiPlan?.name?.toLowerCase() === targetPlanName && apiPlan?.type?.toLowerCase() === 'monthly'
-        ) || apiPlans.find((apiPlan) => apiPlan?.name?.toLowerCase() === targetPlanName);
+    const apiPlanMatch = resolveApiPlan(plan, apiPlans);
 
     const service = apiPlanMatch?.services?.find((s) => s.name === 'Tickets');
 
-    let helloBase = Number(apiPlanMatch?.amount);
-    let helloExtraRate = Number(service?.followUpRate);
-    let includedTickets = Number(service?.freeCredit);
+    let helloBase = Number(apiPlanMatch?.amount || 0);
+    if (Number.isNaN(helloBase)) helloBase = 0;
+    let helloExtraRate = Number(service?.followUpRate || 0);
+    if (Number.isNaN(helloExtraRate)) helloExtraRate = 0;
+    let includedTickets = Number(service?.freeCredit || 0);
+    if (Number.isNaN(includedTickets) || includedTickets < 0) {
+        includedTickets = includedTickets < 0 ? Infinity : 0;
+    }
 
-    if (currency === 'BRL' || currency === 'EUR') {
+    if (currency === 'BRL') {
         helloBase = helloBase * currencyRate;
         helloExtraRate = helloExtraRate * currencyRate;
     }
@@ -228,8 +267,8 @@ export function formatCurrencyAmount(amount, currencyCode, CURRENCY_RATES) {
         case 'BRL':
             locale = 'pt-BR';
             break;
-        case 'EUR':
-            locale = 'de-DE';
+        case 'GBP':
+            locale = 'en-GB';
             break;
         default:
             locale = 'en-US';
