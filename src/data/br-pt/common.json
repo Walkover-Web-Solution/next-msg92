@@ -82,9 +82,9 @@
                         "description": "Gerencie Documentos de Ajuda e Guias"
                     },
                     {
-                        "name": "Reports",
+                        "name": "Relatórios",
                         "slug": "reports",
-                        "description": "Plataforma de Análise e Relatórios de Comunicação"
+                        "description": "Todos os seus relatórios em um só lugar."
                     }
                 ]
             }
@@ -202,9 +202,9 @@
                         "description": "Manage Help Documents and Guides"
                     },
                     {
-                        "name": "Reports",
+                        "name": "Relatórios",
                         "slug": "reports",
-                        "description": "Communication Analytics & Reporting Platform"
+                        "description": "Todos os seus relatórios em um só lugar."
                     }
                 ]
             }

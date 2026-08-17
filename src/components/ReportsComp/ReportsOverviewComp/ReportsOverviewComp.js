@@ -1,95 +1,86 @@
-import { MdOutlineBarChart, MdOutlineCampaign, MdOutlineSettingsSuggest, MdOutlineTrendingUp } from 'react-icons/md';
+import { MdBarChart, MdCampaign, MdSettingsSuggest, MdTrendingUp } from 'react-icons/md';
 
-const categoryThemes = {
+const categoryMeta = {
     communication: {
-        icon: MdOutlineBarChart,
-        color: 'text-sky-600',
-        bg: 'bg-sky-50',
-        border: 'border-sky-100',
-        dot: 'bg-sky-500',
+        icon: MdBarChart,
+        description: 'Track delivery, open rates, and customer responses across all messaging channels.',
+        highlights: ['SMS', 'WhatsApp', 'Email', 'OTP', 'Voice', 'RCS'],
     },
     campaign: {
-        icon: MdOutlineCampaign,
-        color: 'text-indigo-600',
-        bg: 'bg-indigo-50',
-        border: 'border-indigo-100',
-        dot: 'bg-indigo-500',
+        icon: MdCampaign,
+        description: 'Measure campaign ROI, click-through rates, and audience engagement in real time.',
+        highlights: ['Delivery Rates', 'Read Rates', 'CTR', 'Conversions'],
     },
     operational: {
-        icon: MdOutlineSettingsSuggest,
-        color: 'text-emerald-600',
-        bg: 'bg-emerald-50',
-        border: 'border-emerald-100',
-        dot: 'bg-emerald-500',
+        icon: MdSettingsSuggest,
+        description: 'Monitor delivery latency, webhook reliability, credit consumption, and queues.',
+        highlights: ['Delivery Latency', 'Webhooks', 'Queue Status', 'Billing'],
     },
     bi: {
-        icon: MdOutlineTrendingUp,
-        color: 'text-amber-600',
-        bg: 'bg-amber-50',
-        border: 'border-amber-100',
-        dot: 'bg-amber-500',
+        icon: MdTrendingUp,
+        description: 'Executive dashboards and cross-channel intelligence to maximize communication ROI.',
+        highlights: ['Executive Views', 'ROI Analysis', 'SLA Tracking', 'Compliance'],
     },
 };
 
 export default function ReportsOverviewComp({ data }) {
-    if (!data) return null;
+    if (!data?.categories?.length) return null;
 
     return (
-        <section className='bg-neutral py-14 md:py-20'>
+        <section className='bg-neutral py-16 md:py-24'>
             <div className='container cont cont_p cont_gap'>
-                <div className='flex flex-col gap-3 max-w-4xl'>
+                {/* Header */}
+                <div className='cont cont_w gap-3 max-w-3xl'>
                     {data?.tagline && (
                         <div>
-                            <span className='inline-block text-xs font-semibold uppercase tracking-widest text-accent bg-accent/10 px-3.5 py-1 rounded-full border border-accent/20'>
+                            <span className='text-xs sm:text-sm font-semibold uppercase tracking-widest text-[#268080]'>
                                 {data.tagline}
                             </span>
                         </div>
                     )}
-                    {data?.heading && (
-                        <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold text-primary tracking-tight'>
-                            {data.heading}
-                        </h2>
-                    )}
-                    {data?.subheading && (
-                        <p className='text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed'>
-                            {data.subheading}
-                        </p>
-                    )}
-                    {data?.section_title && (
-                        <h3 className='text-base md:text-lg font-bold text-primary mt-2'>{data.section_title}</h3>
-                    )}
+                    {data?.heading && <h2 className='heading'>{data.heading}</h2>}
+                    {data?.subheading && <p className='subheading text-slate-600'>{data.subheading}</p>}
                 </div>
 
-                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
-                    {data?.categories?.map((category, index) => {
-                        const theme = categoryThemes[category?.icon] || categoryThemes.communication;
-                        const IconComponent = theme.icon;
+                {/* Ultra-Clean 4-Card Minimalist Grid */}
+                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-2'>
+                    {data.categories.map((category, index) => {
+                        const meta = categoryMeta[category?.icon] || categoryMeta.communication;
+                        const IconComponent = meta.icon;
+                        const description = category?.description || meta.description;
+                        const highlights = category?.highlights || meta.highlights;
 
                         return (
                             <div
                                 key={index}
-                                className='bg-white rounded-2xl border border-slate-200/90 p-6 flex flex-col gap-4 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200'
+                                className='bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-7 flex flex-col justify-between shadow-sm hover:shadow-lg hover:border-[#24B3B3]/40 hover:-translate-y-1 transition-all duration-300'
                             >
-                                <div className='flex items-center gap-3 pb-3 border-b border-slate-100'>
-                                    <span
-                                        className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-xl ${theme.bg} ${theme.color}`}
-                                    >
+                                <div>
+                                    {/* Icon */}
+                                    <div className='w-12 h-12 rounded-xl bg-[#f0faf9] border border-[#24B3B3]/30 text-[#24B3B3] flex items-center justify-center text-2xl mb-5 shadow-sm'>
                                         <IconComponent aria-hidden />
-                                    </span>
-                                    <h4 className='font-bold text-base text-primary leading-snug'>{category?.title}</h4>
+                                    </div>
+
+                                    {/* Title */}
+                                    <h3 className='text-lg font-bold text-slate-900 mb-2.5 leading-snug'>
+                                        {category?.title}
+                                    </h3>
+
+                                    {/* Short Clean Summary */}
+                                    <p className='text-sm text-slate-600 leading-relaxed'>{description}</p>
                                 </div>
 
-                                <ul className='flex flex-col gap-2.5'>
-                                    {category?.metrics?.map((metric, metricIdx) => (
-                                        <li
-                                            key={metricIdx}
-                                            className='flex items-start gap-2 text-xs sm:text-[13px] text-slate-700 leading-snug'
+                                {/* Key Highlights Pills */}
+                                <div className='pt-6 mt-6 border-t border-slate-100 flex flex-wrap gap-1.5'>
+                                    {highlights.map((item, i) => (
+                                        <span
+                                            key={i}
+                                            className='inline-flex items-center px-2.5 py-1 rounded-md bg-[#f0faf9] text-[#268080] text-xs font-medium border border-[#24B3B3]/20'
                                         >
-                                            <span className={`w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 ${theme.dot}`} />
-                                            <span>{metric}</span>
-                                        </li>
+                                            {item}
+                                        </span>
                                     ))}
-                                </ul>
+                                </div>
                             </div>
                         );
                     })}

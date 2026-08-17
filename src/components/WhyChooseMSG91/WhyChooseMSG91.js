@@ -4,9 +4,16 @@ import LottiePlayer from '../LottiePlayer/LottiePlayer';
 import { LinkButton, LinkText } from '../UIComponent/Buttons/LinkButton';
 import WhatsAppDriveSales from '../WhatsAppDriveSaled';
 
-export default function WhyChooseMSG91({ data }) {
+export default function WhyChooseMSG91({ data, pageInfo }) {
+    const isReports =
+        pageInfo?.page === 'reports' ||
+        data?.slug === 'reports' ||
+        data?.heading?.includes('Reports') ||
+        data?.heading?.includes('Relatórios');
+    const bgClass = isReports ? 'bg-[var(--color-report-primary-light)]' : 'bg-[#f4fcf4]';
+
     return (
-        <div className='bg-[#f4fcf4]'>
+        <div className={bgClass}>
             <div className='container cont cont_p cont_gap'>
                 <div className='cont cont_w gap-2 '>
                     <h2 className='text-3xl font-bold'>{data?.heading}</h2>
@@ -61,7 +68,7 @@ export default function WhyChooseMSG91({ data }) {
                     </div>
                 ))}
             </div>
-            <WhatsAppDriveSales data={data?.WhatsAppDriveSales} />
+            <WhatsAppDriveSales data={data?.WhatsAppDriveSales} pageInfo={pageInfo} isReports={isReports} />
         </div>
     );
 }

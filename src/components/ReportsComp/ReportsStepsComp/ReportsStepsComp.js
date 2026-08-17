@@ -9,7 +9,7 @@ export default function ReportsStepsComp({ data }) {
             <div className='container cont cont_p cont_gap'>
                 <header className='cont gap-4 text-center max-w-4xl mx-auto'>
                     {label && (
-                        <p className='text-xs sm:text-sm font-semibold uppercase tracking-widest text-accent'>
+                        <p className='text-xs sm:text-sm font-semibold uppercase tracking-widest text-[#268080]'>
                             {label}
                         </p>
                     )}
@@ -21,7 +21,7 @@ export default function ReportsStepsComp({ data }) {
                     {steps.map((step, index) => (
                         <Fragment key={`badge-${index}`}>
                             {index > 0 && <div className='h-0.5 min-h-[2px] min-w-8 flex-1 bg-slate-200' aria-hidden />}
-                            <span className='relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent text-base font-bold tracking-wide text-white shadow-sm'>
+                            <span className='relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#24B3B3] text-base font-bold tracking-wide text-white shadow-sm'>
                                 {step.number || String(index + 1).padStart(2, '0')}
                             </span>
                         </Fragment>
@@ -32,14 +32,14 @@ export default function ReportsStepsComp({ data }) {
                     {steps.map((step, index) => (
                         <div
                             key={`${step.title}-${index}`}
-                            className='flex flex-col items-center rounded-xl border border-slate-200/80 bg-white p-6 text-center shadow-sm hover:shadow-md transition-shadow'
+                            className='flex flex-col items-center rounded-xl border border-slate-200/80 bg-white p-6 text-center shadow-sm hover:shadow-md hover:border-[#24B3B3]/40 transition-all'
                         >
                             <div className='mb-4 flex w-full items-center md:hidden'>
                                 <div
                                     className={`h-0.5 min-w-0 flex-1 bg-slate-200 ${index === 0 ? 'opacity-0' : ''}`}
                                     aria-hidden
                                 />
-                                <span className='mx-3 flex h-10 w-10 items-center justify-center rounded-full bg-accent text-sm font-bold text-white shadow-sm'>
+                                <span className='mx-3 flex h-10 w-10 items-center justify-center rounded-full bg-[#24B3B3] text-sm font-bold text-white shadow-sm'>
                                     {step.number || String(index + 1).padStart(2, '0')}
                                 </span>
                                 <div

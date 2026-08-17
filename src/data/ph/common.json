@@ -84,7 +84,7 @@
                     {
                         "name": "Reports",
                         "slug": "reports",
-                        "description": "Communication Analytics & Reporting Platform"
+                        "description": "All your reports at one place."
                     }
                 ]
             }
@@ -204,7 +204,7 @@
                     {
                         "name": "Reports",
                         "slug": "reports",
-                        "description": "Communication Analytics & Reporting Platform"
+                        "description": "All your reports at one place."
                     }
                 ]
             }

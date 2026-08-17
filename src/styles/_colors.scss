@@ -47,6 +47,11 @@
 .text-knowledgebase {
     color: var(--knowledgebase-color) !important;
 }
+
+.text-reports {
+    color: var(--color-report-primary-dark) !important;
+}
+
 .text-home {
     color: var(--accent-color) !important;
 }
@@ -56,6 +61,7 @@
         &_bg {
             background-color: var(--#{$name}-color) !important;
         }
+
         &_text {
             color: var(--#{$name}-color) !important;
         }
@@ -64,14 +70,17 @@
             &_bg {
                 background-color: var(--#{$name}-lite-color) !important;
             }
+
             &_text {
                 color: var(--#{$name}-lite-color) !important;
             }
         }
+
         &_dark {
             &_bg {
                 background-color: var(--#{$name}-dark-color) !important;
             }
+
             &_text {
                 color: var(--#{$name}-dark-color) !important;
             }
@@ -91,3 +100,4 @@
 @include product-color('numbers');
 @include product-color('shorturl');
 @include product-color('knowledgebase');
+@include product-color('reports');

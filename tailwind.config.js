@@ -10,6 +10,11 @@ module.exports = {
     theme: {
         extend: {
             colors: {
+                report: {
+                    primary: '#24B3B3',
+                    'primary-dark': '#268080',
+                    'primary-light': '#f0faf9',
+                },
                 shopifyBanner: {
                     content: '#F0F7E8',
                     visual: '#0A5840',

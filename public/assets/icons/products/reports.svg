@@ -1,9 +1,9 @@
 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="4" y="4" width="32" height="32" rx="8" fill="#1E75BA" fill-opacity="0.15"/>
-  <rect x="8" y="22" width="5" height="10" rx="2" fill="#1E75BA"/>
-  <rect x="15" y="16" width="5" height="16" rx="2" fill="#1E75BA"/>
-  <rect x="22" y="10" width="5" height="22" rx="2" fill="#1E75BA"/>
-  <path d="M29 9L29 32" stroke="#1E75BA" stroke-width="5" stroke-linecap="round"/>
-  <path d="M8 18L17 11L24 16L32 7" stroke="#212528" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="32" cy="7" r="2.5" fill="#212528"/>
+  <!-- 3/4 circle base in dark teal -->
+  <path d="M20 4.5C11.4396 4.5 4.5 11.4396 4.5 20C4.5 28.5604 11.4396 35.5 20 35.5C28.5604 35.5 35.5 28.5604 35.5 20H20V4.5Z" fill="#237571"/>
+  <!-- 1/4 top-right quadrant in bright teal -->
+  <path d="M22 18H36.4C35.6 10.8 30 5.2 22 4.4V18Z" fill="#24B3B3"/>
+  <!-- Chart bars inside top-right quadrant -->
+  <rect x="25.5" y="9" width="2.5" height="6.5" rx="0.8" fill="white"/>
+  <rect x="29.5" y="12" width="2.5" height="3.5" rx="0.8" fill="white"/>
 </svg>

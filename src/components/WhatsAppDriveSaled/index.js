@@ -4,7 +4,10 @@ import LottiePlayer from '../LottiePlayer/LottiePlayer';
 import CalendlyModal from '../CalendlyModal';
 import { LinkText } from '../UIComponent/Buttons/LinkButton';
 
-export default function WhatsAppDriveSales({ data }) {
+export default function WhatsAppDriveSales({ data, pageInfo, isReports: isReportsProp }) {
+    const isReports = isReportsProp || pageInfo?.page === 'reports';
+    const arrowColor = isReports ? 'text-[#268080]' : 'text-green-600';
+
     return (
         <div className='container flex flex-col md:flex-row pb-8 cont_gap items-center justify-between'>
             <div className='w-full xl:max-w-[560px] lg:max-w-[320px] max-w-[280px] md:mx-6 mx-2 rounded'>
@@ -29,7 +32,7 @@ export default function WhatsAppDriveSales({ data }) {
                 <div className='cont cont_gap'>
                     {data?.content?.map((feature, i) => (
                         <div key={i} className='flex gap-1'>
-                            <MdArrowRightAlt className='text-2xl  text-green-600' />
+                            <MdArrowRightAlt className={`text-2xl ${arrowColor}`} />
                             <div className=''>
                                 <h3 className='font-bold'>{feature?.title}</h3>
                                 <p>{feature?.description}</p>

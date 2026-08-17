@@ -12,7 +12,7 @@
         "tagline": "Plataforma de Análise e Relatórios de Comunicação",
         "heading": "Plataforma de Análise e Relatórios de Comunicação para Cada Interação com o Cliente",
         "subheading": "Transforme os dados de comunicação em insights estratégicos com o MSG91 Reports. Analise o desempenho de SMS, WhatsApp, E-mail, Voz, OTP, RCS, Notificações Push e URLs Curtas a partir de um painel unificado. Monitore taxas de entrega, engajamento do cliente, desempenho de campanhas, custos e métricas operacionais em tempo real para tomar decisões mais rápidas e baseadas em dados.",
-        "banner_video": "/assets/reports/videos/Hero Section Report Page_3.webm",
+        "banner_video": "/assets/reports/videos/hero_section_report_page_3.webm",
         "not_absolute": "true",
         "getstarted_btn": "Agendar Demonstração",
         "schedule_meet": "Agendar Reunião",
@@ -44,8 +44,8 @@
     },
     "ReportsOverviewComp": {
         "tagline": "Inteligência Unificada em Tempo Real",
-        "heading": "Um Painel Unificado para Analisar Cada Comunicação com o Cliente",
-        "subheading": "Transforme os dados de comunicação em insights acionáveis com uma plataforma de relatórios unificada. Acompanhe o desempenho de campanhas, o engajamento do cliente, o sucesso da entrega e os custos em todos os canais em tempo real.",
+        "heading": "Painel Unificado de Análise de Comunicação",
+        "subheading": "Transforme dados de comunicação em insights acionáveis e acompanhe o desempenho em todos os canais em tempo real.",
         "section_title": "Tudo o que Você Pode Monitorar",
         "categories": [
             {
@@ -114,8 +114,8 @@
             {
                 "name": "E-commerce e Varejo: Meça Toda a Jornada do Cliente",
                 "content": "Acompanhe cada interação do cliente — desde campanhas promocionais e lembretes de carrinho abandonado até atualizações de pedidos e engajamento pós-compra. Entenda como os clientes interagem com suas comunicações e otimize cada ponto de contato para gerar mais conversões.",
-                "video": "/assets/reports/videos/E-commerce & Retail Analytics.webm",
-                "img": "/assets/reports/use_case/Ecommerce.webp",
+                "video": "/assets/reports/videos/ecommerce_retail_analytics.webm",
+                "img": "/assets/reports/use_case/ecommerce.webp",
                 "more_content": {
                     "usecases": [
                         {
@@ -152,7 +152,8 @@
             {
                 "name": "Bancos, FinTechs e Seguros: Monitore Comunicações Críticas",
                 "content": "Garanta que cada mensagem de autenticação, alerta de transação e notificação de apólice chegue aos clientes pontualmente. Tenha visibilidade total do desempenho de OTPs, falhas de entrega e confiabilidade do canal.",
-                "img": "/assets/reports/use_case/Fintech_Banking.webp",
+                "video": "/assets/reports/videos/fintech_banking_final.webm",
+                "img": "/assets/reports/use_case/fintech_banking.webp",
                 "more_content": {
                     "usecases": [
                         {
@@ -189,7 +190,7 @@
             {
                 "name": "Saúde e Clínicas: Melhore o Engajamento dos Pacientes",
                 "content": "Acompanhe lembretes de consultas, notificações de receitas, campanhas de prevenção e o desempenho das comunicações com pacientes em um painel centralizado.",
-                "img": "/assets/reports/use_case/Healthcare.webp",
+                "img": "/assets/reports/use_case/healthcare.webp",
                 "more_content": {
                     "usecases": [
                         {
@@ -226,7 +227,7 @@
             {
                 "name": "Educação e EdTechs: Aprimore a Comunicação com Alunos",
                 "content": "Meça a eficácia da comunicação da sua instituição de ensino com alunos e responsáveis em processos seletivos, lembretes de mensalidades, exames e comunicados acadêmicos.",
-                "img": "/assets/reports/use_case/Education.webp",
+                "img": "/assets/reports/use_case/education.webp",
                 "more_content": {
                     "usecases": [
                         {
@@ -263,7 +264,7 @@
             {
                 "name": "Logística e Viagens: Acompanhe Notificações Urgentes",
                 "content": "Monitore rastreamento de entregas, confirmações de reservas, alertas de atraso e notificações logísticas com análises de comunicação em tempo real.",
-                "img": "/assets/reports/use_case/Logistics.webp",
+                "img": "/assets/reports/use_case/logistics.webp",
                 "more_content": {
                     "usecases": [
                         {
@@ -308,8 +309,8 @@
                 "name": "Análise de Campanhas: Otimize Cada Ação de Comunicação",
                 "subtitle": "Meça o ROI e o Engajamento por Canal",
                 "content": "Avalie o desempenho de campanhas de SMS, WhatsApp, E-mail, Voz, RCS e Notificações Push usando relatórios e métricas completos.",
-                "video": "/assets/reports/videos/Campaign-Performance-Analytics .webm",
-                "img": "/assets/reports/features/Campaign-Performance-Analytics.webp",
+                "video": "/assets/reports/videos/campaign_performance_analytics.webm",
+                "img": "/assets/reports/features/campaign_performance_analytics.webp",
                 "more_content": {
                     "features": [
                         "Compare o desempenho de campanhas em múltiplos canais",
@@ -325,7 +326,7 @@
                 "name": "Análise de Engajamento: Entenda Como os Clientes Interagem",
                 "subtitle": "Entenda as Interações dos Clientes",
                 "content": "Acompanhe cada ponto de contato para compreender padrões de comportamento e aprimorar suas estratégias de comunicação.",
-                "img": "/assets/reports/features/Customer-Engagement-Analytics-1.webp",
+                "img": "/assets/reports/features/customer_engagement_analytics_1.webp",
                 "more_content": {
                     "features": [
                         "Monitore respostas de clientes e confirmações de leitura",
@@ -341,8 +342,8 @@
                 "name": "Análise Operacional e de Entrega: Garanta Confiabilidade Total",
                 "subtitle": "Assegure Confiabilidade nas Comunicações",
                 "content": "Identifique gargalos na entrega, monitore a saúde das mensagens e garanta que comunicados críticos cheguem sem atraso.",
-                "video": "/assets/reports/videos/Delivery-and-Operational-Analytics.webm",
-                "img": "/assets/reports/features/Delivery-and-Operational-Analytics.webp",
+                "video": "/assets/reports/videos/delivery_and_operational_analytics.webm",
+                "img": "/assets/reports/features/delivery_and_operational_analytics.webp",
                 "more_content": {
                     "features": [
                         "Detecte falhas de entrega instantaneamente",
@@ -357,7 +358,7 @@
                 "name": "Análise de Créditos e Faturamento: Controle seus Custos",
                 "subtitle": "Otimize Gastos e Alocação de Orçamento",
                 "content": "Acompanhe os gastos com comunicação em cada canal e otimize seu orçamento com relatórios detalhados de consumo e créditos.",
-                "img": "/assets/reports/features/Credit-&-Billing-Analytics.webp",
+                "img": "/assets/reports/features/credit_billing_analytics.webp",
                 "more_content": {
                     "features": [
                         "Monitore o consumo de créditos por canal",
@@ -372,7 +373,7 @@
                 "name": "Painéis Executivos e BI: Decisões Rápidas Baseadas em Dados",
                 "subtitle": "Inteligência Estratégica de Negócios",
                 "content": "Converta dados de comunicação em inteligência de negócios com painéis executivos, relatórios de tendências e KPIs estratégicos.",
-                "img": "/assets/reports/features/Executive-Dashboards-&-Business-Intelligence.webp",
+                "img": "/assets/reports/features/executive_dashboards_business_intelligence.webp",
                 "more_content": {
                     "features": [
                         "Monitore o desempenho de comunicação de toda a organização",
@@ -394,8 +395,8 @@
                 "name": "Relatórios e Análise de Entrega de SMS",
                 "subtitle": "Insights de Entrega e Campanhas em Tempo Real",
                 "content": "Tenha visibilidade total do desempenho de suas mensagens de SMS com relatórios de entrega em tempo real e análises aprofundadas. Acompanhe sucessos, falhas, créditos consumidos e cliques para garantir que cada campanha alcance seu público.",
-                "video": "/assets/reports/videos/SMS-Reports-&-Delivery-Analytics.webm",
-                "img": "/assets/reports/features/SMS-Reports-&-Delivery-Analytics.webp",
+                "video": "/assets/reports/videos/sms_reports_delivery_analytics.webm",
+                "img": "/assets/reports/features/sms_reports_delivery_analytics.webp",
                 "more_content": {
                     "features": [
                         "Relatórios de entrega de SMS e logs de status em tempo real",
@@ -411,7 +412,8 @@
                 "name": "Análise e Relatórios do WhatsApp Business",
                 "subtitle": "Acompanhe Conversões, Leituras e Respostas",
                 "content": "Monitore cada conversa no WhatsApp Business com métricas detalhadas de entrega, leitura, respostas, cliques e conversão. Meça o engajamento e otimize mensagens de marketing, utilidades e autenticação.",
-                "img": "/assets/reports/features/WhatsApp-Business-Analytics-&-Reports.webp",
+                "video": "/assets/reports/videos/whatsapp_business_analytics_reports.webm",
+                "img": "/assets/reports/features/whatsapp_business_analytics_reports.webp",
                 "more_content": {
                     "features": [
                         "Métricas de mensagens enviadas, entregues e lidas",
@@ -426,7 +428,7 @@
                 "name": "Relatórios e Métricas de Campanhas de E-mail",
                 "subtitle": "Taxas de Abertura, Cliques e Entregabilidade",
                 "content": "Entenda como os destinatários interagem com seus e-mails usando relatórios avançados de entrega e engajamento. Acompanhe aberturas, cliques, rejeições (bounces) e o desempenho geral de disparos.",
-                "img": "/assets/reports/features/Email-Analytics-&-Campaign-Reports.webp",
+                "img": "/assets/reports/features/email_analytics_campaign_reports.webp",
                 "more_content": {
                     "features": [
                         "Monitoramento de entregabilidade e tempo de fila de envio",
@@ -441,8 +443,8 @@
                 "name": "Relatórios e Análise de Verificação de OTP",
                 "subtitle": "Rastreamento de Autenticação Multicanal",
                 "content": "Monitore o desempenho de autenticação em SMS, WhatsApp, E-mail e Voz. Garanta que cada código de verificação chegue com rapidez e segurança enquanto acompanha as taxas de conversão.",
-                "video": "/assets/reports/videos/OTP-Verification-Analytics-Dashboard.webm",
-                "img": "/assets/reports/features/OTP-Verification-Analytics-Dashboard.webp",
+                "video": "/assets/reports/videos/otp_verification_analytics_dashboard.webm",
+                "img": "/assets/reports/features/otp_verification_analytics_dashboard.webp",
                 "more_content": {
                     "features": [
                         "Rastreamento de entrega de OTP em tempo real em todos os canais",
@@ -457,7 +459,7 @@
                 "name": "Análise de Voz e Relatórios de Chamadas",
                 "subtitle": "Desempenho e Custos de Chamadas Telefônicas",
                 "content": "Analise campanhas de chamadas de voz e autenticação com visibilidade completa sobre duração, taxas de atendimento, falhas e custos operacionais.",
-                "img": "/assets/reports/features/Voice-Analytics-&-Call-Reports.webp",
+                "img": "/assets/reports/features/voice_analytics_call_reports.webp",
                 "more_content": {
                     "features": [
                         "Relatórios de chamadas completadas, ocupadas e não atendidas",
@@ -472,7 +474,7 @@
                 "name": "Métricas de Mensagens RCS",
                 "subtitle": "Engajamento em Mensagens Interativas de Nova Geração",
                 "content": "Meça o desempenho de campanhas RCS com análises detalhadas de entrega, leitura, cliques em cartões ricos e engajamento do consumidor.",
-                "img": "/assets/reports/features/RCS-Messaging-Analytics.webp",
+                "img": "/assets/reports/features/rcs_messaging_analytics.webp",
                 "more_content": {
                     "features": [
                         "Rastreamento de envio e entrega de mensagens RCS",
@@ -487,7 +489,7 @@
                 "name": "Análise de Notificações Push",
                 "subtitle": "Engajamento em Aplicativos Móveis e Web",
                 "content": "Acompanhe a entrega e o engajamento de notificações push para aumentar a retenção no aplicativo e a interação com os usuários.",
-                "img": "/assets/reports/features/Push-Notification-Analytics.webp",
+                "img": "/assets/reports/features/push_notification_analytics.webp",
                 "more_content": {
                     "features": [
                         "Notificações push enviadas e entregues com sucesso",
@@ -502,7 +504,7 @@
                 "name": "Métricas de URLs Curtas e Rastreamento de Cliques",
                 "subtitle": "Atribuição e Análise Completa de Links",
                 "content": "Meça o engajamento do cliente rastreando cada clique gerado através dos links encurtados da MSG91.",
-                "img": "/assets/reports/features/Short-URL-Analytics-&-Click-Tracking-2.webp",
+                "img": "/assets/reports/features/short_url_analytics_click_tracking_2.webp",
                 "more_content": {
                     "features": [
                         "Total de cliques, visitantes únicos e conversões geradas",
@@ -523,7 +525,7 @@
                 "title": "Análise Unificada em Todos os Canais de Comunicação",
                 "subtitle": "Inteligência Centralizada de Comunicação",
                 "description": "Acompanhe o desempenho de SMS, WhatsApp Business API, E-mail, Voz, OTP, RCS, Notificações Push, URLs Curtas e outros produtos MSG91 em um único painel centralizado.",
-                "img": "/assets/reports/features/Customer-Engagement-Analytics-1.webp",
+                "img": "/assets/reports/features/customer_engagement_analytics_1.webp",
                 "highlights": [
                     "Um único painel para todos os canais de comunicação",
                     "Elimine a necessidade de múltiplas ferramentas isoladas",
@@ -537,7 +539,7 @@
                 "title": "Relatórios em Tempo Real e Insights Acionáveis",
                 "subtitle": "Visibilidade Operacional Instantânea",
                 "description": "Acesse métricas ao vivo para monitorar taxas de entrega, engajamento do cliente, saúde operacional e eficácia de campanhas no momento em que acontecem.",
-                "img": "/assets/reports/features/Delivery-and-Operational-Analytics.webp",
+                "img": "/assets/reports/features/delivery_and_operational_analytics.webp",
                 "highlights": [
                     "Rastreamento de entregas em tempo real",
                     "Monitoramento instantâneo de campanhas",
@@ -551,7 +553,7 @@
                 "title": "Filtros Avançados para Diagnóstico Profundo",
                 "subtitle": "Análise Granular de Causa Raiz",
                 "description": "Explore seus dados de comunicação usando filtros avançados por conta, campanha, período, tipo de mensagem, canal, status de entrega e muito mais.",
-                "img": "/assets/reports/features/Campaign-Performance-Analytics.webp",
+                "img": "/assets/reports/features/campaign_performance_analytics.webp",
                 "highlights": [
                     "Diagnóstico rápido de causa raiz",
                     "Relatórios no nível de campanha e disparo",
@@ -564,7 +566,7 @@
                 "title": "Relatórios Corporativos e Opções de Exportação",
                 "subtitle": "Relatórios para Gestão e Conformidade",
                 "description": "Gere relatórios detalhados para equipes de marketing, suporte, finanças, operações, auditoria e diretoria com logs para download e arquivos prontos para integração.",
-                "img": "/assets/reports/features/Credit-&-Billing-Analytics.webp",
+                "img": "/assets/reports/features/credit_billing_analytics.webp",
                 "highlights": [
                     "Exportação de relatórios em CSV",
                     "Logs de comunicação prontos para auditoria",
@@ -577,7 +579,7 @@
                 "title": "Construído para Escalar com o Seu Negócio",
                 "subtitle": "Monitoramento de Alta Capacidade",
                 "description": "Seja enviando milhares ou milhões de mensagens todos os dias, o MSG91 Reports oferece análises rápidas e confiáveis sem comprometer o desempenho.",
-                "img": "/assets/reports/features/Executive-Dashboards-&-Business-Intelligence.webp",
+                "img": "/assets/reports/features/executive_dashboards_business_intelligence.webp",
                 "highlights": [
                     "Processamento de relatórios em alto volume",
                     "Escalabilidade corporativa comprovada",
@@ -591,7 +593,7 @@
             "heading": "Decisões Baseadas em Dados com Painéis Poderosos",
             "subheading": "Transforme dados brutos de comunicação em insights estratégicos",
             "description": "Converta dados brutos de comunicação em insights estratégicos que impulsionam o engajamento, a eficácia das campanhas, a taxa de entrega e o crescimento dos negócios.",
-            "img": "/assets/reports/features/Executive-Dashboards-&-Business-Intelligence.webp",
+            "img": "/assets/reports/features/executive_dashboards_business_intelligence.webp",
             "content": [
                 {
                     "title": "Painéis de KPIs",

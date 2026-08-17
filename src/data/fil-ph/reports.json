@@ -12,7 +12,7 @@
         "tagline": "Platform ng Pagsusuri at Pag-uulat ng Komunikasyon",
         "heading": "Platform ng Pagsusuri at Pag-uulat ng Komunikasyon para sa Bawat Pakikipag-ugnayan sa Customer",
         "subheading": "Gawing mga naaaksyunang insight sa negosyo ang datos ng komunikasyon gamit ang MSG91 Reports. Suriin ang performance ng SMS, WhatsApp, Email, Voice, OTP, RCS, Push Notifications, at Short URL mula sa isang pinag-isang dashboard. Subaybayan ang delivery rate, pakikipag-ugnayan ng customer, performance ng kampanya, mga gastusin, at operational metrics sa real time upang makagawa ng mas mabilis at datos-gabayan na mga desisyon.",
-        "banner_video": "/assets/reports/videos/Hero Section Report Page_3.webm",
+        "banner_video": "/assets/reports/videos/hero_section_report_page_3.webm",
         "not_absolute": "true",
         "getstarted_btn": "Mag-book ng Demo",
         "schedule_meet": "Mag-iskedyul ng Pulong",
@@ -44,8 +44,8 @@
     },
     "ReportsOverviewComp": {
         "tagline": "Real-Time na Pinag-isang Katalinuhan",
-        "heading": "Isang Pinag-isang Dashboard para Suriin ang Bawat Komunikasyon sa Customer",
-        "subheading": "Gawing mga kapaki-pakinabang na insight ang datos ng komunikasyon sa pamamagitan ng pinag-isang platform ng pag-uulat. Subaybayan ang performance ng kampanya, pakikipag-ugnayan ng customer, tagumpay ng delivery, at mga gastusin sa bawat channel sa real time.",
+        "heading": "Pinag-isang Dashboard para sa Analytics ng Komunikasyon",
+        "subheading": "Gawing naaaksyunang insight ang datos ng komunikasyon at subaybayan ang performance sa lahat ng channel sa real time.",
         "section_title": "Lahat ng Maaari Mong Subaybayan",
         "categories": [
             {
@@ -114,8 +114,8 @@
             {
                 "name": "E-commerce at Retail Analytics: Sukatin ang Bawat Paglalakbay ng Customer",
                 "content": "Subaybayan ang bawat pakikipag-ugnayan ng customer—mula sa mga pampromosyong kampanya at paalala sa inabandonang cart hanggang sa mga update sa order at pakikipag-ugnayan pagkatapos bumili. Unawain kung paano nakikipag-ugnayan ang mga customer sa iyong mga mensahe at i-optimize ang bawat touchpoint para sa mas mataas na benta.",
-                "video": "/assets/reports/videos/E-commerce & Retail Analytics.webm",
-                "img": "/assets/reports/use_case/Ecommerce.webp",
+                "video": "/assets/reports/videos/ecommerce_retail_analytics.webm",
+                "img": "/assets/reports/use_case/ecommerce.webp",
                 "more_content": {
                     "usecases": [
                         {
@@ -152,7 +152,8 @@
             {
                 "name": "Bangko, FinTech at Insurance: Subaybayan ang Kritikal na Komunikasyon",
                 "content": "Tiyaking ang bawat mensahe ng pagpapatunay (authentication), alerto sa transaksyon, at abiso sa polisya ay maabot ang mga customer sa tamang oras. Magkaroon ng buong visibility sa OTP performance, mga pagkabigo sa paghahatid, at pagiging maaasahan ng komunikasyon.",
-                "img": "/assets/reports/use_case/Fintech_Banking.webp",
+                "video": "/assets/reports/videos/fintech_banking_final.webm",
+                "img": "/assets/reports/use_case/fintech_banking.webp",
                 "more_content": {
                     "usecases": [
                         {
@@ -189,7 +190,7 @@
             {
                 "name": "Pangangalagang Pangkalusugan (Healthcare): Pagandahin ang Pakikipag-ugnayan sa Pasyente",
                 "content": "Subaybayan ang mga paalala sa appointment, abiso sa reseta, mga kampanya sa kalusugan, at performance ng komunikasyon sa pasyente mula sa isang sentralisadong dashboard.",
-                "img": "/assets/reports/use_case/Healthcare.webp",
+                "img": "/assets/reports/use_case/healthcare.webp",
                 "more_content": {
                     "usecases": [
                         {
@@ -226,7 +227,7 @@
             {
                 "name": "Edukasyon at EdTech: Pahusayin ang Komunikasyon sa Mag-aaral",
                 "content": "Sukatin kung gaano kaepektibo ang pakikipag-usap ng iyong institusyon sa mga estudyante at magulang para sa mga admission, paalala sa matrikula, pagsusulit, webinar, at mga anunsyo.",
-                "img": "/assets/reports/use_case/Education.webp",
+                "img": "/assets/reports/use_case/education.webp",
                 "more_content": {
                     "usecases": [
                         {
@@ -263,7 +264,7 @@
             {
                 "name": "Logistics at Paglalakbay: Subaybayan ang mga Apurahang Abiso",
                 "content": "Subaybayan ang mga update sa padala, kumpirmasyon sa booking, alerto sa pagkaantala ng biyahe, at mga abiso sa paghahatid gamit ang real-time na analytics ng komunikasyon.",
-                "img": "/assets/reports/use_case/Logistics.webp",
+                "img": "/assets/reports/use_case/logistics.webp",
                 "more_content": {
                     "usecases": [
                         {
@@ -308,8 +309,8 @@
                 "name": "Analytics sa Performance ng Kampanya: I-optimize ang Bawat Kampanya",
                 "subtitle": "Sukatin ang ROI at Pakikipag-ugnayan ayon sa Channel",
                 "content": "Sukatin ang performance ng mga kampanya sa SMS, WhatsApp, Email, Voice, RCS, at Push Notification gamit ang komprehensibong analytics at pag-uulat.",
-                "video": "/assets/reports/videos/Campaign-Performance-Analytics .webm",
-                "img": "/assets/reports/features/Campaign-Performance-Analytics.webp",
+                "video": "/assets/reports/videos/campaign_performance_analytics.webm",
+                "img": "/assets/reports/features/campaign_performance_analytics.webp",
                 "more_content": {
                     "features": [
                         "Paghambingin ang performance ng kampanya sa maraming channel",
@@ -325,7 +326,7 @@
                 "name": "Customer Engagement Analytics: Unawain Kung Paano Nakikipag-ugnayan ang mga Customer",
                 "subtitle": "Unawain ang mga Interaksyon ng Customer",
                 "content": "Subaybayan ang bawat pakikipag-ugnayan ng customer upang maunawaan ang kanilang mga gawi at mapahusay ang mga estratehiya sa komunikasyon.",
-                "img": "/assets/reports/features/Customer-Engagement-Analytics-1.webp",
+                "img": "/assets/reports/features/customer_engagement_analytics_1.webp",
                 "more_content": {
                     "features": [
                         "Subaybayan ang mga tugon ng customer at read receipts",
@@ -341,8 +342,8 @@
                 "name": "Paghahatid at Operational Analytics: Siguraduhin ang Maaasahang Komunikasyon",
                 "subtitle": "Tiyakin ang Pagiging Maaasahan ng Komunikasyon",
                 "content": "Tukuyin ang mga isyu sa paghahatid, subaybayan ang kalusugan ng pagmemensahe, at tiyaking matagumpay na nakakarating ang mga kritikal na mensahe sa mga customer.",
-                "video": "/assets/reports/videos/Delivery-and-Operational-Analytics.webm",
-                "img": "/assets/reports/features/Delivery-and-Operational-Analytics.webp",
+                "video": "/assets/reports/videos/delivery_and_operational_analytics.webm",
+                "img": "/assets/reports/features/delivery_and_operational_analytics.webp",
                 "more_content": {
                     "features": [
                         "Tukuyin agad ang mga pagkabigo sa paghahatid",
@@ -357,7 +358,7 @@
                 "name": "Credit at Billing Analytics: Kontrolin ang mga Gastusin sa Komunikasyon",
                 "subtitle": "I-optimize ang Paggasta at Paglalaan ng Badyet",
                 "content": "Subaybayan ang paggasta sa komunikasyon sa bawat channel ng pagmemensahe at i-optimize ang badyet gamit ang detalyadong ulat sa pagsingil at credit.",
-                "img": "/assets/reports/features/Credit-&-Billing-Analytics.webp",
+                "img": "/assets/reports/features/credit_billing_analytics.webp",
                 "more_content": {
                     "features": [
                         "Subaybayan ang paggamit ng credit ayon sa bawat channel",
@@ -372,7 +373,7 @@
                 "name": "Mga Executive Dashboard at BI: Gumawa ng Mas Mabilis na Desisyong Batay sa Datos",
                 "subtitle": "Estratehikong Business Intelligence",
                 "content": "Gawing naaaksyunang katalinuhan sa negosyo ang datos ng komunikasyon gamit ang mga executive dashboard, ulat sa uso, at operational KPIs.",
-                "img": "/assets/reports/features/Executive-Dashboards-&-Business-Intelligence.webp",
+                "img": "/assets/reports/features/executive_dashboards_business_intelligence.webp",
                 "more_content": {
                     "features": [
                         "Subaybayan ang performance ng komunikasyon sa buong kumpanya",
@@ -394,8 +395,8 @@
                 "name": "Mga Ulat sa SMS at Analytics sa Paghahatid",
                 "subtitle": "Real-Time na Delivery at Mga Insight sa Kampanya",
                 "content": "Magkaroon ng buong visibility sa performance ng iyong SMS gamit ang real-time na mga ulat sa paghahatid at detalyadong analytics. Subaybayan ang tagumpay, mga nabigong mensahe, credits, mga na-click na link, at pagiging epektibo ng kampanya upang matiyak na maabot ng bawat SMS ang target na madla.",
-                "video": "/assets/reports/videos/SMS-Reports-&-Delivery-Analytics.webm",
-                "img": "/assets/reports/features/SMS-Reports-&-Delivery-Analytics.webp",
+                "video": "/assets/reports/videos/sms_reports_delivery_analytics.webm",
+                "img": "/assets/reports/features/sms_reports_delivery_analytics.webp",
                 "more_content": {
                     "features": [
                         "Real-time na mga ulat sa paghahatid ng SMS at mga log ng katayuan",
@@ -411,7 +412,8 @@
                 "name": "WhatsApp Business Analytics at Mga Ulat",
                 "subtitle": "Subaybayan ang mga Conversion, Pagbasa at Pagtugon",
                 "content": "Subaybayan ang bawat pag-uusap sa WhatsApp Business gamit ang detalyadong analytics kabilang ang paghahatid ng mensahe, read receipts, mga tugon, mga pag-click, at performance ng kampanya. Sukatin ang pakikipag-ugnayan at i-optimize ang mga mensahe sa marketing, utility, at pagpapatunay.",
-                "img": "/assets/reports/features/WhatsApp-Business-Analytics-&-Reports.webp",
+                "video": "/assets/reports/videos/whatsapp_business_analytics_reports.webm",
+                "img": "/assets/reports/features/whatsapp_business_analytics_reports.webp",
                 "more_content": {
                     "features": [
                         "Analytics sa mga mensaheng naipadala, naihatid, at nabasa",
@@ -426,7 +428,7 @@
                 "name": "Email Analytics at Mga Ulat sa Kampanya",
                 "subtitle": "Mga Rate ng Pagbubukas, Pag-click at Kakayahang Maihatid",
                 "content": "Unawain kung paano nakikipag-ugnayan ang mga tatanggap sa iyong mga kampanya sa email gamit ang detalyadong mga ulat sa paghahatid at pakikipag-ugnayan. Subaybayan ang mga pagbubukas (opens), pag-click, pagtalbog (bounces), at pangkalahatang performance ng email.",
-                "img": "/assets/reports/features/Email-Analytics-&-Campaign-Reports.webp",
+                "img": "/assets/reports/features/email_analytics_campaign_reports.webp",
                 "more_content": {
                     "features": [
                         "Pagsubaybay sa deliverability ng email at latency sa pila ng pagpapadala",
@@ -441,8 +443,8 @@
                 "name": "OTP Analytics at Mga Ulat sa Pagpapatunay",
                 "subtitle": "Multi-Channel na Pagsubaybay sa Pag-verify",
                 "content": "Subaybayan ang performance ng pagpapatunay sa SMS, WhatsApp, Email, at Voice. Tiyaking ang bawat OTP ay matagumpay na nakakarating sa mga customer habang sinusubaybayan ang mga rate ng pag-verify at bilis ng paghahatid.",
-                "video": "/assets/reports/videos/OTP-Verification-Analytics-Dashboard.webm",
-                "img": "/assets/reports/features/OTP-Verification-Analytics-Dashboard.webp",
+                "video": "/assets/reports/videos/otp_verification_analytics_dashboard.webm",
+                "img": "/assets/reports/features/otp_verification_analytics_dashboard.webp",
                 "more_content": {
                     "features": [
                         "Real-time na pagsubaybay sa paghahatid ng OTP sa lahat ng channel",
@@ -457,7 +459,7 @@
                 "name": "Voice Analytics at Mga Ulat sa Tawag",
                 "subtitle": "Performance ng Tawag at Pagsusuri sa Gastos",
                 "content": "Suriin ang mga pinalabas na tawag sa boses at mga tawag sa pagpapatunay na may buong visibility sa tagal ng tawag, mga rate ng tagumpay, at mga operational metric.",
-                "img": "/assets/reports/features/Voice-Analytics-&-Call-Reports.webp",
+                "img": "/assets/reports/features/voice_analytics_call_reports.webp",
                 "more_content": {
                     "features": [
                         "Mga ulat sa nakumpletong tawag, busy signal, at hindi nasagot na tawag",
@@ -472,7 +474,7 @@
                 "name": "Analytics sa Pagmemensahe ng RCS",
                 "subtitle": "Pakikipag-ugnayan sa Susunod na Henerasyon ng Pagmemensahe",
                 "content": "Sukatin ang performance ng kampanya sa Rich Communication Services (RCS) na may detalyadong analytics para sa paghahatid ng mensahe, pagbasa, mga pag-click, at pakikipag-ugnayan ng customer.",
-                "img": "/assets/reports/features/RCS-Messaging-Analytics.webp",
+                "img": "/assets/reports/features/rcs_messaging_analytics.webp",
                 "more_content": {
                     "features": [
                         "Pagsubaybay sa pagpapadala at paghahatid ng mensahe sa RCS",
@@ -487,7 +489,7 @@
                 "name": "Analytics sa Push Notification",
                 "subtitle": "Pakikipag-ugnayan sa Mobile App at Web",
                 "content": "Subaybayan ang paghahatid at pakikipag-ugnayan ng mobile push notification upang mapataas ang retention ng app at interaksyon sa customer.",
-                "img": "/assets/reports/features/Push-Notification-Analytics.webp",
+                "img": "/assets/reports/features/push_notification_analytics.webp",
                 "more_content": {
                     "features": [
                         "Matagumpay na naipadala at naihatid na mga push notification",
@@ -502,7 +504,7 @@
                 "name": "Short URL Analytics at Pagsubaybay sa Pag-click",
                 "subtitle": "Komprehensibong Attribution at Pagsusuri ng Link",
                 "content": "Sukatin ang pakikipag-ugnayan ng customer sa pamamagitan ng pagsubaybay sa bawat pag-click na nabubuo gamit ang mga pinaikling link ng MSG91.",
-                "img": "/assets/reports/features/Short-URL-Analytics-&-Click-Tracking-2.webp",
+                "img": "/assets/reports/features/short_url_analytics_click_tracking_2.webp",
                 "more_content": {
                     "features": [
                         "Kabuuang mga pag-click, natatanging bisita, at conversion attribution",
@@ -523,7 +525,7 @@
                 "title": "Pinag-isang Analytics sa Bawat Channel ng Komunikasyon",
                 "subtitle": "Sentralisadong Katalinuhan sa Komunikasyon",
                 "description": "Subaybayan ang performance sa SMS, WhatsApp Business API, Email, Voice, OTP, RCS, Push Notifications, Short URLs, at iba pang mga produkto ng MSG91 mula sa isang sentralisadong dashboard.",
-                "img": "/assets/reports/features/Customer-Engagement-Analytics-1.webp",
+                "img": "/assets/reports/features/customer_engagement_analytics_1.webp",
                 "highlights": [
                     "Isang dashboard para sa lahat ng channel ng komunikasyon",
                     "Tanggalin ang pangangailangan para sa maraming magkakahiwalay na tool",
@@ -537,7 +539,7 @@
                 "title": "Real-Time na Pag-uulat at mga Naaaksyunang Insight",
                 "subtitle": "Agarang Visibility sa Operasyon",
                 "description": "I-access ang mga live metric upang subaybayan ang tagumpay ng paghahatid, pakikipag-ugnayan ng customer, kalusugan ng operasyon, at pagiging epektibo ng kampanya habang nangyayari ang mga ito.",
-                "img": "/assets/reports/features/Delivery-and-Operational-Analytics.webp",
+                "img": "/assets/reports/features/delivery_and_operational_analytics.webp",
                 "highlights": [
                     "Live na pagsubaybay sa paghahatid",
                     "Mabilis na pagsubaybay sa kampanya",
@@ -551,7 +553,7 @@
                 "title": "Advanced Filters para sa Malalimang Pagsusuri",
                 "subtitle": "Detalyadong Pagsusuri sa Pinag-ugatan ng Problema",
                 "description": "Suriin nang malalim ang datos ng komunikasyon gamit ang mga filter tulad ng account, kampanya, hanay ng petsa, uri ng mensahe, channel, katayuan ng paghahatid, at marami pang iba.",
-                "img": "/assets/reports/features/Campaign-Performance-Analytics.webp",
+                "img": "/assets/reports/features/campaign_performance_analytics.webp",
                 "highlights": [
                     "Mas mabilis na pagsusuri sa pinag-ugatan ng isyu",
                     "Pag-uulat sa antas ng kampanya at mensahe",
@@ -564,7 +566,7 @@
                 "title": "Mga Ulat na Handa para sa Negosyo at mga Opsyon sa Pag-export",
                 "subtitle": "Pag-uulat para sa Pamunuan at Compliance",
                 "description": "Gumawa ng mga detalyadong ulat para sa marketing, customer support, finance, operations, compliance, at pamunuan na may nada-download na mga log at naii-export na analytics.",
-                "img": "/assets/reports/features/Credit-&-Billing-Analytics.webp",
+                "img": "/assets/reports/features/credit_billing_analytics.webp",
                 "highlights": [
                     "Pag-export ng ulat sa CSV format",
                     "Mga log ng komunikasyon na handa para sa pag-audit",
@@ -577,7 +579,7 @@
                 "title": "Binuo upang Lumago Kasabay ng Iyong Negosyo",
                 "subtitle": "Mataas na Kapasidad at Maaasahang Pagsubaybay",
                 "description": "Nagpapadala ka man ng libu-libo o milyun-milyong mensahe araw-araw, nagbibigay ang MSG91 Reports ng mabilis at maaasahang analytics nang hindi bumabagal ang performance.",
-                "img": "/assets/reports/features/Executive-Dashboards-&-Business-Intelligence.webp",
+                "img": "/assets/reports/features/executive_dashboards_business_intelligence.webp",
                 "highlights": [
                     "Pag-uulat para sa napakalaking dami ng mensahe",
                     "Nasubok na scalability para sa malalaking kumpanya",
@@ -591,7 +593,7 @@
             "heading": "Mga Desisyong Batay sa Datos Gamit ang Makapangyarihang Dashboard",
             "subheading": "Gawing mga naaaksyunang insight ang hilaw na datos ng komunikasyon",
             "description": "Gawing mga naaaksyunang insight ang hilaw na datos upang mapahusay ang pakikipag-ugnayan ng customer, performance ng kampanya, tagumpay ng paghahatid, at pangkalahatang paglago ng negosyo.",
-            "img": "/assets/reports/features/Executive-Dashboards-&-Business-Intelligence.webp",
+            "img": "/assets/reports/features/executive_dashboards_business_intelligence.webp",
             "content": [
                 {
                     "title": "Mga KPI Dashboard",
