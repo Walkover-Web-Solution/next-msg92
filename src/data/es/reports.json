@@ -1,0 +1,713 @@
+{
+    "HeadComp": {
+        "title": "Communication Analytics & Reporting Platform | MSG91 Reports",
+        "description": "Turn customer communication data into actionable business insights with MSG91 Reports. Analyze SMS, WhatsApp, Email, Voice, OTP, RCS, Push Notifications, and Short URL performance from one unified dashboard."
+    },
+    "BannerComp": {
+        "slug": "reports",
+        "product": {
+            "name": "Reports",
+            "icon": "/assets/icons/products/reports.svg"
+        },
+        "tagline": "Communication Analytics & Reporting Platform",
+        "heading": "Communication Analytics & Reporting Platform for Every Customer Interaction",
+        "subheading": "Turn customer communication data into actionable business insights with MSG91 Reports. Analyze SMS, WhatsApp, Email, Voice, OTP, RCS, Push Notifications, and Short URL performance from one unified dashboard. Monitor delivery rates, customer engagement, campaign performance, communication costs, and operational metrics in real time to make faster, data-driven decisions.",
+        "banner_video": "/assets/reports/videos/Hero Section Report Page_3.webm",
+        "not_absolute": "true",
+        "getstarted_btn": "Book a Demo",
+        "schedule_meet": "Schedule a Meeting",
+        "trustedByComp": {
+            "heading": "15+ Report Modules • 100+ Communication Metrics • Real-Time Analytics • Exportable Reports • Enterprise Ready",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
+    },
+    "ReportsOverviewComp": {
+        "tagline": "Real-Time Unified Intelligence",
+        "heading": "One Unified Dashboard to Analyze Every Customer Communication",
+        "subheading": "Turn customer communication data into actionable insights with a unified reporting platform. Track campaign performance, customer engagement, delivery success, and costs across every channel in real time.",
+        "section_title": "Everything You Can Monitor",
+        "categories": [
+            {
+                "title": "Customer Communication Analytics",
+                "icon": "communication",
+                "metrics": [
+                    "SMS delivery performance",
+                    "WhatsApp Business message analytics",
+                    "Email delivery and engagement",
+                    "OTP delivery success rates",
+                    "Voice call performance",
+                    "RCS messaging analytics",
+                    "Push notification analytics",
+                    "Short URL click tracking"
+                ]
+            },
+            {
+                "title": "Campaign Performance Analytics",
+                "icon": "campaign",
+                "metrics": [
+                    "Delivery rates",
+                    "Read rates",
+                    "Click-through rates (CTR)",
+                    "Reply rates",
+                    "Failure analysis",
+                    "Campaign comparison",
+                    "Conversion indicators",
+                    "Customer engagement metrics"
+                ]
+            },
+            {
+                "title": "Operational Analytics",
+                "icon": "operational",
+                "metrics": [
+                    "Credit consumption",
+                    "Billing reports",
+                    "Communication costs",
+                    "Delivery latency",
+                    "Queue monitoring",
+                    "Webhook delivery status",
+                    "Export logs",
+                    "Audit reports"
+                ]
+            },
+            {
+                "title": "Business Intelligence",
+                "icon": "bi",
+                "metrics": [
+                    "Executive dashboards",
+                    "Marketing performance",
+                    "Customer support insights",
+                    "Communication ROI",
+                    "SLA monitoring",
+                    "Vendor performance",
+                    "Compliance reporting",
+                    "Team-wise reporting"
+                ]
+            }
+        ]
+    },
+    "FeatureComp": {
+        "heading": "Customer Communication Analytics for Every Industry",
+        "subheading": "Gain complete visibility into customer communications across every industry with unified analytics and reporting. Monitor delivery rates, customer engagement, campaign performance, operational efficiency, and communication ROI to make data-driven decisions. Whether you're sending transactional messages, marketing campaigns, or customer support notifications, MSG91 Reports helps every business measure what matters.",
+        "iconColor": "text-accent",
+        "features": [
+            {
+                "name": "E-commerce & Retail Analytics: Measure Every Customer Journey",
+                "content": "Track every customer interaction—from promotional campaigns and abandoned cart reminders to order updates and post-purchase engagement. Understand how customers interact with your communications and optimize every touchpoint for higher conversions.",
+                "video": "/assets/reports/videos/E-commerce & Retail Analytics.webm",
+                "img": "/assets/reports/use_case/Ecommerce.webp",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Abandoned Cart Campaigns",
+                            "description": "Monitor abandoned cart WhatsApp and SMS campaign performance."
+                        },
+                        {
+                            "name": "Order Notifications",
+                            "description": "Track order confirmation, shipping, and delivery notification success."
+                        },
+                        {
+                            "name": "Product Launches",
+                            "description": "Measure product launch campaign engagement across Email, SMS, and WhatsApp."
+                        },
+                        {
+                            "name": "Coupon Redemptions",
+                            "description": "Analyze coupon redemption campaigns and customer response rates."
+                        },
+                        {
+                            "name": "Festive Sales",
+                            "description": "Compare festive sale campaigns to identify the highest-performing channel."
+                        }
+                    ],
+                    "features": [
+                        "Delivery, read, and click analytics.",
+                        "Campaign-wise performance reports.",
+                        "Customer engagement insights.",
+                        "Channel-wise campaign comparison.",
+                        "Exportable marketing reports.",
+                        "Real-time communication dashboard."
+                    ]
+                }
+            },
+            {
+                "name": "Banking, FinTech & Insurance Analytics: Monitor Critical Customer Communications",
+                "content": "Ensure every authentication message, transaction alert, and policy notification reaches customers on time. Gain complete visibility into OTP performance, delivery failures, and customer communication reliability.",
+                "img": "/assets/reports/use_case/Fintech_Banking.webp",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "OTP Delivery Success",
+                            "description": "Monitor OTP delivery success across SMS, WhatsApp, Email, and Voice."
+                        },
+                        {
+                            "name": "Transaction Alerts",
+                            "description": "Track transaction notification delivery rates."
+                        },
+                        {
+                            "name": "Failure & Latency",
+                            "description": "Analyze authentication failures and delivery latency."
+                        },
+                        {
+                            "name": "Fallback Channels",
+                            "description": "Compare fallback channel performance."
+                        },
+                        {
+                            "name": "Compliance Reports",
+                            "description": "Generate compliance-ready communication reports."
+                        }
+                    ],
+                    "features": [
+                        "OTP verification analytics.",
+                        "Authentication success reports.",
+                        "Multi-channel delivery tracking.",
+                        "Failure and retry analytics.",
+                        "Delivery latency monitoring.",
+                        "Exportable audit logs."
+                    ]
+                }
+            },
+            {
+                "name": "Healthcare Communication Analytics: Improve Patient Engagement",
+                "content": "Track appointment reminders, prescription notifications, health campaigns, and patient communication performance from a centralized reporting dashboard.",
+                "img": "/assets/reports/use_case/Healthcare.webp",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Appointment Reminders",
+                            "description": "Monitor appointment reminder delivery."
+                        },
+                        {
+                            "name": "Prescription Refills",
+                            "description": "Analyze prescription refill notification engagement."
+                        },
+                        {
+                            "name": "Health Campaigns",
+                            "description": "Track vaccination and health awareness campaigns."
+                        },
+                        {
+                            "name": "Patient Success Rates",
+                            "description": "Measure patient communication success rates."
+                        },
+                        {
+                            "name": "Reduce Missed Appointments",
+                            "description": "Reduce missed appointments through delivery insights."
+                        }
+                    ],
+                    "features": [
+                        "Patient notification analytics.",
+                        "Campaign performance dashboard.",
+                        "Delivery and engagement reports.",
+                        "Communication history.",
+                        "Exportable healthcare reports.",
+                        "Multi-channel reporting."
+                    ]
+                }
+            },
+            {
+                "name": "Education & EdTech Analytics: Improve Student Communication",
+                "content": "Measure how effectively your institution communicates with students across admissions, fee reminders, examinations, webinars, and learning updates.",
+                "img": "/assets/reports/use_case/Education.webp",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Admissions Notifications",
+                            "description": "Track admission notification delivery."
+                        },
+                        {
+                            "name": "Student Login OTPs",
+                            "description": "Monitor OTP verification for student logins."
+                        },
+                        {
+                            "name": "Webinar Invitations",
+                            "description": "Measure webinar invitation performance."
+                        },
+                        {
+                            "name": "Examination Alerts",
+                            "description": "Analyze examination notification engagement."
+                        },
+                        {
+                            "name": "Campaign Comparisons",
+                            "description": "Compare student communication campaigns."
+                        }
+                    ],
+                    "features": [
+                        "Student communication reports.",
+                        "Campaign engagement analytics.",
+                        "Delivery monitoring.",
+                        "Click tracking.",
+                        "Exportable reports.",
+                        "Multi-channel dashboard."
+                    ]
+                }
+            },
+            {
+                "name": "Logistics & Travel Analytics: Track Time-Sensitive Notifications",
+                "content": "Monitor shipment updates, booking confirmations, travel alerts, and delivery notifications with real-time communication analytics.",
+                "img": "/assets/reports/use_case/Logistics.webp",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Shipment Updates",
+                            "description": "Measure shipment notification success."
+                        },
+                        {
+                            "name": "Booking Confirmations",
+                            "description": "Monitor booking confirmation delivery."
+                        },
+                        {
+                            "name": "Travel Delay Alerts",
+                            "description": "Track travel delay alerts."
+                        },
+                        {
+                            "name": "Delivery Engagement",
+                            "description": "Analyze delivery update engagement."
+                        },
+                        {
+                            "name": "Proactive Detection",
+                            "description": "Identify communication failures before customers complain."
+                        }
+                    ],
+                    "features": [
+                        "Real-time delivery analytics.",
+                        "Notification performance reports.",
+                        "Customer engagement tracking.",
+                        "Delivery failure analysis.",
+                        "Channel comparison.",
+                        "Exportable communication logs."
+                    ]
+                }
+            }
+        ]
+    },
+    "FeatureWithBulletGroup": {
+        "heading": "Powerful Reports for Every Business Use Case",
+        "subheading": "MSG91 Reports isn't just about tracking message delivery—it empowers marketing, operations, customer support, finance, and leadership teams with actionable communication intelligence. From campaign optimization to compliance reporting, every report helps improve customer experiences and business performance.",
+        "iconColor": "text-accent",
+        "features": [
+            {
+                "name": "Campaign Performance Analytics: Optimize Every Communication Campaign",
+                "subtitle": "Measure ROI & Channel Engagement",
+                "content": "Measure the performance of SMS, WhatsApp, Email, Voice, RCS, and Push Notification campaigns using comprehensive analytics and reporting.",
+                "video": "/assets/reports/videos/Campaign-Performance-Analytics .webm",
+                "img": "/assets/reports/features/Campaign-Performance-Analytics.webp",
+                "more_content": {
+                    "features": [
+                        "Compare campaign performance across multiple channels",
+                        "Measure delivery, read, and click rates",
+                        "Identify top-performing marketing campaigns",
+                        "Track customer engagement trends",
+                        "Improve campaign ROI using performance insights",
+                        "Interactive performance dashboards & exportable reports"
+                    ]
+                }
+            },
+            {
+                "name": "Customer Engagement Analytics: Understand How Customers Interact",
+                "subtitle": "Understand Customer Interactions",
+                "content": "Track every customer interaction to understand engagement patterns and improve communication strategies.",
+                "img": "/assets/reports/features/Customer-Engagement-Analytics-1.webp",
+                "more_content": {
+                    "features": [
+                        "Monitor customer replies and read receipts",
+                        "Measure link click performance across channels",
+                        "Analyze engagement by communication channel",
+                        "Track campaign response trends",
+                        "Improve customer journey performance with actionable insights",
+                        "Comprehensive customer interaction reports"
+                    ]
+                }
+            },
+            {
+                "name": "Delivery & Operational Analytics: Improve Communication Reliability",
+                "subtitle": "Ensure Communication Reliability",
+                "content": "Identify delivery issues, monitor communication health, and ensure critical messages reach customers successfully.",
+                "video": "/assets/reports/videos/Delivery-and-Operational-Analytics.webm",
+                "img": "/assets/reports/features/Delivery-and-Operational-Analytics.webp",
+                "more_content": {
+                    "features": [
+                        "Detect delivery failures instantly",
+                        "Monitor webhook delivery status in real time",
+                        "Analyze message queues and traffic spikes",
+                        "Track communication latency and carrier routing",
+                        "Improve overall delivery performance with automated health reports"
+                    ]
+                }
+            },
+            {
+                "name": "Credit & Billing Analytics: Control Communication Costs",
+                "subtitle": "Optimize Spend & Budget Allocation",
+                "content": "Track communication spend across every messaging channel and optimize budget allocation with detailed billing and credit reports.",
+                "img": "/assets/reports/features/Credit-&-Billing-Analytics.webp",
+                "more_content": {
+                    "features": [
+                        "Monitor channel-wise credit consumption",
+                        "Analyze cost per campaign and message type",
+                        "Track billing history and balance deductions",
+                        "Compare communication expenses across accounts",
+                        "Generate finance-ready exportable reports"
+                    ]
+                }
+            },
+            {
+                "name": "Executive Dashboards & Business Intelligence: Make Faster Data-Driven Decisions",
+                "subtitle": "Strategic Business Intelligence",
+                "content": "Convert communication data into actionable business intelligence with executive dashboards, trend reports, and operational KPIs.",
+                "img": "/assets/reports/features/Executive-Dashboards-&-Business-Intelligence.webp",
+                "more_content": {
+                    "features": [
+                        "Monitor organization-wide communication performance",
+                        "Generate management and board-ready reports",
+                        "Measure cross-channel communication ROI",
+                        "Track business KPIs and SLA benchmarks",
+                        "Support enterprise compliance and audit requirements"
+                    ]
+                }
+            }
+        ]
+    },
+    "FeatureBulletGroup": {
+        "heading": "Everything You Need to Monitor from a Single Reporting Dashboard",
+        "subheading": "From message delivery and customer engagement to campaign performance and operational insights, MSG91 Reports provides comprehensive analytics across every communication channel. Monitor every interaction, identify bottlenecks, optimize campaigns, and make data-driven decisions using one centralized reporting platform.",
+        "iconColor": "text-accent",
+        "features": [
+            {
+                "name": "SMS Reports & Delivery Analytics",
+                "subtitle": "Real-Time Delivery & Campaign Insights",
+                "content": "Gain complete visibility into your SMS communication performance with real-time delivery reports and detailed messaging analytics. Track delivery success, failures, credits, click performance, and campaign effectiveness to ensure every SMS campaign reaches its intended audience.",
+                "video": "/assets/reports/videos/SMS-Reports-&-Delivery-Analytics.webm",
+                "img": "/assets/reports/features/SMS-Reports-&-Delivery-Analytics.webp",
+                "more_content": {
+                    "features": [
+                        "Real-time SMS delivery reports and status logs",
+                        "Failed and filtered message analysis with error insights",
+                        "Delivery success rate and latency monitoring",
+                        "SMS credit consumption and billing transparency",
+                        "Link click tracking and URL attribution",
+                        "Campaign comparison and delivery trend analysis"
+                    ]
+                }
+            },
+            {
+                "name": "WhatsApp Business Analytics & Reports",
+                "subtitle": "Track Conversions, Reads & Replies",
+                "content": "Track every WhatsApp Business conversation with detailed analytics, including message delivery, read receipts, replies, clicks, and campaign performance. Measure customer engagement and optimize WhatsApp marketing, utility, and authentication messages.",
+                "img": "/assets/reports/features/WhatsApp-Business-Analytics-&-Reports.webp",
+                "more_content": {
+                    "features": [
+                        "Sent, delivered, and read message analytics",
+                        "Customer reply tracking and response times",
+                        "Link and call-to-action click tracking",
+                        "Failed message breakdown and error insights",
+                        "Template performance and campaign engagement reports"
+                    ]
+                }
+            },
+            {
+                "name": "Email Analytics & Campaign Reports",
+                "subtitle": "Open Rates, Clicks & Deliverability",
+                "content": "Understand how customers interact with your email campaigns using detailed delivery and engagement reports. Monitor opens, clicks, bounces, failures, and overall email campaign performance.",
+                "img": "/assets/reports/features/Email-Analytics-&-Campaign-Reports.webp",
+                "more_content": {
+                    "features": [
+                        "Email deliverability and queue latency monitoring",
+                        "Open rate, click rate, and bounce reports",
+                        "Rejected email and failure categorization",
+                        "Source-wise deliverability and domain reputation tracking",
+                        "Campaign comparison and exportable analytics logs"
+                    ]
+                }
+            },
+            {
+                "name": "OTP Analytics & Verification Reports",
+                "subtitle": "Multi-Channel Verification Tracking",
+                "content": "Monitor authentication performance across SMS, WhatsApp, Email, and Voice. Ensure every OTP reaches customers successfully while tracking verification rates and delivery performance.",
+                "video": "/assets/reports/videos/OTP-Verification-Analytics-Dashboard.webm",
+                "img": "/assets/reports/features/OTP-Verification-Analytics-Dashboard.webp",
+                "more_content": {
+                    "features": [
+                        "Real-time OTP delivery tracking across channels",
+                        "Verification success rate and fallback monitoring",
+                        "Resend requests and access token verification",
+                        "Failed OTP diagnosis and delivery latency metrics",
+                        "Authentication trend analytics and failure breakdown"
+                    ]
+                }
+            },
+            {
+                "name": "Voice Analytics & Call Reports",
+                "subtitle": "Call Performance & Cost Analytics",
+                "content": "Analyze outbound voice campaigns and authentication calls with complete visibility into call performance, duration, success rates, and operational metrics.",
+                "img": "/assets/reports/features/Voice-Analytics-&-Call-Reports.webp",
+                "more_content": {
+                    "features": [
+                        "Completed calls, busy signals, and no-answer reports",
+                        "Call duration tracking and latency metrics",
+                        "Cancellation reports and voice delivery rates",
+                        "Call charges and billing transparency",
+                        "Exportable call logs and operational insights"
+                    ]
+                }
+            },
+            {
+                "name": "RCS Messaging Analytics",
+                "subtitle": "Next-Gen Messaging Engagement",
+                "content": "Measure Rich Communication Services (RCS) campaign performance with detailed analytics for message delivery, reads, clicks, failures, and customer engagement.",
+                "img": "/assets/reports/features/RCS-Messaging-Analytics.webp",
+                "more_content": {
+                    "features": [
+                        "RCS message delivery and submission tracking",
+                        "Read receipts and rich card button click analytics",
+                        "Failed message reporting and billing deductions",
+                        "Campaign engagement metrics and performance comparison",
+                        "Advanced filtering and exportable communication reports"
+                    ]
+                }
+            },
+            {
+                "name": "Push Notification Analytics",
+                "subtitle": "Mobile App & Web Engagement",
+                "content": "Track mobile push notification delivery and engagement to improve app retention and customer interaction.",
+                "img": "/assets/reports/features/Push-Notification-Analytics.webp",
+                "more_content": {
+                    "features": [
+                        "Push notifications sent and delivered successfully",
+                        "Failed notifications and undelivered alert diagnosis",
+                        "Click-through performance and engagement trends",
+                        "Campaign success rates and platform comparisons",
+                        "Exportable dashboard data and real-time delivery insights"
+                    ]
+                }
+            },
+            {
+                "name": "Short URL Analytics & Click Tracking",
+                "subtitle": "Comprehensive Link Attribution",
+                "content": "Measure customer engagement by tracking every click generated through MSG91 Short URLs.",
+                "img": "/assets/reports/features/Short-URL-Analytics-&-Click-Tracking-2.webp",
+                "more_content": {
+                    "features": [
+                        "Total clicks, unique visitors, and conversion attribution",
+                        "Device, browser, OS, and location analytics",
+                        "Campaign attribution and referral tracking",
+                        "URL traffic trends and peak engagement times",
+                        "Exportable click reports for deeper marketing analysis"
+                    ]
+                }
+            }
+        ]
+    },
+    "WhyChooseMSG91": {
+        "heading": "Why Choose MSG91 Reports?",
+        "subheading": "Turn Communication Data into Business Intelligence — Managing customer communications across multiple channels shouldn't require multiple dashboards. MSG91 Reports unifies analytics for SMS, WhatsApp, Email, Voice, OTP, RCS, Push Notifications, and more into a single reporting platform, giving every team the visibility they need to improve performance, reduce costs, and make smarter business decisions.",
+        "content": [
+            {
+                "title": "Unified Analytics Across Every Communication Channel",
+                "subtitle": "Centralized Communication Intelligence",
+                "description": "Track communication performance across SMS, WhatsApp Business API, Email, Voice, OTP, RCS, Push Notifications, Short URLs, and other MSG91 products from one centralized dashboard.",
+                "img": "/assets/reports/features/Customer-Engagement-Analytics-1.webp",
+                "highlights": [
+                    "One dashboard for all communication channels",
+                    "Eliminate multiple reporting tools",
+                    "Centralized communication intelligence",
+                    "Cross-channel performance comparison"
+                ],
+                "footer": "All your customer communication metrics in one real-time dashboard",
+                "schedule_meet": "Schedule a Meeting"
+            },
+            {
+                "title": "Real-Time Reporting & Actionable Insights",
+                "subtitle": "Live Operational Visibility",
+                "description": "Access live communication metrics to monitor delivery performance, customer engagement, operational health, and campaign effectiveness as they happen.",
+                "img": "/assets/reports/features/Delivery-and-Operational-Analytics.webp",
+                "highlights": [
+                    "Live delivery tracking",
+                    "Instant campaign monitoring",
+                    "Real-time operational visibility",
+                    "Faster issue detection"
+                ],
+                "footer": "Detect delivery failures and traffic spikes before they impact customers",
+                "schedule_meet": "Book a Demo"
+            },
+            {
+                "title": "Advanced Filters for Deep Analysis",
+                "subtitle": "Granular Root-Cause Analytics",
+                "description": "Drill down into your communication data using advanced filters such as account, campaign, date range, message type, communication channel, status, and more.",
+                "img": "/assets/reports/features/Campaign-Performance-Analytics.webp",
+                "highlights": [
+                    "Faster root-cause analysis",
+                    "Campaign-level reporting",
+                    "Channel-specific insights",
+                    "Custom reporting experience"
+                ],
+                "footer": "Drill down to message-level delivery logs in seconds"
+            },
+            {
+                "title": "Enterprise-Ready Reports & Export Options",
+                "subtitle": "Compliance & Management Reporting",
+                "description": "Generate detailed communication reports for marketing, customer support, finance, operations, compliance, and leadership teams with downloadable logs and export-ready analytics.",
+                "img": "/assets/reports/features/Credit-&-Billing-Analytics.webp",
+                "highlights": [
+                    "CSV report exports",
+                    "Audit-ready communication logs",
+                    "Compliance reporting",
+                    "Executive dashboards"
+                ],
+                "footer": "Download audit-ready communication logs and executive summaries"
+            },
+            {
+                "title": "Built to Scale with Your Business",
+                "subtitle": "High-Volume Performance Monitoring",
+                "description": "Whether you're sending thousands or millions of messages every day, MSG91 Reports delivers fast, reliable analytics without compromising performance.",
+                "img": "/assets/reports/features/Executive-Dashboards-&-Business-Intelligence.webp",
+                "highlights": [
+                    "High-volume reporting",
+                    "Enterprise scalability",
+                    "Multi-account analytics",
+                    "Reliable performance monitoring"
+                ],
+                "footer": "Scale from thousands to billions of interactions seamlessly"
+            }
+        ],
+        "WhatsAppDriveSales": {
+            "heading": "Data-Driven Decisions with Powerful Dashboards",
+            "subheading": "Turn raw communication data into actionable insights",
+            "description": "Turn raw communication data into actionable insights that help improve customer engagement, campaign performance, delivery success, and overall business growth.",
+            "img": "/assets/reports/features/Executive-Dashboards-&-Business-Intelligence.webp",
+            "content": [
+                {
+                    "title": "KPI Dashboards",
+                    "description": "Monitor delivery success, click-through rates, and message latency across teams."
+                },
+                {
+                    "title": "Trend Analysis",
+                    "description": "Identify communication trends and seasonal patterns to optimize send times."
+                },
+                {
+                    "title": "Campaign Optimization",
+                    "description": "A/B test channel performance and content effectiveness in real time."
+                },
+                {
+                    "title": "Better Communication ROI",
+                    "description": "Reduce communication costs and maximize ROI across every messaging channel."
+                }
+            ],
+            "schedule_meet": "Book a Meeting"
+        }
+    },
+    "ReportsStepsComp": {
+        "label": "Simple Setup",
+        "heading": "How MSG91 Reports Works",
+        "subheading": "Get Actionable Insights in Four Simple Steps — MSG91 Reports is designed to help businesses monitor and optimize customer communications without any complex setup.",
+        "steps": [
+            {
+                "number": "01",
+                "title": "Connect Your Communication Channels",
+                "description": "Integrate SMS, WhatsApp, Email, Voice, OTP, RCS, Push Notifications, and other MSG91 products into your reporting dashboard."
+            },
+            {
+                "number": "02",
+                "title": "Start Sending Customer Communications",
+                "description": "Run marketing campaigns, transactional notifications, authentication messages, customer support conversations, and automated workflows using MSG91."
+            },
+            {
+                "number": "03",
+                "title": "Monitor Real-Time Communication Performance",
+                "description": "Track message delivery, customer engagement, click rates, replies, failures, billing, credits, and operational metrics through live dashboards and detailed reports."
+            },
+            {
+                "number": "04",
+                "title": "Optimize Campaigns with Actionable Insights",
+                "description": "Use communication analytics to improve delivery rates, reduce failures, increase engagement, optimize communication costs, and maximize business ROI."
+            }
+        ]
+    },
+    "FaqsComp": {
+        "heading": "Frequently Asked Questions",
+        "faqs": [
+            {
+                "question": "What is MSG91 Reports?",
+                "answer": "MSG91 Reports is a centralized communication analytics platform that provides detailed reports for SMS, WhatsApp, Email, Voice, OTP, RCS, Push Notifications, Short URLs, and other communication channels from a single dashboard."
+            },
+            {
+                "question": "What communication channels can I analyze?",
+                "answer": "You can monitor analytics for SMS, WhatsApp Business API, Email, Voice Calls, OTP, RCS Messaging, Push Notifications, Short URLs, Campaigns, and other MSG91 communication services."
+            },
+            {
+                "question": "Can I monitor SMS delivery reports?",
+                "answer": "Yes. MSG91 Reports provides real-time SMS delivery reports, delivery success rates, failed message analytics, filtered messages, click tracking, and campaign performance insights."
+            },
+            {
+                "question": "Does MSG91 provide WhatsApp Business Analytics?",
+                "answer": "Yes. You can monitor WhatsApp message delivery, read receipts, replies, click tracking, failed messages, customer engagement, campaign performance, and communication trends."
+            },
+            {
+                "question": "Can I track OTP delivery and verification reports?",
+                "answer": "Yes. MSG91 Reports provides OTP delivery analytics, verification success reports, resend analytics, channel-wise OTP performance, and authentication insights across SMS, WhatsApp, Email, and Voice."
+            },
+            {
+                "question": "Can I compare communication campaigns?",
+                "answer": "Yes. Compare campaign performance across SMS, WhatsApp, Email, Voice, RCS, and Push Notifications to identify the highest-performing communication channel."
+            },
+            {
+                "question": "Can reports be exported?",
+                "answer": "Yes. Download detailed communication reports, analytics, delivery logs, and audit-ready exports for marketing, finance, compliance, customer support, and operations teams."
+            },
+            {
+                "question": "Does MSG91 provide real-time analytics?",
+                "answer": "Yes. The dashboard updates communication metrics in real time, enabling businesses to monitor delivery performance, customer engagement, campaign results, and operational health instantly."
+            },
+            {
+                "question": "Can I filter reports by campaign or account?",
+                "answer": "Yes. Use advanced filters to analyze reports by campaign, account, communication channel, date range, message status, delivery status, and other reporting parameters."
+            },
+            {
+                "question": "Which teams benefit from MSG91 Reports?",
+                "answer": "MSG91 Reports is designed for Marketing, Customer Support, Operations, Finance, Product, Engineering, Compliance, and Leadership teams that need complete visibility into customer communications."
+            },
+            {
+                "question": "How do communication reports help improve business performance?",
+                "answer": "Communication reports help businesses identify delivery failures, improve campaign performance, increase customer engagement, optimize communication costs, monitor operational KPIs, and make informed business decisions based on real-time analytics."
+            },
+            {
+                "question": "Is MSG91 Reports suitable for enterprise businesses?",
+                "answer": "Yes. MSG91 Reports is built to handle high-volume communication analytics with scalable reporting, advanced filtering, exportable reports, and enterprise-grade dashboards for organizations of all sizes."
+            }
+        ]
+    },
+    "PreFooterComp": {
+        "content": "Start turning your customer communication data into actionable insights",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}

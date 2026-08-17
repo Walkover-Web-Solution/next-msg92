@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import CalendlyModal from '../CalendlyModal';
 import LottiePlayer from '../LottiePlayer/LottiePlayer';
 import { LinkButton, LinkText } from '../UIComponent/Buttons/LinkButton';
@@ -45,7 +46,17 @@ export default function WhyChooseMSG91({ data }) {
                             )}
                         </div>
                         <div className='w-full xl:max-w-[700px] lg:max-w-[320px] max-w-[280px] md:mx-6 mx-2 rounded-lg overflow-hidden'>
-                            <LottiePlayer lottie={item?.img} />
+                            {item?.img?.endsWith('.json') ? (
+                                <LottiePlayer lottie={item?.img} />
+                            ) : item?.img ? (
+                                <Image
+                                    src={item?.img}
+                                    width={700}
+                                    height={500}
+                                    alt={item?.title || 'Feature'}
+                                    className='w-full h-auto object-contain'
+                                />
+                            ) : null}
                         </div>
                     </div>
                 ))}

@@ -72,6 +72,10 @@ import Faqs from '@/components/HelloBrComp/FaqsComp/Faqs';
 import G2Badges from '@/components/HelloBrComp/G2BadgesComp/G2Badges';
 import Pricing from '@/components/HelloBrComp/PricingComp/Pricing';
 import EventRegistrationComp from '@/components/EventRegistrationComp';
+import ReportsOverviewComp from '@/components/ReportsComp/ReportsOverviewComp/ReportsOverviewComp';
+import ReportsDashboardComp from '@/components/ReportsComp/ReportsDashboardComp/ReportsDashboardComp';
+import ReportsTrustComp from '@/components/ReportsComp/ReportsTrustComp/ReportsTrustComp';
+import ReportsStepsComp from '@/components/ReportsComp/ReportsStepsComp/ReportsStepsComp';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -153,6 +157,8 @@ const Components = {
     WhatsAppIntegrations,
     WhatsAppAccountVerification,
     FeatureWithBulletGroup,
+    FeatureBulletGroup: FeatureWithBulletGroup,
+    ReportsChannels: FeatureWithBulletGroup,
     FeatureSliderComp,
 
     // New Components
@@ -167,6 +173,9 @@ const Components = {
     G2Badges,
     Pricing,
     EventRegistrationComp,
+    ReportsOverviewComp,
+    ReportsTrustComp,
+    ReportsStepsComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {

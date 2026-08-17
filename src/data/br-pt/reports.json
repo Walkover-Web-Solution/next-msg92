@@ -1,0 +1,713 @@
+{
+    "HeadComp": {
+        "title": "Plataforma de Análise e Relatórios de Comunicação | MSG91 Reports Brasil",
+        "description": "Transforme os dados de comunicação com o cliente em insights acionáveis com o MSG91 Reports. Analise o desempenho de SMS, WhatsApp, E-mail, Voz, OTP, RCS, Notificações Push e URLs Curtas em um único painel integrado."
+    },
+    "BannerComp": {
+        "slug": "reports",
+        "product": {
+            "name": "Reports",
+            "icon": "/assets/icons/products/reports.svg"
+        },
+        "tagline": "Plataforma de Análise e Relatórios de Comunicação",
+        "heading": "Plataforma de Análise e Relatórios de Comunicação para Cada Interação com o Cliente",
+        "subheading": "Transforme os dados de comunicação em insights estratégicos com o MSG91 Reports. Analise o desempenho de SMS, WhatsApp, E-mail, Voz, OTP, RCS, Notificações Push e URLs Curtas a partir de um painel unificado. Monitore taxas de entrega, engajamento do cliente, desempenho de campanhas, custos e métricas operacionais em tempo real para tomar decisões mais rápidas e baseadas em dados.",
+        "banner_video": "/assets/reports/videos/Hero Section Report Page_3.webm",
+        "not_absolute": "true",
+        "getstarted_btn": "Agendar Demonstração",
+        "schedule_meet": "Agendar Reunião",
+        "trustedByComp": {
+            "heading": "Mais de 15 Módulos de Relatórios • Mais de 100 Métricas de Comunicação • Análise em Tempo Real • Relatórios Exportáveis • Pronto para Empresas",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
+    },
+    "ReportsOverviewComp": {
+        "tagline": "Inteligência Unificada em Tempo Real",
+        "heading": "Um Painel Unificado para Analisar Cada Comunicação com o Cliente",
+        "subheading": "Transforme os dados de comunicação em insights acionáveis com uma plataforma de relatórios unificada. Acompanhe o desempenho de campanhas, o engajamento do cliente, o sucesso da entrega e os custos em todos os canais em tempo real.",
+        "section_title": "Tudo o que Você Pode Monitorar",
+        "categories": [
+            {
+                "title": "Análise de Comunicação com o Cliente",
+                "icon": "communication",
+                "metrics": [
+                    "Desempenho de entrega de SMS",
+                    "Métricas de mensagens do WhatsApp Business",
+                    "Entrega e engajamento de E-mail",
+                    "Taxas de sucesso de entrega de OTP",
+                    "Desempenho de chamadas de Voz",
+                    "Análise de mensagens RCS",
+                    "Métricas de Notificações Push",
+                    "Rastreamento de cliques em URLs Curtas"
+                ]
+            },
+            {
+                "title": "Análise de Desempenho de Campanhas",
+                "icon": "campaign",
+                "metrics": [
+                    "Taxas de entrega",
+                    "Taxas de leitura",
+                    "Taxas de clique (CTR)",
+                    "Taxas de resposta",
+                    "Análise de falhas",
+                    "Comparação entre campanhas",
+                    "Indicadores de conversão",
+                    "Métricas de engajamento do cliente"
+                ]
+            },
+            {
+                "title": "Análise Operacional",
+                "icon": "operational",
+                "metrics": [
+                    "Consumo de créditos",
+                    "Relatórios de faturamento",
+                    "Custos de comunicação",
+                    "Latência de entrega",
+                    "Monitoramento de filas",
+                    "Status de entrega de webhooks",
+                    "Logs de exportação",
+                    "Relatórios de auditoria"
+                ]
+            },
+            {
+                "title": "Inteligência de Negócios (BI)",
+                "icon": "bi",
+                "metrics": [
+                    "Painéis executivos",
+                    "Desempenho de marketing",
+                    "Insights de suporte ao cliente",
+                    "ROI de comunicação",
+                    "Monitoramento de SLA",
+                    "Desempenho de operadoras",
+                    "Relatórios de conformidade",
+                    "Relatórios por equipe"
+                ]
+            }
+        ]
+    },
+    "FeatureComp": {
+        "heading": "Análise de Comunicação com o Cliente para Todos os Setores",
+        "subheading": "Obtenha visibilidade completa das comunicações com clientes em qualquer setor com análises e relatórios unificados. Monitore taxas de entrega, engajamento, desempenho de campanhas, eficiência operacional e ROI para tomar decisões baseadas em dados. Seja enviando mensagens transacionais, campanhas de marketing ou notificações de suporte, o MSG91 Reports ajuda sua empresa a mensurar o que realmente importa.",
+        "iconColor": "text-accent",
+        "features": [
+            {
+                "name": "E-commerce e Varejo: Meça Toda a Jornada do Cliente",
+                "content": "Acompanhe cada interação do cliente — desde campanhas promocionais e lembretes de carrinho abandonado até atualizações de pedidos e engajamento pós-compra. Entenda como os clientes interagem com suas comunicações e otimize cada ponto de contato para gerar mais conversões.",
+                "video": "/assets/reports/videos/E-commerce & Retail Analytics.webm",
+                "img": "/assets/reports/use_case/Ecommerce.webp",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Campanhas de Carrinho Abandonado",
+                            "description": "Monitore o desempenho de campanhas de recuperação via WhatsApp e SMS."
+                        },
+                        {
+                            "name": "Notificações de Pedidos",
+                            "description": "Acompanhe confirmação de pedido, envio e sucesso na entrega."
+                        },
+                        {
+                            "name": "Lançamentos de Produtos",
+                            "description": "Meça o engajamento de lançamentos em E-mail, SMS e WhatsApp."
+                        },
+                        {
+                            "name": "Resgate de Cupons",
+                            "description": "Analise campanhas de cupons promocionais e taxas de resposta."
+                        },
+                        {
+                            "name": "Vendas Sazonais e Festivas",
+                            "description": "Compare campanhas sazonais para identificar o canal com melhor retorno."
+                        }
+                    ],
+                    "features": [
+                        "Métricas de entrega, leitura e cliques.",
+                        "Relatórios de desempenho por campanha.",
+                        "Insights de engajamento do cliente.",
+                        "Comparação de campanhas por canal.",
+                        "Relatórios de marketing exportáveis.",
+                        "Painel de comunicação em tempo real."
+                    ]
+                }
+            },
+            {
+                "name": "Bancos, FinTechs e Seguros: Monitore Comunicações Críticas",
+                "content": "Garanta que cada mensagem de autenticação, alerta de transação e notificação de apólice chegue aos clientes pontualmente. Tenha visibilidade total do desempenho de OTPs, falhas de entrega e confiabilidade do canal.",
+                "img": "/assets/reports/use_case/Fintech_Banking.webp",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Sucesso na Entrega de OTP",
+                            "description": "Monitore o sucesso de OTPs via SMS, WhatsApp, E-mail e Voz."
+                        },
+                        {
+                            "name": "Alertas de Transação",
+                            "description": "Acompanhe taxas de entrega de notificações bancárias e PIX."
+                        },
+                        {
+                            "name": "Falhas e Latência",
+                            "description": "Analise falhas de autenticação e tempo de resposta."
+                        },
+                        {
+                            "name": "Canais de Fallback",
+                            "description": "Compare a eficácia e custos dos canais de contingência."
+                        },
+                        {
+                            "name": "Relatórios de Conformidade",
+                            "description": "Gere relatórios prontos para auditorias e conformidade regulatória."
+                        }
+                    ],
+                    "features": [
+                        "Análise de verificação de OTP.",
+                        "Relatórios de sucesso de autenticação.",
+                        "Rastreamento de entrega multicanal.",
+                        "Análise de falhas e tentativas de reenvio.",
+                        "Monitoramento de latência de entrega.",
+                        "Logs de auditoria exportáveis."
+                    ]
+                }
+            },
+            {
+                "name": "Saúde e Clínicas: Melhore o Engajamento dos Pacientes",
+                "content": "Acompanhe lembretes de consultas, notificações de receitas, campanhas de prevenção e o desempenho das comunicações com pacientes em um painel centralizado.",
+                "img": "/assets/reports/use_case/Healthcare.webp",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Lembretes de Consultas",
+                            "description": "Monitore a confirmação e entrega de lembretes médicos."
+                        },
+                        {
+                            "name": "Retirada de Medicamentos",
+                            "description": "Analise avisos de prescrições e retiradas de exames."
+                        },
+                        {
+                            "name": "Campanhas de Saúde",
+                            "description": "Acompanhe campanhas de vacinação e conscientização."
+                        },
+                        {
+                            "name": "Taxas de Sucesso com Pacientes",
+                            "description": "Meça a taxa de contato efetivo com pacientes."
+                        },
+                        {
+                            "name": "Redução de Faltas (No-Show)",
+                            "description": "Reduza faltas em consultas com alertas e confirmações em tempo real."
+                        }
+                    ],
+                    "features": [
+                        "Métricas de notificações para pacientes.",
+                        "Painel de desempenho de campanhas preventivas.",
+                        "Relatórios de entrega e engajamento.",
+                        "Histórico completo de comunicações.",
+                        "Relatórios médicos exportáveis.",
+                        "Painel multicanal integrado."
+                    ]
+                }
+            },
+            {
+                "name": "Educação e EdTechs: Aprimore a Comunicação com Alunos",
+                "content": "Meça a eficácia da comunicação da sua instituição de ensino com alunos e responsáveis em processos seletivos, lembretes de mensalidades, exames e comunicados acadêmicos.",
+                "img": "/assets/reports/use_case/Education.webp",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Avisos de Matrícula",
+                            "description": "Acompanhe avisos de vestibulares e prazos de matrícula."
+                        },
+                        {
+                            "name": "OTP de Login de Alunos",
+                            "description": "Monitore a verificação de acesso ao portal do aluno."
+                        },
+                        {
+                            "name": "Convites para Webinars",
+                            "description": "Meça o alcance e cliques em palestras e aulas magnas."
+                        },
+                        {
+                            "name": "Alertas de Provas e Notas",
+                            "description": "Analise o engajamento com notificações acadêmicas."
+                        },
+                        {
+                            "name": "Comparação de Campanhas",
+                            "description": "Compare canais de comunicação com pais e alunos."
+                        }
+                    ],
+                    "features": [
+                        "Relatórios de comunicação estudantil.",
+                        "Análise de engajamento de comunicados.",
+                        "Monitoramento de entrega em tempo real.",
+                        "Rastreamento de cliques em links.",
+                        "Exportação de dados para secretaria.",
+                        "Painel unificado para instituições."
+                    ]
+                }
+            },
+            {
+                "name": "Logística e Viagens: Acompanhe Notificações Urgentes",
+                "content": "Monitore rastreamento de entregas, confirmações de reservas, alertas de atraso e notificações logísticas com análises de comunicação em tempo real.",
+                "img": "/assets/reports/use_case/Logistics.webp",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Rastreamento de Entregas",
+                            "description": "Meça a taxa de sucesso de notificações de status de envio."
+                        },
+                        {
+                            "name": "Confirmação de Reservas",
+                            "description": "Monitore o envio imediato de bilhetes e reservas."
+                        },
+                        {
+                            "name": "Alertas de Atrasos e Desvios",
+                            "description": "Acompanhe notificações urgentes de viagens e transporte."
+                        },
+                        {
+                            "name": "Engajamento com Atualizações",
+                            "description": "Analise interações dos clientes com links de rastreamento."
+                        },
+                        {
+                            "name": "Detecção Proativa de Erros",
+                            "description": "Identifique falhas de envio antes que os clientes abram chamados."
+                        }
+                    ],
+                    "features": [
+                        "Análise de entrega em tempo real.",
+                        "Relatórios de desempenho de notificações.",
+                        "Rastreamento de engajamento do destinatário.",
+                        "Diagnóstico de falhas por operadora.",
+                        "Comparativo de canais rápidos.",
+                        "Logs de comunicação exportáveis."
+                    ]
+                }
+            }
+        ]
+    },
+    "FeatureWithBulletGroup": {
+        "heading": "Relatórios Poderosos para Cada Necessidade de Negócio",
+        "subheading": "O MSG91 Reports vai muito além do simples envio de mensagens — ele capacita equipes de marketing, operações, suporte, finanças e liderança com inteligência acionável. Da otimização de campanhas à conformidade regulatória, cada relatório ajuda a aprimorar a experiência do cliente e os resultados da empresa.",
+        "iconColor": "text-accent",
+        "features": [
+            {
+                "name": "Análise de Campanhas: Otimize Cada Ação de Comunicação",
+                "subtitle": "Meça o ROI e o Engajamento por Canal",
+                "content": "Avalie o desempenho de campanhas de SMS, WhatsApp, E-mail, Voz, RCS e Notificações Push usando relatórios e métricas completos.",
+                "video": "/assets/reports/videos/Campaign-Performance-Analytics .webm",
+                "img": "/assets/reports/features/Campaign-Performance-Analytics.webp",
+                "more_content": {
+                    "features": [
+                        "Compare o desempenho de campanhas em múltiplos canais",
+                        "Meça taxas de entrega, leitura e cliques em tempo real",
+                        "Identifique as campanhas de marketing mais eficazes",
+                        "Acompanhe tendências de engajamento do público",
+                        "Aumente o ROI de marketing com insights precisos",
+                        "Painéis interativos e relatórios exportáveis"
+                    ]
+                }
+            },
+            {
+                "name": "Análise de Engajamento: Entenda Como os Clientes Interagem",
+                "subtitle": "Entenda as Interações dos Clientes",
+                "content": "Acompanhe cada ponto de contato para compreender padrões de comportamento e aprimorar suas estratégias de comunicação.",
+                "img": "/assets/reports/features/Customer-Engagement-Analytics-1.webp",
+                "more_content": {
+                    "features": [
+                        "Monitore respostas de clientes e confirmações de leitura",
+                        "Meça o desempenho de cliques em links nos canais",
+                        "Analise o engajamento individualizado por canal",
+                        "Acompanhe o volume e velocidade de respostas",
+                        "Melhore a jornada do cliente com diagnósticos práticos",
+                        "Relatórios completos de interação com o cliente"
+                    ]
+                }
+            },
+            {
+                "name": "Análise Operacional e de Entrega: Garanta Confiabilidade Total",
+                "subtitle": "Assegure Confiabilidade nas Comunicações",
+                "content": "Identifique gargalos na entrega, monitore a saúde das mensagens e garanta que comunicados críticos cheguem sem atraso.",
+                "video": "/assets/reports/videos/Delivery-and-Operational-Analytics.webm",
+                "img": "/assets/reports/features/Delivery-and-Operational-Analytics.webp",
+                "more_content": {
+                    "features": [
+                        "Detecte falhas de entrega instantaneamente",
+                        "Monitore o status de envio de webhooks em tempo real",
+                        "Analise filas de mensagens e picos de tráfego",
+                        "Acompanhe latência e rotas de operadoras",
+                        "Melhore a taxa geral de sucesso com relatórios automatizados"
+                    ]
+                }
+            },
+            {
+                "name": "Análise de Créditos e Faturamento: Controle seus Custos",
+                "subtitle": "Otimize Gastos e Alocação de Orçamento",
+                "content": "Acompanhe os gastos com comunicação em cada canal e otimize seu orçamento com relatórios detalhados de consumo e créditos.",
+                "img": "/assets/reports/features/Credit-&-Billing-Analytics.webp",
+                "more_content": {
+                    "features": [
+                        "Monitore o consumo de créditos por canal",
+                        "Analise o custo por campanha e tipo de mensagem",
+                        "Acompanhe o histórico de faturamento e deduções",
+                        "Compare despesas de comunicação entre subcontas",
+                        "Gere relatórios financeiros prontos para exportação"
+                    ]
+                }
+            },
+            {
+                "name": "Painéis Executivos e BI: Decisões Rápidas Baseadas em Dados",
+                "subtitle": "Inteligência Estratégica de Negócios",
+                "content": "Converta dados de comunicação em inteligência de negócios com painéis executivos, relatórios de tendências e KPIs estratégicos.",
+                "img": "/assets/reports/features/Executive-Dashboards-&-Business-Intelligence.webp",
+                "more_content": {
+                    "features": [
+                        "Monitore o desempenho de comunicação de toda a organização",
+                        "Gere relatórios executivos prontos para diretorias e conselhos",
+                        "Meça o ROI integrado de comunicações multicanal",
+                        "Acompanhe metas de SLA e benchmarks de mercado",
+                        "Atenda requisitos corporativos de auditoria e conformidade"
+                    ]
+                }
+            }
+        ]
+    },
+    "FeatureBulletGroup": {
+        "heading": "Tudo o que Você Precisa Monitorar em um Único Painel de Relatórios",
+        "subheading": "Da entrega de mensagens e engajamento do cliente ao desempenho de campanhas e métricas operacionais, o MSG91 Reports oferece análises completas para cada canal de comunicação. Monitore cada interação, identifique gargalos e tome decisões inteligentes em uma plataforma centralizada.",
+        "iconColor": "text-accent",
+        "features": [
+            {
+                "name": "Relatórios e Análise de Entrega de SMS",
+                "subtitle": "Insights de Entrega e Campanhas em Tempo Real",
+                "content": "Tenha visibilidade total do desempenho de suas mensagens de SMS com relatórios de entrega em tempo real e análises aprofundadas. Acompanhe sucessos, falhas, créditos consumidos e cliques para garantir que cada campanha alcance seu público.",
+                "video": "/assets/reports/videos/SMS-Reports-&-Delivery-Analytics.webm",
+                "img": "/assets/reports/features/SMS-Reports-&-Delivery-Analytics.webp",
+                "more_content": {
+                    "features": [
+                        "Relatórios de entrega de SMS e logs de status em tempo real",
+                        "Análise de mensagens filtradas e falhas com códigos de erro",
+                        "Monitoramento de taxa de sucesso e tempo de latência",
+                        "Transparência no consumo de créditos e faturamento de SMS",
+                        "Rastreamento de cliques em links e atribuição de URL",
+                        "Comparação de campanhas e análise de tendências de entrega"
+                    ]
+                }
+            },
+            {
+                "name": "Análise e Relatórios do WhatsApp Business",
+                "subtitle": "Acompanhe Conversões, Leituras e Respostas",
+                "content": "Monitore cada conversa no WhatsApp Business com métricas detalhadas de entrega, leitura, respostas, cliques e conversão. Meça o engajamento e otimize mensagens de marketing, utilidades e autenticação.",
+                "img": "/assets/reports/features/WhatsApp-Business-Analytics-&-Reports.webp",
+                "more_content": {
+                    "features": [
+                        "Métricas de mensagens enviadas, entregues e lidas",
+                        "Rastreamento de respostas de clientes e tempo de retorno",
+                        "Rastreamento de cliques em botões e chamadas para ação (CTAs)",
+                        "Detalhamento de falhas de envio com códigos de erro da Meta",
+                        "Relatórios de desempenho por modelo de mensagem (Templates)"
+                    ]
+                }
+            },
+            {
+                "name": "Relatórios e Métricas de Campanhas de E-mail",
+                "subtitle": "Taxas de Abertura, Cliques e Entregabilidade",
+                "content": "Entenda como os destinatários interagem com seus e-mails usando relatórios avançados de entrega e engajamento. Acompanhe aberturas, cliques, rejeições (bounces) e o desempenho geral de disparos.",
+                "img": "/assets/reports/features/Email-Analytics-&-Campaign-Reports.webp",
+                "more_content": {
+                    "features": [
+                        "Monitoramento de entregabilidade e tempo de fila de envio",
+                        "Relatórios de taxa de abertura, cliques e rejeições (bounces)",
+                        "Categorização de e-mails recusados e motivos de falha",
+                        "Acompanhamento de reputação de domínio e IP de envio",
+                        "Comparativo de campanhas e logs analíticos exportáveis"
+                    ]
+                }
+            },
+            {
+                "name": "Relatórios e Análise de Verificação de OTP",
+                "subtitle": "Rastreamento de Autenticação Multicanal",
+                "content": "Monitore o desempenho de autenticação em SMS, WhatsApp, E-mail e Voz. Garanta que cada código de verificação chegue com rapidez e segurança enquanto acompanha as taxas de conversão.",
+                "video": "/assets/reports/videos/OTP-Verification-Analytics-Dashboard.webm",
+                "img": "/assets/reports/features/OTP-Verification-Analytics-Dashboard.webp",
+                "more_content": {
+                    "features": [
+                        "Rastreamento de entrega de OTP em tempo real em todos os canais",
+                        "Taxa de sucesso de verificação e uso de canais de fallback",
+                        "Análise de solicitações de reenvio e tokens de acesso",
+                        "Diagnóstico de falhas de autenticação e latência de entrega",
+                        "Análise de tendências de segurança e tentativas suspeitas"
+                    ]
+                }
+            },
+            {
+                "name": "Análise de Voz e Relatórios de Chamadas",
+                "subtitle": "Desempenho e Custos de Chamadas Telefônicas",
+                "content": "Analise campanhas de chamadas de voz e autenticação com visibilidade completa sobre duração, taxas de atendimento, falhas e custos operacionais.",
+                "img": "/assets/reports/features/Voice-Analytics-&-Call-Reports.webp",
+                "more_content": {
+                    "features": [
+                        "Relatórios de chamadas completadas, ocupadas e não atendidas",
+                        "Rastreamento de duração de ligação e tempo de conexão",
+                        "Taxas de sucesso e cancelamentos de chamadas",
+                        "Transparência total em tarifas e cobrança por minuto",
+                        "Logs de chamadas exportáveis para análise operacional"
+                    ]
+                }
+            },
+            {
+                "name": "Métricas de Mensagens RCS",
+                "subtitle": "Engajamento em Mensagens Interativas de Nova Geração",
+                "content": "Meça o desempenho de campanhas RCS com análises detalhadas de entrega, leitura, cliques em cartões ricos e engajamento do consumidor.",
+                "img": "/assets/reports/features/RCS-Messaging-Analytics.webp",
+                "more_content": {
+                    "features": [
+                        "Rastreamento de envio e entrega de mensagens RCS",
+                        "Confirmações de leitura e cliques em botões de cartões ricos",
+                        "Relatórios de mensagens com fallback e custos aplicados",
+                        "Métricas de engajamento interativo e comparativo de campanhas",
+                        "Filtros avançados e relatórios de comunicação exportáveis"
+                    ]
+                }
+            },
+            {
+                "name": "Análise de Notificações Push",
+                "subtitle": "Engajamento em Aplicativos Móveis e Web",
+                "content": "Acompanhe a entrega e o engajamento de notificações push para aumentar a retenção no aplicativo e a interação com os usuários.",
+                "img": "/assets/reports/features/Push-Notification-Analytics.webp",
+                "more_content": {
+                    "features": [
+                        "Notificações push enviadas e entregues com sucesso",
+                        "Diagnóstico de falhas e dispositivos desconectados",
+                        "Desempenho de cliques e tendências de reengajamento",
+                        "Taxas de conversão por plataforma (iOS, Android, Web)",
+                        "Exportação de dados de entrega e relatórios em tempo real"
+                    ]
+                }
+            },
+            {
+                "name": "Métricas de URLs Curtas e Rastreamento de Cliques",
+                "subtitle": "Atribuição e Análise Completa de Links",
+                "content": "Meça o engajamento do cliente rastreando cada clique gerado através dos links encurtados da MSG91.",
+                "img": "/assets/reports/features/Short-URL-Analytics-&-Click-Tracking-2.webp",
+                "more_content": {
+                    "features": [
+                        "Total de cliques, visitantes únicos e conversões geradas",
+                        "Análise por dispositivo, navegador, sistema operacional e país",
+                        "Atribuição de campanhas e fontes de tráfego",
+                        "Tendências de volume de cliques e horários de pico",
+                        "Relatórios de cliques exportáveis para análise de marketing"
+                    ]
+                }
+            }
+        ]
+    },
+    "WhyChooseMSG91": {
+        "heading": "Por que Escolher o MSG91 Reports?",
+        "subheading": "Transforme Dados de Comunicação em Inteligência Estratégica — Gerenciar comunicações em múltiplos canais não precisa exigir vários painéis isolados. O MSG91 Reports unifica análises de SMS, WhatsApp, E-mail, Voz, OTP, RCS, Notificações Push e muito mais em uma única plataforma, dando a visibilidade necessária para reduzir custos e tomar decisões mais inteligentes.",
+        "content": [
+            {
+                "title": "Análise Unificada em Todos os Canais de Comunicação",
+                "subtitle": "Inteligência Centralizada de Comunicação",
+                "description": "Acompanhe o desempenho de SMS, WhatsApp Business API, E-mail, Voz, OTP, RCS, Notificações Push, URLs Curtas e outros produtos MSG91 em um único painel centralizado.",
+                "img": "/assets/reports/features/Customer-Engagement-Analytics-1.webp",
+                "highlights": [
+                    "Um único painel para todos os canais de comunicação",
+                    "Elimine a necessidade de múltiplas ferramentas isoladas",
+                    "Inteligência e histórico de mensagens centralizados",
+                    "Comparação direta de desempenho entre canais"
+                ],
+                "footer": "Todas as métricas de comunicação com clientes em um painel em tempo real",
+                "schedule_meet": "Agendar Reunião"
+            },
+            {
+                "title": "Relatórios em Tempo Real e Insights Acionáveis",
+                "subtitle": "Visibilidade Operacional Instantânea",
+                "description": "Acesse métricas ao vivo para monitorar taxas de entrega, engajamento do cliente, saúde operacional e eficácia de campanhas no momento em que acontecem.",
+                "img": "/assets/reports/features/Delivery-and-Operational-Analytics.webp",
+                "highlights": [
+                    "Rastreamento de entregas em tempo real",
+                    "Monitoramento instantâneo de campanhas",
+                    "Visibilidade operacional ao vivo",
+                    "Detecção rápida de instabilidades"
+                ],
+                "footer": "Detecte falhas de entrega e picos de tráfego antes que afetem seus clientes",
+                "schedule_meet": "Agendar Demonstração"
+            },
+            {
+                "title": "Filtros Avançados para Diagnóstico Profundo",
+                "subtitle": "Análise Granular de Causa Raiz",
+                "description": "Explore seus dados de comunicação usando filtros avançados por conta, campanha, período, tipo de mensagem, canal, status de entrega e muito mais.",
+                "img": "/assets/reports/features/Campaign-Performance-Analytics.webp",
+                "highlights": [
+                    "Diagnóstico rápido de causa raiz",
+                    "Relatórios no nível de campanha e disparo",
+                    "Insights específicos por canal",
+                    "Experiência de relatórios personalizados"
+                ],
+                "footer": "Acesse logs de envio detalhados em segundos"
+            },
+            {
+                "title": "Relatórios Corporativos e Opções de Exportação",
+                "subtitle": "Relatórios para Gestão e Conformidade",
+                "description": "Gere relatórios detalhados para equipes de marketing, suporte, finanças, operações, auditoria e diretoria com logs para download e arquivos prontos para integração.",
+                "img": "/assets/reports/features/Credit-&-Billing-Analytics.webp",
+                "highlights": [
+                    "Exportação de relatórios em CSV",
+                    "Logs de comunicação prontos para auditoria",
+                    "Relatórios de conformidade e LGPD",
+                    "Painéis executivos para tomada de decisão"
+                ],
+                "footer": "Baixe logs de envio prontos para auditoria e resumos executivos"
+            },
+            {
+                "title": "Construído para Escalar com o Seu Negócio",
+                "subtitle": "Monitoramento de Alta Capacidade",
+                "description": "Seja enviando milhares ou milhões de mensagens todos os dias, o MSG91 Reports oferece análises rápidas e confiáveis sem comprometer o desempenho.",
+                "img": "/assets/reports/features/Executive-Dashboards-&-Business-Intelligence.webp",
+                "highlights": [
+                    "Processamento de relatórios em alto volume",
+                    "Escalabilidade corporativa comprovada",
+                    "Análise consolidada para múltiplas contas",
+                    "Monitoramento estável e de alta disponibilidade"
+                ],
+                "footer": "Escale de milhares a bilhões de interações com máxima estabilidade"
+            }
+        ],
+        "WhatsAppDriveSales": {
+            "heading": "Decisões Baseadas em Dados com Painéis Poderosos",
+            "subheading": "Transforme dados brutos de comunicação em insights estratégicos",
+            "description": "Converta dados brutos de comunicação em insights estratégicos que impulsionam o engajamento, a eficácia das campanhas, a taxa de entrega e o crescimento dos negócios.",
+            "img": "/assets/reports/features/Executive-Dashboards-&-Business-Intelligence.webp",
+            "content": [
+                {
+                    "title": "Painéis de KPIs",
+                    "description": "Monitore o sucesso de entrega, taxas de clique e latência entre diferentes equipes."
+                },
+                {
+                    "title": "Análise de Tendências",
+                    "description": "Identifique padrões sazonais e melhores horários de envio para maximizar a abertura."
+                },
+                {
+                    "title": "Otimização de Campanhas",
+                    "description": "Faça testes A/B de canais e mensagens em tempo real para obter o melhor retorno."
+                },
+                {
+                    "title": "Maior ROI de Comunicação",
+                    "description": "Reduza despesas desnecessárias e aumente o retorno sobre o investimento em mensagens."
+                }
+            ],
+            "schedule_meet": "Agendar Reunião"
+        }
+    },
+    "ReportsStepsComp": {
+        "label": "Configuração Simples",
+        "heading": "Como Funciona o MSG91 Reports",
+        "subheading": "Obtenha Insights Estratégicos em Quatro Passos Simples — O MSG91 Reports foi projetado para ajudar empresas a monitorar e otimizar comunicações sem qualquer complexidade técnica.",
+        "steps": [
+            {
+                "number": "01",
+                "title": "Conecte seus Canais de Comunicação",
+                "description": "Integre SMS, WhatsApp, E-mail, Voz, OTP, RCS, Notificações Push e outros serviços da MSG91 ao seu painel de relatórios."
+            },
+            {
+                "number": "02",
+                "title": "Inicie o Envio de Comunicações aos Clientes",
+                "description": "Execute campanhas promocionais, notificações transacionais, mensagens de autenticação e fluxos automatizados com facilidade."
+            },
+            {
+                "number": "03",
+                "title": "Monitore Métricas em Tempo Real",
+                "description": "Acompanhe taxas de entrega, cliques, respostas, falhas, faturamento e créditos através de painéis dinâmicos e relatórios detalhados."
+            },
+            {
+                "number": "04",
+                "title": "Otimize Campanhas com Insights Práticos",
+                "description": "Use as análises para elevar a taxa de entrega, evitar falhas, engajar mais clientes e otimizar o custo de comunicação da sua empresa."
+            }
+        ]
+    },
+    "FaqsComp": {
+        "heading": "Perguntas Frequentes",
+        "faqs": [
+            {
+                "question": "O que é o MSG91 Reports?",
+                "answer": "O MSG91 Reports é uma plataforma centralizada de análise de comunicação que oferece relatórios detalhados para SMS, WhatsApp, E-mail, Voz, OTP, RCS, Notificações Push, URLs Curtas e outros canais a partir de um único painel."
+            },
+            {
+                "question": "Quais canais de comunicação posso analisar?",
+                "answer": "Você pode monitorar análises para SMS, WhatsApp Business API, E-mail, Chamadas de Voz, OTP, Mensagens RCS, Notificações Push, URLs Curtas, Campanhas e outros serviços de comunicação da MSG91."
+            },
+            {
+                "question": "Posso acompanhar relatórios de entrega de SMS?",
+                "answer": "Sim. O MSG91 Reports disponibiliza relatórios de entrega de SMS em tempo real, taxas de sucesso, análise de falhas, mensagens filtradas, rastreamento de cliques e insights de campanhas."
+            },
+            {
+                "question": "O MSG91 oferece análises do WhatsApp Business?",
+                "answer": "Sim. Você pode monitorar a entrega de mensagens no WhatsApp, confirmações de leitura, respostas recebidas, cliques em links e botões, falhas de envio e tendências de engajamento."
+            },
+            {
+                "question": "É possível rastrear relatórios de entrega e verificação de OTP?",
+                "answer": "Sim. A plataforma fornece métricas completas de entrega de OTP, taxa de sucesso de verificação, reenvios solicitados, desempenho por canal e insights de segurança em SMS, WhatsApp, E-mail e Voz."
+            },
+            {
+                "question": "Posso comparar o desempenho entre diferentes campanhas?",
+                "answer": "Sim. Você pode comparar o desempenho de campanhas em SMS, WhatsApp, E-mail, Voz, RCS e Notificações Push para identificar qual canal oferece o melhor retorno para seu público."
+            },
+            {
+                "question": "Os relatórios podem ser exportados?",
+                "answer": "Sim. Baixe relatórios detalhados, métricas consolidadas, logs de entrega e arquivos para auditoria prontos para as equipes de marketing, finanças, suporte e operações."
+            },
+            {
+                "question": "O MSG91 fornece análises em tempo real?",
+                "answer": "Sim. O painel atualiza as métricas de comunicação em tempo real, permitindo acompanhar o sucesso de entrega, engajamento e a saúde operacional das mensagens instantaneamente."
+            },
+            {
+                "question": "Posso filtrar relatórios por campanha ou conta?",
+                "answer": "Sim. Utilize filtros avançados por campanha, subconta, canal de comunicação, período, status de entrega e outros parâmetros personalizados."
+            },
+            {
+                "question": "Quais equipes se beneficiam do MSG91 Reports?",
+                "answer": "O MSG91 Reports foi desenvolvido para equipes de Marketing, Suporte ao Cliente, Operações, Finanças, Produto, Engenharia e Liderança que necessitam de visibilidade total sobre as comunicações com clientes."
+            },
+            {
+                "question": "Como os relatórios de comunicação ajudam nos resultados da empresa?",
+                "answer": "Eles permitem identificar falhas de envio rapidamente, aprimorar a eficácia de campanhas, aumentar o engajamento dos clientes, reduzir custos desnecessários e tomar decisões estratégicas baseadas em dados confiáveis."
+            },
+            {
+                "question": "O MSG91 Reports é adequado para grandes empresas (Enterprise)?",
+                "answer": "Sim. O MSG91 Reports foi construído para lidar com altíssimos volumes de mensagens com relatórios escaláveis, filtros granulares, exportações seguras e painéis de nível corporativo."
+            }
+        ]
+    },
+    "PreFooterComp": {
+        "content": "Comece a transformar os dados de comunicação da sua empresa em insights estratégicos",
+        "buttons": {
+            "contactSales": {
+                "text": "Fale com Vendas",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Preços",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Começar Gratuitamente",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}

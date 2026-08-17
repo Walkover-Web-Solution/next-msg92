@@ -39,13 +39,17 @@ export default function BannerComp({ pageInfo, data }) {
                             {data?.tagline}
                         </span>
                         {data?.product ? (
-                            <h1 className={`${data?.slug === 'whatsapp' ? 'whatsapp__' : ''}heading`}>
+                            <h1
+                                className={`${data?.slug === 'whatsapp' || data?.slug === 'reports' ? 'whatsapp__' : ''}heading`}
+                            >
                                 {data?.heading}
                             </h1>
                         ) : (
                             <h1 className='heading'>{data?.heading}</h1>
                         )}
-                        <p className={`${data?.slug === 'whatsapp' ? 'whatsapp__subheading' : 'subheading'}`}>
+                        <p
+                            className={`${data?.slug === 'whatsapp' || data?.slug === 'reports' ? 'whatsapp__subheading' : 'subheading'}`}
+                        >
                             {data?.subheading}
                         </p>
                         {data?.highlights && (
