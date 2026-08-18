@@ -132,7 +132,13 @@ export default function RegistrationForm({ data }) {
                                         {field?.label}
                                     </label>
                                     <input
-                                        className='input input-bordered w-full bg-white text-sm'
+                                        className={`input input-bordered w-full bg-white text-sm ${
+                                            field?.type === 'date'
+                                                ? !formValues?.[field?.name]
+                                                    ? 'text-slate-400 uppercase'
+                                                    : 'text-slate-800'
+                                                : 'text-slate-800'
+                                        }`}
                                         id={field?.name}
                                         name={field?.name}
                                         type={field?.type}
@@ -141,6 +147,21 @@ export default function RegistrationForm({ data }) {
                                         onChange={handleChange}
                                         disabled={isLoading}
                                         readOnly={isLockedByOtp}
+                                        max={
+                                            field?.type === 'date' ? new Date().toISOString().split('T')[0] : undefined
+                                        }
+                                        onClick={(e) => {
+                                            if (
+                                                field?.type === 'date' &&
+                                                !isLockedByOtp &&
+                                                !isLoading &&
+                                                e?.target?.showPicker
+                                            ) {
+                                                try {
+                                                    e.target.showPicker();
+                                                } catch (err) {}
+                                            }
+                                        }}
                                     />
                                 </div>
                             );

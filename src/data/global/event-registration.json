@@ -48,7 +48,7 @@
                 {
                     "name": "dob",
                     "label": "Date of Birth",
-                    "type": "text",
+                    "type": "date",
                     "placeholder": "DD/MM/YYYY"
                 },
                 {
@@ -60,7 +60,10 @@
             ],
             "travel": {
                 "label": "How will you be traveling to the venue?",
-                "options": ["Public Transport", "Own car"]
+                "options": [
+                    "Public Transport",
+                    "Own car"
+                ]
             },
             "submit_btn": "Submit",
             "submitting_btn": "Submitting...",
