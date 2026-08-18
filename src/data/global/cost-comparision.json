@@ -89,7 +89,7 @@
                 },
                 {
                     "question": "Can I see this for Brazilian tools?",
-                    "answer": "Yes — Octadesk, Take Blip, and Zenvia are in the dropdown alongside Zendesk, Intercom, Freshdesk, Zoho Desk, and Respond.io."
+                    "answer": "Yes — Take Blip, and Zenvia are in the dropdown alongside Zendesk, Intercom, Freshdesk, Zoho Desk, and Respond.io."
                 }
             ]
         },
@@ -103,6 +103,7 @@
                 "aiRate": "% of tickets resolved by AI / bot",
                 "aiRatePlaceholder": "e.g. 50",
                 "competitor": "Select Competitor to Compare",
+                "competitorPlan": "Plan Tier",
                 "globalProviders": "GLOBAL PROVIDERS",
                 "brazilProviders": "BRAZIL PROVIDERS",
                 "currency": "Currency",
@@ -155,6 +156,9 @@
                 "usageCost": "{tickets} × {price}",
                 "aiFeaturesIncludedFree": "AI features included free",
                 "overageAboveAllowance": "Overage above allowance",
+                "contactSalesOverage": "{tickets} > {included} included · Contact sales",
+                "contactSales": "Contact sales",
+                "withinQuotaIncluded": "Within {included} included quota",
                 "aiResolvedCost": "{tickets} × {price}",
                 "aiIncludedInPlan": "AI included in plan",
                 "zeroAiResolved": "0 AI resolved",

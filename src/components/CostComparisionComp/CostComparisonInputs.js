@@ -110,6 +110,8 @@ export default function CostComparisonInputs({
     setAiRate,
     competitorKey,
     setCompetitorKey,
+    competitorPlanName,
+    setCompetitorPlanName,
     currency,
     setCurrency,
     planKey,
@@ -117,6 +119,8 @@ export default function CostComparisonInputs({
     apiPlans,
 }) {
     if (!data) return null;
+
+    const selectedCompetitor = ALL_COMPETITORS[competitorKey];
 
     return (
         <div className='cont gap-7 rounded-xl border border-gray-200 bg-white p-8 shadow-sm lg:col-span-5'>
@@ -170,11 +174,43 @@ export default function CostComparisonInputs({
                     setCompetitorKey={setCompetitorKey}
                     labels={data?.labels}
                 />
+                {selectedCompetitor?.plans?.length > 0 && (
+                    <div className='cont gap-2 pt-2'>
+                        <span className='text-xs font-bold uppercase text-gray-500'>
+                            {data?.labels?.competitorPlan || `${selectedCompetitor?.name} Plan`}
+                        </span>
+                        <div
+                            className={`grid gap-1 rounded-xl border border-gray-200 bg-gray-100 p-1 ${
+                                selectedCompetitor.plans.length === 2
+                                    ? 'grid-cols-2'
+                                    : selectedCompetitor.plans.length === 3
+                                      ? 'grid-cols-3'
+                                      : 'grid-cols-2 sm:grid-cols-4'
+                            }`}
+                        >
+                            {selectedCompetitor.plans.map((planItem) => (
+                                <button
+                                    key={planItem.name}
+                                    type='button'
+                                    aria-pressed={competitorPlanName === planItem.name}
+                                    onClick={() => setCompetitorPlanName(planItem.name)}
+                                    className={`rounded-xl py-1.5 px-2 text-center text-xs font-bold transition-all ${
+                                        competitorPlanName === planItem.name
+                                            ? 'bg-indigo-600 text-white shadow-sm'
+                                            : 'text-gray-700 hover:text-gray-900'
+                                    }`}
+                                >
+                                    {planItem.name}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                )}
             </div>
 
             <div className='cont gap-2 border-t border-gray-100 py-5'>
                 <span className='text-xs font-bold uppercase'>{data?.labels?.currency}</span>
-                <div className='grid grid-cols-5 gap-1 rounded-xl border border-gray-200 bg-gray-100 p-1'>
+                <div className='grid grid-cols-4 gap-1 rounded-xl border border-gray-200 bg-gray-100 p-1'>
                     {CURRENCY_ORDER.map((currency_option) => (
                         <button
                             key={currency_option}

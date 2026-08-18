@@ -171,7 +171,14 @@ export async function generateCostComparisonPdf({
                 positionY: 240,
             },
             { label: 'HELLO PLAN', value: planName, positionX: 120, positionY: 320 },
-            { label: 'COMPETITOR', value: competitorName, positionX: 600, positionY: 320 },
+            {
+                label: 'COMPETITOR',
+                value: competitorResult?.selectedPlanName
+                    ? `${competitorName} (${sanitizeText(competitorResult.selectedPlanName)})`
+                    : competitorName,
+                positionX: 600,
+                positionY: 320,
+            },
             { label: 'CURRENCY', value: currency || 'USD', positionX: 1080, positionY: 320 },
         ];
 
@@ -295,6 +302,25 @@ export async function generateCostComparisonPdf({
             return '—';
         };
 
+        const getSeatDescription = () => {
+            if (['seat', 'seat_res', 'seat_tiered'].includes(competitorResult?.model)) {
+                return `${agents} × ${formatCurrency(competitorResult?.perAgent || 0)}`;
+            }
+            if (competitorResult?.model === 'base_seat' || competitorResult?.model === 'base_seat_tiered') {
+                const extraSeats = Math.max(0, agents - (competitorResult?.includedSeats || 0));
+                return extraSeats > 0
+                    ? `${extraSeats} extra × ${formatCurrency(competitorResult?.extraSeatFee || competitorResult?.extraSeat || 0)}`
+                    : 'Within included seats';
+            }
+            if (competitorResult?.model === 'zenvia_tiered') {
+                const extraUsers = Math.max(0, agents - (competitorResult?.includedUsers || 0));
+                return extraUsers > 0
+                    ? `${extraUsers} extra × ${formatCurrency(competitorResult?.extraUserFee || 0)}`
+                    : 'Within included seats';
+            }
+            return '—';
+        };
+
         const rows = [
             {
                 title: 'Base Subscription',
@@ -310,12 +336,17 @@ export async function generateCostComparisonPdf({
                 subtitle: 'Hello: Unlimited free agents',
                 helloValue: `${formatCurrency(0)} (Free)`,
                 helloColor: getCssVariable('--emerald-success-text', '#059669'),
-                competitorValue: ['seat', 'seat_res', 'base_seat'].includes(competitorResult?.model)
+                competitorValue: [
+                    'seat',
+                    'seat_res',
+                    'base_seat',
+                    'seat_tiered',
+                    'base_seat_tiered',
+                    'zenvia_tiered',
+                ].includes(competitorResult?.model)
                     ? formatCurrency(competitorResult?.agentSeatsCost || 0)
                     : '—',
-                competitorDescription: ['seat', 'seat_res'].includes(competitorResult?.model)
-                    ? `${agents} × ${formatCurrency(competitorResult?.perAgent || 0)}`
-                    : '—',
+                competitorDescription: getSeatDescription(),
             },
             {
                 title: 'AI Seat Copilot / Add-on',
@@ -334,11 +365,26 @@ export async function generateCostComparisonPdf({
                 helloValue: hello?.extraCost > 0 ? formatCurrency(hello.extraCost) : formatCurrency(0),
                 helloColor: getCssVariable('--text-primary', '#111827'),
                 competitorValue:
-                    competitorResult?.model === 'base_conv' ? formatCurrency(competitorResult?.usageCost || 0) : '—',
+                    (competitorResult?.model === 'base_conv' || competitorResult?.model === 'base_conv_tiered') &&
+                    competitorResult?.usageCost > 0
+                        ? formatCurrency(competitorResult?.usageCost || 0)
+                        : (competitorResult?.includedConvs || competitor?.includedConvs) &&
+                            (competitorResult?.includedConvs || competitor?.includedConvs) !== Infinity &&
+                            (hello?.tickets || 0) > (competitorResult?.includedConvs || competitor?.includedConvs)
+                          ? 'Contact sales'
+                          : '—',
                 competitorDescription:
-                    competitorResult?.model === 'base_conv'
+                    (competitorResult?.model === 'base_conv' || competitorResult?.model === 'base_conv_tiered') &&
+                    competitorResult?.usageCost > 0
                         ? `${(hello?.tickets || 0).toLocaleString()} × ${formatCurrency(competitorResult?.perConv || 0)}`
-                        : '—',
+                        : (competitorResult?.includedConvs || competitor?.includedConvs) &&
+                            (competitorResult?.includedConvs || competitor?.includedConvs) !== Infinity &&
+                            (hello?.tickets || 0) > (competitorResult?.includedConvs || competitor?.includedConvs)
+                          ? `${(hello?.tickets || 0).toLocaleString()} > ${(competitorResult?.includedConvs || competitor?.includedConvs).toLocaleString()} included · Contact sales`
+                          : (competitorResult?.includedConvs || competitor?.includedConvs) &&
+                              (competitorResult?.includedConvs || competitor?.includedConvs) !== Infinity
+                            ? `Within ${(competitorResult?.includedConvs || competitor?.includedConvs).toLocaleString()} included quota`
+                            : '—',
             },
             {
                 title: 'AI Bot Resolutions',
@@ -348,13 +394,17 @@ export async function generateCostComparisonPdf({
                 competitorValue:
                     competitorResult?.aiResolutionsCost > 0
                         ? formatCurrency(competitorResult.aiResolutionsCost)
-                        : competitorResult?.perResolution === 0
+                        : competitorResult?.perResolution === 0 || competitorResult?.model === 'base_seat_tiered'
                           ? formatCurrency(0)
                           : '—',
                 competitorDescription:
                     competitorResult?.aiResolutionsCost > 0
-                        ? `${(hello?.aiResolved || 0).toLocaleString()} × ${formatCurrency(competitorResult?.perResolution || 0)}`
-                        : '—',
+                        ? competitorResult?.model === 'zenvia_tiered'
+                            ? `${Math.max(0, (hello?.aiResolved || 0) - (competitorResult?.includedCredits || 0)).toLocaleString()} extra × ${formatCurrency(competitorResult?.extraCreditFee || 0)}`
+                            : `${(hello?.aiResolved || 0).toLocaleString()} × ${formatCurrency(competitorResult?.perResolution || 0)}`
+                        : competitorResult?.perResolution === 0 || competitorResult?.model === 'base_seat_tiered'
+                          ? 'Included in plan'
+                          : '—',
             },
         ];
 

@@ -59,7 +59,13 @@ export default function CostComparisonResults({
 
     const getBaseSubDesc = () => {
         if (competitorResult.basePlanCost > 0) {
-            if (competitorResult.model === 'crisp_tiered' || competitorResult.model === 'zenvia_tiered') {
+            if (
+                competitorResult.model === 'crisp_tiered' ||
+                competitorResult.model === 'zenvia_tiered' ||
+                competitorResult.model === 'base_seat_tiered' ||
+                competitorResult.model === 'base_conv_tiered' ||
+                competitorResult.selectedPlanName
+            ) {
                 return tableDetails?.baseSubWithPlan?.replace('{plan}', competitorResult.selectedPlanName);
             }
             if (competitorResult.model === 'flat') return tableDetails?.flatBaseSub;
@@ -69,17 +75,32 @@ export default function CostComparisonResults({
     };
 
     const getSeatsDesc = () => {
-        if (competitorResult.model === 'seat' || competitorResult.model === 'seat_res') {
+        if (
+            competitorResult.model === 'seat' ||
+            competitorResult.model === 'seat_res' ||
+            competitorResult.model === 'seat_tiered'
+        ) {
             return tableDetails?.seatsCost
                 ?.replace('{agents}', agents)
                 .replace('{price}', formatCurrency(competitorResult.perAgent));
         }
-        if (competitorResult.model === 'base_seat') {
-            const extraSeats = Math.max(0, agents - competitor.includedSeats);
-            const priceStr = formatCurrency(competitorResult.extraSeat || competitorResult.perAgent);
+        if (competitorResult.model === 'base_seat' || competitorResult.model === 'base_seat_tiered') {
+            const extraSeats = Math.max(0, agents - (competitorResult.includedSeats ?? competitor.includedSeats ?? 0));
+            const priceStr = formatCurrency(
+                competitorResult.extraSeatFee || competitorResult.extraSeat || competitorResult.perAgent
+            );
+            if (extraSeats === 0) return tableDetails?.noSeatCharges;
             if (extraSeats === 1)
                 return tableDetails?.extraSeatsCostSingle?.replace('{seats}', extraSeats).replace('{price}', priceStr);
             return tableDetails?.extraSeatsCostPlural?.replace('{seats}', extraSeats).replace('{price}', priceStr);
+        }
+        if (competitorResult.model === 'zenvia_tiered') {
+            const extraUsers = Math.max(0, agents - (competitorResult.includedUsers || 0));
+            const priceStr = formatCurrency(competitorResult.extraUserFee || 0);
+            if (extraUsers === 0) return tableDetails?.noSeatCharges;
+            if (extraUsers === 1)
+                return tableDetails?.extraSeatsCostSingle?.replace('{seats}', extraUsers).replace('{price}', priceStr);
+            return tableDetails?.extraSeatsCostPlural?.replace('{seats}', extraUsers).replace('{price}', priceStr);
         }
         return tableDetails?.noSeatCharges;
     };
@@ -94,18 +115,39 @@ export default function CostComparisonResults({
     };
 
     const getUsageDesc = () => {
-        if (competitorResult.model === 'base_conv') {
-            return tableDetails?.usageCost
-                ?.replace('{tickets}', hello.tickets.toLocaleString())
-                .replace('{price}', formatCurrency(competitorResult.perConv));
+        if (competitorResult.model === 'base_conv' || competitorResult.model === 'base_conv_tiered') {
+            if (competitorResult.usageCost > 0) {
+                return tableDetails?.usageCost
+                    ?.replace('{tickets}', hello.tickets.toLocaleString())
+                    .replace('{price}', formatCurrency(competitorResult.perConv));
+            }
+            const incConvs = competitorResult.includedConvs ?? competitor.includedConvs;
+            if (incConvs && incConvs !== Infinity) {
+                if (hello.tickets > incConvs) {
+                    return tableDetails?.contactSalesOverage
+                        ?.replace('{tickets}', hello.tickets.toLocaleString())
+                        ?.replace('{included}', incConvs.toLocaleString());
+                }
+                return (
+                    tableDetails?.withinQuotaIncluded?.replace('{included}', incConvs.toLocaleString()) ||
+                    tableDetails?.withinQuota
+                );
+            }
+            return tableDetails?.fallbackDash;
         }
         return tableDetails?.fallbackDash;
     };
 
     const getAiResolutionsDesc = () => {
         if (competitorResult.aiResolutionsCost > 0) {
-            if (competitorResult.model === 'crisp_tiered' || competitorResult.model === 'zenvia_tiered') {
+            if (competitorResult.model === 'crisp_tiered') {
                 return tableDetails?.overageAboveAllowance;
+            }
+            if (competitorResult.model === 'zenvia_tiered') {
+                const extraCredits = Math.max(0, hello.aiResolved - (competitorResult.includedCredits || 0));
+                return tableDetails?.extraTicketsCost
+                    ?.replace('{tickets}', extraCredits.toLocaleString())
+                    .replace('{price}', formatCurrency(competitorResult.extraCreditFee));
             }
             if (competitorResult.perResolution > 0) {
                 return tableDetails?.aiResolvedCost
@@ -114,26 +156,38 @@ export default function CostComparisonResults({
             }
             return tableDetails?.fallbackDash;
         }
-        if (competitorResult.perResolution === 0) return tableDetails?.aiIncludedInPlan;
+        if (competitorResult.perResolution === 0 || competitorResult.model === 'base_seat_tiered') {
+            return tableDetails?.aiIncludedInPlan;
+        }
         if (hello.aiResolved === 0) return tableDetails?.zeroAiResolved;
         return tableDetails?.fallbackDash;
     };
 
     const baseSubValue =
         competitorResult.basePlanCost > 0 ? formatCurrency(competitorResult.basePlanCost) : tableDetails?.fallbackDash;
-    const seatsValue = ['seat', 'seat_res', 'base_seat'].includes(competitorResult.model)
+    const seatsValue = ['seat', 'seat_res', 'base_seat', 'seat_tiered', 'base_seat_tiered', 'zenvia_tiered'].includes(
+        competitorResult.model
+    )
         ? formatCurrency(competitorResult.agentSeatsCost)
         : tableDetails?.fallbackDash;
     const aiSeatValue =
         competitorResult.aiSeatCost > 0 ? formatCurrency(competitorResult.aiSeatCost) : tableDetails?.fallbackDash;
-    const usageValue =
-        competitorResult.model === 'base_conv'
-            ? formatCurrency(competitorResult.usageCost)
-            : tableDetails?.fallbackDash;
+    let usageValue = tableDetails?.fallbackDash;
+    if (competitorResult.model === 'base_conv' || competitorResult.model === 'base_conv_tiered') {
+        if (competitorResult.usageCost > 0) {
+            usageValue = formatCurrency(competitorResult.usageCost);
+        } else {
+            const incConvs = competitorResult.includedConvs ?? competitor.includedConvs;
+            if (incConvs && incConvs !== Infinity && hello.tickets > incConvs) {
+                usageValue = tableDetails?.contactSales || 'Contact sales';
+            }
+        }
+    }
 
     let aiResolutionsValue = tableDetails?.fallbackDash;
     if (competitorResult.aiResolutionsCost > 0) aiResolutionsValue = formatCurrency(competitorResult.aiResolutionsCost);
-    else if (competitorResult.perResolution === 0) aiResolutionsValue = formatCurrency(0);
+    else if (competitorResult.perResolution === 0 || competitorResult.model === 'base_seat_tiered')
+        aiResolutionsValue = formatCurrency(0);
     else if (hello.aiResolved === 0) aiResolutionsValue = '—';
 
     return (
