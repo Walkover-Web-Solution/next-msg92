@@ -61,6 +61,7 @@ export default function RegistrationForm({ data }) {
                     name: formValues?.fullName,
                     phone: formValues?.phoneNumber,
                     email: formValues?.email,
+                    dob: formValues?.dob,
                     website: formValues?.website,
                     transport: formValues?.travelMode,
                 }),
