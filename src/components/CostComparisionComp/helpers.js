@@ -105,6 +105,7 @@ export function calculatePlatformCosts(
     let extraCreditFee = competitor?.extraCreditFee || 0;
     let includedSeats = competitor?.includedSeats || 0;
     let extraSeatFee = competitor?.extraSeatFee || competitor?.extraSeat || 0;
+    let includedConvs = competitor?.includedConvs || 0;
     let setupFee = competitor?.setupFee || 0;
 
     const resolveCompetitorPlan = () => {
@@ -163,8 +164,17 @@ export function calculatePlatformCosts(
             compAiResolutionsCostUSD = (competitor.perResolution || 0) * aiResolved;
             break;
         }
-        case 'base_conv': {
-            compBasePlanCostUSD = competitor.basePlan;
+        case 'base_conv':
+        case 'base_conv_tiered': {
+            const chosenPlan = resolveCompetitorPlan();
+            if (chosenPlan) {
+                selectedPlanName = chosenPlan?.name || '';
+                compBasePlanCostUSD = chosenPlan?.base || 0;
+                includedConvs = chosenPlan?.includedConvs ?? 0;
+            } else {
+                compBasePlanCostUSD = competitor.basePlan || 0;
+                includedConvs = competitor.includedConvs || 0;
+            }
             compUsageCostUSD = tickets * (competitor.perConv || 0);
             compBaseUSD = compBasePlanCostUSD + compUsageCostUSD;
             compAiResolutionsCostUSD = (competitor.perResolution || 0) * aiResolved;
@@ -263,6 +273,7 @@ export function calculatePlatformCosts(
             extraCreditFee: extraCreditFee * currencyRate,
             includedSeats,
             extraSeatFee: extraSeatFee * currencyRate,
+            includedConvs,
             setupFee: setupFee * currencyRate,
             plans: competitor.plans,
             aiResolved: aiResolved,
