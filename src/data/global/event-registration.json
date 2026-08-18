@@ -46,6 +46,12 @@
                     "placeholder": "you@company.com"
                 },
                 {
+                    "name": "dob",
+                    "label": "Date of Birth",
+                    "type": "text",
+                    "placeholder": "DD/MM/YYYY"
+                },
+                {
                     "name": "website",
                     "label": "Website",
                     "type": "text",
