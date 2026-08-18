@@ -2,6 +2,7 @@ import { useRef, useState } from 'react';
 import { MdArrowForward, MdCheckCircle } from 'react-icons/md';
 import { toast } from 'react-toastify';
 import MobileOtpField from './MobileOtpField';
+import DobScrollPicker from './DobScrollPicker';
 
 const MOBILE_REGEX = /^[+]?[0-9]{7,15}$/;
 const EMAIL_REGEX =
@@ -61,6 +62,7 @@ export default function RegistrationForm({ data }) {
                     name: formValues?.fullName,
                     phone: formValues?.phoneNumber,
                     email: formValues?.email,
+                    dob: formValues?.dob,
                     website: formValues?.website,
                     transport: formValues?.travelMode,
                 }),
@@ -122,6 +124,18 @@ export default function RegistrationForm({ data }) {
                                         data={data?.otp}
                                         disabled={isLoading}
                                         onVerifiedChange={setIsMobileVerified}
+                                    />
+                                );
+                            }
+                            if (field?.name === 'dob' || field?.type === 'date') {
+                                return (
+                                    <DobScrollPicker
+                                        key={index}
+                                        field={field}
+                                        value={formValues?.[field?.name]}
+                                        onChange={handleChange}
+                                        disabled={isLoading}
+                                        readOnly={isLockedByOtp}
                                     />
                                 );
                             }
