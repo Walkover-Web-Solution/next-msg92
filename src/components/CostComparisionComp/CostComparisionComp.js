@@ -30,7 +30,7 @@ export default function CostComparisionComp({ data, pageInfo }) {
     const [apiPlans, setApiPlans] = useState([]);
     const [loadingApi, setLoadingApi] = useState(false);
 
-    const apiCurrency = currency === 'BRL' ? 'USD' : currency;
+    const apiCurrency = currency;
 
     const fetchPlans = useCallback(async () => {
         setLoadingApi(true);

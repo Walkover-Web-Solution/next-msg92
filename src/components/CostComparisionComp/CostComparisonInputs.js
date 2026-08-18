@@ -210,7 +210,7 @@ export default function CostComparisonInputs({
 
             <div className='cont gap-2 border-t border-gray-100 py-5'>
                 <span className='text-xs font-bold uppercase'>{data?.labels?.currency}</span>
-                <div className='grid grid-cols-5 gap-1 rounded-xl border border-gray-200 bg-gray-100 p-1'>
+                <div className='grid grid-cols-4 gap-1 rounded-xl border border-gray-200 bg-gray-100 p-1'>
                     {CURRENCY_ORDER.map((currency_option) => (
                         <button
                             key={currency_option}
