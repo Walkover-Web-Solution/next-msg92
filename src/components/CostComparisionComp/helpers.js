@@ -61,7 +61,8 @@ export function calculatePlatformCosts(
     aiRateInput,
     currency,
     CURRENCY_RATES,
-    apiPlans = []
+    apiPlans = [],
+    selectedCompetitorPlanName = ''
 ) {
     const tickets = ticketsInput === '' ? 0 : Math.max(0, Math.floor(Number(ticketsInput)));
     const agents = agentsInput === '' ? 1 : Math.max(1, Math.floor(Number(agentsInput)));
@@ -101,16 +102,50 @@ export function calculatePlatformCosts(
     let compAiSeatCostUSD = 0;
     let compUsageCostUSD = 0;
 
+    let planPerAgent = competitor?.perAgent || 0;
+    let planPerResolution = competitor?.perResolution ?? 0;
+    let includedUsers = competitor?.includedUsers || 0;
+    let extraUserFee = competitor?.extraUserFee || 0;
+    let includedCredits = competitor?.includedCredits || 0;
+    let extraCreditFee = competitor?.extraCreditFee || 0;
+    let includedSeats = competitor?.includedSeats || 0;
+    let extraSeatFee = competitor?.extraSeatFee || competitor?.extraSeat || 0;
+    let setupFee = competitor?.setupFee || 0;
+
+    const resolveCompetitorPlan = () => {
+        if (!Array.isArray(competitor?.plans) || competitor.plans.length === 0) return null;
+        if (selectedCompetitorPlanName) {
+            const found = competitor.plans.find((p) => p.name === selectedCompetitorPlanName);
+            if (found) return found;
+        }
+        if (competitor.defaultPlan) {
+            const foundDefault = competitor.plans.find((p) => p.name === competitor.defaultPlan);
+            if (foundDefault) return foundDefault;
+        }
+        return competitor.plans[0];
+    };
+
     switch (competitor.model) {
         case 'seat': {
             compAgentSeatsCostUSD = agents * competitor.perAgent;
-            compAiSeatCostUSD = agents * competitor.aiPerAgent;
+            compAiSeatCostUSD = agents * (competitor.aiPerAgent || 0);
             compBaseUSD = compAgentSeatsCostUSD + compAiSeatCostUSD;
+            compAiResolutionsCostUSD = (competitor.perResolution || 0) * aiResolved;
             break;
         }
         case 'seat_res': {
             compAgentSeatsCostUSD = agents * competitor.perAgent;
             compBaseUSD = compAgentSeatsCostUSD;
+            compAiResolutionsCostUSD = (competitor.perResolution || 0) * aiResolved;
+            break;
+        }
+        case 'seat_tiered': {
+            const chosenPlan = resolveCompetitorPlan();
+            selectedPlanName = chosenPlan?.name || '';
+            planPerAgent = chosenPlan?.perAgent || 0;
+            compAgentSeatsCostUSD = agents * planPerAgent;
+            compBaseUSD = compAgentSeatsCostUSD;
+            compAiResolutionsCostUSD = (competitor.perResolution || 0) * aiResolved;
             break;
         }
         case 'base_seat': {
@@ -118,73 +153,69 @@ export function calculatePlatformCosts(
             const extraSeats = Math.max(0, agents - competitor.includedSeats);
             compAgentSeatsCostUSD = extraSeats * competitor.extraSeat;
             compBaseUSD = compBasePlanCostUSD + compAgentSeatsCostUSD;
+            compAiResolutionsCostUSD = (competitor.perResolution || 0) * aiResolved;
+            break;
+        }
+        case 'base_seat_tiered': {
+            const chosenPlan = resolveCompetitorPlan();
+            selectedPlanName = chosenPlan?.name || '';
+            compBasePlanCostUSD = chosenPlan?.base || 0;
+            includedSeats = chosenPlan?.includedSeats || 0;
+            extraSeatFee = chosenPlan?.extraSeatFee || 0;
+            const extraSeats = Math.max(0, agents - includedSeats);
+            compAgentSeatsCostUSD = extraSeats * extraSeatFee;
+            compBaseUSD = compBasePlanCostUSD + compAgentSeatsCostUSD;
+            compAiResolutionsCostUSD = (competitor.perResolution || 0) * aiResolved;
             break;
         }
         case 'base_conv': {
             compBasePlanCostUSD = competitor.basePlan;
-            compUsageCostUSD = tickets * competitor.perConv;
+            compUsageCostUSD = tickets * (competitor.perConv || 0);
             compBaseUSD = compBasePlanCostUSD + compUsageCostUSD;
+            compAiResolutionsCostUSD = (competitor.perResolution || 0) * aiResolved;
             break;
         }
         case 'flat': {
             compBasePlanCostUSD = competitor.basePlanBRL / CURRENCY_RATES.BRL.rate;
             compBaseUSD = compBasePlanCostUSD;
+            compAiResolutionsCostUSD = (competitor.perResolution || 0) * aiResolved;
             break;
         }
         case 'crisp_tiered': {
-            let cheapestCost = Infinity;
-            let chosenPlan = competitor.plans[0];
-
-            for (const competitorPlan of competitor.plans) {
-                if (aiResolved > 0 && competitorPlan.includedAIConvs === 0 && competitorPlan.perResolution === 0) {
-                    continue;
-                }
-                const cost =
-                    competitorPlan.base +
-                    Math.max(0, aiResolved - competitorPlan.includedAIConvs) * competitorPlan.perResolution;
-                if (cost < cheapestCost) {
-                    cheapestCost = cost;
-                    chosenPlan = competitorPlan;
-                }
-            }
-
-            selectedPlanName = chosenPlan.name;
-            compBasePlanCostUSD = chosenPlan.base;
-            compAiResolutionsCostUSD = Math.max(0, aiResolved - chosenPlan.includedAIConvs) * chosenPlan.perResolution;
+            const chosenPlan = resolveCompetitorPlan();
+            selectedPlanName = chosenPlan?.name || '';
+            compBasePlanCostUSD = chosenPlan?.base || 0;
+            const overageAIConvs = Math.max(0, aiResolved - (chosenPlan?.includedAIConvs || 0));
+            compAiResolutionsCostUSD = overageAIConvs * (chosenPlan?.perResolution || 0);
             compBaseUSD = compBasePlanCostUSD + compAiResolutionsCostUSD;
             break;
         }
         case 'zenvia_tiered': {
-            let cheapestCost = Infinity;
-            let chosenPlan = competitor.plans[0];
+            const chosenPlan = resolveCompetitorPlan();
+            selectedPlanName = chosenPlan?.name || '';
+            compBasePlanCostUSD = chosenPlan?.base || 0;
+            includedUsers = chosenPlan?.includedUsers || 0;
+            extraUserFee = chosenPlan?.extraUserFee || 0;
+            includedCredits = chosenPlan?.includedCredits || 0;
+            extraCreditFee = chosenPlan?.extraCreditFee || 0;
+            setupFee = chosenPlan?.setupFee || 0;
 
-            for (const competitorPlan of competitor.plans) {
-                const cost =
-                    competitorPlan.base +
-                    Math.max(0, aiResolved - competitorPlan.includedCredits) * competitorPlan.overage;
-                if (cost < cheapestCost) {
-                    cheapestCost = cost;
-                    chosenPlan = competitorPlan;
-                }
-            }
+            const extraUsers = Math.max(0, agents - includedUsers);
+            const extraCredits = Math.max(0, aiResolved - includedCredits);
 
-            selectedPlanName = chosenPlan.name;
-            compBasePlanCostUSD = chosenPlan.base;
-            compAiResolutionsCostUSD = Math.max(0, aiResolved - chosenPlan.includedCredits) * chosenPlan.overage;
-            compBaseUSD = compBasePlanCostUSD + compAiResolutionsCostUSD;
+            compAgentSeatsCostUSD = extraUsers * extraUserFee;
+            compAiResolutionsCostUSD = extraCredits * extraCreditFee;
+            compBaseUSD = compBasePlanCostUSD + compAgentSeatsCostUSD + compAiResolutionsCostUSD;
             break;
         }
         default:
             break;
     }
 
-    if (competitor.model !== 'crisp_tiered' && competitor.model !== 'zenvia_tiered') {
-        compAiResolutionsCostUSD = competitor.perResolution * aiResolved;
-    }
-
     const compTotalUSD =
-        compBaseUSD +
-        (competitor.model === 'crisp_tiered' || competitor.model === 'zenvia_tiered' ? 0 : compAiResolutionsCostUSD);
+        competitor.model === 'crisp_tiered' || competitor.model === 'zenvia_tiered'
+            ? compBaseUSD
+            : compBaseUSD + compAiResolutionsCostUSD;
 
     const compBase = compBaseUSD * currencyRate;
     const compTotal = compTotalUSD * currencyRate;
@@ -227,10 +258,17 @@ export function calculatePlatformCosts(
             aiSeatCost: compAiSeatCost,
             usageCost: compUsageCost,
             aiResolutionsCost: compAiResolutionsCost,
-            perAgent: competitor.perAgent * currencyRate,
-            aiPerAgent: competitor.aiPerAgent * currencyRate,
-            perConv: competitor.perConv * currencyRate,
-            perResolution: competitor.perResolution * currencyRate,
+            perAgent: planPerAgent * currencyRate,
+            aiPerAgent: (competitor.aiPerAgent || 0) * currencyRate,
+            perConv: (competitor.perConv || 0) * currencyRate,
+            perResolution: planPerResolution * currencyRate,
+            includedUsers,
+            extraUserFee: extraUserFee * currencyRate,
+            includedCredits,
+            extraCreditFee: extraCreditFee * currencyRate,
+            includedSeats,
+            extraSeatFee: extraSeatFee * currencyRate,
+            setupFee: setupFee * currencyRate,
             plans: competitor.plans,
             aiResolved: aiResolved,
         },
