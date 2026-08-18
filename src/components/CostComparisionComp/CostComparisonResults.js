@@ -62,7 +62,9 @@ export default function CostComparisonResults({
             if (
                 competitorResult.model === 'crisp_tiered' ||
                 competitorResult.model === 'zenvia_tiered' ||
-                competitorResult.model === 'base_seat_tiered'
+                competitorResult.model === 'base_seat_tiered' ||
+                competitorResult.model === 'base_conv_tiered' ||
+                competitorResult.selectedPlanName
             ) {
                 return tableDetails?.baseSubWithPlan?.replace('{plan}', competitorResult.selectedPlanName);
             }
@@ -113,10 +115,25 @@ export default function CostComparisonResults({
     };
 
     const getUsageDesc = () => {
-        if (competitorResult.model === 'base_conv' && competitorResult.usageCost > 0) {
-            return tableDetails?.usageCost
-                ?.replace('{tickets}', hello.tickets.toLocaleString())
-                .replace('{price}', formatCurrency(competitorResult.perConv));
+        if (competitorResult.model === 'base_conv' || competitorResult.model === 'base_conv_tiered') {
+            if (competitorResult.usageCost > 0) {
+                return tableDetails?.usageCost
+                    ?.replace('{tickets}', hello.tickets.toLocaleString())
+                    .replace('{price}', formatCurrency(competitorResult.perConv));
+            }
+            const incConvs = competitorResult.includedConvs ?? competitor.includedConvs;
+            if (incConvs && incConvs !== Infinity) {
+                if (hello.tickets > incConvs) {
+                    return tableDetails?.contactSalesOverage
+                        ?.replace('{tickets}', hello.tickets.toLocaleString())
+                        ?.replace('{included}', incConvs.toLocaleString());
+                }
+                return (
+                    tableDetails?.withinQuotaIncluded?.replace('{included}', incConvs.toLocaleString()) ||
+                    tableDetails?.withinQuota
+                );
+            }
+            return tableDetails?.fallbackDash;
         }
         return tableDetails?.fallbackDash;
     };
@@ -155,10 +172,17 @@ export default function CostComparisonResults({
         : tableDetails?.fallbackDash;
     const aiSeatValue =
         competitorResult.aiSeatCost > 0 ? formatCurrency(competitorResult.aiSeatCost) : tableDetails?.fallbackDash;
-    const usageValue =
-        competitorResult.model === 'base_conv' && competitorResult.usageCost > 0
-            ? formatCurrency(competitorResult.usageCost)
-            : tableDetails?.fallbackDash;
+    let usageValue = tableDetails?.fallbackDash;
+    if (competitorResult.model === 'base_conv' || competitorResult.model === 'base_conv_tiered') {
+        if (competitorResult.usageCost > 0) {
+            usageValue = formatCurrency(competitorResult.usageCost);
+        } else {
+            const incConvs = competitorResult.includedConvs ?? competitor.includedConvs;
+            if (incConvs && incConvs !== Infinity && hello.tickets > incConvs) {
+                usageValue = tableDetails?.contactSales || 'Contact sales';
+            }
+        }
+    }
 
     let aiResolutionsValue = tableDetails?.fallbackDash;
     if (competitorResult.aiResolutionsCost > 0) aiResolutionsValue = formatCurrency(competitorResult.aiResolutionsCost);

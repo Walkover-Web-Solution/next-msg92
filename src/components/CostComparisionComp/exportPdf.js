@@ -365,13 +365,26 @@ export async function generateCostComparisonPdf({
                 helloValue: hello?.extraCost > 0 ? formatCurrency(hello.extraCost) : formatCurrency(0),
                 helloColor: getCssVariable('--text-primary', '#111827'),
                 competitorValue:
-                    competitorResult?.model === 'base_conv' && competitorResult?.usageCost > 0
+                    (competitorResult?.model === 'base_conv' || competitorResult?.model === 'base_conv_tiered') &&
+                    competitorResult?.usageCost > 0
                         ? formatCurrency(competitorResult?.usageCost || 0)
-                        : '—',
+                        : (competitorResult?.includedConvs || competitor?.includedConvs) &&
+                            (competitorResult?.includedConvs || competitor?.includedConvs) !== Infinity &&
+                            (hello?.tickets || 0) > (competitorResult?.includedConvs || competitor?.includedConvs)
+                          ? 'Contact sales'
+                          : '—',
                 competitorDescription:
-                    competitorResult?.model === 'base_conv' && competitorResult?.usageCost > 0
+                    (competitorResult?.model === 'base_conv' || competitorResult?.model === 'base_conv_tiered') &&
+                    competitorResult?.usageCost > 0
                         ? `${(hello?.tickets || 0).toLocaleString()} × ${formatCurrency(competitorResult?.perConv || 0)}`
-                        : '—',
+                        : (competitorResult?.includedConvs || competitor?.includedConvs) &&
+                            (competitorResult?.includedConvs || competitor?.includedConvs) !== Infinity &&
+                            (hello?.tickets || 0) > (competitorResult?.includedConvs || competitor?.includedConvs)
+                          ? `${(hello?.tickets || 0).toLocaleString()} > ${(competitorResult?.includedConvs || competitor?.includedConvs).toLocaleString()} included · Contact sales`
+                          : (competitorResult?.includedConvs || competitor?.includedConvs) &&
+                              (competitorResult?.includedConvs || competitor?.includedConvs) !== Infinity
+                            ? `Within ${(competitorResult?.includedConvs || competitor?.includedConvs).toLocaleString()} included quota`
+                            : '—',
             },
             {
                 title: 'AI Bot Resolutions',
