@@ -103,6 +103,7 @@
                 "aiRate": "% of tickets resolved by AI / bot",
                 "aiRatePlaceholder": "e.g. 50",
                 "competitor": "Select Competitor to Compare",
+                "competitorPlan": "Plan Tier",
                 "globalProviders": "GLOBAL PROVIDERS",
                 "brazilProviders": "BRAZIL PROVIDERS",
                 "currency": "Currency",

@@ -21,6 +21,10 @@ export default function CostComparisionComp({ data, pageInfo }) {
     const [competitorKey, setCompetitorKey] = useState(
         ALL_COMPETITORS[data?.defaults?.competitor] ? data.defaults.competitor : 'zendesk'
     );
+    const initialCompetitor = ALL_COMPETITORS[data?.defaults?.competitor] || ALL_COMPETITORS.zendesk;
+    const [competitorPlanName, setCompetitorPlanName] = useState(
+        initialCompetitor?.defaultPlan || initialCompetitor?.plans?.[0]?.name || ''
+    );
     const [currency, setCurrency] = useState(CURRENCY_RATES[data?.defaultCurrency] ? data.defaultCurrency : 'USD');
 
     const [apiPlans, setApiPlans] = useState([]);
@@ -49,9 +53,30 @@ export default function CostComparisionComp({ data, pageInfo }) {
     const plan = HELLO_PLANS[planKey];
     const competitor = ALL_COMPETITORS[competitorKey];
 
+    useEffect(() => {
+        if (competitor?.plans?.length) {
+            const found = competitor.plans.find((p) => p.name === competitorPlanName);
+            if (!found) {
+                setCompetitorPlanName(competitor.defaultPlan || competitor.plans[0].name);
+            }
+        } else {
+            setCompetitorPlanName('');
+        }
+    }, [competitorKey, competitor]);
+
     const calculation = useMemo(() => {
-        return calculatePlatformCosts(plan, competitor, tickets, agents, aiRate, currency, CURRENCY_RATES, apiPlans);
-    }, [plan, competitor, tickets, agents, aiRate, currency, apiPlans]);
+        return calculatePlatformCosts(
+            plan,
+            competitor,
+            tickets,
+            agents,
+            aiRate,
+            currency,
+            CURRENCY_RATES,
+            apiPlans,
+            competitorPlanName
+        );
+    }, [plan, competitor, tickets, agents, aiRate, currency, apiPlans, competitorPlanName]);
 
     if (!data) return null;
 
@@ -81,6 +106,8 @@ export default function CostComparisionComp({ data, pageInfo }) {
                         setAiRate={setAiRate}
                         competitorKey={competitorKey}
                         setCompetitorKey={setCompetitorKey}
+                        competitorPlanName={competitorPlanName}
+                        setCompetitorPlanName={setCompetitorPlanName}
                         currency={currency}
                         setCurrency={setCurrency}
                         planKey={planKey}
