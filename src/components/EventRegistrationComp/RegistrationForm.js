@@ -2,6 +2,7 @@ import { useRef, useState } from 'react';
 import { MdArrowForward, MdCheckCircle } from 'react-icons/md';
 import { toast } from 'react-toastify';
 import MobileOtpField from './MobileOtpField';
+import DobScrollPicker from './DobScrollPicker';
 
 const MOBILE_REGEX = /^[+]?[0-9]{7,15}$/;
 const EMAIL_REGEX =
@@ -126,19 +127,25 @@ export default function RegistrationForm({ data }) {
                                     />
                                 );
                             }
+                            if (field?.name === 'dob' || field?.type === 'date') {
+                                return (
+                                    <DobScrollPicker
+                                        key={index}
+                                        field={field}
+                                        value={formValues?.[field?.name]}
+                                        onChange={handleChange}
+                                        disabled={isLoading}
+                                        readOnly={isLockedByOtp}
+                                    />
+                                );
+                            }
                             return (
                                 <div key={index} className='flex flex-col gap-1.5'>
                                     <label className='text-xs font-bold text-slate-700' htmlFor={field?.name}>
                                         {field?.label}
                                     </label>
                                     <input
-                                        className={`input input-bordered w-full bg-white text-sm ${
-                                            field?.type === 'date'
-                                                ? !formValues?.[field?.name]
-                                                    ? 'text-slate-400 uppercase'
-                                                    : 'text-slate-800'
-                                                : 'text-slate-800'
-                                        }`}
+                                        className='input input-bordered w-full bg-white text-sm'
                                         id={field?.name}
                                         name={field?.name}
                                         type={field?.type}
@@ -147,21 +154,6 @@ export default function RegistrationForm({ data }) {
                                         onChange={handleChange}
                                         disabled={isLoading}
                                         readOnly={isLockedByOtp}
-                                        max={
-                                            field?.type === 'date' ? new Date().toISOString().split('T')[0] : undefined
-                                        }
-                                        onClick={(e) => {
-                                            if (
-                                                field?.type === 'date' &&
-                                                !isLockedByOtp &&
-                                                !isLoading &&
-                                                e?.target?.showPicker
-                                            ) {
-                                                try {
-                                                    e.target.showPicker();
-                                                } catch (err) {}
-                                            }
-                                        }}
                                     />
                                 </div>
                             );

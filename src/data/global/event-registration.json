@@ -62,7 +62,7 @@
                 "label": "How will you be traveling to the venue?",
                 "options": [
                     "Public Transport",
-                    "Own car"
+                    "Own Car"
                 ]
             },
             "submit_btn": "Submit",
