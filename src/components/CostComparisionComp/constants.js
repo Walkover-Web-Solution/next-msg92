@@ -13,7 +13,6 @@ export const HELLO_PLANS = {
 
 export const CURRENCY_RATES = {
     USD: { symbol: '$', rate: 1, locale: 'en-US' },
-    BRL: { symbol: 'R$', rate: 5.12, locale: 'pt-BR' },
     INR: { symbol: '₹', rate: 95.3, locale: 'en-IN' },
     AED: { symbol: 'AED ', rate: 3.6725, locale: 'en-AE' },
     GBP: { symbol: 'GBP ', rate: 0.79, locale: 'en-GB' },
@@ -163,9 +162,9 @@ export const COMPETITORS = {
             name: 'Blip Go',
             region: 'brazil',
             model: 'flat',
-            basePlanBRL: 299,
+            basePlan: 58.4,
             perResolution: 0,
-            note: 'Blip Go R$299/month — AI included (blip.ai)',
+            note: 'Blip Go ~$58.40/month (R$299) — AI included (blip.ai)',
         },
         {
             key: 'zenvia',
@@ -246,6 +245,6 @@ export const ALL_COMPETITORS = [...COMPETITORS.global, ...COMPETITORS.brazil].re
     return accumulator;
 }, {});
 
-export const CURRENCY_ORDER = ['USD', 'BRL', 'INR', 'AED', 'GBP'];
+export const CURRENCY_ORDER = ['USD', 'INR', 'AED', 'GBP'];
 export const INPUT_MIN = 0;
 export const INPUT_MAX = 9999999999;

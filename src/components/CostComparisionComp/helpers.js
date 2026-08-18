@@ -84,11 +84,6 @@ export function calculatePlatformCosts(
         includedTickets = includedTickets < 0 ? Infinity : 0;
     }
 
-    if (currency === 'BRL') {
-        helloBase = helloBase * currencyRate;
-        helloExtraRate = helloExtraRate * currencyRate;
-    }
-
     const extraTickets = Math.max(0, tickets - includedTickets);
     const helloOverage = extraTickets * helloExtraRate;
     const helloTotal = helloBase + helloOverage;
@@ -176,7 +171,7 @@ export function calculatePlatformCosts(
             break;
         }
         case 'flat': {
-            compBasePlanCostUSD = competitor.basePlanBRL / CURRENCY_RATES.BRL.rate;
+            compBasePlanCostUSD = competitor.basePlan || 0;
             compBaseUSD = compBasePlanCostUSD;
             compAiResolutionsCostUSD = (competitor.perResolution || 0) * aiResolved;
             break;
@@ -301,9 +296,6 @@ export function formatCurrencyAmount(amount, currencyCode, CURRENCY_RATES) {
             break;
         case 'AED':
             locale = 'en-AE';
-            break;
-        case 'BRL':
-            locale = 'pt-BR';
             break;
         case 'GBP':
             locale = 'en-GB';
