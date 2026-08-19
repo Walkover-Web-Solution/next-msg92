@@ -1,20 +1,45 @@
 {
     "HeadComp": {
-        "title": "Hello, free for India startups. | MSG91",
+        "title": "Hello, Free For India Startups. | MSG91",
         "description": "Full customer-support software — omnichannel inbox, AI chatbot, and automation — completely free for early-stage Indian businesses under ₹40 lakh in annual revenue."
     },
     "HelloStartupBanner": {
         "badge": true,
         "badge_text": "Hello For Indian Startups",
         "heading_prefix": "Hello,",
-        "heading_accent": "free for India startups.",
-        "heading": "Hello, free for India startups.",
+        "heading_accent": "Free For India Startups.",
+        "heading": "Hello, Free For India Startups.",
         "description": "Full customer-support software — omnichannel inbox, Al chatbot, and automation — completely free for early-stage Indian businesses under ₹40 lakh in annual revenue. Build your customer experience now; pay only when you've grown.",
-        "primary_btn": "Apply fro free access",
+        "primary_btn": "Apply for free access",
         "primary_btn_link": "https://msg91.com/startups-form",
         "secondary_btn": "Read eligibility & terms",
-        "secondary_btn_link": "#eligibility",
-        "trusted_strip": "TRUSTED BY 30,000+ GLOBAL BUSINESSES · XIAOMI · RAZORPAY · UNACADEMY · BAJAJ FINSERV · APOLLO 24×7"
+        "secondary_btn_link": "/hello-for-startups-terms",
+        "secondary_btn_target": "_blank",
+        "trusted_by": {
+            "title": "TRUSTED BY 30,000+ GLOBAL BUSINESSES",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Razorpay",
+                    "url": "/assets/trusted_by/razorpay.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Bajaj Finserv",
+                    "url": "/assets/trusted_by/bajaj_finserve.svg"
+                },
+                {
+                    "name": "Apollo 24x7",
+                    "url": "/assets/trusted_by/apollo_247.svg"
+                }
+            ]
+        }
     },
     "HelloStartupWhy": {
         "heading": "Why we built this",
@@ -108,7 +133,7 @@
                 "sublabel": "Al usage policy\napplies"
             }
         ],
-        "notice": "Cross any of these caps and you'll simply be invited to upgrade to a paid plan — your account and data continue uninterrupted."
+        "notice": "Cross any of these caps and you'll simply be invited to <span class='text-accent underline cursor-pointer'>upgrade to a paid plan</span> — your account and data continue uninterrupted."
     },
     "HelloStartupSteps": {
         "heading": "How it works",
@@ -139,9 +164,9 @@
         "heading": "When you grow, you keep everything",
         "description": "Crossing 40 lakh is a good problem. When you do, your data, conversations and setup stay exactly as they are — you just move to a paid Hello plan. No migration, no disruption."
     },
-    "FaqsComp": {
+    "Faqs": {
         "heading": "Frequently asked questions",
-        "faqs": [
+        "items": [
             {
                 "question": "Is it genuinely free?",
                 "answer": "Yes — within the usage limits above, for as long as you remain eligible."
@@ -167,7 +192,7 @@
     "HelloStartupFooterCta": {
         "heading": "Big-company support, while you're still small.",
         "description": "Apply for Hello Free for Startups and give your customers the experience they deserve.",
-        "btn_text": "Apply fro free access",
+        "btn_text": "Apply for free access",
         "btn_link": "https://msg91.com/startups-form"
     }
 }
