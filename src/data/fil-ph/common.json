@@ -335,6 +335,10 @@
                     "link": "startups"
                 },
                 {
+                    "name": "Hello for startups",
+                    "link": "hello-for-startups"
+                },
+                {
                     "name": "Mga Partner at Integrasyon",
                     "link": "partners-and-integrations"
                 },
