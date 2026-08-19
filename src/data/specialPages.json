@@ -25,7 +25,9 @@
         "signup",
         "startups-form",
         "chatbot",
-        "event-registration"
+        "event-registration",
+        "hello-for-startups",
+        "hello-for-startups-terms"
     ],
     "products": [
         "hello",

@@ -77,6 +77,14 @@ import EventRegistrationComp from '@/components/EventRegistrationComp';
 import CategoriesComp from '@/components/ReportsComp/CategoriesComp/CategoriesComp';
 import SetupStepsComp from '@/components/ReportsComp/SetupStepsComp/SetupStepsComp';
 import ImageWithBgComp from '@/components/ImageWithBgComp/ImageWithBgComp';
+import HelloStartupBanner from '@/components/HelloStartupComp/BannerComp/BannerComp';
+import HelloStartupWhy from '@/components/HelloStartupComp/WhyBuiltComp/WhyBuiltComp';
+import HelloStartupEligibility from '@/components/HelloStartupComp/EligibilityComp/EligibilityComp';
+import HelloStartupPlan from '@/components/HelloStartupComp/IncludedPlanComp/IncludedPlanComp';
+import HelloStartupSteps from '@/components/HelloStartupComp/StepsComp/StepsComp';
+import HelloStartupGrow from '@/components/HelloStartupComp/CalloutComp/CalloutComp';
+import HelloStartupFooterCta from '@/components/HelloStartupComp/FooterCtaComp/FooterCtaComp';
+import HelloStartupTerms from '@/components/HelloStartupComp/TermsComp/HelloStartupTerms';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -180,6 +188,14 @@ const Components = {
     CategoriesComp,
     SetupStepsComp,
     ImageWithBgComp,
+    HelloStartupBanner,
+    HelloStartupWhy,
+    HelloStartupEligibility,
+    HelloStartupPlan,
+    HelloStartupSteps,
+    HelloStartupGrow,
+    HelloStartupFooterCta,
+    HelloStartupTerms,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
