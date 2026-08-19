@@ -72,6 +72,14 @@ import Faqs from '@/components/HelloBrComp/FaqsComp/Faqs';
 import G2Badges from '@/components/HelloBrComp/G2BadgesComp/G2Badges';
 import Pricing from '@/components/HelloBrComp/PricingComp/Pricing';
 import EventRegistrationComp from '@/components/EventRegistrationComp';
+import HelloStartupBanner from '@/components/HelloStartupComp/BannerComp/BannerComp';
+import HelloStartupWhy from '@/components/HelloStartupComp/WhyBuiltComp/WhyBuiltComp';
+import HelloStartupEligibility from '@/components/HelloStartupComp/EligibilityComp/EligibilityComp';
+import HelloStartupPlan from '@/components/HelloStartupComp/IncludedPlanComp/IncludedPlanComp';
+import HelloStartupSteps from '@/components/HelloStartupComp/StepsComp/StepsComp';
+import HelloStartupGrow from '@/components/HelloStartupComp/CalloutComp/CalloutComp';
+import HelloStartupFooterCta from '@/components/HelloStartupComp/FooterCtaComp/FooterCtaComp';
+import HelloStartupTerms from '@/components/HelloStartupComp/TermsComp/HelloStartupTerms';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -167,6 +175,14 @@ const Components = {
     G2Badges,
     Pricing,
     EventRegistrationComp,
+    HelloStartupBanner,
+    HelloStartupWhy,
+    HelloStartupEligibility,
+    HelloStartupPlan,
+    HelloStartupSteps,
+    HelloStartupGrow,
+    HelloStartupFooterCta,
+    HelloStartupTerms,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
