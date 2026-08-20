@@ -3,11 +3,7 @@ import { MdArrowForward, MdCheckCircle } from 'react-icons/md';
 import { toast } from 'react-toastify';
 import MobileOtpField from './MobileOtpField';
 import DobScrollPicker from './DobScrollPicker';
-
-const MOBILE_REGEX = /^[+]?[0-9]{7,15}$/;
-const EMAIL_REGEX =
-    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-const WEBSITE_REGEX = /^(https?:\/\/)?([a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}(\/.*)?$/i;
+import { EMAIL_REGEX, MOBILE_REGEX, WEBSITE_REGEX } from '@/components/signupComp/SignUp';
 
 export default function RegistrationForm({ data }) {
     const defaultTravelMode = data?.travel?.options?.[0] || '';
