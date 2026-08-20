@@ -40,7 +40,11 @@ export default function BannerComp({ pageInfo, data }) {
                         </span>
                         {data?.product ? (
                             <h1
-                                className={`${data?.slug === 'whatsapp' || data?.slug === 'reports' ? 'whatsapp__' : ''}heading`}
+                                className={
+                                    data?.slug === 'whatsapp' || data?.slug === 'reports'
+                                        ? 'whatsapp__heading'
+                                        : 'heading'
+                                }
                             >
                                 {data?.heading}
                             </h1>
@@ -48,7 +52,11 @@ export default function BannerComp({ pageInfo, data }) {
                             <h1 className='heading'>{data?.heading}</h1>
                         )}
                         <p
-                            className={`${data?.slug === 'whatsapp' || data?.slug === 'reports' ? 'whatsapp__subheading' : 'subheading'}`}
+                            className={
+                                data?.slug === 'whatsapp' || data?.slug === 'reports'
+                                    ? 'whatsapp__subheading'
+                                    : 'subheading'
+                            }
                         >
                             {data?.subheading}
                         </p>
