@@ -72,8 +72,8 @@ import Faqs from '@/components/HelloBrComp/FaqsComp/Faqs';
 import G2Badges from '@/components/HelloBrComp/G2BadgesComp/G2Badges';
 import Pricing from '@/components/HelloBrComp/PricingComp/Pricing';
 import EventRegistrationComp from '@/components/EventRegistrationComp';
-import ReportsOverviewComp from '@/components/ReportsComp/ReportsOverviewComp/ReportsOverviewComp';
-import ReportsStepsComp from '@/components/ReportsComp/ReportsStepsComp/ReportsStepsComp';
+import CategoriesComp from '@/components/ReportsComp/CategoriesComp/CategoriesComp';
+import SetupStepsComp from '@/components/ReportsComp/SetupStepsComp/SetupStepsComp';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -171,8 +171,8 @@ const Components = {
     G2Badges,
     Pricing,
     EventRegistrationComp,
-    ReportsOverviewComp,
-    ReportsStepsComp,
+    CategoriesComp,
+    SetupStepsComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {

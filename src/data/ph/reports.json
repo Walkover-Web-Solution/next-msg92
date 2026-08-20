@@ -42,7 +42,7 @@
             ]
         }
     },
-    "ReportsOverviewComp": {
+    "CategoriesComp": {
         "tagline": "Real-Time Unified Intelligence",
         "heading": "Unified Communication Analytics Dashboard",
         "subheading": "Turn communication data into actionable insights and track performance across all channels in real time.",
@@ -645,7 +645,7 @@
             "schedule_meet": "Book a Meeting"
         }
     },
-    "ReportsStepsComp": {
+    "SetupStepsComp": {
         "label": "Simple Setup",
         "heading": "How MSG91 Reports Works",
         "subheading": "Get Actionable Insights in Four Simple Steps — MSG91 Reports is designed to help businesses monitor and optimize customer communications without any complex setup.",

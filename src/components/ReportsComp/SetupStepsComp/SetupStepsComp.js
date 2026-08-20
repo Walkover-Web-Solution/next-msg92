@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 
-export default function ReportsStepsComp({ data }) {
+export default function SetupStepsComp({ data }) {
     if (!data?.steps?.length) return null;
 
     return (

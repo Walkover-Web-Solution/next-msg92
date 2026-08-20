@@ -42,7 +42,7 @@
             ]
         }
     },
-    "ReportsOverviewComp": {
+    "CategoriesComp": {
         "tagline": "Inteligência Unificada em Tempo Real",
         "heading": "Painel Unificado de Análise de Comunicação",
         "subheading": "Transforme dados de comunicação em insights acionáveis e acompanhe o desempenho em todos os canais em tempo real.",
@@ -645,7 +645,7 @@
             "schedule_meet": "Agendar Reunião"
         }
     },
-    "ReportsStepsComp": {
+    "SetupStepsComp": {
         "label": "Configuração Simples",
         "heading": "Como Funciona o MSG91 Reports",
         "subheading": "Obtenha Insights Estratégicos em Quatro Passos Simples — O MSG91 Reports foi projetado para ajudar empresas a monitorar e otimizar comunicações sem qualquer complexidade técnica.",

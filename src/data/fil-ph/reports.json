@@ -42,7 +42,7 @@
             ]
         }
     },
-    "ReportsOverviewComp": {
+    "CategoriesComp": {
         "tagline": "Real-Time na Pinag-isang Katalinuhan",
         "heading": "Pinag-isang Dashboard para sa Analytics ng Komunikasyon",
         "subheading": "Gawing naaaksyunang insight ang datos ng komunikasyon at subaybayan ang performance sa lahat ng channel sa real time.",
@@ -645,7 +645,7 @@
             "schedule_meet": "Mag-iskedyul ng Pulong"
         }
     },
-    "ReportsStepsComp": {
+    "SetupStepsComp": {
         "label": "Simpleng Setup",
         "heading": "Paano Gumagana ang MSG91 Reports",
         "subheading": "Kumuha ng mga Naaaksyunang Insight sa Apat na Simpleng Hakbang — Dinisenyo ang MSG91 Reports upang tulungan ang mga negosyo na subaybayan at i-optimize ang komunikasyon nang walang kumplikadong setup.",

@@ -1,6 +1,6 @@
 import GetMdIcons from '@/utils/getMdIcons';
 
-export default function ReportsOverviewComp({ data }) {
+export default function CategoriesComp({ data }) {
     if (!data?.categories?.length) return null;
 
     return (
