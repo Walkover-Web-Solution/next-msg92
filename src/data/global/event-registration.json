@@ -74,6 +74,7 @@
                 "required": "Please fill all the required fields.",
                 "mobile": "Please enter a valid mobile number.",
                 "email": "Please enter a valid email address.",
+                "website": "Please enter a valid website URL.",
                 "submit": "Something went wrong. Please try again."
             },
             "otp": {
