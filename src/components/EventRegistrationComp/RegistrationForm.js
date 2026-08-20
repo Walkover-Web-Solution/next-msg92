@@ -3,11 +3,7 @@ import { MdArrowForward, MdCheckCircle } from 'react-icons/md';
 import { toast } from 'react-toastify';
 import MobileOtpField from './MobileOtpField';
 import DobScrollPicker from './DobScrollPicker';
-
-const MOBILE_REGEX = /^[+]?[0-9]{7,15}$/;
-const EMAIL_REGEX =
-    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-const WEBSITE_REGEX = /^(https?:\/\/)?([a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}(\/.*)?$/i;
+import { EMAIL_REGEX, MOBILE_REGEX, WEBSITE_REGEX } from '@/components/SignupCompNew/SignupUtils/constants';
 
 export default function RegistrationForm({ data }) {
     const defaultTravelMode = data?.travel?.options?.[0] || '';
@@ -29,7 +25,7 @@ export default function RegistrationForm({ data }) {
         const fields = data?.fields || [];
 
         const mobileField = fields.find((field) => field?.type === 'tel');
-        if (mobileField && !MOBILE_REGEX.test(formValues?.[mobileField?.name]?.replace(/\s/g, '') || '')) {
+        if (mobileField && !new RegExp(MOBILE_REGEX).test(formValues?.[mobileField?.name]?.replace(/\s/g, '') || '')) {
             toast.error(data?.errors?.mobile);
             return;
         }
@@ -46,13 +42,13 @@ export default function RegistrationForm({ data }) {
             return;
         }
         const emailField = fields.find((field) => field?.type === 'email');
-        if (emailField && !EMAIL_REGEX.test(formValues?.[emailField?.name]?.trim())) {
+        if (emailField && !new RegExp(EMAIL_REGEX).test(formValues?.[emailField?.name]?.trim())) {
             toast.error(data?.errors?.email);
             return;
         }
         const websiteField = fields.find((field) => field?.name === 'website');
-        if (websiteField && !WEBSITE_REGEX.test(formValues?.[websiteField?.name]?.trim())) {
-            toast.error(data?.errors?.website);
+        if (websiteField && !new RegExp(WEBSITE_REGEX).test(formValues?.[websiteField?.name]?.trim())) {
+            toast.error(data?.errors?.website || 'Please enter a valid website URL.');
             return;
         }
 
