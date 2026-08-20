@@ -25,7 +25,7 @@ export default function RegistrationForm({ data }) {
         const fields = data?.fields || [];
 
         const mobileField = fields.find((field) => field?.type === 'tel');
-        if (mobileField && !new RegExp(MOBILE_REGEX).test(formValues?.[mobileField?.name]?.replace(/\s/g, '') || '')) {
+        if (mobileField && !MOBILE_REGEX.test(formValues?.[mobileField?.name]?.replace(/\s/g, '') || '')) {
             toast.error(data?.errors?.mobile);
             return;
         }
@@ -42,12 +42,12 @@ export default function RegistrationForm({ data }) {
             return;
         }
         const emailField = fields.find((field) => field?.type === 'email');
-        if (emailField && !new RegExp(EMAIL_REGEX).test(formValues?.[emailField?.name]?.trim())) {
+        if (emailField && !EMAIL_REGEX.test(formValues?.[emailField?.name]?.trim())) {
             toast.error(data?.errors?.email);
             return;
         }
         const websiteField = fields.find((field) => field?.name === 'website');
-        if (websiteField && !new RegExp(WEBSITE_REGEX).test(formValues?.[websiteField?.name]?.trim())) {
+        if (websiteField && !WEBSITE_REGEX.test(formValues?.[websiteField?.name]?.trim())) {
             toast.error(data?.errors?.website || 'Please enter a valid website URL.');
             return;
         }
