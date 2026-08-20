@@ -3,10 +3,7 @@ import { MdArrowForward, MdCheckCircle } from 'react-icons/md';
 import { toast } from 'react-toastify';
 import MobileOtpField from './MobileOtpField';
 import DobScrollPicker from './DobScrollPicker';
-
-const MOBILE_REGEX = /^[+]?[0-9]{7,15}$/;
-const EMAIL_REGEX =
-    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+import { EMAIL_REGEX, MOBILE_REGEX, WEBSITE_REGEX } from '@/components/signupComp/SignUp';
 
 export default function RegistrationForm({ data }) {
     const defaultTravelMode = data?.travel?.options?.[0] || '';
@@ -33,15 +30,25 @@ export default function RegistrationForm({ data }) {
             return;
         }
         if (mobileField && !isMobileVerified) {
+            toast.error(data?.otp?.errors?.not_verified);
             return;
         }
         if (fields.some((field) => !formValues?.[field?.name]?.trim())) {
             toast.error(data?.errors?.required);
             return;
         }
+        if (data?.travel?.options?.length > 0 && !formValues?.travelMode?.trim()) {
+            toast.error(data?.errors?.required);
+            return;
+        }
         const emailField = fields.find((field) => field?.type === 'email');
         if (emailField && !EMAIL_REGEX.test(formValues?.[emailField?.name]?.trim())) {
             toast.error(data?.errors?.email);
+            return;
+        }
+        const websiteField = fields.find((field) => field?.name === 'website');
+        if (websiteField && !WEBSITE_REGEX.test(formValues?.[websiteField?.name]?.trim())) {
+            toast.error(data?.errors?.website || 'Please enter a valid website URL.');
             return;
         }
 
@@ -154,6 +161,7 @@ export default function RegistrationForm({ data }) {
                                         onChange={handleChange}
                                         disabled={isLoading}
                                         readOnly={isLockedByOtp}
+                                        required
                                     />
                                 </div>
                             );
@@ -177,6 +185,7 @@ export default function RegistrationForm({ data }) {
                                                     checked={formValues?.travelMode === option}
                                                     onChange={handleChange}
                                                     disabled={isLoading}
+                                                    required
                                                 />
                                                 <span className='text-sm font-medium text-slate-700'>{option}</span>
                                             </label>

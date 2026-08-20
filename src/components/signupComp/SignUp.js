@@ -29,9 +29,10 @@ const OTPRetryModes = {
     Email: '3',
     Whatsapp: '12',
 };
-const MOBILE_REGEX = /^[+]?[0-9]{7,15}$/;
-const EMAIL_REGEX =
+export const MOBILE_REGEX = /^[+]?[0-9]{7,15}$/;
+export const EMAIL_REGEX =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+export const WEBSITE_REGEX = /^(https?:\/\/)?([a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}(\/.*)?$/i;
 
 export default class SignUp extends React.Component {
     constructor(props) {
@@ -254,11 +255,11 @@ export default class SignUp extends React.Component {
     };
 
     sendOtp = (identifier, notByEmail) => {
-        if (!new RegExp(EMAIL_REGEX).test(identifier) && !notByEmail) {
+        if (!EMAIL_REGEX.test(identifier) && !notByEmail) {
             toast.error('Invalid email address.');
             return;
         }
-        if (!new RegExp(MOBILE_REGEX).test(identifier) && notByEmail) {
+        if (!MOBILE_REGEX.test(identifier) && notByEmail) {
             toast.error('Invalid mobile number.');
             return;
         }
