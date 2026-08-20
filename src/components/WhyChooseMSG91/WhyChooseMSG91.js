@@ -5,12 +5,8 @@ import { LinkButton, LinkText } from '../UIComponent/Buttons/LinkButton';
 import WhatsAppDriveSales from '../WhatsAppDriveSaled';
 
 export default function WhyChooseMSG91({ data, pageInfo }) {
-    const isReports =
-        pageInfo?.page === 'reports' ||
-        data?.slug === 'reports' ||
-        data?.heading?.includes('Reports') ||
-        data?.heading?.includes('Relatórios');
-    const bgClass = isReports ? 'bg-[var(--color-report-primary-light)]' : 'bg-[#f4fcf4]';
+    const isReports = pageInfo?.page === 'reports';
+    const bgClass = isReports ? 'reports_lite_bg' : 'bg-[#f4fcf4]';
 
     return (
         <div className={bgClass}>
@@ -60,7 +56,7 @@ export default function WhyChooseMSG91({ data, pageInfo }) {
                                     src={item?.img}
                                     width={700}
                                     height={500}
-                                    alt={item?.title || 'Feature'}
+                                    alt={item?.title}
                                     className='w-full h-auto object-contain'
                                 />
                             ) : null}
@@ -68,7 +64,9 @@ export default function WhyChooseMSG91({ data, pageInfo }) {
                     </div>
                 ))}
             </div>
-            <WhatsAppDriveSales data={data?.WhatsAppDriveSales} pageInfo={pageInfo} isReports={isReports} />
+            {data?.WhatsAppDriveSales && (
+                <WhatsAppDriveSales data={data?.WhatsAppDriveSales} pageInfo={pageInfo} isReports={isReports} />
+            )}
         </div>
     );
 }

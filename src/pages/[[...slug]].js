@@ -73,8 +73,6 @@ import G2Badges from '@/components/HelloBrComp/G2BadgesComp/G2Badges';
 import Pricing from '@/components/HelloBrComp/PricingComp/Pricing';
 import EventRegistrationComp from '@/components/EventRegistrationComp';
 import ReportsOverviewComp from '@/components/ReportsComp/ReportsOverviewComp/ReportsOverviewComp';
-import ReportsDashboardComp from '@/components/ReportsComp/ReportsDashboardComp/ReportsDashboardComp';
-import ReportsTrustComp from '@/components/ReportsComp/ReportsTrustComp/ReportsTrustComp';
 import ReportsStepsComp from '@/components/ReportsComp/ReportsStepsComp/ReportsStepsComp';
 
 /* files */
@@ -174,7 +172,6 @@ const Components = {
     Pricing,
     EventRegistrationComp,
     ReportsOverviewComp,
-    ReportsTrustComp,
     ReportsStepsComp,
 };
 
