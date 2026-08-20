@@ -3,7 +3,7 @@ import { MdArrowForward, MdCheckCircle } from 'react-icons/md';
 import { toast } from 'react-toastify';
 import MobileOtpField from './MobileOtpField';
 import DobScrollPicker from './DobScrollPicker';
-import { EMAIL_REGEX, MOBILE_REGEX, WEBSITE_REGEX } from '@/components/SignupCompNew/SignupUtils/constants';
+import { EMAIL_REGEX, MOBILE_REGEX, WEBSITE_REGEX } from '@/components/signupComp/SignUp';
 
 export default function RegistrationForm({ data }) {
     const defaultTravelMode = data?.travel?.options?.[0] || '';
