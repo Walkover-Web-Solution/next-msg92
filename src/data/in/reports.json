@@ -50,7 +50,16 @@
         "categories": [
             {
                 "title": "Customer Communication Analytics",
-                "icon": "communication",
+                "icon": "MdBarChart",
+                "description": "Track delivery, open rates, and customer responses across all messaging channels.",
+                "highlights": [
+                    "SMS",
+                    "WhatsApp",
+                    "Email",
+                    "OTP",
+                    "Voice",
+                    "RCS"
+                ],
                 "metrics": [
                     "SMS delivery performance",
                     "WhatsApp Business message analytics",
@@ -64,7 +73,14 @@
             },
             {
                 "title": "Campaign Performance Analytics",
-                "icon": "campaign",
+                "icon": "MdCampaign",
+                "description": "Measure campaign ROI, click-through rates, and audience engagement in real time.",
+                "highlights": [
+                    "Delivery Rates",
+                    "Read Rates",
+                    "CTR",
+                    "Conversions"
+                ],
                 "metrics": [
                     "Delivery rates",
                     "Read rates",
@@ -78,7 +94,14 @@
             },
             {
                 "title": "Operational Analytics",
-                "icon": "operational",
+                "icon": "MdSettingsSuggest",
+                "description": "Monitor delivery latency, webhook reliability, credit consumption, and queues.",
+                "highlights": [
+                    "Delivery Latency",
+                    "Webhooks",
+                    "Queue Status",
+                    "Billing"
+                ],
                 "metrics": [
                     "Credit consumption",
                     "Billing reports",
@@ -92,7 +115,14 @@
             },
             {
                 "title": "Business Intelligence",
-                "icon": "bi",
+                "icon": "MdTrendingUp",
+                "description": "Executive dashboards and cross-channel intelligence to maximize communication ROI.",
+                "highlights": [
+                    "Executive Views",
+                    "ROI Analysis",
+                    "SLA Tracking",
+                    "Compliance"
+                ],
                 "metrics": [
                     "Executive dashboards",
                     "Marketing performance",

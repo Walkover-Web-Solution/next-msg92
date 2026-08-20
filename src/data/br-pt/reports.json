@@ -50,7 +50,16 @@
         "categories": [
             {
                 "title": "Análise de Comunicação com o Cliente",
-                "icon": "communication",
+                "icon": "MdBarChart",
+                "description": "Acompanhe entrega, taxas de abertura e respostas dos clientes em todos os canais de mensagens.",
+                "highlights": [
+                    "SMS",
+                    "WhatsApp",
+                    "E-mail",
+                    "OTP",
+                    "Voz",
+                    "RCS"
+                ],
                 "metrics": [
                     "Desempenho de entrega de SMS",
                     "Métricas de mensagens do WhatsApp Business",
@@ -64,7 +73,14 @@
             },
             {
                 "title": "Análise de Desempenho de Campanhas",
-                "icon": "campaign",
+                "icon": "MdCampaign",
+                "description": "Meça o ROI de campanhas, taxas de clique e engajamento do público em tempo real.",
+                "highlights": [
+                    "Taxas de Entrega",
+                    "Taxas de Leitura",
+                    "CTR",
+                    "Conversões"
+                ],
                 "metrics": [
                     "Taxas de entrega",
                     "Taxas de leitura",
@@ -78,7 +94,14 @@
             },
             {
                 "title": "Análise Operacional",
-                "icon": "operational",
+                "icon": "MdSettingsSuggest",
+                "description": "Monitore a latência de entrega, confiabilidade dos webhooks, consumo de créditos e filas.",
+                "highlights": [
+                    "Latência de Entrega",
+                    "Webhooks",
+                    "Status de Filas",
+                    "Faturamento"
+                ],
                 "metrics": [
                     "Consumo de créditos",
                     "Relatórios de faturamento",
@@ -92,7 +115,14 @@
             },
             {
                 "title": "Inteligência de Negócios (BI)",
-                "icon": "bi",
+                "icon": "MdTrendingUp",
+                "description": "Painéis executivos e inteligência multicanal para maximizar o ROI de comunicação.",
+                "highlights": [
+                    "Visões Executivas",
+                    "Análise de ROI",
+                    "Rastreamento de SLA",
+                    "Conformidade"
+                ],
                 "metrics": [
                     "Painéis executivos",
                     "Desempenho de marketing",

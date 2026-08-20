@@ -122,7 +122,7 @@ export default function FeatureComp({ data, pageInfo }) {
                                         )}
                                     </div>
                                     {feature?.video ? (
-                                        <div className='w-full xl:max-w-[620px] lg:max-w-[500px] max-w-[300px] p-4 lg:p-6'>
+                                        <div className='w-full lg:max-w-[500px] max-w-[300px] p-4 lg:p-6'>
                                             <video
                                                 className='w-full rounded-lg'
                                                 autoPlay

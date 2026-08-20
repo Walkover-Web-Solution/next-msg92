@@ -50,7 +50,16 @@
         "categories": [
             {
                 "title": "Pagsusuri sa Komunikasyon ng Customer",
-                "icon": "communication",
+                "icon": "MdBarChart",
+                "description": "Subaybayan ang paghahatid, open rates, at tugon ng customer sa lahat ng messaging channel.",
+                "highlights": [
+                    "SMS",
+                    "WhatsApp",
+                    "Email",
+                    "OTP",
+                    "Voice",
+                    "RCS"
+                ],
                 "metrics": [
                     "Performance ng paghahatid ng SMS",
                     "Analytics ng mga mensahe sa WhatsApp Business",
@@ -64,7 +73,14 @@
             },
             {
                 "title": "Analytics sa Performance ng Kampanya",
-                "icon": "campaign",
+                "icon": "MdCampaign",
+                "description": "Sukatin ang ROI ng kampanya, click-through rates, at pakikipag-ugnayan ng audience sa real time.",
+                "highlights": [
+                    "Delivery Rates",
+                    "Read Rates",
+                    "CTR",
+                    "Conversions"
+                ],
                 "metrics": [
                     "Mga rate ng paghahatid (Delivery rates)",
                     "Mga rate ng pagbasa (Read rates)",
@@ -77,8 +93,15 @@
                 ]
             },
             {
-                "title": "Operational Analytics",
-                "icon": "operational",
+                "title": "Analytics sa Operasyon",
+                "icon": "MdSettingsSuggest",
+                "description": "Subaybayan ang latensya ng paghahatid, pagiging maaasahan ng webhook, paggamit ng credit, at mga pila.",
+                "highlights": [
+                    "Latency sa Paghahatid",
+                    "Mga Webhook",
+                    "Katayuan ng Pila",
+                    "Pagsingil"
+                ],
                 "metrics": [
                     "Paggamit ng credit",
                     "Mga ulat sa pagsingil (Billing reports)",
@@ -92,7 +115,14 @@
             },
             {
                 "title": "Business Intelligence (BI)",
-                "icon": "bi",
+                "icon": "MdTrendingUp",
+                "description": "Mga executive dashboard at cross-channel intelligence upang mapataas ang ROI ng komunikasyon.",
+                "highlights": [
+                    "Executive Views",
+                    "Pagsusuri ng ROI",
+                    "Pagsubaybay sa SLA",
+                    "Komporme (Compliance)"
+                ],
                 "metrics": [
                     "Mga executive dashboard",
                     "Performance ng marketing",
