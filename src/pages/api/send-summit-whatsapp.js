@@ -25,7 +25,7 @@ export default async function handler(req, res) {
             messaging_product: 'whatsapp',
             type: 'template',
             template: {
-                name: 'registration_confirmation_5th_sept',
+                name: 'event_ragistration',
                 language: {
                     code: 'en',
                     policy: 'deterministic',

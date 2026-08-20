@@ -217,6 +217,7 @@ export default function DobScrollPicker({ field, value, onChange, disabled, read
                     onFocus={() => !disabled && !readOnly && setIsOpen(true)}
                     disabled={disabled}
                     readOnly={readOnly}
+                    required
                     className={`input input-bordered w-full bg-white pr-10 text-sm font-medium transition-all ${
                         isOpen ? 'border-accent ring-2 ring-accent/15' : ''
                     }`}
