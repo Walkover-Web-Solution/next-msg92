@@ -5,16 +5,13 @@ import { MdArrowForward } from 'react-icons/md';
 export default function BannerComp({ data }) {
     if (!data?.heading && !data?.heading_accent) return null;
 
-    const trustedBy = data?.trusted_by;
-
     return (
         <section className='bg-gradient-to-b from-secondary to-white pt-12 text-center'>
             <div className='container'>
                 <div className='flex flex-col items-center max-w-4xl mx-auto'>
                     {data?.badge && (
                         <div className='inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-secondary text-accent text-xs font-semibold mb-5 shadow-sm'>
-                            <span>🇮🇳</span>
-                            <span>{data?.badge_text}</span>
+                            {data?.badge}
                         </div>
                     )}
 
@@ -23,8 +20,8 @@ export default function BannerComp({ data }) {
                         <span className='text-accent'>{data?.heading_accent}</span>
                     </h1>
 
-                    {data?.description && (
-                        <p className='text-xs sm:text-sm text-gray-700 max-w-xl mx-auto my-12'>{data.description}</p>
+                    {data?.subheading && (
+                        <p className='text-xs sm:text-sm text-gray-700 max-w-xl mx-auto my-12'>{data?.subheading}</p>
                     )}
 
                     <div className='flex items-center justify-center gap-4'>
@@ -40,10 +37,7 @@ export default function BannerComp({ data }) {
                         {data?.secondary_btn && data?.secondary_btn_link && (
                             <a
                                 href={data.secondary_btn_link}
-                                target={
-                                    data?.secondary_btn_target ||
-                                    (data.secondary_btn_link.startsWith('http') ? '_blank' : undefined)
-                                }
+                                target={data?.secondary_btn_target}
                                 className='inline-flex items-center gap-1.5 text-accent text-xs sm:text-sm font-medium'
                             >
                                 <span>{data.secondary_btn}</span>
@@ -54,14 +48,14 @@ export default function BannerComp({ data }) {
                 </div>
             </div>
 
-            {trustedBy?.logos?.length > 0 && (
-                <div className='mt-16 md:mt-20 bg-secondary py-5 px-4 border-t border-blue-100'>
+            {data?.trusted_by?.logos?.length > 0 && (
+                <div className='mt-16 md:mt-20 bg-secondary py-5 px-4 border-t border-gray-200'>
                     <div className='container flex flex-col md:flex-row items-center justify-center gap-4 md:gap-7'>
-                        {trustedBy?.title && (
-                            <span className='text-xs font-semibold text-gray-600'>{trustedBy.title}</span>
+                        {data?.trusted_by?.title && (
+                            <span className='text-xs font-semibold text-gray-600'>{data.trusted_by.title}</span>
                         )}
                         <div className='flex flex-wrap items-center justify-center gap-5 sm:gap-7'>
-                            {trustedBy.logos.map((logo, index) => (
+                            {data?.trusted_by?.logos?.map((logo, index) => (
                                 <Image
                                     key={index}
                                     src={logo?.url}

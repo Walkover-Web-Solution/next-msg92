@@ -4,12 +4,11 @@
         "description": "Full customer-support software — omnichannel inbox, AI chatbot, and automation — completely free for early-stage Indian businesses under ₹40 lakh in annual revenue."
     },
     "HelloStartupBanner": {
-        "badge": true,
-        "badge_text": "Hello For Indian Startups",
+        "badge": "🇮🇳 Hello For Indian Startups",
         "heading_prefix": "Hello,",
         "heading_accent": "Free For India Startups.",
         "heading": "Hello, Free For India Startups.",
-        "description": "Full customer-support software — omnichannel inbox, Al chatbot, and automation — completely free for early-stage Indian businesses under ₹40 lakh in annual revenue. Build your customer experience now; pay only when you've grown.",
+        "subheading": "Full customer-support software — omnichannel inbox, Al chatbot, and automation — completely free for early-stage Indian businesses under ₹40 lakh in annual revenue. Build your customer experience now; pay only when you've grown.",
         "primary_btn": "Apply for free access",
         "primary_btn_link": "https://msg91.com/startups-form",
         "secondary_btn": "Read eligibility & terms",
@@ -46,32 +45,32 @@
         "description": "Early-stage businesses shouldn't have to choose between good customer support and their runway. Hello Free for Startups gives qualifying Indian startups the same platform growing companies pay for — at zero cost — so you can deliver professional, multi-channel support from day one.",
         "cards": [
             {
-                "icon": "inbox",
+                "icon": "💬",
                 "title": "Omnichannel inbox",
                 "description": "WhatsApp, Email, Live Chat, Instagram &\nFacebook — unified in one place."
             },
             {
-                "icon": "chatbot",
+                "icon": "🤖",
                 "title": "AI chatbot",
                 "description": "Auto-resolve routine queries around the clock,\nsubject to fair use."
             },
             {
-                "icon": "automation",
+                "icon": "⚡",
                 "title": "Automation & routing",
                 "description": "Workflow automation, smart routing, and\ncanned responses built in."
             },
             {
-                "icon": "translation",
+                "icon": "🌐",
                 "title": "Real-time translation",
                 "description": "Talk to customers in their language across\nevery channel."
             },
             {
-                "icon": "analytics",
+                "icon": "📊",
                 "title": "Analytics & reporting",
                 "description": "Track response times, resolution and team\nperformance."
             },
             {
-                "icon": "integrations",
+                "icon": "🔌",
                 "title": "150+ integrations",
                 "description": "Connect your CRM, e-commerce and tools.\nLive in minutes, no setup fee."
             }
@@ -106,7 +105,7 @@
     },
     "HelloStartupPlan": {
         "heading": "What's included in your free plan",
-        "description": "The Free Startup Plan gives you full access to Hello — capped at the limits below. Stay within them and you pay nothing.",
+        "subheading": "The Free Startup Plan gives you full access to Hello — capped at the limits below. Stay within them and you pay nothing.",
         "plan_badge": "Free Startup Plan",
         "price": "₹0",
         "period": "/month",
@@ -191,7 +190,7 @@
     },
     "HelloStartupFooterCta": {
         "heading": "Big-company support, while you're still small.",
-        "description": "Apply for Hello Free for Startups and give your customers the experience they deserve.",
+        "subheading": "Apply for Hello Free for Startups and give your customers the experience they deserve.",
         "btn_text": "Apply for free access",
         "btn_link": "https://msg91.com/startups-form"
     }
