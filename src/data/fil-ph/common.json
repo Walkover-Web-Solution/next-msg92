@@ -78,6 +78,11 @@
                         "name": "KnowledgeBase",
                         "slug": "knowledgebase",
                         "description": "Pamahalaan ang mga Dokumento at Gabay"
+                    },
+                    {
+                        "name": "Reports",
+                        "slug": "reports",
+                        "description": "Lahat ng iyong mga ulat sa isang lugar."
                     }
                 ]
             }
@@ -191,6 +196,11 @@
                         "name": "KnowledgeBase",
                         "slug": "knowledgebase",
                         "description": "Pamahalaan ang mga Dokumento at Gabay"
+                    },
+                    {
+                        "name": "Reports",
+                        "slug": "reports",
+                        "description": "Lahat ng iyong mga ulat sa isang lugar."
                     }
                 ]
             }
@@ -237,6 +247,10 @@
                 {
                     "name": "KnowledgeBase",
                     "link": "knowledgebase"
+                },
+                {
+                    "name": "Reports",
+                    "link": "reports"
                 },
                 {
                     "name": "Libreng WhatsApp link generator",

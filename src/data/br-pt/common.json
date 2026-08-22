@@ -80,6 +80,11 @@
                         "name": "KnowledgeBase",
                         "slug": "knowledgebase",
                         "description": "Gerencie Documentos de Ajuda e Guias"
+                    },
+                    {
+                        "name": "Relatórios",
+                        "slug": "reports",
+                        "description": "Todos os seus relatórios em um só lugar."
                     }
                 ]
             }
@@ -195,6 +200,11 @@
                         "name": "KnowledgeBase",
                         "slug": "knowledgebase",
                         "description": "Manage Help Documents and Guides"
+                    },
+                    {
+                        "name": "Relatórios",
+                        "slug": "reports",
+                        "description": "Todos os seus relatórios em um só lugar."
                     }
                 ]
             }
@@ -242,6 +252,10 @@
                 {
                     "name": "KnowledgeBase",
                     "link": "knowledgebase"
+                },
+                {
+                    "name": "Reports",
+                    "link": "reports"
                 },
                 {
                     "name": "Free WhatsApp link generator",

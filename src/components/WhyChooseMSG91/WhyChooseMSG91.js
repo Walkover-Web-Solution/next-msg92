@@ -1,11 +1,15 @@
+import Image from 'next/image';
 import CalendlyModal from '../CalendlyModal';
 import LottiePlayer from '../LottiePlayer/LottiePlayer';
 import { LinkButton, LinkText } from '../UIComponent/Buttons/LinkButton';
 import WhatsAppDriveSales from '../WhatsAppDriveSaled';
 
-export default function WhyChooseMSG91({ data }) {
+export default function WhyChooseMSG91({ data, pageInfo }) {
+    const isReports = pageInfo?.page === 'reports';
+    const bgClass = isReports ? 'reports_lite_bg' : 'bg-[#f4fcf4]';
+
     return (
-        <div className='bg-[#f4fcf4]'>
+        <div className={bgClass}>
             <div className='container cont cont_p cont_gap'>
                 <div className='cont cont_w gap-2 '>
                     <h2 className='text-3xl font-bold'>{data?.heading}</h2>
@@ -45,12 +49,24 @@ export default function WhyChooseMSG91({ data }) {
                             )}
                         </div>
                         <div className='w-full xl:max-w-[700px] lg:max-w-[320px] max-w-[280px] md:mx-6 mx-2 rounded-lg overflow-hidden'>
-                            <LottiePlayer lottie={item?.img} />
+                            {item?.img?.endsWith('.json') ? (
+                                <LottiePlayer lottie={item?.img} />
+                            ) : item?.img ? (
+                                <Image
+                                    src={item?.img}
+                                    width={700}
+                                    height={500}
+                                    alt={item?.title}
+                                    className='w-full h-auto object-contain'
+                                />
+                            ) : null}
                         </div>
                     </div>
                 ))}
             </div>
-            <WhatsAppDriveSales data={data?.WhatsAppDriveSales} />
+            {data?.WhatsAppDriveSales && (
+                <WhatsAppDriveSales data={data?.WhatsAppDriveSales} pageInfo={pageInfo} isReports={isReports} />
+            )}
         </div>
     );
 }

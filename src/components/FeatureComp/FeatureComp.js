@@ -121,7 +121,20 @@ export default function FeatureComp({ data, pageInfo }) {
                                             </>
                                         )}
                                     </div>
-                                    {feature?.img && feature?.img.endsWith('.json') ? (
+                                    {feature?.video ? (
+                                        <div className='w-full lg:max-w-[500px] max-w-[300px] p-4 lg:p-6'>
+                                            <video
+                                                className='w-full rounded-lg'
+                                                autoPlay
+                                                muted
+                                                loop
+                                                playsInline
+                                                aria-label={feature?.name}
+                                            >
+                                                <source src={feature.video} type='video/webm' />
+                                            </video>
+                                        </div>
+                                    ) : feature?.img && feature?.img.endsWith('.json') ? (
                                         <div className='w-full xl:max-w-[600px] lg:max-w-[400px] max-w-[300px] md:mx-6 mx-2'>
                                             <LottiePlayer lottie={feature?.img} />
                                         </div>

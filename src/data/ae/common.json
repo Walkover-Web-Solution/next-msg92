@@ -81,6 +81,11 @@
                         "name": "KnowledgeBase",
                         "slug": "knowledgebase",
                         "description": "Manage Help Documents and Guides"
+                    },
+                    {
+                        "name": "Reports",
+                        "slug": "reports",
+                        "description": "All your reports at one place."
                     }
                 ]
             }
@@ -246,6 +251,10 @@
                 {
                     "name": "KnowledgeBase",
                     "link": "knowledgebase"
+                },
+                {
+                    "name": "Reports",
+                    "link": "reports"
                 },
                 {
                     "name": "Free WhatsApp link generator",
