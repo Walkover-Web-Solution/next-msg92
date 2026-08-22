@@ -1,0 +1,12 @@
+.otp_input {
+    &:focus {
+        border-color: var(--accent-color, #4f46e5);
+        outline: 2px solid var(--accent-color, #4f46e5);
+        outline-offset: 2px;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}

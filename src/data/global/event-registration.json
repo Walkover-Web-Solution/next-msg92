@@ -46,6 +46,12 @@
                     "placeholder": "you@company.com"
                 },
                 {
+                    "name": "dob",
+                    "label": "Date of Birth",
+                    "type": "date",
+                    "placeholder": "DD/MM/YYYY"
+                },
+                {
                     "name": "website",
                     "label": "Website",
                     "type": "text",
@@ -54,7 +60,10 @@
             ],
             "travel": {
                 "label": "How will you be traveling to the venue?",
-                "options": ["Public Transport", "Own car"]
+                "options": [
+                    "Public Transport",
+                    "Own Car"
+                ]
             },
             "submit_btn": "Submit",
             "submitting_btn": "Submitting...",
@@ -65,6 +74,7 @@
                 "required": "Please fill all the required fields.",
                 "mobile": "Please enter a valid mobile number.",
                 "email": "Please enter a valid email address.",
+                "website": "Please enter a valid website URL.",
                 "submit": "Something went wrong. Please try again."
             },
             "otp": {

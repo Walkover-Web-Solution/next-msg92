@@ -25,7 +25,9 @@
         "signup",
         "startups-form",
         "chatbot",
-        "event-registration"
+        "event-registration",
+        "hello-for-startups",
+        "hello-for-startups-terms"
     ],
     "products": [
         "hello",
@@ -78,6 +80,7 @@
         "whatsapp/compare/msg91-vs-interakt",
         "whatsapp/compare/msg91-vs-wati",
         "whatsapp/compare",
-        "sla/hello"
+        "sla/hello",
+        "hello/one-api"
     ]
 }

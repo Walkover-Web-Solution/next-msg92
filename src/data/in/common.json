@@ -3,7 +3,10 @@
     "notification": {
         "support": "Contact Us",
         "login": "LOG IN",
-        "hide": ["signup", "singin"]
+        "hide": [
+            "signup",
+            "singin"
+        ]
     },
     "menu": {
         "products": "Products",
@@ -15,6 +18,11 @@
                         "name": "Hello",
                         "slug": "hello",
                         "description": "Ticketing and Chat"
+                    },
+                    {
+                        "name": "One API",
+                        "slug": "hello/one-api",
+                        "description": "Dynamic Multi-Channel Messaging"
                     },
                     {
                         "name": "Campaign",
@@ -197,10 +205,16 @@
         ],
         "apidocs": "API Docs",
         "signup_btn": "Sign Up",
-        "hide": ["signup", "singin"]
+        "hide": [
+            "signup",
+            "singin"
+        ]
     },
     "footer": {
-        "hide": ["signup", "singin"],
+        "hide": [
+            "signup",
+            "singin"
+        ],
         "products": {
             "name": "Our Products",
             "links": [
@@ -241,6 +255,10 @@
                 {
                     "name": "Free WhatsApp link generator",
                     "link": "free-whatsapp-link-generator"
+                },
+                {
+                    "name": "Free Apple Link Generator",
+                    "link": "free-apple-messages-for-business-link-generator"
                 },
                 {
                     "name": "WhatsApp Chatbot",
@@ -322,6 +340,10 @@
                     "link": "startups"
                 },
                 {
+                    "name": "Hello for startups",
+                    "link": "hello-for-startups"
+                },
+                {
                     "name": "Partners and integrations",
                     "link": "partners-and-integrations"
                 },
@@ -340,6 +362,10 @@
                 {
                     "name": "Compare",
                     "link": "compare"
+                },
+                {
+                    "name": "Cost comparison",
+                    "link": "cost-comparision"
                 }
             ]
         },

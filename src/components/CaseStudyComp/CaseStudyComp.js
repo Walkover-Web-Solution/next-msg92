@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { LinkText } from '../UIComponent/Buttons/LinkButton';
 
 export default function CaseStudyComp({ data, pageInfo }) {
@@ -22,40 +23,48 @@ export default function CaseStudyComp({ data, pageInfo }) {
                     <h2 className='text-3xl font-semibold'>{data?.caseStudies?.heading}</h2>
                     <div className='grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10'>
                         {caseStudies?.map((caseStudy, index) => {
+                            const href = `/case-studies/${caseStudy?.slug}`;
                             return (
-                                <a
+                                <div
                                     key={index}
-                                    href={`/case-studies/${caseStudy?.slug}`}
-                                    className='flex flex-col gap-6 rounded p-6 bg-white LinkButtonCard '
+                                    className='relative flex flex-col gap-6 rounded p-6 bg-white LinkButtonCard '
                                 >
-                                    <Image
-                                        src={`/assets/case-studies/${caseStudy?.slug}.png`}
-                                        width={400}
-                                        height={400}
-                                        alt={caseStudy?.slug}
-                                        className='h-[50px] w-fit '
-                                        loading='lazy'
+                                    {/* Card link as overlay — blurbs include <a>; nesting <a> inside <a> breaks hydration */}
+                                    <Link
+                                        href={href}
+                                        className='absolute inset-0 z-0 rounded'
+                                        aria-label={`View case study: ${caseStudy?.title || caseStudy?.slug}`}
                                     />
-                                    <h3 className='text-xl font-medium'>{caseStudy?.title}</h3>
-                                    <div>
-                                        <div dangerouslySetInnerHTML={{ __html: caseStudy?.caseStudies }}></div>
-                                    </div>
+                                    <div className='relative z-10 flex flex-col gap-6 pointer-events-none [&_a]:pointer-events-auto'>
+                                        <Image
+                                            src={`/assets/case-studies/${caseStudy?.slug}.png`}
+                                            width={400}
+                                            height={400}
+                                            alt={caseStudy?.slug}
+                                            className='h-[50px] w-fit '
+                                            loading='lazy'
+                                        />
+                                        <h3 className='text-xl font-medium'>{caseStudy?.title}</h3>
+                                        <div>
+                                            <div dangerouslySetInnerHTML={{ __html: caseStudy?.caseStudies }}></div>
+                                        </div>
 
-                                    <div className='flex flex-wrap  gap-2'>
-                                        {caseStudy?.tags?.map((tag, i) => {
-                                            return (
-                                                <div
-                                                    key={i}
-                                                    className='bg-gray-100 px-2 py-1 rounded-full text-gray-600'
-                                                >
-                                                    {tag?.name}
-                                                </div>
-                                            );
-                                        })}
-                                    </div>
+                                        <div className='flex flex-wrap  gap-2'>
+                                            {caseStudy?.tags?.map((tag, i) => {
+                                                return (
+                                                    <div
+                                                        key={i}
+                                                        className='bg-gray-100 px-2 py-1 rounded-full text-gray-600'
+                                                    >
+                                                        {tag?.name}
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
 
-                                    <LinkText customClasses={'mt-auto'}>Learn More</LinkText>
-                                </a>
+                                        <LinkText customClasses={'mt-auto'}>Learn More</LinkText>
+                                    </div>
+                                </div>
                             );
                         })}
                     </div>
