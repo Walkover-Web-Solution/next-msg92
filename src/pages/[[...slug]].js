@@ -85,6 +85,8 @@ import HelloStartupSteps from '@/components/HelloStartupComp/StepsComp/StepsComp
 import HelloStartupGrow from '@/components/HelloStartupComp/CalloutComp/CalloutComp';
 import HelloStartupFooterCta from '@/components/HelloStartupComp/FooterCtaComp/FooterCtaComp';
 import HelloStartupTerms from '@/components/HelloStartupComp/TermsComp/HelloStartupTerms';
+import CategoriesComp from '@/components/ReportsComp/CategoriesComp/CategoriesComp';
+import SetupStepsComp from '@/components/ReportsComp/SetupStepsComp/SetupStepsComp';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -169,6 +171,8 @@ const Components = {
     WhatsAppAccountVerification,
     FeatureWithBulletGroup,
     GridFeatureComp,
+    FeatureBulletGroup: FeatureWithBulletGroup,
+    ReportsChannels: FeatureWithBulletGroup,
     FeatureSliderComp,
 
     // New Components
@@ -192,6 +196,8 @@ const Components = {
     HelloStartupGrow,
     HelloStartupFooterCta,
     HelloStartupTerms,
+    CategoriesComp,
+    SetupStepsComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
