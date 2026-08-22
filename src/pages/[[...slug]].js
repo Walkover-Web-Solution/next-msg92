@@ -71,6 +71,7 @@ import FooterCta from '@/components/HelloBrComp/FooterCtaComp/FooterCta';
 import Faqs from '@/components/HelloBrComp/FaqsComp/Faqs';
 import G2Badges from '@/components/HelloBrComp/G2BadgesComp/G2Badges';
 import Pricing from '@/components/HelloBrComp/PricingComp/Pricing';
+import CostComparisionComp from '@/components/CostComparisionComp/CostComparisionComp';
 import EventRegistrationComp from '@/components/EventRegistrationComp';
 
 /* files */
@@ -166,6 +167,7 @@ const Components = {
     Faqs,
     G2Badges,
     Pricing,
+    CostComparisionComp,
     EventRegistrationComp,
 };
 
