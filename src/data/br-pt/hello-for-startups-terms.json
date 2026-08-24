@@ -15,7 +15,7 @@
             {
                 "number": 1,
                 "title": "Sobre este Programa",
-                "content": "O Programa Hello Gratuito para Startups (\"Programa\") é oferecido pela MSG91 (\"MSG91\", \"nós\"). Ele fornece a empresas em estágio inicial no Brasil acesso gratuito à plataforma Hello (\"Hello\"), sujeito a estes Termos e Condições (\"Termos\"). Ao se inscrever, você aceita estes Termos."
+                "content": "O Programa Hello Gratuito para Startups (\"Programa\") é oferecido pela [razão social da MSG91], [endereço] (\"MSG91\", \"nós\"). Ele fornece a empresas em estágio inicial qualificadas no Brasil acesso gratuito à plataforma Hello (\"Hello\"), sujeito a estes Termos e Condições (\"Termos\"). Ao se inscrever, você aceita estes Termos."
             },
             {
                 "number": 2,
@@ -31,7 +31,7 @@
                     },
                     {
                         "term": "\"Limite de Qualificação\"",
-                        "desc": "receita anual inferior a R$ 250.000 (US$ 50.000)."
+                        "desc": "receita anual inferior a R$ 360.000."
                     },
                     {
                         "term": "\"Limites de Uso\"",
@@ -46,71 +46,50 @@
             {
                 "number": 3,
                 "title": "Elegibilidade",
-                "lead": "Para se qualificar, a Empresa deve, no momento da inscrição e durante todo o Acesso Gratuito:",
-                "list_type": "alpha",
-                "list": [
-                    "ser uma entidade legalmente registrada no Brasil com CNPJ ativo (LTDA, MEI, EIRELI, S.A. ou empresário individual);",
-                    "possuir receita anual abaixo do Limite de Qualificação, comprovada por demonstrações financeiras;",
-                    "enviar Documentos de Verificação completos e precisos;",
-                    "operar apenas uma conta gratuita por CNPJ registrado; e",
-                    "aceitar estes Termos."
-                ],
+                "lead": "Para se qualificar, a Empresa deve, no momento da inscrição e durante todo o Acesso Gratuito: (a) ser uma empresa registrada no Brasil; (b) possuir receita anual abaixo do Limite de Qualificação, comprovada por suas demonstrações financeiras; (c) enviar Documentos de Verificação completos e precisos; (d) operar apenas uma conta gratuita por entidade registrada; e (e) aceitar estes Termos. A MSG91 tem total critério para determinar e reavaliar a elegibilidade.",
                 "footer": "A MSG91 tem total critério para determinar e reavaliar a elegibilidade."
             },
             {
                 "number": 4,
                 "title": "Documentos de verificação obrigatórios",
-                "lead": "A Empresa deve enviar:",
-                "list_type": "alpha",
-                "list": [
-                    "demonstração financeira / DRE / DEFIS / DASN-SIMEI do último exercício fiscal mostrando receita anual abaixo de R$ 250.000;",
-                    "comprovante de inscrição no CNPJ; e",
-                    "uma autodeclaração assinada confirmando o valor da receita e a veracidade das informações fornecidas."
-                ],
-                "callout": "Inscrições sem demonstrações financeiras válidas não serão processadas. O envio de documentos falsos resultará em desqualificação e encerramento imediatos."
+                "lead": "A Empresa deve enviar: (a) demonstração financeira auditada do último exercício fiscal, comprovando receita anual abaixo do Limite de Qualificação; (b) comprovante de inscrição da empresa (CNPJ, conforme aplicável); e (c) uma autodeclaração assinada confirmando o valor da receita e a veracidade das informações fornecidas. Inscrições sem a demonstração financeira necessária não serão processadas. O envio de documentos falsos, adulterados ou enganosos resultará em desqualificação e encerramento imediatos.",
+                "callout": "Inscrições sem a demonstração financeira exigida não serão processadas. O envio de documentos falsos resultará em desqualificação e encerramento imediatos."
             },
             {
                 "number": 5,
                 "title": "Escopo do plano gratuito e limites de uso",
-                "lead": "O Acesso Gratuito é limitado a:",
-                "list_type": "bullet",
-                "list": [
-                    "Até 1.000 tickets de suporte por mês;",
-                    "Até 50 atendentes inclusos;",
-                    "Até 2 caixas de entrada / canais;",
-                    "Uso de IA sujeito a política de uso justo."
-                ],
-                "footer": "Recursos não incluídos no plano gratuito e cobranças externas baseadas em uso (por exemplo, tarifas de conversas do WhatsApp/Meta, tarifas de SMS) são cobrados separadamente."
+                "lead": "O Acesso Gratuito é limitado a: até 1.000 tickets de suporte por mês; até 50 atendentes; até 2 caixas de entrada / canais; e uso de IA sujeito a uma política de uso justo. Recursos não incluídos no plano gratuito e cobranças externas baseadas em uso (por exemplo, tarifas de conversas do WhatsApp/Meta, tarifas de SMS, telefonia) são excluídos e cobrados separadamente pela Empresa. A MSG91 poderá ajustar os Limites de Uso mediante aviso prévio.",
+                "footer": "Recursos não incluídos no plano gratuito e cobranças externas baseadas em uso são cobrados separadamente."
             },
             {
                 "number": 6,
                 "title": "Ultrapassagem dos limites de uso",
-                "content": "Se a Empresa exceder qualquer Limite de Uso, a MSG91 poderá convidá-la a fazer upgrade para um plano pago. O uso contínuo além dos limites exige assinatura paga."
+                "content": "Se a Empresa exceder qualquer Limite de Uso, a MSG91 poderá (a) convidar a Empresa a fazer upgrade para um plano pago, e/ou (b) restringir ou pausar funcionalidades acima do limite até o upgrade. O uso contínuo além dos limites exige assinatura paga."
             },
             {
                 "number": 7,
                 "title": "Duração e revisão anual de elegibilidade",
-                "content": "O Acesso Gratuito continua enquanto a Empresa permanecer elegível. A MSG91 revisará a elegibilidade anualmente e poderá solicitar documentos de verificação atualizados."
+                "content": "O Acesso Gratuito continua enquanto a Empresa permanecer elegível. A MSG91 revisará a elegibilidade anualmente e poderá solicitar documentos de verificação atualizados. A Empresa deve notificar prontamente a MSG91 caso sua receita atinja ou exceda o Limite de Qualificação."
             },
             {
                 "number": 8,
                 "title": "Perda de elegibilidade e conversão para plano pago",
-                "content": "Se a Empresa ultrapassar o Limite de Qualificação ou os Limites de Uso, o Acesso Gratuito poderá ser convertido em um plano pago do Hello mediante aviso prévio. A Empresa mantém seus dados."
+                "content": "Se a Empresa exceder o Limite de Qualificação ou os Limites de Uso, falhar na reverificação ou o Programa for encerrado, o Acesso Gratuito poderá ser convertido em um plano pago do Hello mediante aviso prévio. A Empresa mantém e pode exportar seus dados."
             },
             {
                 "number": 9,
                 "title": "Uso justo e aceitável",
-                "content": "O Acesso Gratuito destina-se exclusivamente às operações de suporte ao cliente genuínas da Empresa. É proibida a revenda, compartilhamento de acesso e criação de múltiplas contas por entidade."
+                "content": "O Acesso Gratuito destina-se exclusivamente às operações de atendimento ao cliente autênticas da Empresa. É proibida a revenda, compartilhamento de acesso, criação de múltiplas contas e divisão da empresa para permanecer dentro dos limites."
             },
             {
                 "number": 10,
                 "title": "Proteção de dados",
-                "content": "Os Documentos de Verificação e dados pessoais são tratados de acordo com a Política de Privacidade da MSG91 e a LGPD (Lei Geral de Proteção de Dados)."
+                "content": "Os Documentos de Verificação e dados pessoais são tratados exclusivamente para administrar o Programa, de acordo com a Política de Privacidade da MSG91 e a legislação aplicável. A MSG91 aplica salvaguardas razoáveis de segurança. Documentos financeiros são tratados como confidenciais."
             },
             {
                 "number": 11,
                 "title": "Serviço fornecido \"no estado em que se encontra\"",
-                "content": "O Acesso Gratuito é fornecido \"como está\" e \"conforme disponível\", sem SLA contratual."
+                "content": "O Acesso Gratuito é fornecido \"como está\" e \"conforme disponível\", com suporte padrão/comunitário, sem SLA contratual."
             },
             {
                 "number": 12,
@@ -120,23 +99,24 @@
             {
                 "number": 13,
                 "title": "Alterações no Programa ou nos Termos",
-                "content": "A MSG91 poderá modificar ou descontinuar o Programa ou estes Termos a qualquer momento mediante aviso prévio."
+                "content": "A MSG91 poderá modificar, suspender ou descontinuar o Programa ou estes Termos a qualquer momento mediante aviso prévio."
             },
             {
                 "number": 14,
                 "title": "Limitação de responsabilidade",
-                "content": "Na máxima extensão permitida por lei, a MSG91 não é responsável por danos indiretos ou consequenciais decorrentes do Programa."
+                "content": "Na máxima extensão permitida por lei, a responsabilidade agregada da MSG91 decorrente do Programa é limitada conforme estabelecido nos termos principais do Hello / [valor], e a MSG91 não é responsável por danos indiretos ou consequenciais."
             },
             {
                 "number": 15,
                 "title": "Lei aplicável e jurisdição",
-                "content": "Estes Termos são regidos pelas leis aplicáveis conforme estabelecido nos termos principais da MSG91."
+                "content": "Estes Termos são regidos pelas leis do Brasil, e o foro de [São Paulo / sua sede registrada], Brasil terá jurisdição exclusiva."
             },
             {
                 "number": 16,
                 "title": "Contato",
-                "content": "Para dúvidas sobre o Programa: support@msg91.com."
+                "content": "Para dúvidas sobre o Programa: [e-mail / telefone do programa]."
             }
-        ]
+        ],
+        "disclaimer": "Minuta para revisão — este documento deve ser revisado e aprovado pela assessoria jurídica antes da publicação. Os campos entre colchetes devem ser preenchidos."
     }
 }

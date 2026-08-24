@@ -15,7 +15,7 @@
             {
                 "number": 1,
                 "title": "Tungkol sa Programang Ito",
-                "content": "Ang Hello Libre para sa mga Startup Program (\"Programa\") ay inaalok ng MSG91 (\"MSG91\", \"kami\"). Nagbibigay ito sa mga kwalipikadong early-stage na negosyo sa Pilipinas ng komplimentaryong access sa platform ng Hello (\"Hello\"), alinsunod sa Mga Tuntunin at Kundisyong ito (\"Mga Tuntunin\"). Sa pag-apply, tinatanggap mo ang Mga Tuntuning ito."
+                "content": "Ang Hello Libre para sa mga Startup Program (\"Programa\") ay inaalok ng [pangalan ng legal entity ng MSG91], [tirahan] (\"MSG91\", \"kami\"). Nagbibigay ito sa mga kwalipikadong early-stage na negosyo sa Pilipinas ng komplimentaryong access sa platform ng Hello (\"Hello\"), alinsunod sa Mga Tuntunin at Kundisyong ito (\"Mga Tuntunin\"). Sa pag-apply, tinatanggap mo ang Mga Tuntuning ito."
             },
             {
                 "number": 2,
@@ -31,7 +31,7 @@
                     },
                     {
                         "term": "\"Kwalipikadong Limitasyon\"",
-                        "desc": "taunang kita na mas mababa sa $50,000."
+                        "desc": "taunang kita na mas mababa sa ₱ 2,500,000."
                     },
                     {
                         "term": "\"Mga Limitasyon sa Paggamit\"",
@@ -46,56 +46,35 @@
             {
                 "number": 3,
                 "title": "Kwalipikasyon",
-                "lead": "Upang maging kwalipikado, ang Negosyo ay dapat, sa oras ng aplikasyon at sa buong panahon ng Libreng Access:",
-                "list_type": "alpha",
-                "list": [
-                    "maging isang legal na rehistradong negosyo sa Pilipinas (Korporasyon, Partnership, OPC, o rehistradong Sole Proprietorship);",
-                    "may taunang kita na mas mababa sa Kwalipikadong Limitasyon, batay sa mga financial statement o BIR tax return;",
-                    "magsumite ng kumpleto at tumpak na Mga Dokumento sa Pagpapatunay;",
-                    "magpatakbo lamang ng isang libreng account bawat rehistradong entidad; at",
-                    "tanggapin ang Mga Tuntuning ito."
-                ],
+                "lead": "Upang maging kwalipikado, ang Negosyo ay dapat, sa oras ng aplikasyon at sa buong panahon ng Libreng Access: (a) maging isang rehistradong negosyo sa Pilipinas; (b) may taunang kita na mas mababa sa Kwalipikadong Limitasyon, batay sa mga financial statement; (c) magsumite ng kumpleto at tumpak na Mga Dokumento sa Pagpapatunay; (d) magpatakbo lamang ng isang libreng account bawat rehistradong entidad; at (e) tanggapin ang Mga Tuntuning ito. May sariling pagpapasya ang MSG91 na tukuyin at muling tasahin ang kwalipikasyon.",
                 "footer": "May sariling pagpapasya ang MSG91 na tukuyin at muling tasahin ang kwalipikasyon."
             },
             {
                 "number": 4,
                 "title": "Mga mandatoryong dokumento sa pagpapatunay",
-                "lead": "Dapat magsumite ang Negosyo ng:",
-                "list_type": "alpha",
-                "list": [
-                    "isang financial statement (AFS / BIR ITR) para sa pinakabagong taon ng pananalapi na nagpapakita ng kita na mas mababa sa $50,000;",
-                    "patunay ng rehistrasyon ng negosyo (hal. SEC / DTI / BIR Form 2303); at",
-                    "isang nilagdaang self-declaration na nagpapatunay sa halaga ng kita at katumpakan ng impormasyon."
-                ],
+                "lead": "Dapat magsumite ang Negosyo ng: (a) isang audited financial statement para sa pinakabagong taon ng pananalapi na nagpapakita ng kita na mas mababa sa Kwalipikadong Limitasyon; (b) patunay ng rehistrasyon ng negosyo (DTI / SEC registration, kung naaangkop); at (c) isang nilagdaang self-declaration na nagpapatunay sa halaga ng kita at katumpakan ng impormasyon. Ang mga aplikasyong walang wastong financial statement ay hindi ipoproseso. Ang pagsusumite ng maling dokumento ay magreresulta sa agarang diskwalipikasyon.",
                 "callout": "Ang mga aplikasyong walang wastong financial statement ay hindi ipoproseso. Ang pagsusumite ng maling dokumento ay magreresulta sa agarang diskwalipikasyon."
             },
             {
                 "number": 5,
                 "title": "Saklaw ng libreng tier at mga limitasyon",
-                "lead": "Ang Libreng Access ay limitado sa:",
-                "list_type": "bullet",
-                "list": [
-                    "Hanggang 1,000 support tickets bawat buwan;",
-                    "Hanggang 50 ahente na kasama;",
-                    "Hanggang 2 inbox / channel;",
-                    "Paggamit ng AI na alinsunod sa patakaran ng patas na paggamit."
-                ],
-                "footer": "Ang mga feature na hindi kasama sa libreng tier at mga bayarin batay sa paggamit (hal. bayarin sa WhatsApp/Meta, SMS) ay sisingilin nang hiwalay."
+                "lead": "Ang Libreng Access ay limitado sa: hanggang 1,000 support tickets bawat buwan; hanggang 50 ahente; hanggang 2 inboxes / channels; at paggamit ng AI na alinsunod sa patakaran ng patas na paggamit. Ang mga feature na hindi kasama sa libreng tier at mga bayarin batay sa paggamit (hal. bayarin sa WhatsApp/Meta, SMS, telepono) ay sisingilin nang hiwalay ng Negosyo. Maaaring baguhin ng MSG91 ang mga limitasyon na may paunang abiso.",
+                "footer": "Ang mga feature na hindi kasama sa libreng tier at mga external usage fee ay sisingilin nang hiwalay."
             },
             {
                 "number": 6,
-                "title": "Paglampas sa mga limitasyon",
+                "title": "Paglampas sa mga limitasyon sa paggamit",
                 "content": "Kung lumampas ang Negosyo sa anumang Limitasyon sa Paggamit, maaaring anyayahan ng MSG91 ang Negosyo na mag-upgrade sa bayad na plano. Ang patuloy na paggamit lampas sa mga limitasyon ay nangangailangan ng bayad na subscription."
             },
             {
                 "number": 7,
                 "title": "Tagal at taunang pagsusuri ng kwalipikasyon",
-                "content": "Magpapatuloy ang Libreng Access habang nananatiling kwalipikado ang Negosyo. Susuriin ng MSG91 ang kwalipikasyon taon-taon."
+                "content": "Magpapatuloy ang Libreng Access habang nananatiling kwalipikado ang Negosyo. Susuriin ng MSG91 ang kwalipikasyon taon-taon at maaaring humiling ng mga na-update na dokumento."
             },
             {
                 "number": 8,
                 "title": "Pagkawala ng kwalipikasyon at paglipat sa bayad na plano",
-                "content": "Kung lumampas ang Negosyo sa limitasyon ng kita o mga limitasyon sa paggamit, ang Libreng Access ay maaaring maging regular na bayad na Hello plan pagkatapos ng paunawa. Mananatili ang iyong data."
+                "content": "Kung lumampas ang Negosyo sa Kwalipikadong Limitasyon o mga limitasyon sa paggamit, ang Libreng Access ay maaaring maging regular na bayad na Hello plan pagkatapos ng paunawa. Mananatili ang iyong data."
             },
             {
                 "number": 9,
@@ -105,12 +84,12 @@
             {
                 "number": 10,
                 "title": "Proteksyon ng data",
-                "content": "Ang mga dokumento at personal na data ay ipoproseso alinsunod sa Patakaran sa Privacy ng MSG91 at Philippine Data Privacy Act of 2012."
+                "content": "Ang mga dokumento at personal na data ay ipoproseso alinsunod sa Patakaran sa Privacy ng MSG91 at naaangkop na batas. Ang mga isinumiteng dokumento ay ituturing na kumpidensyal."
             },
             {
                 "number": 11,
                 "title": "Serbisyong ibinigay \"as is\"",
-                "content": "Ang Libreng Access ay ibinibigay sa batayang \"as is\" nang walang kontraktwal na SLA."
+                "content": "Ang Libreng Access ay ibinibigay sa batayang \"as is\" at \"as available\" nang walang kontraktwal na SLA."
             },
             {
                 "number": 12,
@@ -130,13 +109,14 @@
             {
                 "number": 15,
                 "title": "Nalalapat na batas at hurisdiksyon",
-                "content": "Ang Mga Tuntuning ito ay pinamamahalaan ng mga naaangkop na batas tulad ng nakasaad sa mga pangkalahatang tuntunin ng MSG91."
+                "content": "Ang Mga Tuntuning ito ay pinamamahalaan ng mga batas ng Pilipinas, at ang [Maynila / iyong rehistradong tanggapan], Pilipinas ang magkakaroon ng eksklusibong hurisdiksyon."
             },
             {
                 "number": 16,
                 "title": "Kontak",
-                "content": "Para sa mga katanungan tungkol sa Programa: support@msg91.com."
+                "content": "Para sa mga katanungan tungkol sa Programa: [program email / phone]."
             }
-        ]
+        ],
+        "disclaimer": "Draft para sa pagsusuri — ang dokumentong ito ay dapat suriin ng legal counsel bago i-publish."
     }
 }

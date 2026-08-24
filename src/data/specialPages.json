@@ -25,9 +25,7 @@
         "signup",
         "startups-form",
         "chatbot",
-        "event-registration",
-        "hello-for-startups",
-        "hello-for-startups-terms"
+        "event-registration"
     ],
     "products": [
         "hello",
@@ -43,7 +41,9 @@
         "numbers",
         "shorturl",
         "knowledgebase",
-        "push-notification"
+        "push-notification",
+        "hello-for-startups",
+        "hello-for-startups-terms"
     ],
     "countries": [
         "in",

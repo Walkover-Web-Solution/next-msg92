@@ -1,14 +1,14 @@
 {
     "HeadComp": {
-        "title": "Hello, Free For Philippine Startups. | MSG91",
-        "description": "Full customer-support software — omnichannel inbox, AI chatbot, and automation — completely free for early-stage Philippine businesses under $50,000 in annual revenue."
+        "title": "Hello, free for Philippines startups. | MSG91",
+        "description": "Full customer-support software — omnichannel inbox, AI chatbot, and automation — completely free for early-stage businesses in Philippines under ₱ 2,500,000 in annual revenue."
     },
     "HelloStartupBanner": {
-        "badge": "🇵🇭 Hello For Philippine Startups",
+        "badge": "🇵🇭 Hello For Philippines Startups",
         "heading_prefix": "Hello,",
-        "heading_accent": "Free For Philippine Startups.",
-        "heading": "Hello, Free For Philippine Startups.",
-        "subheading": "Full customer-support software — omnichannel inbox, AI chatbot, and automation — completely free for early-stage Philippine businesses under $50,000 in annual revenue. Build your customer experience now; pay only when you've grown.",
+        "heading_accent": "free for Philippines startups.",
+        "heading": "Hello, free for Philippines startups.",
+        "subheading": "Full customer-support software — omnichannel inbox, AI chatbot, and automation — completely free for early-stage businesses in Philippines under ₱ 2,500,000 in annual revenue. Build your customer experience now; pay only when you've grown.",
         "primary_btn": "Apply for free access",
         "primary_btn_link": "https://docs.google.com/forms/d/e/1FAIpQLSf50qTLGF-UjasMyhmZLd4rKt8FtpqA1Q9x2AL3Neor7fk0cg/viewform?usp=send_form",
         "secondary_btn": "Read eligibility & terms",
@@ -42,12 +42,12 @@
     },
     "HelloStartupWhy": {
         "heading": "Why we built this",
-        "description": "Early-stage businesses shouldn't have to choose between good customer support and their runway. Hello Free for Startups gives qualifying Philippine startups the same platform growing companies pay for — at zero cost — so you can deliver professional, multi-channel support from day one.",
+        "description": "Early-stage businesses shouldn't have to choose between good customer support and their runway. Hello Free for Startups gives qualifying Philippines startups the same platform growing companies pay for — at zero cost — so you can deliver professional, multi-channel support from day one. When your business grows past the startup stage, you simply move to a paid plan, keeping all your data and setup.",
         "cards": [
             {
                 "icon": "💬",
                 "title": "Omnichannel inbox",
-                "description": "WhatsApp, Email, Live Chat, Instagram &\nFacebook — unified in one place."
+                "description": "WhatsApp, Email, Live Chat, Instagram, Facebook — unified in one place"
             },
             {
                 "icon": "🤖",
@@ -71,45 +71,45 @@
             },
             {
                 "icon": "🔌",
-                "title": "150+ integrations",
-                "description": "Connect your CRM, e-commerce and tools.\nLive in minutes, no setup fee."
+                "title": "2,200+ integrations",
+                "description": "Connect integrations for the chatbot.\nLive in minutes, no implementation fee."
             }
         ]
     },
     "HelloStartupEligibility": {
         "id": "eligibility",
-        "heading": "Eligibility — you must meet all of these",
+        "heading": "Eligibility — you must meet ALL of the following",
         "description": "To keep this program focused on genuine early-stage businesses, your business qualifies only if it meets every condition below.",
         "cards": [
             {
                 "number": "01",
-                "title": "Registered Philippine business",
-                "description": "A business entity registered in the Philippines — Corporation (SEC), Partnership, OPC, or registered Sole Proprietorship (DTI/BIR). Unregistered individuals are not eligible."
+                "title": "Business type",
+                "description": "You are a registered business in the Philippines."
             },
             {
                 "number": "02",
-                "title": "Revenue below $50,000",
-                "description": "Your annual revenue is below $50,000, as evidenced by your Audited Financial Statements (AFS) or BIR tax returns."
+                "title": "Revenue cap",
+                "description": "Your annual revenue is below ₱ 2,500,000, as evidenced by your financial statements."
             },
             {
                 "number": "03",
-                "title": "Verified financial statements",
-                "description": "A valid financial statement / BIR ITR for the most recent financial year, plus proof of registration (SEC/DTI) and a signed self-declaration."
+                "title": "Mandatory documentation",
+                "description": "Valid audited financial statements (BIR-filed) for the most recent financial year, along with proof of business registration (DTI / SEC registration, as applicable) and a signed self-declaration of annual revenue. Applications without the required financial statement will not be processed."
             },
             {
                 "number": "04",
                 "title": "One account per business",
-                "description": "Only one free Startup account per registered entity. Splitting your business to stay within limits will disqualify you."
+                "description": "Only one free Startup account is permitted per registered entity. Creating multiple accounts or splitting your business to stay within limits will disqualify you."
             }
         ]
     },
     "HelloStartupPlan": {
-        "heading": "What's included in your free plan",
+        "heading": "What you get — free",
         "subheading": "The Free Startup Plan gives you full access to Hello — capped at the limits below. Stay within them and you pay nothing.",
         "plan_badge": "Free Startup Plan",
-        "price": "$0",
+        "price": "₱ 0",
         "period": "/month",
-        "action_badge": "What you get — and the limits",
+        "action_badge": "Usage limits of the free tier",
         "stats": [
             {
                 "label": "UP TO",
@@ -140,7 +140,7 @@
             {
                 "number": "1",
                 "title": "Apply",
-                "description": "Fill the form and upload your SEC/DTI registration and financial statements."
+                "description": "Complete the form and upload your financial statement and registration proof."
             },
             {
                 "number": "2",
@@ -155,13 +155,13 @@
             {
                 "number": "4",
                 "title": "Annual review",
-                "description": "We re-confirm eligibility each year and help you transition smoothly as you grow."
+                "description": "We re-confirm eligibility each year. If you've crossed ₱ 2,500,000 or exceeded usage limits, we'll help you transition smoothly to a paid plan."
             }
         ]
     },
     "HelloStartupGrow": {
         "heading": "When you grow, you keep everything",
-        "description": "Crossing $50,000 revenue is a good problem. When you do, your data, conversations and setup stay exactly as they are — you just move to a paid Hello plan. No migration, no disruption."
+        "description": "Crossing ₱ 2,500,000 is a good problem. When you do, your data, conversations, and setup stay exactly as they are — you just move to a paid Hello plan. No migration, no disruption."
     },
     "Faqs": {
         "heading": "Frequently asked questions",
@@ -171,25 +171,25 @@
                 "answer": "Yes — within the usage limits above, for as long as you remain eligible."
             },
             {
-                "question": "Why do you need financial statements?",
-                "answer": "Financial statements help us verify revenue objectively and ensure this initiative supports early-stage startups that need it most."
+                "question": "Why do you need financial documents?",
+                "answer": "To fairly and consistently verify that your revenue is below ₱ 2,500,000. It is a mandatory requirement of this program."
             },
             {
                 "question": "What if I exceed the ticket or agent limit?",
-                "answer": "If you cross the limits, you will simply be invited to upgrade to a paid Hello plan. Your account and data will continue completely uninterrupted."
+                "answer": "You'll be prompted to upgrade to a paid plan; your account and data continue uninterrupted."
             },
             {
                 "question": "What happens at annual review if I've grown?",
-                "answer": "Crossing $50,000 revenue is great news! We will help you smoothly transition to a regular paid plan with zero migration hassle and no downtime."
+                "answer": "You transition to a paid plan — nothing is lost."
             },
             {
                 "question": "Can access be withdrawn?",
-                "answer": "Access remains active as long as you remain eligible and adhere to fair use policies. If eligibility terms are violated, access may be revoked after prior notice."
+                "answer": "Yes, if eligibility is no longer met or the Terms are breached."
             }
         ]
     },
     "HelloStartupFooterCta": {
-        "heading": "Big-company support, while you're still small.",
+        "heading": "Give your customers big-company support while you're still small.",
         "subheading": "Apply for Hello Free for Startups and give your customers the experience they deserve.",
         "btn_text": "Apply for free access",
         "btn_link": "https://docs.google.com/forms/d/e/1FAIpQLSf50qTLGF-UjasMyhmZLd4rKt8FtpqA1Q9x2AL3Neor7fk0cg/viewform?usp=send_form"
