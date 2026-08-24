@@ -174,7 +174,7 @@
             },
             "secondaryBtn": {
                 "text": "Book a demo",
-                "link": "/contact-us"
+                "link": "https://calendly.com/hello-shared-inbox/hello-meeting"
             }
         }
     }
