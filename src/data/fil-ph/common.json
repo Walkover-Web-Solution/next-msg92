@@ -20,6 +20,11 @@
                         "description": "Ticketing at Chat"
                     },
                     {
+                        "name": "One API",
+                        "slug": "one-api",
+                        "description": "Dynamic Multi-Channel Messaging"
+                    },
+                    {
                         "name": "Campaign",
                         "slug": "campaign",
                         "description": "Automation na Batay sa Kaganapan"
