@@ -1,14 +1,14 @@
 {
     "HeadComp": {
         "title": "Hello, Gratuito para Startups no Brasil. | MSG91",
-        "description": "Software completo de atendimento ao cliente — caixa de entrada omnicanal, chatbot com IA e automação — totalmente gratuito para startups e empresas em estágio inicial no Brasil com faturamento anual de até R$ 250.000."
+        "description": "Software completo de suporte ao cliente — caixa de entrada omnicanal, chatbot com IA e automação — totalmente gratuito para empresas em estágio inicial no Brasil com receita anual abaixo de R$ 360.000."
     },
     "HelloStartupBanner": {
         "badge": "🇧🇷 Hello para Startups Brasileiras",
         "heading_prefix": "Hello,",
         "heading_accent": "Gratuito para Startups no Brasil.",
         "heading": "Hello, Gratuito para Startups no Brasil.",
-        "subheading": "Software completo de suporte ao cliente — caixa de entrada omnicanal, chatbot com IA e automação — 100% gratuito para empresas brasileiras em estágio inicial com faturamento anual abaixo de R$ 250.000 (US$ 50.000). Construa sua experiência de atendimento agora e pague somente quando crescer.",
+        "subheading": "Software completo de suporte ao cliente — caixa de entrada omnicanal, chatbot com IA e automação — totalmente gratuito para empresas em estágio inicial no Brasil com receita anual abaixo de R$ 360.000. Construa sua experiência de atendimento agora; pague somente quando crescer.",
         "primary_btn": "Solicitar acesso gratuito",
         "primary_btn_link": "https://docs.google.com/forms/d/e/1FAIpQLSf50qTLGF-UjasMyhmZLd4rKt8FtpqA1Q9x2AL3Neor7fk0cg/viewform?usp=send_form",
         "secondary_btn": "Ler elegibilidade e termos",
@@ -42,7 +42,7 @@
     },
     "HelloStartupWhy": {
         "heading": "Por que criamos isso",
-        "description": "Empresas em estágio inicial não deveriam ter que escolher entre um bom atendimento ao cliente e o seu fluxo de caixa. O Hello Gratuito para Startups oferece às startups brasileiras qualificadas a mesma plataforma pela qual grandes empresas pagam — a custo zero — para você oferecer suporte profissional e multicanal desde o primeiro dia.",
+        "description": "Empresas em estágio inicial não deveriam ter que escolher entre um bom suporte ao cliente e o seu fluxo de caixa. O Hello Gratuito para Startups oferece às startups brasileiras qualificadas a mesma plataforma pela qual empresas em crescimento pagam — a custo zero — para você oferecer suporte profissional e multicanal desde o primeiro dia. Quando sua empresa crescer além do estágio inicial, você simplesmente migra para um plano pago, mantendo todos os seus dados e configurações.",
         "cards": [
             {
                 "icon": "💬",
@@ -71,45 +71,45 @@
             },
             {
                 "icon": "🔌",
-                "title": "Mais de 150 integrações",
-                "description": "Conecte seu CRM, e-commerce e ferramentas.\nAtivo em minutos, sem taxa de configuração."
+                "title": "Mais de 2.200 integrações",
+                "description": "Conecte integrações para o chatbot.\nAtivo em minutos, sem taxa de implementação."
             }
         ]
     },
     "HelloStartupEligibility": {
         "id": "eligibility",
-        "heading": "Elegibilidade — você deve atender a todos os requisitos",
+        "heading": "Elegibilidade — você deve atender a TODOS os requisitos",
         "description": "Para manter este programa focado em negócios autênticos em estágio inicial, sua empresa só se qualifica se atender a todas as condições abaixo.",
         "cards": [
             {
                 "number": "01",
-                "title": "Empresa registrada no Brasil",
-                "description": "Pessoa jurídica registrada no Brasil com CNPJ ativo — LTDA, MEI, EIRELI, S.A., ou empresário individual. Pessoas físicas sem registro não são elegíveis."
+                "title": "Tipo de empresa",
+                "description": "Você é uma empresa registrada no Brasil com CNPJ ativo."
             },
             {
                 "number": "02",
-                "title": "Receita anual abaixo de R$ 250.000",
-                "description": "Sua receita anual é inferior a R$ 250.000 (US$ 50.000), comprovada por suas demonstrações financeiras (DRE, DEFIS ou DASN-SIMEI)."
+                "title": "Limite de receita",
+                "description": "Sua receita anual é inferior a R$ 360.000, comprovada por suas demonstrações financeiras."
             },
             {
                 "number": "03",
-                "title": "Demonstrações financeiras válidas",
-                "description": "Balanço patrimonial / demonstração financeira válida do último exercício fiscal, comprovante de CNPJ e autodeclaração assinada."
+                "title": "Documentação obrigatória",
+                "description": "Demonstrações financeiras válidas auditadas ou protocoladas (Balanço Patrimonial) do último exercício fiscal, comprovante de inscrição no CNPJ e uma autodeclaração assinada de receita anual."
             },
             {
                 "number": "04",
                 "title": "Uma conta por empresa",
-                "description": "Apenas uma conta gratuita de Startup por CNPJ registrado. A divisão de negócios para permanecer dentro dos limites resultará em desqualificação."
+                "description": "Apenas uma conta gratuita de Startup por CNPJ registrado. A criação de múltiplas contas ou a divisão de negócios resultará em desqualificação."
             }
         ]
     },
     "HelloStartupPlan": {
-        "heading": "O que está incluído no seu plano gratuito",
+        "heading": "O que você recebe — grátis",
         "subheading": "O Plano Gratuito para Startups oferece acesso total ao Hello — limitado aos limites abaixo. Fique dentro deles e não pague nada.",
         "plan_badge": "Plano Gratuito para Startups",
         "price": "R$ 0",
         "period": "/mês",
-        "action_badge": "O que você recebe — e os limites",
+        "action_badge": "Limites de uso do plano gratuito",
         "stats": [
             {
                 "label": "ATÉ",
@@ -140,7 +140,7 @@
             {
                 "number": "1",
                 "title": "Inscreva-se",
-                "description": "Preencha o formulário e envie seu comprovante de CNPJ e demonstrações financeiras."
+                "description": "Preencha o formulário e envie sua demonstração financeira e comprovante de CNPJ."
             },
             {
                 "number": "2",
@@ -155,13 +155,13 @@
             {
                 "number": "4",
                 "title": "Revisão anual",
-                "description": "Reconfirmamos a elegibilidade a cada ano e ajudamos você a fazer a transição à medida que cresce."
+                "description": "Reconfirmamos a elegibilidade a cada ano. Se ultrapassar R$ 360.000 ou exceder os limites de uso, ajudaremos na transição suave para um plano pago."
             }
         ]
     },
     "HelloStartupGrow": {
         "heading": "Quando você crescer, continuará com tudo",
-        "description": "Ultrapassar os limites de receita é um excelente sinal. Quando isso acontecer, seus dados, conversas e configurações permanecerão exatamente como estão — basta migrar para um plano pago do Hello. Sem necessidade de migração e sem interrupções."
+        "description": "Ultrapassar R$ 360.000 é um bom problema. Quando isso acontecer, seus dados, conversas e configurações permanecerão exatamente como estão — basta migrar para um plano pago do Hello. Sem necessidade de migração e sem interrupções."
     },
     "Faqs": {
         "heading": "Perguntas frequentes",
@@ -171,25 +171,25 @@
                 "answer": "Sim — dentro dos limites de uso descritos acima, enquanto você permanecer elegível."
             },
             {
-                "question": "Por que são necessárias demonstrações financeiras?",
-                "answer": "Documentos financeiros nos ajudam a verificar a receita de forma transparente e garantir que esta iniciativa apoie startups em estágio inicial que realmente precisam."
+                "question": "Por que são necessários documentos financeiros?",
+                "answer": "Para verificar de forma justa e consistente que sua receita está abaixo de R$ 360.000. É um requisito obrigatório deste programa."
             },
             {
                 "question": "O que acontece se eu ultrapassar os limites?",
-                "answer": "Se ultrapassar os limites, você receberá um convite para migrar para um plano pago do Hello. Sua conta e seus dados continuarão funcionando normalmente."
+                "answer": "Você receberá um convite para migrar para um plano pago do Hello; sua conta e dados continuarão normalmente."
             },
             {
                 "question": "O que acontece na revisão anual se a minha empresa tiver crescido?",
-                "answer": "Crescer é uma excelente notícia! Nós o ajudaremos a migrar suavemente para um plano pago regular com zero atrito e sem tempo de inatividade."
+                "answer": "Você migra para um plano pago — nada é perdido."
             },
             {
                 "question": "O acesso pode ser cancelado?",
-                "answer": "O acesso permanece ativo enquanto você continuar elegível e cumprir as diretrizes de uso justo. Caso os termos sejam violados, o acesso poderá ser revogado mediante aviso prévio."
+                "answer": "Sim, se a elegibilidade não for mais atendida ou se os Termos forem violados."
             }
         ]
     },
     "HelloStartupFooterCta": {
-        "heading": "Atendimento de grande empresa enquanto você ainda está crescendo.",
+        "heading": "Ofereça suporte de grande empresa enquanto sua empresa ainda está crescendo.",
         "subheading": "Candidate-se ao Hello Gratuito para Startups e proporcione aos seus clientes o atendimento que eles merecem.",
         "btn_text": "Solicitar acesso gratuito",
         "btn_link": "https://docs.google.com/forms/d/e/1FAIpQLSf50qTLGF-UjasMyhmZLd4rKt8FtpqA1Q9x2AL3Neor7fk0cg/viewform?usp=send_form"
