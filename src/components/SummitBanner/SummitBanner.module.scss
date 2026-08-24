@@ -1,0 +1,360 @@
+.summitBannerWrapper {
+  --blue: #2f70d8;
+  --text: #15243b;
+  --muted: #718198;
+  position: relative;
+  width: 100%;
+  padding: 10px 24px;
+  background: radial-gradient(circle at 86% 30%, rgba(76, 133, 226, 0.13), transparent 27%),
+    linear-gradient(180deg, #f7faff, #eef5ff);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  z-index: 99999;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.bannerCard {
+  position: relative;
+  width: 100%;
+  max-width: 1480px;
+  min-height: 112px;
+  margin: auto;
+  padding: 18px 52px 18px 28px;
+  display: grid;
+  grid-template-columns: minmax(330px, 1.2fr) minmax(260px, 0.8fr) minmax(300px, 0.95fr);
+  align-items: center;
+  gap: 28px;
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid #e1e9f4;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(34, 76, 130, 0.1), 0 2px 8px rgba(34, 76, 130, 0.06);
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: linear-gradient(180deg, #3e7ce0, #2364c8);
+  }
+}
+
+.bannerClose {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 1px solid #dbe4ef;
+  border-radius: 50%;
+  background: #f5f8fc;
+  color: #607189;
+  font-size: 15px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: #e4ecf7;
+    color: #15243b;
+  }
+}
+
+.bannerMain {
+  min-width: 0;
+}
+
+.bannerEyebrow {
+  margin: 0 0 5px;
+  color: #527abd;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.55px;
+  text-transform: uppercase;
+}
+
+.bannerTitle {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(20px, 1.7vw, 26px);
+  line-height: 1.15;
+  font-weight: 750;
+  letter-spacing: -0.45px;
+
+  span {
+    display: block;
+    margin-top: 2px;
+    color: var(--blue);
+  }
+}
+
+.bannerPerks {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.25px;
+  text-transform: uppercase;
+}
+
+.bannerDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #5d9aeb;
+}
+
+.bannerDetails {
+  min-width: 0;
+  min-height: 76px;
+  padding-left: 24px;
+  border-left: 1px solid #e1e9f4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bannerDate {
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.bannerTime {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.bannerLocation {
+  margin-top: 8px;
+
+  a {
+    color: var(--blue) !important;
+    text-decoration: none !important;
+    font-size: 14px;
+    font-weight: 750;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+
+    &:hover {
+      text-decoration: underline !important;
+    }
+  }
+}
+
+.bannerCity {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.bannerAction {
+  min-width: 0;
+  min-height: 76px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+}
+
+.countdownWrap {
+  margin-bottom: 6px;
+}
+
+.countdownLabel {
+  margin-bottom: 5px;
+  color: #7b899b;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
+}
+
+.countdown {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.countItem {
+  min-width: 34px;
+}
+
+.countNumber {
+  display: block;
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.countUnit {
+  display: block;
+  margin-top: 3px;
+  color: #7a899c;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.countSeparator {
+  color: #b8c5d6;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+}
+
+.bannerCta {
+  width: auto;
+  min-width: 175px;
+  height: 38px;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #4a80df, #2e6ed6);
+  color: #fff !important;
+  text-decoration: none !important;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  box-shadow: 0 7px 16px rgba(47, 112, 216, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 9px 20px rgba(47, 112, 216, 0.3);
+  }
+}
+
+.bannerArrow {
+  font-size: 15px;
+  margin-left: 6px;
+}
+
+@media (max-width: 1100px) {
+  .summitBannerWrapper {
+    padding: 8px 14px;
+  }
+
+  .bannerCard {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 18px;
+  }
+
+  .bannerAction {
+    grid-column: 1 / -1;
+    border-top: 1px solid #e1e9f4;
+    padding-top: 12px;
+    min-height: 52px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .bannerCta {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .summitBannerWrapper {
+    padding: 8px;
+  }
+
+  .bannerCard {
+    min-height: 0;
+    padding: 17px 18px 16px 20px;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .bannerMain {
+    padding-right: 18px;
+  }
+
+  .bannerTitle {
+    font-size: 20px;
+  }
+
+  .bannerDetails {
+    min-height: 0;
+    padding: 11px 0 0;
+    border-left: 0;
+    border-top: 1px solid #e1e9f4;
+  }
+
+  .bannerAction {
+    grid-column: auto;
+    min-height: 0;
+    padding-top: 11px;
+    border-top: 1px solid #e1e9f4;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .countItem {
+    min-width: 28px;
+  }
+
+  .countNumber {
+    font-size: 16px;
+  }
+
+  .countUnit {
+    font-size: 8px;
+  }
+
+  .bannerCta {
+    width: auto;
+    min-width: 150px;
+    height: 36px;
+    margin-top: 0;
+    font-size: 11px;
+  }
+
+  .bannerClose {
+    top: 7px;
+    right: 7px;
+  }
+}
+
+@media (max-width: 430px) {
+  .bannerAction {
+    display: block;
+  }
+
+  .countdownWrap {
+    margin-bottom: 10px;
+  }
+
+  .bannerCta {
+    width: 100%;
+    min-width: 0;
+  }
+}
