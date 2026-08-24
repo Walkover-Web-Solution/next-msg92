@@ -1,0 +1,142 @@
+{
+    "HeadComp": {
+        "title": "Hello Free for Startups — Terms & Conditions | MSG91",
+        "description": "Terms & Conditions governing participation in the Hello Free for Startups Program in Spain."
+    },
+    "HelloStartupTerms": {
+        "breadcrumb_parent": "Hello Free for Startups",
+        "breadcrumb_link": "/es/hello-for-startups",
+        "breadcrumb_current": "Terms & Conditions",
+        "title": "Hello Free For Startups — Terms & Conditions",
+        "meta": "Spain · Last updated: [date]",
+        "lead": "These Terms & Conditions govern participation in the Hello Free for Startups Program in Spain/EU. Please read them carefully before applying — by submitting an application you accept these Terms.",
+        "nav_title": "ON THIS PAGE",
+        "sections": [
+            {
+                "number": 1,
+                "title": "About this Program",
+                "content": "The Hello Free for Startups Program (\"Program\") is offered by MSG91 (\"MSG91\", \"we\", \"us\"). It provides eligible early-stage businesses complimentary access to the Hello platform (\"Hello\"), subject to these Terms & Conditions (\"Terms\"). By applying, you accept these Terms."
+            },
+            {
+                "number": 2,
+                "title": "Definitions",
+                "definitions": [
+                    {
+                        "term": "\"Applicant\" / \"Business\" / \"you\"",
+                        "desc": "the entity applying for or using the Program."
+                    },
+                    {
+                        "term": "\"Free Access\"",
+                        "desc": "complimentary use of Hello under the Program, within the Usage Limits."
+                    },
+                    {
+                        "term": "\"Qualifying Threshold\"",
+                        "desc": "annual revenue below €50,000."
+                    },
+                    {
+                        "term": "\"Usage Limits\"",
+                        "desc": "the ticket, agent, inbox and other caps stated in Clause 5."
+                    },
+                    {
+                        "term": "\"Verification Documents\"",
+                        "desc": "the documents listed in Clause 4."
+                    }
+                ]
+            },
+            {
+                "number": 3,
+                "title": "Eligibility",
+                "lead": "To qualify, the Business must, at application and throughout Free Access:",
+                "list_type": "alpha",
+                "list": [
+                    "be a validly registered business entity in Spain/EU (SL, SA, or registered Autónomo);",
+                    "have annual revenue below the Qualifying Threshold, evidenced by financial statements or tax returns;",
+                    "submit complete and accurate Verification Documents;",
+                    "operate only one free account per registered entity; and",
+                    "accept these Terms."
+                ],
+                "footer": "MSG91 has sole discretion to determine and re-assess eligibility."
+            },
+            {
+                "number": 4,
+                "title": "Mandatory verification documents",
+                "lead": "The Business must submit:",
+                "list_type": "alpha",
+                "list": [
+                    "a financial statement or annual tax return for the most recent financial year showing annual revenue below €50,000;",
+                    "proof of business registration (e.g. CIF / Registro Mercantil / Autónomo registration); and",
+                    "a signed self-declaration confirming the revenue figure and that the information provided is true."
+                ],
+                "callout": "Applications lacking valid financial documentation will not be processed. Submission of false or misleading documents results in immediate disqualification and termination."
+            },
+            {
+                "number": 5,
+                "title": "Free tier scope & usage limits",
+                "lead": "Free Access is limited to:",
+                "list_type": "bullet",
+                "list": [
+                    "Up to 1,000 support tickets per calendar month;",
+                    "Up to 50 agents;",
+                    "Up to 2 inboxes / channels;",
+                    "AI usage subject to a fair-use policy."
+                ],
+                "footer": "Features not included in the free tier, and external usage-based charges (e.g., WhatsApp/Meta conversation fees, SMS carrier charges, telephony), are excluded and payable separately by the Business."
+            },
+            {
+                "number": 6,
+                "title": "Exceeding usage limits",
+                "content": "If the Business exceeds any Usage Limit, MSG91 may invite the Business to upgrade to a paid plan. Continued use beyond the limits requires a paid subscription."
+            },
+            {
+                "number": 7,
+                "title": "Duration & annual eligibility review",
+                "content": "Free Access continues while the Business remains eligible. MSG91 will review eligibility annually and may request updated Verification Documents."
+            },
+            {
+                "number": 8,
+                "title": "Loss of eligibility & conversion to paid",
+                "content": "If the Business exceeds the Qualifying Threshold or Usage Limits, Free Access may convert to a paid Hello plan upon notice. The Business retains its data."
+            },
+            {
+                "number": 9,
+                "title": "Fair & acceptable use",
+                "content": "Free Access is solely for the Business's own genuine customer-support operations. Reselling, sharing access, and multiple accounts per entity are prohibited."
+            },
+            {
+                "number": 10,
+                "title": "Data protection",
+                "content": "Verification Documents and personal data are processed in accordance with MSG91's Privacy Policy and EU GDPR."
+            },
+            {
+                "number": 11,
+                "title": "Service provided \"as is\"",
+                "content": "Free Access is provided on an \"as is\" and \"as available\" basis without contractual SLA."
+            },
+            {
+                "number": 12,
+                "title": "Suspension & termination",
+                "content": "MSG91 may suspend or terminate Free Access for breach of these Terms, ineligibility, or misuse."
+            },
+            {
+                "number": 13,
+                "title": "Changes to the Program or Terms",
+                "content": "MSG91 may modify or discontinue the Program or these Terms at any time with prior notice."
+            },
+            {
+                "number": 14,
+                "title": "Limitation of liability",
+                "content": "To the maximum extent permitted by law, MSG91 is not liable for indirect or consequential loss arising from the Program."
+            },
+            {
+                "number": 15,
+                "title": "Governing law & jurisdiction",
+                "content": "These Terms are governed by the laws of Spain / EU."
+            },
+            {
+                "number": 16,
+                "title": "Contact",
+                "content": "For questions about the Program: support@msg91.com."
+            }
+        ]
+    }
+}
