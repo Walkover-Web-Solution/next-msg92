@@ -7,21 +7,23 @@ export default function HeadComp({ data, pageInfo }) {
 
     return (
         <>
-            {pageInfo?.page !== 'demochatbot' && pageInfo?.page !== 'contact-us' && (
-                <>
-                    <Script
-                        strategy='afterInteractive'
-                        dangerouslySetInnerHTML={{
-                            __html: `var helloConfig = {
+            {pageInfo?.page !== 'demochatbot' &&
+                pageInfo?.page !== 'contact-us' &&
+                !pageInfo?.baseURL?.startsWith('pricing') && (
+                    <>
+                        <Script
+                            strategy='afterInteractive'
+                            dangerouslySetInnerHTML={{
+                                __html: `var helloConfig = {
               widgetToken: '${isEcommerceStore ? process.env.ECOMMERCE_WIDGET_TOKEN : process.env.CHAT_WIDGET_TOKEN}',
               hide_launcher: false
             };`,
-                        }}
-                    />
+                            }}
+                        />
 
-                    <Script onload='initChatWidget(helloConfig, 0)' src={`${process.env.CHAT_WIDGET_URL}`} />
-                </>
-            )}
+                        <Script onload='initChatWidget(helloConfig, 0)' src={`${process.env.CHAT_WIDGET_URL}`} />
+                    </>
+                )}
 
             <Script
                 strategy='afterInteractive'
