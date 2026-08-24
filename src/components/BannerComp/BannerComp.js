@@ -12,11 +12,7 @@ export default function BannerComp({ pageInfo, data }) {
 
     return (
         <>
-            <div
-                className={`container cont_p flex gap-6 h-fit flex-col lg:flex-row overflow-hidden ${
-                    data?.slug === 'one-api' ? 'lg:items-center' : ''
-                }`}
-            >
+            <div className='container cont_p flex gap-6 h-fit flex-col lg:flex-row overflow-hidden '>
                 <div
                     className={
                         !data?.code
