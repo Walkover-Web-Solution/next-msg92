@@ -3,7 +3,10 @@
     "notification": {
         "support": "Makipag-ugnayan sa Amin",
         "login": "MAG-LOG IN",
-        "hide": ["signup", "singin"]
+        "hide": [
+            "signup",
+            "singin"
+        ]
     },
     "menu": {
         "products": "Mga Produkto",
@@ -197,10 +200,16 @@
         ],
         "apidocs": "API Docs",
         "signup_btn": "Mag-sign Up",
-        "hide": ["signup", "singin"]
+        "hide": [
+            "signup",
+            "singin"
+        ]
     },
     "footer": {
-        "hide": ["signup", "singin"],
+        "hide": [
+            "signup",
+            "singin"
+        ],
         "products": {
             "name": "Aming mga Produkto",
             "links": [
@@ -344,6 +353,10 @@
                 {
                     "name": "Ihambing",
                     "link": "compare"
+                },
+                {
+                    "name": "Cost comparison",
+                    "link": "cost-comparision"
                 }
             ]
         },

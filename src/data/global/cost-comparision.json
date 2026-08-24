@@ -1,0 +1,181 @@
+{
+    "HeadComp": {
+        "title": "Support cost comparison — Hello by MSG91",
+        "description": "See how much you save on customer support software with Hello by MSG91 compared to Zendesk, Intercom, Freshdesk, Zoho Desk and more.",
+        "keywords": "hello, msg91, cost comparison, zendesk alternative, intercom alternative, freshdesk alternative, customer support pricing"
+    },
+    "CostComparisionComp": {
+        "heading": "Compare your support costs with | Hello",
+        "description": "Hello charges a small monthly plan plus a low per-ticket rate — with unlimited free agents. Most tools charge per agent seat. Enter your numbers to see the difference.",
+        "badges": [
+            "Unlimited agents, always free",
+            "Pay only per ticket",
+            "Official Meta Business Partner"
+        ],
+        "defaultCurrency": "USD",
+        "defaults": {
+            "plan": "basic",
+            "competitor": "zendesk"
+        },
+        "footnote": "Competitor figures are published list prices as of July 2026. Brazilian vendors marked (approx) are quote-only.",
+        "buttons": {
+            "primaryBtn": {
+                "text": "Start free with Hello",
+                "link": "https://control.msg91.com/signup/"
+            },
+            "secondaryBtn": {
+                "text": "Export PDF"
+            }
+        },
+        "CostSavingBenefits": {
+            "heading": "Why Hello costs less as you grow",
+            "description": "It's structural, not a discount. The more your team grows, the wider the gap gets.",
+            "cards": [
+                {
+                    "number": "1",
+                    "title": "Agents are free",
+                    "description": "Add as many support agents as you want. Hello never charges per seat — so growing your team doesn't grow your bill."
+                },
+                {
+                    "number": "2",
+                    "title": "You pay per ticket",
+                    "description": "Your cost tracks the work actually handled, not the number of people logged in. Predictable, and tied to real volume."
+                },
+                {
+                    "number": "3",
+                    "title": "AI is built in",
+                    "description": "Chatbots, AI replies, and automation come with the platform — not as a per-agent add-on that inflates every invoice."
+                }
+            ]
+        },
+        "PlatformComparisonCards": {
+            "heading": "Two different ways to price support",
+            "description": "Most tools bill by the seat. Hello bills by the outcome.",
+            "helloCard": {
+                "label": "HELLO BY MSG91",
+                "title": "Per ticket · unlimited agents",
+                "items": [
+                    "Unlimited agents at no extra cost",
+                    "One inbox for WhatsApp, Instagram, email, voice",
+                    "AI chatbot & automation included",
+                    "Cost scales with volume, not headcount"
+                ]
+            },
+            "competitorCard": {
+                "label": "MOST COMPETITORS",
+                "title": "Per agent · per month",
+                "items": [
+                    "Every new agent adds to the bill",
+                    "AI features often cost extra per seat",
+                    "Channels split across separate plans",
+                    "Scaling the team punishes your budget"
+                ]
+            }
+        },
+        "FaqsComp": {
+            "heading": "Questions about the numbers",
+            "faqs": [
+                {
+                    "question": "Where do the competitor prices come from?",
+                    "answer": "Published list prices for each tool's most comparable plan, noted at the bottom of the calculator with the date. You can adjust any figure to match the exact plan you're on."
+                },
+                {
+                    "question": "Why are agents free on Hello?",
+                    "answer": "Hello prices per ticket handled rather than per seat. Whether you have 3 agents or 300, the platform cost is the same — you pay for conversations, not logins."
+                },
+                {
+                    "question": "Does this include agent salaries?",
+                    "answer": "Salaries are shown for full context but kept equal on both sides, so the highlighted saving reflects software cost. You can model workload reduction separately."
+                },
+                {
+                    "question": "Can I see this for Brazilian tools?",
+                    "answer": "Yes — Take Blip, and Zenvia are in the dropdown alongside Zendesk, Intercom, Freshdesk, Zoho Desk, and Respond.io."
+                }
+            ]
+        },
+        "inputsData": {
+            "heading": "Enter Your Support Volume",
+            "labels": {
+                "tickets": "Tickets / conversations per month",
+                "ticketsPlaceholder": "e.g. 3000",
+                "agents": "Number of Support Agents",
+                "agentsPlaceholder": "e.g. 12",
+                "aiRate": "% of tickets resolved by AI / bot",
+                "aiRatePlaceholder": "e.g. 50",
+                "competitor": "Select Competitor to Compare",
+                "competitorPlan": "Plan Tier",
+                "globalProviders": "GLOBAL PROVIDERS",
+                "brazilProviders": "BRAZIL PROVIDERS",
+                "currency": "Currency",
+                "helloPlan": "Hello Plan"
+            }
+        },
+        "resultsData": {
+            "summary": {
+                "helloPay": "With Hello you pay",
+                "competitorPay": "With {competitor} you pay",
+                "perMonth": "per month",
+                "youSave": "You save with Hello",
+                "savedPerYearSummary": "{yearly}/year · {percent}% less"
+            },
+            "table": {
+                "heading": "Cost Breakdown",
+                "costElement": "Cost Element",
+                "hello": "Hello ({plan})",
+                "baseSubscription": "Base Subscription",
+                "helloTicketsIncluded": "Hello: {tickets} tickets included",
+                "seatCharges": "Seat Charges",
+                "helloAgentsFree": "Hello: Unlimited free agents",
+                "freeBadge": "(Free)",
+                "aiSeatCopilot": "AI Seat Copilot / Add-on",
+                "helloAiIncluded": "Hello: Included in plan",
+                "includedBadge": "(Included)",
+                "ticketUsage": "Ticket Usage / Overage",
+                "helloExtraTicket": "Hello: {price} per extra ticket",
+                "aiBotResolutions": "AI Bot Resolutions",
+                "totalMonthlyCost": "Total Monthly Cost"
+            },
+            "savingBox": {
+                "monthlySavingTitle": "Your monthly saving with Hello",
+                "savingEquation": "{compTotal} − {helloTotal} = your saving",
+                "mo": "/mo",
+                "savedPerYear": "{yearly} saved per year · {percent}% lower"
+            },
+            "tableDetails": {
+                "noBaseSub": "No base subscription",
+                "baseSubWithPlan": "Base Subscription ({plan})",
+                "flatBaseSub": "Flat Base Subscription",
+                "baseSub": "Base Subscription",
+                "noSeatCharges": "No seat charges",
+                "seatsCost": "{agents} × {price}",
+                "extraSeatsCostSingle": "{seats} extra seat × {price}",
+                "extraSeatsCostPlural": "{seats} extra seats × {price}",
+                "aiSeatCost": "{agents} × {price} (Copilot)",
+                "withinQuota": "Within included quota",
+                "extraTicketsCost": "{tickets} extra × {price}/ticket",
+                "usageCost": "{tickets} × {price}",
+                "aiFeaturesIncludedFree": "AI features included free",
+                "overageAboveAllowance": "Overage above allowance",
+                "contactSalesOverage": "{tickets} > {included} included · Contact sales",
+                "contactSales": "Contact sales",
+                "withinQuotaIncluded": "Within {included} included quota",
+                "aiResolvedCost": "{tickets} × {price}",
+                "aiIncludedInPlan": "AI included in plan",
+                "zeroAiResolved": "0 AI resolved",
+                "fallbackDash": "—"
+            }
+        },
+        "CostComparisonBanner": {
+            "heading": "Stop paying for seats. Start paying for outcomes.",
+            "description": "Bring every channel into one inbox, add unlimited agents, and only pay per ticket. Live this week.",
+            "primaryBtn": {
+                "text": "Start free — no credit card",
+                "link": "https://control.msg91.com/signup/"
+            },
+            "secondaryBtn": {
+                "text": "Book a demo",
+                "link": "/contact-us"
+            }
+        }
+    }
+}
