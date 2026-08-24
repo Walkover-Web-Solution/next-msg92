@@ -31,6 +31,7 @@
     ],
     "products": [
         "hello",
+        "one-api",
         "campaign",
         "segmento",
         "otp",
@@ -80,7 +81,6 @@
         "whatsapp/compare/msg91-vs-interakt",
         "whatsapp/compare/msg91-vs-wati",
         "whatsapp/compare",
-        "sla/hello",
-        "hello/one-api"
+        "sla/hello"
     ]
 }
