@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import Link from 'next/link';
 import styles from './SummitBanner.module.scss';
 
@@ -143,6 +143,29 @@ export default function SummitBanner() {
         updateCountdown();
         const timer = setInterval(updateCountdown, 1000);
         return () => clearInterval(timer);
+    }, [isVisible]);
+
+    useLayoutEffect(() => {
+        if (!isVisible) {
+            document.documentElement.style.removeProperty('--summit-banner-height');
+            return;
+        }
+
+        const el = document.getElementById('msg91-summit-banner');
+        if (!el) return;
+
+        const applyHeight = () => {
+            document.documentElement.style.setProperty('--summit-banner-height', `${el.offsetHeight}px`);
+        };
+
+        applyHeight();
+        const observer = new ResizeObserver(applyHeight);
+        observer.observe(el);
+
+        return () => {
+            observer.disconnect();
+            document.documentElement.style.removeProperty('--summit-banner-height');
+        };
     }, [isVisible]);
 
     const handleClose = () => {

@@ -1,15 +1,21 @@
 .overlay {
     background: rgba(0, 0, 0, 0.2);
-    @apply fixed hidden md:flex top-0 left-0 z-[996] h-dvh w-dvw pointer-events-auto;
+    @apply fixed hidden md:flex left-0 z-[996] w-dvw pointer-events-auto;
+    top: var(--summit-banner-height, 0px);
+    height: calc(100dvh - var(--summit-banner-height, 0px));
 }
 
 .background {
-    @apply fixed hidden md:flex bg-white lg:w-3/5 xl:w-1/2 w-3/4 h-dvh top-0 z-[998];
+    @apply fixed hidden md:flex bg-white lg:w-3/5 xl:w-1/2 w-3/4 z-[998];
+    top: var(--summit-banner-height, 0px);
+    height: calc(100dvh - var(--summit-banner-height, 0px));
     transition: all 0.2s;
 }
 
 .cont {
-    @apply fixed hidden md:flex top-0 z-[999] h-dvh w-dvw items-center justify-center overflow-hidden pointer-events-none;
+    @apply fixed hidden md:flex z-[999] w-dvw items-center justify-center overflow-hidden pointer-events-none;
+    top: var(--summit-banner-height, 0px);
+    height: calc(100dvh - var(--summit-banner-height, 0px));
     transition: all 0.2s;
 }
 
@@ -19,7 +25,7 @@
 }
 
 .menuPanel {
-    @apply lg:w-3/5 xl:w-1/2 w-3/4 pe-3 flex flex-col h-dvh min-h-0 pointer-events-auto;
+    @apply lg:w-3/5 xl:w-1/2 w-3/4 pe-3 flex flex-col h-full min-h-0 pointer-events-auto;
 }
 
 .menuScroll {
@@ -28,7 +34,9 @@
 }
 
 .minicont {
-    @apply fixed md:hidden bg-white flex flex-col top-0 z-[999] h-dvh w-dvw overflow-hidden;
+    @apply fixed md:hidden bg-white flex flex-col z-[999] w-dvw overflow-hidden;
+    top: var(--summit-banner-height, 0px);
+    height: calc(100dvh - var(--summit-banner-height, 0px));
     transition: all 0.2s;
 }
 
@@ -37,7 +45,7 @@
 }
 
 .navigationDesktop {
-    @apply z-[999] h-dvh min-h-0 overflow-hidden;
+    @apply z-[999] h-full min-h-0 overflow-hidden;
 }
 
 .mobileMenuScroll {
