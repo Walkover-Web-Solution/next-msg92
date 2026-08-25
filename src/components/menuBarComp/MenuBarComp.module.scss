@@ -34,9 +34,7 @@
 }
 
 .minicont {
-    @apply fixed md:hidden bg-white flex flex-col z-[999] w-dvw overflow-hidden;
-    top: var(--summit-banner-height, 0px);
-    height: calc(100dvh - var(--summit-banner-height, 0px));
+    @apply fixed md:hidden bg-white flex flex-col top-0 z-[999] h-dvh w-dvw overflow-hidden;
     transition: all 0.2s;
 }
 
