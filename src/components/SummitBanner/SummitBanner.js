@@ -161,7 +161,8 @@ export default function SummitBanner() {
             role='region'
             aria-label='MSG91 E-Commerce Summit'
         >
-            <div className={styles.bannerCard}>
+            <div className='container'>
+                <div className={styles.bannerCard}>
                 <button
                     type='button'
                     className={styles.bannerClose}
@@ -243,6 +244,7 @@ export default function SummitBanner() {
                         <span>Reserve Your Seat</span>
                         <span className={styles.bannerArrow}>&rarr;</span>
                     </Link>
+                </div>
                 </div>
             </div>
         </div>
