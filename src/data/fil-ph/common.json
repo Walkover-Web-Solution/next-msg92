@@ -3,7 +3,10 @@
     "notification": {
         "support": "Makipag-ugnayan sa Amin",
         "login": "MAG-LOG IN",
-        "hide": ["signup", "singin"]
+        "hide": [
+            "signup",
+            "singin"
+        ]
     },
     "menu": {
         "products": "Mga Produkto",
@@ -15,6 +18,11 @@
                         "name": "Hello",
                         "slug": "hello",
                         "description": "Ticketing at Chat"
+                    },
+                    {
+                        "name": "One API",
+                        "slug": "one-api",
+                        "description": "Dynamic Multi-Channel Messaging"
                     },
                     {
                         "name": "Campaign",
@@ -207,10 +215,16 @@
         ],
         "apidocs": "API Docs",
         "signup_btn": "Mag-sign Up",
-        "hide": ["signup", "singin"]
+        "hide": [
+            "signup",
+            "singin"
+        ]
     },
     "footer": {
-        "hide": ["signup", "singin"],
+        "hide": [
+            "signup",
+            "singin"
+        ],
         "products": {
             "name": "Aming mga Produkto",
             "links": [
@@ -256,7 +270,11 @@
                     "name": "Libreng WhatsApp link generator",
                     "link": "free-whatsapp-link-generator"
                 },
-                 {
+                {
+                    "name": "Libreng Apple Link Generator",
+                    "link": "free-apple-messages-for-business-link-generator"
+                },
+                {
                     "name": "WhatsApp Chatbot",
                     "link": "whatsapp/chatbot"
                 }
@@ -354,6 +372,10 @@
                 {
                     "name": "Ihambing",
                     "link": "compare"
+                },
+                {
+                    "name": "Cost comparison",
+                    "link": "cost-comparision"
                 }
             ]
         },

@@ -31,6 +31,7 @@ import SignUp from '@/components/signupComp/SignUp';
 import ChatBotComp from '@/components/ChatBotComp/ChatBotComp';
 import MagicLinkComp from '@/components/MagicLinkComp/MagicLinkComp';
 import WhatsappLinkComp from '@/components/WhatsappLinkComp/WhatsappLinkComp';
+import AppleMessagesLinkComp from '@/components/AppleMessagesLinkComp/AppleMessagesLinkComp';
 import IntegrationAppComp from '@/components/IntegrationsComp/IntegrationAppComp';
 import ThankYouComp from '@/components/ThankYouComp/ThankYouComp';
 import StartupFormsComp from '@/components/StartupFormsComp/StartupFormsComp';
@@ -71,6 +72,7 @@ import FooterCta from '@/components/HelloBrComp/FooterCtaComp/FooterCta';
 import Faqs from '@/components/HelloBrComp/FaqsComp/Faqs';
 import G2Badges from '@/components/HelloBrComp/G2BadgesComp/G2Badges';
 import Pricing from '@/components/HelloBrComp/PricingComp/Pricing';
+import CostComparisionComp from '@/components/CostComparisionComp/CostComparisionComp';
 import EventRegistrationComp from '@/components/EventRegistrationComp';
 import CategoriesComp from '@/components/ReportsComp/CategoriesComp/CategoriesComp';
 import SetupStepsComp from '@/components/ReportsComp/SetupStepsComp/SetupStepsComp';
@@ -102,6 +104,7 @@ const Components = {
     TrustedByComp,
     HeadComp,
     FeatureComp,
+    IndustryFeatureComp: FeatureComp,
     PricingComp,
     AboutUsComp,
     DevelopersComp,
@@ -117,6 +120,7 @@ const Components = {
     ChatBotComp,
     MagicLinkComp,
     WhatsappLinkComp,
+    AppleMessagesLinkComp,
     ThankYouComp,
     StartupFormsComp,
     IntegrationAppComp,
@@ -171,6 +175,7 @@ const Components = {
     Faqs,
     G2Badges,
     Pricing,
+    CostComparisionComp,
     EventRegistrationComp,
     CategoriesComp,
     SetupStepsComp,

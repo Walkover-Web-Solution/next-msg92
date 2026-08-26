@@ -20,6 +20,11 @@
                         "description": "Ticketing and Chat"
                     },
                     {
+                        "name": "One API",
+                        "slug": "one-api",
+                        "description": "Dynamic Multi-Channel Messaging"
+                    },
+                    {
                         "name": "Campaign",
                         "slug": "campaign",
                         "description": "Event-based Automation"
@@ -261,6 +266,10 @@
                     "link": "free-whatsapp-link-generator"
                 },
                 {
+                    "name": "Free Apple Link Generator",
+                    "link": "free-apple-messages-for-business-link-generator"
+                },
+                {
                     "name": "WhatsApp Chatbot",
                     "link": "whatsapp/chatbot"
                 }
@@ -358,6 +367,10 @@
                 {
                     "name": "Compare",
                     "link": "compare"
+                },
+                {
+                    "name": "Cost comparison",
+                    "link": "cost-comparision"
                 }
             ]
         },

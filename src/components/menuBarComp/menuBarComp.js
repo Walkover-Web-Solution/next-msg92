@@ -320,7 +320,11 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                             </li>
                         </ul>
                     </div>
-                    <div className='container z-[1000] flex md:hidden py-5'>
+                    <div
+                        className={`container z-[1000] flex md:hidden py-5 ${
+                            nav === 'show' ? 'fixed inset-x-0 top-0 bg-white' : ''
+                        }`}
+                    >
                         <div className='w-full z-[1000] flex items-center justify-between gap-6'>
                             <a href={pageInfo?.country === 'global' ? '/' : `/${pageInfo?.country}`}>
                                 <Image

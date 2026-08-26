@@ -20,6 +20,11 @@
                         "description": "Ticketing and Chat"
                     },
                     {
+                        "name": "One API",
+                        "slug": "one-api",
+                        "description": "Dynamic Multi-Channel Messaging"
+                    },
+                    {
                         "name": "Campaign",
                         "slug": "campaign",
                         "description": "Event-based Automation"
@@ -363,6 +368,10 @@
                 {
                     "name": "Compare",
                     "link": "compare"
+                },
+                {
+                    "name": "Cost comparison",
+                    "link": "cost-comparision"
                 },
                 {
                     "name": "Event registration",

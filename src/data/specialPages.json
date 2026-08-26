@@ -29,6 +29,7 @@
     ],
     "products": [
         "hello",
+        "one-api",
         "campaign",
         "segmento",
         "otp",

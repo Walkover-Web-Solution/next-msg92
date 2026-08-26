@@ -10,6 +10,7 @@ module.exports = {
     theme: {
         extend: {
             colors: {
+                darkNavy: '#0e1638',
                 report: {
                     primary: '#24B3B3',
                     'primary-dark': '#268080',
@@ -44,6 +45,7 @@ module.exports = {
                     accent: '#1E75BA',
                     neutral: '#FAFAFA',
                     hello: '#f2ca55',
+                    darkNavy: '#0e1638',
                     'base-100': '#FFFFFF',
                     '--rounded-btn': '0.2rem',
                     'base-200': '#808080',
