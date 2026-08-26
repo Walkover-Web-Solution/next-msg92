@@ -9,15 +9,15 @@
             "name": "Reports",
             "icon": "/assets/icons/products/reports.svg"
         },
-        "tagline": "Communication Analytics & Reporting Platform",
-        "heading": "Communication Analytics & Reporting Platform for Every Customer Interaction",
-        "subheading": "Turn customer communication data into actionable business insights with MSG91 Reports. Analyze SMS, WhatsApp, Email, Voice, OTP, RCS, Push Notifications, and Short URL performance from one unified dashboard. Monitor delivery rates, customer engagement, campaign performance, communication costs, and operational metrics in real time to make faster, data-driven decisions.",
+        "tagline": "COMMUNICATION ANALYTICS & REPORTING",
+        "heading": "Real-time communication analytics and insights.",
+        "subheading": "Turn customer communication data into actionable business insights with MSG91 Reports. Track delivery performance, customer engagement, and campaign ROI across SMS, WhatsApp, Email, OTP, and RCS in real time from a single unified dashboard.",
         "banner_video": "/assets/reports/videos/hero_section_report_page_3.webm",
         "not_absolute": "true",
-        "getstarted_btn": "Book a Demo",
+        "getstarted_btn": "Get Started",
         "schedule_meet": "Schedule a Meeting",
         "trustedByComp": {
-            "heading": "15+ Report Modules • 100+ Communication Metrics • Real-Time Analytics • Exportable Reports • Enterprise Ready",
+            "heading": "Trusted by 30,000+ global businesses",
             "logos": [
                 {
                     "name": "Xiaomi",
@@ -329,6 +329,13 @@
                 }
             }
         ]
+    },
+    "ImageWithBgComp": {
+        "img": "/assets/reports/use_case/hello_analytics.webp",
+        "alt": "Why Choose Hello Analytics",
+        "bg": "hello_analytics_bg",
+        "width": 1920,
+        "height": 1280
     },
     "FeatureWithBulletGroup": {
         "heading": "Powerful Reports for Every Business Use Case",

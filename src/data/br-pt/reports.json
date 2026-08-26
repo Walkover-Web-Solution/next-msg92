@@ -9,15 +9,15 @@
             "name": "Reports",
             "icon": "/assets/icons/products/reports.svg"
         },
-        "tagline": "Plataforma de Análise e Relatórios de Comunicação",
-        "heading": "Plataforma de Análise e Relatórios de Comunicação para Cada Interação com o Cliente",
-        "subheading": "Transforme os dados de comunicação em insights estratégicos com o MSG91 Reports. Analise o desempenho de SMS, WhatsApp, E-mail, Voz, OTP, RCS, Notificações Push e URLs Curtas a partir de um painel unificado. Monitore taxas de entrega, engajamento do cliente, desempenho de campanhas, custos e métricas operacionais em tempo real para tomar decisões mais rápidas e baseadas em dados.",
+        "tagline": "ANÁLISE E RELATÓRIOS DE COMUNICAÇÃO",
+        "heading": "Análise e insights de comunicação em tempo real.",
+        "subheading": "Transforme os dados de comunicação com o cliente em insights acionáveis com o MSG91 Reports. Acompanhe o desempenho de entrega, o engajamento do cliente e o ROI das campanhas em SMS, WhatsApp, E-mail, OTP e RCS em tempo real a partir de um único painel integrado.",
         "banner_video": "/assets/reports/videos/hero_section_report_page_3.webm",
         "not_absolute": "true",
-        "getstarted_btn": "Agendar Demonstração",
+        "getstarted_btn": "Começar Agora",
         "schedule_meet": "Agendar Reunião",
         "trustedByComp": {
-            "heading": "Mais de 15 Módulos de Relatórios • Mais de 100 Métricas de Comunicação • Análise em Tempo Real • Relatórios Exportáveis • Pronto para Empresas",
+            "heading": "Confiado por mais de 30.000 empresas globais",
             "logos": [
                 {
                     "name": "Xiaomi",
@@ -329,6 +329,13 @@
                 }
             }
         ]
+    },
+    "ImageWithBgComp": {
+        "img": "/assets/reports/use_case/hello_analytics.webp",
+        "alt": "Por que escolher o Hello Analytics",
+        "bg": "hello_analytics_bg",
+        "width": 1920,
+        "height": 1280
     },
     "FeatureWithBulletGroup": {
         "heading": "Relatórios Poderosos para Cada Necessidade de Negócio",
