@@ -28,7 +28,7 @@ export default function CostComparisionComp({ data, pageInfo }) {
     const [currency, setCurrency] = useState(CURRENCY_RATES[data?.defaultCurrency] ? data.defaultCurrency : 'USD');
 
     const [apiPlans, setApiPlans] = useState([]);
-    const [loadingApi, setLoadingApi] = useState(false);
+    const [loadingApi, setLoadingApi] = useState(true);
 
     const apiCurrency = currency;
 
@@ -38,6 +38,8 @@ export default function CostComparisionComp({ data, pageInfo }) {
             const raw = await getSubscriptions(apiCurrency, HELLO_MS_ID);
             if (raw) {
                 setApiPlans(handlePlanStructure(raw, apiCurrency));
+            } else {
+                setApiPlans([]);
             }
         } catch {
             setApiPlans([]);
