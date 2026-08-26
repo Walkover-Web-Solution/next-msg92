@@ -87,7 +87,7 @@ import HelloStartupFooterCta from '@/components/HelloStartupComp/FooterCtaComp/F
 import HelloStartupTerms from '@/components/HelloStartupComp/TermsComp/HelloStartupTerms';
 import CategoriesComp from '@/components/ReportsComp/CategoriesComp/CategoriesComp';
 import SetupStepsComp from '@/components/ReportsComp/SetupStepsComp/SetupStepsComp';
-import HelloAnalyticsComp from '@/components/ReportsComp/HelloAnalyticsComp/HelloAnalyticsComp';
+import ImageWithBgComp from '@/components/ImageWithBgComp/ImageWithBgComp';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -199,7 +199,7 @@ const Components = {
     HelloStartupTerms,
     CategoriesComp,
     SetupStepsComp,
-    HelloAnalyticsComp,
+    ImageWithBgComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {

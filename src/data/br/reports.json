@@ -330,9 +330,12 @@
             }
         ]
     },
-    "HelloAnalyticsComp": {
+    "ImageWithBgComp": {
         "img": "/assets/reports/use_case/hello_analytics.webp",
-        "alt": "Why Choose Hello Analytics"
+        "alt": "Why Choose Hello Analytics",
+        "bg": "hello_analytics_bg",
+        "width": 1920,
+        "height": 1280
     },
     "FeatureWithBulletGroup": {
         "heading": "Powerful Reports for Every Business Use Case",
@@ -678,7 +681,6 @@
     },
     "FaqsComp": {
         "heading": "Frequently Asked Questions",
-        "question_font": "font-medium",
         "faqs": [
             {
                 "question": "What is MSG91 Reports?",
