@@ -340,6 +340,10 @@
                     "link": "startups"
                 },
                 {
+                    "name": "Hello for startups",
+                    "link": "hello-for-startups"
+                },
+                {
                     "name": "Partners and integrations",
                     "link": "partners-and-integrations"
                 },

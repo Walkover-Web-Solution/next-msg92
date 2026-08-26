@@ -1,0 +1,197 @@
+{
+    "HeadComp": {
+        "title": "Hello, free for Singapore startups. | MSG91",
+        "description": "Full customer-support software — omnichannel inbox, AI chatbot, and automation — completely free for early-stage businesses in Singapore under S$ 150,000 in annual revenue."
+    },
+    "HelloStartupBanner": {
+        "badge": "🇸🇬 Hello For Singapore Startups",
+        "heading_prefix": "Hello,",
+        "heading_accent": "free for Singapore startups.",
+        "heading": "Hello, free for Singapore startups.",
+        "subheading": "Full customer-support software — omnichannel inbox, AI chatbot, and automation — completely free for early-stage businesses in Singapore under S$ 150,000 in annual revenue. Build your customer experience now; pay only when you've grown.",
+        "primary_btn": "Apply for free access",
+        "primary_btn_link": "https://docs.google.com/forms/d/e/1FAIpQLSf50qTLGF-UjasMyhmZLd4rKt8FtpqA1Q9x2AL3Neor7fk0cg/viewform?usp=send_form",
+        "secondary_btn": "Read eligibility & terms",
+        "secondary_btn_link": "/sg/hello-for-startups-terms",
+        "secondary_btn_target": "_blank",
+        "trusted_by": {
+            "title": "TRUSTED BY 30,000+ GLOBAL BUSINESSES",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Razorpay",
+                    "url": "/assets/trusted_by/razorpay.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Bajaj Finserv",
+                    "url": "/assets/trusted_by/bajaj_finserve.svg"
+                },
+                {
+                    "name": "Apollo 24x7",
+                    "url": "/assets/trusted_by/apollo_247.svg"
+                }
+            ]
+        }
+    },
+    "HelloStartupWhy": {
+        "heading": "Why we built this",
+        "description": "Early-stage businesses shouldn't have to choose between good customer support and their runway. Hello Free for Startups gives qualifying Singapore startups the same platform growing companies pay for — at zero cost — so you can deliver professional, multi-channel support from day one. When your business grows past the startup stage, you simply move to a paid plan, keeping all your data and setup.",
+        "cards": [
+            {
+                "icon": "💬",
+                "title": "Omnichannel inbox",
+                "description": "WhatsApp, Email, Live Chat, Instagram, Facebook — unified in one place"
+            },
+            {
+                "icon": "🤖",
+                "title": "AI chatbot",
+                "description": "Auto-resolve routine queries around the clock,\nsubject to fair use."
+            },
+            {
+                "icon": "⚡",
+                "title": "Automation & routing",
+                "description": "Workflow automation, smart routing, and\ncanned responses built in."
+            },
+            {
+                "icon": "🌐",
+                "title": "Real-time translation",
+                "description": "Talk to customers in their language across\nevery channel."
+            },
+            {
+                "icon": "📊",
+                "title": "Analytics & reporting",
+                "description": "Track response times, resolution and team\nperformance."
+            },
+            {
+                "icon": "🔌",
+                "title": "2,200+ integrations",
+                "description": "Connect integrations for the chatbot.\nLive in minutes, no implementation fee."
+            }
+        ]
+    },
+    "HelloStartupEligibility": {
+        "id": "eligibility",
+        "heading": "Eligibility — you must meet ALL of the following",
+        "description": "To keep this program focused on genuine early-stage businesses, your business qualifies only if it meets every condition below.",
+        "cards": [
+            {
+                "number": "01",
+                "title": "Business type",
+                "description": "You are a registered business in Singapore."
+            },
+            {
+                "number": "02",
+                "title": "Revenue cap",
+                "description": "Your annual revenue is below S$ 150,000, as evidenced by your financial statements."
+            },
+            {
+                "number": "03",
+                "title": "Mandatory documentation",
+                "description": "Valid most recent filed financials or ACRA return for the most recent financial year, along with proof of business registration (ACRA / UEN, as applicable) and a signed self-declaration of annual revenue."
+            },
+            {
+                "number": "04",
+                "title": "One account per business",
+                "description": "Only one free Startup account is permitted per registered entity. Creating multiple accounts or splitting your business to stay within limits will disqualify you."
+            }
+        ]
+    },
+    "HelloStartupPlan": {
+        "heading": "What you get — free",
+        "subheading": "The Free Startup Plan gives you full access to Hello — capped at the limits below. Stay within them and you pay nothing.",
+        "plan_badge": "Free Startup Plan",
+        "price": "S$ 0",
+        "period": "/month",
+        "action_badge": "Usage limits of the free tier",
+        "stats": [
+            {
+                "label": "UP TO",
+                "value": "1,000",
+                "sublabel": "support tickets\nper month"
+            },
+            {
+                "label": "UP TO",
+                "value": "50",
+                "sublabel": "agents\nincluded"
+            },
+            {
+                "label": "UP TO",
+                "value": "2",
+                "sublabel": "inboxes /\nchannels"
+            },
+            {
+                "label": "UP TO",
+                "value": "Fair use",
+                "sublabel": "AI usage policy\napplies"
+            }
+        ],
+        "notice": "Cross any of these caps and you'll simply be invited to <span class='text-accent underline cursor-pointer'>upgrade to a paid plan</span> — your account and data continue uninterrupted."
+    },
+    "HelloStartupSteps": {
+        "heading": "How it works",
+        "steps": [
+            {
+                "number": "1",
+                "title": "Apply",
+                "description": "Complete the form and upload your financial statement and registration proof."
+            },
+            {
+                "number": "2",
+                "title": "Verification",
+                "description": "Our team verifies your documents and eligibility, typically within a few business days."
+            },
+            {
+                "number": "3",
+                "title": "Activation",
+                "description": "Once approved, your free Startup account is switched on."
+            },
+            {
+                "number": "4",
+                "title": "Annual review",
+                "description": "We re-confirm eligibility each year. If you've crossed S$ 150,000 or exceeded usage limits, we'll help you transition smoothly to a paid plan."
+            }
+        ]
+    },
+    "HelloStartupGrow": {
+        "heading": "When you grow, you keep everything",
+        "description": "Crossing S$ 150,000 is a good problem. When you do, your data, conversations, and setup stay exactly as they are — you just move to a paid Hello plan. No migration, no disruption."
+    },
+    "Faqs": {
+        "heading": "Frequently asked questions",
+        "items": [
+            {
+                "question": "Is it genuinely free?",
+                "answer": "Yes — within the usage limits above, for as long as you remain eligible."
+            },
+            {
+                "question": "Why do you need financial documents?",
+                "answer": "To fairly and consistently verify that your revenue is below S$ 150,000. It is a mandatory requirement of this program."
+            },
+            {
+                "question": "What if I exceed the ticket or agent limit?",
+                "answer": "You'll be prompted to upgrade to a paid plan; your account and data continue uninterrupted."
+            },
+            {
+                "question": "What happens at annual review if I've grown?",
+                "answer": "You transition to a paid plan — nothing is lost."
+            },
+            {
+                "question": "Can access be withdrawn?",
+                "answer": "Yes, if eligibility is no longer met or the Terms are breached."
+            }
+        ]
+    },
+    "HelloStartupFooterCta": {
+        "heading": "Give your customers big-company support while you're still small.",
+        "subheading": "Apply for Hello Free for Startups and give your customers the experience they deserve.",
+        "btn_text": "Apply for free access",
+        "btn_link": "https://docs.google.com/forms/d/e/1FAIpQLSf50qTLGF-UjasMyhmZLd4rKt8FtpqA1Q9x2AL3Neor7fk0cg/viewform?usp=send_form"
+    }
+}

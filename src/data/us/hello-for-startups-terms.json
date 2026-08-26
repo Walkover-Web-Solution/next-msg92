@@ -1,0 +1,122 @@
+{
+    "HeadComp": {
+        "title": "Hello Free for Startups — Terms & Conditions | MSG91",
+        "description": "Terms & Conditions governing participation in the Hello Free for Startups Program in the US."
+    },
+    "HelloStartupTerms": {
+        "breadcrumb_parent": "Hello Free for Startups",
+        "breadcrumb_link": "/us/hello-for-startups",
+        "breadcrumb_current": "Terms & Conditions",
+        "title": "Hello Free For Startups — Terms & Conditions",
+        "meta": "United States (USA) · Last updated: [date]",
+        "lead": "These Terms & Conditions govern participation in the Hello Free for Startups Program in the United States. Please read them carefully before applying — by submitting an application you accept these Terms.",
+        "nav_title": "ON THIS PAGE",
+        "sections": [
+            {
+                "number": 1,
+                "title": "About this Program",
+                "content": "The Hello Free for Startups Program (\"Program\") is offered by [MSG91 legal entity name], [address] (\"MSG91\", \"we\", \"us\"). It provides eligible early-stage United States (USA) businesses complimentary access to the Hello platform (\"Hello\"), subject to these Terms & Conditions (\"Terms\"). By applying, you accept these Terms."
+            },
+            {
+                "number": 2,
+                "title": "Definitions",
+                "definitions": [
+                    {
+                        "term": "\"Applicant\" / \"Business\" / \"you\"",
+                        "desc": "the entity applying for or using the Program."
+                    },
+                    {
+                        "term": "\"Free Access\"",
+                        "desc": "complimentary use of Hello under the Program, within the Usage Limits."
+                    },
+                    {
+                        "term": "\"Qualifying Threshold\"",
+                        "desc": "annual revenue below US$ 100,000."
+                    },
+                    {
+                        "term": "\"Usage Limits\"",
+                        "desc": "the ticket, agent, inbox and other caps stated in Clause 5."
+                    },
+                    {
+                        "term": "\"Verification Documents\"",
+                        "desc": "the documents listed in Clause 4."
+                    }
+                ]
+            },
+            {
+                "number": 3,
+                "title": "Eligibility",
+                "lead": "To qualify, the Business must, at application and throughout Free Access: (a) be a registered business in the USA; (b) have annual revenue below the Qualifying Threshold, evidenced by its financial statements; (c) submit complete and accurate Verification Documents; (d) operate only one free account per registered entity; and (e) accept these Terms. MSG91 has sole discretion to determine and re-assess eligibility.",
+                "footer": "MSG91 has sole discretion to determine and re-assess eligibility."
+            },
+            {
+                "number": 4,
+                "title": "Mandatory verification documents",
+                "lead": "The Business must submit: (a) the most recent filed accounts or tax return, showing annual revenue below the Qualifying Threshold; (b) proof of business registration (Certificate of Formation / Incorporation, as applicable); and (c) a signed self-declaration confirming the revenue figure and that the information provided is true. Applications lacking the required financial proof will not be processed. Submission of false, forged, or misleading documents results in immediate disqualification and termination, and may lead to recovery of the value of services used and other legal action.",
+                "callout": "Applications lacking the required financial proof will not be processed. Submission of false, forged, or misleading documents results in immediate disqualification and termination."
+            },
+            {
+                "number": 5,
+                "title": "Free tier scope and usage limits",
+                "lead": "Free Access is limited to: up to 1,000 support tickets per calendar month; up to 50 agents; up to 2 inboxes / channels; and AI usage subject to a fair-use policy. Features not included in the free tier, and external usage-based charges (e.g., WhatsApp/Meta conversation fees, SMS carrier charges, telephony), are excluded and payable separately by the Business. MSG91 may adjust the Usage Limits with notice.",
+                "footer": "Features not included in the free tier, and external usage-based charges are excluded and payable separately."
+            },
+            {
+                "number": 6,
+                "title": "Exceeding usage limits",
+                "content": "If the Business exceeds any Usage Limit, MSG91 may (a) invite the Business to upgrade to a paid plan, and/or (b) restrict or pause functionality above the limit until upgrade. Continued use beyond the limits requires a paid subscription."
+            },
+            {
+                "number": 7,
+                "title": "Duration and annual eligibility review",
+                "content": "Free Access continues while the Business remains eligible. MSG91 will review eligibility annually and may request updated Verification Documents. The Business must promptly notify MSG91 if its revenue reaches or exceeds the Qualifying Threshold or if any eligibility detail changes."
+            },
+            {
+                "number": 8,
+                "title": "Loss of eligibility and conversion to paid",
+                "content": "If the Business exceeds the Qualifying Threshold, exceeds the Usage Limits, fails re-verification, or the Program ends, Free Access may convert to a paid Hello plan upon notice. The Business retains and may export its data; continued use after conversion requires a paid subscription."
+            },
+            {
+                "number": 9,
+                "title": "Fair and acceptable use",
+                "content": "Free Access is solely for the Business's own genuine customer-support operations. The following are prohibited and are grounds for termination: reselling or sharing access; operating multiple free accounts; splitting or restructuring the entity to stay within the Qualifying Threshold or Usage Limits; and any use violating Hello's Acceptable Use Policy or applicable law. AI features are subject to a fair-use policy, and MSG91 may limit or throttle AI usage that materially exceeds normal usage patterns."
+            },
+            {
+                "number": 10,
+                "title": "Data protection",
+                "content": "Verification Documents and personal data are processed solely to administer the Program, in accordance with MSG91's Privacy Policy and applicable law. MSG91 applies reasonable security safeguards and retains Verification Documents only as long as necessary for Program administration and legal compliance. Financial documents you submit are treated as confidential."
+            },
+            {
+                "number": 11,
+                "title": "Service provided \"as is\"",
+                "content": "Free Access is provided on an \"as is\" and \"as available\" basis. Program accounts receive [standard/community] support, with no contractual service-level agreement (SLA) unless separately agreed in writing."
+            },
+            {
+                "number": 12,
+                "title": "Suspension and termination",
+                "content": "MSG91 may suspend or terminate Free Access for breach of these Terms, ineligibility, misuse, or failure to respond to verification, with notice where practicable. The Business may discontinue use at any time."
+            },
+            {
+                "number": 13,
+                "title": "Changes to the Program or Terms",
+                "content": "MSG91 may modify, suspend, or discontinue the Program or these Terms at any time. Material changes will be notified; continued use after changes constitutes acceptance."
+            },
+            {
+                "number": 14,
+                "title": "Limitation of liability",
+                "content": "To the maximum extent permitted by law, MSG91's aggregate liability arising from the Program (provided free of charge) is limited as set out in the Hello master terms / [amount], and MSG91 is not liable for indirect or consequential loss."
+            },
+            {
+                "number": 15,
+                "title": "Governing law and jurisdiction",
+                "content": "These Terms are governed by the laws of [State, e.g. Delaware], and the courts of [State], USA shall have exclusive jurisdiction."
+            },
+            {
+                "number": 16,
+                "title": "Contact",
+                "content": "For questions about the Program: [program email / phone]."
+            }
+        ],
+        "disclaimer": "Draft for review — this document should be reviewed and approved by legal counsel before publication. Bracketed fields ([date], entity name, jurisdiction, contact, support level, liability cap) must be completed."
+    }
+}

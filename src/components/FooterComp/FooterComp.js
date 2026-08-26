@@ -124,6 +124,17 @@ export default function FooterComp({ componentData, pageInfo }) {
                                                         </a>
                                                     </li>
                                                 );
+                                            } else if (link?.link === 'hello-for-startups') {
+                                                return (
+                                                    <li key={index} className='text-link-white'>
+                                                        <a
+                                                            href={getURL('product', link?.link, pageInfo)}
+                                                            className='text-gray-200'
+                                                        >
+                                                            {link?.name}
+                                                        </a>
+                                                    </li>
+                                                );
                                             } else {
                                                 return (
                                                     <li key={index} className='text-link-white'>
