@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import normalizeDialPlanInfo from '@/utils/pricing/normalizeDialPlanInfo';
 import { DEBOUNCE_DELAY, DIAL_PLAN_PER_PAGE, EMPTY_ARRAY } from '../constants';
+import GetCountryDetails from '@/utils/getCurrentCountry';
 
 const SCROLL_DISTANCE = 400;
 
@@ -214,7 +215,7 @@ function DialPlanTable({
     );
 }
 
-export default function DialPlan({ pricingData, selection, pageData, currency }) {
+export default function DialPlan({ pricingData, selection, pageData, currency, country }) {
     const [search, setSearch] = useState('');
     const [searchQuery, setSearchQuery] = useState('');
     const [offset, setOffset] = useState(1);
@@ -225,6 +226,11 @@ export default function DialPlan({ pricingData, selection, pageData, currency })
     const [loaded, setLoaded] = useState(false);
 
     const activePlan = useMemo(() => findActivePlan(pricingData, selection), [pricingData, selection]);
+
+    const currentCountry =
+        country && country !== 'global'
+            ? GetCountryDetails({ shortname: country, type: 'shortname' })?.name?.toLowerCase()
+            : null;
 
     useEffect(() => {
         if (search.trim() === '') {
@@ -263,8 +269,15 @@ export default function DialPlan({ pricingData, selection, pageData, currency })
             .then((json) => {
                 if (cancelled) return;
                 const normalized = normalizeDialPlanInfo(json.data);
+                const rows = currentCountry
+                    ? [...normalized.data].sort(
+                          (a, b) =>
+                              (b?.country_name?.toLowerCase() === currentCountry) -
+                              (a?.country_name?.toLowerCase() === currentCountry)
+                      )
+                    : normalized.data;
                 setColumns(normalized.columns);
-                setData(normalized.data);
+                setData(rows);
                 setPagination(json.data.metadata);
                 setLoaded(true);
             })
@@ -278,7 +291,7 @@ export default function DialPlan({ pricingData, selection, pageData, currency })
         return () => {
             cancelled = true;
         };
-    }, [activePlan?.serviceId, activePlan?.dialPlanId, currency, offset, searchQuery]);
+    }, [activePlan?.serviceId, activePlan?.dialPlanId, currency, offset, searchQuery, currentCountry]);
 
     const handleSearchChange = useCallback((e) => setSearch(e.target.value), []);
 
