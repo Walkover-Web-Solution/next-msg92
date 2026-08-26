@@ -186,88 +186,88 @@ export default function SummitBanner() {
         >
             <div className='container'>
                 <div className={styles.bannerCard}>
-                <button
-                    type='button'
-                    className={styles.bannerClose}
-                    id='msg91SummitClose'
-                    aria-label='Close event banner'
-                    onClick={handleClose}
-                >
-                    &times;
-                </button>
+                    <button
+                        type='button'
+                        className={styles.bannerClose}
+                        id='msg91SummitClose'
+                        aria-label='Close event banner'
+                        onClick={handleClose}
+                    >
+                        &times;
+                    </button>
 
-                <div className={styles.bannerMain}>
-                    <div className={styles.bannerEyebrow}>MSG91 E-Commerce Summit</div>
-                    <h2 className={styles.bannerTitle}>
-                        Shopify Store Owners<span>Join Us in Indore.</span>
-                    </h2>
-                    <div className={styles.bannerPerks}>
-                        <span>Invite Only</span>
-                        <span className={styles.bannerDot}></span>
-                        <span>Free Entry</span>
-                        <span className={styles.bannerDot}></span>
-                        <span>High Tea</span>
+                    <div className={styles.bannerMain}>
+                        <div className={styles.bannerEyebrow}>MSG91 E-Commerce Summit</div>
+                        <h2 className={styles.bannerTitle}>
+                            Shopify Store Owners<span>Join Us in Indore.</span>
+                        </h2>
+                        <div className={styles.bannerPerks}>
+                            <span>Invite Only</span>
+                            <span className={styles.bannerDot}></span>
+                            <span>Free Entry</span>
+                            <span className={styles.bannerDot}></span>
+                            <span>High Tea</span>
+                        </div>
                     </div>
-                </div>
 
-                <div className={styles.bannerDetails}>
-                    <div className={styles.bannerDate}>05 September 2026</div>
-                    <div className={styles.bannerTime}>6:30 PM onwards</div>
-                    <div className={styles.bannerLocation}>
-                        <a
-                            href='https://www.google.com/maps/place/Walkover/@22.7469512,75.8929134,17z/data=!3m1!4b1!4m6!3m5!1s0x3962fd37c63496b9:0xf190bda9147f9d62!8m2!3d22.7469512!4d75.8929134!16s%2Fg%2F1hm34wlnl?entry=ttu&g_ep=EgoyMDI2MDgxOS4wIKXMDSoASAFQAw%3D%3D'
+                    <div className={styles.bannerDetails}>
+                        <div className={styles.bannerDate}>05 September 2026</div>
+                        <div className={styles.bannerTime}>6:30 PM onwards</div>
+                        <div className={styles.bannerLocation}>
+                            <a
+                                href='https://www.google.com/maps/place/Walkover/@22.7469512,75.8929134,17z/data=!3m1!4b1!4m6!3m5!1s0x3962fd37c63496b9:0xf190bda9147f9d62!8m2!3d22.7469512!4d75.8929134!16s%2Fg%2F1hm34wlnl?entry=ttu&g_ep=EgoyMDI2MDgxOS4wIKXMDSoASAFQAw%3D%3D'
+                                target='_blank'
+                                rel='noopener noreferrer'
+                            >
+                                Walkover Office, Indore &#8599;
+                            </a>
+                            <div className={styles.bannerCity}>Indore, Madhya Pradesh</div>
+                        </div>
+                    </div>
+
+                    <div className={styles.bannerAction}>
+                        <div className={styles.countdownWrap}>
+                            <div className={styles.countdownLabel}>Starts In</div>
+                            <div className={styles.countdown}>
+                                <div className={styles.countItem}>
+                                    <span className={styles.countNumber} id='msg91Days'>
+                                        {timeLeft.days}
+                                    </span>
+                                    <span className={styles.countUnit}>Days</span>
+                                </div>
+                                <span className={styles.countSeparator}>:</span>
+                                <div className={styles.countItem}>
+                                    <span className={styles.countNumber} id='msg91Hours'>
+                                        {timeLeft.hours}
+                                    </span>
+                                    <span className={styles.countUnit}>Hrs</span>
+                                </div>
+                                <span className={styles.countSeparator}>:</span>
+                                <div className={styles.countItem}>
+                                    <span className={styles.countNumber} id='msg91Minutes'>
+                                        {timeLeft.minutes}
+                                    </span>
+                                    <span className={styles.countUnit}>Mins</span>
+                                </div>
+                                <span className={styles.countSeparator}>:</span>
+                                <div className={styles.countItem}>
+                                    <span className={styles.countNumber} id='msg91Seconds'>
+                                        {timeLeft.seconds}
+                                    </span>
+                                    <span className={styles.countUnit}>Secs</span>
+                                </div>
+                            </div>
+                        </div>
+                        <Link
+                            className={styles.bannerCta}
+                            href='/event-registration'
                             target='_blank'
                             rel='noopener noreferrer'
                         >
-                            Walkover Office, Indore &#8599;
-                        </a>
-                        <div className={styles.bannerCity}>Indore, Madhya Pradesh</div>
+                            <span>Reserve Your Seat</span>
+                            <span className={styles.bannerArrow}>&rarr;</span>
+                        </Link>
                     </div>
-                </div>
-
-                <div className={styles.bannerAction}>
-                    <div className={styles.countdownWrap}>
-                        <div className={styles.countdownLabel}>Starts In</div>
-                        <div className={styles.countdown}>
-                            <div className={styles.countItem}>
-                                <span className={styles.countNumber} id='msg91Days'>
-                                    {timeLeft.days}
-                                </span>
-                                <span className={styles.countUnit}>Days</span>
-                            </div>
-                            <span className={styles.countSeparator}>:</span>
-                            <div className={styles.countItem}>
-                                <span className={styles.countNumber} id='msg91Hours'>
-                                    {timeLeft.hours}
-                                </span>
-                                <span className={styles.countUnit}>Hrs</span>
-                            </div>
-                            <span className={styles.countSeparator}>:</span>
-                            <div className={styles.countItem}>
-                                <span className={styles.countNumber} id='msg91Minutes'>
-                                    {timeLeft.minutes}
-                                </span>
-                                <span className={styles.countUnit}>Mins</span>
-                            </div>
-                            <span className={styles.countSeparator}>:</span>
-                            <div className={styles.countItem}>
-                                <span className={styles.countNumber} id='msg91Seconds'>
-                                    {timeLeft.seconds}
-                                </span>
-                                <span className={styles.countUnit}>Secs</span>
-                            </div>
-                        </div>
-                    </div>
-                    <Link
-                        className={styles.bannerCta}
-                        href='/event-registration'
-                        target='_blank'
-                        rel='noopener noreferrer'
-                    >
-                        <span>Reserve Your Seat</span>
-                        <span className={styles.bannerArrow}>&rarr;</span>
-                    </Link>
-                </div>
                 </div>
             </div>
         </div>

@@ -74,6 +74,9 @@ import G2Badges from '@/components/HelloBrComp/G2BadgesComp/G2Badges';
 import Pricing from '@/components/HelloBrComp/PricingComp/Pricing';
 import CostComparisionComp from '@/components/CostComparisionComp/CostComparisionComp';
 import EventRegistrationComp from '@/components/EventRegistrationComp';
+import CategoriesComp from '@/components/ReportsComp/CategoriesComp/CategoriesComp';
+import SetupStepsComp from '@/components/ReportsComp/SetupStepsComp/SetupStepsComp';
+import ImageWithBgComp from '@/components/ImageWithBgComp/ImageWithBgComp';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -157,6 +160,8 @@ const Components = {
     WhatsAppIntegrations,
     WhatsAppAccountVerification,
     FeatureWithBulletGroup,
+    FeatureBulletGroup: FeatureWithBulletGroup,
+    ReportsChannels: FeatureWithBulletGroup,
     FeatureSliderComp,
 
     // New Components
@@ -172,6 +177,9 @@ const Components = {
     Pricing,
     CostComparisionComp,
     EventRegistrationComp,
+    CategoriesComp,
+    SetupStepsComp,
+    ImageWithBgComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
