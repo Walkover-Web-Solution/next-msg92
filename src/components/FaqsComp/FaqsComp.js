@@ -14,7 +14,7 @@ export default function FaqsComp({ data, notCont }) {
                                         defaultChecked={index === 0}
                                         aria-label={faq?.question}
                                     />
-                                    <h3 className='collapse-title text-xl font-bold'>
+                                    <h3 className={`collapse-title text-xl ${data?.question_font || 'font-bold'}`}>
                                         <button className='text-start'>{faq?.question}</button>
                                     </h3>
                                     <div className='collapse-content '>

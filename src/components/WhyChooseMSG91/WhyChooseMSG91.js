@@ -3,6 +3,7 @@ import CalendlyModal from '../CalendlyModal';
 import LottiePlayer from '../LottiePlayer/LottiePlayer';
 import { LinkButton, LinkText } from '../UIComponent/Buttons/LinkButton';
 import WhatsAppDriveSales from '../WhatsAppDriveSaled';
+import getURL from '@/utils/getURL';
 
 export default function WhyChooseMSG91({ data, pageInfo }) {
     const isReports = pageInfo?.page === 'reports';
@@ -42,11 +43,20 @@ export default function WhyChooseMSG91({ data, pageInfo }) {
                                     content={item?.cta?.text}
                                 />
                             )}
-                            {item?.schedule_meet && (
-                                <CalendlyModal>
-                                    <LinkText customClasses={'text-link active-link'}>{item?.schedule_meet}</LinkText>
-                                </CalendlyModal>
-                            )}
+                            {item?.schedule_meet &&
+                                (isReports ? (
+                                    <a href={getURL('contact-us', pageInfo?.page, pageInfo)}>
+                                        <LinkText customClasses={'text-link active-link'}>
+                                            {item?.schedule_meet}
+                                        </LinkText>
+                                    </a>
+                                ) : (
+                                    <CalendlyModal>
+                                        <LinkText customClasses={'text-link active-link'}>
+                                            {item?.schedule_meet}
+                                        </LinkText>
+                                    </CalendlyModal>
+                                ))}
                         </div>
                         <div className='w-full xl:max-w-[700px] lg:max-w-[320px] max-w-[280px] md:mx-6 mx-2 rounded-lg overflow-hidden'>
                             {item?.img?.endsWith('.json') ? (

@@ -3,6 +3,7 @@ import { MdArrowRightAlt } from 'react-icons/md';
 import LottiePlayer from '../LottiePlayer/LottiePlayer';
 import CalendlyModal from '../CalendlyModal';
 import { LinkText } from '../UIComponent/Buttons/LinkButton';
+import getURL from '@/utils/getURL';
 
 export default function WhatsAppDriveSales({ data, pageInfo, isReports }) {
     return (
@@ -37,11 +38,16 @@ export default function WhatsAppDriveSales({ data, pageInfo, isReports }) {
                         </div>
                     ))}
                 </div>
-                {data?.schedule_meet && (
-                    <CalendlyModal>
-                        <LinkText customClasses={'text-link active-link'}>{data?.schedule_meet}</LinkText>
-                    </CalendlyModal>
-                )}
+                {data?.schedule_meet &&
+                    (isReports ? (
+                        <a href={getURL('contact-us', pageInfo?.page, pageInfo)}>
+                            <LinkText customClasses={'text-link active-link'}>{data?.schedule_meet}</LinkText>
+                        </a>
+                    ) : (
+                        <CalendlyModal>
+                            <LinkText customClasses={'text-link active-link'}>{data?.schedule_meet}</LinkText>
+                        </CalendlyModal>
+                    ))}
             </div>
         </div>
     );

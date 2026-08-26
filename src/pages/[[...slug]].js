@@ -74,6 +74,7 @@ import Pricing from '@/components/HelloBrComp/PricingComp/Pricing';
 import EventRegistrationComp from '@/components/EventRegistrationComp';
 import CategoriesComp from '@/components/ReportsComp/CategoriesComp/CategoriesComp';
 import SetupStepsComp from '@/components/ReportsComp/SetupStepsComp/SetupStepsComp';
+import HelloAnalyticsComp from '@/components/ReportsComp/HelloAnalyticsComp/HelloAnalyticsComp';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -173,6 +174,7 @@ const Components = {
     EventRegistrationComp,
     CategoriesComp,
     SetupStepsComp,
+    HelloAnalyticsComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {

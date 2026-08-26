@@ -75,7 +75,14 @@ export default function BannerComp({ pageInfo, data }) {
                     <div className='flex flex-col md:flex-row gap-6'>
                         {data?.getstarted_btn && (
                             <a
-                                href={data?.getstarted_btn_link || getURL('signup', pageInfo?.page, pageInfo)}
+                                href={
+                                    data?.getstarted_btn_link ||
+                                    getURL(
+                                        pageInfo?.page === 'reports' ? 'contact-us' : 'signup',
+                                        pageInfo?.page,
+                                        pageInfo
+                                    )
+                                }
                                 target='_blank'
                                 rel={data?.getstarted_btn_link ? 'noopener noreferrer' : undefined}
                                 className='btn btn-primary btn-md'
@@ -84,11 +91,22 @@ export default function BannerComp({ pageInfo, data }) {
                             </a>
                         )}
 
-                        {data?.schedule_meet && (
-                            <button className='btn btn-md btn-primary btn-outline' onClick={() => setIsModalOpen(true)}>
-                                {data?.schedule_meet}
-                            </button>
-                        )}
+                        {data?.schedule_meet &&
+                            (pageInfo?.page === 'reports' ? (
+                                <a
+                                    href={getURL('contact-us', pageInfo?.page, pageInfo)}
+                                    className='btn btn-md btn-primary btn-outline'
+                                >
+                                    {data?.schedule_meet}
+                                </a>
+                            ) : (
+                                <button
+                                    className='btn btn-md btn-primary btn-outline'
+                                    onClick={() => setIsModalOpen(true)}
+                                >
+                                    {data?.schedule_meet}
+                                </button>
+                            ))}
                         {/* {pageInfo?.page === 'hello' && (
                             <a
                                 href='/demochatbot'
