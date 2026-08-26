@@ -330,9 +330,12 @@
             }
         ]
     },
-    "HelloAnalyticsComp": {
+    "ImageWithBgComp": {
         "img": "/assets/reports/use_case/hello_analytics.webp",
-        "alt": "Bakit Piliin ang Hello Analytics"
+        "alt": "Bakit Piliin ang Hello Analytics",
+        "bg": "hello_analytics_bg",
+        "width": 1920,
+        "height": 1280
     },
     "FeatureWithBulletGroup": {
         "heading": "Makapangyarihang mga Ulat para sa Bawat Pangangailangan ng Negosyo",
@@ -678,7 +681,6 @@
     },
     "FaqsComp": {
         "heading": "Mga Madalas Itanong (FAQs)",
-        "question_font": "font-medium",
         "faqs": [
             {
                 "question": "Ano ang MSG91 Reports?",
