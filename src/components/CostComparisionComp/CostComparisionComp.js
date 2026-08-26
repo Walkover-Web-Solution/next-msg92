@@ -37,8 +37,7 @@ export default function CostComparisionComp({ data, pageInfo }) {
         try {
             const raw = await getSubscriptions(apiCurrency, HELLO_MS_ID);
             if (raw) {
-                const structured = handlePlanStructure(raw, apiCurrency);
-                setApiPlans(structured || []);
+                setApiPlans(handlePlanStructure(raw, apiCurrency));
             } else {
                 setApiPlans([]);
             }
