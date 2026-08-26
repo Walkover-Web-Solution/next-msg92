@@ -9,15 +9,15 @@
             "name": "Reports",
             "icon": "/assets/icons/products/reports.svg"
         },
-        "tagline": "Platform ng Pagsusuri at Pag-uulat ng Komunikasyon",
-        "heading": "Platform ng Pagsusuri at Pag-uulat ng Komunikasyon para sa Bawat Pakikipag-ugnayan sa Customer",
-        "subheading": "Gawing mga naaaksyunang insight sa negosyo ang datos ng komunikasyon gamit ang MSG91 Reports. Suriin ang performance ng SMS, WhatsApp, Email, Voice, OTP, RCS, Push Notifications, at Short URL mula sa isang pinag-isang dashboard. Subaybayan ang delivery rate, pakikipag-ugnayan ng customer, performance ng kampanya, mga gastusin, at operational metrics sa real time upang makagawa ng mas mabilis at datos-gabayan na mga desisyon.",
+        "tagline": "PAGSUSURI AT PAG-UULAT NG KOMUNIKASYON",
+        "heading": "Real-time na pagsusuri at mga insight sa komunikasyon.",
+        "subheading": "Gawing mga naaaksyunang insight sa negosyo ang datos ng komunikasyon ng customer gamit ang MSG91 Reports. Subaybayan ang performance ng paghahatid, pakikipag-ugnayan ng customer, at ROI ng kampanya sa SMS, WhatsApp, Email, OTP, at RCS sa real time mula sa iisang dashboard.",
         "banner_video": "/assets/reports/videos/hero_section_report_page_3.webm",
         "not_absolute": "true",
-        "getstarted_btn": "Mag-book ng Demo",
+        "getstarted_btn": "Magsimula",
         "schedule_meet": "Mag-iskedyul ng Pulong",
         "trustedByComp": {
-            "heading": "15+ Modyul ng Ulat • 100+ Sukatan ng Komunikasyon • Real-Time Analytics • Naii-export na mga Ulat • Handa para sa Malalaking Negosyo",
+            "heading": "Pinagkakatiwalaan ng 30,000+ pandaigdigang negosyo",
             "logos": [
                 {
                     "name": "Xiaomi",
@@ -329,6 +329,10 @@
                 }
             }
         ]
+    },
+    "HelloAnalyticsComp": {
+        "img": "/assets/reports/use_case/hello_analytics.webp",
+        "alt": "Bakit Piliin ang Hello Analytics"
     },
     "FeatureWithBulletGroup": {
         "heading": "Makapangyarihang mga Ulat para sa Bawat Pangangailangan ng Negosyo",
@@ -674,6 +678,7 @@
     },
     "FaqsComp": {
         "heading": "Mga Madalas Itanong (FAQs)",
+        "question_font": "font-medium",
         "faqs": [
             {
                 "question": "Ano ang MSG91 Reports?",

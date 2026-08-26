@@ -101,3 +101,7 @@
 @include product-color('shorturl');
 @include product-color('knowledgebase');
 @include product-color('reports');
+
+.hello_analytics_bg {
+    background-color: var(--hello-analytics-bg) !important;
+}
