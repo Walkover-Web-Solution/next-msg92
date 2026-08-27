@@ -1,0 +1,303 @@
+{
+    "HeadComp": {
+        "title": "Serviço de Hospedagem de Arquivos para Empresas | MSG91 Brasil",
+        "description": "Faça upload, hospede e compartilhe imagens, vídeos, PDFs, documentos e outros arquivos corporativos a partir de uma plataforma centralizada. Gere URLs compartilháveis e use seus arquivos no WhatsApp, SMS, E-mail, RCS, sites, apps e APIs."
+    },
+    "BannerComp": {
+        "slug": "file-hosting",
+        "product": {
+            "name": "Hospedagem de Arquivos",
+            "icon": "/assets/icons/products/filehosting.svg"
+        },
+        "tagline": "SERVIÇO DE HOSPEDAGEM DE ARQUIVOS",
+        "heading": "Envie, Hospede e Compartilhe Arquivos Corporativos",
+        "subheading": "Envie arquivos uma única vez, gere URLs compartilháveis e use no WhatsApp, SMS, E-mail, RCS, sites e APIs.",
+        "banner_video": "/assets/file_hosting/videos/upload_100_file_formats.webm",
+        "not_absolute": "true",
+        "getstarted_btn": "Comece gratuitamente",
+        "schedule_meet": "Agendar uma Reunião",
+        "trust_highlights": {
+            "heading": "Envie uma vez. Hospede com segurança. Compartilhe em qualquer lugar.",
+            "highlights": [
+                "+ de 100 Formatos de Arquivo",
+                "Biblioteca Centralizada",
+                "URLs Reutilizáveis",
+                "Compartilhamento Multicanal"
+            ]
+        }
+    },
+    "FileHostingProblemComp": {
+        "heading": "Os arquivos da sua empresa não devem ficar espalhados por toda parte",
+        "subheading": "As empresas compartilham constantemente imagens de produtos, faturas, catálogos, vídeos, documentos e outros ativos.",
+        "content": [
+            {
+                "title": "Pare de Gerenciar Arquivos Dispersos em Várias Plataformas",
+                "subtitle": "Centralize, Hospede e Compartilhe",
+                "description": "Quando os arquivos ficam espalhados por sistemas locais, anexos de e-mail, drives na nuvem e diferentes ferramentas, as equipes enfrentam retrabalho e atritos diários.",
+                "img": "/assets/file_hosting/images/problem_statement.webp",
+                "video": "/assets/file_hosting/videos/problem_statement.webm",
+                "highlights": [
+                    "Elimine uploads repetidos e arquivos duplicados em várias plataformas",
+                    "Evite ativos desatualizados e garanta consistência nos materiais com clientes",
+                    "Acabe com a dificuldade de encontrar arquivos e limitações de tamanho de anexos",
+                    "A solução inteligente: envie uma única vez e disponibilize onde sua empresa precisar"
+                ],
+                "footer": "Envie uma vez e disponibilize seus arquivos em todos os canais de comunicação",
+                "schedule_meet": "Agendar uma Reunião"
+            }
+        ]
+    },
+    "FeatureComp": {
+        "heading": "Tudo o Que Você Precisa para Hospedagem de Arquivos Corporativos",
+        "subheading": "Uma plataforma unificada criada para armazenar, gerenciar e distribuir ativos empresariais em todos os canais de comunicação.",
+        "features": [
+            {
+                "name": "Upload de + de 100 Formatos de Arquivo",
+                "content": "<p>Hospede imagens, vídeos, áudios, PDFs, apresentações, planilhas e documentos empresariais a partir de uma única plataforma.</p><ul><li>Suporta JPG, PNG, WEBP, GIF, SVG, MP4, PDF, DOCX, XLSX e mais de 100 tipos</li><li>Entrega rápida na nuvem e visualização instantânea de mídia</li><li>Otimizado para mídias de todos os tamanhos com renderização direta</li></ul>",
+                "img": "/assets/file_hosting/images/upload_100_file_formats.webp"
+            },
+            {
+                "name": "Biblioteca Centralizada de Arquivos",
+                "content": "<p>Mantenha seus arquivos organizados em um só lugar, em vez de gerenciar conteúdos em várias plataformas de armazenamento.</p><ul><li>Pesquise e filtre seu repositório digital completo em segundos</li><li>Categorize ativos com estrutura de pastas e tags intuitivas</li><li>Garanta que as equipes sempre usem as versões mais recentes dos arquivos</li></ul>",
+                "img": "/assets/file_hosting/images/centralized_file_library.webp"
+            },
+            {
+                "name": "Geração de URLs Compartilháveis",
+                "content": "<p>Transforme arquivos enviados em links que podem ser facilmente compartilhados em todos os canais de atendimento e comunicação.</p><ul><li>Geração instantânea de links via CDN com alta velocidade global</li><li>Substitua anexos pesados por links leves e fáceis de abrir</li><li>Compatível com encurtadores, parâmetros de rastreamento e CRMs</li></ul>",
+                "img": "/assets/file_hosting/images/generate_shareable_urls.webp"
+            },
+            {
+                "name": "Envie Uma Vez, Reutilize Sempre",
+                "content": "<p>Reutilize o mesmo arquivo hospedado em campanhas, modelos de mensagens, e-mails, sites, aplicativos e fluxos de automação.</p><ul><li>Elimine uploads duplicados e reduza custos de armazenamento</li><li>Atualize o arquivo de origem sem quebrar links já compartilhados</li><li>Integre links em disparos automáticos de mensagens e marketing</li></ul>",
+                "img": "/assets/file_hosting/images/upload_once_reuse_everywhere.webp"
+            },
+            {
+                "name": "Gestão Fácil de Arquivos",
+                "content": "<p>Pesquise, organize, renomeie, exclua e controle seus arquivos com facilidade em uma biblioteca central.</p><ul><li>Inspeção rápida de arquivos, renomeação e gestão de metadados</li><li>Substituição, exclusão e controle de acesso com um clique</li><li>Gestão programática de arquivos por meio de APIs REST para desenvolvedores</li></ul>",
+                "img": "/assets/file_hosting/images/easy_file_management.webp"
+            },
+            {
+                "name": "Criado para Comunicação Empresarial",
+                "content": "<p>Use arquivos hospedados no WhatsApp, SMS, E-mail, RCS, APIs, sites, aplicativos e fluxos automatizados.</p><ul><li>Integrado nativamente com WhatsApp Business, SMS, E-mail e RCS</li><li>Compartilhe mídias no chat sem erros de limite de tamanho</li><li>Dispare o envio de documentos via webhooks e fluxos de chatbots</li></ul>",
+                "img": "/assets/file_hosting/images/built_for_business_communication.webp"
+            }
+        ]
+    },
+    "FileHostingStepsComp": {
+        "tagline": "COMO FUNCIONA",
+        "heading": "Envie Uma Vez. Compartilhe em Qualquer Lugar.",
+        "subheading": "Um fluxo simples de 4 etapas para enviar, gerar links, compartilhar e reutilizar ativos empresariais.",
+        "steps": [
+            {
+                "number": "01",
+                "title": "Envio",
+                "description": "Faça o upload de imagens, vídeos, PDFs, documentos ou outros arquivos corporativos."
+            },
+            {
+                "number": "02",
+                "title": "Geração",
+                "description": "Gere uma URL hospedada e segura para o seu arquivo."
+            },
+            {
+                "number": "03",
+                "title": "Compartilhamento",
+                "description": "Utilize o link gerado no seu canal de comunicação preferido."
+            },
+            {
+                "number": "04",
+                "title": "Reutilização",
+                "description": "Acesse e reutilize o mesmo arquivo hospedado sempre que precisar."
+            }
+        ]
+    },
+    "FileHostingChannelsComp": {
+        "heading": "Use um Único Arquivo Hospedado em Todos os Canais de Comunicação",
+        "subheading": "Envie seus arquivos comerciais uma vez e compartilhe no WhatsApp, SMS, E-mail, RCS, sites, apps e APIs por meio de links reutilizáveis.",
+        "content": [
+            {
+                "title": "Distribua Mídias Hospedadas no WhatsApp, SMS, E-mail, RCS e APIs",
+                "subtitle": "Distribuição Multicanal de Ativos",
+                "description": "Transforme ativos corporativos estáticos em links rápidos e entregue fotos de produtos, catálogos, vídeos, documentos e boletos em todos os pontos de contato com clientes.",
+                "img": "/assets/file_hosting/images/communication_channels.webp",
+                "video": "/assets/file_hosting/videos/communication_channels.webm",
+                "highlights": [
+                    "API do WhatsApp Business: Compartilhe imagens de produtos, catálogos e faturas diretamente no chat",
+                    "SMS: Transforme o SMS em uma porta de entrada para conteúdos ricos através de links leves",
+                    "E-mail: Substitua anexos pesados por links rápidos e fáceis de rastrear",
+                    "Sites e Landing Pages: Hospede catálogos para download, kits de mídia e materiais institucionais",
+                    "APIs e Aplicativos: Entregue documentos dinâmicos via chatbots, CRMs e gatilhos de backend",
+                    "RCS e Mensagens Ricas: Enriqueça campanhas com mídias de alto impacto e materiais promocionais"
+                ],
+                "footer": "Faça o upload uma vez e disponibilize seus arquivos em todos os canais de atendimento",
+                "schedule_meet": "Agendar uma Reunião"
+            }
+        ]
+    },
+    "FileHostingUseCasesComp": {
+        "tagline": "CASOS DE USO",
+        "heading": "Casos de Uso Empresariais para Hospedagem de Arquivos",
+        "subheading": "De vendas e marketing a suporte e automação, armazene e compartilhe os arquivos que seus clientes precisam em cada etapa.",
+        "features": [
+            {
+                "name": "Catálogos de Produtos e Folhetos",
+                "content": "Compartilhe catálogos, folhetos, tabelas de preços e apresentações de vendas por meio de links reutilizáveis. Mantenha o conteúdo acessível e fácil de atualizar.",
+                "bullets": [
+                    "Compartilhe catálogos de produtos interativos por meio de links leves",
+                    "Atualize catálogos e tabelas em tempo real sem gerar links quebrados",
+                    "Facilite o trabalho da equipe de vendas em todos os pontos de contato"
+                ],
+                "img": "/assets/file_hosting/images/product_catalogs_and_brochures.webp"
+            },
+            {
+                "name": "Imagens e Vídeos de Produtos",
+                "content": "Hospede imagens de produtos, vídeos de demonstração, banners e vídeos promocionais em um só lugar e reutilize em campanhas de marketing.",
+                "bullets": [
+                    "Armazene fotos em alta resolução e vídeos de demonstração de forma centralizada",
+                    "Envie URLs de mídia instantaneamente via WhatsApp, E-mail, RCS e SMS",
+                    "Mantenha a consistência da identidade visual da marca em todas as equipes"
+                ],
+                "img": "/assets/file_hosting/images/product_images_and_videos.webp"
+            },
+            {
+                "name": "Faturas, Boletos e Documentos Comerciais",
+                "content": "Entregue faturas, recibos, orçamentos, pedidos de compra e termos de garantia sem depender de anexos pesados de e-mail.",
+                "bullets": [
+                    "Envie links diretos de faturas e recibos por WhatsApp e SMS",
+                    "Elimine problemas de limite de tamanho de anexo e entregabilidade de e-mail",
+                    "Garanta acesso rápido e seguro aos documentos para todos os clientes"
+                ],
+                "img": "/assets/file_hosting/images/invoices_and_business_documents.webp"
+            },
+            {
+                "name": "Treinamento e Suporte ao Cliente",
+                "content": "Compartilhe manuais do usuário, guias de instalação, vídeos de treinamento, FAQs e materiais de suporte através de links permanentes durante o atendimento e integração de clientes.",
+                "bullets": [
+                    "Equipe os agentes com links de autoatendimento prontos e guias de início rápido",
+                    "Distribua tutoriais e documentações atualizadas sob links permanentes",
+                    "Reduza o tempo de resolução de chamados com mídias instrutivas diretamente em chats"
+                ],
+                "img": "/assets/file_hosting/images/training_and_support.webp"
+            },
+            {
+                "name": "Automação e Fluxos de Trabalho",
+                "content": "Conecte URLs de arquivos hospedados com APIs, chatbots, CRMs e fluxos automáticos para entregar documentos ou mídias com base nas ações do cliente.",
+                "bullets": [
+                    "Integre links dinâmicos de arquivos em chatbots e fluxos automatizados no CRM",
+                    "Dispare o envio de documentos transacionais baseado no progresso do usuário",
+                    "Monitore a distribuição de materiais de forma programática"
+                ],
+                "img": "/assets/file_hosting/images/automation_and_apis.webp"
+            }
+        ]
+    },
+    "FileHostingComparisonComp": {
+        "heading": "Por Que Escolher a MSG91 em Vez de Google Drive / Dropbox",
+        "subheading": "O armazenamento em nuvem genérico foi feito para guardar arquivos. A Hospedagem de Arquivos da MSG91 foi criada para ajudar sua empresa a usar esses arquivos na comunicação com clientes.",
+        "content": [
+            {
+                "title": "Criado para Comunicação Empresarial em Todos os Canais",
+                "subtitle": "Conectado, Reutilizável e Escalável",
+                "description": "Os serviços tradicionais armazenam arquivos em pastas estáticas. A Hospedagem da MSG91 conecta seus arquivos diretamente ao WhatsApp, SMS, E-mail, RCS, APIs, sites e sistemas de gestão para entregá-los onde os clientes precisarem.",
+                "img": "/assets/file_hosting/images/why_msg91.webp",
+                "highlights": [
+                    "Centralizado: Mantenha todos os seus ativos de comunicação em um único lugar",
+                    "Reutilizável: Envie uma vez e reutilize em campanhas, modelos e automações",
+                    "Conectado: Utilize arquivos hospedados nativamente nos canais MSG91",
+                    "Escalável: Suporte demandas crescentes de compartilhamento de arquivos multicanal"
+                ],
+                "footer": "Envie uma vez e disponibilize seus materiais onde quer que sua empresa se comunique",
+                "schedule_meet": "Agendar uma Reunião"
+            }
+        ]
+    },
+    "FileHostingFormatsComp": {
+        "tagline": "FORMATOS SUPORTADOS",
+        "heading": "Hospede os Arquivos Que Sua Empresa Usa Todos os Dias",
+        "subheading": "+ de 100 Formatos de Arquivo. Uma Única Plataforma Centralizada.",
+        "img": "/assets/file_hosting/images/host_the_files_your_business_uses_every_day.webp",
+        "steps": [
+            {
+                "number": "01",
+                "title": "Imagens",
+                "description": "PNG, JPG, JPEG, GIF, SVG, WEBP, BMP, TIFF"
+            },
+            {
+                "number": "02",
+                "title": "Vídeos",
+                "description": "MP4, MOV, AVI, MPEG, OGG"
+            },
+            {
+                "number": "03",
+                "title": "Áudios",
+                "description": "MP3, AAC, WAV, AMR"
+            },
+            {
+                "number": "04",
+                "title": "Documentos",
+                "description": "PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, TXT e muito mais"
+            }
+        ]
+    },
+    "FaqsComp": {
+        "heading": "Perguntas Frequentes",
+        "faqs": [
+            {
+                "question": "O que é hospedagem de arquivos?",
+                "answer": "A hospedagem de arquivos é um serviço que permite que empresas enviem, armazenem, gerenciem e compartilhem arquivos online. Em vez de manter arquivos apenas em computadores locais ou enviar anexos pesados, as empresas podem hospedar imagens, vídeos, PDFs e documentos e compartilhá-los por meio de links acessíveis.<br/><br/>A Hospedagem de Arquivos da MSG91 oferece uma plataforma centralizada para hospedar arquivos corporativos e usá-los no WhatsApp, SMS, E-mail, RCS, sites, aplicativos e APIs."
+            },
+            {
+                "question": "O que é um serviço de hospedagem de arquivos?",
+                "answer": "Um serviço de hospedagem de arquivos fornece armazenamento online e acesso a conteúdos por meio de uma plataforma centralizada. Ele ajuda empresas a gerenciar seus ativos digitais e compartilhá-los por meio de links hospedados, em vez de enviar os mesmos arquivos repetidamente.<br/><br/>Com a MSG91, sua empresa pode enviar arquivos uma vez, gerar URLs compartilháveis e reutilizá-los em toda a comunicação com clientes."
+            },
+            {
+                "question": "Por que as empresas precisam de um serviço de hospedagem de arquivos?",
+                "answer": "As empresas costumam compartilhar os mesmos materiais em várias campanhas, conversas de suporte, sites e aplicativos. Gerenciar esses arquivos separadamente pode gerar uploads repetidos, versões desatualizadas e trabalho manual desnecessário.<br/><br/>Um serviço de hospedagem de arquivos oferece um local centralizado onde as equipes organizam e reutilizam arquivos por meio de links práticos."
+            },
+            {
+                "question": "Quais tipos de arquivos posso hospedar na MSG91?",
+                "answer": "A Hospedagem da MSG91 suporta diversos tipos de arquivos corporativos, incluindo:<br/>• Imagens como JPG, PNG, GIF, SVG e WEBP<br/>• Vídeos como MP4, MOV, AVI e MPEG<br/>• Arquivos de áudio como MP3, WAV, AAC e AMR<br/>• Documentos como PDF, DOC, DOCX, XLS, XLSX, PPT e PPTX<br/><br/>A plataforma suporta mais de 100 formatos de arquivos, sendo ideal para materiais de marketing, documentos corporativos, mídias de produtos e recursos de suporte."
+            },
+            {
+                "question": "Posso fazer upload de um arquivo uma única vez e reutilizá-lo?",
+                "answer": "Sim. Uma das principais vantagens da Hospedagem de Arquivos da MSG91 é a possibilidade de fazer upload de um arquivo uma vez e reutilizar seu link em diferentes campanhas, canais de comunicação, sites, aplicativos e fluxos de automação.<br/><br/>Isso elimina uploads repetitivos e garante acesso consistente aos ativos da sua empresa."
+            },
+            {
+                "question": "A hospedagem de arquivos pode ser usada com chatbots e automações?",
+                "answer": "Sim. As URLs dos arquivos hospedados podem ser facilmente integradas a respostas de chatbots e fluxos automatizados para entregar arquivos relevantes com base nas interações do cliente.<br/><br/>Por exemplo, uma empresa pode enviar um catálogo de produtos, manual de instruções, fatura ou guia de configuração assim que o cliente solicitar."
+            },
+            {
+                "question": "Como o serviço de hospedagem reduz o trabalho repetitivo?",
+                "answer": "Sem hospedagem centralizada, as equipes precisam reenviar imagens, PDFs ou vídeos a cada nova campanha ou atendimento.<br/><br/>Com a MSG91, você faz o upload uma única vez, gera um link permanente e reutiliza em qualquer canal ou automação, economizando tempo e aumentando a agilidade da equipe."
+            },
+            {
+                "question": "Posso usar o mesmo arquivo hospedado em vários canais?",
+                "answer": "Sim. Um arquivo hospedado pode ser compartilhado em todos os canais de comunicação suportados, incluindo WhatsApp, SMS, E-mail, RCS, sites, aplicativos e APIs.<br/><br/>Isso cria uma gestão centralizada de ativos em vez de manter cópias separadas para cada canal."
+            },
+            {
+                "question": "A Hospedagem de Arquivos da MSG91 é indicada para comunicação corporativa?",
+                "answer": "Sim. A solução foi desenhada especificamente para fluxos de comunicação corporativa, conectando o armazenamento de arquivos diretamente com WhatsApp, SMS, E-mail, RCS, sites, aplicativos e APIs."
+            },
+            {
+                "question": "Quais são os benefícios de usar hospedagem na nuvem para empresas?",
+                "answer": "A hospedagem na nuvem oferece um modo centralizado de gerenciar e compartilhar ativos digitais. Com a MSG91, sua empresa pode:<br/>• Centralizar arquivos frequentemente utilizados<br/>• Fazer upload uma vez e reutilizar links<br/>• Gerar URLs compartilháveis e rápidas<br/>• Eliminar uploads redundantes<br/>• Compartilhar arquivos em múltiplos canais<br/>• Automatizar a entrega de documentos<br/>• Simplificar a gestão de arquivos da equipe"
+            },
+            {
+                "question": "A hospedagem de arquivos é útil para suporte ao cliente?",
+                "answer": "Sim. As equipes de suporte podem compartilhar guias de solução de problemas, manuais, termos de garantia, FAQs e vídeos explicativos por meio de links prontos para envio, reduzindo o tempo de atendimento."
+            },
+            {
+                "question": "Por que escolher a MSG91 como seu serviço de hospedagem de arquivos?",
+                "answer": "A MSG91 une hospedagem de arquivos com comunicação empresarial multicanal. Em vez de isolar arquivos em drives tradicionais, conectamos seus materiais diretamente ao WhatsApp, SMS, E-mail, RCS, sites e APIs para uma distribuição rápida e eficiente."
+            }
+        ]
+    },
+    "PreFooterComp": {
+        "content": "Hospede os Arquivos da Sua Empresa e Compartilhe Onde Quiser",
+        "buttons": {
+            "getStarted": {
+                "text": "Comece a Hospedar Arquivos Hoje",
+                "primary": true
+            }
+        }
+    }
+}

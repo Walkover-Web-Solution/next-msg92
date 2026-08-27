@@ -7,7 +7,8 @@ import getURL from '@/utils/getURL';
 
 export default function WhyChooseMSG91({ data, pageInfo }) {
     const isReports = pageInfo?.page === 'reports';
-    const bgClass = isReports ? 'reports_lite_bg' : 'bg-[#f4fcf4]';
+    const isFileHosting = pageInfo?.page === 'file-hosting';
+    const bgClass = isReports ? 'reports_lite_bg' : isFileHosting ? 'file-hosting_lite_bg' : 'bg-[#f4fcf4]';
 
     return (
         <div className={bgClass}>
@@ -44,7 +45,7 @@ export default function WhyChooseMSG91({ data, pageInfo }) {
                                 />
                             )}
                             {item?.schedule_meet &&
-                                (isReports ? (
+                                (isReports || isFileHosting ? (
                                     <a href={getURL('contact-us', pageInfo?.page, pageInfo)}>
                                         <LinkText customClasses={'text-link active-link'}>
                                             {item?.schedule_meet}
@@ -61,6 +62,10 @@ export default function WhyChooseMSG91({ data, pageInfo }) {
                         <div className='w-full xl:max-w-[700px] lg:max-w-[320px] max-w-[280px] md:mx-6 mx-2 rounded-lg overflow-hidden'>
                             {item?.img?.endsWith('.json') ? (
                                 <LottiePlayer lottie={item?.img} />
+                            ) : item?.video ? (
+                                <video className='w-full' autoPlay muted loop playsInline aria-label={item?.title}>
+                                    <source src={item.video} type='video/webm' />
+                                </video>
                             ) : item?.img ? (
                                 <Image
                                     src={item?.img}

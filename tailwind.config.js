@@ -28,6 +28,11 @@ module.exports = {
                     secondaryFg: '#0A5840',
                     secondaryBorder: '#0A5840',
                 },
+                fileHosting: {
+                    primary: '#4f46e5',
+                    light: '#EEF2FF',
+                    border: '#C7D2FE',
+                },
             },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

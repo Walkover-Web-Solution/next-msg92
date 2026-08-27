@@ -88,6 +88,11 @@
                         "description": "Gerencie Documentos de Ajuda e Guias"
                     },
                     {
+                        "name": "Hospedagem de Arquivos",
+                        "slug": "file-hosting",
+                        "description": "Hospede e compartilhe arquivos comerciais."
+                    },
+                    {
                         "name": "Relatórios",
                         "slug": "reports",
                         "description": "Todos os seus relatórios em um só lugar."
@@ -261,6 +266,10 @@
                 {
                     "name": "KnowledgeBase",
                     "link": "knowledgebase"
+                },
+                {
+                    "name": "Hospedagem de Arquivos",
+                    "link": "file-hosting"
                 },
                 {
                     "name": "Reports",
