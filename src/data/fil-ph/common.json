@@ -88,6 +88,11 @@
                         "description": "Pamahalaan ang mga Dokumento at Gabay"
                     },
                     {
+                        "name": "File Hosting",
+                        "slug": "file-hosting",
+                        "description": "Mag-host at magbahagi ng mga file ng negosyo."
+                    },
+                    {
                         "name": "Reports",
                         "slug": "reports",
                         "description": "Lahat ng iyong mga ulat sa isang lugar."
@@ -261,6 +266,10 @@
                 {
                     "name": "KnowledgeBase",
                     "link": "knowledgebase"
+                },
+                {
+                    "name": "File Hosting",
+                    "link": "file-hosting"
                 },
                 {
                     "name": "Reports",

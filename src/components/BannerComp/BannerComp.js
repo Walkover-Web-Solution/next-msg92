@@ -85,7 +85,7 @@ export default function BannerComp({ pageInfo, data }) {
                         )}
 
                         {data?.schedule_meet &&
-                            (pageInfo?.page === 'reports' ? (
+                            (pageInfo?.page === 'reports' || pageInfo?.page === 'file-hosting' ? (
                                 <a
                                     href={getURL('contact-us', pageInfo?.page, pageInfo)}
                                     className='btn btn-md btn-primary btn-outline'
@@ -120,7 +120,16 @@ export default function BannerComp({ pageInfo, data }) {
                         )} */}
                     </div>
 
-                    <TrustedByComp data={data?.trustedByComp} />
+                    {data?.trust_highlights ? (
+                        <div className='flex flex-col gap-1 pt-2'>
+                            <p className='font-bold text-lg'>{data.trust_highlights?.heading}</p>
+                            {data.trust_highlights?.highlights?.length > 0 && (
+                                <p className='text-sm font-medium'>{data.trust_highlights.highlights.join(' | ')}</p>
+                            )}
+                        </div>
+                    ) : (
+                        <TrustedByComp data={data?.trustedByComp} />
+                    )}
                     {data?.code && <CodeSnippet curlKey={data?.slug} />}
                 </div>
                 {!data?.code && data?.banner_img && !data?.not_absolute && (
