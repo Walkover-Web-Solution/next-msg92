@@ -48,7 +48,8 @@ function matchesSearchQuery(row, searchableKeys, query) {
 function deduplicateRows(data) {
     const seen = new Set();
     return data.filter((row) => {
-        const key = row.identifier || `${row.country_name ?? ''}||${row.prefix ?? ''}||${row.country_prefix ?? ''}`;
+        if (!row.country_name) return true;
+        const key = `${row.country_name}||${row.prefix ?? ''}||${row.country_prefix ?? ''}`;
         if (seen.has(key)) return false;
         seen.add(key);
         return true;
@@ -99,7 +100,14 @@ const DialPlanTable = React.memo(function DialPlanTable({
     currency,
 }) {
     const hasData = data.length > 0;
-    const visibleColumns = columns.filter((col) => col.key !== 'prefix' && col.key !== 'country_prefix');
+    const visibleColumns = useMemo(() => {
+        const filtered = (columns || []).filter((col) => col.key !== 'prefix' && col.key !== 'country_prefix');
+        const countryCol = filtered.find((col) => col.key === 'country_name');
+        if (countryCol) {
+            return [countryCol, ...filtered.filter((col) => col.key !== 'country_name')];
+        }
+        return filtered;
+    }, [columns]);
     const tableRef = useRef(null);
 
     const scrollLeft = () => tableRef.current?.scrollBy({ left: -SCROLL_DISTANCE, behavior: 'smooth' });
