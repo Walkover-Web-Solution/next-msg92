@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import styles from './SummitBanner.module.scss';
 
 const EVENT_TIME = new Date('2026-09-05T18:30:00+05:30').getTime();
@@ -7,6 +8,10 @@ const EVENT_TIME = new Date('2026-09-05T18:30:00+05:30').getTime();
 const padValue = (val) => String(Math.max(0, val)).padStart(2, '0');
 
 export default function SummitBanner() {
+    const router = useRouter();
+    const isEventRegistrationPage =
+        router?.asPath?.includes('event-registration') || router?.pathname?.includes('event-registration');
+
     const [isVisible, setIsVisible] = useState(false);
     const [timeLeft, setTimeLeft] = useState({
         days: '00',
@@ -146,7 +151,7 @@ export default function SummitBanner() {
     }, [isVisible]);
 
     useLayoutEffect(() => {
-        if (!isVisible) {
+        if (!isVisible || isEventRegistrationPage) {
             document.documentElement.style.removeProperty('--summit-banner-height');
             return;
         }
@@ -166,7 +171,7 @@ export default function SummitBanner() {
             observer.disconnect();
             document.documentElement.style.removeProperty('--summit-banner-height');
         };
-    }, [isVisible]);
+    }, [isVisible, isEventRegistrationPage]);
 
     const handleClose = () => {
         setIsVisible(false);
@@ -175,7 +180,7 @@ export default function SummitBanner() {
         } catch (e) {}
     };
 
-    if (!isVisible) return null;
+    if (!isVisible || isEventRegistrationPage) return null;
 
     return (
         <div
