@@ -17,7 +17,7 @@ export const TAB_TYPES = {
 };
 
 // Searchable fields for dial plan
-export const SEARCHABLE_FIELDS = ['country_name'];
+export const SEARCHABLE_FIELDS = ['country_name', 'identifier', 'name'];
 
 // Empty arrays for memoization
 export const EMPTY_ARRAY = [];

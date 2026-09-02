@@ -48,7 +48,7 @@ function matchesSearchQuery(row, searchableKeys, query) {
 function deduplicateRows(data) {
     const seen = new Set();
     return data.filter((row) => {
-        const key = `${row.country_name ?? ''}||${row.prefix ?? ''}||${row.country_prefix ?? ''}`;
+        const key = row.identifier || `${row.country_name ?? ''}||${row.prefix ?? ''}||${row.country_prefix ?? ''}`;
         if (seen.has(key)) return false;
         seen.add(key);
         return true;
@@ -186,8 +186,12 @@ const DialPlanTable = React.memo(function DialPlanTable({
                                                                   return val ?? '-';
                                                               const num = Number(val);
                                                               const isIdCol = col.key.toLowerCase().includes('id');
+                                                              const formatted = String(val).replace(
+                                                                  /(\.\d{2})\d+/,
+                                                                  '$1'
+                                                              );
                                                               return !Number.isNaN(num) && currency && !isIdCol
-                                                                  ? `${val} ${currency}`
+                                                                  ? `${formatted} ${currency}`
                                                                   : val;
                                                           })()}
                                                 </td>
