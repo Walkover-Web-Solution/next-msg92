@@ -72,7 +72,8 @@ function formatCellValue(col, row, currency) {
     const num = Number(val);
 
     if (!Number.isNaN(num) && currency && !col.key.toLowerCase().includes('id')) {
-        return `${val} ${currency}`;
+        const formatted = String(val).replace(/(\.\d{2})\d+/, '$1');
+        return `${formatted} ${currency}`;
     }
     return val;
 }
