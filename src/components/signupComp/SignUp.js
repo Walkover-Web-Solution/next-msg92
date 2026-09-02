@@ -34,7 +34,7 @@ export default class SignUp extends React.Component {
         var queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
 
         this.state = {
-            activeStep: null,
+            activeStep: 1,
             signupByGitHub: queryParams?.githubsignup ? true : false,
             githubCode: queryParams?.code,
             githubState: queryParams?.state,
