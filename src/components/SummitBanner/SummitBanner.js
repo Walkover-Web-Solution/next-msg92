@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import styles from './SummitBanner.module.scss';
 
 const EVENT_TIME = new Date('2026-09-05T18:30:00+05:30').getTime();
+const EVENT_EXPIRY_TIME = new Date('2026-09-05T17:00:00+05:30').getTime();
 
 const padValue = (val) => String(Math.max(0, val)).padStart(2, '0');
 
@@ -23,6 +24,10 @@ export default function SummitBanner() {
     useEffect(() => {
         const searchParams = new URLSearchParams(window.location.search);
         const forcePreview = searchParams.get('preview_banner') === 'true' || searchParams.get('indore') === 'true';
+
+        if (Date.now() >= EVENT_EXPIRY_TIME && !forcePreview) {
+            return;
+        }
 
         if (forcePreview) {
             try {
@@ -133,8 +138,8 @@ export default function SummitBanner() {
 
         const updateCountdown = () => {
             const difference = EVENT_TIME - Date.now();
-            if (difference <= 0) {
-                setTimeLeft({ days: '00', hours: '00', minutes: '00', seconds: '00' });
+            if (Date.now() >= EVENT_EXPIRY_TIME || difference <= 0) {
+                setIsVisible(false);
                 return;
             }
             setTimeLeft({
