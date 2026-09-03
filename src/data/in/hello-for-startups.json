@@ -41,65 +41,67 @@
         }
     },
     "HelloStartupWhy": {
-        "heading": "Why we built this",
-        "description": "Early-stage businesses shouldn't have to choose between good customer support and their runway. Hello Free for Startups gives qualifying Indian startups the same platform growing companies pay for — at zero cost — so you can deliver professional, multi-channel support from day one.",
+        "kicker": "One workspace",
+        "heading": "Support that grows with your startup.",
+        "description": "Bring conversations, automation and insights together — so your team can spend less time managing support and more time helping customers.",
         "cards": [
             {
                 "icon": "💬",
-                "title": "Omnichannel inbox",
-                "description": "WhatsApp, Email, Live Chat, Instagram &\nFacebook — unified in one place."
+                "title": "One inbox. Every conversation.",
+                "description": "WhatsApp, Email, Live Chat, Instagram and Facebook — all in one clean workspace."
             },
             {
-                "icon": "🤖",
-                "title": "AI chatbot",
-                "description": "Auto-resolve routine queries around the clock,\nsubject to fair use."
+                "icon": "✦",
+                "title": "AI that handles the routine.",
+                "description": "Resolve common questions automatically, around the clock."
             },
             {
                 "icon": "⚡",
-                "title": "Automation & routing",
-                "description": "Workflow automation, smart routing, and\ncanned responses built in."
+                "title": "Automate the busywork.",
+                "description": "Route conversations and create workflows that keep your team moving."
             },
             {
-                "icon": "🌐",
-                "title": "Real-time translation",
-                "description": "Talk to customers in their language across\nevery channel."
+                "icon": "◎",
+                "title": "Speak every customer's language.",
+                "description": "Real-time translation helps your team communicate naturally across markets."
             },
             {
-                "icon": "📊",
-                "title": "Analytics & reporting",
-                "description": "Track response times, resolution and team\nperformance."
+                "icon": "▥",
+                "title": "Know what's working.",
+                "description": "Track response times, resolution and team performance without the spreadsheet work."
             },
             {
-                "icon": "🔌",
-                "title": "150+ integrations",
-                "description": "Connect your CRM, e-commerce and tools.\nLive in minutes, no setup fee."
+                "icon": "⌘",
+                "title": "Connect your stack.",
+                "description": "150+ integrations make it easy to connect CRM, commerce and everyday tools."
             }
         ]
     },
     "HelloStartupEligibility": {
         "id": "eligibility",
-        "heading": "Eligibility — you must meet all of these",
-        "description": "To keep this program focused on genuine early-stage businesses, your business qualifies only if it meets every condition below.",
+        "kicker": "Built for early-stage teams",
+        "heading": "Simple to qualify. Simple to use.",
+        "description": "If your business is registered, genuinely early-stage and within the revenue threshold, you can get Hello at no cost.",
         "cards": [
             {
                 "number": "01",
                 "title": "Registered India business",
-                "description": "A business entity registered in India — Private Limited, LLP, OPC, Partnership, or registered Proprietorship. Unregistered individuals are not eligible."
+                "description": "A business entity registered in India — Private Limited, LLP, OPC, Partnership, or registered Proprietorship. Unregistered individuals aren't eligible."
             },
             {
                 "number": "02",
                 "title": "Revenue below ₹40 lakh",
-                "description": "Your annual revenue is below ₹40,00,000 (40 lakh), as evidenced by your audited balance sheet."
+                "description": "Annual revenue must be below ₹40,00,000 (40 lakh) as evidenced by your audited balance sheet."
             },
             {
                 "number": "03",
-                "title": "Audited balance sheet",
-                "description": "A valid audited balance sheet (by a practicing Chartered Accountant) for the most recent financial year, plus proof of registration and a signed self-declaration."
+                "title": "Verified documents",
+                "description": "A valid audited balance sheet (by a practicing CA) for the most recent financial year, registration proof and declaration."
             },
             {
                 "number": "04",
                 "title": "One account per business",
-                "description": "Only one free Startup account per registered entity. Splitting your business to stay within limits will disqualify you."
+                "description": "One free Startup account per registered entity. No splitting businesses to stay within limits."
             }
         ]
     },
@@ -108,8 +110,8 @@
         "subheading": "The Free Startup Plan gives you full access to Hello — capped at the limits below. Stay within them and you pay nothing.",
         "plan_badge": "Free Startup Plan",
         "price": "₹0",
-        "period": "/month",
-        "action_badge": "What you get — and the limits",
+        "period": "/ month",
+        "action_badge": "NO CREDIT CARD · NO SETUP FEE",
         "stats": [
             {
                 "label": "UP TO",
@@ -129,68 +131,71 @@
             {
                 "label": "UP TO",
                 "value": "Fair use",
-                "sublabel": "AI usage policy\napplies"
+                "sublabel": "AI usage\npolicy applies"
             }
         ],
-        "notice": "Cross any of these caps and you'll simply be invited to <span class='text-accent underline cursor-pointer'>upgrade to a paid plan</span> — your account and data continue uninterrupted."
+        "notice": "<strong>Grow beyond a limit?</strong> Your account and data stay intact — you simply move to a paid Hello plan."
     },
     "HelloStartupSteps": {
-        "heading": "How it works",
+        "kicker": "Getting started",
+        "heading": "Four steps. No surprises.",
+        "subheading": "We keep the process simple so you can get back to building your startup.",
         "steps": [
             {
                 "number": "1",
                 "title": "Apply",
-                "description": "Fill the form and upload your audited balance sheet and registration proof."
+                "description": "Fill the form and upload your business documents."
             },
             {
                 "number": "2",
                 "title": "Verification",
-                "description": "Our team verifies your documents and eligibility, typically within a few business days."
+                "description": "Our team reviews your documents and eligibility."
             },
             {
                 "number": "3",
                 "title": "Activation",
-                "description": "Once approved, your free Startup account is switched on."
+                "description": "Once approved, your free Hello account goes live."
             },
             {
                 "number": "4",
-                "title": "Annual review",
-                "description": "We re-confirm eligibility each year and help you transition smoothly as you grow."
+                "title": "Grow",
+                "description": "Keep your setup and move to paid when you outgrow the program."
             }
         ]
     },
     "HelloStartupGrow": {
-        "heading": "When you grow, you keep everything",
-        "description": "Crossing 40 lakh is a good problem. When you do, your data, conversations and setup stay exactly as they are — you just move to a paid Hello plan. No migration, no disruption."
+        "heading": "When you grow, you keep everything.",
+        "description": "Your data, conversations and setup stay exactly as they are. No migration. No disruption."
     },
     "Faqs": {
-        "heading": "Frequently asked questions",
+        "heading": "Good to know.",
         "items": [
             {
                 "question": "Is it genuinely free?",
-                "answer": "Yes — within the usage limits above, for as long as you remain eligible."
+                "answer": "Yes — within the stated usage limits and for as long as your business remains eligible for the program."
             },
             {
                 "question": "Why do you need an audited balance sheet?",
                 "answer": "An audited balance sheet by a practicing Chartered Accountant helps us verify revenue objectively and ensure this initiative supports early-stage startups that need it most."
             },
             {
-                "question": "What if I exceed the ticket or agent limit?",
-                "answer": "If you cross the limits, you will simply be invited to upgrade to a paid Hello plan. Your account and data will continue completely uninterrupted."
+                "question": "What happens if I exceed a ticket or agent limit?",
+                "answer": "You'll be invited to move to a suitable paid plan. Your existing account, conversations and data remain intact."
             },
             {
                 "question": "What happens at annual review if I've grown?",
-                "answer": "Crossing 40 lakh revenue is great news! We will help you smoothly transition to a regular paid plan with zero migration hassle and no downtime."
+                "answer": "If you no longer meet the criteria, we'll help you transition to a paid Hello plan without migration or disruption."
             },
             {
                 "question": "Can access be withdrawn?",
-                "answer": "Access remains active as long as you remain eligible and adhere to fair use policies. If eligibility terms are violated, access may be revoked after prior notice."
+                "answer": "Eligibility may be reviewed or access withdrawn if program requirements or usage terms are no longer met."
             }
         ]
     },
     "HelloStartupFooterCta": {
-        "heading": "Big-company support, while you're still small.",
-        "subheading": "Apply for Hello Free for Startups and give your customers the experience they deserve.",
+        "kicker": "For the next stage",
+        "heading": "Start your support journey without the starting cost.",
+        "subheading": "Give customers a better experience today. Pay for more only when you've grown.",
         "btn_text": "Apply for free access",
         "btn_link": "https://docs.google.com/forms/d/e/1FAIpQLSf50qTLGF-UjasMyhmZLd4rKt8FtpqA1Q9x2AL3Neor7fk0cg/viewform?usp=send_form"
     }
