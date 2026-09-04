@@ -4,10 +4,10 @@
         "description": "Full customer-support software — omnichannel inbox, AI chatbot, and automation — completely free for early-stage businesses in Singapore under S$ 150,000 in annual revenue."
     },
     "HelloStartupBanner": {
-        "badge": "🇸🇬 Hello For Singapore Startups",
-        "heading_prefix": "Hello,",
-        "heading_accent": "free for Singapore startups.",
-        "heading": "Hello, free for Singapore startups.",
+        "badge": "Hello For Singapore Startups",
+        "heading_prefix": "Great customer support.",
+        "heading_accent": "Zero cost to get started.",
+        "heading": "Great customer support. Zero cost to get started.",
         "subheading": "Full customer-support software — omnichannel inbox, AI chatbot, and automation — completely free for early-stage businesses in Singapore under S$ 150,000 in annual revenue. Build your customer experience now; pay only when you've grown.",
         "primary_btn": "Apply for free access",
         "primary_btn_link": "https://docs.google.com/forms/d/e/1FAIpQLSf50qTLGF-UjasMyhmZLd4rKt8FtpqA1Q9x2AL3Neor7fk0cg/viewform?usp=send_form",
@@ -42,13 +42,13 @@
     },
     "HelloStartupWhy": {
         "kicker": "One workspace",
-        "heading": "Support that grows with your startup.",
+        "heading": "Support that grows\nwith your startup.",
         "description": "Bring conversations, automation and insights together — so your team can spend less time managing support and more time helping customers.",
         "cards": [
             {
                 "icon": "💬",
                 "title": "One inbox. Every conversation.",
-                "description": "WhatsApp, Email, Live Chat, Instagram and Facebook — all in one clean workspace."
+                "description": "WhatsApp, Email, Live Chat, Voice, Instagram, Facebook, Twitter (X), RCS, and Apple Message — all in one clean workspace."
             },
             {
                 "icon": "✦",
@@ -79,24 +79,24 @@
     },
     "HelloStartupEligibility": {
         "id": "eligibility",
-        "kicker": "Built for early-stage teams",
-        "heading": "Simple to qualify. Simple to use.",
+        "kicker": "BUILT FOR EARLY-STAGE TEAMS",
+        "heading": "Simple to qualify.\nSimple to use.",
         "description": "If your business is registered, genuinely early-stage and within the revenue threshold, you can get Hello at no cost.",
         "cards": [
             {
                 "number": "01",
                 "title": "Registered business",
-                "description": "A validly registered business entity in Singapore. Unregistered individuals aren't eligible."
+                "description": "A validly registered business entity. Unregistered individuals aren't eligible."
             },
             {
                 "number": "02",
                 "title": "Revenue below S$ 150,000",
-                "description": "Annual revenue must be below S$ 150,000 as evidenced by your financial statements."
+                "description": "Annual revenue must be below S$ 150,000 or the applicable local equivalent."
             },
             {
                 "number": "03",
                 "title": "Verified documents",
-                "description": "Valid filed financials or ACRA return for the most recent financial year, registration proof and declaration."
+                "description": "Latest financial statement or tax return, registration proof and declaration."
             },
             {
                 "number": "04",
@@ -107,7 +107,6 @@
     },
     "HelloStartupPlan": {
         "heading": "What's included in your free plan",
-        "subheading": "The Free Startup Plan gives you full access to Hello — capped at the limits below. Stay within them and you pay nothing.",
         "plan_badge": "Free Startup Plan",
         "price": "S$ 0",
         "period": "/ month",
@@ -139,7 +138,7 @@
     "HelloStartupSteps": {
         "kicker": "Getting started",
         "heading": "Four steps. No surprises.",
-        "subheading": "We keep the process simple so you can get back to building your startup.",
+        "description": "We keep the process simple so you can get back to building your startup.",
         "steps": [
             {
                 "number": "1",

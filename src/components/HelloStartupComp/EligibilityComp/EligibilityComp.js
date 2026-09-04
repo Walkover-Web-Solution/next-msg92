@@ -1,64 +1,42 @@
-import React from 'react';
-
 export default function EligibilityComp({ data }) {
     if (!data?.heading) return null;
 
     return (
-        <section
-            id={data?.id || 'eligibility'}
-            className='bg-[#f5faff] border-y border-[#edf5fa] py-16 lg:py-24 scroll-mt-10'
-        >
-            <div className='container'>
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-end max-w-6xl mx-auto mb-12'>
-                    <div>
-                        {data?.kicker ? (
-                            <div className='text-accent text-xs font-extrabold uppercase tracking-widest mb-3'>
-                                {data.kicker}
-                            </div>
-                        ) : (
-                            <div className='text-accent text-xs font-extrabold uppercase tracking-widest mb-3'>
-                                Built for early-stage teams
-                            </div>
+        <section id='eligibility' className='bg-sky-50 border-t border-sky-100 scroll-mt-10'>
+            <div className='container cont_p'>
+                <div className='max-w-5xl mx-auto w-full cont cont_gap'>
+                    <header className='flex flex-col md:flex-row md:items-end justify-between gap-6'>
+                        <div>
+                            {data?.kicker && <p className='py-2 text-xs font-semibold text-accent'>{data.kicker}</p>}
+                            <h2 className='heading font-semibold whitespace-pre-line'>{data.heading}</h2>
+                        </div>
+                        {data?.description && (
+                            <p className='max-w-md text-base text-gray-600 md:text-right'>{data.description}</p>
                         )}
-                        <h2 className='text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight'>
-                            {data?.heading}
-                        </h2>
-                    </div>
-                    {data?.description && (
-                        <p className='text-gray-600 text-sm sm:text-base leading-relaxed max-w-lg mt-2 md:mt-0'>
-                            {data.description}
-                        </p>
-                    )}
-                </div>
+                    </header>
 
-                {data?.cards?.length > 0 && (
-                    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#dfeaf2] border border-[#dfeaf2] rounded-2xl overflow-hidden shadow-sm max-w-6xl mx-auto'>
-                        {data?.cards?.map((card, index) => {
-                            const formattedNum = card?.number
-                                ? String(card.number).padStart(2, '0')
-                                : String(index + 1).padStart(2, '0');
-
-                            return (
-                                <article
-                                    key={index}
-                                    className='bg-white p-6 sm:p-7 min-h-[220px] flex flex-col justify-between hover:bg-slate-50/50 transition-colors'
-                                >
-                                    <div className='text-accent font-extrabold text-xs tracking-wider mb-6'>
-                                        {formattedNum}
-                                    </div>
-                                    <div>
-                                        <h3 className='text-base sm:text-lg font-bold text-gray-900 mb-2'>
+                    {data?.cards?.length > 0 && (
+                        <div className='bg-white border border-sky-100 rounded-2xl overflow-hidden shadow-sm'>
+                            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-sky-100'>
+                                {data.cards.map((card, index) => (
+                                    <article key={index} className='p-6 sm:p-7 flex flex-col'>
+                                        {card?.number && (
+                                            <span className='text-xs font-bold text-accent mb-12 block'>
+                                                {card.number}
+                                            </span>
+                                        )}
+                                        <h3 className='text-base font-bold text-gray-900 mb-2 sm:min-h-[44px]'>
                                             {card?.title}
                                         </h3>
-                                        <p className='text-xs sm:text-sm text-gray-600 leading-relaxed'>
+                                        <p className='text-xs sm:text-[13px] text-gray-600 leading-relaxed m-0'>
                                             {card?.description}
                                         </p>
-                                    </div>
-                                </article>
-                            );
-                        })}
-                    </div>
-                )}
+                                    </article>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                </div>
             </div>
         </section>
     );

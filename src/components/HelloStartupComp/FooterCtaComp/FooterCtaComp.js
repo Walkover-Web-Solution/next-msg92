@@ -1,41 +1,61 @@
-import React from 'react';
-
 export default function FooterCtaComp({ data }) {
     if (!data?.heading) return null;
 
+    const renderHeading = () => {
+        if (data?.heading_line1) {
+            return (
+                <>
+                    <span className='block'>{data.heading_line1}</span>
+                    {data?.heading_line2 && <span className='text-accent block'>{data.heading_line2}</span>}
+                </>
+            );
+        }
+        if (data?.heading?.includes('\n')) {
+            const [line1, ...rest] = data.heading.split('\n');
+            return (
+                <>
+                    <span className='block'>{line1}</span>
+                    <span className='text-accent block'>{rest.join(' ')}</span>
+                </>
+            );
+        }
+        if (data?.heading?.includes(',')) {
+            const commaIndex = data.heading.indexOf(',');
+            const line1 = data.heading.substring(0, commaIndex + 1);
+            const line2 = data.heading.substring(commaIndex + 1).trim();
+            return (
+                <>
+                    <span className='block'>{line1}</span>
+                    <span className='text-accent block'>{line2}</span>
+                </>
+            );
+        }
+        return data?.heading;
+    };
+
     return (
-        <section className='bg-gradient-to-b from-[#e9f7ff] to-[#f7fcff] py-20 sm:py-28 text-center border-t border-[#edf5fa]'>
-            <div className='container max-w-4xl mx-auto px-4'>
-                {data?.kicker ? (
-                    <div className='text-accent text-xs font-extrabold uppercase tracking-widest mb-3'>
-                        {data.kicker}
-                    </div>
-                ) : (
-                    <div className='text-accent text-xs font-extrabold uppercase tracking-widest mb-3'>
-                        For the next stage
-                    </div>
-                )}
-
-                <h2 className='text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight max-w-2xl mx-auto leading-tight'>
-                    {data?.heading}
-                </h2>
-
-                {data?.subheading && (
-                    <p className='text-gray-600 text-sm sm:text-base max-w-xl mx-auto mt-4 mb-8 leading-relaxed'>
-                        {data.subheading}
-                    </p>
-                )}
+        <section className='bg-gradient-to-b from-sky-100 via-sky-50 to-white border-t border-sky-100'>
+            <div className='container cont_p cont cont_gap items-center text-center'>
+                <header className='max-w-3xl mx-auto'>
+                    {data?.kicker && <p className='py-2 text-xs font-semibold text-accent'>{data.kicker}</p>}
+                    <h2 className='heading font-semibold'>{renderHeading()}</h2>
+                    {data?.subheading && (
+                        <p className='mx-auto my-3 max-w-2xl text-base md:text-lg text-gray-600'>{data?.subheading}</p>
+                    )}
+                </header>
 
                 {data?.btn_text && data?.btn_link && (
-                    <a
-                        href={data.btn_link}
-                        target={data.btn_link.startsWith('http') ? '_blank' : undefined}
-                        rel={data.btn_link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        className='btn btn-accent btn-md text-white font-bold px-7 py-3 rounded-lg shadow-md hover:shadow-lg transition-all inline-flex items-center gap-1'
-                    >
-                        <span>{data.btn_text}</span>
-                        <span className='ml-1'>&nbsp;→</span>
-                    </a>
+                    <div className='mt-4 flex justify-center'>
+                        <a
+                            href={data.btn_link}
+                            target={data.btn_link.startsWith('http') ? '_blank' : undefined}
+                            rel={data.btn_link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                            className='btn btn-accent btn-md text-white rounded-xl'
+                        >
+                            <span>{data.btn_text}</span>
+                            <span aria-hidden>→</span>
+                        </a>
+                    </div>
                 )}
             </div>
         </section>
