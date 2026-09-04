@@ -458,7 +458,7 @@ function PlanCard({
                         {saveLabel}
                     </span>
                 )}
-                <div className='flex items-baseline gap-1.5 mb-1'>
+                <div className='flex items-baseline gap-1.5 mb-1 whitespace-nowrap'>
                     <span className='text-4xl font-extrabold tracking-tight text-slate-900'>
                         {isFree ? formatZeroPrice(currency) : displayPrice}
                     </span>
