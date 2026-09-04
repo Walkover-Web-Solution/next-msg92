@@ -1,12 +1,18 @@
 import { useEffect, useLayoutEffect, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import styles from './SummitBanner.module.scss';
 
 const EVENT_TIME = new Date('2026-09-05T18:30:00+05:30').getTime();
+const EVENT_EXPIRY_TIME = new Date('2026-09-05T17:00:00+05:30').getTime();
 
 const padValue = (val) => String(Math.max(0, val)).padStart(2, '0');
 
 export default function SummitBanner() {
+    const router = useRouter();
+    const isEventRegistrationPage =
+        router?.asPath?.includes('event-registration') || router?.pathname?.includes('event-registration');
+
     const [isVisible, setIsVisible] = useState(false);
     const [timeLeft, setTimeLeft] = useState({
         days: '00',
@@ -18,6 +24,10 @@ export default function SummitBanner() {
     useEffect(() => {
         const searchParams = new URLSearchParams(window.location.search);
         const forcePreview = searchParams.get('preview_banner') === 'true' || searchParams.get('indore') === 'true';
+
+        if (Date.now() >= EVENT_EXPIRY_TIME && !forcePreview) {
+            return;
+        }
 
         if (forcePreview) {
             try {
@@ -128,8 +138,8 @@ export default function SummitBanner() {
 
         const updateCountdown = () => {
             const difference = EVENT_TIME - Date.now();
-            if (difference <= 0) {
-                setTimeLeft({ days: '00', hours: '00', minutes: '00', seconds: '00' });
+            if (Date.now() >= EVENT_EXPIRY_TIME || difference <= 0) {
+                setIsVisible(false);
                 return;
             }
             setTimeLeft({
@@ -146,7 +156,7 @@ export default function SummitBanner() {
     }, [isVisible]);
 
     useLayoutEffect(() => {
-        if (!isVisible) {
+        if (!isVisible || isEventRegistrationPage) {
             document.documentElement.style.removeProperty('--summit-banner-height');
             return;
         }
@@ -166,7 +176,7 @@ export default function SummitBanner() {
             observer.disconnect();
             document.documentElement.style.removeProperty('--summit-banner-height');
         };
-    }, [isVisible]);
+    }, [isVisible, isEventRegistrationPage]);
 
     const handleClose = () => {
         setIsVisible(false);
@@ -175,7 +185,7 @@ export default function SummitBanner() {
         } catch (e) {}
     };
 
-    if (!isVisible) return null;
+    if (!isVisible || isEventRegistrationPage) return null;
 
     return (
         <div
