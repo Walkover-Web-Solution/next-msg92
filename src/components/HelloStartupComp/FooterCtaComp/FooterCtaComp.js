@@ -1,21 +1,61 @@
-import React from 'react';
-
 export default function FooterCtaComp({ data }) {
     if (!data?.heading) return null;
 
+    const renderHeading = () => {
+        if (data?.heading_line1) {
+            return (
+                <>
+                    <span className='block'>{data.heading_line1}</span>
+                    {data?.heading_line2 && <span className='text-accent block'>{data.heading_line2}</span>}
+                </>
+            );
+        }
+        if (data?.heading?.includes('\n')) {
+            const [line1, ...rest] = data.heading.split('\n');
+            return (
+                <>
+                    <span className='block'>{line1}</span>
+                    <span className='text-accent block'>{rest.join(' ')}</span>
+                </>
+            );
+        }
+        if (data?.heading?.includes(',')) {
+            const commaIndex = data.heading.indexOf(',');
+            const line1 = data.heading.substring(0, commaIndex + 1);
+            const line2 = data.heading.substring(commaIndex + 1).trim();
+            return (
+                <>
+                    <span className='block'>{line1}</span>
+                    <span className='text-accent block'>{line2}</span>
+                </>
+            );
+        }
+        return data?.heading;
+    };
+
     return (
-        <section className='container my-12 mb-16'>
-            <div className='bg-accent text-white rounded-xl py-12 px-6 sm:px-12 max-w-4xl mx-auto text-center shadow-lg'>
-                <h2 className='text-2xl sm:text-3xl font-bold text-white mb-3'>{data?.heading}</h2>
-                {data?.subheading && <p className='text-secondary mb-6 max-w-xl mx-auto'>{data?.subheading}</p>}
+        <section className='bg-gradient-to-b from-sky-100 via-sky-50 to-white border-t border-sky-100'>
+            <div className='container cont_p cont cont_gap items-center text-center'>
+                <header className='max-w-3xl mx-auto'>
+                    {data?.kicker && <p className='py-2 text-xs font-semibold text-accent'>{data.kicker}</p>}
+                    <h2 className='heading font-semibold'>{renderHeading()}</h2>
+                    {data?.subheading && (
+                        <p className='mx-auto my-3 max-w-2xl text-base md:text-lg text-gray-600'>{data?.subheading}</p>
+                    )}
+                </header>
+
                 {data?.btn_text && data?.btn_link && (
-                    <a
-                        href={data.btn_link}
-                        target={data.btn_link.startsWith('http') ? '_blank' : undefined}
-                        className='inline-block bg-white text-accent hover:bg-neutral font-medium text-sm px-6 py-2.5 rounded-xl'
-                    >
-                        {data.btn_text}
-                    </a>
+                    <div className='mt-4 flex justify-center'>
+                        <a
+                            href={data.btn_link}
+                            target={data.btn_link.startsWith('http') ? '_blank' : undefined}
+                            rel={data.btn_link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                            className='btn btn-accent btn-md text-white rounded-xl'
+                        >
+                            <span>{data.btn_text}</span>
+                            <span aria-hidden>→</span>
+                        </a>
+                    </div>
                 )}
             </div>
         </section>

@@ -8,7 +8,6 @@
         "breadcrumb_link": "/br-pt/hello-for-startups",
         "breadcrumb_current": "Termos e Condições",
         "title": "Hello Gratuito para Startups — Termos e Condições",
-        "meta": "Brasil · Última atualização: [data]",
         "lead": "Estes Termos e Condições regem a participação no Programa Hello Gratuito para Startups no Brasil. Leia-os atentamente antes de se inscrever — ao enviar uma inscrição, você aceita estes Termos.",
         "nav_title": "NESTA PÁGINA",
         "sections": [
@@ -103,20 +102,9 @@
             },
             {
                 "number": 14,
-                "title": "Limitação de responsabilidade",
-                "content": "Na máxima extensão permitida por lei, a responsabilidade agregada da MSG91 decorrente do Programa é limitada conforme estabelecido nos termos principais do Hello / [valor], e a MSG91 não é responsável por danos indiretos ou consequenciais."
-            },
-            {
-                "number": 15,
-                "title": "Lei aplicável e jurisdição",
-                "content": "Estes Termos são regidos pelas leis do Brasil, e o foro de [São Paulo / sua sede registrada], Brasil terá jurisdição exclusiva."
-            },
-            {
-                "number": 16,
                 "title": "Contato",
-                "content": "Para dúvidas sobre o Programa: [e-mail / telefone do programa]."
+                "content": "Para dúvidas sobre o Programa: falcon@msg91.com, support@msg91.com | Telefone: 07316914278"
             }
-        ],
-        "disclaimer": "Minuta para revisão — este documento deve ser revisado e aprovado pela assessoria jurídica antes da publicação. Os campos entre colchetes devem ser preenchidos."
+        ]
     }
 }

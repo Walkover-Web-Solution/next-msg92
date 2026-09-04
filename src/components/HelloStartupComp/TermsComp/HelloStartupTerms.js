@@ -54,7 +54,37 @@ export default function HelloStartupTerms({ data }) {
                                 <span>{sec?.title}</span>
                             </h2>
 
-                            {sec?.content && <p className='text-sm text-gray-700'>{sec?.content}</p>}
+                            {sec?.content && (
+                                <p className='text-sm text-gray-700 leading-relaxed'>
+                                    {sec.content
+                                        .split(/(falcon@msg91\.com|support@msg91\.com|07316914278)/g)
+                                        .map((part, partIndex) => {
+                                            if (part === 'falcon@msg91.com' || part === 'support@msg91.com') {
+                                                return (
+                                                    <a
+                                                        key={partIndex}
+                                                        href={`mailto:${part}`}
+                                                        className='text-accent hover:underline font-medium'
+                                                    >
+                                                        {part}
+                                                    </a>
+                                                );
+                                            }
+                                            if (part === '07316914278') {
+                                                return (
+                                                    <a
+                                                        key={partIndex}
+                                                        href={`tel:${part}`}
+                                                        className='text-accent hover:underline font-medium'
+                                                    >
+                                                        {part}
+                                                    </a>
+                                                );
+                                            }
+                                            return part;
+                                        })}
+                                </p>
+                            )}
 
                             {sec?.definitions?.length > 0 && (
                                 <div className='space-y-2 text-sm text-gray-700'>
