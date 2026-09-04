@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState, useRef, useCallback } from 'react';
 import { toast } from 'react-toastify';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import normalizeDialPlanInfo from '@/utils/pricing/normalizeDialPlanInfo';
+import GetCountryDetails from '@/utils/getCurrentCountry';
 import { DEBOUNCE_DELAY, DIAL_PLAN_PER_PAGE, EMPTY_ARRAY } from '../constants';
 
 const SCROLL_DISTANCE = 400;
@@ -86,45 +87,61 @@ function DialPlanTable({
     searchPlaceholder,
     currency,
     pagination,
+    offset,
     onOffsetChange,
     loading,
     loaded,
 }) {
-    const visibleColumns = columns.filter((col) => col.key !== 'prefix' && col.key !== 'country_prefix');
+    const visibleColumns = columns
+        .filter((col) => col.key !== 'prefix' && col.key !== 'country_prefix')
+        .sort((a, b) => (b.key === 'country_name') - (a.key === 'country_name'));
     const tableRef = useRef(null);
-    const { total_pages: totalPages, offset: currentOffset } = pagination ?? {};
+    const [hasOverflow, setHasOverflow] = useState(false);
+    const { total_pages: totalPages } = pagination ?? {};
+    const currentOffset = offset ?? 0;
     const colSpan = visibleColumns.length || 1;
+
+    useEffect(() => {
+        const el = tableRef.current;
+        if (!el) return;
+        const updateOverflow = () => setHasOverflow(el.scrollWidth > el.clientWidth);
+        updateOverflow();
+        window.addEventListener('resize', updateOverflow);
+        return () => window.removeEventListener('resize', updateOverflow);
+    }, [columns, data]);
 
     return (
         <div className='flex flex-col gap-3'>
             <div className='flex items-center justify-between gap-4'>
                 <input
                     type='text'
-                    placeholder={searchPlaceholder}
+                    placeholder={visibleColumns[0]?.label}
                     value={search}
                     onChange={onSearchChange}
                     className='w-full max-w-xs rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none focus:border-indigo-400 transition-colors'
                     autoComplete='off'
                     aria-label='Search dial plan rates'
                 />
-                <div className='hidden sm:flex items-center gap-2'>
-                    <button
-                        type='button'
-                        onClick={() => tableRef.current?.scrollBy({ left: -SCROLL_DISTANCE, behavior: 'smooth' })}
-                        aria-label='Scroll left'
-                        className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
-                    >
-                        <MdChevronLeft size={20} />
-                    </button>
-                    <button
-                        type='button'
-                        onClick={() => tableRef.current?.scrollBy({ left: SCROLL_DISTANCE, behavior: 'smooth' })}
-                        aria-label='Scroll right'
-                        className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
-                    >
-                        <MdChevronRight size={20} />
-                    </button>
-                </div>
+                {hasOverflow && (
+                    <div className='hidden sm:flex items-center gap-2'>
+                        <button
+                            type='button'
+                            onClick={() => tableRef.current?.scrollBy({ left: -SCROLL_DISTANCE, behavior: 'smooth' })}
+                            aria-label='Scroll left'
+                            className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
+                        >
+                            <MdChevronLeft size={20} />
+                        </button>
+                        <button
+                            type='button'
+                            onClick={() => tableRef.current?.scrollBy({ left: SCROLL_DISTANCE, behavior: 'smooth' })}
+                            aria-label='Scroll right'
+                            className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
+                        >
+                            <MdChevronRight size={20} />
+                        </button>
+                    </div>
+                )}
             </div>
             <div className='w-full overflow-x-auto'>
                 <div className='overflow-y-auto rounded-xl border border-slate-200 bg-white' ref={tableRef}>
@@ -144,13 +161,7 @@ function DialPlanTable({
                             </tr>
                         </thead>
                         <tbody>
-                            {loading ? (
-                                <tr>
-                                    <td colSpan={colSpan} className='px-5 py-8 text-center text-sm text-slate-400'>
-                                        Loading...
-                                    </td>
-                                </tr>
-                            ) : data.length > 0 ? (
+                            {data.length > 0 ? (
                                 data.map((row, index) => {
                                     const rowBg = index % 2 === 0 ? 'bg-white' : 'bg-slate-50';
                                     return (
@@ -173,6 +184,12 @@ function DialPlanTable({
                                         </tr>
                                     );
                                 })
+                            ) : loading ? (
+                                <tr>
+                                    <td colSpan={colSpan} className='px-5 py-8 text-center text-sm text-slate-400'>
+                                        Loading...
+                                    </td>
+                                </tr>
                             ) : loaded ? (
                                 <tr>
                                     <td colSpan={colSpan} className='px-5 py-8 text-center text-sm text-slate-400'>
@@ -189,7 +206,7 @@ function DialPlanTable({
                     <button
                         type='button'
                         onClick={() => onOffsetChange(currentOffset - 1)}
-                        disabled={currentOffset <= 1 || loading}
+                        disabled={currentOffset <= 0 || loading}
                         className='flex items-center gap-1 px-3 py-2 rounded border border-slate-200 text-sm text-slate-600 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed'
                         aria-label='Previous page'
                     >
@@ -197,12 +214,12 @@ function DialPlanTable({
                         Previous
                     </button>
                     <span className='text-sm text-slate-500'>
-                        Page {currentOffset} of {totalPages}
+                        Page {currentOffset + 1} of {totalPages}
                     </span>
                     <button
                         type='button'
                         onClick={() => onOffsetChange(currentOffset + 1)}
-                        disabled={currentOffset >= totalPages || loading}
+                        disabled={currentOffset >= totalPages - 1 || loading}
                         className='flex items-center gap-1 px-3 py-2 rounded border border-slate-200 text-sm text-slate-600 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed'
                         aria-label='Next page'
                     >
@@ -215,10 +232,10 @@ function DialPlanTable({
     );
 }
 
-export default function DialPlan({ pricingData, selection, pageData, currency }) {
+export default function DialPlan({ pricingData, selection, pageData, currency, country }) {
     const [search, setSearch] = useState('');
     const [searchQuery, setSearchQuery] = useState('');
-    const [offset, setOffset] = useState(1);
+    const [offset, setOffset] = useState(0);
     const [columns, setColumns] = useState(EMPTY_ARRAY);
     const [data, setData] = useState(EMPTY_ARRAY);
     const [pagination, setPagination] = useState(null);
@@ -226,6 +243,7 @@ export default function DialPlan({ pricingData, selection, pageData, currency })
     const [loaded, setLoaded] = useState(false);
 
     const activePlan = useMemo(() => findActivePlan(pricingData, selection), [pricingData, selection]);
+    const currentCountryName = GetCountryDetails({ shortname: country, type: 'shortname' })?.name;
 
     useEffect(() => {
         if (search.trim() === '') {
@@ -239,12 +257,12 @@ export default function DialPlan({ pricingData, selection, pageData, currency })
     useEffect(() => {
         setSearch('');
         setSearchQuery('');
-        setOffset(1);
+        setOffset(0);
         setLoaded(false);
     }, [selection]);
 
     useEffect(() => {
-        setOffset(1);
+        setOffset(0);
         setLoaded(false);
     }, [searchQuery]);
 
@@ -264,8 +282,13 @@ export default function DialPlan({ pricingData, selection, pageData, currency })
             .then((json) => {
                 if (cancelled) return;
                 const normalized = normalizeDialPlanInfo(json.data);
+                const rows = [...normalized.data].sort(
+                    (a, b) =>
+                        (b.country_name?.toLowerCase() === currentCountryName?.toLowerCase()) -
+                        (a.country_name?.toLowerCase() === currentCountryName?.toLowerCase())
+                );
                 setColumns(normalized.columns);
-                setData(normalized.data);
+                setData(rows);
                 setPagination(json.data.metadata);
                 setLoaded(true);
             })
@@ -279,7 +302,7 @@ export default function DialPlan({ pricingData, selection, pageData, currency })
         return () => {
             cancelled = true;
         };
-    }, [activePlan?.serviceId, activePlan?.dialPlanId, currency, offset, searchQuery]);
+    }, [activePlan?.serviceId, activePlan?.dialPlanId, currency, offset, searchQuery, currentCountryName]);
 
     const handleSearchChange = useCallback((e) => setSearch(e.target.value), []);
 
@@ -307,6 +330,7 @@ export default function DialPlan({ pricingData, selection, pageData, currency })
                 searchPlaceholder={pageData?.searchPlaceholder}
                 currency={currency}
                 pagination={pagination}
+                offset={offset}
                 onOffsetChange={setOffset}
                 loading={loading}
                 loaded={loaded}

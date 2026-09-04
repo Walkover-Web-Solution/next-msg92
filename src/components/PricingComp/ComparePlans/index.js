@@ -195,6 +195,7 @@ export default function ComparePlans({ pricingData, currency, locale, pageData }
     const monthlyRef = useRef(null);
     const yearlyRef = useRef(null);
     const [activeTab, setActiveTab] = useState('Monthly');
+    const [hasOverflow, setHasOverflow] = useState(false);
 
     const activeRef = activeTab === 'Yearly' ? yearlyRef : monthlyRef;
     const scrollLeft = () => activeRef.current?.scrollBy({ left: -SCROLL_DISTANCE, behavior: 'smooth' });
@@ -225,6 +226,15 @@ export default function ComparePlans({ pricingData, currency, locale, pageData }
         return () => observer.disconnect();
     }, []);
 
+    useEffect(() => {
+        const el = activeRef.current;
+        if (!el) return;
+        const updateOverflow = () => setHasOverflow(el.scrollWidth > el.clientWidth);
+        updateOverflow();
+        window.addEventListener('resize', updateOverflow);
+        return () => window.removeEventListener('resize', updateOverflow);
+    }, [activeTab, monthlyData, yearlyData]);
+
     if (!monthlyData && !yearlyData) return null;
 
     return (
@@ -232,24 +242,26 @@ export default function ComparePlans({ pricingData, currency, locale, pageData }
             <div>
                 <div className='flex py-4 items-center justify-between'>
                     <h3 className='text-2xl font-semibold text-slate-900'>{pageData?.comparePlansHeading}</h3>
-                    <div className='hidden sm:flex items-center gap-2'>
-                        <button
-                            type='button'
-                            onClick={scrollLeft}
-                            aria-label='Scroll left to view previous plans'
-                            className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
-                        >
-                            <MdChevronLeft size={20} aria-hidden='true' />
-                        </button>
-                        <button
-                            type='button'
-                            onClick={scrollRight}
-                            aria-label='Scroll right to view more plans'
-                            className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
-                        >
-                            <MdChevronRight size={20} aria-hidden='true' />
-                        </button>
-                    </div>
+                    {hasOverflow && (
+                        <div className='hidden sm:flex items-center gap-2'>
+                            <button
+                                type='button'
+                                onClick={scrollLeft}
+                                aria-label='Scroll left to view previous plans'
+                                className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
+                            >
+                                <MdChevronLeft size={20} aria-hidden='true' />
+                            </button>
+                            <button
+                                type='button'
+                                onClick={scrollRight}
+                                aria-label='Scroll right to view more plans'
+                                className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
+                            >
+                                <MdChevronRight size={20} aria-hidden='true' />
+                            </button>
+                        </div>
+                    )}
                 </div>
 
                 {/* Monthly table — visible by default */}
