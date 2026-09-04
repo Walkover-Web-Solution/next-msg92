@@ -8,7 +8,6 @@
         "breadcrumb_link": "/in/hello-for-startups",
         "breadcrumb_current": "Terms & Conditions",
         "title": "Hello Free For Startups — Terms & Conditions",
-        "meta": "India · Last updated: [date]",
         "lead": "These Terms & Conditions govern participation in the Hello Free for Startups Program in India. Please read them carefully before applying — by submitting an application you accept these Terms.",
         "nav_title": "ON THIS PAGE",
         "sections": [
@@ -124,20 +123,9 @@
             },
             {
                 "number": 14,
-                "title": "Limitation of liability",
-                "content": "To the maximum extent permitted by law, MSG91's aggregate liability arising from the Program (provided free of charge) is limited as set out in the Hello master terms / [₹ amount], and MSG91 is not liable for indirect or consequential loss."
-            },
-            {
-                "number": 15,
-                "title": "Governing law & jurisdiction",
-                "content": "These Terms are governed by the laws of India. Courts at [Indore / your registered seat], India shall have exclusive jurisdiction."
-            },
-            {
-                "number": 16,
                 "title": "Contact",
-                "content": "For questions about the Program: [program email / phone]."
+                "content": "For questions about the Program: falcon@msg91.com, support@msg91.com | Phone: 07316914278"
             }
-        ],
-        "disclaimer": "Draft for review — this document should be reviewed and approved by legal counsel before publication. Bracketed fields ([date], entity name, jurisdiction, contact, support level, liability cap) must be completed."
+        ]
     }
 }

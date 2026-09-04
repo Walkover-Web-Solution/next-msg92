@@ -4,10 +4,10 @@
         "description": "Software completo de suporte ao cliente — caixa de entrada omnicanal, chatbot com IA e automação — totalmente gratuito para empresas em estágio inicial no Brasil com receita anual abaixo de R$ 360.000."
     },
     "HelloStartupBanner": {
-        "badge": "🇧🇷 Hello para Startups Brasileiras",
-        "heading_prefix": "Hello,",
-        "heading_accent": "Gratuito para Startups no Brasil.",
-        "heading": "Hello, Gratuito para Startups no Brasil.",
+        "badge": "Hello para Startups Brasileiras",
+        "heading_prefix": "Excelente suporte ao cliente.",
+        "heading_accent": "Custo zero para começar.",
+        "heading": "Excelente suporte ao cliente. Custo zero para começar.",
         "subheading": "Software completo de suporte ao cliente — caixa de entrada omnicanal, chatbot com IA e automação — totalmente gratuito para empresas em estágio inicial no Brasil com receita anual abaixo de R$ 360.000. Construa sua experiência de atendimento agora; pague somente quando crescer.",
         "primary_btn": "Solicitar acesso gratuito",
         "primary_btn_link": "https://docs.google.com/forms/d/e/1FAIpQLSf50qTLGF-UjasMyhmZLd4rKt8FtpqA1Q9x2AL3Neor7fk0cg/viewform?usp=send_form",
@@ -41,74 +41,76 @@
         }
     },
     "HelloStartupWhy": {
-        "heading": "Por que criamos isso",
-        "description": "Empresas em estágio inicial não deveriam ter que escolher entre um bom suporte ao cliente e o seu fluxo de caixa. O Hello Gratuito para Startups oferece às startups brasileiras qualificadas a mesma plataforma pela qual empresas em crescimento pagam — a custo zero — para você oferecer suporte profissional e multicanal desde o primeiro dia. Quando sua empresa crescer além do estágio inicial, você simplesmente migra para um plano pago, mantendo todos os seus dados e configurações.",
+        "kicker": "Um único espaço de trabalho",
+        "heading": "Suporte que cresce\ncom a sua startup.",
+        "description": "Reúna conversas, automação e insights — para que sua equipe gaste menos tempo gerenciando o suporte e mais tempo ajudando os clientes.",
         "cards": [
             {
                 "icon": "💬",
-                "title": "Caixa de entrada omnicanal",
-                "description": "WhatsApp, E-mail, Chat ao Vivo, Instagram e\nFacebook — unificados em um só lugar."
+                "title": "Uma caixa de entrada. Todas as conversas.",
+                "description": "WhatsApp, E-mail, Chat ao Vivo, Voz, Instagram, Facebook, Twitter (X), RCS e Apple Message — tudo em um espaço limpo."
             },
             {
-                "icon": "🤖",
-                "title": "Chatbot com IA",
-                "description": "Resolva dúvidas rotineiras 24 horas por dia,\nsujeito ao uso justo."
+                "icon": "✦",
+                "title": "IA que cuida da rotina.",
+                "description": "Resolva dúvidas comuns automaticamente, 24 horas por dia."
             },
             {
                 "icon": "⚡",
-                "title": "Automação e roteamento",
-                "description": "Automação de fluxos de trabalho, roteamento inteligente e\nrespostas prontas integradas."
+                "title": "Automatize o trabalho repetitivo.",
+                "description": "Direcione conversas e crie fluxos de trabalho que mantêm sua equipe ágil."
             },
             {
-                "icon": "🌐",
-                "title": "Tradução em tempo real",
-                "description": "Converse com clientes no idioma deles em\ntodos os canais."
+                "icon": "◎",
+                "title": "Fale o idioma de cada cliente.",
+                "description": "A tradução em tempo real ajuda sua equipe a se comunicar naturalmente em todos os mercados."
             },
             {
-                "icon": "📊",
-                "title": "Análises e relatórios",
-                "description": "Acompanhe tempos de resposta, resolução e\ndesempenho da equipe."
+                "icon": "▥",
+                "title": "Saiba o que está funcionando.",
+                "description": "Acompanhe tempos de resposta, resolução e desempenho da equipe sem planilhas."
             },
             {
-                "icon": "🔌",
-                "title": "Mais de 2.200 integrações",
-                "description": "Conecte integrações para o chatbot.\nAtivo em minutos, sem taxa de implementação."
+                "icon": "⌘",
+                "title": "Conecte sua estrutura.",
+                "description": "Mais de 150 integrações facilitam a conexão com CRM, e-commerce e ferramentas diárias."
             }
         ]
     },
     "HelloStartupEligibility": {
         "id": "eligibility",
-        "heading": "Elegibilidade — você deve atender a TODOS os requisitos",
-        "description": "Para manter este programa focado em negócios autênticos em estágio inicial, sua empresa só se qualifica se atender a todas as condições abaixo.",
+        "kicker": "DESENVOLVIDO PARA EQUIPES EM ESTÁGIO INICIAL",
+        "heading": "Simples de qualificar.\nSimples de usar.",
+        "description": "Se a sua empresa for registrada, genuinamente em estágio inicial e dentro do limite de receita, você pode obter o Hello sem custos.",
         "cards": [
             {
                 "number": "01",
-                "title": "Tipo de empresa",
-                "description": "Você é uma empresa registrada no Brasil com CNPJ ativo."
+                "title": "Empresa registrada",
+                "description": "Uma entidade empresarial validamente registrada. Pessoas físicas não registradas não são elegíveis."
             },
             {
                 "number": "02",
-                "title": "Limite de receita",
-                "description": "Sua receita anual é inferior a R$ 360.000, comprovada por suas demonstrações financeiras."
+                "title": "Receita abaixo de R$ 360.000",
+                "description": "A receita anual deve ser inferior a R$ 360.000 ou o equivalente local aplicável."
             },
             {
                 "number": "03",
-                "title": "Documentação obrigatória",
-                "description": "Demonstrações financeiras válidas auditadas ou protocoladas (Balanço Patrimonial) do último exercício fiscal, comprovante de inscrição no CNPJ e uma autodeclaração assinada de receita anual."
+                "title": "Documentos verificados",
+                "description": "Última demonstração financeira ou declaração fiscal, comprovante de registro e declaração."
             },
             {
                 "number": "04",
                 "title": "Uma conta por empresa",
-                "description": "Apenas uma conta gratuita de Startup por CNPJ registrado. A criação de múltiplas contas ou a divisão de negócios resultará em desqualificação."
+                "description": "Uma conta gratuita para Startups por entidade registrada. Sem divisão de empresas para ficar dentro dos limites."
             }
         ]
     },
     "HelloStartupPlan": {
-        "heading": "O que você recebe — grátis",
-        "subheading": "O Plano Gratuito para Startups oferece acesso total ao Hello — limitado aos limites abaixo. Fique dentro deles e não pague nada.",
+        "heading": "O que está incluído no seu plano gratuito",
         "plan_badge": "Plano Gratuito para Startups",
         "price": "R$ 0",
         "period": "/mês",
+        "fee_badge": "SEM CARTÃO DE CRÉDITO · SEM TAXA DE ADESÃO",
         "action_badge": "Limites de uso do plano gratuito",
         "stats": [
             {
@@ -135,33 +137,35 @@
         "notice": "Se ultrapassar algum desses limites, você será simplesmente convidado a <span class='text-accent underline cursor-pointer'>fazer upgrade para um plano pago</span> — sua conta e seus dados continuam sem interrupções."
     },
     "HelloStartupSteps": {
-        "heading": "Como funciona",
+        "kicker": "Primeiros passos",
+        "heading": "Quatro etapas. Sem surpresas.",
+        "description": "Mantemos o processo simples para que você possa voltar a construir sua startup.",
         "steps": [
             {
                 "number": "1",
                 "title": "Inscreva-se",
-                "description": "Preencha o formulário e envie sua demonstração financeira e comprovante de CNPJ."
+                "description": "Preencha o formulário e envie os documentos da sua empresa."
             },
             {
                 "number": "2",
                 "title": "Verificação",
-                "description": "Nossa equipe analisa seus documentos e elegibilidade, geralmente em poucos dias úteis."
+                "description": "Nossa equipe analisa seus documentos e elegibilidade."
             },
             {
                 "number": "3",
                 "title": "Ativação",
-                "description": "Após a aprovação, sua conta gratuita de Startup é ativada."
+                "description": "Após a aprovação, sua conta gratuita do Hello entra em operação."
             },
             {
                 "number": "4",
-                "title": "Revisão anual",
-                "description": "Reconfirmamos a elegibilidade a cada ano. Se ultrapassar R$ 360.000 ou exceder os limites de uso, ajudaremos na transição suave para um plano pago."
+                "title": "Cresça",
+                "description": "Mantenha sua configuração e mude para um plano pago quando superar o programa."
             }
         ]
     },
     "HelloStartupGrow": {
-        "heading": "Quando você crescer, continuará com tudo",
-        "description": "Ultrapassar R$ 360.000 é um bom problema. Quando isso acontecer, seus dados, conversas e configurações permanecerão exatamente como estão — basta migrar para um plano pago do Hello. Sem necessidade de migração e sem interrupções."
+        "heading": "Quando você crescer, mantém tudo.",
+        "description": "Seus dados, conversas e configurações continuam exatamente como estão. Sem migração. Sem interrupções."
     },
     "Faqs": {
         "heading": "Perguntas frequentes",

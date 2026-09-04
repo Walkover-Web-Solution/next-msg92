@@ -8,7 +8,6 @@
         "breadcrumb_link": "/fil-ph/hello-for-startups",
         "breadcrumb_current": "Mga Tuntunin at Kundisyon",
         "title": "Hello Libre Para sa mga Startup — Mga Tuntunin at Kundisyon",
-        "meta": "Pilipinas · Huling na-update: [petsa]",
         "lead": "Ang mga Tuntunin at Kundisyong ito ay namamahala sa paglahok sa Hello Libre para sa mga Startup Program sa Pilipinas. Mangyaring basahin nang mabuti bago mag-apply — sa pagsusumite ng aplikasyon, tinatanggap mo ang Mga Tuntuning ito.",
         "nav_title": "SA PAHINANG ITO",
         "sections": [
@@ -103,20 +102,9 @@
             },
             {
                 "number": 14,
-                "title": "Limitasyon ng pananagutan",
-                "content": "Sa pinakamataas na lawak na pinahihintulutan ng batas, ang MSG91 ay hindi mananagot para sa anumang hindi direkta o kinahinatnang pagkawala."
-            },
-            {
-                "number": 15,
-                "title": "Nalalapat na batas at hurisdiksyon",
-                "content": "Ang Mga Tuntuning ito ay pinamamahalaan ng mga batas ng Pilipinas, at ang [Maynila / iyong rehistradong tanggapan], Pilipinas ang magkakaroon ng eksklusibong hurisdiksyon."
-            },
-            {
-                "number": 16,
                 "title": "Kontak",
-                "content": "Para sa mga katanungan tungkol sa Programa: [program email / phone]."
+                "content": "Para sa mga katanungan tungkol sa Programa: falcon@msg91.com, support@msg91.com | Telepono: 07316914278"
             }
-        ],
-        "disclaimer": "Draft para sa pagsusuri — ang dokumentong ito ay dapat suriin ng legal counsel bago i-publish."
+        ]
     }
 }

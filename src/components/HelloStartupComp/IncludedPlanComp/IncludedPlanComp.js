@@ -1,57 +1,63 @@
-import React from 'react';
-import { MdCheckCircle } from 'react-icons/md';
-
 export default function IncludedPlanComp({ data }) {
     if (!data?.heading) return null;
 
     return (
-        <section className='bg-secondary py-16'>
-            <div className='container max-w-4xl mx-auto'>
-                <div className='text-center max-w-4xl mx-auto mb-10'>
-                    <h1 className='heading'>{data?.heading}</h1>
-                    {data?.subheading && <p className='subheading'>{data?.subheading}</p>}
-                </div>
+        <section id='plan' className='bg-sky-50 border-b border-sky-100'>
+            <div className='container cont_p cont cont_gap'>
+                <header className='text-center mx-auto max-w-4xl'>
+                    <h2 className='heading font-semibold sm:whitespace-nowrap'>{data?.heading}</h2>
+                    {data?.subheading && (
+                        <p className='mx-auto my-3 max-w-2xl text-base md:text-lg text-gray-600'>{data?.subheading}</p>
+                    )}
+                </header>
 
-                <div className='bg-primary text-white rounded-xl p-6 sm:p-8 shadow-lg'>
-                    <div className='flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-gray-700'>
+                <div className='bg-white border border-sky-100 rounded-xl shadow-sm overflow-hidden max-w-5xl mx-auto w-full'>
+                    <div className='p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-sky-100'>
                         <div>
                             {data?.plan_badge && (
-                                <p className='text-xs text-gray-400 font-medium mb-1'>{data?.plan_badge}</p>
+                                <div className='text-xs font-bold text-gray-500 mb-1.5'>{data.plan_badge}</div>
                             )}
-                            <div className='flex items-baseline gap-1'>
-                                <span className='text-3xl sm:text-4xl font-bold text-white'>{data?.price}</span>
-                                {data?.period && <span className='text-xs text-gray-400'>{data?.period}</span>}
+                            <div className='text-4xl sm:text-5xl font-extrabold text-gray-900 leading-none flex items-baseline'>
+                                <span>{data?.price}</span>
+                                {data?.period && (
+                                    <span className='text-xs sm:text-sm font-normal text-gray-500 ml-1.5'>
+                                        {data.period}
+                                    </span>
+                                )}
                             </div>
                         </div>
-                        {data?.action_badge && (
-                            <span className='bg-accent text-white text-xs font-semibold px-4 py-1.5 rounded-xl'>
-                                {data?.action_badge}
-                            </span>
-                        )}
+
+                        <div className='text-accent bg-secondary px-4 py-2 rounded-full text-xs font-bold w-fit'>
+                            {data?.fee_badge}
+                        </div>
                     </div>
 
                     {data?.stats?.length > 0 && (
-                        <div className='grid grid-cols-2 sm:grid-cols-4 gap-6 py-6 border-b border-gray-700'>
+                        <div className='grid grid-cols-2 md:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-sky-100'>
                             {data?.stats?.map((stat, index) => (
-                                <div key={index} className='flex flex-col'>
-                                    <span className='text-2xl sm:text-3xl font-bold text-accent mb-1'>
+                                <div key={index} className='p-6 sm:p-7 sm:px-8 flex flex-col'>
+                                    <b className='text-2xl sm:text-3xl font-extrabold text-accent mb-1.5 block'>
                                         {stat?.value}
+                                    </b>
+                                    <span className='text-xs sm:text-sm text-gray-600 leading-relaxed whitespace-pre-line block'>
+                                        {stat?.sublabel}
                                     </span>
-                                    {stat?.label && (
-                                        <span className='text-xs text-gray-400 font-semibold mb-1'>{stat?.label}</span>
-                                    )}
-                                    <span className='text-xs text-gray-400 whitespace-pre-line'>{stat?.sublabel}</span>
                                 </div>
                             ))}
                         </div>
                     )}
 
-                    {data?.notice && (
-                        <div className='mt-6 bg-white/5 rounded-xl p-4 flex items-center gap-3 border border-white/10'>
-                            <MdCheckCircle className='text-accent text-base' aria-hidden />
-                            <p className='text-xs text-gray-300' dangerouslySetInnerHTML={{ __html: data?.notice }} />
-                        </div>
-                    )}
+                    <div className='mx-5 sm:mx-10 my-6 sm:my-8 p-3.5 sm:p-4 rounded-xl bg-sky-50/70 border border-sky-100 text-xs sm:text-sm text-gray-600 flex items-center gap-2'>
+                        <span className='text-gray-900 font-bold text-sm'>✓</span>
+                        {data?.notice ? (
+                            <div dangerouslySetInnerHTML={{ __html: data.notice }} />
+                        ) : (
+                            <div>
+                                <strong className='text-gray-900 font-bold'>Grow beyond a limit?</strong> Your account
+                                and data stay intact — you simply move to a paid Hello plan.
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
         </section>
