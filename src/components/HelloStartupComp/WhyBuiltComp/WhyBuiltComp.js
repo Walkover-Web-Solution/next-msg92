@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function WhyBuiltComp({ data }) {
     if (!data?.heading) return null;
 

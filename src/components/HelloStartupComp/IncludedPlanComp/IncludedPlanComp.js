@@ -1,5 +1,5 @@
 export default function IncludedPlanComp({ data }) {
-    if (!data?.price && !data?.heading) return null;
+    if (!data?.heading) return null;
 
     return (
         <section id='plan' className='bg-sky-50 border-b border-sky-100'>
@@ -32,7 +32,6 @@ export default function IncludedPlanComp({ data }) {
                         )}
                     </div>
 
-                    {/* Limits 4-column Grid */}
                     {data?.stats?.length > 0 && (
                         <div className='grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-sky-100'>
                             {data?.stats?.map((stat, index) => (
