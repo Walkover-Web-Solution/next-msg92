@@ -12,14 +12,14 @@
         "tagline": "SERVIÇO DE HOSPEDAGEM DE ARQUIVOS",
         "heading": "Envie, Hospede e Compartilhe Arquivos Corporativos",
         "subheading": "Envie arquivos uma única vez, gere URLs compartilháveis e use no WhatsApp, SMS, E-mail, RCS, sites e APIs.",
-        "banner_video": "/assets/file_hosting/videos/upload_100_file_formats.webm",
+        "banner_video": "/assets/file_hosting/videos/hero_video.webm",
         "not_absolute": "true",
         "getstarted_btn": "Comece gratuitamente",
         "schedule_meet": "Agendar uma Reunião",
         "trust_highlights": {
             "heading": "Envie uma vez. Hospede com segurança. Compartilhe em qualquer lugar.",
             "highlights": [
-                "+ de 100 Formatos de Arquivo",
+                "+ de 50 Formatos de Arquivo",
                 "Biblioteca Centralizada",
                 "URLs Reutilizáveis",
                 "Compartilhamento Multicanal"
@@ -42,8 +42,7 @@
                     "Acabe com a dificuldade de encontrar arquivos e limitações de tamanho de anexos",
                     "A solução inteligente: envie uma única vez e disponibilize onde sua empresa precisar"
                 ],
-                "footer": "Envie uma vez e disponibilize seus arquivos em todos os canais de comunicação",
-                "schedule_meet": "Agendar uma Reunião"
+                "footer": "Envie uma vez e disponibilize seus arquivos em todos os canais de comunicação"
             }
         ]
     },
@@ -52,9 +51,9 @@
         "subheading": "Uma plataforma unificada criada para armazenar, gerenciar e distribuir ativos empresariais em todos os canais de comunicação.",
         "features": [
             {
-                "name": "Upload de + de 100 Formatos de Arquivo",
-                "content": "<p>Hospede imagens, vídeos, áudios, PDFs, apresentações, planilhas e documentos empresariais a partir de uma única plataforma.</p><ul><li>Suporta JPG, PNG, WEBP, GIF, SVG, MP4, PDF, DOCX, XLSX e mais de 100 tipos</li><li>Entrega rápida na nuvem e visualização instantânea de mídia</li><li>Otimizado para mídias de todos os tamanhos com renderização direta</li></ul>",
-                "img": "/assets/file_hosting/images/upload_100_file_formats.webp"
+                "name": "Upload de + de 50 Formatos de Arquivo",
+                "content": "<p>Hospede imagens, vídeos, áudios, PDFs, apresentações, planilhas e documentos empresariais a partir de uma única plataforma.</p><ul><li>Suporta JPG, PNG, WEBP, GIF, SVG, MP4, PDF, DOCX, XLSX e mais de 50 tipos</li><li>Entrega rápida na nuvem e visualização instantânea de mídia</li><li>Otimizado para mídias de todos os tamanhos com renderização direta</li></ul>",
+                "video": "/assets/file_hosting/videos/upload_100_file_formats.webm"
             },
             {
                 "name": "Biblioteca Centralizada de Arquivos",
@@ -69,7 +68,7 @@
             {
                 "name": "Envie Uma Vez, Reutilize Sempre",
                 "content": "<p>Reutilize o mesmo arquivo hospedado em campanhas, modelos de mensagens, e-mails, sites, aplicativos e fluxos de automação.</p><ul><li>Elimine uploads duplicados e reduza custos de armazenamento</li><li>Atualize o arquivo de origem sem quebrar links já compartilhados</li><li>Integre links em disparos automáticos de mensagens e marketing</li></ul>",
-                "img": "/assets/file_hosting/images/upload_once_reuse_everywhere.webp"
+                "video": "/assets/file_hosting/videos/upload_once_reuse_everywhere.webm"
             },
             {
                 "name": "Gestão Fácil de Arquivos",
@@ -128,8 +127,7 @@
                     "APIs e Aplicativos: Entregue documentos dinâmicos via chatbots, CRMs e gatilhos de backend",
                     "RCS e Mensagens Ricas: Enriqueça campanhas com mídias de alto impacto e materiais promocionais"
                 ],
-                "footer": "Faça o upload uma vez e disponibilize seus arquivos em todos os canais de atendimento",
-                "schedule_meet": "Agendar uma Reunião"
+                "footer": "Faça o upload uma vez e disponibilize seus arquivos em todos os canais de atendimento"
             }
         ]
     },
@@ -213,7 +211,7 @@
     "FileHostingFormatsComp": {
         "tagline": "FORMATOS SUPORTADOS",
         "heading": "Hospede os Arquivos Que Sua Empresa Usa Todos os Dias",
-        "subheading": "+ de 100 Formatos de Arquivo. Uma Única Plataforma Centralizada.",
+        "subheading": "+ de 50 Formatos de Arquivo. Uma Única Plataforma Centralizada.",
         "img": "/assets/file_hosting/images/host_the_files_your_business_uses_every_day.webp",
         "steps": [
             {
@@ -255,7 +253,7 @@
             },
             {
                 "question": "Quais tipos de arquivos posso hospedar na MSG91?",
-                "answer": "A Hospedagem da MSG91 suporta diversos tipos de arquivos corporativos, incluindo:<br/>• Imagens como JPG, PNG, GIF, SVG e WEBP<br/>• Vídeos como MP4, MOV, AVI e MPEG<br/>• Arquivos de áudio como MP3, WAV, AAC e AMR<br/>• Documentos como PDF, DOC, DOCX, XLS, XLSX, PPT e PPTX<br/><br/>A plataforma suporta mais de 100 formatos de arquivos, sendo ideal para materiais de marketing, documentos corporativos, mídias de produtos e recursos de suporte."
+                "answer": "A Hospedagem da MSG91 suporta diversos tipos de arquivos corporativos, incluindo:<br/>• Imagens como JPG, PNG, GIF, SVG e WEBP<br/>• Vídeos como MP4, MOV, AVI e MPEG<br/>• Arquivos de áudio como MP3, WAV, AAC e AMR<br/>• Documentos como PDF, DOC, DOCX, XLS, XLSX, PPT e PPTX<br/><br/>A plataforma suporta mais de 50 formatos de arquivos, sendo ideal para materiais de marketing, documentos corporativos, mídias de produtos e recursos de suporte."
             },
             {
                 "question": "Posso fazer upload de um arquivo uma única vez e reutilizá-lo?",

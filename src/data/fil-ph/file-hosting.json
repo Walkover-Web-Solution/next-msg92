@@ -12,14 +12,14 @@
         "tagline": "SERBISYO NG FILE HOSTING",
         "heading": "Mag-upload, Mag-host at Magbahagi ng mga File ng Negosyo",
         "subheading": "I-upload ang mga file nang isang beses, bumuo ng shareable URLs, at gamitin sa WhatsApp, SMS, Email, RCS, mga website, at APIs.",
-        "banner_video": "/assets/file_hosting/videos/upload_100_file_formats.webm",
+        "banner_video": "/assets/file_hosting/videos/hero_video.webm",
         "not_absolute": "true",
         "getstarted_btn": "Magsimula",
         "schedule_meet": "Mag-iskedyul ng Pagpupulong",
         "trust_highlights": {
             "heading": "Mag-upload Minsan. Mag-host nang Ligtas. Magbahagi Kahit Saan.",
             "highlights": [
-                "100+ Format ng File",
+                "50+ Format ng File",
                 "Isang Sentralisadong Library",
                 "Muling Magagamit na mga URL",
                 "Multi-Channel na Pagbabahagi"
@@ -42,8 +42,7 @@
                     "Lutasin ang mahirap na paghahanap ng file at limitasyon sa laki ng email attachment",
                     "Ang mas matalinong paraan: Mag-upload nang isang beses at gawing available ang mga file kahit saan"
                 ],
-                "footer": "Mag-upload nang isang beses at gawing available ang iyong mga asset kahit saan nakikipag-ugnayan ang iyong negosyo",
-                "schedule_meet": "Mag-iskedyul ng Pagpupulong"
+                "footer": "Mag-upload nang isang beses at gawing available ang iyong mga asset kahit saan nakikipag-ugnayan ang iyong negosyo"
             }
         ]
     },
@@ -52,9 +51,9 @@
         "subheading": "Isang pinag-isang platform na binuo upang mag-imbak, mamahala, at magpamahagi ng mga asset ng negosyo sa lahat ng channel ng komunikasyon.",
         "features": [
             {
-                "name": "Mag-upload ng 100+ Format ng File",
-                "content": "<p>Mag-host ng mga larawan, video, audio, PDF, presentasyon, spreadsheet, at dokumento mula sa isang platform.</p><ul><li>Suportado ang JPG, PNG, WEBP, GIF, SVG, MP4, PDF, DOCX, XLSX at 100+ uri ng file</li><li>Mabilis na cloud delivery at agarang preview ng media</li><li>Na-optimize para sa media ng lahat ng laki na may direktang pag-render</li></ul>",
-                "img": "/assets/file_hosting/images/upload_100_file_formats.webp"
+                "name": "Mag-upload ng 50+ Format ng File",
+                "content": "<p>Mag-host ng mga larawan, video, audio, PDF, presentasyon, spreadsheet, at dokumento mula sa isang platform.</p><ul><li>Suportado ang JPG, PNG, WEBP, GIF, SVG, MP4, PDF, DOCX, XLSX at 50+ uri ng file</li><li>Mabilis na cloud delivery at agarang preview ng media</li><li>Na-optimize para sa media ng lahat ng laki na may direktang pag-render</li></ul>",
+                "video": "/assets/file_hosting/videos/upload_100_file_formats.webm"
             },
             {
                 "name": "Sentralisadong File Library",
@@ -69,7 +68,7 @@
             {
                 "name": "Mag-upload Minsan, Gamitin Kahit Saan",
                 "content": "<p>Muling gamitin ang parehong na-host na file sa mga kampanya, template, email, website, application, at workflow.</p><ul><li>Alisin ang paulit-ulit na pag-upload at bawasan ang gastos sa storage</li><li>I-update ang orihinal na file nang hindi nasisira ang mga naibahaging link</li><li>Walang putol na gamitin ang mga file sa mga automated marketing trigger</li></ul>",
-                "img": "/assets/file_hosting/images/upload_once_reuse_everywhere.webp"
+                "video": "/assets/file_hosting/videos/upload_once_reuse_everywhere.webm"
             },
             {
                 "name": "Madaling Pamamahala ng File",
@@ -128,8 +127,7 @@
                     "Mga API at Application: Maghatid ng mga dynamic na dokumento sa pamamagitan ng mga chatbot, CRM, at backend trigger",
                     "RCS at Rich Messaging: Pagandahin ang mga kampanya gamit ang de-kalidad na media at pampromosyong file"
                 ],
-                "footer": "Mag-upload nang isang beses at gawing available ang iyong mga file sa bawat pakikipag-ugnayan sa customer",
-                "schedule_meet": "Mag-iskedyul ng Pagpupulong"
+                "footer": "Mag-upload nang isang beses at gawing available ang iyong mga file sa bawat pakikipag-ugnayan sa customer"
             }
         ]
     },
@@ -213,7 +211,7 @@
     "FileHostingFormatsComp": {
         "tagline": "MGA SUPORTADONG FORMAT",
         "heading": "I-host ang mga File na Ginagamit ng Iyong Negosyo Araw-araw",
-        "subheading": "100+ Format ng File. Isang Sentralisadong Platform.",
+        "subheading": "50+ Format ng File. Isang Sentralisadong Platform.",
         "img": "/assets/file_hosting/images/host_the_files_your_business_uses_every_day.webp",
         "steps": [
             {
@@ -255,7 +253,7 @@
             },
             {
                 "question": "Anong mga uri ng file ang maaari kong i-host sa MSG91?",
-                "answer": "Sinusuportahan ng MSG91 File Hosting ang malawak na hanay ng mga uri ng file ng negosyo, kabilang ang:<br/>• Mga larawan tulad ng JPG, PNG, GIF, SVG, at WEBP<br/>• Mga video tulad ng MP4, MOV, AVI, at MPEG<br/>• Mga audio file tulad ng MP3, WAV, AAC, at AMR<br/>• Mga dokumento tulad ng PDF, DOC, DOCX, XLS, XLSX, PPT, at PPTX<br/><br/>Sinusuportahan ng platform ang 100+ format ng file, kaya angkop ito para sa mga materyales sa marketing, dokumento ng negosyo, media ng produkto, at suporta sa customer."
+                "answer": "Sinusuportahan ng MSG91 File Hosting ang malawak na hanay ng mga uri ng file ng negosyo, kabilang ang:<br/>• Mga larawan tulad ng JPG, PNG, GIF, SVG, at WEBP<br/>• Mga video tulad ng MP4, MOV, AVI, at MPEG<br/>• Mga audio file tulad ng MP3, WAV, AAC, at AMR<br/>• Mga dokumento tulad ng PDF, DOC, DOCX, XLS, XLSX, PPT, at PPTX<br/><br/>Sinusuportahan ng platform ang 50+ format ng file, kaya angkop ito para sa mga materyales sa marketing, dokumento ng negosyo, media ng produkto, at suporta sa customer."
             },
             {
                 "question": "Maaari ba akong mag-upload ng file nang isang beses at muling gamitin ito?",

@@ -12,14 +12,14 @@
         "tagline": "FILE HOSTING SERVICE",
         "heading": "Upload, Host & Share Business Files",
         "subheading": "Upload files once, generate shareable URLs, and use them across WhatsApp, SMS, Email, RCS, websites, apps, and APIs.",
-        "banner_video": "/assets/file_hosting/videos/upload_100_file_formats.webm",
+        "banner_video": "/assets/file_hosting/videos/hero_video.webm",
         "not_absolute": "true",
         "getstarted_btn": "Get Started",
         "schedule_meet": "Schedule a Meeting",
         "trust_highlights": {
             "heading": "Upload Once. Host Securely. Share Anywhere.",
             "highlights": [
-                "100+ File Formats",
+                "50+ File Formats",
                 "One Centralized Library",
                 "Reusable URLs",
                 "Multi-Channel Sharing"
@@ -42,8 +42,7 @@
                     "Difficult file discovery and email attachment limitations",
                     "The smarter way: Upload once and make files available wherever your business communicates"
                 ],
-                "footer": "Upload a file once and make it available wherever your business communicates",
-                "schedule_meet": "Schedule a Meeting"
+                "footer": "Upload a file once and make it available wherever your business communicates"
             }
         ]
     },
@@ -52,9 +51,9 @@
         "subheading": "A unified platform built to store, manage, and distribute business assets across all communication channels.",
         "features": [
             {
-                "name": "Upload 100+ File Formats",
-                "content": "<p>Host images, videos, audio, PDFs, presentations, spreadsheets, and business documents from one platform.</p><ul><li>Supports JPG, PNG, WEBP, GIF, SVG, MP4, PDF, DOCX, XLSX & 100+ file types</li><li>High-speed cloud delivery and instant media previewing</li><li>Optimized for media of all sizes with direct rendering</li></ul>",
-                "img": "/assets/file_hosting/images/upload_100_file_formats.webp"
+                "name": "Upload 50+ File Formats",
+                "content": "<p>Host images, videos, audio, PDFs, presentations, spreadsheets, and business documents from one platform.</p><ul><li>Supports JPG, PNG, WEBP, GIF, SVG, MP4, PDF, DOCX, XLSX & 50+ file types</li><li>High-speed cloud delivery and instant media previewing</li><li>Optimized for media of all sizes with direct rendering</li></ul>",
+                "video": "/assets/file_hosting/videos/upload_100_file_formats.webm"
             },
             {
                 "name": "Centralized File Library",
@@ -69,7 +68,7 @@
             {
                 "name": "Upload Once, Reuse Everywhere",
                 "content": "<p>Reuse the same hosted file across campaigns, templates, emails, websites, applications, and workflows.</p><ul><li>Eliminate duplicate uploads and reduce redundant storage costs</li><li>Update the source file once without breaking existing shared URLs</li><li>Seamlessly embed files in automated marketing and transactional triggers</li></ul>",
-                "img": "/assets/file_hosting/images/upload_once_reuse_everywhere.webp"
+                "video": "/assets/file_hosting/videos/upload_once_reuse_everywhere.webm"
             },
             {
                 "name": "Easy File Management",
@@ -128,8 +127,7 @@
                     "APIs & Applications: Deliver dynamic documents via chatbots, CRMs, and backend triggers",
                     "RCS & Rich Messaging: Enhance campaigns with high-impact media and promotional files"
                 ],
-                "footer": "Upload a file once and make it available across every customer touchpoint",
-                "schedule_meet": "Schedule a Meeting"
+                "footer": "Upload a file once and make it available across every customer touchpoint"
             }
         ]
     },
@@ -213,7 +211,7 @@
     "FileHostingFormatsComp": {
         "tagline": "SUPPORTED FORMATS",
         "heading": "Host the Files Your Business Uses Every Day",
-        "subheading": "100+ File Formats. One Centralized Platform.",
+        "subheading": "50+ File Formats. One Centralized Platform.",
         "img": "/assets/file_hosting/images/host_the_files_your_business_uses_every_day.webp",
         "steps": [
             {
@@ -255,7 +253,7 @@
             },
             {
                 "question": "Which types of files can I host with MSG91?",
-                "answer": "MSG91 File Hosting supports a wide range of business file types, including:<br/>• Images such as JPG, PNG, GIF, SVG, and WEBP<br/>• Videos such as MP4, MOV, AVI, and MPEG<br/>• Audio files such as MP3, WAV, AAC, and AMR<br/>• Documents such as PDF, DOC, DOCX, XLS, XLSX, PPT, and PPTX<br/><br/>The platform supports 100+ file formats, making it suitable for hosting marketing assets, business documents, product media, training resources, and customer-facing content."
+                "answer": "MSG91 File Hosting supports a wide range of business file types, including:<br/>• Images such as JPG, PNG, GIF, SVG, and WEBP<br/>• Videos such as MP4, MOV, AVI, and MPEG<br/>• Audio files such as MP3, WAV, AAC, and AMR<br/>• Documents such as PDF, DOC, DOCX, XLS, XLSX, PPT, and PPTX<br/><br/>The platform supports 50+ file formats, making it suitable for hosting marketing assets, business documents, product media, training resources, and customer-facing content."
             },
             {
                 "question": "Can I upload a file once and reuse it?",
