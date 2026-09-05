@@ -34,23 +34,23 @@ export default function FooterCtaComp({ data }) {
     };
 
     return (
-        <section className='bg-gradient-to-b from-sky-100 via-sky-50 to-white border-t border-sky-100'>
-            <div className='container cont_p cont cont_gap items-center text-center'>
+        <section className='bg-gradient-to-b from-sky-100 to-white border-t border-sky-100'>
+            <div className='container cont_p flex flex-col items-center text-center gap-6'>
                 <header className='max-w-3xl mx-auto'>
                     {data?.kicker && <p className='py-2 text-xs font-semibold text-accent'>{data.kicker}</p>}
                     <h2 className='heading font-semibold'>{renderHeading()}</h2>
                     {data?.subheading && (
-                        <p className='mx-auto my-3 max-w-2xl text-base md:text-lg text-gray-600'>{data?.subheading}</p>
+                        <p className='my-3 max-w-2xl text-base md:text-lg text-gray-600'>{data?.subheading}</p>
                     )}
                 </header>
 
                 {data?.btn_text && data?.btn_link && (
-                    <div className='mt-4 flex justify-center'>
+                    <div className='mt-2'>
                         <a
                             href={data.btn_link}
                             target={data.btn_link.startsWith('http') ? '_blank' : undefined}
                             rel={data.btn_link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                            className='btn btn-accent btn-md text-white rounded-xl'
+                            className='btn btn-accent btn-md'
                         >
                             <span>{data.btn_text}</span>
                             <span aria-hidden>→</span>
