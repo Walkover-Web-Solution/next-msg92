@@ -193,6 +193,8 @@
         ]
     },
     "HelloStartupFooterCta": {
+        "heading_prefix": "Big-company support,",
+        "heading_accent": "while you're still small.",
         "heading": "Big-company support, while you're still small.",
         "subheading": "Apply for Hello Free for Startups and give your customers the experience they deserve.",
         "btn_text": "Apply for free access",

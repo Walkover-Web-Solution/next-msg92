@@ -124,7 +124,7 @@
             {
                 "number": 14,
                 "title": "Contact",
-                "content": "For questions about the Program: falcon@msg91.com, support@msg91.com | Phone: 07316914278"
+                "content": "For questions about the Program: <a href='mailto:falcon@msg91.com' class='text-accent hover:underline font-medium'>falcon@msg91.com</a>, <a href='mailto:support@msg91.com' class='text-accent hover:underline font-medium'>support@msg91.com</a> | Phone: <a href='tel:07316914278' class='text-accent hover:underline font-medium'>07316914278</a>"
             }
         ]
     }

@@ -1,8 +1,6 @@
 export default function IncludedPlanComp({ data }) {
     if (!data?.heading) return null;
 
-    const feeBadgeText = data?.fee_badge || data?.action_badge;
-
     return (
         <section id='plan' className='bg-sky-50 border-b border-sky-100'>
             <div className='container cont_p flex flex-col gap-8'>
@@ -13,7 +11,7 @@ export default function IncludedPlanComp({ data }) {
                     )}
                 </header>
 
-                <div className='bg-white border border-sky-100 rounded-xl overflow-hidden max-w-5xl mx-auto'>
+                <div className='bg-white border border-sky-100 rounded-xl overflow-hidden max-w-6xl w-full mx-auto'>
                     <div className='p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-sky-100'>
                         <div>
                             {data?.plan_badge && (
@@ -31,9 +29,9 @@ export default function IncludedPlanComp({ data }) {
                             </div>
                         </div>
 
-                        {feeBadgeText && (
+                        {data?.fee_badge && (
                             <div className='text-accent bg-secondary px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider w-fit'>
-                                {feeBadgeText}
+                                {data.fee_badge}
                             </div>
                         )}
                     </div>
@@ -53,17 +51,12 @@ export default function IncludedPlanComp({ data }) {
                         </div>
                     )}
 
-                    <div className='m-6 sm:m-8 p-4 rounded-xl bg-sky-50 border border-sky-100 text-xs sm:text-sm text-gray-600 flex items-center gap-2'>
-                        <span className='font-bold text-sm'>✓</span>
-                        {data?.notice ? (
+                    {data?.notice && (
+                        <div className='m-6 sm:m-8 p-4 rounded-xl bg-sky-50 border border-sky-100 text-xs sm:text-sm text-gray-600 flex items-center gap-2'>
+                            <span className='font-bold text-sm'>✓</span>
                             <div dangerouslySetInnerHTML={{ __html: data.notice }} />
-                        ) : (
-                            <div>
-                                <strong className='font-bold text-gray-900'>Grow beyond a limit?</strong> Your account
-                                and data stay intact — you simply move to a paid Hello plan.
-                            </div>
-                        )}
-                    </div>
+                        </div>
+                    )}
                 </div>
             </div>
         </section>
