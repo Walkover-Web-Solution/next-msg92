@@ -7,7 +7,7 @@ export default function IncludedPlanComp({ data }) {
                 <header className='text-center max-w-4xl mx-auto'>
                     <h2 className='heading font-semibold'>{data?.heading}</h2>
                     {data?.subheading && (
-                        <p className='my-3 max-w-2xl text-base md:text-lg text-gray-600'>{data?.subheading}</p>
+                        <p className='my-3 max-w-2xl text-base text-gray-600 mx-auto'>{data.subheading}</p>
                     )}
                 </header>
 
@@ -15,46 +15,40 @@ export default function IncludedPlanComp({ data }) {
                     <div className='p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-sky-100'>
                         <div>
                             {data?.plan_badge && (
-                                <div className='text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5'>
-                                    {data.plan_badge}
-                                </div>
+                                <p className='text-xs font-bold text-gray-500 uppercase mb-1'>{data.plan_badge}</p>
                             )}
-                            <div className='text-4xl sm:text-5xl font-extrabold text-gray-900 flex items-baseline'>
+                            <div className='text-4xl sm:text-5xl font-extrabold flex items-baseline gap-2'>
                                 <span>{data?.price}</span>
                                 {data?.period && (
-                                    <span className='text-xs sm:text-sm font-normal text-gray-500 ml-1.5'>
-                                        {data.period}
-                                    </span>
+                                    <span className='text-sm font-normal text-gray-500'>{data.period}</span>
                                 )}
                             </div>
                         </div>
 
                         {data?.fee_badge && (
-                            <div className='text-accent bg-secondary px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider w-fit'>
+                            <span className='text-accent bg-secondary px-4 py-2 rounded-full text-xs font-bold'>
                                 {data.fee_badge}
-                            </div>
+                            </span>
                         )}
                     </div>
 
                     {/* Limits 4-column Grid */}
                     {data?.stats?.length > 0 && (
-                        <div className='grid grid-cols-2 md:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-sky-100'>
+                        <div className='grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-sky-100'>
                             {data?.stats?.map((stat, index) => (
-                                <div key={index} className='p-6 sm:p-8 flex flex-col'>
-                                    <b className='text-2xl sm:text-3xl font-extrabold text-accent mb-1.5 block'>
+                                <div key={index} className='p-6 sm:p-8 flex flex-col gap-1'>
+                                    <span className='text-2xl sm:text-3xl font-extrabold text-accent'>
                                         {stat?.value}
-                                    </b>
-                                    <span className='text-xs sm:text-sm text-gray-600 whitespace-pre-line'>
-                                        {stat?.sublabel}
                                     </span>
+                                    <span className='text-sm text-gray-600 whitespace-pre-line'>{stat?.sublabel}</span>
                                 </div>
                             ))}
                         </div>
                     )}
 
                     {data?.notice && (
-                        <div className='m-6 sm:m-8 p-4 rounded-xl bg-sky-50 border border-sky-100 text-xs sm:text-sm text-gray-600 flex items-center gap-2'>
-                            <span className='font-bold text-sm'>✓</span>
+                        <div className='m-6 sm:m-8 p-4 rounded-xl bg-sky-50 border border-sky-100 text-sm text-gray-600 flex items-center gap-2'>
+                            <span>✓</span>
                             <div dangerouslySetInnerHTML={{ __html: data.notice }} />
                         </div>
                     )}
