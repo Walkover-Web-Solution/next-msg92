@@ -19,9 +19,11 @@ export default function StepsComp({ data }) {
                         <div className='grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 relative z-10'>
                             {data.steps.map((step, index) => (
                                 <div key={index} className='flex flex-col items-center text-center'>
-                                    <span className='flex h-10 w-10 items-center justify-center rounded-full bg-accent text-sm font-bold text-white mb-4'>
-                                        {step?.number || index + 1}
-                                    </span>
+                                    {step?.number && (
+                                        <span className='flex h-10 w-10 items-center justify-center rounded-full bg-accent text-sm font-bold text-white mb-4'>
+                                            {step.number}
+                                        </span>
+                                    )}
                                     <h3 className='text-base font-bold mb-1.5'>{step?.title}</h3>
                                     <p className='text-sm text-gray-600'>{step?.description}</p>
                                 </div>
