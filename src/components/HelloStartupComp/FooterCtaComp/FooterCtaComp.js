@@ -5,7 +5,7 @@ export default function FooterCtaComp({ data }) {
         <section className='bg-gradient-to-b from-sky-100 to-white border-t border-sky-100'>
             <div className='container cont_p flex flex-col items-center text-center gap-6'>
                 <header className='max-w-4xl mx-auto'>
-                    {data?.kicker && <p className='py-2 text-xs font-semibold text-accent'>{data.kicker}</p>}
+                    {data?.kicker && <p className='text-xs font-semibold text-accent'>{data.kicker}</p>}
                     <h2 className='heading font-semibold'>
                         {data?.heading_prefix ? (
                             <>
