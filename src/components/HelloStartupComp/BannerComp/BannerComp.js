@@ -60,16 +60,18 @@ export default function BannerComp({ data }) {
                             )}
                         </div>
 
-                        <div className='relative z-10 w-full'>
-                            <Image
-                                src={data?.banner_img || '/assets/hello_for_startup/hello_for_startup.png'}
-                                alt={data?.heading || 'Hello for Startups'}
-                                width={1774}
-                                height={644}
-                                priority
-                                className='w-full h-auto'
-                            />
-                        </div>
+                        {data?.banner_img && (
+                            <div className='relative z-10 w-full'>
+                                <Image
+                                    src={data.banner_img}
+                                    alt={data?.heading}
+                                    width={1774}
+                                    height={644}
+                                    priority
+                                    className='w-full h-auto'
+                                />
+                            </div>
+                        )}
                     </div>
 
                     {/* Mini Product Preview Dashboard */}
