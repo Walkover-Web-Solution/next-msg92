@@ -38,7 +38,8 @@
                     "url": "/assets/trusted_by/apollo_247.svg"
                 }
             ]
-        }
+        },
+        "banner_img": "/assets/hello_for_startup/hello_for_startup.png"
     },
     "HelloStartupWhy": {
         "kicker": "One workspace",
@@ -108,9 +109,9 @@
     "HelloStartupPlan": {
         "heading": "What's included in your free plan",
         "plan_badge": "Free Startup Plan",
-        "price": "€0",
-        "period": "/month",
-        "action_badge": "Usage limits of the free tier",
+        "price": "0 €",
+        "period": "/mes",
+        "fee_badge": "SIN TARJETA DE CRÉDITO · SIN COSTO DE CONFIGURACIÓN",
         "stats": [
             {
                 "label": "UP TO",
@@ -133,7 +134,7 @@
                 "sublabel": "AI usage policy\napplies"
             }
         ],
-        "notice": "Cross any of these caps and you'll simply be invited to <span class='text-accent underline cursor-pointer'>upgrade to a paid plan</span> — your account and data continue uninterrupted."
+        "notice": "<strong>¿Superas algún límite?</strong> Tu cuenta y tus datos se mantienen intactos: simplemente pasas a un plan Hello de pago."
     },
     "HelloStartupSteps": {
         "kicker": "Getting started",

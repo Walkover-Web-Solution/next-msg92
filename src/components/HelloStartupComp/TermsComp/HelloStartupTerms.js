@@ -7,10 +7,10 @@ export default function HelloStartupTerms({ data }) {
     return (
         <article className='bg-white'>
             <header className='bg-secondary py-12 border-b border-gray-200'>
-                <div className='container max-w-4xl mx-auto px-4'>
+                <div className='container max-w-4xl mx-auto'>
                     <nav className='flex items-center gap-2 text-sm font-medium' aria-label='Breadcrumb'>
                         {data?.breadcrumb_parent && data?.breadcrumb_link && (
-                            <Link href={data.breadcrumb_link} className='text-accent hover:opacity-80 font-bold'>
+                            <Link href={data.breadcrumb_link} className='text-accent hover:opacity-80 font-semibold'>
                                 {data.breadcrumb_parent}
                             </Link>
                         )}
@@ -26,7 +26,7 @@ export default function HelloStartupTerms({ data }) {
                 </div>
             </header>
 
-            <div className='container max-w-4xl mx-auto px-4 py-10'>
+            <div className='container max-w-4xl mx-auto py-10'>
                 {data?.lead && <p className='text-base text-gray-700 mb-8'>{data.lead}</p>}
 
                 {data?.sections?.length > 0 && (
@@ -55,7 +55,7 @@ export default function HelloStartupTerms({ data }) {
                             </h2>
 
                             {sec?.content && (
-                                <p className='text-sm text-gray-700 leading-relaxed'>
+                                <p className='text-sm text-gray-700'>
                                     {sec.content
                                         .split(/(falcon@msg91\.com|support@msg91\.com|07316914278)/g)
                                         .map((part, partIndex) => {

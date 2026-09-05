@@ -38,7 +38,8 @@
                     "url": "/assets/trusted_by/apollo_247.svg"
                 }
             ]
-        }
+        },
+        "banner_img": "/assets/hello_for_startup/hello_for_startup.png"
     },
     "HelloStartupWhy": {
         "kicker": "Isang espasyo sa pagtatrabaho",
@@ -134,7 +135,7 @@
                 "sublabel": "patakaran sa patas na\ngamit ng AI"
             }
         ],
-        "notice": "Kapag lumampas sa mga limitasyong ito, aanyayahan ka lamang na <span class='text-accent underline cursor-pointer'>mag-upgrade sa isang bayad na plano</span> — magpapatuloy ang iyong account at data nang walang abala."
+        "notice": "<strong>Lumalagpas sa limitasyon?</strong> Ang iyong account at data ay mananatiling buo — lumipat lamang sa isang bayad na Hello plan."
     },
     "HelloStartupSteps": {
         "kicker": "Pagsisimula",
