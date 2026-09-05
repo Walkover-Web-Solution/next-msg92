@@ -88,6 +88,11 @@
                         "description": "Manage Help Documents and Guides"
                     },
                     {
+                        "name": "File Hosting",
+                        "slug": "file-hosting",
+                        "description": "Host and share business files."
+                    },
+                    {
                         "name": "Reports",
                         "slug": "reports",
                         "description": "All your reports at one place."
@@ -256,6 +261,10 @@
                 {
                     "name": "KnowledgeBase",
                     "link": "knowledgebase"
+                },
+                {
+                    "name": "File Hosting",
+                    "link": "file-hosting"
                 },
                 {
                     "name": "Reports",

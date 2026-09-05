@@ -77,6 +77,9 @@ import EventRegistrationComp from '@/components/EventRegistrationComp';
 import CategoriesComp from '@/components/ReportsComp/CategoriesComp/CategoriesComp';
 import SetupStepsComp from '@/components/ReportsComp/SetupStepsComp/SetupStepsComp';
 import ImageWithBgComp from '@/components/ImageWithBgComp/ImageWithBgComp';
+import FileHostingStepsComp from '@/components/FileHostingComp/StepsComp/StepsComp';
+import FileHostingUseCasesComp from '@/components/FileHostingComp/UseCasesComp/UseCasesComp';
+import FileHostingFormatsComp from '@/components/FileHostingComp/FormatsComp/FormatsComp';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -180,6 +183,12 @@ const Components = {
     CategoriesComp,
     SetupStepsComp,
     ImageWithBgComp,
+    FileHostingProblemComp: WhyChooseMSG91,
+    FileHostingStepsComp,
+    FileHostingChannelsComp: WhyChooseMSG91,
+    FileHostingUseCasesComp,
+    FileHostingComparisonComp: WhyChooseMSG91,
+    FileHostingFormatsComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {

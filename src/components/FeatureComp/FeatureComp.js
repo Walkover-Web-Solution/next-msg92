@@ -93,7 +93,18 @@ function FeatureCard({ feature, index, featureKey, total, openedFeatures, setOpe
                     </>
                 )}
             </div>
-            {feature?.img &&
+            {feature?.video ? (
+                <video
+                    className='w-full xl:max-w-[620px] lg:max-w-[500px] max-w-[300px] p-10'
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                >
+                    <source src={feature?.video} type='video/webm' />
+                </video>
+            ) : (
+                feature?.img &&
                 (feature?.img.endsWith('.json') ? (
                     <div className='w-full xl:max-w-[600px] lg:max-w-[400px] max-w-[300px] md:mx-6 mx-2'>
                         <LottiePlayer lottie={feature?.img} />
@@ -108,7 +119,8 @@ function FeatureCard({ feature, index, featureKey, total, openedFeatures, setOpe
                         loading='lazy'
                         sizes='(max-width: 768px) 300px, (max-width: 1024px) 500px, (max-width: 1280px) 620px, 1080px'
                     />
-                ))}
+                ))
+            )}
         </div>
     );
 }
