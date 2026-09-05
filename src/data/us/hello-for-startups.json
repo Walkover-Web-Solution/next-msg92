@@ -38,7 +38,8 @@
                     "url": "/assets/trusted_by/apollo_247.svg"
                 }
             ]
-        }
+        },
+        "banner_img": "/assets/hello_for_startup/hello_for_startup.png"
     },
     "HelloStartupWhy": {
         "kicker": "One workspace",
@@ -108,9 +109,9 @@
     "HelloStartupPlan": {
         "heading": "What's included in your free plan",
         "plan_badge": "Free Startup Plan",
-        "price": "US$ 0",
-        "period": "/ month",
-        "action_badge": "NO CREDIT CARD · NO SETUP FEE",
+        "price": "$0",
+        "period": "/month",
+        "fee_badge": "NO CREDIT CARD · NO SETUP FEE",
         "stats": [
             {
                 "label": "UP TO",

@@ -38,7 +38,8 @@
                     "url": "/assets/trusted_by/apollo_247.svg"
                 }
             ]
-        }
+        },
+        "banner_img": "/assets/hello_for_startup/hello_for_startup.png"
     },
     "HelloStartupWhy": {
         "kicker": "Um único espaço de trabalho",
@@ -134,7 +135,7 @@
                 "sublabel": "política de uso de IA\naplicável"
             }
         ],
-        "notice": "Se ultrapassar algum desses limites, você será simplesmente convidado a <span class='text-accent underline cursor-pointer'>fazer upgrade para um plano pago</span> — sua conta e seus dados continuam sem interrupções."
+        "notice": "<strong>Ultrapassou algum limite?</strong> Sua conta e seus dados permanecem intactos — basta migrar para um plano pago do Hello."
     },
     "HelloStartupSteps": {
         "kicker": "Primeiros passos",
