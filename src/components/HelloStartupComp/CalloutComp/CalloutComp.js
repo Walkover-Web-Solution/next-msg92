@@ -1,13 +1,13 @@
-import React from 'react';
-
 export default function CalloutComp({ data }) {
     if (!data?.heading) return null;
 
     return (
-        <section className='container my-8'>
-            <div className='bg-secondary rounded-xl py-12 px-12 max-w-4xl mx-auto text-center'>
-                <h3 className='text-xl sm:text-2xl font-bold text-gray-900 mb-2'>{data?.heading}</h3>
-                {data?.description && <p className='text-gray-600 max-w-2xl mx-auto mt-2'>{data?.description}</p>}
+        <section className='container pb-12'>
+            <div className='rounded-xl bg-secondary border border-sky-100 p-6 sm:p-8 max-w-4xl mx-auto text-center flex flex-col items-center gap-3'>
+                <h3 className='subheading font-semibold'>{data?.heading}</h3>
+                {data?.description && (
+                    <p className='text-sm md:text-base text-gray-600 max-w-2xl'>{data?.description}</p>
+                )}
             </div>
         </section>
     );

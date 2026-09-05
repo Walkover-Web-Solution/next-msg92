@@ -1,29 +1,34 @@
-import React from 'react';
-
 export default function StepsComp({ data }) {
     if (!data?.heading) return null;
 
     return (
-        <section className='bg-white py-16'>
-            <div className='container'>
-                <div className='text-center max-w-2xl mx-auto mb-10'>
-                    <h1 className='heading'>{data?.heading}</h1>
-                    {data?.subheading && <p className='subheading'>{data?.subheading}</p>}
-                </div>
+        <section>
+            <div className='container cont_p flex flex-col gap-8'>
+                <header className='text-center max-w-3xl mx-auto'>
+                    {data?.kicker && <p className='text-xs font-semibold text-accent'>{data.kicker}</p>}
+                    <h2 className='heading font-semibold'>{data.heading}</h2>
+                    {data?.description && (
+                        <p className='my-3 max-w-2xl text-base md:text-lg text-gray-600'>{data.description}</p>
+                    )}
+                </header>
 
                 {data?.steps?.length > 0 && (
-                    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12 max-w-5xl mx-auto'>
-                        {data?.steps?.map((step, index) => (
-                            <div key={index} className='flex flex-col items-center text-center'>
-                                <div className='w-8 h-8 rounded-full bg-accent text-white font-bold text-xs flex items-center justify-center mb-3'>
-                                    {step?.number}
+                    <div className='relative max-w-5xl mx-auto'>
+                        <div className='hidden md:block absolute top-[20px] left-[12%] right-[12%] h-px bg-gray-200 pointer-events-none' />
+
+                        <div className='grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 relative z-10'>
+                            {data?.steps?.map((step, index) => (
+                                <div key={index} className='flex flex-col items-center text-center'>
+                                    {step?.number && (
+                                        <span className='flex h-10 w-10 items-center justify-center rounded-full bg-accent text-sm font-bold text-white mb-4'>
+                                            {step.number}
+                                        </span>
+                                    )}
+                                    <h3 className='text-base font-bold mb-1.5'>{step?.title}</h3>
+                                    <p className='text-sm text-gray-600'>{step?.description}</p>
                                 </div>
-                                <h2 className='text-base font-bold text-gray-900 mb-1'>{step?.title}</h2>
-                                <p className='text-sm text-gray-500 max-w-xs mx-auto whitespace-pre-line'>
-                                    {step?.description}
-                                </p>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 )}
             </div>

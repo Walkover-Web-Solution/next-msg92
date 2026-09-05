@@ -1,60 +1,88 @@
 import Image from 'next/image';
-import React from 'react';
-import { MdArrowForward } from 'react-icons/md';
 
 export default function BannerComp({ data }) {
     if (!data?.heading && !data?.heading_accent) return null;
 
     return (
-        <section className='bg-gradient-to-b from-secondary to-white pt-12 text-center'>
-            <div className='container'>
-                <div className='flex flex-col items-center max-w-4xl mx-auto'>
-                    {data?.badge && (
-                        <div className='inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-secondary text-accent text-xs font-semibold mb-5 shadow-sm'>
-                            {data?.badge}
-                        </div>
-                    )}
+        <>
+            <section className='relative overflow-hidden bg-gradient-to-b from-sky-100 to-white pt-16 md:pt-24 text-center'>
+                <div className='absolute left-1/2 -translate-x-1/2 top-[300px] w-[680px] h-[680px] rounded-full border border-sky-200/40 pointer-events-none' />
+                <div className='absolute left-1/2 -translate-x-1/2 top-[160px] w-[960px] h-[960px] rounded-full border border-sky-200/40 pointer-events-none' />
 
-                    <h1 className='heading'>
-                        {data?.heading_prefix && `${data.heading_prefix} `}
-                        <span className='text-accent'>{data?.heading_accent}</span>
-                    </h1>
-
-                    {data?.subheading && (
-                        <p className='text-xs sm:text-sm text-gray-700 max-w-xl mx-auto my-12'>{data?.subheading}</p>
-                    )}
-
-                    <div className='flex items-center justify-center gap-4'>
-                        {data?.primary_btn && data?.primary_btn_link && (
-                            <a
-                                href={data.primary_btn_link}
-                                target={data.primary_btn_link.startsWith('http') ? '_blank' : undefined}
-                                className='btn btn-accent btn-sm text-white px-5'
-                            >
-                                {data.primary_btn}
-                            </a>
+                <div className='container relative z-10'>
+                    <div className='flex flex-col items-center max-w-5xl mx-auto'>
+                        {data?.badge && (
+                            <div className='inline-flex items-center gap-3 px-5 py-2 rounded-full border border-sky-200 bg-white text-accent text-base sm:text-lg font-semibold mb-6'>
+                                <span className='w-3 h-3 rounded-full bg-accent animate-pulse ring-4 ring-sky-100' />
+                                <span>{data?.badge}</span>
+                            </div>
                         )}
-                        {data?.secondary_btn && data?.secondary_btn_link && (
-                            <a
-                                href={data.secondary_btn_link}
-                                target={data?.secondary_btn_target}
-                                className='inline-flex items-center gap-1.5 text-accent text-xs sm:text-sm font-medium'
-                            >
-                                <span>{data.secondary_btn}</span>
-                                <MdArrowForward className='text-base' aria-hidden />
-                            </a>
+
+                        <h1 className='heading font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl'>
+                            {data?.heading_prefix ? (
+                                <>
+                                    <span className='block'>{data.heading_prefix}</span>
+                                    {data?.heading_accent && (
+                                        <span className='text-accent block'>{data.heading_accent}</span>
+                                    )}
+                                </>
+                            ) : (
+                                <span>{data?.heading}</span>
+                            )}
+                        </h1>
+
+                        {data?.subheading && (
+                            <p className='my-4 max-w-2xl text-base md:text-lg text-gray-600'>{data?.subheading}</p>
+                        )}
+
+                        <div className='flex flex-wrap items-center justify-center gap-4 mt-6 mb-12'>
+                            {data?.primary_btn && data?.primary_btn_link && (
+                                <a
+                                    href={data.primary_btn_link}
+                                    target={data.primary_btn_link.startsWith('http') ? '_blank' : undefined}
+                                    rel={data.primary_btn_link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                    className='btn btn-accent btn-md'
+                                >
+                                    <span>{data.primary_btn}</span>
+                                    <span aria-hidden>→</span>
+                                </a>
+                            )}
+                            {data?.secondary_btn && data?.secondary_btn_link && (
+                                <a
+                                    href={data.secondary_btn_link}
+                                    target={data?.secondary_btn_target}
+                                    rel={data?.secondary_btn_target === '_blank' ? 'noopener noreferrer' : undefined}
+                                    className='inline-flex items-center gap-1 text-accent text-sm font-semibold hover:underline'
+                                >
+                                    <span>{data.secondary_btn}</span>
+                                    <span aria-hidden>↗</span>
+                                </a>
+                            )}
+                        </div>
+
+                        {data?.banner_img && (
+                            <div className='relative z-10 w-full'>
+                                <Image
+                                    src={data.banner_img}
+                                    alt={data?.heading}
+                                    width={1774}
+                                    height={644}
+                                    priority
+                                    className='w-full h-auto'
+                                />
+                            </div>
                         )}
                     </div>
                 </div>
-            </div>
+            </section>
 
             {data?.trusted_by?.logos?.length > 0 && (
-                <div className='mt-16 md:mt-20 bg-secondary py-5 px-4 border-t border-gray-200'>
-                    <div className='container flex flex-col md:flex-row items-center justify-center gap-4 md:gap-7'>
+                <div className='border-y border-gray-200 bg-slate-100 py-5'>
+                    <div className='container flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8'>
                         {data?.trusted_by?.title && (
-                            <span className='text-xs font-semibold text-gray-600'>{data.trusted_by.title}</span>
+                            <span className='text-xs font-semibold text-gray-700'>{data.trusted_by.title}</span>
                         )}
-                        <div className='flex flex-wrap items-center justify-center gap-5 sm:gap-7'>
+                        <div className='flex flex-wrap items-center justify-center gap-6 sm:gap-8'>
                             {data?.trusted_by?.logos?.map((logo, index) => (
                                 <Image
                                     key={index}
@@ -62,7 +90,7 @@ export default function BannerComp({ data }) {
                                     alt={logo?.name}
                                     width={100}
                                     height={24}
-                                    className='h-5 sm:h-6 w-auto object-contain'
+                                    className='h-6 sm:h-7 w-auto'
                                     loading='lazy'
                                 />
                             ))}
@@ -70,6 +98,6 @@ export default function BannerComp({ data }) {
                     </div>
                 </div>
             )}
-        </section>
+        </>
     );
 }
