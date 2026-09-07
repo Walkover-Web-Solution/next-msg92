@@ -8,14 +8,12 @@ export default function FormatsComp({ data, pageInfo }) {
         <section className='bg-white'>
             <div className='container cont_p cont_gap flex flex-col'>
                 <div className='flex flex-col gap-4 text-center max-w-5xl mx-auto'>
-                    {data?.tagline && <span className='text-xs font-semibold text-fh sm:text-sm'>{data.tagline}</span>}
-                    {data?.heading && <h2 className='heading md:whitespace-nowrap'>{data.heading}</h2>}
-                    {data?.subheading && (
-                        <p className='text-base text-gray-600 md:text-xl max-w-3xl mx-auto'>{data.subheading}</p>
-                    )}
+                    {data?.tagline && <span className='text-xs font-semibold text-fh sm:text-sm'>{data?.tagline}</span>}
+                    {data?.heading && <h2 className='heading'>{data?.heading}</h2>}
+                    {data?.subheading && <p className='subheading max-w-3xl mx-auto'>{data?.subheading}</p>}
                 </div>
 
-                <div className='grid grid-cols-1 items-center gap-8 lg:gap-12 lg:grid-cols-12 pt-8'>
+                <div className='grid grid-cols-1 items-center gap-8 lg:gap-12 lg:grid-cols-12'>
                     <div className='flex flex-col gap-4 lg:col-span-6'>
                         {data?.steps?.map((step, index) => (
                             <div
