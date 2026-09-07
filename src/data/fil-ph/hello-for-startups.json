@@ -4,10 +4,10 @@
         "description": "Kumpletong software sa suporta ng customer — omnichannel inbox, AI chatbot, at automation — libre para sa mga negosyo sa Pilipinas na may taunang kita na mas mababa sa ₱ 2,500,000."
     },
     "HelloStartupBanner": {
-        "badge": "🇵🇭 Hello para sa mga Startup sa Pilipinas",
-        "heading_prefix": "Hello,",
-        "heading_accent": "Libre para sa mga Startup sa Pilipinas.",
-        "heading": "Hello, Libre para sa mga Startup sa Pilipinas.",
+        "badge": "Hello para sa mga Startup sa Pilipinas",
+        "heading_prefix": "Mahusay na suporta sa customer.",
+        "heading_accent": "Walang gastos upang magsimula.",
+        "heading": "Mahusay na suporta sa customer. Walang gastos upang magsimula.",
         "subheading": "Kumpletong software sa suporta ng customer — omnichannel inbox, AI chatbot, at automation — ganap na libre para sa mga early-stage na negosyo sa Pilipinas na may taunang kita na mas mababa sa ₱ 2,500,000. Buuin ang iyong karanasan sa customer ngayon; magbayad lamang kapag lumago ka na.",
         "primary_btn": "Mag-apply para sa libreng access",
         "primary_btn_link": "https://docs.google.com/forms/d/e/1FAIpQLSf50qTLGF-UjasMyhmZLd4rKt8FtpqA1Q9x2AL3Neor7fk0cg/viewform?usp=send_form",
@@ -38,77 +38,80 @@
                     "url": "/assets/trusted_by/apollo_247.svg"
                 }
             ]
-        }
+        },
+        "banner_img": "/assets/hello_for_startup/hello_for_startup.png"
     },
     "HelloStartupWhy": {
-        "heading": "Bakit namin ito binuo",
-        "description": "Ang mga negosyong nasa maagang yugto ay hindi dapat pumili sa pagitan ng magandang suporta sa customer at ng kanilang pondo. Ang Hello Free for Startups ay nagbibigay sa mga kwalipikadong startup sa Pilipinas ng parehong plataporma na binabayaran ng mga lumalaking kumpanya — nang walang bayad — upang makapaghatid ka ng propesyonal at multi-channel na suporta mula sa unang araw. Kapag lumago na ang iyong negosyo, lumipat lamang sa bayad na plano nang napananatili ang lahat ng iyong data at setup.",
+        "kicker": "Isang espasyo sa pagtatrabaho",
+        "heading": "Suportang lumalago\nkasabay ng iyong startup.",
+        "description": "Pagsama-samahin ang mga pag-uusap, automation, at mga insight — upang mas kaunting oras ang gugulin ng iyong team sa pamamahala at mas maraming oras sa pagtulong sa mga customer.",
         "cards": [
             {
                 "icon": "💬",
-                "title": "Omnichannel inbox",
-                "description": "WhatsApp, Email, Live Chat, Instagram, Facebook — pinagsama-sama sa isang lugar."
+                "title": "Isang inbox. Bawat pag-uusap.",
+                "description": "WhatsApp, Email, Live Chat, Boses, Instagram, Facebook, Twitter (X), RCS, at Apple Message — lahat sa isang malinis na espasyo."
             },
             {
-                "icon": "🤖",
-                "title": "AI chatbot",
-                "description": "Awtomatikong lutasin ang mga karaniwang tanong,\nalinsunod sa patas na paggamit."
+                "icon": "✦",
+                "title": "AI na humahawak ng routine.",
+                "description": "Lutasin ang mga karaniwang katanungan nang awtomatiko, 24/7."
             },
             {
                 "icon": "⚡",
-                "title": "Automation at routing",
-                "description": "Workflow automation, smart routing, at\nmga naka-imbak na sagot."
+                "title": "I-automate ang paulit-ulit na gawain.",
+                "description": "I-ruta ang mga usapan at lumikha ng mga workflow na nagpapanatili sa iyong koponan."
             },
             {
-                "icon": "🌐",
-                "title": "Real-time na pagsasalin",
-                "description": "Makipag-usap sa mga customer sa kanilang wika sa\nbawat channel."
+                "icon": "◎",
+                "title": "Salitain ang wika ng bawat customer.",
+                "description": "Ang real-time translation ay tumutulong sa iyong team na natural na makipag-usap sa iba't ibang merkado."
             },
             {
-                "icon": "📊",
-                "title": "Analytics at pag-uulat",
-                "description": "Subaybayan ang bilis ng tugon, resolusyon at\npagganap ng koponan."
+                "icon": "▥",
+                "title": "Alamin kung ano ang epektibo.",
+                "description": "Subaybayan ang bilis ng tugon, resolusyon at pagganap ng koponan nang walang spreadsheet."
             },
             {
-                "icon": "🔌",
-                "title": "2,200+ integrations",
-                "description": "Ikonekta ang mga integrasyon para sa chatbot.\nBuhay sa loob ng ilang minuto nang walang bayad sa setup."
+                "icon": "⌘",
+                "title": "Ikonekta ang iyong stack.",
+                "description": "Pinapadali ng 150+ integrations ang pagkonekta sa CRM, commerce, at pang-araw-araw na tools."
             }
         ]
     },
     "HelloStartupEligibility": {
         "id": "eligibility",
-        "heading": "Kwalipikasyon — dapat mong matugunan ang LAHAT ng sumusunod",
-        "description": "Upang mapanatili ang programang ito na nakatuon sa mga tunay na negosyong nasa maagang yugto, kwalipikado lamang ang iyong negosyo kung natutugunan nito ang bawat kondisyon sa ibaba.",
+        "kicker": "GINAWA PARA SA MGA EARLY-STAGE NA KOPONAN",
+        "heading": "Simpleng maging kwalipikado.\nMadaling gamitin.",
+        "description": "Kung ang iyong negosyo ay nakarehistro, tunay na maagang yugto at nasa loob ng threshold ng kita, maaari kang makakuha ng Hello nang walang bayad.",
         "cards": [
             {
                 "number": "01",
-                "title": "Uri ng negosyo",
-                "description": "Ikaw ay isang rehistradong negosyo sa Pilipinas."
+                "title": "Rehistradong negosyo",
+                "description": "Isang wastong rehistradong entity ng negosyo. Ang mga hindi rehistradong indibidwal ay hindi kwalipikado."
             },
             {
                 "number": "02",
-                "title": "Limitasyon sa kita",
-                "description": "Ang iyong taunang kita ay mas mababa sa ₱ 2,500,000, batay sa iyong financial statements."
+                "title": "Kita sa ibaba ng ₱ 2,500,000",
+                "description": "Ang taunang kita ay dapat mas mababa sa ₱ 2,500,000 o ang naaangkop na lokal na katumbas."
             },
             {
                 "number": "03",
-                "title": "Mandatoryong dokumentasyon",
-                "description": "Wastong audited financial statements (BIR-filed) para sa pinakahuling financial year, kasama ang patunay ng business registration (DTI / SEC) at nilagdaang self-declaration ng taunang kita."
+                "title": "Mga na-verify na dokumento",
+                "description": "Pinakabagong financial statement o tax return, patunay ng pagpaparehistro at deklarasyon."
             },
             {
                 "number": "04",
                 "title": "Isang account bawat negosyo",
-                "description": "Isang libreng Startup account lamang ang pinapayagan bawat rehistradong entidad. Ang paglikha ng maraming account ay magreresulta sa diskwalipikasyon."
+                "description": "Isang libreng Startup account bawat rehistradong entity. Walang paghahati ng mga negosyo upang manatili sa limitasyon."
             }
         ]
     },
     "HelloStartupPlan": {
-        "heading": "Ano ang iyong makukuha — libre",
-        "subheading": "Ang Libreng Startup Plan ay nagbibigay sa iyo ng buong access sa Hello — nakapaloob sa mga limitasyon sa ibaba. Manatili sa loob ng mga ito at wala kang babayaran.",
+        "heading": "Ano ang kasama sa iyong libreng plano",
         "plan_badge": "Libreng Startup Plan",
         "price": "₱ 0",
         "period": "/buwan",
+        "fee_badge": "WALANG CREDIT CARD · WALANG BAYAD SA SETUP",
         "action_badge": "Mga limitasyon sa paggamit ng libreng tier",
         "stats": [
             {
@@ -124,44 +127,46 @@
             {
                 "label": "HANGGANG",
                 "value": "2",
-                "sublabel": "inboxes /\nchannels"
+                "sublabel": "mga inbox /\nmga channel"
             },
             {
                 "label": "HANGGANG",
                 "value": "Patas na gamit",
-                "sublabel": "AI usage policy\nang ipinapatupad"
+                "sublabel": "patakaran sa patas na\ngamit ng AI"
             }
         ],
-        "notice": "Kapag lumampas sa mga limitasyong ito, aanyayahan ka lamang na <span class='text-accent underline cursor-pointer'>mag-upgrade sa isang bayad na plano</span> — magpapatuloy ang iyong account at data nang walang abala."
+        "notice": "<strong>Lumalagpas sa limitasyon?</strong> Ang iyong account at data ay mananatiling buo — lumipat lamang sa isang bayad na Hello plan."
     },
     "HelloStartupSteps": {
-        "heading": "Paano ito gumagana",
+        "kicker": "Pagsisimula",
+        "heading": "Apat na hakbang. Walang sorpresa.",
+        "description": "Pinapanatili naming simple ang proseso para makabalik ka agad sa pagbuo ng iyong startup.",
         "steps": [
             {
                 "number": "1",
                 "title": "Mag-apply",
-                "description": "Kumpletuhin ang form at i-upload ang iyong financial statement at patunay ng rehistrasyon."
+                "description": "Punan ang form at i-upload ang mga dokumento ng iyong negosyo."
             },
             {
                 "number": "2",
                 "title": "Pagpapatunay",
-                "description": "Bineberipika ng aming team ang iyong mga dokumento, karaniwang sa loob ng ilang araw ng negosyo."
+                "description": "Sinusuri ng aming team ang iyong mga dokumento at kwalipikasyon."
             },
             {
                 "number": "3",
                 "title": "Pag-activate",
-                "description": "Kapag naaprubahan na, bubuksan ang iyong libreng Startup account."
+                "description": "Kapag naaprubahan, magiging live ang iyong libreng Hello account."
             },
             {
                 "number": "4",
-                "title": "Taunang pagsusuri",
-                "description": "Muli naming kinukumpirma ang kwalipikasyon bawat taon. Kung lumampas ka sa ₱ 2,500,000 o sa limitasyon ng paggamit, tutulungan ka naming lumipat sa bayad na plano."
+                "title": "Lumago",
+                "description": "Panatilihin ang iyong setup at lumipat sa may bayad kapag nalagpasan mo ang programa."
             }
         ]
     },
     "HelloStartupGrow": {
-        "heading": "Kapag lumago ka, mananatili sa iyo ang lahat",
-        "description": "Ang paglampas sa ₱ 2,500,000 ay magandang balita. Kapag nangyari ito, mananatili ang iyong data, mga pag-uusap, at setup nang eksakto kung paano ito binuo — lilipat ka lamang sa bayad na Hello plan nang walang pagkaantala."
+        "heading": "Kapag lumago ka, mananatili sa iyo ang lahat.",
+        "description": "Mananatili ang iyong data, mga pag-uusap, at setup nang eksakto kung paano ito. Walang paglipat. Walang abala."
     },
     "Faqs": {
         "heading": "Mga madalas itanong",
@@ -189,7 +194,9 @@
         ]
     },
     "HelloStartupFooterCta": {
-        "heading": "Bigyan ang iyong mga customer ng suporta ng malaking kumpanya habang maliit ka pa.",
+        "heading_prefix": "Suporta tulad ng malaking kumpanya,",
+        "heading_accent": "habang maliit ka pa.",
+        "heading": "Suporta tulad ng malaking kumpanya, habang maliit ka pa.",
         "subheading": "Mag-apply para sa Hello Free for Startups at bigyan ang iyong mga customer ng karanasang nararapat sa kanila.",
         "btn_text": "Mag-apply para sa libreng access",
         "btn_link": "https://docs.google.com/forms/d/e/1FAIpQLSf50qTLGF-UjasMyhmZLd4rKt8FtpqA1Q9x2AL3Neor7fk0cg/viewform?usp=send_form"
