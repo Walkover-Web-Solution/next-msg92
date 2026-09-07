@@ -2,7 +2,7 @@ export default function WhyBuiltComp({ data }) {
     if (!data?.heading) return null;
 
     return (
-        <section id='features'>
+        <section>
             <div className='container cont_p flex flex-col gap-8'>
                 <header className='flex flex-col md:flex-row md:items-end justify-between gap-6'>
                     <div>
