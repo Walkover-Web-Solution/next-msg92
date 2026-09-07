@@ -46,7 +46,7 @@ export default function UseCasesComp({ data, pageInfo }) {
                                                     key={bulletIndex}
                                                     className='flex items-start gap-2.5 text-sm md:text-base text-gray-700'
                                                 >
-                                                    <span className='flex h-5 w-5 shrink-0 items-center justify-center rounded-xl bg-fh-light text-fh'>
+                                                    <span className='flex h-5 w-5 items-center justify-center rounded-xl bg-fh-light text-fh'>
                                                         <MdCheck className='h-3.5 w-3.5' />
                                                     </span>
                                                     <span>{bullet}</span>

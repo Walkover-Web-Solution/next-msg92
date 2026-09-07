@@ -59,7 +59,7 @@ export default function WhyChooseMSG91({ data, pageInfo }) {
                                     </CalendlyModal>
                                 ))}
                         </div>
-                        <div className='w-full xl:max-w-[700px] lg:max-w-[320px] max-w-[280px] md:mx-6 mx-2 rounded-lg overflow-hidden'>
+                        <div className='w-full xl:max-w-[560px] lg:max-w-[460px] max-w-[400px] md:mx-6 mx-2 rounded-xl overflow-hidden'>
                             {item?.img?.endsWith('.json') ? (
                                 <LottiePlayer lottie={item?.img} />
                             ) : item?.video ? (
