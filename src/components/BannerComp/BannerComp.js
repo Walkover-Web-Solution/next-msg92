@@ -121,7 +121,7 @@ export default function BannerComp({ pageInfo, data }) {
                     </div>
 
                     {data?.trust_highlights ? (
-                        <div className='flex flex-col gap-1 pt-2'>
+                        <div className='flex flex-col gap-1'>
                             <p className='font-bold text-lg'>{data.trust_highlights?.heading}</p>
                             {data.trust_highlights?.highlights?.length > 0 && (
                                 <p className='text-sm font-medium'>{data.trust_highlights.highlights.join(' | ')}</p>
