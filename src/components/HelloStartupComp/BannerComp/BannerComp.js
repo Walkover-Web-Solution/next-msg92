@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 export default function BannerComp({ data }) {
-    if (!data?.heading && !data?.heading_accent) return null;
+    if (!data) return null;
 
     return (
         <>
@@ -21,9 +21,9 @@ export default function BannerComp({ data }) {
                         <h1 className='heading font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl'>
                             {data?.heading_prefix ? (
                                 <>
-                                    <span className='block'>{data.heading_prefix}</span>
+                                    <span className='block'>{data?.heading_prefix}</span>
                                     {data?.heading_accent && (
-                                        <span className='text-accent block'>{data.heading_accent}</span>
+                                        <span className='text-accent block'>{data?.heading_accent}</span>
                                     )}
                                 </>
                             ) : (
@@ -37,24 +37,17 @@ export default function BannerComp({ data }) {
 
                         <div className='flex flex-wrap items-center justify-center gap-4 mt-6 mb-12'>
                             {data?.primary_btn && data?.primary_btn_link && (
-                                <a
-                                    href={data.primary_btn_link}
-                                    target={data.primary_btn_link.startsWith('http') ? '_blank' : undefined}
-                                    rel={data.primary_btn_link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                                    className='btn btn-accent btn-md'
-                                >
-                                    <span>{data.primary_btn}</span>
+                                <a href={data?.primary_btn_link} className='btn btn-accent btn-md'>
+                                    <span>{data?.primary_btn}</span>
                                     <span aria-hidden>→</span>
                                 </a>
                             )}
                             {data?.secondary_btn && data?.secondary_btn_link && (
                                 <a
-                                    href={data.secondary_btn_link}
-                                    target={data?.secondary_btn_target}
-                                    rel={data?.secondary_btn_target === '_blank' ? 'noopener noreferrer' : undefined}
+                                    href={data?.secondary_btn_link}
                                     className='inline-flex items-center gap-1 text-accent text-sm font-semibold hover:underline'
                                 >
-                                    <span>{data.secondary_btn}</span>
+                                    <span>{data?.secondary_btn}</span>
                                     <span aria-hidden>↗</span>
                                 </a>
                             )}
@@ -63,7 +56,7 @@ export default function BannerComp({ data }) {
                         {data?.banner_img && (
                             <div className='relative z-10 w-full'>
                                 <Image
-                                    src={data.banner_img}
+                                    src={data?.banner_img}
                                     alt={data?.heading}
                                     width={1774}
                                     height={644}
@@ -80,7 +73,7 @@ export default function BannerComp({ data }) {
                 <div className='border-y border-gray-200 bg-slate-100 py-5'>
                     <div className='container flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8'>
                         {data?.trusted_by?.title && (
-                            <span className='text-xs font-semibold text-gray-700'>{data.trusted_by.title}</span>
+                            <span className='text-xs font-semibold text-gray-700'>{data?.trusted_by?.title}</span>
                         )}
                         <div className='flex flex-wrap items-center justify-center gap-6 sm:gap-8'>
                             {data?.trusted_by?.logos?.map((logo, index) => (
