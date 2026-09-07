@@ -52,6 +52,10 @@
     color: var(--color-report-primary-dark) !important;
 }
 
+.text-file-hosting {
+    color: var(--file-hosting-dark-color) !important;
+}
+
 .text-home {
     color: var(--accent-color) !important;
 }
@@ -101,6 +105,7 @@
 @include product-color('shorturl');
 @include product-color('knowledgebase');
 @include product-color('reports');
+@include product-color('file-hosting');
 
 .hello_analytics_bg {
     background-color: var(--hello-analytics-bg) !important;
