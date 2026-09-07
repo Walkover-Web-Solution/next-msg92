@@ -1,7 +1,7 @@
 {
     "HeadComp": {
-        "title": "Serbisyo ng File Hosting para Mag-upload, Mag-host at Magbahagi ng mga File | MSG91 Pilipinas",
-        "description": "Mag-upload, mag-host, at magbahagi ng mga larawan, video, PDF, dokumento, at iba pang mga file ng negosyo mula sa isang sentralisadong platform. Bumuo ng mga maibabahaging URL at gamitin ang iyong mga file sa WhatsApp, SMS, Email, RCS, mga website, app, at mga API."
+        "title": "File Hosting Service to Upload, Host & Share Business Files | MSG91 Philippines",
+        "description": "Upload, host, and share images, videos, PDFs, documents, and other business files from one centralized platform. Generate shareable URLs and use your files across WhatsApp, SMS, Email, RCS, websites, apps, and APIs."
     },
     "BannerComp": {
         "slug": "file-hosting",
@@ -9,291 +9,291 @@
             "name": "File Hosting",
             "icon": "/assets/icons/products/filehosting.svg"
         },
-        "tagline": "SERBISYO NG FILE HOSTING",
-        "heading": "Mag-upload, Mag-host at Magbahagi ng mga File ng Negosyo",
-        "subheading": "I-upload ang mga file nang isang beses, bumuo ng shareable URLs, at gamitin sa WhatsApp, SMS, Email, RCS, mga website, at APIs.",
+        "tagline": "FILE HOSTING SERVICE",
+        "heading": "Upload, Host & Share Business Files",
+        "subheading": "Upload files once, generate shareable URLs, and use them across WhatsApp, SMS, Email, RCS, websites, apps, and APIs.",
         "banner_video": "/assets/file_hosting/videos/hero_video.webm",
         "not_absolute": "true",
-        "getstarted_btn": "Magsimula",
-        "schedule_meet": "Mag-iskedyul ng Pagpupulong",
+        "getstarted_btn": "Get Started",
+        "schedule_meet": "Schedule a Meeting",
         "trust_highlights": {
-            "heading": "Mag-upload Minsan. Mag-host nang Ligtas. Magbahagi Kahit Saan.",
+            "heading": "Upload Once. Host Securely. Share Anywhere.",
             "highlights": [
-                "50+ Format ng File",
-                "Isang Sentralisadong Library",
-                "Muling Magagamit na mga URL",
-                "Multi-Channel na Pagbabahagi"
+                "50+ File Formats",
+                "One Centralized Library",
+                "Reusable URLs",
+                "Multi-Channel Sharing"
             ]
         }
     },
     "FileHostingProblemComp": {
-        "heading": "Hindi Dapat Nakakalat ang mga File ng Iyong Negosyo Kahit Saan",
-        "subheading": "Patuloy na nagbabahagi ang mga negosyo ng mga larawan ng produkto, invoice, brochure, video, dokumento, at iba pang mga asset.",
+        "heading": "Your Business Files Shouldn't Live Everywhere",
+        "subheading": "Businesses constantly share product images, invoices, brochures, videos, documents, catalogs, and other assets.",
         "content": [
             {
-                "title": "Itigil ang Pamamahala ng Nakakalat na mga File sa Magkakahiwalay na Platform",
-                "subtitle": "Isentralisa, I-host at Ibahagi",
-                "description": "Kapag nakakalat ang mga file sa mga lokal na computer, email attachment, cloud drive, at iba't ibang tool ng komunikasyon, nahaharap ang mga team sa abala at paulit-ulit na trabaho.",
+                "title": "Stop Managing Scattered Files Across Disconnected Platforms",
+                "subtitle": "Centralize, Host & Share",
+                "description": "When files are scattered across local systems, email attachments, cloud drives, and different communication platforms, teams face continuous friction.",
                 "img": "/assets/file_hosting/images/problem_statement.webp",
                 "video": "/assets/file_hosting/videos/problem_statement.webm",
                 "highlights": [
-                    "Alisin ang paulit-ulit na pag-upload at dobleng kopya ng file sa maraming platform",
-                    "Iwasan ang mga lumang file at panatilihin ang pare-parehong komunikasyon sa customer",
-                    "Lutasin ang mahirap na paghahanap ng file at limitasyon sa laki ng email attachment",
-                    "Ang mas matalinong paraan: Mag-upload nang isang beses at gawing available ang mga file kahit saan"
+                    "Repeated uploads and duplicate file storage across multiple systems",
+                    "Outdated assets and inconsistent customer communication",
+                    "Difficult file discovery and email attachment limitations",
+                    "The smarter way: Upload once and make files available wherever your business communicates"
                 ],
-                "footer": "Mag-upload nang isang beses at gawing available ang iyong mga asset kahit saan nakikipag-ugnayan ang iyong negosyo"
+                "footer": "Upload a file once and make it available wherever your business communicates"
             }
         ]
     },
     "FeatureComp": {
-        "heading": "Lahat ng Kailangan Mo para sa File Hosting ng Negosyo",
-        "subheading": "Isang pinag-isang platform na binuo upang mag-imbak, mamahala, at magpamahagi ng mga asset ng negosyo sa lahat ng channel ng komunikasyon.",
+        "heading": "Everything You Need for Business File Hosting",
+        "subheading": "A unified platform built to store, manage, and distribute business assets across all communication channels.",
         "features": [
             {
-                "name": "Mag-upload ng 50+ Format ng File",
-                "content": "<p>Mag-host ng mga larawan, video, audio, PDF, presentasyon, spreadsheet, at dokumento mula sa isang platform.</p><ul><li>Suportado ang JPG, PNG, WEBP, GIF, SVG, MP4, PDF, DOCX, XLSX at 50+ uri ng file</li><li>Mabilis na cloud delivery at agarang preview ng media</li><li>Na-optimize para sa media ng lahat ng laki na may direktang pag-render</li></ul>",
+                "name": "Upload 50+ File Formats",
+                "content": "<p>Host images, videos, audio, PDFs, presentations, spreadsheets, and business documents from one platform.</p><ul><li>Supports JPG, PNG, WEBP, GIF, SVG, MP4, PDF, DOCX, XLSX & 50+ file types</li><li>High-speed cloud delivery and instant media previewing</li><li>Optimized for media of all sizes with direct rendering</li></ul>",
                 "video": "/assets/file_hosting/videos/upload_100_file_formats.webm"
             },
             {
-                "name": "Sentralisadong File Library",
-                "content": "<p>Panatilihing maayos ang iyong mga asset ng negosyo sa isang lugar sa halip na pamahalaan ang mga ito sa maraming storage.</p><ul><li>Maghanap at mag-filter sa iyong digital repository sa loob ng ilang segundo</li><li>Ayusin ang mga asset gamit ang mga folder at tag</li><li>Siguraduhing laging ginagamit ng mga team ang pinakabagong bersyon ng mga file</li></ul>",
+                "name": "Centralized File Library",
+                "content": "<p>Keep your business assets organized in one place instead of managing files across multiple storage platforms.</p><ul><li>Search and filter your entire digital repository in seconds</li><li>Categorize assets with intuitive folder structures and tags</li><li>Ensure teams always access the latest versions of brand assets</li></ul>",
                 "img": "/assets/file_hosting/images/centralized_file_library.webp"
             },
             {
-                "name": "Bumuo ng Maibabahaging mga URL",
-                "content": "<p>Gawing mga URL ang mga na-upload na file na madaling maibabahagi sa iyong mga channel ng komunikasyon sa negosyo.</p><ul><li>Bumuo agad ng CDN URL para sa mabilis na paghahatid sa buong mundo</li><li>Palitan ang mabibigat na attachment ng magagaang link</li><li>Tugma sa mga short link, parameter ng pagsubaybay, at workflow ng CRM</li></ul>",
+                "name": "Generate Shareable URLs",
+                "content": "<p>Turn uploaded files into URLs that can be easily shared across your business communication channels.</p><ul><li>Instant CDN-backed URL generation with global high-speed delivery</li><li>Replace heavy email and chat attachments with lightweight links</li><li>Compatible with short links, tracking parameters, and CRM workflows</li></ul>",
                 "img": "/assets/file_hosting/images/generate_shareable_urls.webp"
             },
             {
-                "name": "Mag-upload Minsan, Gamitin Kahit Saan",
-                "content": "<p>Muling gamitin ang parehong na-host na file sa mga kampanya, template, email, website, application, at workflow.</p><ul><li>Alisin ang paulit-ulit na pag-upload at bawasan ang gastos sa storage</li><li>I-update ang orihinal na file nang hindi nasisira ang mga naibahaging link</li><li>Walang putol na gamitin ang mga file sa mga automated marketing trigger</li></ul>",
+                "name": "Upload Once, Reuse Everywhere",
+                "content": "<p>Reuse the same hosted file across campaigns, templates, emails, websites, applications, and workflows.</p><ul><li>Eliminate duplicate uploads and reduce redundant storage costs</li><li>Update the source file once without breaking existing shared URLs</li><li>Seamlessly embed files in automated marketing and transactional triggers</li></ul>",
                 "video": "/assets/file_hosting/videos/upload_once_reuse_everywhere.webm"
             },
             {
-                "name": "Madaling Pamamahala ng File",
-                "content": "<p>Maghanap, mag-ayos, magbago ng pangalan, magbura, at mamahala ng iyong mga file mula sa isang sentralisadong library.</p><ul><li>Mabilis na pagsusuri, pagpapalit ng pangalan, at pamamahala ng metadata</li><li>Isang-click na pagpapalit, pagbura, at kontrol sa pag-access</li><li>Pamahalaan ang mga file gamit ang mga REST API para sa mga developer</li></ul>",
+                "name": "Easy File Management",
+                "content": "<p>Search, organize, rename, delete, and manage your files from one centralized library.</p><ul><li>Quick file inspection, renaming, and metadata management</li><li>One-click file replacement, deletion, and access controls</li><li>Programmatic file management via developer-friendly REST APIs</li></ul>",
                 "img": "/assets/file_hosting/images/easy_file_management.webp"
             },
             {
-                "name": "Binuo para sa Komunikasyon ng Negosyo",
-                "content": "<p>Gamitin ang mga na-host na file sa WhatsApp, SMS, Email, RCS, mga API, website, app, at automation workflow.</p><ul><li>Direktang nakasama sa WhatsApp Business, SMS, Email, at RCS</li><li>Magbahagi ng rich media sa chat nang walang error sa laki</li><li>I-trigger ang automated na pagpapadala ng dokumento gamit ang mga webhook at chatbot</li></ul>",
+                "name": "Built for Business Communication",
+                "content": "<p>Use hosted files across WhatsApp, SMS, Email, RCS, APIs, websites, apps, and automation workflows.</p><ul><li>Natively integrated with WhatsApp Business, SMS, Email, and RCS</li><li>Share rich media in customer chats without size limit errors</li><li>Trigger automated document delivery via webhooks and chatbot flows</li></ul>",
                 "img": "/assets/file_hosting/images/built_for_business_communication.webp"
             }
         ]
     },
     "FileHostingStepsComp": {
-        "tagline": "PAANO ITO GUMAGANA",
-        "heading": "Mag-upload Minsan. Magbahagi Kahit Saan.",
-        "subheading": "Isang tuloy-tuloy na 4-step na daloy ng trabaho para mag-upload, bumuo ng link, magbahagi, at muling gumamit ng mga asset.",
+        "tagline": "HOW IT WORKS",
+        "heading": "Upload Once. Share Everywhere.",
+        "subheading": "A seamless 4-step workflow to upload, generate, share, and reuse business assets.",
         "steps": [
             {
                 "number": "01",
-                "title": "Mag-upload",
-                "description": "I-upload ang iyong larawan, video, PDF, dokumento, o iba pang file ng negosyo."
+                "title": "Upload",
+                "description": "Upload your image, video, PDF, document, or other business file."
             },
             {
                 "number": "02",
-                "title": "Bumuo",
-                "description": "Gumawa ng naka-host na URL para sa iyong file."
+                "title": "Generate",
+                "description": "Create a hosted URL for your file."
             },
             {
                 "number": "03",
-                "title": "Magbahagi",
-                "description": "Gamitin ang URL sa iyong gustong channel ng komunikasyon."
+                "title": "Share",
+                "description": "Use the URL across your preferred communication channel."
             },
             {
                 "number": "04",
-                "title": "Muling Gamitin",
-                "description": "I-access at muling gamitin ang parehong na-host na file anumang oras."
+                "title": "Reuse",
+                "description": "Access and reuse the same hosted file whenever you need it."
             }
         ]
     },
     "FileHostingChannelsComp": {
-        "heading": "Gumamit ng Isang Naka-host na File sa Bawat Channel ng Komunikasyon",
-        "subheading": "I-upload ang iyong mga file nang isang beses at ibahagi sa WhatsApp, SMS, Email, RCS, mga website, app, at mga API gamit ang reusable links.",
+        "heading": "Use One Hosted File Across Every Communication Channel",
+        "subheading": "Upload your business files once and share them across WhatsApp, SMS, Email, RCS, websites, apps, and APIs via reusable links.",
         "content": [
             {
-                "title": "Ihatid ang Naka-host na Media sa WhatsApp, SMS, Email, RCS at mga API",
-                "subtitle": "Pang-omnichannel na Paghahatid ng Asset",
-                "description": "Gawing mga maibabahaging link ang mga static na asset ng negosyo at ihatid ang mga larawan ng produkto, brochure, video, dokumento, at invoice sa lahat ng touchpoint ng customer.",
+                "title": "Deliver Hosted Media Across WhatsApp, SMS, Email, RCS & APIs",
+                "subtitle": "Omnichannel Asset Delivery",
+                "description": "Turn static business assets into shareable links and deliver product images, brochures, videos, documents, and invoices across all customer touchpoints.",
                 "img": "/assets/file_hosting/images/communication_channels.webp",
                 "video": "/assets/file_hosting/videos/communication_channels.webm",
                 "highlights": [
-                    "WhatsApp Business API: Magbahagi ng mga larawan ng produkto, brochure, at invoice nang direkta sa chat",
-                    "SMS: Gawing gateway para sa rich content ang SMS gamit ang magagaang na link",
-                    "Email: Palitan ang mabibigat na attachment ng mabilis at masusubaybayang mga URL ng file",
-                    "Mga Website at Landing Page: Mag-host ng mga nada-download na brochure, media kit, at asset",
-                    "Mga API at Application: Maghatid ng mga dynamic na dokumento sa pamamagitan ng mga chatbot, CRM, at backend trigger",
-                    "RCS at Rich Messaging: Pagandahin ang mga kampanya gamit ang de-kalidad na media at pampromosyong file"
+                    "WhatsApp Business API: Share product images, brochures, and invoices directly in chat",
+                    "SMS: Turn SMS into rich content gateways with lightweight hosted links",
+                    "Email: Replace bulky attachments with fast, trackable file URLs",
+                    "Websites & Landing Pages: Host downloadable brochures, media kits, and assets",
+                    "APIs & Applications: Deliver dynamic documents via chatbots, CRMs, and backend triggers",
+                    "RCS & Rich Messaging: Enhance campaigns with high-impact media and promotional files"
                 ],
-                "footer": "Mag-upload nang isang beses at gawing available ang iyong mga file sa bawat pakikipag-ugnayan sa customer"
+                "footer": "Upload a file once and make it available across every customer touchpoint"
             }
         ]
     },
     "FileHostingUseCasesComp": {
-        "tagline": "MGA PAGGAMIT",
-        "heading": "Mga Gamit sa Negosyo para sa File Hosting",
-        "subheading": "Mula sa benta at marketing hanggang sa suporta at automation, iimbak at ibahagi ang mga file na kailangan ng iyong mga customer sa bawat yugto.",
+        "tagline": "USE CASES",
+        "heading": "Business Use Cases for File Hosting",
+        "subheading": "From sales and marketing to support and automation, store and share the files your customers need across every stage of their journey.",
         "features": [
             {
-                "name": "Mga Katalogo at Brochure ng Produkto",
-                "content": "Magbahagi ng mga katalogo, brochure, listahan ng presyo, at presentasyon sa sales sa pamamagitan ng muling magagamit na naka-host na URL.",
+                "name": "Product Catalogs & Brochures",
+                "content": "Share catalogs, brochures, price lists, and sales presentations through a reusable hosted URL. Keep customer-facing content easy to access and update.",
                 "bullets": [
-                    "Magbahagi ng mga interactive na katalogo ng produkto gamit ang magagaang na link",
-                    "I-update ang mga brochure at presyo sa real time nang walang sirang link",
-                    "Pabilisin ang proseso ng sales sa bawat pakikipag-ugnayan sa customer"
+                    "Share interactive product catalogs via lightweight links",
+                    "Update brochures and price sheets in real time without broken URLs",
+                    "Enable friction-free sales enablement across every customer touchpoint"
                 ],
                 "img": "/assets/file_hosting/images/product_catalogs_and_brochures.webp"
             },
             {
-                "name": "Mga Larawan at Video ng Produkto",
-                "content": "Mag-host ng mga visual, demo, banner, at pampromosyong video sa isang lugar at muling gamitin ang mga ito sa mga kampanya.",
+                "name": "Product Images & Videos",
+                "content": "Host product visuals, demos, banners, and promotional videos in one place and reuse them across campaigns and customer touchpoints.",
                 "bullets": [
-                    "I-imbak nang sentralisado ang mga high-resolution na larawan at demo video",
-                    "Maghatid agad ng mga media URL sa WhatsApp, Email, RCS, at SMS",
-                    "Panatilihin ang pare-parehong visual identity ng brand sa buong organisasyon"
+                    "Store high-resolution product photography and demo videos centrally",
+                    "Deliver media URLs instantly across WhatsApp, Email, RCS, and SMS",
+                    "Maintain consistent visual brand assets across marketing and sales teams"
                 ],
                 "img": "/assets/file_hosting/images/product_images_and_videos.webp"
             },
             {
-                "name": "Mga Invoice at Dokumento ng Negosyo",
-                "content": "Maghatid ng mga invoice, resibo, quotation, purchase order, at dokumento ng warranty nang hindi umaasa sa malalaking email attachment.",
+                "name": "Invoices & Business Documents",
+                "content": "Deliver invoices, receipts, quotations, purchase orders, warranty documents, and other files without relying on bulky email attachments.",
                 "bullets": [
-                    "Magpadala ng direktang link ng invoice at resibo sa pamamagitan ng WhatsApp at SMS",
-                    "Alisin ang mga limitasyon sa laki ng email attachment at mga isyu sa delivery",
-                    "Tiyakin ang maaasahan at ligtas na pag-access sa dokumento para sa mga customer"
+                    "Send direct invoice and receipt links via WhatsApp & SMS",
+                    "Eliminate email attachment size limits and deliverability issues",
+                    "Ensure reliable, secure document access for all customers"
                 ],
                 "img": "/assets/file_hosting/images/invoices_and_business_documents.webp"
             },
             {
-                "name": "Pagsasanay at Suporta sa Customer",
-                "content": "Magbahagi ng mga manual, gabay sa pag-install, video ng pagsasanay, FAQ, at mapagkukunan ng suporta gamit ang mga permanenteng link sa panahon ng onboarding at pagtulong sa customer.",
+                "name": "Training & Customer Support",
+                "content": "Share user manuals, installation guides, training videos, FAQs, and troubleshooting resources through permanent hosted links during customer onboarding and support conversations.",
                 "bullets": [
-                    "Bigyan ang mga ahente ng suporta ng mga gabay sa mabilisang pagsisimula",
-                    "Ipamahagi ang mga tutorial at dokumentasyon gamit ang mga permanenteng link",
-                    "Bawasan ang oras ng pagresolba gamit ang mga instructional media sa customer chat"
+                    "Equip support agents with instant shareable help assets and setup guides",
+                    "Distribute HD tutorials and onboarding documentation under permanent URLs",
+                    "Reduce resolution times with one-click instructional media in customer chats"
                 ],
                 "img": "/assets/file_hosting/images/training_and_support.webp"
             },
             {
-                "name": "Automation at Daloy ng Trabaho",
-                "content": "Gamitin ang iyong mga naka-host na URL ng file kasama ang mga API, chatbot, CRM, at automated workflow para maghatid ng tamang dokumento.",
+                "name": "Automation & Business Workflows",
+                "content": "Use your hosted file URLs with APIs, chatbots, CRMs, and automated workflows to deliver the right documents or media based on customer actions.",
                 "bullets": [
-                    "Isama ang mga dynamic na link ng file sa mga chatbot at CRM workflow",
-                    "I-trigger ang paghahatid ng dokumento batay sa mga aksyon ng user",
-                    "Subaybayan ang pamamahagi ng asset sa programatikong paraan"
+                    "Integrate dynamic file links with CRM and automated chatbot flows",
+                    "Trigger transactional document delivery based on user milestones",
+                    "Track asset engagement and distribution programmatically"
                 ],
                 "img": "/assets/file_hosting/images/automation_and_apis.webp"
             }
         ]
     },
     "FileHostingComparisonComp": {
-        "heading": "Bakit MSG91 sa Halip na Google Drive / Dropbox",
-        "subheading": "Ang generic na cloud storage ay binuo para magtago ng mga file. Ang MSG91 File Hosting ay binuo upang tulungan ang mga negosyo na gamitin ang mga file na iyon sa komunikasyon sa customer.",
+        "heading": "Why MSG91 Instead of Google Drive / Dropbox",
+        "subheading": "Generic cloud storage is built to store files. MSG91 File Hosting is built to help businesses use those files in customer communication.",
         "content": [
             {
-                "title": "Binuo para sa Komunikasyon ng Negosyo sa Bawat Channel",
-                "subtitle": "Konektado, Magagamit Muli at Nasusukat",
-                "description": "Ang generic na cloud storage ay nag-iimbak ng mga file sa mga static folder. Ikinokonekta ng MSG91 File Hosting ang iyong mga file nang direkta sa WhatsApp, SMS, Email, RCS, mga API, website, at mga app ng negosyo para maihatid ang mga ito kahit kailan.",
+                "title": "Built for Business Communication Across Every Channel",
+                "subtitle": "Connected, Reusable & Scalable",
+                "description": "Generic cloud storage stores files in static folders. MSG91 File Hosting connects your files directly to WhatsApp, SMS, Email, RCS, APIs, websites, and business applications to deliver files whenever and wherever customers need them.",
                 "img": "/assets/file_hosting/images/why_msg91.webp",
                 "highlights": [
-                    "Sentralisado: Panatilihin ang lahat ng iyong asset sa komunikasyon sa isang lugar",
-                    "Magagamit Muli: Mag-upload nang isang beses at muling gamitin sa mga kampanya at workflow",
-                    "Konektado: Gamitin ang mga naka-host na file sa mga channel ng MSG91",
-                    "Nasusukat: Suportahan ang lumalaking pangangailangan sa pagbabahagi ng file"
+                    "Centralized: Keep all your communication assets in one place",
+                    "Reusable: Upload once and reuse across campaigns, templates, and workflows",
+                    "Connected: Use hosted files seamlessly across MSG91 communication channels",
+                    "Scalable: Support growing omnichannel communication and file-sharing needs"
                 ],
-                "footer": "Mag-upload nang isang beses at gawing available ang iyong mga asset kahit saan nakikipag-ugnayan ang iyong negosyo",
-                "schedule_meet": "Mag-iskedyul ng Pagpupulong"
+                "footer": "Upload once and make your assets available wherever your business communicates",
+                "schedule_meet": "Schedule a Meeting"
             }
         ]
     },
     "FileHostingFormatsComp": {
-        "tagline": "MGA SUPORTADONG FORMAT",
-        "heading": "I-host ang mga File na Ginagamit ng Iyong Negosyo Araw-araw",
-        "subheading": "50+ Format ng File. Isang Sentralisadong Platform.",
+        "tagline": "SUPPORTED FORMATS",
+        "heading": "Host the Files Your Business Uses Every Day",
+        "subheading": "50+ File Formats. One Centralized Platform.",
         "img": "/assets/file_hosting/images/host_the_files_your_business_uses_every_day.webp",
         "steps": [
             {
                 "number": "01",
-                "title": "Mga Larawan",
+                "title": "Images",
                 "description": "PNG, JPG, JPEG, GIF, SVG, WEBP, BMP, TIFF"
             },
             {
                 "number": "02",
-                "title": "Mga Video",
+                "title": "Videos",
                 "description": "MP4, MOV, AVI, MPEG, OGG"
             },
             {
                 "number": "03",
-                "title": "Mga Audio",
+                "title": "Audio",
                 "description": "MP3, AAC, WAV, AMR"
             },
             {
                 "number": "04",
-                "title": "Mga Dokumento",
-                "description": "PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, TXT, at marami pa"
+                "title": "Documents",
+                "description": "PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, TXT, and more"
             }
         ]
     },
     "FaqsComp": {
-        "heading": "Mga Madalas Itanong (FAQ)",
+        "heading": "Frequently Asked Questions",
         "faqs": [
             {
-                "question": "Ano ang file hosting?",
-                "answer": "Ang file hosting ay isang serbisyong nagbibigay-daan sa mga negosyo na mag-upload, mag-imbak, mamahala, at magbahagi ng mga file online. Sa halip na panatilihin ang mga file sa mga lokal na computer o magpadala ng malalaking attachment, maaaring mag-host ang mga negosyo ng mga larawan, video, PDF, at dokumento at ibahagi ang mga ito sa pamamagitan ng mga link.<br/><br/>Nagbibigay ang MSG91 File Hosting ng isang sentralisadong platform para mag-host ng mga file ng negosyo at gamitin ang mga ito sa WhatsApp, SMS, Email, RCS, mga website, application, at mga API."
+                "question": "What is file hosting?",
+                "answer": "File hosting is a service that allows businesses to upload, store, manage, and share files online. Instead of keeping files only on local systems or sending large attachments, businesses can host images, videos, PDFs, documents, and other assets and share them through accessible URLs.<br/><br/>MSG91 File Hosting provides a centralized platform to host business files and use them across WhatsApp, SMS, Email, RCS, websites, applications, and APIs."
             },
             {
-                "question": "Ano ang serbisyo ng file hosting?",
-                "answer": "Ang serbisyo ng file hosting ay nagbibigay ng online storage at access sa mga file sa pamamagitan ng isang sentralisadong platform. Tinutulungan nito ang mga negosyo na pamahalaan ang kanilang mga digital asset at ibahagi ang mga ito sa pamamagitan ng mga naka-host na URL sa halip na paulit-ulit na mag-upload ng parehong mga file.<br/><br/>Sa MSG91, maaaring mag-upload ang mga negosyo ng mga file nang isang beses, bumuo ng maibabahaging mga URL, at muling gamitin ang mga file na iyon sa komunikasyon sa customer."
+                "question": "What is a file hosting service?",
+                "answer": "A file hosting service provides online storage and access to files through a centralized platform. It helps businesses manage their digital assets and share them through hosted URLs instead of repeatedly uploading or sending the same files.<br/><br/>With MSG91, businesses can upload files once, generate shareable URLs, and reuse those files across customer communication and business workflows."
             },
             {
-                "question": "Bakit kailangan ng mga negosyo ang serbisyo ng file hosting?",
-                "answer": "Madalas na nagbabahagi ang mga negosyo ng parehong mga file sa maraming kampanya, pag-uusap sa customer, website, at application. Ang pamamahala sa mga file na iyon nang hiwalay ay maaaring magresulta sa paulit-ulit na pag-upload, nakakalat na mga asset, lumang bersyon, at hindi kinakailangang trabaho.<br/><br/>Nagbibigay ang serbisyo ng file hosting ng isang sentralisadong lokasyon kung saan maaaring mag-ayos at muling gumamit ng mga file ang mga team."
+                "question": "Why do businesses need a file hosting service?",
+                "answer": "Businesses often share the same files across multiple campaigns, customer conversations, websites, and applications. Managing those files separately can result in repeated uploads, scattered assets, outdated versions, and unnecessary manual work.<br/><br/>A file hosting service provides one centralized location where teams can upload, organize, and reuse business files through shareable URLs."
             },
             {
-                "question": "Anong mga uri ng file ang maaari kong i-host sa MSG91?",
-                "answer": "Sinusuportahan ng MSG91 File Hosting ang malawak na hanay ng mga uri ng file ng negosyo, kabilang ang:<br/>• Mga larawan tulad ng JPG, PNG, GIF, SVG, at WEBP<br/>• Mga video tulad ng MP4, MOV, AVI, at MPEG<br/>• Mga audio file tulad ng MP3, WAV, AAC, at AMR<br/>• Mga dokumento tulad ng PDF, DOC, DOCX, XLS, XLSX, PPT, at PPTX<br/><br/>Sinusuportahan ng platform ang 50+ format ng file, kaya angkop ito para sa mga materyales sa marketing, dokumento ng negosyo, media ng produkto, at suporta sa customer."
+                "question": "Which types of files can I host with MSG91?",
+                "answer": "MSG91 File Hosting supports a wide range of business file types, including:<br/>• Images such as JPG, PNG, GIF, SVG, and WEBP<br/>• Videos such as MP4, MOV, AVI, and MPEG<br/>• Audio files such as MP3, WAV, AAC, and AMR<br/>• Documents such as PDF, DOC, DOCX, XLS, XLSX, PPT, and PPTX<br/><br/>The platform supports 50+ file formats, making it suitable for hosting marketing assets, business documents, product media, training resources, and customer-facing content."
             },
             {
-                "question": "Maaari ba akong mag-upload ng file nang isang beses at muling gamitin ito?",
-                "answer": "Oo. Isa sa mga pangunahing bentahe ng MSG91 File Hosting ay ang kakayahang mag-upload ng file nang isang beses at muling gamitin ang naka-host na URL nito sa iba't ibang kampanya, channel ng komunikasyon, website, application, at daloy ng trabaho.<br/><br/>Nakatutulong ito sa mga team na bawasan ang paulit-ulit na pag-upload at mapanatili ang pare-parehong access sa mga asset."
+                "question": "Can I upload a file once and reuse it?",
+                "answer": "Yes. One of the key advantages of MSG91 File Hosting is the ability to upload a file once and reuse its hosted URL across different campaigns, communication channels, websites, applications, and workflows.<br/><br/>This helps teams reduce repetitive uploads and maintain consistent access to frequently used business assets."
             },
             {
-                "question": "Maaari bang gamitin ang file hosting kasama ng mga chatbot at automation?",
-                "answer": "Oo. Ang mga naka-host na URL ng file ay maaaring isama sa mga tugon ng chatbot at mga automated workflow para maghatid ng mga nauugnay na file batay sa pakikipag-ugnayan ng customer.<br/><br/>Halimbawa, maaaring magbahagi ang isang negosyo ng brochure ng produkto, user manual, invoice, o troubleshooting guide kapag hiniling ito ng customer."
+                "question": "Can file hosting be used with chatbots and automation?",
+                "answer": "Yes. Hosted file URLs can be integrated into chatbot responses and automated workflows to deliver relevant files based on customer interactions.<br/><br/>For example, a business can use a hosted URL to share a product brochure, user manual, invoice, onboarding document, or troubleshooting guide when a customer requests it."
             },
             {
-                "question": "Paano nakakatulong ang serbisyo ng file hosting na bawasan ang paulit-ulit na trabaho?",
-                "answer": "Kung walang sentralisadong file hosting, maaaring paulit-ulit na mag-upload ang mga team ng parehong mga larawan, PDF, o video tuwing gagawa sila ng bagong kampanya o mensahe sa customer.<br/><br/>Sa MSG91, maaaring mag-upload ang mga negosyo ng file nang isang beses, bumuo ng naka-host na URL, at muling gamitin ito sa mga sinusuportahang channel at workflow."
+                "question": "How does a file hosting service help reduce repetitive work?",
+                "answer": "Without centralized file hosting, teams may repeatedly upload the same images, PDFs, videos, or documents whenever they create a new campaign or customer communication.<br/><br/>With MSG91, businesses can upload a file once, generate a hosted URL, and reuse it across supported channels and workflows. This reduces manual file management and helps teams launch communications faster."
             },
             {
-                "question": "Maaari ko bang gamitin ang parehong naka-host na file sa maraming channel?",
-                "answer": "Oo. Ang isang naka-host na file ay maaaring muling gamitin sa mga sinusuportahang channel ng komunikasyon sa negosyo, kabilang ang WhatsApp, SMS, Email, RCS, mga website, application, at mga API."
+                "question": "Can I use the same hosted file across multiple channels?",
+                "answer": "Yes. A hosted file can be reused across supported business communication channels and digital touchpoints, including WhatsApp, SMS, Email, RCS, websites, applications, and APIs.<br/><br/>This creates a centralized approach to managing communication assets instead of maintaining separate copies for every channel."
             },
             {
-                "question": "Angkop ba ang MSG91 File Hosting para sa komunikasyon ng negosyo?",
-                "answer": "Oo. Ang MSG91 File Hosting ay idinisenyo para sa mga pangangailangan sa komunikasyon ng negosyo kung saan madalas kailangang magbahagi ng mga larawan, video, dokumento, brochure, at invoice sa mga customer."
+                "question": "Is MSG91 File Hosting suitable for business communication?",
+                "answer": "Yes. MSG91 File Hosting is designed around business communication use cases where companies frequently need to share images, videos, documents, brochures, invoices, and other files with customers.<br/><br/>It connects file hosting with channels such as WhatsApp, SMS, Email, RCS, websites, applications, APIs, and automation workflows."
             },
             {
-                "question": "Ano ang mga benepisyo ng paggamit ng cloud file hosting para sa mga negosyo?",
-                "answer": "Ang cloud file hosting ay nagbibigay sa mga negosyo ng sentralisadong paraan upang pamahalaan at ibahagi ang mga digital asset online. Sa MSG91, maaari kang:<br/>• Magsentralisa ng mga madalas gamiting file<br/>• Mag-upload nang isang beses at muling gamitin ang mga link<br/>• Bumuo ng mabilis na maibabahaging mga URL<br/>• Bawasan ang paulit-ulit na pag-upload ng file<br/>• Magbahagi ng mga file sa maraming channel ng komunikasyon<br/>• Suportahan ang awtomatikong paghahatid ng file<br/>• Pasimplehin ang pamamahala ng file para sa mga team"
+                "question": "What are the benefits of using cloud file hosting for businesses?",
+                "answer": "Cloud file hosting gives businesses a centralized way to manage and share digital assets online. With MSG91, businesses can:<br/>• Centralize frequently used files<br/>• Upload files once and reuse them<br/>• Generate shareable hosted URLs<br/>• Reduce repetitive file uploads<br/>• Share files across multiple communication channels<br/>• Support automated file delivery<br/>• Simplify file management for teams"
             },
             {
-                "question": "Kapaki-pakinabang ba ang file hosting para sa customer support?",
-                "answer": "Oo. Maaaring gamitin ng mga customer support team ang mga naka-host na file upang magbahagi ng mga troubleshooting guide, manual ng produkto, mga FAQ, at video resources sa pamamagitan ng mga handang link."
+                "question": "Is file hosting useful for customer support?",
+                "answer": "Yes. Customer support teams can use hosted files to share troubleshooting guides, product manuals, setup instructions, warranty documents, FAQs, videos, policies, and other helpful resources.<br/><br/>Instead of searching for and attaching files during every conversation, teams can provide customers with ready-to-use hosted links."
             },
             {
-                "question": "Bakit pipiliin ang MSG91 bilang iyong serbisyo ng file hosting?",
-                "answer": "Pinagsasama ng MSG91 ang file hosting at komunikasyon sa negosyo. Sa halip na hiwalay na pamahalaan ang mga file, maaaring i-host ng mga negosyo ang kanilang mga asset at gamitin ang mga ito sa WhatsApp, SMS, Email, RCS, mga website, API, at mga chatbot para sa mabilis at maayos na pamamahagi."
+                "question": "Why choose MSG91 as your file hosting service?",
+                "answer": "MSG91 combines file hosting with business communication. Instead of managing files separately from your communication workflows, businesses can host their assets and use them across WhatsApp, SMS, Email, RCS, websites, APIs, applications, chatbots, and automation workflows.<br/><br/>This makes MSG91 File Hosting a practical solution for businesses that need both centralized file management and easy file sharing."
             }
         ]
     },
     "PreFooterComp": {
-        "content": "I-host ang mga File ng Iyong Negosyo at Ibahagi ang mga Ito Kahit Saan",
+        "content": "Host Your Business Files & Share Them Anywhere",
         "buttons": {
             "getStarted": {
-                "text": "Simulan ang Pag-host ng mga File Ngayon",
+                "text": "Start Hosting Files Today",
                 "primary": true
             }
         }
