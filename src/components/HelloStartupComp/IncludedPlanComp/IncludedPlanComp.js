@@ -2,7 +2,7 @@ export default function IncludedPlanComp({ data }) {
     if (!data?.heading) return null;
 
     return (
-        <section id='plan' className='bg-sky-50 border-b border-sky-100'>
+        <section className='bg-sky-50 border-b border-sky-100'>
             <div className='container cont_p flex flex-col gap-8'>
                 <header className='text-center max-w-4xl mx-auto flex flex-col gap-4'>
                     <h2 className='heading font-semibold'>{data?.heading}</h2>
@@ -12,9 +12,7 @@ export default function IncludedPlanComp({ data }) {
                 <div className='bg-white border border-sky-100 rounded-xl overflow-hidden max-w-6xl w-full mx-auto'>
                     <div className='p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-sky-100'>
                         <div className='flex flex-col gap-1'>
-                            {data?.plan_badge && (
-                                <p className='text-xs font-bold text-gray-500 uppercase'>{data?.plan_badge}</p>
-                            )}
+                            {data?.plan_badge && <p className='text-xs font-bold text-gray-500'>{data?.plan_badge}</p>}
                             <div className='text-4xl sm:text-5xl font-extrabold flex items-baseline gap-2'>
                                 <span>{data?.price}</span>
                                 {data?.period && (

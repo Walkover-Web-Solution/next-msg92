@@ -2,7 +2,7 @@ export default function EligibilityComp({ data }) {
     if (!data?.heading) return null;
 
     return (
-        <section id='eligibility' className='bg-sky-50 border-t border-sky-100 scroll-mt-10'>
+        <section className='bg-sky-50 border-t border-sky-100'>
             <div className='container cont_p'>
                 <div className='max-w-5xl mx-auto flex flex-col gap-8'>
                     <header className='flex flex-col md:flex-row md:items-end justify-between gap-6'>
