@@ -20,7 +20,7 @@ export const TAB_TYPES = {
 export const DIAL_PLAN_PER_PAGE = 100;
 
 // Searchable fields for dial plan
-export const SEARCHABLE_FIELDS = ['country_name', 'identifier'];
+export const SEARCHABLE_FIELDS = ['country_name'];
 
 // Empty arrays for memoization
 export const EMPTY_ARRAY = [];
