@@ -227,9 +227,9 @@ export default function ComparePlans({ pricingData, currency, locale, pageData }
     }, []);
 
     useEffect(() => {
-        const el = activeRef.current;
-        if (!el) return;
-        const updateOverflow = () => setHasOverflow(el.scrollWidth > el.clientWidth);
+        const tableElement = activeRef.current;
+        if (!tableElement) return;
+        const updateOverflow = () => setHasOverflow(tableElement.scrollWidth > tableElement.clientWidth);
         updateOverflow();
         window.addEventListener('resize', updateOverflow);
         return () => window.removeEventListener('resize', updateOverflow);
