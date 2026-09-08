@@ -4,15 +4,15 @@ export default function EligibilityComp({ data }) {
     return (
         <section className='bg-sky-50 border-t border-sky-100'>
             <div className='container cont_p'>
-                <div className='max-w-5xl mx-auto flex flex-col gap-8'>
-                    <header className='flex flex-col md:flex-row md:items-end justify-between gap-6'>
-                        <div>
-                            {data?.kicker && <p className='text-xs font-semibold text-accent'>{data?.kicker}</p>}
-                            <h2 className='heading font-semibold whitespace-pre-line'>{data?.heading}</h2>
+                <div className='max-w-6xl w-full mx-auto flex flex-col gap-8'>
+                    <header className='flex flex-col gap-2'>
+                        {data?.kicker && <p className='text-xs font-semibold text-accent'>{data?.kicker}</p>}
+                        <div className='flex flex-col md:flex-row md:items-end justify-between gap-6'>
+                            <h2 className='heading font-semibold whitespace-pre-line leading-tight'>{data?.heading}</h2>
+                            {data?.description && (
+                                <p className='max-w-md text-base text-gray-600 md:text-right'>{data?.description}</p>
+                            )}
                         </div>
-                        {data?.description && (
-                            <p className='max-w-md text-base text-gray-600 md:text-right'>{data?.description}</p>
-                        )}
                     </header>
 
                     {data?.cards?.length > 0 && (
