@@ -693,7 +693,9 @@ class StepThree extends React.Component {
                                             onChange={this.handleInputChange}
                                             disabled={isLoading}
                                         />
-                                        <div>{this.state.formErrorData.gstNumberError}</div>
+                                        <p className='text-sm text-red-600'>
+                                            {this.state.formErrorData.gstNumberError}
+                                        </p>
                                     </div>
                                 )}
                             </form>

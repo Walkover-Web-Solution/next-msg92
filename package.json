@@ -16,6 +16,7 @@
         "date-fns": "^4.1.0",
         "dotenv": "^16.4.5",
         "fs": "^0.0.1-security",
+        "google-libphonenumber": "^3.2.46",
         "gray-matter": "^4.0.3",
         "i": "^0.3.7",
         "js-yaml": "^4.1.0",

@@ -1,11 +1,10 @@
-import { EMAIL_REGEX, MOBILE_REGEX } from './constants';
+import { EMAIL_REGEX, MOBILE_REGEX, OTPRetryModes } from './constants';
 
 /**
  * OTP sending function for functional components
  * @param {string} identifier - Email or mobile number
  * @param {boolean} notByEmail - Whether it's mobile (true) or email (false)
  * @param {Function} dispatch - Redux dispatch function
- * @param {string} channel - Optional channel for retry (e.g., 'sms', 'voice', 'whatsapp')
  * @param {Function} showToast - Toast notification function
  */
 // Filter OTP methods: prioritize country-specific, fallback to default (country: 0)
@@ -16,7 +15,7 @@ export function getAvailableOtpMethods(methods, phoneCountry) {
     return countrySpecific.length > 0 ? countrySpecific : methods.filter((m) => m.country === 0);
 }
 
-export function sendOtp(identifier, notByEmail, dispatch, channel = null, showToast = () => {}) {
+export function sendOtp(identifier, notByEmail, dispatch, showToast = () => {}) {
     if (!new RegExp(EMAIL_REGEX).test(identifier) && !notByEmail) {
         dispatch({ type: 'SET_ERROR', payload: 'Invalid email address.' });
         showToast('Invalid email address.');
@@ -28,13 +27,10 @@ export function sendOtp(identifier, notByEmail, dispatch, channel = null, showTo
         return;
     }
 
-    dispatch({ type: 'SET_LOADING', payload: true });
-
-    // If channel is specified, use it for retry
-    const sendOtpArgs = channel ? [identifier, channel] : [identifier];
+    dispatch({ type: 'SET_LOADING', payload: { isLoading: true, loadingType: 'send' } });
 
     window.sendOtp(
-        ...sendOtpArgs,
+        identifier,
         (data) => {
             if (notByEmail) {
                 dispatch({
@@ -65,17 +61,49 @@ export function sendOtp(identifier, notByEmail, dispatch, channel = null, showTo
 }
 
 /**
+ * Resend OTP via widget retry API (same as legacy SignUp.retryOtp)
+ */
+export function retryOtp(channel, requestId, dispatch, showToast = () => {}) {
+    if (!requestId) {
+        dispatch({ type: 'SET_ERROR', payload: 'No request ID found. Please send OTP again.' });
+        return;
+    }
+
+    const channelMap = {
+        sms: OTPRetryModes.Sms,
+        voice: OTPRetryModes.Voice,
+        email: OTPRetryModes.Email,
+        whatsapp: OTPRetryModes.Whatsapp,
+    };
+    const retryBy =
+        channel == null || channel === ''
+            ? null
+            : /^\d+$/.test(String(channel))
+              ? String(channel)
+              : channelMap[String(channel).toLowerCase()] || null;
+
+    dispatch({ type: 'SET_LOADING', payload: { isLoading: true, loadingType: 'send' } });
+
+    window.retryOtp(
+        retryBy,
+        () => {
+            dispatch({ type: 'SET_LOADING', payload: false });
+            dispatch({ type: 'SET_OTP_SENT', payload: true });
+        },
+        (error) => {
+            const errorMessage = error?.message || 'Failed to resend OTP';
+            showToast(errorMessage);
+            dispatch({ type: 'SET_ERROR', payload: errorMessage });
+        },
+        requestId
+    );
+}
+
+/**
  * OTP verification function
- * @param {string} otp - OTP code
- * @param {string} requestId - Request ID from send OTP
- * @param {boolean} notByEmail - Whether it's mobile (true) or email (false)
- * @param {Function} dispatch - Redux dispatch function
- * @param {Object} state - Current state
- * @param {Function} onSuccess - Success callback
- * @param {Function} onError - Error callback
  */
 export function verifyOtp(otp, requestId, notByEmail, dispatch, state, onSuccess, onError = () => {}) {
-    dispatch({ type: 'SET_LOADING', payload: true });
+    dispatch({ type: 'SET_LOADING', payload: { isLoading: true, loadingType: 'verify' } });
     window.verifyOtp(
         `${otp}`,
         (data) => {
@@ -116,7 +144,6 @@ export function verifyOtp(otp, requestId, notByEmail, dispatch, state, onSuccess
 
 /**
  * Reset email OTP state
- * @param {Function} dispatch - Redux dispatch function
  */
 export function resetEmailOtp(dispatch) {
     dispatch({ type: 'SET_EMAIL_EDIT' });
@@ -124,7 +151,6 @@ export function resetEmailOtp(dispatch) {
 
 /**
  * Reset phone OTP state
- * @param {Function} dispatch - Redux dispatch function
  */
 export function resetPhoneOtp(dispatch) {
     dispatch({ type: 'SET_PHONE_EDIT' });

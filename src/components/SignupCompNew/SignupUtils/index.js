@@ -4,7 +4,7 @@ import { reducer } from './reducer';
 
 // Re-export everything from modular files
 export { otpWidgetSetup, cleanupOtpWidget } from './widgetUtils';
-export { sendOtp, verifyOtp, resetEmailOtp, resetPhoneOtp } from './otpUtils';
+export { sendOtp, retryOtp, verifyOtp, resetEmailOtp, resetPhoneOtp } from './otpUtils';
 export {
     validateSignUp,
     validateEmailSignup,

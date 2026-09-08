@@ -29,8 +29,6 @@ blog.msg91.com  /guide
 /in/transactional-sms/  /in/sms/
 /in/virtual-number/ /in/voice
 /in/welcome/  /in
-/us/one-api/  /us/campaign
-/sg/one-api/ /sg/campaign
 /in/verified-sms/ /in/sms
 /us/send-otp/ /us/otp
 /in/case-studies/ /case-studies/
@@ -66,7 +64,6 @@ blog1.msg91.com/  https://msg91.com/guide
 /transactional-sms/in/ /in/sms
 # msg91.com/wp-content/uploads/2018/05/excel-plugin-v-2.0.zip
 /india/customized-solutions.php /in
-/ph/one-api/  /ph/campaign
 /blog/are-you-violating-trai-sms-regulations/ /guide
 # docs.msg91.com/collection/msg91-api-integration/5/send-sms/T1HW8R1O
 # msg91.com/images/add-ons/sc2.png
@@ -110,7 +107,6 @@ support.msg91.com/users/41006711-sagarvaishnav/filters/comments /
 /guide/tag/data-driven-content-marketing/ /guide
 /tag/marketing/rss/ /guide
 /blog/tag/sms-plugin/ /guide
-/uk/one-api/ /gb
 /ph/internet-messaging/ /ph/whatsapp
 /guide/benefits-of-sms-solutions-to-the-agricultural-industry/feed/ /guide
 /blog/tips-tricks-to-successful-business-texting/feed/ /guide
@@ -447,7 +443,6 @@ help.msg91.com/article/357-the-header-is-approved-still-not-receiving-sms-with-i
 control.msg91.com/signup.php /signup
 /developers/get-started.php https://msg91.com/developers
 test.panel.msg91.com/apidoc/sendotp/verify-otp.php https://msg91.com/otp
-/one-api /campaign
 support.msg91.com/users/51427277-logout /contact-us
 /blog/page/10/ /guide
 /blog/tag/trai/feed/ /guide
@@ -589,7 +584,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /in/people_voice_sms/ /voice
 /case-studies/indialends/amp/ /case-studies/indialends
 /case-studies/barbeque-nation/ /case-studies/barbequenation
-/in/one-api/ /campaign
 /startups/policy /startup-policy
 /sms-for-developers?utm_source=blog /sms
 /choose-country/ /
@@ -621,13 +615,11 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /blog/mahindra-has-established-efficient-communication-across-its-different-business-lines-with-msg91/amp/ /guide
 /cdn-cgi/challenge-platform/h/b/scripts/cb/invisible.js?cb=754f80ad6d5f30d4 /
 /cdn-cgi/challenge-platform/h/b/scripts/cb/invisible.js?cb=7a814d754d952340 /
-/one-api /campaign
 /blog/category/msg91-for-stock-markets/amp/ /guide
 /sg/virtual-number/ /voice
 /addons_platform_shape-2/ /partners-and-integrations
 /in/send-otp/?source=post_page--------------------------- /otp/
 /sms-campaign/?utm_source=blog&utm_medium=int&utm_campaign=holiday /camapign
-/sg/one-api/ /campaign
 /customized_content_bg_dot/?utm_source=rss&utm_medium=rss&utm_campaign=customized_content_bg_dot /
 /in/category/build-in-communication/?amp=1 /category/build-in-communication/?amp=1
 /blog/msg91-ups-and-downs-updates/amp/ /guide
@@ -689,7 +681,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /in/wrong/ /
 /chat-new/ /contact-us
 /blog/make-msg91-your-sms-partner/amp/ /guide/make-msg91-your-sms-partner/
-/uk/one-api/ /campaign/
 /uk/transactional-sms/ /sms
 /es/transactional-email/ /transactional-email/
 /uk/sms-campaign/ /campaign/
@@ -869,7 +860,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /us/transactional-email/ /email/
 /es/sms-campaign/ /campaign/
 /hello/group-121/feed/ /hello/
-/one-api/?__hstc=241134940.d9f92fa8eef68bbb7f3a5412b223a496.1602547200116.1602547200117.1602547200118.1&__hssc=241134940.1.1602547200119&__hsfp=2827025116 /campaign
 /in/case-studies/leegality/ /case-studies/leegality/
 /es/verified-sms /sms
 /es/verified-sms/ /sms
@@ -881,7 +871,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /us/case-studies/mahindra-saboro/ /case-studies/mahindra
 /guide/rich-communication-service-rcs/in/ /
 /case-studies/mahindra-saboro /case-studies/mahindra
-/us/one-api/ /campaign
 /es/virtual-number/ /voice
 /blog/new-and-improved-bulk-sms-apis-at-your-service/amp /guide
 /blog/mobile/steps-to-integrate-msg91s-sms-apis-in-busy-software/ /guide
@@ -893,7 +882,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /us/case-studies/category/startups/ /case-studies/tag/startup
 /cdn-cgi/challenge-platform/h/b/scripts/cb/invisible.js?cb=7b622063c9e43adc /
 /cdn-cgi/challenge-platform/h/b/scripts/cb/invisible.js?cb=7b2b8c7f1e04233e /
-/one-api/?typeform-embed=popup-drawer /campaign
 /blog/tag/segment-marketing/ /guide
 /cdn-cgi/challenge-platform/h/g/scripts/cb/invisible.js?cb=7a030d6a3b393b7e /
 /hello/group-17476/feed/ /hello
@@ -911,7 +899,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /blog/know-the-secrets-to-increase-readership/?nonamp=1 /guide/know-the-secrets-to-increase-readership/?utm_source=organic&utm_medium=blog&utm_campaign=retarget
 /blog/?s=%7Bsearch_term_string%7D /guide
 /communication-addon/ /partners-and-integrations
-/in/one-api /campaign
 / documentation / documentation
 /blog/tag/whmcs/ /guide
 /cdn-cgi/challenge-platform/h/b/scripts/cb/invisible.js?cb=7998fd4dedf0309b /

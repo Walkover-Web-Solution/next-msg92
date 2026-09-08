@@ -24,10 +24,12 @@
         "compare",
         "signup",
         "startups-form",
-        "chatbot"
+        "chatbot",
+        "event-registration"
     ],
     "products": [
         "hello",
+        "one-api",
         "campaign",
         "segmento",
         "otp",
@@ -39,7 +41,10 @@
         "numbers",
         "shorturl",
         "knowledgebase",
-        "push-notification"
+        "file-hosting",
+        "push-notification",
+        "hello-for-startups",
+        "hello-for-startups-terms"
     ],
     "countries": [
         "in",

@@ -66,6 +66,7 @@ Configured in `next.config.mjs` and injected into the app:
     - `HELLO_API_URL`
     - `CHATBOT_TEMPLATE_TEST_URL`
     - `WHATSAPP_PRICING_URL`
+    - `IMESSAGE_URL`
 
 - **Client IDs**
     - `GOOGLE_CLIENT_ID`

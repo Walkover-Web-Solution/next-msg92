@@ -1,0 +1,234 @@
+export const HELLO_MS_ID = 7;
+
+export const HELLO_PLANS = {
+    basic: {
+        key: 'basic',
+        name: 'Basic',
+    },
+    premium: {
+        key: 'premium',
+        name: 'Premium',
+    },
+};
+
+export const CURRENCY_RATES = {
+    USD: { symbol: '$', rate: 1, locale: 'en-US' },
+    INR: { symbol: '₹', rate: 95.3, locale: 'en-IN' },
+    AED: { symbol: 'AED ', rate: 3.6725, locale: 'en-AE' },
+    GBP: { symbol: 'GBP ', rate: 0.79, locale: 'en-GB' },
+};
+
+export const COMPETITORS = {
+    global: [
+        {
+            key: 'zendesk',
+            name: 'Zendesk',
+            region: 'global',
+            model: 'seat',
+            perAgent: 55,
+            aiPerAgent: 50,
+            perResolution: 1.5,
+            note: 'Suite Team + Copilot + $1.50/automated resolution (zendesk.com)',
+        },
+        {
+            key: 'intercom',
+            name: 'Intercom',
+            region: 'global',
+            model: 'seat_res',
+            perAgent: 85,
+            perResolution: 0.99,
+            note: 'Advanced seat + Fin $0.99/resolution (intercom.com/pricing)',
+        },
+        {
+            key: 'freshdesk',
+            name: 'Freshdesk',
+            region: 'global',
+            model: 'seat',
+            perAgent: 55,
+            aiPerAgent: 29,
+            perResolution: 0.1,
+            note: 'Pro + Freddy Copilot + AI Agent ~$0.10/session (freshworks.com)',
+        },
+        {
+            key: 'zoho',
+            name: 'Zoho Desk',
+            region: 'global',
+            model: 'seat',
+            perAgent: 40,
+            aiPerAgent: 0,
+            perResolution: 0,
+            note: 'Enterprise, Zia AI included (zoho.com/desk/pricing)',
+        },
+        {
+            key: 'helpscout',
+            name: 'Help Scout',
+            region: 'global',
+            model: 'seat',
+            perAgent: 50,
+            aiPerAgent: 0,
+            perResolution: 0.75,
+            note: 'Plus + AI Answers $0.75/resolution (helpscout.com/pricing)',
+        },
+        {
+            key: 'hubspot',
+            name: 'HubSpot Service Hub',
+            region: 'global',
+            model: 'seat_tiered',
+            plans: [
+                { name: 'Professional', perAgent: 100 },
+                { name: 'Enterprise', perAgent: 150 },
+            ],
+            defaultPlan: 'Professional',
+            perResolution: 0.5,
+            note: 'HubSpot Service Hub — Professional $100/seat, Enterprise $150/seat. AI resolution $0.50/conversation on all plans.',
+        },
+        {
+            key: 'gorgias',
+            name: 'Gorgias',
+            region: 'global',
+            model: 'base_conv',
+            basePlan: 60,
+            perConv: 0.4,
+            perResolution: 0.9,
+            note: 'Basic + $0.40/ticket + AI Agent $0.90/resolution (gorgias.com/pricing)',
+        },
+        {
+            key: 'front',
+            name: 'Front',
+            region: 'global',
+            model: 'seat_tiered',
+            plans: [
+                { name: 'Starter', perAgent: 25 },
+                { name: 'Professional', perAgent: 65 },
+                { name: 'Enterprise', perAgent: 105 },
+            ],
+            defaultPlan: 'Professional',
+            perResolution: 0.89,
+            note: 'Front — Starter $25/seat, Professional $65/seat, Enterprise $105/seat (annual). AI resolution $0.89/conversation on every plan.',
+        },
+        {
+            key: 'tidio',
+            name: 'Tidio',
+            region: 'global',
+            model: 'base_conv_tiered',
+            plans: [
+                { name: 'Starter', base: 29, includedConvs: 100 },
+                { name: 'Growth', base: 59, includedConvs: 2000 },
+                { name: 'Plus', base: 749, includedConvs: Infinity },
+            ],
+            defaultPlan: 'Growth',
+            perConv: 0,
+            perResolution: 0.39,
+            note: 'Tidio — Starter $29 (100 convs), Growth $59 (2,000 convs), Plus $749. Lyro AI ~$0.39/AI conversation (verify at tidio.com/pricing).',
+        },
+        {
+            key: 'crisp',
+            name: 'Crisp',
+            region: 'global',
+            model: 'crisp_tiered',
+            plans: [
+                { name: 'Free', base: 0, includedAIConvs: 0, perResolution: 0 },
+                { name: 'Mini', base: 45, includedAIConvs: 90, perResolution: 0.056 },
+                { name: 'Essentials', base: 95, includedAIConvs: 450, perResolution: 0.056 },
+                { name: 'Plus', base: 295, includedAIConvs: 1350, perResolution: 0.056 },
+            ],
+            defaultPlan: 'Mini',
+            note: 'Crisp tiered plans: Free/Mini($45,90convs)/Essentials($95,450convs)/Plus($295,1350convs)',
+        },
+        {
+            key: 'respondio',
+            name: 'Respond.io',
+            region: 'global',
+            model: 'base_seat_tiered',
+            plans: [
+                { name: 'Starter', base: 99, includedSeats: 5, extraSeatFee: 12 },
+                { name: 'Growth', base: 199, includedSeats: 10, extraSeatFee: 20 },
+                { name: 'Advanced', base: 349, includedSeats: 10, extraSeatFee: 24 },
+            ],
+            defaultPlan: 'Growth',
+            perResolution: 0,
+            note: 'Respond.io — Starter $99 (5 users), Growth $199 (10 users), Advanced $349 (10 users). AI included on every plan.',
+        },
+    ],
+    brazil: [
+        {
+            key: 'blipgo',
+            name: 'Blip Go',
+            region: 'brazil',
+            model: 'flat',
+            basePlan: 58.4,
+            perResolution: 0,
+            note: 'Blip Go ~$58.40/month (R$299) — AI included (blip.ai)',
+        },
+        {
+            key: 'zenvia',
+            name: 'Zenvia',
+            region: 'brazil',
+            model: 'zenvia_tiered',
+            plans: [
+                {
+                    name: 'Starter',
+                    base: 0,
+                    includedUsers: 1,
+                    includedCredits: 100,
+                    extraUserFee: 53,
+                    extraCreditFee: 1.0,
+                    setupFee: 137,
+                },
+                {
+                    name: 'Specialist',
+                    base: 130,
+                    includedUsers: 10,
+                    includedCredits: 500,
+                    extraUserFee: 32,
+                    extraCreditFee: 0.28,
+                    setupFee: 137,
+                },
+                {
+                    name: 'Expert',
+                    base: 390,
+                    includedUsers: 30,
+                    includedCredits: 2000,
+                    extraUserFee: 22,
+                    extraCreditFee: 0.21,
+                    setupFee: 421,
+                },
+                {
+                    name: 'Professional',
+                    base: 845,
+                    includedUsers: 50,
+                    includedCredits: 5000,
+                    extraUserFee: 22,
+                    extraCreditFee: 0.19,
+                    setupFee: 842,
+                },
+            ],
+            defaultPlan: 'Specialist',
+            perResolution: 0,
+            note: 'Zenvia Customer Cloud — InteractionZ credits. 1 resolved query = 1 credit. Extra users AND extra credits both billable past plan allowance.',
+        },
+        {
+            key: 'jivochat',
+            name: 'JivoChat',
+            region: 'brazil',
+            model: 'seat_tiered',
+            plans: [
+                { name: 'Basic', perAgent: 28 },
+                { name: 'Professional', perAgent: 42 },
+                { name: 'VIP Enterprise', perAgent: 56 },
+            ],
+            defaultPlan: 'Professional',
+            perResolution: 0,
+            note: 'JivoChat — Basic $28/agent, Professional $42/agent, VIP Enterprise $56/agent (annual billing). AI included in plan.',
+        },
+    ],
+};
+
+export const ALL_COMPETITORS = [...COMPETITORS.global, ...COMPETITORS.brazil].reduce((accumulator, competitor) => {
+    accumulator[competitor.key] = competitor;
+    return accumulator;
+}, {});
+
+export const CURRENCY_ORDER = ['USD', 'INR', 'AED', 'GBP'];
+export const INPUT_MIN = 0;
+export const INPUT_MAX = 9999999999;

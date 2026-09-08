@@ -31,6 +31,7 @@ import SignupParentComp from '@/components/SignupCompNew/SignupParentComp';
 import ChatBotComp from '@/components/ChatBotComp/ChatBotComp';
 import MagicLinkComp from '@/components/MagicLinkComp/MagicLinkComp';
 import WhatsappLinkComp from '@/components/WhatsappLinkComp/WhatsappLinkComp';
+import AppleMessagesLinkComp from '@/components/AppleMessagesLinkComp/AppleMessagesLinkComp';
 import IntegrationAppComp from '@/components/IntegrationsComp/IntegrationAppComp';
 import ThankYouComp from '@/components/ThankYouComp/ThankYouComp';
 import StartupFormsComp from '@/components/StartupFormsComp/StartupFormsComp';
@@ -72,7 +73,24 @@ import Steps from '@/components/HelloBrComp/StepsComp/StepsSetup';
 import Testimonials from '@/components/HelloBrComp/TestimonialsComp/Testimonials';
 import FooterCta from '@/components/HelloBrComp/FooterCtaComp/FooterCta';
 import Faqs from '@/components/HelloBrComp/FaqsComp/Faqs';
+import G2Badges from '@/components/HelloBrComp/G2BadgesComp/G2Badges';
 import Pricing from '@/components/HelloBrComp/PricingComp/Pricing';
+import CostComparisionComp from '@/components/CostComparisionComp/CostComparisionComp';
+import EventRegistrationComp from '@/components/EventRegistrationComp';
+import HelloStartupBanner from '@/components/HelloStartupComp/BannerComp/BannerComp';
+import HelloStartupWhy from '@/components/HelloStartupComp/WhyBuiltComp/WhyBuiltComp';
+import HelloStartupEligibility from '@/components/HelloStartupComp/EligibilityComp/EligibilityComp';
+import HelloStartupPlan from '@/components/HelloStartupComp/IncludedPlanComp/IncludedPlanComp';
+import HelloStartupSteps from '@/components/HelloStartupComp/StepsComp/StepsComp';
+import HelloStartupGrow from '@/components/HelloStartupComp/CalloutComp/CalloutComp';
+import HelloStartupFooterCta from '@/components/HelloStartupComp/FooterCtaComp/FooterCtaComp';
+import HelloStartupTerms from '@/components/HelloStartupComp/TermsComp/HelloStartupTerms';
+import CategoriesComp from '@/components/ReportsComp/CategoriesComp/CategoriesComp';
+import SetupStepsComp from '@/components/ReportsComp/SetupStepsComp/SetupStepsComp';
+import ImageWithBgComp from '@/components/ImageWithBgComp/ImageWithBgComp';
+import FileHostingStepsComp from '@/components/FileHostingComp/StepsComp/StepsComp';
+import FileHostingUseCasesComp from '@/components/FileHostingComp/UseCasesComp/UseCasesComp';
+import FileHostingFormatsComp from '@/components/FileHostingComp/FormatsComp/FormatsComp';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -100,6 +118,7 @@ const Components = {
     TrustedByComp,
     HeadComp,
     FeatureComp,
+    IndustryFeatureComp: FeatureComp,
     PricingComp,
     AboutUsComp,
     DevelopersComp,
@@ -115,6 +134,7 @@ const Components = {
     ChatBotComp,
     MagicLinkComp,
     WhatsappLinkComp,
+    AppleMessagesLinkComp,
     ThankYouComp,
     StartupFormsComp,
     IntegrationAppComp,
@@ -155,6 +175,8 @@ const Components = {
     WhatsAppAccountVerification,
     FeatureWithBulletGroup,
     GridFeatureComp,
+    FeatureBulletGroup: FeatureWithBulletGroup,
+    ReportsChannels: FeatureWithBulletGroup,
     FeatureSliderComp,
 
     // New Components
@@ -166,7 +188,27 @@ const Components = {
     Testimonials,
     FooterCta,
     Faqs,
+    G2Badges,
     Pricing,
+    CostComparisionComp,
+    EventRegistrationComp,
+    HelloStartupBanner,
+    HelloStartupWhy,
+    HelloStartupEligibility,
+    HelloStartupPlan,
+    HelloStartupSteps,
+    HelloStartupGrow,
+    HelloStartupFooterCta,
+    HelloStartupTerms,
+    CategoriesComp,
+    SetupStepsComp,
+    ImageWithBgComp,
+    FileHostingProblemComp: WhyChooseMSG91,
+    FileHostingStepsComp,
+    FileHostingChannelsComp: WhyChooseMSG91,
+    FileHostingUseCasesComp,
+    FileHostingComparisonComp: WhyChooseMSG91,
+    FileHostingFormatsComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {

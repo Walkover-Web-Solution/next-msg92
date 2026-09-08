@@ -20,6 +20,11 @@
                         "description": "Ticketing and Chat"
                     },
                     {
+                        "name": "One API",
+                        "slug": "one-api",
+                        "description": "Dynamic Multi-Channel Messaging"
+                    },
+                    {
                         "name": "Campaign",
                         "slug": "campaign",
                         "description": "Event-based Automation"
@@ -81,6 +86,16 @@
                         "name": "KnowledgeBase",
                         "slug": "knowledgebase",
                         "description": "Manage Help Documents and Guides"
+                    },
+                    {
+                        "name": "File Hosting",
+                        "slug": "file-hosting",
+                        "description": "Host and share business files."
+                    },
+                    {
+                        "name": "Reports",
+                        "slug": "reports",
+                        "description": "All your reports at one place."
                     }
                 ]
             }
@@ -88,7 +103,7 @@
         "integrations": "Integrations",
         "integrations_list": {
             "explore_btn": "Explore More Plugins",
-             "content": [
+            "content": [
                 {
                     "name": "Shopify",
                     "link": "/partners-and-integrations/shopify",
@@ -194,6 +209,11 @@
                         "name": "KnowledgeBase",
                         "slug": "knowledgebase",
                         "description": "Manage Help Documents and Guides"
+                    },
+                    {
+                        "name": "Reports",
+                        "slug": "reports",
+                        "description": "All your reports at one place."
                     }
                 ]
             }
@@ -248,10 +268,22 @@
                     "link": "knowledgebase"
                 },
                 {
+                    "name": "File Hosting",
+                    "link": "file-hosting"
+                },
+                {
+                    "name": "Reports",
+                    "link": "reports"
+                },
+                {
                     "name": "Free WhatsApp link generator",
                     "link": "free-whatsapp-link-generator"
                 },
-                 {
+                {
+                    "name": "Free Apple Link Generator",
+                    "link": "free-apple-messages-for-business-link-generator"
+                },
+                {
                     "name": "WhatsApp Chatbot",
                     "link": "whatsapp/chatbot"
                 }
@@ -331,6 +363,10 @@
                     "link": "startups"
                 },
                 {
+                    "name": "Hello for startups",
+                    "link": "hello-for-startups"
+                },
+                {
                     "name": "Partners and integrations",
                     "link": "partners-and-integrations"
                 },
@@ -342,13 +378,21 @@
                     "name": "Career",
                     "link": "https://walkover.in/careers"
                 },
-                      {
+                {
                     "name": "Certificates",
                     "link": "certificates"
                 },
                 {
                     "name": "Compare",
                     "link": "compare"
+                },
+                {
+                    "name": "Cost comparison",
+                    "link": "cost-comparision"
+                },
+                {
+                    "name": "Event registration",
+                    "link": "event-registration"
                 }
             ]
         },

@@ -39,13 +39,25 @@ export default function BannerComp({ pageInfo, data }) {
                             {data?.tagline}
                         </span>
                         {data?.product ? (
-                            <h1 className={`${data?.slug === 'whatsapp' ? 'whatsapp__' : ''}heading`}>
+                            <h1
+                                className={
+                                    data?.slug === 'whatsapp' || data?.slug === 'reports'
+                                        ? 'whatsapp__heading'
+                                        : 'heading'
+                                }
+                            >
                                 {data?.heading}
                             </h1>
                         ) : (
                             <h1 className='heading'>{data?.heading}</h1>
                         )}
-                        <p className={`${data?.slug === 'whatsapp' ? 'whatsapp__subheading' : 'subheading'}`}>
+                        <p
+                            className={
+                                data?.slug === 'whatsapp' || data?.slug === 'reports'
+                                    ? 'whatsapp__subheading'
+                                    : 'subheading'
+                            }
+                        >
                             {data?.subheading}
                         </p>
                         {data?.highlights && (
@@ -72,11 +84,22 @@ export default function BannerComp({ pageInfo, data }) {
                             </a>
                         )}
 
-                        {data?.schedule_meet && (
-                            <button className='btn btn-md btn-primary btn-outline' onClick={() => setIsModalOpen(true)}>
-                                {data?.schedule_meet}
-                            </button>
-                        )}
+                        {data?.schedule_meet &&
+                            (pageInfo?.page === 'reports' || pageInfo?.page === 'file-hosting' ? (
+                                <a
+                                    href={getURL('contact-us', pageInfo?.page, pageInfo)}
+                                    className='btn btn-md btn-primary btn-outline'
+                                >
+                                    {data?.schedule_meet}
+                                </a>
+                            ) : (
+                                <button
+                                    className='btn btn-md btn-primary btn-outline'
+                                    onClick={() => setIsModalOpen(true)}
+                                >
+                                    {data?.schedule_meet}
+                                </button>
+                            ))}
                         {/* {pageInfo?.page === 'hello' && (
                             <a
                                 href='/demochatbot'
@@ -97,7 +120,16 @@ export default function BannerComp({ pageInfo, data }) {
                         )} */}
                     </div>
 
-                    <TrustedByComp data={data?.trustedByComp} />
+                    {data?.trust_highlights ? (
+                        <div className='flex flex-col gap-1'>
+                            <p className='font-bold text-lg'>{data.trust_highlights?.heading}</p>
+                            {data.trust_highlights?.highlights?.length > 0 && (
+                                <p className='text-sm font-medium'>{data.trust_highlights.highlights.join(' | ')}</p>
+                            )}
+                        </div>
+                    ) : (
+                        <TrustedByComp data={data?.trustedByComp} />
+                    )}
                     {data?.code && <CodeSnippet curlKey={data?.slug} />}
                 </div>
                 {!data?.code && data?.banner_img && !data?.not_absolute && (

@@ -42,17 +42,30 @@ export function reducer(state, action) {
                 allowedRetry: action.payload.allowedRetry,
             };
 
-        case 'SET_LOADING':
-            return { ...state, isLoading: action.payload };
+        case 'SET_LOADING': {
+            if (typeof action.payload === 'object' && action.payload !== null) {
+                const isLoading = !!action.payload.isLoading;
+                return {
+                    ...state,
+                    isLoading,
+                    loadingType: isLoading ? action.payload.loadingType || null : null,
+                };
+            }
+            return {
+                ...state,
+                isLoading: action.payload,
+                loadingType: action.payload ? state.loadingType : null,
+            };
+        }
 
         case 'SET_OTP_ERROR':
-            return { ...state, isLoading: false, error: 'Failed to send OTP' };
+            return { ...state, isLoading: false, loadingType: null, error: 'Failed to send OTP' };
 
         case 'SET_ERROR':
-            return { ...state, isLoading: false, error: action.payload };
+            return { ...state, isLoading: false, loadingType: null, error: action.payload };
 
         case 'SET_OTP_VERIFICATION_ERROR':
-            return { ...state, isLoading: false, error: 'OTP verification failed' };
+            return { ...state, isLoading: false, loadingType: null, error: 'OTP verification failed' };
 
         case 'CLEAR_ERROR':
             return { ...state, error: null };
@@ -68,6 +81,7 @@ export function reducer(state, action) {
                 emailRequestId: action.payload.requestId,
                 emailIdentifier: action.payload.identifier,
                 isLoading: false,
+                loadingType: null,
                 otpSent: true,
             };
         }
@@ -78,6 +92,7 @@ export function reducer(state, action) {
                 emailToken: action.payload.accessToken,
                 emailVerified: true,
                 isLoading: false,
+                loadingType: null,
                 activeStep: 2,
                 otpSent: false,
             };
@@ -87,6 +102,7 @@ export function reducer(state, action) {
                 ...state,
                 emailRequestId: null,
                 isLoading: false,
+                loadingType: null,
                 otpSent: false,
             };
 
@@ -98,6 +114,7 @@ export function reducer(state, action) {
                 emailRequestId: null,
                 emailToken: null,
                 isLoading: false,
+                loadingType: null,
                 otpSent: false,
             };
 
@@ -107,6 +124,7 @@ export function reducer(state, action) {
                 mobileRequestId: action.payload.requestId,
                 mobileIdentifier: action.payload.identifier,
                 isLoading: false,
+                loadingType: null,
                 otpSent: true,
             };
 
@@ -115,6 +133,7 @@ export function reducer(state, action) {
                 ...state,
                 mobileToken: action.payload.accessToken,
                 isLoading: false,
+                loadingType: null,
                 mobileOtpVerified: true,
                 otpSent: false,
             };
@@ -124,6 +143,7 @@ export function reducer(state, action) {
                 ...state,
                 mobileRequestId: null,
                 isLoading: false,
+                loadingType: null,
                 otpSent: false,
             };
 
@@ -134,6 +154,7 @@ export function reducer(state, action) {
                 mobileToken: null,
                 mobileOtpVerified: false,
                 isLoading: false,
+                loadingType: null,
                 otpSent: false,
             };
 

@@ -10,6 +10,12 @@ module.exports = {
     theme: {
         extend: {
             colors: {
+                darkNavy: '#0e1638',
+                report: {
+                    primary: '#24B3B3',
+                    'primary-dark': '#268080',
+                    'primary-light': '#f0faf9',
+                },
                 shopifyBanner: {
                     content: '#F0F7E8',
                     visual: '#0A5840',
@@ -21,6 +27,11 @@ module.exports = {
                     secondaryBg: '#ffffff',
                     secondaryFg: '#0A5840',
                     secondaryBorder: '#0A5840',
+                },
+                fileHosting: {
+                    primary: '#4f46e5',
+                    light: '#EEF2FF',
+                    border: '#C7D2FE',
                 },
             },
             backgroundImage: {
@@ -39,6 +50,7 @@ module.exports = {
                     accent: '#1E75BA',
                     neutral: '#FAFAFA',
                     hello: '#f2ca55',
+                    darkNavy: '#0e1638',
                     'base-100': '#FFFFFF',
                     '--rounded-btn': '0.2rem',
                     'base-200': '#808080',
