@@ -79,6 +79,18 @@ function formatCellValue(col, row, currency) {
     return val;
 }
 
+function getVisibleColumns(columns) {
+    const filteredColumns = columns.filter((col) => col.key !== 'prefix' && col.key !== 'country_prefix');
+    const countryColumn = filteredColumns.find((col) => col.key === 'country_name');
+
+    if (countryColumn) {
+        const otherColumns = filteredColumns.filter((col) => col.key !== 'country_name');
+        return [countryColumn, ...otherColumns];
+    } else {
+        return filteredColumns;
+    }
+}
+
 function DialPlanTable({
     columns,
     data,
@@ -92,9 +104,7 @@ function DialPlanTable({
     loading,
     loaded,
 }) {
-    const visibleColumns = columns
-        .filter((col) => col.key !== 'prefix' && col.key !== 'country_prefix')
-        .sort((a, b) => (b.key === 'country_name') - (a.key === 'country_name'));
+    const visibleColumns = useMemo(() => getVisibleColumns(columns), [columns]);
     const tableRef = useRef(null);
     const [hasOverflow, setHasOverflow] = useState(false);
     const { total_pages: totalPages } = pagination ?? {};
@@ -102,9 +112,9 @@ function DialPlanTable({
     const colSpan = visibleColumns.length || 1;
 
     useEffect(() => {
-        const el = tableRef.current;
-        if (!el) return;
-        const updateOverflow = () => setHasOverflow(el.scrollWidth > el.clientWidth);
+        const tableElement = tableRef.current;
+        if (!tableElement) return;
+        const updateOverflow = () => setHasOverflow(tableElement.scrollWidth > tableElement.clientWidth);
         updateOverflow();
         window.addEventListener('resize', updateOverflow);
         return () => window.removeEventListener('resize', updateOverflow);
