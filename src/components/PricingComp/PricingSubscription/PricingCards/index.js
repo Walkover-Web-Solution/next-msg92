@@ -122,7 +122,7 @@ export default function PricingCards({
             el.removeEventListener('scroll', handler);
             window.removeEventListener('resize', handler);
         };
-    }, [monthlyPlans, updateScrollState]);
+    }, [monthlyPlans, activeTab, updateScrollState]);
 
     useEffect(() => {
         const el = yearlyScrollRef.current;
@@ -136,7 +136,7 @@ export default function PricingCards({
             el.removeEventListener('scroll', handler);
             window.removeEventListener('resize', handler);
         };
-    }, [yearlyPlans, updateScrollState]);
+    }, [yearlyPlans, activeTab, updateScrollState]);
 
     if (!monthlyPlans.length && !yearlyPlans.length) return null;
 
