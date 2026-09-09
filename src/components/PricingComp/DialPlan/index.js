@@ -303,7 +303,11 @@ export default function DialPlan({ pricingData, selection, pageData, currency, c
                 setLoaded(true);
             })
             .catch((err) => {
-                if (!cancelled) toast.error(getDialPlanErrorMessage(err));
+                if (!cancelled) {
+                    toast.error(getDialPlanErrorMessage(err));
+                    setData(EMPTY_ARRAY);
+                    setLoaded(true);
+                }
             })
             .finally(() => {
                 if (!cancelled) setLoading(false);
@@ -312,7 +316,7 @@ export default function DialPlan({ pricingData, selection, pageData, currency, c
         return () => {
             cancelled = true;
         };
-    }, [activePlan?.serviceId, activePlan?.dialPlanId, currency, offset, searchQuery, currentCountryName]);
+    }, [activePlan?.serviceId, activePlan?.dialPlanId, currency, offset, searchQuery, currentCountryName, selection]);
 
     const handleSearchChange = useCallback((e) => setSearch(e.target.value), []);
 
