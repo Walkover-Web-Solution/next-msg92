@@ -12,13 +12,13 @@ export default function BannerComp({ data }) {
                 <div className='container relative z-10'>
                     <div className='flex flex-col items-center max-w-5xl mx-auto'>
                         {data?.badge && (
-                            <div className='inline-flex items-center gap-3 px-5 py-2 rounded-full border border-sky-200 bg-white text-accent text-base sm:text-lg font-semibold mb-6'>
+                            <div className='inline-flex items-center gap-2 px-4 py-1 rounded-full border border-sky-200 bg-white text-accent text-base sm:text-lg font-semibold mb-4'>
                                 <span className='w-3 h-3 rounded-full bg-accent animate-pulse ring-4 ring-sky-100' />
                                 <span>{data?.badge}</span>
                             </div>
                         )}
 
-                        <h1 className='heading font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl'>
+                        <h1 className='heading font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl'>
                             {data?.heading_prefix ? (
                                 <>
                                     <span className='block'>{data?.heading_prefix}</span>
@@ -32,7 +32,7 @@ export default function BannerComp({ data }) {
                         </h1>
 
                         {data?.subheading && (
-                            <p className='my-4 max-w-2xl text-base md:text-lg text-gray-600'>{data?.subheading}</p>
+                            <p className='my-4 max-w-2xl text-base md:text-md text-gray-600'>{data?.subheading}</p>
                         )}
 
                         <div className='flex flex-wrap items-center justify-center gap-4 mt-6 mb-12'>
