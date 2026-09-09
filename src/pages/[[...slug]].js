@@ -77,6 +77,7 @@ import EventRegistrationComp from '@/components/EventRegistrationComp';
 import CategoriesComp from '@/components/ReportsComp/CategoriesComp/CategoriesComp';
 import SetupStepsComp from '@/components/ReportsComp/SetupStepsComp/SetupStepsComp';
 import ImageWithBgComp from '@/components/ImageWithBgComp/ImageWithBgComp';
+import FileHostingFeatureHighlightComp from '@/components/FileHostingComp/FeatureHighlightComp/FeatureHighlightComp';
 import FileHostingStepsComp from '@/components/FileHostingComp/StepsComp/StepsComp';
 import FileHostingUseCasesComp from '@/components/FileHostingComp/UseCasesComp/UseCasesComp';
 import FileHostingFormatsComp from '@/components/FileHostingComp/FormatsComp/FormatsComp';
@@ -183,11 +184,11 @@ const Components = {
     CategoriesComp,
     SetupStepsComp,
     ImageWithBgComp,
-    FileHostingProblemComp: WhyChooseMSG91,
+    FileHostingProblemComp: FileHostingFeatureHighlightComp,
     FileHostingStepsComp,
-    FileHostingChannelsComp: WhyChooseMSG91,
+    FileHostingChannelsComp: FileHostingFeatureHighlightComp,
     FileHostingUseCasesComp,
-    FileHostingComparisonComp: WhyChooseMSG91,
+    FileHostingComparisonComp: FileHostingFeatureHighlightComp,
     FileHostingFormatsComp,
 };
 
