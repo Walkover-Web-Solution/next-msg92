@@ -109,6 +109,7 @@ function DialPlanTable({
     const [hasOverflow, setHasOverflow] = useState(false);
     const { total_pages: totalPages } = pagination ?? {};
     const currentOffset = offset ?? 0;
+    const currentPage = Math.floor(currentOffset / DIAL_PLAN_PER_PAGE) + 1;
     const colSpan = visibleColumns.length || 1;
 
     useEffect(() => {
@@ -215,7 +216,7 @@ function DialPlanTable({
                 <div className='flex items-center justify-center gap-3'>
                     <button
                         type='button'
-                        onClick={() => onOffsetChange(currentOffset - 1)}
+                        onClick={() => onOffsetChange(currentOffset - DIAL_PLAN_PER_PAGE)}
                         disabled={currentOffset <= 0 || loading}
                         className='flex items-center gap-1 px-3 py-2 rounded border border-slate-200 text-sm text-slate-600 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed'
                         aria-label='Previous page'
@@ -224,12 +225,12 @@ function DialPlanTable({
                         Previous
                     </button>
                     <span className='text-sm text-slate-500'>
-                        Page {currentOffset + 1} of {totalPages}
+                        Page {currentPage} of {totalPages}
                     </span>
                     <button
                         type='button'
-                        onClick={() => onOffsetChange(currentOffset + 1)}
-                        disabled={currentOffset >= totalPages - 1 || loading}
+                        onClick={() => onOffsetChange(currentOffset + DIAL_PLAN_PER_PAGE)}
+                        disabled={currentPage >= totalPages || loading}
                         className='flex items-center gap-1 px-3 py-2 rounded border border-slate-200 text-sm text-slate-600 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed'
                         aria-label='Next page'
                     >
