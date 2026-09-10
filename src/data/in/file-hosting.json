@@ -1,0 +1,301 @@
+{
+    "HeadComp": {
+        "title": "File Hosting Service to Upload, Host & Share Business Files | MSG91",
+        "description": "Upload, host, and share images, videos, PDFs, documents, and other business files from one centralized platform. Generate shareable URLs and use your files across WhatsApp, SMS, Email, RCS, websites, apps, and APIs."
+    },
+    "BannerComp": {
+        "slug": "file-hosting",
+        "product": {
+            "name": "File Hosting",
+            "icon": "/assets/icons/products/filehosting.svg"
+        },
+        "tagline": "FILE HOSTING SERVICE",
+        "heading": "Upload, Host & Share Business Files",
+        "subheading": "Upload files once, generate shareable URLs, and use them across WhatsApp, SMS, Email, RCS, websites, apps, and APIs.",
+        "banner_video": "/assets/file_hosting/videos/hero_video.webm",
+        "not_absolute": "true",
+        "getstarted_btn": "Get Started",
+        "schedule_meet": "Schedule a Meeting",
+        "trust_highlights": {
+            "heading": "Upload Once. Host Securely. Share Anywhere.",
+            "highlights": [
+                "50+ File Formats",
+                "One Centralized Library",
+                "Reusable URLs",
+                "Multi-Channel Sharing"
+            ]
+        }
+    },
+    "FileHostingProblemComp": {
+        "heading": "Your Business Files Shouldn't Live Everywhere",
+        "subheading": "Businesses constantly share product images, invoices, brochures, videos, documents, catalogs, and other assets.",
+        "content": [
+            {
+                "title": "Stop Managing Scattered Files Across Disconnected Platforms",
+                "subtitle": "Centralize, Host & Share",
+                "description": "When files are scattered across local systems, email attachments, cloud drives, and different communication platforms, teams face continuous friction.",
+                "img": "/assets/file_hosting/images/problem_statement.webp",
+                "video": "/assets/file_hosting/videos/problem_statement.webm",
+                "highlights": [
+                    "Repeated uploads and duplicate file storage across multiple systems",
+                    "Outdated assets and inconsistent customer communication",
+                    "Difficult file discovery and email attachment limitations",
+                    "The smarter way: Upload once and make files available wherever your business communicates"
+                ],
+                "footer": "Upload a file once and make it available wherever your business communicates"
+            }
+        ]
+    },
+    "FeatureComp": {
+        "heading": "Everything You Need for Business File Hosting",
+        "subheading": "A unified platform built to store, manage, and distribute business assets across all communication channels.",
+        "features": [
+            {
+                "name": "Upload 50+ File Formats",
+                "content": "<p>Host images, videos, audio, PDFs, presentations, spreadsheets, and business documents from one platform.</p><ul><li>Supports JPG, PNG, WEBP, GIF, SVG, MP4, PDF, DOCX, XLSX & 50+ file types</li><li>High-speed cloud delivery and instant media previewing</li><li>Optimized for media of all sizes with direct rendering</li></ul>",
+                "video": "/assets/file_hosting/videos/upload_100_file_formats.webm"
+            },
+            {
+                "name": "Centralized File Library",
+                "content": "<p>Keep your business assets organized in one place instead of managing files across multiple storage platforms.</p><ul><li>Search and filter your entire digital repository in seconds</li><li>Categorize assets with intuitive folder structures and tags</li><li>Ensure teams always access the latest versions of brand assets</li></ul>",
+                "img": "/assets/file_hosting/images/centralized_file_library.webp"
+            },
+            {
+                "name": "Generate Shareable URLs",
+                "content": "<p>Turn uploaded files into URLs that can be easily shared across your business communication channels.</p><ul><li>Instant CDN-backed URL generation with global high-speed delivery</li><li>Replace heavy email and chat attachments with lightweight links</li><li>Compatible with short links, tracking parameters, and CRM workflows</li></ul>",
+                "img": "/assets/file_hosting/images/generate_shareable_urls.webp"
+            },
+            {
+                "name": "Upload Once, Reuse Everywhere",
+                "content": "<p>Reuse the same hosted file across campaigns, templates, emails, websites, applications, and workflows.</p><ul><li>Eliminate duplicate uploads and reduce redundant storage costs</li><li>Update the source file once without breaking existing shared URLs</li><li>Seamlessly embed files in automated marketing and transactional triggers</li></ul>",
+                "video": "/assets/file_hosting/videos/upload_once_reuse_everywhere.webm"
+            },
+            {
+                "name": "Easy File Management",
+                "content": "<p>Search, organize, rename, delete, and manage your files from one centralized library.</p><ul><li>Quick file inspection, renaming, and metadata management</li><li>One-click file replacement, deletion, and access controls</li><li>Programmatic file management via developer-friendly REST APIs</li></ul>",
+                "img": "/assets/file_hosting/images/easy_file_management.webp"
+            },
+            {
+                "name": "Built for Business Communication",
+                "content": "<p>Use hosted files across WhatsApp, SMS, Email, RCS, APIs, websites, apps, and automation workflows.</p><ul><li>Natively integrated with WhatsApp Business, SMS, Email, and RCS</li><li>Share rich media in customer chats without size limit errors</li><li>Trigger automated document delivery via webhooks and chatbot flows</li></ul>",
+                "img": "/assets/file_hosting/images/built_for_business_communication.webp"
+            }
+        ]
+    },
+    "FileHostingStepsComp": {
+        "tagline": "HOW IT WORKS",
+        "heading": "Upload Once. Share Everywhere.",
+        "subheading": "A seamless 4-step workflow to upload, generate, share, and reuse business assets.",
+        "steps": [
+            {
+                "number": "01",
+                "title": "Upload",
+                "description": "Upload your image, video, PDF, document, or other business file."
+            },
+            {
+                "number": "02",
+                "title": "Generate",
+                "description": "Create a hosted URL for your file."
+            },
+            {
+                "number": "03",
+                "title": "Share",
+                "description": "Use the URL across your preferred communication channel."
+            },
+            {
+                "number": "04",
+                "title": "Reuse",
+                "description": "Access and reuse the same hosted file whenever you need it."
+            }
+        ]
+    },
+    "FileHostingChannelsComp": {
+        "heading": "Use One Hosted File Across Every Communication Channel",
+        "subheading": "Upload your business files once and share them across WhatsApp, SMS, Email, RCS, websites, apps, and APIs via reusable links.",
+        "content": [
+            {
+                "title": "Deliver Hosted Media Across WhatsApp, SMS, Email, RCS & APIs",
+                "subtitle": "Omnichannel Asset Delivery",
+                "description": "Turn static business assets into shareable links and deliver product images, brochures, videos, documents, and invoices across all customer touchpoints.",
+                "img": "/assets/file_hosting/images/communication_channels.webp",
+                "video": "/assets/file_hosting/videos/communication_channels.webm",
+                "highlights": [
+                    "WhatsApp Business API: Share product images, brochures, and invoices directly in chat",
+                    "SMS: Turn SMS into rich content gateways with lightweight hosted links",
+                    "Email: Replace bulky attachments with fast, trackable file URLs",
+                    "Websites & Landing Pages: Host downloadable brochures, media kits, and assets",
+                    "APIs & Applications: Deliver dynamic documents via chatbots, CRMs, and backend triggers",
+                    "RCS & Rich Messaging: Enhance campaigns with high-impact media and promotional files"
+                ],
+                "footer": "Upload a file once and make it available across every customer touchpoint"
+            }
+        ]
+    },
+    "FileHostingUseCasesComp": {
+        "tagline": "USE CASES",
+        "heading": "Business Use Cases for File Hosting",
+        "subheading": "From sales and marketing to support and automation, store and share the files your customers need across every stage of their journey.",
+        "features": [
+            {
+                "name": "Product Catalogs & Brochures",
+                "content": "Share catalogs, brochures, price lists, and sales presentations through a reusable hosted URL. Keep customer-facing content easy to access and update.",
+                "bullets": [
+                    "Share interactive product catalogs via lightweight links",
+                    "Update brochures and price sheets in real time without broken URLs",
+                    "Enable friction-free sales enablement across every customer touchpoint"
+                ],
+                "img": "/assets/file_hosting/images/product_catalogs_and_brochures.webp"
+            },
+            {
+                "name": "Product Images & Videos",
+                "content": "Host product visuals, demos, banners, and promotional videos in one place and reuse them across campaigns and customer touchpoints.",
+                "bullets": [
+                    "Store high-resolution product photography and demo videos centrally",
+                    "Deliver media URLs instantly across WhatsApp, Email, RCS, and SMS",
+                    "Maintain consistent visual brand assets across marketing and sales teams"
+                ],
+                "img": "/assets/file_hosting/images/product_images_and_videos.webp"
+            },
+            {
+                "name": "Invoices & Business Documents",
+                "content": "Deliver invoices, receipts, quotations, purchase orders, warranty documents, and other files without relying on bulky email attachments.",
+                "bullets": [
+                    "Send direct invoice and receipt links via WhatsApp & SMS",
+                    "Eliminate email attachment size limits and deliverability issues",
+                    "Ensure reliable, secure document access for all customers"
+                ],
+                "img": "/assets/file_hosting/images/invoices_and_business_documents.webp"
+            },
+            {
+                "name": "Training & Customer Support",
+                "content": "Share user manuals, installation guides, training videos, FAQs, and troubleshooting resources through permanent hosted links during customer onboarding and support conversations.",
+                "bullets": [
+                    "Equip support agents with instant shareable help assets and setup guides",
+                    "Distribute HD tutorials and onboarding documentation under permanent URLs",
+                    "Reduce resolution times with one-click instructional media in customer chats"
+                ],
+                "img": "/assets/file_hosting/images/training_and_support.webp"
+            },
+            {
+                "name": "Automation & Business Workflows",
+                "content": "Use your hosted file URLs with APIs, chatbots, CRMs, and automated workflows to deliver the right documents or media based on customer actions.",
+                "bullets": [
+                    "Integrate dynamic file links with CRM and automated chatbot flows",
+                    "Trigger transactional document delivery based on user milestones",
+                    "Track asset engagement and distribution programmatically"
+                ],
+                "img": "/assets/file_hosting/images/automation_and_apis.webp"
+            }
+        ]
+    },
+    "FileHostingComparisonComp": {
+        "heading": "Why MSG91 Instead of Google Drive / Dropbox",
+        "subheading": "Generic cloud storage is built to store files. MSG91 File Hosting is built to help businesses use those files in customer communication.",
+        "content": [
+            {
+                "title": "Built for Business Communication Across Every Channel",
+                "subtitle": "Connected, Reusable & Scalable",
+                "description": "Generic cloud storage stores files in static folders. MSG91 File Hosting connects your files directly to WhatsApp, SMS, Email, RCS, APIs, websites, and business applications to deliver files whenever and wherever customers need them.",
+                "img": "/assets/file_hosting/images/why_msg91.webp",
+                "highlights": [
+                    "Centralized: Keep all your communication assets in one place",
+                    "Reusable: Upload once and reuse across campaigns, templates, and workflows",
+                    "Connected: Use hosted files seamlessly across MSG91 communication channels",
+                    "Scalable: Support growing omnichannel communication and file-sharing needs"
+                ],
+                "footer": "Upload once and make your assets available wherever your business communicates",
+                "schedule_meet": "Schedule a Meeting"
+            }
+        ]
+    },
+    "FileHostingFormatsComp": {
+        "tagline": "SUPPORTED FORMATS",
+        "heading": "Host the Files Your Business Uses Every Day",
+        "subheading": "50+ File Formats. One Centralized Platform.",
+        "img": "/assets/file_hosting/images/host_the_files_your_business_uses_every_day.webp",
+        "steps": [
+            {
+                "number": "01",
+                "title": "Images",
+                "description": "PNG, JPG, JPEG, GIF, SVG, WEBP, BMP, TIFF"
+            },
+            {
+                "number": "02",
+                "title": "Videos",
+                "description": "MP4, MOV, AVI, MPEG, OGG"
+            },
+            {
+                "number": "03",
+                "title": "Audio",
+                "description": "MP3, AAC, WAV, AMR"
+            },
+            {
+                "number": "04",
+                "title": "Documents",
+                "description": "PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, TXT, and more"
+            }
+        ]
+    },
+    "FaqsComp": {
+        "heading": "Frequently Asked Questions",
+        "faqs": [
+            {
+                "question": "What is file hosting?",
+                "answer": "File hosting is a service that allows businesses to upload, store, manage, and share files online. Instead of keeping files only on local systems or sending large attachments, businesses can host images, videos, PDFs, documents, and other assets and share them through accessible URLs.<br/><br/>MSG91 File Hosting provides a centralized platform to host business files and use them across WhatsApp, SMS, Email, RCS, websites, applications, and APIs."
+            },
+            {
+                "question": "What is a file hosting service?",
+                "answer": "A file hosting service provides online storage and access to files through a centralized platform. It helps businesses manage their digital assets and share them through hosted URLs instead of repeatedly uploading or sending the same files.<br/><br/>With MSG91, businesses can upload files once, generate shareable URLs, and reuse those files across customer communication and business workflows."
+            },
+            {
+                "question": "Why do businesses need a file hosting service?",
+                "answer": "Businesses often share the same files across multiple campaigns, customer conversations, websites, and applications. Managing those files separately can result in repeated uploads, scattered assets, outdated versions, and unnecessary manual work.<br/><br/>A file hosting service provides one centralized location where teams can upload, organize, and reuse business files through shareable URLs."
+            },
+            {
+                "question": "Which types of files can I host with MSG91?",
+                "answer": "MSG91 File Hosting supports a wide range of business file types, including:<br/>• Images such as JPG, PNG, GIF, SVG, and WEBP<br/>• Videos such as MP4, MOV, AVI, and MPEG<br/>• Audio files such as MP3, WAV, AAC, and AMR<br/>• Documents such as PDF, DOC, DOCX, XLS, XLSX, PPT, and PPTX<br/><br/>The platform supports 50+ file formats, making it suitable for hosting marketing assets, business documents, product media, training resources, and customer-facing content."
+            },
+            {
+                "question": "Can I upload a file once and reuse it?",
+                "answer": "Yes. One of the key advantages of MSG91 File Hosting is the ability to upload a file once and reuse its hosted URL across different campaigns, communication channels, websites, applications, and workflows.<br/><br/>This helps teams reduce repetitive uploads and maintain consistent access to frequently used business assets."
+            },
+            {
+                "question": "Can file hosting be used with chatbots and automation?",
+                "answer": "Yes. Hosted file URLs can be integrated into chatbot responses and automated workflows to deliver relevant files based on customer interactions.<br/><br/>For example, a business can use a hosted URL to share a product brochure, user manual, invoice, onboarding document, or troubleshooting guide when a customer requests it."
+            },
+            {
+                "question": "How does a file hosting service help reduce repetitive work?",
+                "answer": "Without centralized file hosting, teams may repeatedly upload the same images, PDFs, videos, or documents whenever they create a new campaign or customer communication.<br/><br/>With MSG91, businesses can upload a file once, generate a hosted URL, and reuse it across supported channels and workflows. This reduces manual file management and helps teams launch communications faster."
+            },
+            {
+                "question": "Can I use the same hosted file across multiple channels?",
+                "answer": "Yes. A hosted file can be reused across supported business communication channels and digital touchpoints, including WhatsApp, SMS, Email, RCS, websites, applications, and APIs.<br/><br/>This creates a centralized approach to managing communication assets instead of maintaining separate copies for every channel."
+            },
+            {
+                "question": "Is MSG91 File Hosting suitable for business communication?",
+                "answer": "Yes. MSG91 File Hosting is designed around business communication use cases where companies frequently need to share images, videos, documents, brochures, invoices, and other files with customers.<br/><br/>It connects file hosting with channels such as WhatsApp, SMS, Email, RCS, websites, applications, APIs, and automation workflows."
+            },
+            {
+                "question": "What are the benefits of using cloud file hosting for businesses?",
+                "answer": "Cloud file hosting gives businesses a centralized way to manage and share digital assets online. With MSG91, businesses can:<br/>• Centralize frequently used files<br/>• Upload files once and reuse them<br/>• Generate shareable hosted URLs<br/>• Reduce repetitive file uploads<br/>• Share files across multiple communication channels<br/>• Support automated file delivery<br/>• Simplify file management for teams"
+            },
+            {
+                "question": "Is file hosting useful for customer support?",
+                "answer": "Yes. Customer support teams can use hosted files to share troubleshooting guides, product manuals, setup instructions, warranty documents, FAQs, videos, policies, and other helpful resources.<br/><br/>Instead of searching for and attaching files during every conversation, teams can provide customers with ready-to-use hosted links."
+            },
+            {
+                "question": "Why choose MSG91 as your file hosting service?",
+                "answer": "MSG91 combines file hosting with business communication. Instead of managing files separately from your communication workflows, businesses can host their assets and use them across WhatsApp, SMS, Email, RCS, websites, APIs, applications, chatbots, and automation workflows.<br/><br/>This makes MSG91 File Hosting a practical solution for businesses that need both centralized file management and easy file sharing."
+            }
+        ]
+    },
+    "PreFooterComp": {
+        "content": "Host Your Business Files & Share Them Anywhere",
+        "buttons": {
+            "getStarted": {
+                "text": "Start Hosting Files Today",
+                "primary": true
+            }
+        }
+    }
+}
