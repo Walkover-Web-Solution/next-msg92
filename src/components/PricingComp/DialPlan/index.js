@@ -155,7 +155,12 @@ function DialPlanTable({
                 )}
             </div>
             <div className='w-full overflow-x-auto'>
-                <div className='overflow-y-auto rounded-xl border border-slate-200 bg-white' ref={tableRef}>
+                <div
+                    className={`overflow-y-auto rounded-xl border border-slate-200 bg-white transition-opacity duration-150 ${
+                        loading ? 'opacity-30 pointer-events-none animate-pulse' : 'opacity-100'
+                    }`}
+                    ref={tableRef}
+                >
                     <table className='table-fixed min-w-max w-full border-collapse text-sm'>
                         <thead className='sticky top-0 z-30 bg-slate-50'>
                             <tr className='border-b border-slate-200'>
@@ -224,8 +229,7 @@ function DialPlanTable({
                         <MdChevronLeft size={18} />
                         Previous
                     </button>
-                    <span className='flex items-center gap-2 text-sm text-slate-500'>
-                        {loading && <span className='loading loading-spinner loading-xs' />}
+                    <span className='text-sm text-slate-500'>
                         Page {currentPage} of {totalPages}
                     </span>
                     <button
