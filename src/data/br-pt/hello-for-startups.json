@@ -1,0 +1,204 @@
+{
+    "HeadComp": {
+        "title": "Hello, Gratuito para Startups no Brasil. | MSG91",
+        "description": "Software completo de suporte ao cliente — caixa de entrada omnicanal, chatbot com IA e automação — totalmente gratuito para empresas em estágio inicial no Brasil com receita anual abaixo de R$ 360.000."
+    },
+    "HelloStartupBanner": {
+        "badge": "Hello para Startups Brasileiras",
+        "heading_prefix": "Excelente suporte ao cliente.",
+        "heading_accent": "Custo zero para começar.",
+        "heading": "Excelente suporte ao cliente. Custo zero para começar.",
+        "subheading": "Software completo de suporte ao cliente — caixa de entrada omnicanal, chatbot com IA e automação — totalmente gratuito para empresas em estágio inicial no Brasil com receita anual abaixo de R$ 360.000. Construa sua experiência de atendimento agora; pague somente quando crescer.",
+        "primary_btn": "Solicitar acesso gratuito",
+        "primary_btn_link": "https://docs.google.com/forms/d/e/1FAIpQLSf50qTLGF-UjasMyhmZLd4rKt8FtpqA1Q9x2AL3Neor7fk0cg/viewform?usp=send_form",
+        "secondary_btn": "Ler elegibilidade e termos",
+        "secondary_btn_link": "/br-pt/hello-for-startups-terms",
+        "secondary_btn_target": "_blank",
+        "trusted_by": {
+            "title": "MAIS DE 30.000 EMPRESAS GLOBAIS CONFIAM",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Razorpay",
+                    "url": "/assets/trusted_by/razorpay.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Bajaj Finserv",
+                    "url": "/assets/trusted_by/bajaj_finserve.svg"
+                },
+                {
+                    "name": "Apollo 24x7",
+                    "url": "/assets/trusted_by/apollo_247.svg"
+                }
+            ]
+        },
+        "banner_img": "/assets/hello_for_startup/hello_for_startup.png"
+    },
+    "HelloStartupWhy": {
+        "kicker": "Um único espaço de trabalho",
+        "heading": "Suporte que cresce\ncom a sua startup.",
+        "description": "Reúna conversas, automação e insights — para que sua equipe gaste menos tempo gerenciando o suporte e mais tempo ajudando os clientes.",
+        "cards": [
+            {
+                "icon": "💬",
+                "title": "Uma caixa de entrada. Todas as conversas.",
+                "description": "WhatsApp, E-mail, Chat ao Vivo, Voz, Instagram, Facebook, Twitter (X), RCS e Apple Message — tudo em um espaço limpo."
+            },
+            {
+                "icon": "✦",
+                "title": "IA que cuida da rotina.",
+                "description": "Resolva dúvidas comuns automaticamente, 24 horas por dia."
+            },
+            {
+                "icon": "⚡",
+                "title": "Automatize o trabalho repetitivo.",
+                "description": "Direcione conversas e crie fluxos de trabalho que mantêm sua equipe ágil."
+            },
+            {
+                "icon": "◎",
+                "title": "Fale o idioma de cada cliente.",
+                "description": "A tradução em tempo real ajuda sua equipe a se comunicar naturalmente em todos os mercados."
+            },
+            {
+                "icon": "▥",
+                "title": "Saiba o que está funcionando.",
+                "description": "Acompanhe tempos de resposta, resolução e desempenho da equipe sem planilhas."
+            },
+            {
+                "icon": "⌘",
+                "title": "Conecte sua estrutura.",
+                "description": "Mais de 150 integrações facilitam a conexão com CRM, e-commerce e ferramentas diárias."
+            }
+        ]
+    },
+    "HelloStartupEligibility": {
+        "id": "eligibility",
+        "kicker": "DESENVOLVIDO PARA EQUIPES EM ESTÁGIO INICIAL",
+        "heading": "Simples de qualificar.\nSimples de usar.",
+        "description": "Se a sua empresa for registrada, genuinamente em estágio inicial e dentro do limite de receita, você pode obter o Hello sem custos.",
+        "cards": [
+            {
+                "number": "01",
+                "title": "Empresa registrada",
+                "description": "Uma entidade empresarial validamente registrada. Pessoas físicas não registradas não são elegíveis."
+            },
+            {
+                "number": "02",
+                "title": "Receita abaixo de R$ 360.000",
+                "description": "A receita anual deve ser inferior a R$ 360.000 ou o equivalente local aplicável."
+            },
+            {
+                "number": "03",
+                "title": "Documentos verificados",
+                "description": "Última demonstração financeira ou declaração fiscal, comprovante de registro e declaração."
+            },
+            {
+                "number": "04",
+                "title": "Uma conta por empresa",
+                "description": "Uma conta gratuita para Startups por entidade registrada. Sem divisão de empresas para ficar dentro dos limites."
+            }
+        ]
+    },
+    "HelloStartupPlan": {
+        "heading": "O que está incluído no seu plano gratuito",
+        "plan_badge": "Plano Gratuito para Startups",
+        "price": "R$ 0",
+        "period": "/mês",
+        "fee_badge": "SEM CARTÃO DE CRÉDITO · SEM TAXA DE ADESÃO",
+        "action_badge": "Limites de uso do plano gratuito",
+        "stats": [
+            {
+                "label": "ATÉ",
+                "value": "1.000",
+                "sublabel": "tickets de suporte\npor mês"
+            },
+            {
+                "label": "ATÉ",
+                "value": "50",
+                "sublabel": "atendentes\nincluídos"
+            },
+            {
+                "label": "ATÉ",
+                "value": "2",
+                "sublabel": "caixas de entrada /\ncanais"
+            },
+            {
+                "label": "ATÉ",
+                "value": "Uso justo",
+                "sublabel": "política de uso de IA\naplicável"
+            }
+        ],
+        "notice": "<strong>Ultrapassou algum limite?</strong> Sua conta e seus dados permanecem intactos — basta migrar para um plano pago do Hello."
+    },
+    "HelloStartupSteps": {
+        "kicker": "Primeiros passos",
+        "heading": "Quatro etapas. Sem surpresas.",
+        "description": "Mantemos o processo simples para que você possa voltar a construir sua startup.",
+        "steps": [
+            {
+                "number": "1",
+                "title": "Inscreva-se",
+                "description": "Preencha o formulário e envie os documentos da sua empresa."
+            },
+            {
+                "number": "2",
+                "title": "Verificação",
+                "description": "Nossa equipe analisa seus documentos e elegibilidade."
+            },
+            {
+                "number": "3",
+                "title": "Ativação",
+                "description": "Após a aprovação, sua conta gratuita do Hello entra em operação."
+            },
+            {
+                "number": "4",
+                "title": "Cresça",
+                "description": "Mantenha sua configuração e mude para um plano pago quando superar o programa."
+            }
+        ]
+    },
+    "HelloStartupGrow": {
+        "heading": "Quando você crescer, mantém tudo.",
+        "description": "Seus dados, conversas e configurações continuam exatamente como estão. Sem migração. Sem interrupções."
+    },
+    "Faqs": {
+        "heading": "Perguntas frequentes",
+        "items": [
+            {
+                "question": "É realmente gratuito?",
+                "answer": "Sim — dentro dos limites de uso descritos acima, enquanto você permanecer elegível."
+            },
+            {
+                "question": "Por que são necessários documentos financeiros?",
+                "answer": "Para verificar de forma justa e consistente que sua receita está abaixo de R$ 360.000. É um requisito obrigatório deste programa."
+            },
+            {
+                "question": "O que acontece se eu ultrapassar os limites?",
+                "answer": "Você receberá um convite para migrar para um plano pago do Hello; sua conta e dados continuarão normalmente."
+            },
+            {
+                "question": "O que acontece na revisão anual se a minha empresa tiver crescido?",
+                "answer": "Você migra para um plano pago — nada é perdido."
+            },
+            {
+                "question": "O acesso pode ser cancelado?",
+                "answer": "Sim, se a elegibilidade não for mais atendida ou se os Termos forem violados."
+            }
+        ]
+    },
+    "HelloStartupFooterCta": {
+        "heading_prefix": "Suporte de grande empresa,",
+        "heading_accent": "enquanto você ainda é pequeno.",
+        "heading": "Suporte de grande empresa, enquanto você ainda é pequeno.",
+        "subheading": "Candidate-se ao Hello Gratuito para Startups e proporcione aos seus clientes o atendimento que eles merecem.",
+        "btn_text": "Solicitar acesso gratuito",
+        "btn_link": "https://docs.google.com/forms/d/e/1FAIpQLSf50qTLGF-UjasMyhmZLd4rKt8FtpqA1Q9x2AL3Neor7fk0cg/viewform?usp=send_form"
+    }
+}
