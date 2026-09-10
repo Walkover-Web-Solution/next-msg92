@@ -224,7 +224,8 @@ function DialPlanTable({
                         <MdChevronLeft size={18} />
                         Previous
                     </button>
-                    <span className='text-sm text-slate-500'>
+                    <span className='flex items-center gap-2 text-sm text-slate-500'>
+                        {loading && <span className='loading loading-spinner loading-xs' />}
                         Page {currentPage} of {totalPages}
                     </span>
                     <button
@@ -252,9 +253,21 @@ export default function DialPlan({ pricingData, selection, pageData, currency, c
     const [pagination, setPagination] = useState(null);
     const [loading, setLoading] = useState(false);
     const [loaded, setLoaded] = useState(false);
+    const lastNonSearchOffsetRef = useRef(0);
 
     const activePlan = useMemo(() => findActivePlan(pricingData, selection), [pricingData, selection]);
     const currentCountryName = GetCountryDetails({ shortname: country, type: 'shortname' })?.name;
+
+    const handleOffsetChange = useCallback(
+        (newOffset) => {
+            setLoading(true);
+            setOffset(newOffset);
+            if (!searchQuery) {
+                lastNonSearchOffsetRef.current = newOffset;
+            }
+        },
+        [searchQuery]
+    );
 
     useEffect(() => {
         if (search.trim() === '') {
@@ -270,10 +283,11 @@ export default function DialPlan({ pricingData, selection, pageData, currency, c
         setSearchQuery('');
         setOffset(0);
         setLoaded(false);
+        lastNonSearchOffsetRef.current = 0;
     }, [selection]);
 
     useEffect(() => {
-        setOffset(0);
+        setOffset(searchQuery ? 0 : lastNonSearchOffsetRef.current);
         setLoaded(false);
     }, [searchQuery]);
 
@@ -346,7 +360,7 @@ export default function DialPlan({ pricingData, selection, pageData, currency, c
                 currency={currency}
                 pagination={pagination}
                 offset={offset}
-                onOffsetChange={setOffset}
+                onOffsetChange={handleOffsetChange}
                 loading={loading}
                 loaded={loaded}
             />
