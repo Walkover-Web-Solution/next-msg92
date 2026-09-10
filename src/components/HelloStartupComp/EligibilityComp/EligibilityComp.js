@@ -8,9 +8,13 @@ export default function EligibilityComp({ data }) {
                     <header className='flex flex-col gap-2'>
                         {data?.kicker && <p className='text-xs font-semibold text-accent'>{data?.kicker}</p>}
                         <div className='flex flex-col md:flex-row md:items-end justify-between gap-6'>
-                            <h2 className='heading font-semibold whitespace-pre-line leading-tight'>{data?.heading}</h2>
+                            <h2 className='text-3xl sm:text-4xl lg:text-5xl font-bold whitespace-pre-line leading-tight'>
+                                {data?.heading}
+                            </h2>
                             {data?.description && (
-                                <p className='max-w-md text-base text-gray-600 md:text-right'>{data?.description}</p>
+                                <p className='max-w-xs md:max-w-sm lg:max-w-md text-base text-gray-600 md:text-right'>
+                                    {data?.description}
+                                </p>
                             )}
                         </div>
                     </header>

@@ -7,9 +7,13 @@ export default function WhyBuiltComp({ data }) {
                 <header className='flex flex-col gap-2'>
                     {data?.kicker && <p className='text-xs font-semibold text-accent'>{data?.kicker}</p>}
                     <div className='flex flex-col md:flex-row md:items-end justify-between gap-6'>
-                        <h2 className='heading font-semibold whitespace-pre-line leading-tight'>{data?.heading}</h2>
+                        <h2 className='text-3xl sm:text-4xl lg:text-5xl font-bold whitespace-pre-line leading-tight'>
+                            {data?.heading}
+                        </h2>
                         {data?.description && (
-                            <p className='max-w-md text-base text-gray-600 md:text-right'>{data?.description}</p>
+                            <p className='max-w-xs md:max-w-sm lg:max-w-md text-base text-gray-600 md:text-right'>
+                                {data?.description}
+                            </p>
                         )}
                     </div>
                 </header>
@@ -19,9 +23,9 @@ export default function WhyBuiltComp({ data }) {
                         {data?.cards?.map((card, index) => (
                             <div
                                 key={index}
-                                className='min-h-[260px] border border-gray-200 rounded-xl p-6 relative overflow-hidden flex flex-col justify-between bg-white'
+                                className='min-h-[240px] sm:min-h-[300px] border border-gray-200 rounded-xl p-6 relative overflow-hidden flex flex-col justify-between bg-white'
                             >
-                                <div className='relative z-10 flex flex-col gap-3'>
+                                <div className='relative z-10 flex flex-col gap-3 pb-8 sm:pb-12'>
                                     {card?.icon && (
                                         <div className='w-10 h-10 rounded-xl bg-secondary text-accent flex items-center justify-center text-lg'>
                                             {card?.icon}
@@ -36,7 +40,7 @@ export default function WhyBuiltComp({ data }) {
                                 {index < 3 && (
                                     <div
                                         aria-hidden='true'
-                                        className='absolute -right-3 -bottom-7 w-44 h-28 border border-sky-100 bg-white rounded-xl p-3 flex flex-col gap-2 pointer-events-none'
+                                        className='hidden sm:flex absolute -right-3 -bottom-7 w-44 h-28 border border-sky-100 bg-white rounded-xl p-3 flex-col gap-2 pointer-events-none'
                                     >
                                         <div className='h-1.5 w-3/4 bg-sky-100 rounded-xl' />
                                         <div className='h-1.5 w-full bg-slate-100 rounded-xl' />
