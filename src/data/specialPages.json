@@ -42,9 +42,13 @@
         "shorturl",
         "knowledgebase",
         "file-hosting",
+<<<<<<< HEAD
         "push-notification",
         "hello-for-startups",
         "hello-for-startups-terms"
+=======
+        "push-notification"
+>>>>>>> 060aea00d3ccea95d2f6820e45e03ff19356c3ab
     ],
     "countries": [
         "in",
