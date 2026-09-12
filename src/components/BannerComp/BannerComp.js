@@ -35,13 +35,13 @@ export default function BannerComp({ pageInfo, data }) {
                                 <span className='font-semibold text-2xl'>{data?.product?.name}</span>
                             </div>
                         )}
-                        <span className={`text-xl uppercase tracking-widest ${data?.slug}_dark_text`}>
+                        <span className={`text-xl uppercase tracking-widest ${data?.slug?.split('/')[0]}_dark_text`}>
                             {data?.tagline}
                         </span>
                         {data?.product ? (
                             <h1
                                 className={
-                                    data?.slug === 'whatsapp' || data?.slug === 'reports'
+                                    data?.slug?.startsWith('whatsapp') || data?.slug === 'reports'
                                         ? 'whatsapp__heading'
                                         : 'heading'
                                 }
@@ -53,7 +53,7 @@ export default function BannerComp({ pageInfo, data }) {
                         )}
                         <p
                             className={
-                                data?.slug === 'whatsapp' || data?.slug === 'reports'
+                                data?.slug?.startsWith('whatsapp') || data?.slug === 'reports'
                                     ? 'whatsapp__subheading'
                                     : 'subheading'
                             }
@@ -64,7 +64,9 @@ export default function BannerComp({ pageInfo, data }) {
                             <ul className='flex flex-col gap-2'>
                                 {data.highlights.map((item, i) => (
                                     <li key={i} className='flex items-start gap-2 text-base'>
-                                        <span className={`${data?.slug}_dark_text mt-0.5`}>&#10004;</span>
+                                        <span className={`${data?.slug?.split('/')[0]}_dark_text mt-0.5`}>
+                                            &#10004;
+                                        </span>
                                         <span>{item}</span>
                                     </li>
                                 ))}
@@ -165,7 +167,10 @@ export default function BannerComp({ pageInfo, data }) {
                 {!data?.code && data?.banner_video && data?.not_absolute && (
                     <div className='lg:w-1/2'>
                         <video className='w-full' autoPlay muted loop playsInline aria-label={data?.tagline}>
-                            <source src={data?.banner_video} type='video/webm' />
+                            <source
+                                src={data?.banner_video}
+                                type={data?.banner_video?.endsWith('.mp4') ? 'video/mp4' : 'video/webm'}
+                            />
                         </video>
                     </div>
                 )}

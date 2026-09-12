@@ -16,7 +16,7 @@ export default function WhyChooseMSG91({ data, pageInfo }) {
                     <h2 className='text-3xl font-bold'>{data?.heading}</h2>
                     <p>{data?.subheading}</p>
                 </div>
-                {data?.content.map((item, index) => (
+                {data?.content?.map((item, index) => (
                     <div
                         key={index}
                         className={`flex gap-12 items-center justify-center ${
@@ -30,7 +30,7 @@ export default function WhyChooseMSG91({ data, pageInfo }) {
                             </div>
                             <p>{item?.description}</p>
                             <ul className='list-disc'>
-                                {item?.highlights.map((hl, i) => (
+                                {item?.highlights?.map((hl, i) => (
                                     <li key={i}>{hl}</li>
                                 ))}
                             </ul>
