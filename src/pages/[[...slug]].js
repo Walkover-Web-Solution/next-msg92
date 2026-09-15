@@ -74,9 +74,6 @@ import G2Badges from '@/components/HelloBrComp/G2BadgesComp/G2Badges';
 import Pricing from '@/components/HelloBrComp/PricingComp/Pricing';
 import CostComparisionComp from '@/components/CostComparisionComp/CostComparisionComp';
 import EventRegistrationComp from '@/components/EventRegistrationComp';
-import CategoriesComp from '@/components/ReportsComp/CategoriesComp/CategoriesComp';
-import SetupStepsComp from '@/components/ReportsComp/SetupStepsComp/SetupStepsComp';
-import ImageWithBgComp from '@/components/ImageWithBgComp/ImageWithBgComp';
 import HelloStartupBanner from '@/components/HelloStartupComp/BannerComp/BannerComp';
 import HelloStartupWhy from '@/components/HelloStartupComp/WhyBuiltComp/WhyBuiltComp';
 import HelloStartupEligibility from '@/components/HelloStartupComp/EligibilityComp/EligibilityComp';
@@ -85,6 +82,13 @@ import HelloStartupSteps from '@/components/HelloStartupComp/StepsComp/StepsComp
 import HelloStartupGrow from '@/components/HelloStartupComp/CalloutComp/CalloutComp';
 import HelloStartupFooterCta from '@/components/HelloStartupComp/FooterCtaComp/FooterCtaComp';
 import HelloStartupTerms from '@/components/HelloStartupComp/TermsComp/HelloStartupTerms';
+import CategoriesComp from '@/components/ReportsComp/CategoriesComp/CategoriesComp';
+import SetupStepsComp from '@/components/ReportsComp/SetupStepsComp/SetupStepsComp';
+import ImageWithBgComp from '@/components/ImageWithBgComp/ImageWithBgComp';
+import FileHostingFeatureHighlightComp from '@/components/FileHostingComp/FeatureHighlightComp/FeatureHighlightComp';
+import FileHostingStepsComp from '@/components/FileHostingComp/StepsComp/StepsComp';
+import FileHostingUseCasesComp from '@/components/FileHostingComp/UseCasesComp/UseCasesComp';
+import FileHostingFormatsComp from '@/components/FileHostingComp/FormatsComp/FormatsComp';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -185,9 +189,6 @@ const Components = {
     Pricing,
     CostComparisionComp,
     EventRegistrationComp,
-    CategoriesComp,
-    SetupStepsComp,
-    ImageWithBgComp,
     HelloStartupBanner,
     HelloStartupWhy,
     HelloStartupEligibility,
@@ -196,6 +197,15 @@ const Components = {
     HelloStartupGrow,
     HelloStartupFooterCta,
     HelloStartupTerms,
+    CategoriesComp,
+    SetupStepsComp,
+    ImageWithBgComp,
+    FileHostingProblemComp: FileHostingFeatureHighlightComp,
+    FileHostingStepsComp,
+    FileHostingChannelsComp: FileHostingFeatureHighlightComp,
+    FileHostingUseCasesComp,
+    FileHostingComparisonComp: FileHostingFeatureHighlightComp,
+    FileHostingFormatsComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
