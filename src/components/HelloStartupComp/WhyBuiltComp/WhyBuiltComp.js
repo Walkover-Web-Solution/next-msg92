@@ -25,7 +25,7 @@ export default function WhyBuiltComp({ data }) {
                                 key={index}
                                 className='min-h-[240px] sm:min-h-[300px] border border-gray-200 rounded-xl p-6 relative overflow-hidden flex flex-col justify-between bg-white'
                             >
-                                <div className='relative z-10 flex flex-col gap-3 pb-8 sm:pb-12'>
+                                <div className='relative z-10 flex flex-col gap-3'>
                                     {card?.icon && (
                                         <div className='w-10 h-10 rounded-xl bg-secondary text-accent flex items-center justify-center text-lg'>
                                             {card?.icon}
