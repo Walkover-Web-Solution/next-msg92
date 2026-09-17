@@ -1,0 +1,79 @@
+<svg width="331" height="212" viewBox="0 0 331 212" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<filter id="filter0_d_reports" x="9.56812" y="1.92597" width="309.531" height="216.197" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="3.69134"/>
+<feGaussianBlur stdDeviation="7.38269"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<filter id="filter_badge_reports" x="220" y="80" width="105" height="42" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="1.28494" dy="2.56989"/>
+<feGaussianBlur stdDeviation="3.42652"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<clipPath id="clip0_reports">
+<rect width="330.667" height="212" fill="white"/>
+</clipPath>
+</defs>
+
+<g clip-path="url(#clip0_reports)">
+<g filter="url(#filter0_d_reports)">
+<rect x="24.3335" y="13" width="280" height="186.667" rx="5.91921" fill="white"/>
+</g>
+<ellipse cx="38.3337" cy="27.0002" rx="4.66667" ry="4.66667" fill="#DF434C"/>
+<ellipse cx="50.0002" cy="27.0002" rx="4.66667" ry="4.66667" fill="#E7B44C"/>
+<ellipse cx="61.6672" cy="27.0002" rx="4.66667" ry="4.66667" fill="#6BD280"/>
+<rect x="75.667" y="22.3335" width="219.333" height="9.33333" rx="4.66667" fill="#E1E3E8"/>
+
+<!-- Chart Container matching internal aspect ratio -->
+<g transform="translate(34.33, 42) scale(0.4127)">
+<rect x="0" y="0" width="630" height="355.767" rx="9.5" fill="white" stroke="#D7D6F7"/>
+<line x1="14.5" y1="139" x2="610.5" y2="139" stroke="#8C89B4" stroke-opacity="0.5" stroke-dasharray="4 4"/>
+<line x1="14.5" y1="82" x2="610.5" y2="82" stroke="#8C89B4" stroke-opacity="0.5" stroke-dasharray="4 4"/>
+<line x1="14.5" y1="197" x2="610.5" y2="197" stroke="#8C89B4" stroke-opacity="0.5" stroke-dasharray="4 4"/>
+<line x1="14.5" y1="255" x2="610.5" y2="255" stroke="#8C89B4" stroke-opacity="0.5" stroke-dasharray="4 4"/>
+<line x1="14.5" y1="313" x2="610.5" y2="313" stroke="#8C89B4" stroke-opacity="0.5" stroke-dasharray="4 4"/>
+
+<path d="M14.5 206C14.5 201.858 17.8579 198.5 22 198.5V198.5C26.1421 198.5 29.5 201.858 29.5 206V314.5H14.5V206Z" fill="#237571"/>
+<path d="M258.5 206C258.5 201.858 261.858 198.5 266 198.5V198.5C270.142 198.5 273.5 201.858 273.5 206V314.5H258.5V206Z" fill="#237571"/>
+<path d="M29.5 135C29.5 130.858 32.8579 127.5 37 127.5V127.5C41.1421 127.5 44.5 130.858 44.5 135V314.5H29.5V135Z" fill="#24B3B3"/>
+<path d="M273.5 135C273.5 130.858 276.858 127.5 281 127.5V127.5C285.142 127.5 288.5 130.858 288.5 135V314.5H273.5V135Z" fill="#24B3B3"/>
+<path d="M96.5 153C96.5 148.858 99.8579 145.5 104 145.5V145.5C108.142 145.5 111.5 148.858 111.5 153V314.5H96.5V153Z" fill="#237571"/>
+<path d="M339.5 153C339.5 148.858 342.858 145.5 347 145.5V145.5C351.142 145.5 354.5 148.858 354.5 153V314.5H339.5V153Z" fill="#237571"/>
+<path d="M178.5 234.5C178.5 230.634 181.634 227.5 185.5 227.5V227.5C189.366 227.5 192.5 230.634 192.5 234.5V314.5H178.5V234.5Z" fill="#237571"/>
+<path d="M419.5 197C419.5 192.858 422.858 189.5 427 189.5V189.5C431.142 189.5 434.5 192.858 434.5 197V314.5H419.5V197Z" fill="#237571"/>
+<path d="M501.5 224.5C501.5 220.634 504.634 217.5 508.5 217.5V217.5C512.366 217.5 515.5 220.634 515.5 224.5V314.5H501.5V224.5Z" fill="#237571"/>
+<path d="M580.5 197C580.5 192.858 583.858 189.5 588 189.5V189.5C592.142 189.5 595.5 192.858 595.5 197V314.5H580.5V197Z" fill="#237571"/>
+<path d="M111.5 204C111.5 199.858 114.858 196.5 119 196.5V196.5C123.142 196.5 126.5 199.858 126.5 204V314.5H111.5V204Z" fill="#24B3B3"/>
+<path d="M354.5 103C354.5 98.8579 357.858 95.5 362 95.5V95.5C366.142 95.5 369.5 98.8579 369.5 103V314.5H354.5V103Z" fill="#24B3B3"/>
+<path d="M434.5 233C434.5 228.858 437.858 225.5 442 225.5V225.5C446.142 225.5 449.5 228.858 449.5 233V314.5H434.5V233Z" fill="#24B3B3"/>
+<path d="M595.5 233C595.5 228.858 598.858 225.5 603 225.5V225.5C607.142 225.5 610.5 228.858 610.5 233V314.5H595.5V233Z" fill="#24B3B3"/>
+<path d="M515.5 253C515.5 248.858 518.858 245.5 523 245.5V245.5C527.142 245.5 530.5 248.858 530.5 253V314.5H515.5V253Z" fill="#24B3B3"/>
+<path d="M29.5 21C29.5 25.1421 26.1421 28.5 22 28.5C17.8579 28.5 14.5 25.1421 14.5 21C14.5 16.8579 17.8579 13.5 22 13.5C26.1421 13.5 29.5 16.8579 29.5 21Z" fill="#237571"/>
+<path d="M128.5 21C128.5 25.1421 125.142 28.5 121 28.5C116.858 28.5 113.5 25.1421 113.5 21C113.5 16.8579 116.858 13.5 121 13.5C125.142 13.5 128.5 16.8579 128.5 21Z" fill="#24B3B3"/>
+<path d="M192.5 183C192.5 178.858 195.858 175.5 200 175.5V175.5C204.142 175.5 207.5 178.858 207.5 183V314.5H192.5V183Z" fill="#24B3B3"/>
+<rect x="33.5" y="13.5" width="67" height="15" rx="7.5" fill="#D9D9D9"/>
+<rect x="132.5" y="13.5" width="67" height="15" rx="7.5" fill="#D9D9D9"/>
+<rect x="547.5" y="13.5" width="67" height="25" rx="12.5" fill="#D9D9D9"/>
+<path d="M596.5 24.5L600.657 28.3949L604.174 24.5" stroke="#237571"/>
+</g>
+
+<!-- Floating Analytics Badge with drop shadow matching other cards -->
+<g filter="url(#filter_badge_reports)">
+<rect x="228" y="86" width="90" height="26" rx="13" fill="#24B3B3"/>
+<rect x="240" y="99" width="3" height="7" rx="0.5" fill="white"/>
+<rect x="244.5" y="95" width="3" height="11" rx="0.5" fill="white"/>
+<rect x="249" y="91" width="3" height="15" rx="0.5" fill="white"/>
+<text x="256" y="103" fill="white" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="600" letter-spacing="0.2">Analytics</text>
+</g>
+</g>
+</svg>

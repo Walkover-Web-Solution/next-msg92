@@ -127,6 +127,12 @@
                 "name": "Numbers",
                 "description": "Desbloqueie mercados globais com números virtuais econômicos. Aumente o engajamento com serviços de chamadas perdidas, mensagens de palavras-chave, pesquisas e respostas automáticas",
                 "link": "/numbers"
+            },
+            {
+                "icon": "/assets/icons/products/rcs.svg",
+                "name": "RCS",
+                "description": "Engaje os clientes na caixa de entrada SMS, entregando mensagens ricas e interativas usando RCS",
+                "link": "/rcs"
             }
         ]
     },
@@ -179,6 +185,14 @@
                 "heading": "Armazenamento de arquivos simples e seguro",
                 "description": "Um hub central para armazenamento, compartilhamento e sincronização de arquivos online. Armazene todos os seus arquivos com segurança usando um armazenamento em nuvem poderoso, confiável e fácil de usar.",
                 "link": "https://msg91.com/help/files/all-you-need-to-know-about-files-option-of-msg91"
+            },
+            {
+                "icon": "/assets/icons/products/reports.svg",
+                "name": "Relatórios",
+                "img": "/assets/global/index/services/Reports.svg",
+                "heading": "Análise e insights de comunicação em tempo real",
+                "description": "Transforme os dados de comunicação com o cliente em insights acionáveis com o MSG91 Reports. Acompanhe o desempenho de entrega, o engajamento do cliente e o ROI das campanhas.",
+                "link": "/reports"
             }
         ]
     },

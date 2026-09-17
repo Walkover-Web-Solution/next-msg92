@@ -127,6 +127,12 @@
                 "name": "Numbers",
                 "description": "Buksan ang global na merkado gamit ang cost-efficient na virtual numbers. Palakasin ang engagement gamit ang missed call services, keyword messaging, surveys, at auto responses",
                 "link": "/numbers"
+            },
+            {
+                "icon": "/assets/icons/products/rcs.svg",
+                "name": "RCS",
+                "description": "Makipag-ugnayan sa mga customer sa kanilang SMS inbox sa pamamagitan ng pagpapadala ng mayaman at interaktibong mga mensahe gamit ang RCS",
+                "link": "/rcs"
             }
         ]
     },
@@ -179,6 +185,14 @@
                 "heading": "Simple at seguradong file storage",
                 "description": "Isang sentrong hub para sa online file storage, pagbabahagi at pag-sync. Itago ang lahat ng iyong files nang ligtas gamit ang makapangyarihan, maaasahan at madaling gamitin na cloud storage.",
                 "link": "https://msg91.com/help/files/all-you-need-to-know-about-files-option-of-msg91"
+            },
+            {
+                "icon": "/assets/icons/products/reports.svg",
+                "name": "Reports",
+                "img": "/assets/global/index/services/Reports.svg",
+                "heading": "Real-time na pagsusuri at mga insight sa komunikasyon",
+                "description": "Gawing mga naaaksyunang insight sa negosyo ang datos ng komunikasyon ng customer. Subaybayan ang paghahatid, pakikipag-ugnayan, at ROI ng kampanya sa real time.",
+                "link": "/reports"
             }
         ]
     },
