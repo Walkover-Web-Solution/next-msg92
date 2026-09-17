@@ -38,7 +38,13 @@ export default function CaseStudyComp({ data, pageInfo }) {
                                     />
                                     <h3 className='text-xl font-medium'>{caseStudy?.title}</h3>
                                     <div>
-                                        <div dangerouslySetInnerHTML={{ __html: caseStudy?.caseStudies }}></div>
+                                        <div
+                                            dangerouslySetInnerHTML={{
+                                                __html: caseStudy?.caseStudies
+                                                    ?.replace(/<a\b([^>]*)>/g, '<span$1>')
+                                                    .replace(/<\/a>/g, '</span>'),
+                                            }}
+                                        ></div>
                                     </div>
 
                                     <div className='flex flex-wrap  gap-2'>
