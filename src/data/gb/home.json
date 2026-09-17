@@ -153,6 +153,12 @@
                 "name": "Numbers",
                 "description": "Unlock global markets with cost-efficient virtual numbers. Enhance engagement with missed call services, keyword messaging, surveys, and auto responses",
                 "link": "/numbers"
+            },
+            {
+                "icon": "/assets/icons/products/rcs.svg",
+                "name": "RCS",
+                "description": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
+                "link": "/rcs"
             }
         ]
     },
@@ -204,7 +210,15 @@
                 "img": "/assets/global/index/services/filehosting.svg",
                 "heading": "Simple and secured file storage",
                 "description": "A central hub for online file storage, sharing and syncing. Store all your files safely using powerful, reliable and easy-to-use cloud storage.",
-                "link": "https://msg91.com/help/files/all-you-need-to-know-about-files-option-of-msg91"
+                "link": "/file-hosting"
+            },
+            {
+                "icon": "/assets/icons/products/reports.svg",
+                "name": "Reports",
+                "img": "/assets/global/index/services/Reports.svg",
+                "heading": "Unified communication analytics and insights",
+                "description": "Turn customer communication data into actionable insights. Track delivery performance, customer engagement, and campaign ROI across all channels in real time.",
+                "link": "/reports"
             }
         ]
     },
