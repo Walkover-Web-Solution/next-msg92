@@ -27,9 +27,8 @@ export default function CaseStudyComp({ data, pageInfo }) {
                             return (
                                 <div
                                     key={index}
-                                    className='relative flex flex-col gap-6 rounded p-6 bg-white LinkButtonCard '
+                                    className='relative flex flex-col gap-6 rounded p-6 bg-white LinkButtonCard'
                                 >
-                                    {/* Card link as overlay — blurbs include <a>; nesting <a> inside <a> breaks hydration */}
                                     <Link
                                         href={href}
                                         className='absolute inset-0 z-0 rounded'
