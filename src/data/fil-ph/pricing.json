@@ -172,6 +172,13 @@
             },
             "heading": "OTP Widget Pricing",
             "get_started": "Magsimula",
+            "dialPlan": {
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
             "connectComp": {
                 "content": "Libre ang paggamit ng OTP widget/SDK.",
                 "content2": "Channel-wise na presyo ang ipapataw para sa pagpapadala ng mensahe.",

@@ -1,6 +1,6 @@
 import getURL from '@/utils/getURL';
 import { formatPriceAmount, formatUnitPrice, formatZeroPrice } from '@/utils/pricing/formatPrice';
-import { useMemo, useRef, useCallback, useState } from 'react';
+import { useMemo, useRef, useCallback, useState, useEffect } from 'react';
 import {
     MdChevronLeft,
     MdChevronRight,
@@ -80,7 +80,7 @@ export default function PricingCards({
         if (!Array.isArray(pricingData)) return flags;
         for (const plan of pricingData) {
             for (const s of plan?.services ?? []) {
-                const hasDP = s?.dialPlan != null && s.dialPlan?.data?.length > 0;
+                const hasDP = s?.dialPlan != null;
                 if (hasDP) {
                     const hasCredit = s?.freeCredit != null && Number(s.freeCredit) > 0;
                     if (hasCredit && !s?.postPaidAllowed) flags.hasDemoOnly = true;
@@ -97,8 +97,6 @@ export default function PricingCards({
         return flags;
     }, [pricingData]);
 
-    const { useEffect } = require('react');
-
     useEffect(() => {
         const el = monthlyScrollRef.current;
         if (!el) return;
@@ -110,7 +108,7 @@ export default function PricingCards({
             el.removeEventListener('scroll', handler);
             window.removeEventListener('resize', handler);
         };
-    }, [monthlyPlans, checkFade]);
+    }, [monthlyPlans, activeTab, checkFade]);
 
     useEffect(() => {
         const el = yearlyScrollRef.current;
@@ -123,7 +121,7 @@ export default function PricingCards({
             el.removeEventListener('scroll', handler);
             window.removeEventListener('resize', handler);
         };
-    }, [yearlyPlans, checkFade]);
+    }, [yearlyPlans, activeTab, checkFade]);
 
     if (!monthlyPlans.length && !yearlyPlans.length) return null;
 
@@ -295,13 +293,7 @@ export default function PricingCards({
 }
 
 function getBadgeLabel(service) {
-    if (
-        service?.dialPlan != null &&
-        service.dialPlan?.data?.length > 0 &&
-        service?.freeCredit != null &&
-        Number(service.freeCredit) > 0
-    )
-        return 'WALLET';
+    if (service?.dialPlan != null && service?.freeCredit != null && Number(service.freeCredit) > 0) return 'WALLET';
     return 'QUOTA';
 }
 
@@ -383,7 +375,7 @@ function PlanCard({
     const services = plan?.services ?? [];
     const features = plan?.features ?? [];
 
-    const hasDialPlan = (s) => s?.dialPlan != null && s.dialPlan?.data?.length > 0;
+    const hasDialPlan = (s) => s?.dialPlan != null;
 
     const includedServices = services.filter((s) => s?.freeCredit != null && s?.freeCredit !== 0 && !hasDialPlan(s));
     const isUnlimitedFreeCredit = (fc) => fc === -1 || fc === '-1';
@@ -423,17 +415,14 @@ function PlanCard({
         extraServices.length > 0 || dialPlanServicesNoCredit.length > 0 || dialPlanServicesWithCredit.length > 0;
     const visibleFeatures = features.slice(0, 5);
 
-    const firstDialPlanService = services.find((s) => hasDialPlan(s));
+    const openRateCard = (serviceName) => {
+        onSelect?.();
+        onViewRateCard?.({ serviceName, planName: plan?.name, planType: plan?.type });
+    };
 
     return (
         <div
-            onClick={() => {
-                onSelect?.();
-                if (firstDialPlanService) {
-                    onViewRateCard?.({ serviceName: firstDialPlanService.name, planName: plan?.name });
-                }
-            }}
-            className={`group relative flex flex-col p-6 rounded-2xl transition-all duration-300 cursor-pointer ${isOverflow ? 'min-w-[280px] w-[280px] md:min-w-[290px] md:w-[290px]' : 'flex-1 min-w-[290px] max-w-[320px]'} ${isSelected ? 'bg-indigo-50 border-2 border-indigo-300 shadow-lg shadow-indigo-100' : 'bg-white border border-slate-200 hover:shadow-md hover:border-slate-300'}`}
+            className={`group relative flex flex-col p-6 rounded-2xl transition-all duration-300 ${isOverflow ? 'min-w-[280px] w-[280px] md:min-w-[290px] md:w-[290px]' : 'flex-1 min-w-[290px] max-w-[320px]'} ${isSelected ? 'bg-indigo-50 border-2 border-indigo-300 shadow-lg shadow-indigo-100' : 'bg-white border border-slate-200 hover:shadow-md hover:border-slate-300'}`}
         >
             {/* Header */}
             <div className={`mb-5 ${hasDiscount ? 'min-h-[148px]' : 'min-h-[108px]'}`}>
@@ -445,7 +434,7 @@ function PlanCard({
                         {saveLabel}
                     </span>
                 )}
-                <div className='flex items-baseline gap-1.5 mb-1'>
+                <div className='flex items-baseline gap-1.5 mb-1 whitespace-nowrap'>
                     <span className='text-4xl font-extrabold tracking-tight text-slate-900'>
                         {isFree ? formatZeroPrice(currency) : displayPrice}
                     </span>
@@ -503,10 +492,7 @@ function PlanCard({
                                                     className='text-slate-400 hover:text-indigo-600 cursor-pointer transition-colors'
                                                     onClick={(e) => {
                                                         e.stopPropagation();
-                                                        onViewRateCard?.({
-                                                            serviceName: service?.name,
-                                                            planName: plan?.name,
-                                                        });
+                                                        openRateCard(service?.name);
                                                     }}
                                                 />
                                             )}
@@ -547,10 +533,7 @@ function PlanCard({
                                                         type='button'
                                                         onClick={(e) => {
                                                             e.stopPropagation();
-                                                            onViewRateCard?.({
-                                                                serviceName: service?.name,
-                                                                planName: plan?.name,
-                                                            });
+                                                            openRateCard(service?.name);
                                                         }}
                                                         className='font-medium text-xs text-indigo-600 hover:text-indigo-800 transition-colors'
                                                     >
