@@ -28,7 +28,6 @@ import ContactUsComp from '@/components/ContactUs';
 import getPageInfo from '@/utils/getPageInfo';
 import getCommonCompData from '@/utils/getCommonCompData';
 import SignUp from '@/components/signupComp/SignUp';
-import ChatBotComp from '@/components/ChatBotComp/ChatBotComp';
 import MagicLinkComp from '@/components/MagicLinkComp/MagicLinkComp';
 import WhatsappLinkComp from '@/components/WhatsappLinkComp/WhatsappLinkComp';
 import AppleMessagesLinkComp from '@/components/AppleMessagesLinkComp/AppleMessagesLinkComp';
@@ -90,6 +89,11 @@ import { useRouter } from 'next/router';
 import PreFooterMFTL from '@/components/migrateFromTextlocal/preFooterMFTL/preFooterMFTL';
 import CTAMFTL from '@/components/migrateFromTextlocal/ctaMFTL/ctaMFTL';
 import ChatBotPageComp from '@/components/ChatBotPageComp';
+import CustomerSupportComp from '@/components/ChatBotComp/CustomerSupportComp/CustomerSupportComp';
+import SalesOpportunityComp from '@/components/ChatBotComp/SalesOpportunityComp/SalesOpportunityComp';
+import ChatbotStepsComp from '@/components/ChatBotComp/StepsComp/StepsComp';
+import WhyChooseChatbotComp from '@/components/ChatBotComp/WhyChooseComp/WhyChooseComp';
+import ChatbotTrustComp from '@/components/ChatBotComp/TrustComp/TrustComp';
 
 const Components = {
     BannerComp,
@@ -121,7 +125,11 @@ const Components = {
     TermsComp,
     ContactUsComp,
     SignUp,
-    ChatBotComp,
+    CustomerSupportComp,
+    SalesOpportunityComp,
+    ChatbotStepsComp,
+    WhyChooseChatbotComp,
+    ChatbotTrustComp,
     MagicLinkComp,
     WhatsappLinkComp,
     AppleMessagesLinkComp,

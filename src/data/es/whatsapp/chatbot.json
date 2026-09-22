@@ -1,190 +1,457 @@
 {
     "HeadComp": {
         "title": "Whatsapp with Chatbot | MSG91",
-        "description": "Unlock new opportunities with WhatsApp: Automate tasks, accelerate sales, and achieve greater efficiency with a dynamic WhatsApp chatbot. Upgrade your business strategy today!"
+        "description": "Maximize your business potential with WhatsApp: Automate processes, boost sales, and enhance efficiency with a powerful WhatsApp chatbot. Transform your strategy for success today!"
     },
-    "ChatBotComp": {
+    "BannerComp": {
         "slug": "whatsapp/chatbot",
         "product": {
             "name": "WhatsApp Chatbot",
             "icon": "/assets/icons/products/whatsapp.svg"
         },
-        "tagline": "DOMINATE POPULAR PLATFORMS",
-        "heading": "Transform Automation and Sales on WhatsApp",
-        "subheading": "Enhance sales, streamline responses, and effortlessly reconnect with your contacts.",
-        "banner_img": "/assets/chatbot/banner.png",
-        "getstarted_btn": "Get Started",
-        "business_use": {
-            "heading": "Why businesses should use WhatsApp Chatbot",
-            "content": [
+        "tagline": "AI WHATSAPP CHATBOT",
+        "heading": "AI WhatsApp Chatbot That Automates Sales, Support & Customer Conversations",
+        "subheading": "Build an AI-powered WhatsApp chatbot that answers customer questions instantly, qualifies leads, recommends products, automates customer support, and hands over complex conversations to your team. Powered by the Official WhatsApp Business API.",
+        "banner_video": "/assets/whatsapp_chatbot/videos/Hero Video.mp4",
+        "not_absolute": true,
+        "getstarted_btn": "Start Free",
+        "schedule_meet": "Book a Demo",
+        "trustedByComp": {
+            "heading": "Trusted by Brands",
+            "logos": [
                 {
-                    "heading": "Boost Engagement, Maximize Sales",
-                    "description": "WhatsApp chatbot platforms drive engagement by facilitating interactive conversations, guiding potential customers through the sales funnel to boost sales and improve user experience.",
-                    "icon": "MdFlashOn"
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
                 },
                 {
-                    "heading": "Establish a 24/7 Communication Channel",
-                    "description": "A WhatsApp Chatbot ensures 24/7 accessibility, addressing customer queries at any hour, reinforcing your commitment to their needs and maintaining an always-responsive chatbot flow.",
-                    "icon": "MdOutlineWatch"
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
                 },
                 {
-                    "heading": "Streamline Responses to FAQs ",
-                    "description": "WhatsApp Chatbots swiftly address frequently asked questions by leveraging the  <a href='/whatsapp' style='color: blue;'>WhatsApp Business API</a> to save businesses time and resources.",
-                    "icon": "MdHelpOutline"
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
                 },
                 {
-                    "heading": "Elevate Customer Support",
-                    "description": "WhatsApp Chatbots deliver instant responses, ensuring prompt acknowledgment and boosting brand loyalty.",
-                    "icon": "MdOutlineSupport"
-                }
-            ]
-        },
-        "across_industries": {
-            "heading": "WhatsApp Chatbot Applications Across Industries",
-            "content": [
-                {
-                    "heading": "Healthcare",
-                    "image": "/assets/chatbot/healthcare.png",
-                    "icon": "MdOutlineHealthAndSafety",
-                    "description": "Automate appointment bookings and send consultation reminders hassle-free with MSG91s WhatsApp Chatbot for Business. Say goodbye to waiting on hold and callbacks. This tool streamlines scheduling for clinics and hospitals, minimizing no-shows and promoting punctuality.",
-                    "card": [
-                        {
-                            "line": "Automated appointment scheduling"
-                        },
-                        {
-                            "line": "Timely reminders to reduce no-show rates"
-                        },
-                        {
-                            "line": "Enhanced punctuality in consultations"
-                        },
-                        {
-                            "line": "Simplified process for patients and providers"
-                        }
-                    ],
-                    "more_btn": "Learn More",
-                    "extra": [
-                        {
-                            "title": "Automating Appointment Bookings & Sending Consultation Reminders:",
-                            "description": "Traditional hassles of waiting on hold or dealing with callbacks are a thing of the past. MSG91's WhatsApp Chatbot for Business enables clinics and hospitals to automate appointment scheduling, streamlining the process for both patients and healthcare providers. Additionally, the chatbot sends timely reminders, minimizing no-show rates and promoting punctuality."
-                        },
-                        {
-                            "title": "Addressing Common Medical Queries:",
-                            "description": "Patients often have urgent inquiries about their health, medications, or hospital procedures. Leveraging the WhatsApp Bot API, MSG91's chatbot delivers automated responses to frequently asked questions, providing patients with quick and reliable information, thereby enhancing customer support within the healthcare sector."
-                        },
-                        {
-                            "title": "Disseminating Health Tips and Medication Reminders:",
-                            "description": "TProactive healthcare is optimal. MSG91's WhatsApp Chatbot can be configured to share relevant health tips, including dietary recommendations and exercise routines. For those on medication, the chatbot sends timely reminders, promoting adherence to prescribed regimens."
-                        },
-                        {
-                            "title": "Fostering Trust with Patients:",
-                            "description": "In the digital healthcare era, cultivating and retaining patient trust is paramount. By developing a chatbot flow that is empathetic, responsive, and consistent, healthcare providers can establish an environment where patients feel valued and heard. This seamless interaction is facilitated through MSG91's platform."
-                        },
-                        {
-                            "title": "Ensuring Patient Data Privacy:",
-                            "description": "In healthcare, safeguarding data privacy is non-negotiable. MSG91 prioritizes the security features of its WhatsApp Chatbot platforms, ensuring that patient information is securely stored, handled ethically, and complies with all relevant regulations."
-                        },
-                        {
-                            "title": "",
-                            "description": "In conclusion, the convergence of healthcare and technology is inevitable. Leveraging the capabilities of WhatsApp Chatbots, healthcare providers can not only enhance patient interactions but also streamline operations, leading to improved care and better patient outcomes. With MSG91 steering the journey, the experience is smoother, more intuitive, and ultimately more rewarding."
-                        }
-                    ]
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
                 },
                 {
-                    "heading": "E-Commerce",
-                    "image": "/assets/chatbot/e-commerce.png",
-                    "icon": "MdOutlineStorefront",
-                    "description": "The e-commerce landscape has undergone a significant transformation due to digital advancements, and at the core of this evolution lies the WhatsApp Chatbot.",
-                    "card": [
-                        {
-                            "line": "Product queries and suggestions"
-                        },
-                        {
-                            "line": "Real-time order tracking via WhatsApp"
-                        },
-                        {
-                            "line": "Handling of returns, exchange and feedback"
-                        },
-                        {
-                            "line": "Engagement via updates and promotions"
-                        }
-                    ],
-                    "more_btn": "Learn More",
-                    "extra": [
-                        {
-                            "title": "Product Queries and Suggestions:",
-                            "description": "Navigating through a plethora of online products can be overwhelming for shoppers. MSG91's WhatsApp Chatbot for Business assists customers by furnishing comprehensive product details, reviews, and personalized recommendations based on browsing history and preferences, ensuring a tailored shopping experience."
-                        },
-                        {
-                            "title": "Real-Time Order Tracking via WhatsApp:",
-                            "description": "The excitement and occasional anxiety associated with awaiting a package are addressed through the WhatsApp bot API. Our whatsapp bot application provides real-time order tracking, keeping customers informed about the status and location of their purchases, thereby enhancing customer support within the e-commerce realm."
-                        },
-                        {
-                            "title": "Instant Handling of Returns and Customer Feedback:",
-                            "description": "Returns, exchanges, and feedback play a crucial role in e-commerce. MSG91's chatbot streamlines these processes by delivering immediate solutions and gathering feedback, allowing businesses to continuously improve while prioritizing customer satisfaction."
-                        },
-                        {
-                            "title": "Automated Responses for Common Queries:",
-                            "description": "Customers often seek information on payment methods, shipping policies, and other details. Our chatbot, powered by the WhatsApp Business API, efficiently provides automated responses to frequently asked questions, simplifying the shopping experience."
-                        },
-                        {
-                            "title": "Customer Engagement through Promotions and Updates:",
-                            "description": "Staying abreast of developments in the dynamic e-commerce environment is essential. By crafting a chatbot flow that engages users, businesses can keep customers informed about sales, new arrivals, and exclusive offers, directly enhancing opportunities for engagement and sales."
-                        },
-                        {
-                            "title": "",
-                            "description": "In the intricate tapestry of e-commerce, the WhatsApp Chatbot emerges as a connecting thread that brings businesses and customers into a closer relationship than ever before. At MSG91, we are dedicated to ensuring that this connection is not only robust but also fruitful, driving sales while ensuring unparalleled customer satisfaction."
-                        }
-                    ]
-                },
-                {
-                    "heading": "Banking & Finance",
-                    "image": "/assets/chatbot/banking.png",
-                    "icon": "MdAccountBalance",
-                    "description": "WhatsApp Chatbot for Business revolutionizes banking with features like instant balance checks, quick customer support, tailored financial tips, robust security, and simplified onboarding, ensuring a smooth, secure, and superior customer experience.",
-                    "card": [
-                        {
-                            "line": "Get  balance updates & transaction alerts"
-                        },
-                        {
-                            "line": "Daily bills and deductions remainders"
-                        },
-                        {
-                            "line": "Check account balance and other details"
-                        },
-                        {
-                            "line": "Engagement via updates and promotions"
-                        }
-                    ],
-                    "more_btn": "Learn More",
-                    "extra": [
-                        {
-                            "title": "Checking Account Balances and Receiving Transaction Alerts:",
-                            "description": "The era of logging into banking portals or making helpline calls is a thing of the past. With MSG91's WhatsApp bot builder, customers can effortlessly inquire about account balances or receive instant transaction alerts, ensuring constant awareness and control over their financial information."
-                        },
-                        {
-                            "title": "Providing Swift Customer Support for Financial Inquiries:",
-                            "description": "Whether it's grasping interest rates, navigating loan processes, or understanding account features, customers frequently have urgent queries. Utilizing the capabilities of the WhatsApp Business API, our chatbot delivers prompt automated responses to frequently asked questions, fostering clarity and instilling confidence in financial decision-making."
-                        },
-                        {
-                            "title": "Sharing Financial Tips and Service Updates:",
-                            "description": "The financial landscape is expansive and ever-evolving. MSG91's WhatsApp Chatbots ensure customers stay well-informed by sharing tailored financial tips, news, and updates on banking services, aligning with each individual's banking profile."
-                        },
-                        {
-                            "title": "Upholding Security and Trust:",
-                            "description": "In the delicate domain of banking and finance, security is of utmost importance. At MSG91, we prioritize the robust security features of our Chatbot platforms for WhatsApp, ensuring encrypted communication, secure data handling, and compliance with banking regulations."
-                        },
-                        {
-                            "title": "Simplified Onboarding and Access to Services:",
-                            "description": "Onboarding new customers or accessing various banking services can be intricate. Through a thoughtfully designed chatbot flow that streamlines these processes, we provide a seamless, hassle-free experience for all banking activities."
-                        },
-                        {
-                            "title": "",
-                            "description": "As the financial sector steps into a new era, the WhatsApp Chatbot emerges as an indispensable ally. With MSG91 leading the way, we are enthusiastic about assisting banks and financial institutions in reshaping the narrative, offering customers an experience that is smooth, secure, and superior."
-                        }
-                    ]
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
                 }
             ]
         }
+    },
+    "FeatureComp": {
+        "heading": "Everything You Can Automate with an WhatsApp AI Chatbot",
+        "subheading": "Whether you're looking for a WhatsApp chatbot for business to automate customer support, increase sales, recover abandoned carts, or streamline customer engagement, MSG91 helps you build intelligent conversations that work around the clock. Powered by AI and the Official <a href='/whatsapp' class='text-accent hover:underline'>WhatsApp Business API</a>, our WhatsApp AI chatbot adapts to every stage of the customer journey, helping you respond faster, convert more customers, and reduce manual effort.",
+        "features": [
+            {
+                "name": "AI Customer Support",
+                "content": "<p>Deliver instant, accurate support with an AI WhatsApp chatbot that understands customer intent, answers repetitive questions, tracks orders, manages returns, and seamlessly transfers complex conversations to live agents.</p><p><strong>Perfect for:</strong></p><ul><li>FAQs & Help Desk</li><li>Order Tracking</li><li>Returns & Refunds</li><li>Complaint Management</li><li>Customer Feedback</li></ul>",
+                "video": "/assets/whatsapp_chatbot/videos/AI Customer Support.mp4"
+            },
+            {
+                "name": "AI Sales Assistant",
+                "content": "<p>Turn every conversation into a sales opportunity. Your WhatsApp chatbot qualifies leads, recommends products, answers buying questions, shares catalogs, and helps customers make confident purchase decisions.</p><p><strong>Perfect for:</strong></p><ul><li>Product Recommendations</li><li>Lead Qualification</li><li>Sales Enquiries</li><li>Quote Generation</li><li>Appointment Booking</li></ul>",
+                "img": "/assets/whatsapp_chatbot/images/AI Sales Assistant.png"
+            },
+            {
+                "name": "WhatsApp Marketing Automation",
+                "content": "<p>Convert marketing campaigns into conversations. Automatically engage customers responding to WhatsApp campaigns, Click-to-WhatsApp Ads, QR codes, and website widgets with personalized follow-ups that increase engagement and conversions.</p><p><strong>Perfect for:</strong></p><ul><li>Promotional Campaigns</li><li>Festival Offers</li><li>New Product Launches</li><li>Customer Re-engagement</li><li>Lead Nurturing</li></ul>",
+                "video": "/assets/whatsapp_chatbot/videos/WhatsApp Marketing Automation.mp4"
+            },
+            {
+                "name": "Abandoned Cart Recovery",
+                "content": "<p>Recover lost revenue with automated cart reminders, personalized offers, payment links, and AI-driven follow-ups that encourage customers to complete their purchases.</p><p><strong>Perfect for:</strong></p><ul><li>Cart Recovery</li><li>COD Verification</li><li>Payment Reminders</li><li>Discount Campaigns</li><li>Checkout Assistance</li></ul>",
+                "video": "/assets/whatsapp_chatbot/videos/Abandoned Cart Recovery.mp4"
+            },
+            {
+                "name": "Appointment & Booking Automation",
+                "content": "<p>Simplify scheduling with a WhatsApp chatbot for business that books appointments, confirms availability, sends reminders, and reduces no-shows across healthcare, education, real estate, and service businesses.</p><p><strong>Perfect for:</strong></p><ul><li>Appointment Booking</li><li>Demo Scheduling</li><li>Consultation Requests</li><li>Calendar Management</li><li>Reminder Notifications</li></ul>",
+                "img": "/assets/whatsapp_chatbot/images/Appointment & Booking Automation.png"
+            },
+            {
+                "name": "Customer Onboarding",
+                "content": "<p>Guide new customers through onboarding with welcome messages, document collection, verification, tutorials, and progress tracking to ensure a smooth start.</p><p><strong>Perfect for:</strong></p><ul><li>New User Onboarding</li><li>KYC Collection</li><li>Document Verification</li><li>Welcome Journeys</li><li>Training & Tutorials</li></ul>",
+                "img": "/assets/whatsapp_chatbot/images/Customer-Onboarding.png"
+            }
+        ]
+    },
+    "CustomerSupportComp": {
+        "heading_black": "Deliver Smarter Customer Support with",
+        "heading_green": "an AI WhatsApp Chatbot",
+        "heading": "Deliver Smarter Customer Support with an AI WhatsApp Chatbot",
+        "subheading": "Your customers expect instant, accurate answers every time they reach out. MSG91's AI WhatsApp business chatbot understands customer intent, responds using your website, FAQs, product documentation, and knowledge base, and seamlessly hands over complex conversations to live agents when needed. Resolve more queries, reduce response times, and deliver consistent support 24×7 without increasing your support workload.",
+        "footer_tag": "MSG91 WhatsApp Automation",
+        "status_tag": "24×7 Active",
+        "use_cases_heading": "Popular Use Cases",
+        "solutions_badge": "5 Solutions",
+        "use_cases": [
+            {
+                "icon": "MdHelpOutline",
+                "title": "Frequently Asked Questions (FAQs)",
+                "description": "Instantly answer common customer questions related to products, pricing, shipping, business hours, payment methods, return policies, warranties, and more without manual intervention."
+            },
+            {
+                "icon": "MdLocalShipping",
+                "title": "Order Tracking",
+                "description": "Enable customers to check order status, shipment progress, estimated delivery dates, courier details, and invoices directly on WhatsApp, reducing repetitive support requests."
+            },
+            {
+                "icon": "MdReplay",
+                "title": "Returns & Refunds",
+                "description": "Automate return requests, refund status updates, exchange processes, cancellation requests, and warranty claims while collecting the required customer information."
+            },
+            {
+                "icon": "MdReportProblem",
+                "title": "Complaint Management",
+                "description": "Allow customers to register complaints, generate support tickets, upload images or documents, and receive real-time updates until the issue is resolved."
+            },
+            {
+                "icon": "MdSupportAgent",
+                "title": "Live Agent Handover",
+                "description": "Automatically transfer conversations to the right support team when human assistance is needed, ensuring agents receive the complete conversation history for a seamless customer experience."
+            }
+        ]
+    },
+    "SalesOpportunityComp": {
+        "heading_black": "Turn Every WhatsApp Conversation into",
+        "heading_green": "a Sales Opportunity",
+        "heading": "Turn Every WhatsApp Conversation into a Sales Opportunity",
+        "subheading": "Engage prospects instantly, qualify leads automatically, and guide customers from discovery to purchase on WhatsApp.",
+        "use_cases": [
+            {
+                "icon": "MdFilterAlt",
+                "theme": "emerald",
+                "title": "Lead Qualification",
+                "description": "Identify high-intent prospects by collecting customer requirements, budget, location, and purchase intent before automatically routing qualified leads to the right sales representative."
+            },
+            {
+                "icon": "MdExplore",
+                "theme": "blue",
+                "title": "Product Discovery & Recommendations",
+                "description": "Help customers discover products through natural conversations, compare options, and receive personalized recommendations based on their preferences, browsing history, or previous purchases."
+            },
+            {
+                "icon": "MdCalculate",
+                "theme": "purple",
+                "title": "Quote & Pricing Assistance",
+                "description": "Instantly answer pricing enquiries, share quotations, explain plans, recommend suitable packages, and capture additional requirements without manual intervention."
+            },
+            {
+                "icon": "MdEventAvailable",
+                "theme": "orange",
+                "title": "Appointment & Demo Booking",
+                "description": "Allow customers to schedule demos, consultations, store visits, or sales meetings directly on WhatsApp with automated confirmations and reminders."
+            },
+            {
+                "icon": "MdCallSplit",
+                "theme": "teal",
+                "title": "Smart Lead Routing",
+                "description": "Automatically assign conversations to the right sales representative based on product interest, language, region, or business rules to ensure faster response times and higher conversion rates."
+            }
+        ]
+    },
+    "ChatbotStepsComp": {
+        "tagline": "How It Works",
+        "heading_black": "Launch Your AI WhatsApp Chatbot",
+        "heading_green": "in Minutes",
+        "heading": "Launch Your AI WhatsApp Chatbot in Minutes",
+        "subheading": "Get your AI WhatsApp chatbot up and running in just a few simple steps. From connecting your WhatsApp Business account to automating customer conversations, MSG91 makes deployment quick, scalable, and code-free.",
+        "steps": [
+            {
+                "title": "Connect WhatsApp API",
+                "description": "Connect your official WhatsApp Business account and API credentials."
+            },
+            {
+                "title": "Train AI with Knowledge",
+                "description": "Train AI using your website, FAQs, PDFs, and knowledge base."
+            },
+            {
+                "title": "Build Workflows & Templates",
+                "description": "Build chatbot workflows or use ready-made industry templates."
+            },
+            {
+                "title": "Go Live & Engage",
+                "description": "Go live and start engaging and converting customers on WhatsApp."
+            },
+            {
+                "title": "Track & Improve",
+                "description": "Track analytics and continuously improve customer conversations."
+            }
+        ]
+    },
+    "WhyChooseChatbotComp": {
+        "tagline": "Why Choose MSG91",
+        "heading_black": "Why Choose MSG91's",
+        "heading_green": "AI WhatsApp Chatbot?",
+        "heading": "Why Choose MSG91's AI WhatsApp Chatbot?",
+        "subheading": "A great WhatsApp chatbot does more than answer questions. It helps you engage customers faster, automate repetitive work, convert more leads, and deliver consistent experiences across every conversation. MSG91 combines AI, automation, and the Official WhatsApp Business API into one platform, giving your business everything needed to grow on WhatsApp.",
+        "items": [
+            {
+                "icon": "MdAutoAwesome",
+                "theme": "emerald",
+                "title": "AI That Learns Your Business",
+                "description": "Train your <strong>AI WhatsApp business chatbot</strong> using your website, FAQs, PDFs, product catalog, and knowledge base. Instead of relying on predefined keywords, it understands customer intent and delivers accurate, contextual responses that improve over time."
+            },
+            {
+                "icon": "IoLogoWhatsapp",
+                "theme": "whatsapp",
+                "title": "Official WhatsApp Business API Partner",
+                "description": "Build secure, reliable, and scalable customer conversations using the Official <a href='/whatsapp' class='text-[#128C7E] font-medium underline'>WhatsApp Business API</a>. Automate messaging, interactive workflows, and customer engagement while staying compliant with Meta's platform."
+            },
+            {
+                "icon": "MdWidgets",
+                "theme": "blue",
+                "title": "Build Without Writing Code",
+                "description": "Create a <strong>no-code whatsapp chatbot</strong> using an intuitive drag-and-drop builder. Create conversation flows, automate workflows, and deploy updates without developer support."
+            },
+            {
+                "icon": "MdSupportAgent",
+                "theme": "amber",
+                "title": "AI + Live Agent Collaboration",
+                "description": "Let AI handle repetitive questions while your team focuses on conversations that need a personal touch. Instantly transfer chats to live agents with complete conversation history for a seamless customer experience."
+            },
+            {
+                "icon": "MdHub",
+                "theme": "teal",
+                "title": "Connect Your Business Stack",
+                "description": "Connect your WhatsApp Chatbot with Shopify, WooCommerce, Salesforce, HubSpot, Zoho CRM, payment gateways, ERPs, webhooks, and custom APIs to automate workflows and synchronize customer data across your business ecosystem."
+            },
+            {
+                "icon": "MdSecurity",
+                "theme": "indigo",
+                "title": "Enterprise Security & Reliability",
+                "description": "Protect customer conversations with enterprise-grade security, encrypted communication, role-based access controls, audit logs, and infrastructure built to support businesses of every size."
+            }
+        ]
+    },
+    "WhyChooseMSG91": {
+        "heading": "WhatsApp AI Chatbot Built for Every Industry",
+        "subheading": "Every business has unique customer journeys, workflows, and communication needs. That's why MSG91's AI WhatsApp Chatbot adapts to your industry, helping you automate conversations, improve customer experiences, and drive better business outcomes across sales, support, and engagement.",
+        "content": [
+            {
+                "title": "Ecommerce & D2C",
+                "subtitle": "Convert Browsers into Buyers with AI-Powered Shopping Experiences",
+                "description": "Deliver personalized shopping experiences from product discovery to post-purchase support. Recommend products, recover abandoned carts, automate order updates, and increase repeat purchases through intelligent WhatsApp conversations.",
+                "img": "/assets/whatsapp_chatbot/images/eCommerce & D2C(8).png",
+                "highlights": [
+                    "Recover abandoned shopping carts",
+                    "Recommend products based on customer preferences",
+                    "Share product catalogs and interactive carousels",
+                    "Verify Cash on Delivery (COD) orders",
+                    "Automate order tracking and delivery updates",
+                    "Manage returns, exchanges, and refund requests",
+                    "Collect customer reviews after delivery",
+                    "Launch new collections and promotional campaigns",
+                    "Send payment links for faster checkout",
+                    "Increase repeat purchases with personalized recommendations"
+                ]
+            },
+            {
+                "title": "Healthcare",
+                "subtitle": "Deliver Faster Patient Support & Better Healthcare Experiences",
+                "description": "Automate appointment scheduling, reminders, patient support, and report sharing while reducing administrative workload and improving response times.",
+                "img": "/assets/whatsapp_chatbot/images/Healthcare.png",
+                "highlights": [
+                    "Schedule and manage appointments",
+                    "Send appointment reminders automatically",
+                    "Share prescriptions and laboratory reports securely",
+                    "Answer common patient enquiries instantly",
+                    "Collect patient registration details",
+                    "Automate follow-up consultations",
+                    "Send medicine refill reminders",
+                    "Assist with insurance-related queries",
+                    "Collect patient feedback after consultations",
+                    "Route patients to the appropriate department"
+                ]
+            },
+            {
+                "title": "Education & EdTech",
+                "subtitle": "Simplify Student Admissions and Campus Communication",
+                "description": "Engage students throughout the admission journey with instant enquiry handling, course recommendations, counselling bookings, and academic notifications.",
+                "img": "/assets/whatsapp_chatbot/images/Education-&-EdTech.png",
+                "highlights": [
+                    "Handle admission enquiries automatically",
+                    "Recommend courses based on student interests",
+                    "Share brochures, fee structures, and admission documents",
+                    "Schedule counselling sessions",
+                    "Collect student applications and documents",
+                    "Send fee payment reminders",
+                    "Notify students about examinations and results",
+                    "Share timetables and academic announcements",
+                    "Support students with AI-powered assistance",
+                    "Improve parent communication"
+                ]
+            },
+            {
+                "title": "Real Estate",
+                "subtitle": "Convert Property Enquiries into Qualified Buyers",
+                "description": "Capture every enquiry, recommend relevant properties, schedule site visits, and nurture prospects until they are ready to buy.",
+                "img": "/assets/whatsapp_chatbot/images/Real-Estate.png",
+                "highlights": [
+                    "Recommend properties based on buyer preferences",
+                    "Share project brochures and floor plans",
+                    "Schedule site visits automatically",
+                    "Qualify buyers based on budget and location",
+                    "Answer pricing and availability enquiries",
+                    "Share virtual property tours",
+                    "Provide home loan assistance",
+                    "Automate follow-up communication",
+                    "Assign leads to sales representatives",
+                    "Support customers after booking"
+                ]
+            },
+            {
+                "title": "Banking, Financial Services & Insurance",
+                "subtitle": "Deliver Secure, Personalized Financial Conversations",
+                "description": "Provide instant, secure assistance for loans, insurance, KYC, and account-related services while improving customer engagement with AI-powered self-service.",
+                "img": "/assets/whatsapp_chatbot/images/Banking,-Financial-Services-&-Insurance.png",
+                "highlights": [
+                    "Assist customers with loan enquiries",
+                    "Guide users through KYC documentation",
+                    "Send EMI and payment reminders",
+                    "Support insurance policy enquiries",
+                    "Handle account-related service requests",
+                    "Share investment product information",
+                    "Collect required documents securely",
+                    "Provide branch and relationship manager information",
+                    "Automate claim status updates",
+                    "Route premium customers to dedicated advisors"
+                ]
+            },
+            {
+                "title": "Travel & Hospitality",
+                "subtitle": "Deliver Memorable Guest Experiences Before, During & After Every Trip",
+                "description": "Automate bookings, itinerary sharing, customer assistance, travel updates, and guest engagement before, during, and after every trip.",
+                "img": "/assets/whatsapp_chatbot/images/Travel-&-Hospitality.png",
+                "highlights": [
+                    "Confirm bookings instantly",
+                    "Share travel itineraries",
+                    "Send hotel check-in and check-out reminders",
+                    "Manage cancellations and rescheduling",
+                    "Recommend travel packages and upgrades",
+                    "Provide concierge assistance",
+                    "Share boarding passes and travel documents",
+                    "Notify customers about delays and travel updates",
+                    "Collect guest feedback",
+                    "Promote loyalty programs and future offers"
+                ]
+            }
+        ]
+    },
+    "ChatbotTrustComp": {
+        "heading_black": "Why Thousands of Businesses",
+        "heading_green": "Trust MSG91",
+        "heading": "Why Thousands of Businesses Trust MSG91",
+        "items": [
+            {
+                "icon": "IoLogoWhatsapp",
+                "theme": "whatsapp",
+                "title": "Official WhatsApp Business API",
+                "description": "Secure, scalable, and Meta-compliant messaging."
+            },
+            {
+                "icon": "MdFlashOn",
+                "theme": "amber",
+                "title": "Fast Implementation",
+                "description": "Launch quickly with no-code workflows and ready-made templates."
+            },
+            {
+                "icon": "MdHub",
+                "theme": "teal",
+                "title": "Seamless Integrations",
+                "description": "Connect with Shopify, HubSpot, Salesforce, Zoho CRM, APIs, and more."
+            },
+            {
+                "icon": "MdShield",
+                "theme": "indigo",
+                "title": "Enterprise-Grade Security",
+                "description": "Protect customer conversations with reliable infrastructure."
+            },
+            {
+                "icon": "MdSupportAgent",
+                "theme": "emerald",
+                "title": "Dedicated Customer Success",
+                "description": "Expert onboarding and support at every stage."
+            },
+            {
+                "icon": "MdTrendingUp",
+                "theme": "blue",
+                "title": "Built to Scale",
+                "description": "From hundreds to millions of conversations every month."
+            }
+        ]
+    },
+    "FaqsComp": {
+        "heading": "Frequently Asked Questions",
+        "faqs": [
+            {
+                "question": "What is an AI WhatsApp Chatbot?",
+                "answer": "An AI WhatsApp Chatbot is an intelligent virtual assistant that automates customer conversations on WhatsApp using Artificial Intelligence and the Official WhatsApp Business API. It can answer customer queries, recommend products, qualify leads, automate support, recover abandoned carts, book appointments, and seamlessly transfer conversations to live agents, helping businesses deliver faster and more personalized customer experiences."
+            },
+            {
+                "question": "How does a WhatsApp Chatbot work?",
+                "answer": "A WhatsApp Chatbot interacts with customers through the Official WhatsApp Business API. It understands customer intent, retrieves information from your website or knowledge base, executes automated workflows, and provides instant responses. An AI WhatsApp Chatbot can also answer complex questions, recommend products, and support customers throughout their journey."
+            },
+            {
+                "question": "What is the difference between an WhatsApp AI Chatbot and a Rule-Based Chatbot?",
+                "answer": "A rule-based chatbot for WhatsApp follows predefined conversation flows and decision trees, while an AI WhatsApp Chatbot understands natural language, interprets customer intent, remembers conversation context, and delivers human-like responses. It can also learn from your business knowledge to provide more accurate and personalized interactions."
+            },
+            {
+                "question": "Can I build a WhatsApp Chatbot without coding?",
+                "answer": "Yes. MSG91 provides a no-code WhatsApp Chatbot Builder that lets you create conversation flows, automate customer journeys, and deploy an AI WhatsApp Chatbot without writing a single line of code."
+            },
+            {
+                "question": "Does the chatbot work with the Official WhatsApp Business API?",
+                "answer": "Yes. MSG91's WhatsApp Chatbot is built on the Official <a href='/whatsapp' class='text-[#128C7E] font-medium underline'>WhatsApp Business API</a>, enabling secure, reliable, and scalable customer communication while ensuring compliance with Meta's policies."
+            },
+            {
+                "question": "Can the chatbot answer questions using my website or FAQs?",
+                "answer": "Absolutely. Train your AI WhatsApp Chatbot using your website, FAQs, product documentation, PDFs, and knowledge base. This enables the chatbot to deliver accurate, contextual responses to customer queries."
+            },
+            {
+                "question": "Can I train the chatbot using PDF documents?",
+                "answer": "Yes. Upload PDFs such as user manuals, brochures, policy documents, product guides, or knowledge base documents. Your WhatsApp AI Chatbot can use this information to answer customer questions accurately."
+            },
+            {
+                "question": "Can the chatbot recommend products to customers?",
+                "answer": "Yes. The AI WhatsApp Chatbot can recommend products based on customer preferences, browsing behavior, previous purchases, or predefined business rules. It can also share product catalogs, images, and interactive messages directly within WhatsApp."
+            },
+            {
+                "question": "Can I automate customer support using the chatbot?",
+                "answer": "Yes. A WhatsApp Chatbot for Business can automate FAQs, order tracking, returns, refunds, complaint registration, appointment scheduling, and many other support workflows, helping businesses reduce response times and improve customer satisfaction."
+            },
+            {
+                "question": "Does the chatbot support WhatsApp Bulk Messaging campaigns?",
+                "answer": "Yes. The WhatsApp Chatbot works alongside WhatsApp Bulk Messaging campaigns by automatically responding to customer replies, qualifying leads, answering questions, and continuing conversations after a campaign is delivered."
+            },
+            {
+                "question": "Which industries can use the MSG91 WhatsApp Chatbot?",
+                "answer": "MSG91's WhatsApp Chatbot for Business is designed for Ecommerce, Healthcare, Education, BFSI, Real Estate, Travel & Hospitality, Retail, Manufacturing, Automotive, SaaS, and many other industries. The platform can be customized to fit your unique business workflows."
+            },
+            {
+                "question": "Can the chatbot integrate with Shopify or WooCommerce?",
+                "answer": "Yes. The chatbot integrates with Shopify and WooCommerce to automate product recommendations, abandoned cart recovery, order tracking, payment reminders, and customer support directly on WhatsApp."
+            },
+            {
+                "question": "Is customer data secure?",
+                "answer": "Yes. MSG91 follows enterprise-grade security standards and operates on the Official WhatsApp Business API. Customer conversations are protected through secure infrastructure, encrypted communication, role-based access controls, and reliable messaging architecture."
+            },
+            {
+                "question": "Can the chatbot support multiple languages?",
+                "answer": "Yes. The Chatbot for WhatsApp supports multiple languages, enabling businesses to deliver localized and personalized customer experiences across different regions."
+            },
+            {
+                "question": "Can I send images, videos, PDFs, and catalogs through the chatbot?",
+                "answer": "Yes. The AI WhatsApp Chatbot supports rich media including images, videos, PDFs, documents, product catalogs, interactive buttons, carousel messages, and location sharing to create engaging customer conversations."
+            },
+            {
+                "question": "Why should I choose MSG91's AI WhatsApp Chatbot?",
+                "answer": "MSG91 combines an AI WhatsApp Chatbot, the Official WhatsApp Business API, a no-code WhatsApp Chatbot Builder, live agent handover, enterprise-grade security, deep integrations, and advanced analytics into one platform. Whether your goal is to automate customer support, improve sales, or enhance customer engagement, MSG91 provides everything you need to build intelligent WhatsApp experiences at scale."
+            }
+        ]
     },
     "PreFooterComp": {
         "content": "Start building your ideal customer engagement experience",
