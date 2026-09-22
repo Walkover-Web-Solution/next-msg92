@@ -1,6 +1,6 @@
 import getURL from '@/utils/getURL';
 import { formatPriceAmount, formatUnitPrice, formatZeroPrice } from '@/utils/pricing/formatPrice';
-import { useMemo, useRef, useCallback, useState } from 'react';
+import { useMemo, useRef, useCallback, useState, useEffect } from 'react';
 import {
     MdChevronLeft,
     MdChevronRight,
@@ -97,8 +97,6 @@ export default function PricingCards({
         return flags;
     }, [pricingData]);
 
-    const { useEffect } = require('react');
-
     useEffect(() => {
         const el = monthlyScrollRef.current;
         if (!el) return;
@@ -110,7 +108,7 @@ export default function PricingCards({
             el.removeEventListener('scroll', handler);
             window.removeEventListener('resize', handler);
         };
-    }, [monthlyPlans, activeTab, updateScrollState]);
+    }, [monthlyPlans, activeTab, checkFade]);
 
     useEffect(() => {
         const el = yearlyScrollRef.current;
@@ -123,7 +121,7 @@ export default function PricingCards({
             el.removeEventListener('scroll', handler);
             window.removeEventListener('resize', handler);
         };
-    }, [yearlyPlans, activeTab, updateScrollState]);
+    }, [yearlyPlans, activeTab, checkFade]);
 
     if (!monthlyPlans.length && !yearlyPlans.length) return null;
 
