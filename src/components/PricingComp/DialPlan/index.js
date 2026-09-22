@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState, useRef, useCallback } from 'react';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import { DEBOUNCE_DELAY, SEARCHABLE_FIELDS, MAX_TABLE_HEIGHT, EMPTY_ARRAY } from '../constants';
+import GetCountryDetails from '@/utils/getCurrentCountry';
 
 const SCROLL_DISTANCE = 400;
 
@@ -213,9 +214,14 @@ const DialPlanTable = React.memo(function DialPlanTable({
     );
 });
 
-export default function DialPlan({ pricingData, selectedServiceName, selectedPlanName, pageData, currency }) {
+export default function DialPlan({ pricingData, selectedServiceName, selectedPlanName, pageData, currency, country }) {
     const [search, setSearch] = useState('');
     const debouncedSearch = useDebouncedValue(search, DEBOUNCE_DELAY);
+
+    const currentCountry =
+        country && country !== 'global'
+            ? GetCountryDetails({ shortname: country, type: 'shortname' })?.name?.toLowerCase()
+            : null;
 
     const dialPlans = useMemo(() => {
         if (!Array.isArray(pricingData) || pricingData.length === 0) return EMPTY_ARRAY;
@@ -225,8 +231,16 @@ export default function DialPlan({ pricingData, selectedServiceName, selectedPla
     const searchTerm = search.trim() === '' ? '' : debouncedSearch;
 
     const filteredDataByPlan = useMemo(() => {
-        return dialPlans.map((dialPlan) => filterRowsBySearch(dialPlan.data, dialPlan.columns, searchTerm));
-    }, [dialPlans, searchTerm]);
+        return dialPlans.map((dialPlan) => {
+            const rows = filterRowsBySearch(dialPlan.data, dialPlan.columns, searchTerm);
+            if (!currentCountry) return rows;
+            return [...rows].sort(
+                (a, b) =>
+                    (b?.country_name?.toLowerCase() === currentCountry) -
+                    (a?.country_name?.toLowerCase() === currentCountry)
+            );
+        });
+    }, [dialPlans, searchTerm, currentCountry]);
 
     useEffect(() => {
         setSearch('');
