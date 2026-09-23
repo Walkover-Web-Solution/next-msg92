@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useSignup } from './index';
 import { MdClose, MdError, MdCheckCircle, MdInfo, MdWarning } from 'react-icons/md';
+import style from './Toast.module.scss';
 
 /**
  * Toast notification component with modern styling
@@ -66,9 +67,9 @@ export default function Toast({ type = 'danger', duration = 10000 }) {
     };
 
     return (
-        <div className='fixed top-4 right-4 z-50 animate-slide-in-right'>
+        <div className={`fixed top-4 right-4 z-50 ${style.slide_in_right}`}>
             <div
-                className={`${getStyles()} border-l-4 rounded-lg shadow-lg p-4 min-w-[320px] max-w-md flex items-start gap-3 animate-fade-in`}
+                className={`${getStyles()} border-l-4 rounded-lg shadow-lg p-4 min-w-[320px] max-w-md flex items-start gap-3 ${style.fade_in}`}
                 role='alert'
             >
                 <div className={getIconColor()}>{getIcon()}</div>
@@ -83,32 +84,6 @@ export default function Toast({ type = 'danger', duration = 10000 }) {
                     <MdClose className='text-xl' />
                 </button>
             </div>
-            <style jsx>{`
-                @keyframes slide-in-right {
-                    from {
-                        transform: translateX(100%);
-                        opacity: 0;
-                    }
-                    to {
-                        transform: translateX(0);
-                        opacity: 1;
-                    }
-                }
-                @keyframes fade-in {
-                    from {
-                        opacity: 0;
-                    }
-                    to {
-                        opacity: 1;
-                    }
-                }
-                .animate-slide-in-right {
-                    animation: slide-in-right 0.3s ease-out;
-                }
-                .animate-fade-in {
-                    animation: fade-in 0.2s ease-in;
-                }
-            `}</style>
         </div>
     );
 }
