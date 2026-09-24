@@ -1,0 +1,37 @@
+export default function StepsComp({ data }) {
+    if (!data?.heading) return null;
+
+    return (
+        <section>
+            <div className='container cont_p flex flex-col gap-8'>
+                <header className='text-center max-w-3xl mx-auto flex flex-col gap-4'>
+                    {data?.kicker && <p className='text-xs font-semibold text-accent'>{data?.kicker}</p>}
+                    <h2 className='heading font-semibold'>{data?.heading}</h2>
+                    {data?.description && <p className='subheading max-w-2xl mx-auto'>{data?.description}</p>}
+                </header>
+
+                {data?.steps?.length > 0 && (
+                    <div className='relative max-w-5xl mx-auto'>
+                        <div className='hidden md:block absolute top-[20px] left-[12%] right-[12%] h-px bg-gray-200 pointer-events-none' />
+
+                        <div className='grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 relative z-10'>
+                            {data?.steps?.map((step, index) => (
+                                <div key={index} className='flex flex-col items-center text-center gap-3'>
+                                    {step?.number && (
+                                        <span className='flex h-10 w-10 items-center justify-center rounded-full bg-accent text-sm font-bold text-white'>
+                                            {step?.number}
+                                        </span>
+                                    )}
+                                    <div className='flex flex-col gap-1'>
+                                        <h3 className='text-base font-bold'>{step?.title}</h3>
+                                        <p className='text-sm text-gray-600'>{step?.description}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+            </div>
+        </section>
+    );
+}
