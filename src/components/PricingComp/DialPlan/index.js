@@ -307,13 +307,38 @@ export default function DialPlan({ pricingData, selection, pageData, currency, c
             offset,
             search: searchQuery,
         })
-            .then((json) => {
+            .then(async (json) => {
                 if (cancelled) return;
                 const normalized = normalizeDialPlanInfo(json.data);
-                const rows = [...normalized.data].sort(
+                let rows = [...normalized.data];
+                const countryNameLower = currentCountryName?.toLowerCase();
+                if (!searchQuery && offset === 0 && countryNameLower) {
+                    try {
+                        const countryJson = await fetchDialPlanData({
+                            serviceId: activePlan.serviceId,
+                            dialPlanId: activePlan.dialPlanId,
+                            currency,
+                            offset: 0,
+                            search: currentCountryName,
+                        });
+                        if (cancelled) return;
+                        const countryRows = normalizeDialPlanInfo(countryJson.data).data.filter(
+                            (row) => row.country_name?.toLowerCase() === countryNameLower
+                        );
+                        if (countryRows.length > 0) {
+                            rows = [
+                                ...countryRows,
+                                ...rows.filter((row) => row.country_name?.toLowerCase() !== countryNameLower),
+                            ];
+                        }
+                    } catch {}
+                }
+
+                rows.sort(
                     (a, b) =>
-                        (b.country_name?.toLowerCase() === currentCountryName?.toLowerCase()) -
-                        (a.country_name?.toLowerCase() === currentCountryName?.toLowerCase())
+                        (b.country_name?.toLowerCase() === countryNameLower) -
+                            (a.country_name?.toLowerCase() === countryNameLower) ||
+                        (a.country_name || '').localeCompare(b.country_name || '')
                 );
                 setColumns(normalized.columns);
                 setData(rows);
