@@ -74,14 +74,6 @@ import G2Badges from '@/components/HelloBrComp/G2BadgesComp/G2Badges';
 import Pricing from '@/components/HelloBrComp/PricingComp/Pricing';
 import CostComparisionComp from '@/components/CostComparisionComp/CostComparisionComp';
 import EventRegistrationComp from '@/components/EventRegistrationComp';
-import HelloStartupBanner from '@/components/HelloStartupComp/BannerComp/BannerComp';
-import HelloStartupWhy from '@/components/HelloStartupComp/WhyBuiltComp/WhyBuiltComp';
-import HelloStartupEligibility from '@/components/HelloStartupComp/EligibilityComp/EligibilityComp';
-import HelloStartupPlan from '@/components/HelloStartupComp/IncludedPlanComp/IncludedPlanComp';
-import HelloStartupSteps from '@/components/HelloStartupComp/StepsComp/StepsComp';
-import HelloStartupGrow from '@/components/HelloStartupComp/CalloutComp/CalloutComp';
-import HelloStartupFooterCta from '@/components/HelloStartupComp/FooterCtaComp/FooterCtaComp';
-import HelloStartupTerms from '@/components/HelloStartupComp/TermsComp/HelloStartupTerms';
 import CategoriesComp from '@/components/ReportsComp/CategoriesComp/CategoriesComp';
 import SetupStepsComp from '@/components/ReportsComp/SetupStepsComp/SetupStepsComp';
 import ImageWithBgComp from '@/components/ImageWithBgComp/ImageWithBgComp';
@@ -89,6 +81,7 @@ import FileHostingFeatureHighlightComp from '@/components/FileHostingComp/Featur
 import FileHostingStepsComp from '@/components/FileHostingComp/StepsComp/StepsComp';
 import FileHostingUseCasesComp from '@/components/FileHostingComp/UseCasesComp/UseCasesComp';
 import FileHostingFormatsComp from '@/components/FileHostingComp/FormatsComp/FormatsComp';
+import BenefitSection from '@/components/OneApiBenefitComp/BenefitSection';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -189,14 +182,6 @@ const Components = {
     Pricing,
     CostComparisionComp,
     EventRegistrationComp,
-    HelloStartupBanner,
-    HelloStartupWhy,
-    HelloStartupEligibility,
-    HelloStartupPlan,
-    HelloStartupSteps,
-    HelloStartupGrow,
-    HelloStartupFooterCta,
-    HelloStartupTerms,
     CategoriesComp,
     SetupStepsComp,
     ImageWithBgComp,
@@ -206,6 +191,7 @@ const Components = {
     FileHostingUseCasesComp,
     FileHostingComparisonComp: FileHostingFeatureHighlightComp,
     FileHostingFormatsComp,
+    BenefitSection,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
@@ -232,36 +218,40 @@ export default function Page({ data, commonData, pageInfo }) {
 
             <MenuBarComp componentData={commonData?.menu} pageInfo={pageInfo} />
             {data &&
-                Object.keys(data).map((key) => {
-                    const pageData = data[key];
-                    var Component = Components[key];
-                    if (
-                        key === 'Banner' &&
-                        pageInfo?.page === 'hello' &&
-                        (pageInfo?.country === 'br' || pageInfo?.country === 'br-pt')
-                    ) {
-                        Component = HelloBanner;
-                    }
-                    if (
-                        key === 'Features' &&
-                        pageInfo?.page === 'hello' &&
-                        (pageInfo?.country === 'br' || pageInfo?.country === 'br-pt')
-                    ) {
-                        Component = HelloBrFeatures;
-                    }
-                    if (!Component) {
-                        console.error(`Component "${key}" is undefined. Check your imports and component exports.`);
-                        return;
-                    }
-                    return (
-                        <Component
-                            key={`section-${key}`}
-                            data={pageData}
-                            pageInfo={pageInfo}
-                            browserPathCase={browserPathCase}
-                        />
-                    );
-                })}
+                Object.keys(data)
+                    .filter((key) => key !== 'BenefitSection')
+                    .flatMap((key) => (key === 'FeatureComp' ? ['FeatureComp', 'BenefitSection'] : [key]))
+                    .filter((key) => data[key])
+                    .map((key) => {
+                        const pageData = data[key];
+                        var Component = Components[key];
+                        if (
+                            key === 'Banner' &&
+                            pageInfo?.page === 'hello' &&
+                            (pageInfo?.country === 'br' || pageInfo?.country === 'br-pt')
+                        ) {
+                            Component = HelloBanner;
+                        }
+                        if (
+                            key === 'Features' &&
+                            pageInfo?.page === 'hello' &&
+                            (pageInfo?.country === 'br' || pageInfo?.country === 'br-pt')
+                        ) {
+                            Component = HelloBrFeatures;
+                        }
+                        if (!Component) {
+                            console.error(`Component "${key}" is undefined. Check your imports and component exports.`);
+                            return;
+                        }
+                        return (
+                            <Component
+                                key={`section-${key}`}
+                                data={pageData}
+                                pageInfo={pageInfo}
+                                browserPathCase={browserPathCase}
+                            />
+                        );
+                    })}
 
             <FooterComp componentData={commonData?.footer} pageInfo={pageInfo} />
         </>
