@@ -1,10 +1,13 @@
 import Image from 'next/image';
 import { MdCheckCircle, MdGridView, MdHeadset, MdBolt } from 'react-icons/md';
 
-const FEATURE_ICONS = [MdBolt, MdGridView, MdHeadset];
-const FEATURE_ICON_COLORS = ['text-amber-500', 'text-blue-500', 'text-sky-500'];
+const FEATURE_ITEMS = [
+    { icon: MdBolt, color: 'text-amber-500' },
+    { icon: MdGridView, color: 'text-blue-500' },
+    { icon: MdHeadset, color: 'text-sky-500' },
+];
 
-export default function ContactRcsSection({ data }) {
+export default function RcsSection({ data }) {
     if (!data) return null;
 
     return (
@@ -21,15 +24,15 @@ export default function ContactRcsSection({ data }) {
                     {data?.features?.length > 0 && (
                         <ul className='flex flex-col gap-3'>
                             {data.features.map((feature, index) => {
-                                const Icon = FEATURE_ICONS[index];
-                                const iconColor = FEATURE_ICON_COLORS[index];
+                                const item = FEATURE_ITEMS[index];
+                                const Icon = item?.icon;
 
                                 return (
                                     <li
                                         key={index}
                                         className='flex items-center gap-3 text-sm md:text-base text-primary'
                                     >
-                                        {Icon && <Icon className={`text-xl ${iconColor}`} />}
+                                        {Icon && <Icon className={`text-xl ${item?.color}`} />}
                                         <span>{feature}</span>
                                     </li>
                                 );
@@ -51,27 +54,7 @@ export default function ContactRcsSection({ data }) {
 
                     <div className='flex flex-col items-center gap-4 w-full max-w-xs bg-secondary/40 border border-secondary rounded-2xl p-6'>
                         {data?.scanLabel && (
-                            <div className='flex items-center justify-center gap-2'>
-                                <svg width='18' height='14' viewBox='0 0 18 14' fill='none' className='text-accent'>
-                                    <path d='M4 3L11 7' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' />
-                                    <path
-                                        d='M2 11L9 11'
-                                        stroke='currentColor'
-                                        strokeWidth='2.5'
-                                        strokeLinecap='round'
-                                    />
-                                </svg>
-                                <h3 className='text-xl font-bold text-primary'>{data.scanLabel}</h3>
-                                <svg width='18' height='14' viewBox='0 0 18 14' fill='none' className='text-accent'>
-                                    <path d='M14 3L7 7' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' />
-                                    <path
-                                        d='M16 11L9 11'
-                                        stroke='currentColor'
-                                        strokeWidth='2.5'
-                                        strokeLinecap='round'
-                                    />
-                                </svg>
-                            </div>
+                            <h3 className='text-xl font-bold text-primary text-center'>{data.scanLabel}</h3>
                         )}
                         {data?.qrImage && (
                             <div className='rounded-xl bg-white p-4 shadow-sm border border-secondary'>
