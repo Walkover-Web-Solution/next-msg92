@@ -4,6 +4,7 @@ import { MdOutlineLocalMall, MdOutlineSupportAgent } from 'react-icons/md';
 import BookingModal from './BookingModal';
 import ContactCard from './ContactCard';
 import ContactHeader from './ContactHeader';
+import ContactRcsSection from './ContactRcsSection';
 import MeetingCard from './MeetingCard';
 
 const CHAT_WIDGET_SCRIPT = 'https://blacksea.msg91.com/chat-widget.js';
@@ -36,6 +37,8 @@ export default function ContactUsComp({ data }) {
                     {meetingCard && <MeetingCard card={meetingCard} onBookSlot={() => setIsBookingOpen(true)} />}
                     {supportCard && <ContactCard card={supportCard} icon={MdOutlineSupportAgent} />}
                 </div>
+
+                {data?.rcs && <ContactRcsSection data={data.rcs} />}
             </div>
 
             <BookingModal
