@@ -58,6 +58,42 @@
             }
         ]
     },
+    "BenefitSection": {
+        "heading": "Infrastructure for messages that can't afford to fail",
+        "subheading": "OTPs, payment confirmations, fraud alerts and incident pages are not \"nice to send.\" ONE API gives you one dependable layer that keeps them moving, whatever happens to a single channel.",
+        "cards": [
+            {
+                "icon": "MdSecurity",
+                "heading": "Critical messages always find a way through",
+                "description": "If SMS fails, WhatsApp, RCS, Email or Voice takes over automatically. One channel having a bad day no longer means a customer missing an OTP or a payment alert."
+            },
+            {
+                "icon": "MdTune",
+                "heading": "Change anything without deploying anything",
+                "description": "Switch channels, edit templates and adjust routing from the dashboard. Your backend stays untouched, so fixes take minutes instead of sprints."
+            },
+            {
+                "icon": "MdPower",
+                "heading": "One integration, every channel",
+                "description": "Integrate one API instead of five. Add or swap channels later without new integrations, new code paths or new maintenance."
+            },
+            {
+                "icon": "MdLogin",
+                "heading": "Fewer failed logins and abandoned transactions",
+                "description": "Send OTPs on SMS with WhatsApp, Email or Voice as backup, so users get in the first time."
+            },
+            {
+                "icon": "MdPeople",
+                "heading": "Business teams move without waiting on engineering",
+                "description": "Ops and product teams can update content, respond to compliance changes and run template A/B tests without a ticket in the dev queue."
+            },
+            {
+                "icon": "MdNotificationsActive",
+                "heading": "Alerts that reach a human, not just an inbox",
+                "description": "Fire API-failure, queue-delay and threshold alerts across SMS, WhatsApp and Voice, in parallel or as an escalation sequence, so incidents get caught early."
+            }
+        ]
+    },
     "IndustryFeatureComp": {
         "heading": "Industry Applications",
         "subheading": "See how teams across industries use ONE API for reliable multi-channel communication.",
