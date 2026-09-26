@@ -52,6 +52,26 @@
                 "buttonText": "Book a Slot",
                 "widgetToken": "8e51b"
             }
-        ]
+        ],
+        "rcs": {
+            "badge": "REACH US",
+            "heading": "Contact us via RCS",
+            "subheading": "Scan the code to start a conversation with our team over RCS, right from your messaging app.",
+            "features": [
+                "Instant conversations",
+                "Rich and interactive messaging",
+                "Direct support, no queue"
+            ],
+            "scanLabel": "Scan to chat",
+            "scanCaption": "Scan to start a conversation with MSG91.",
+            "rcsLink": "https://rbm.goog/message?bot-id=msg91_locv1fl3_agent%40rbm.goog&fallback=aHR0cHM6Ly9tc2c5MS5jb20vaW4&body=Hi",
+            "phoneImage": "/assets/contact-us/rcs_phone.webp",
+            "qrImage": "/assets/contact-us/rcs_qr_code.png",
+            "scanTips": [
+                "For Android users only",
+                "Enable RCS chats in your Messages settings",
+                "No app install needed"
+            ]
+        }
     }
 }
