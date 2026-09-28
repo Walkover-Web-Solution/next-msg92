@@ -142,6 +142,44 @@
             }
         ]
     },
+    "FaqsComp": {
+    "heading": "Frequently Asked Questions",
+    "subheading": "Everything you need to know about running critical messaging on ONE API.",
+    "faqs": [
+        {
+            "question": "What is ONE API by MSG91?",
+            "answer": "ONE API is a single API that lets you send messages across multiple channels through configurable flows. You define your channels, templates and fallback logic in MSG91, and your application makes one call. Channel changes then happen from the dashboard rather than in your code."
+        },
+        {
+            "question": "How is it different from integrating each channel API separately?",
+            "answer": "With separate integrations, every new channel or routing change means new code, testing and deployment. With ONE API, you integrate once and manage channels, priority and fallback in a Flow, which saves engineering time and removes a common source of failure."
+        },
+        {
+            "question": "Which channels does ONE API support?",
+            "answer": "SMS, WhatsApp, RCS, Email, Voice and Push Notifications."
+        },
+        {
+            "question": "How does multi-channel fallback work?",
+            "answer": "You set a priority order in your Flow, for example, SMS first, then WhatsApp, then Voice. If the primary channel fails to deliver, ONE API automatically triggers the next one, so critical messages don't depend on a single route."
+        },
+        {
+            "question": "Can I change channels or templates without redeploying my code?",
+            "answer": "Yes. Once your application is integrated with a Flow, you can switch channels, update templates and modify routing from the MSG91 dashboard without backend changes or a release. This includes A/B testing message content."
+        },
+        {
+            "question": "Can I use ONE API for OTP delivery?",
+            "answer": "Yes. A common setup is SMS as the primary channel with WhatsApp, Email or Voice as fallbacks. This raises the odds that users receive their OTP and complete login or payment on the first attempt."
+        },
+        {
+            "question": "Can I use it for internal alerts and system monitoring?",
+            "answer": "Yes. Teams use ONE API to send API-failure, queue and threshold alerts across SMS, WhatsApp and Voice, in parallel or as an escalation chain, so incidents reach the right people quickly."
+        },
+        {
+            "question": "How do I get started, and how long does setup take?",
+            "answer": "Create a Flow in your MSG91 dashboard: select the channel, name the Flow, choose a template and save. Voice Flows also need a caller ID. MSG91 then generates a sample JSON request you can drop into your application. Templates must be approved under each channel's rules first, such as DLT registration for SMS in India and Meta approval for WhatsApp."
+        }
+    ]
+},
     "PreFooterComp": {
         "content": "Start building your ideal customer engagement experience",
         "buttons": {
