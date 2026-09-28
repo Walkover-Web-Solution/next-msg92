@@ -1,11 +1,6 @@
 import Image from 'next/image';
-import { MdCheckCircle, MdGridView, MdHeadset, MdBolt } from 'react-icons/md';
-
-const FEATURE_ITEMS = [
-    { icon: MdBolt, color: 'text-amber-500' },
-    { icon: MdGridView, color: 'text-blue-500' },
-    { icon: MdHeadset, color: 'text-sky-500' },
-];
+import { MdCheckCircle } from 'react-icons/md';
+import GetMdIcons from '@/utils/getMdIcons';
 
 export default function RcsSection({ data }) {
     if (!data) return null;
@@ -24,16 +19,15 @@ export default function RcsSection({ data }) {
                     {data?.features?.length > 0 && (
                         <ul className='flex flex-col gap-3'>
                             {data.features.map((feature, index) => {
-                                const item = FEATURE_ITEMS[index];
-                                const Icon = item?.icon;
+                                const Icon = GetMdIcons(feature?.icon);
 
                                 return (
                                     <li
                                         key={index}
                                         className='flex items-center gap-3 text-sm md:text-base text-primary'
                                     >
-                                        {Icon && <Icon className={`text-xl ${item?.color}`} />}
-                                        <span>{feature}</span>
+                                        {Icon && <Icon className={`text-xl ${feature?.color}`} />}
+                                        <span>{feature?.text}</span>
                                     </li>
                                 );
                             })}

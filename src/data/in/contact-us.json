@@ -63,9 +63,21 @@
             "heading": "Contact us via RCS",
             "subheading": "Scan the code to start a conversation with our team over RCS, right from your messaging app.",
             "features": [
-                "Instant conversations",
-                "Rich and interactive messaging",
-                "Direct support, no queue"
+                {
+                    "icon": "MdBolt",
+                    "color": "text-hello",
+                    "text": "Instant conversations"
+                },
+                {
+                    "icon": "MdGridView",
+                    "color": "text-blue-600",
+                    "text": "Rich and interactive messaging"
+                },
+                {
+                    "icon": "MdHeadset",
+                    "color": "text-purple-600",
+                    "text": "Direct support, no queue"
+                }
             ],
             "scanLabel": "Scan to chat",
             "scanCaption": "Scan to start a conversation with MSG91.",
