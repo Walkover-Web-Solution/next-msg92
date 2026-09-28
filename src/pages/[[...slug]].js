@@ -196,6 +196,7 @@ const Components = {
     HelloStartupSteps,
     HelloStartupGrow,
     HelloStartupFooterCta,
+    WhatsAppChatWindowCTA: HelloStartupFooterCta,
     HelloStartupTerms,
     CategoriesComp,
     SetupStepsComp,
