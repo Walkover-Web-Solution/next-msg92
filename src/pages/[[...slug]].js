@@ -92,6 +92,7 @@ import FileHostingFeatureHighlightComp from '@/components/FileHostingComp/Featur
 import FileHostingStepsComp from '@/components/FileHostingComp/StepsComp/StepsComp';
 import FileHostingUseCasesComp from '@/components/FileHostingComp/UseCasesComp/UseCasesComp';
 import FileHostingFormatsComp from '@/components/FileHostingComp/FormatsComp/FormatsComp';
+import BenefitSection from '@/components/OneApiBenefitComp/BenefitSection';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -119,6 +120,7 @@ const Components = {
     TrustedByComp,
     HeadComp,
     FeatureComp,
+    BenefitSection,
     IndustryFeatureComp: FeatureComp,
     PricingComp,
     AboutUsComp,
