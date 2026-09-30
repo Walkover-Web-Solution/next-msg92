@@ -16,7 +16,7 @@ export default async function handler(req, res) {
                 search,
             },
         });
-
+        console.log(response.data);
         return res.status(response.status).json(response.data);
     } catch (err) {
         return res.status(err.response.status).json(err.response.data);
