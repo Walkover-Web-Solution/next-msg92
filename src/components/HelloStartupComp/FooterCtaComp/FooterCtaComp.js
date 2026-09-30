@@ -1,7 +1,7 @@
 export default function FooterCtaComp({ data, pageInfo }) {
     if (!data) return null;
 
-    const isWhatsApp = pageInfo?.page === 'whatsapp';
+    const isWhatsApp = pageInfo?.page === 'whatsapp' || pageInfo?.page === 'whatsapp-chat-window';
     const bgClass =
         data?.bg_class ||
         (isWhatsApp ? 'whatsapp_gradient_bg' : 'bg-gradient-to-b from-sky-100 to-white border-t border-sky-100');

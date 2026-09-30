@@ -394,3 +394,24 @@ $button-transition-timing: 100ms;
     border-color: #c7d2fe;
 }
 
+.wa-wallpaper {
+    background-color: #EFEAE2;
+    background-image: radial-gradient(#d1c7b7 0.75px, transparent 0.75px);
+    background-size: 16px 16px;
+}
+
+@keyframes chatFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: chatFadeIn 0.25s ease-out forwards;
+}
+

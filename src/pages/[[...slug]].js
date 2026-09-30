@@ -93,6 +93,13 @@ import FileHostingStepsComp from '@/components/FileHostingComp/StepsComp/StepsCo
 import FileHostingUseCasesComp from '@/components/FileHostingComp/UseCasesComp/UseCasesComp';
 import FileHostingFormatsComp from '@/components/FileHostingComp/FormatsComp/FormatsComp';
 import BenefitSection from '@/components/OneApiBenefitComp/BenefitSection';
+import WhatsAppHeroComp from '@/components/WhatsAppChatWindow/HeroComp/HeroComp';
+import WhatsAppProblemSolutionComp from '@/components/WhatsAppChatWindow/ProblemSolutionComp/ProblemSolutionComp';
+import WhatsAppStepsComp from '@/components/WhatsAppChatWindow/StepsComp/StepsComp';
+import WhatsAppUseCasesComp from '@/components/WhatsAppChatWindow/UseCasesComp/UseCasesComp';
+import WhatsAppComparisonComp from '@/components/WhatsAppChatWindow/ComparisonComp/ComparisonComp';
+import WhatsAppWhyComp from '@/components/WhatsAppChatWindow/WhyComp/WhyComp';
+import WhatsAppCTAComp from '@/components/WhatsAppChatWindow/CTAComp/CTAComp';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -213,6 +220,13 @@ const Components = {
     FileHostingUseCasesComp,
     FileHostingComparisonComp: FileHostingFeatureHighlightComp,
     FileHostingFormatsComp,
+    WhatsAppHeroComp,
+    WhatsAppProblemSolutionComp,
+    WhatsAppStepsComp,
+    WhatsAppUseCasesComp,
+    WhatsAppComparisonComp,
+    WhatsAppWhyComp,
+    WhatsAppCTAComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
