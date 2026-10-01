@@ -1,12 +1,4 @@
-import { MdLink, MdSmartToy, MdSupportAgent, MdRadio, MdBalance } from 'react-icons/md';
-
-const whyIcons = {
-    link: <MdLink className='h-6 w-6' />,
-    bot: <MdSmartToy className='h-6 w-6' />,
-    agent: <MdSupportAgent className='h-6 w-6' />,
-    radio: <MdRadio className='h-6 w-6' />,
-    scale: <MdBalance className='h-6 w-6' />,
-};
+import GetMdIcons from '@/utils/getMdIcons';
 
 export default function WhatsAppWhyComp({ data }) {
     if (!data) return null;
@@ -15,15 +7,18 @@ export default function WhatsAppWhyComp({ data }) {
     const row1 = reasons.slice(0, 3);
     const row2 = reasons.slice(3, 5);
 
-    const renderCard = (reason, index) => (
-        <div key={index} className='bg-white rounded-lg border p-6 flex flex-col justify-between gap-4'>
-            <div className='w-12 h-12 rounded-lg bg-[#529837]/10 flex items-center justify-center text-[#529837]'>
-                {whyIcons[reason?.icon]}
+    const renderCard = (reason, index) => {
+        const Icon = GetMdIcons(reason?.icon);
+        return (
+            <div key={index} className='bg-white rounded-lg border p-6 flex flex-col justify-between gap-4'>
+                <div className='w-12 h-12 rounded-lg bg-[#529837]/10 flex items-center justify-center text-[#529837]'>
+                    {Icon && <Icon className='h-6 w-6' />}
+                </div>
+                <h3 className='font-semibold text-lg text-[#18181B]'>{reason?.title}</h3>
+                <p className='text-[#4B5563] text-sm leading-relaxed'>{reason?.desc}</p>
             </div>
-            <h3 className='font-semibold text-lg text-[#18181B]'>{reason?.title}</h3>
-            <p className='text-[#4B5563] text-sm leading-relaxed'>{reason?.desc}</p>
-        </div>
-    );
+        );
+    };
 
     return (
         <section className='bg-white'>

@@ -6,16 +6,7 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
     if (!data) return null;
 
     const conversationStages = data?.conversation_stages || [];
-    const widgetConfig = data?.widget_config || {
-        widgetToken: '251a3',
-        parentId: 'wa-chat-widget-mount',
-        hide_launcher: true,
-        show_widget_form: true,
-        show_close_button: true,
-        show_send_button: true,
-        fullscreen: true,
-        theme: 'systlight',
-    };
+    const widgetConfig = data?.widget_config;
 
     const [currentStage, setCurrentStage] = useState(1);
     const [isTyping, setIsTyping] = useState(false);
@@ -218,10 +209,10 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
         }
     }, [visibleMessages, isTyping]);
 
-    const activeMeta = conversationStages?.[0] || {};
+    const activeMeta = conversationStages?.[0];
 
     return (
-        <section id='how-it-works' ref={sectionRef} className='bg-[#FAFAF9] border-t border-gray-100 overflow-hidden'>
+        <section id='how-it-works' ref={sectionRef} className='bg-slate-50 border-t border-gray-100 overflow-hidden'>
             {widgetConfig?.script_src && (
                 <Script
                     strategy='afterInteractive'
@@ -233,11 +224,11 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
 
             <div className='container cont_p flex flex-col gap-10'>
                 <div className='text-center flex flex-col gap-3'>
-                    <h2 className='heading text-[#18181B]'>
+                    <h2 className='heading'>
                         {data?.heading_prefix ? (
                             <>
                                 {data?.heading_prefix}
-                                <span className='text-[#529837]'>{data?.heading_accent}</span>
+                                <span className='text-emerald-600 font-bold'>{data?.heading_accent}</span>
                                 {data?.heading_suffix}
                             </>
                         ) : (
@@ -245,12 +236,10 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
                         )}
                     </h2>
 
-                    <p className='subheading text-[#4B5563] max-w-2xl mx-auto font-normal leading-relaxed'>
-                        {data?.subheading}
-                    </p>
+                    <p className='subheading max-w-2xl mx-auto'>{data?.subheading}</p>
                 </div>
 
-                <div className='grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center max-w-6xl mx-auto'>
+                <div className='grid grid-cols-1 lg:grid-cols-12 gap-10 items-center max-w-6xl mx-auto'>
                     <div className='lg:col-span-6 flex flex-col gap-6'>
                         <div className='flex flex-col gap-4'>
                             {data?.steps?.map((step, index) => {
@@ -262,56 +251,55 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
                                     <div
                                         key={step?.n || index}
                                         onClick={() => handleSelectStage(stepNum)}
-                                        className={`text-left rounded-xl p-5 border flex flex-col gap-2 cursor-pointer group relative ${
+                                        className={`text-left rounded-xl p-5 border flex gap-3 cursor-pointer ${
                                             isCurrent
-                                                ? 'bg-white border-emerald-600 shadow-md ring-1 ring-emerald-600/30'
+                                                ? 'bg-white border-emerald-600 shadow-md'
                                                 : isCompleted
-                                                  ? 'bg-slate-50/90 border-slate-200 hover:bg-white hover:border-emerald-200'
-                                                  : 'bg-white border-slate-200/80 hover:border-slate-300'
+                                                  ? 'bg-slate-50 border-slate-200'
+                                                  : 'bg-white border-slate-200'
                                         }`}
                                     >
-                                        <div className='flex items-center justify-between gap-3'>
-                                            <div className='flex items-center gap-3'>
-                                                <div
-                                                    className={`w-9 h-9 rounded-lg font-bold text-xs flex items-center justify-center ${
-                                                        isCurrent
-                                                            ? 'bg-emerald-600 text-white'
-                                                            : isCompleted
-                                                              ? 'bg-emerald-100 text-emerald-700'
-                                                              : 'bg-slate-100 text-slate-500'
-                                                    }`}
-                                                >
-                                                    {step?.n || `0${stepNum}`}
-                                                </div>
+                                        <div
+                                            className={`w-9 h-9 rounded-lg font-bold text-xs flex items-center justify-center ${
+                                                isCurrent
+                                                    ? 'bg-emerald-600 text-white'
+                                                    : isCompleted
+                                                      ? 'bg-emerald-100 text-emerald-700'
+                                                      : 'bg-slate-100 text-slate-500'
+                                            }`}
+                                        >
+                                            {step?.n}
+                                        </div>
+
+                                        <div className='flex-1 flex flex-col gap-1'>
+                                            <div className='flex items-center justify-between gap-3'>
                                                 <h3
-                                                    className={`font-semibold text-base sm:text-lg ${
+                                                    className={`font-semibold text-lg ${
                                                         isCurrent ? 'text-slate-900 font-bold' : 'text-slate-800'
                                                     }`}
                                                 >
                                                     {step?.title}
                                                 </h3>
+
+                                                {isCompleted ? (
+                                                    <span className='text-xs font-semibold text-emerald-700 flex items-center gap-1 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full'>
+                                                        <MdCheckCircle className='w-3.5 h-3.5' />
+                                                        <span>{data?.done_text}</span>
+                                                    </span>
+                                                ) : isCurrent ? (
+                                                    <span className='text-xs font-semibold text-emerald-800 flex items-center gap-1.5 bg-emerald-50 border border-emerald-300 px-2.5 py-0.5 rounded-full'>
+                                                        <span className='w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse' />
+                                                        <span>{data?.live_text}</span>
+                                                    </span>
+                                                ) : (
+                                                    <span className='text-xs text-slate-400 font-medium'>
+                                                        {data?.click_to_view}
+                                                    </span>
+                                                )}
                                             </div>
 
-                                            {isCompleted ? (
-                                                <span className='text-[11px] font-semibold text-emerald-700 flex items-center gap-1 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full'>
-                                                    <MdCheckCircle className='w-3.5 h-3.5' />
-                                                    <span>{data?.done_text}</span>
-                                                </span>
-                                            ) : isCurrent ? (
-                                                <span className='text-[11px] font-semibold text-emerald-800 flex items-center gap-1.5 bg-emerald-50 border border-emerald-300 px-2.5 py-0.5 rounded-full'>
-                                                    <span className='w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse' />
-                                                    <span>{data?.live_text}</span>
-                                                </span>
-                                            ) : (
-                                                <span className='text-xs text-slate-400 font-medium'>
-                                                    {data?.click_to_view}
-                                                </span>
-                                            )}
+                                            <p className='text-sm text-slate-600'>{step?.desc}</p>
                                         </div>
-
-                                        <p className='text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pl-12'>
-                                            {step?.desc}
-                                        </p>
                                     </div>
                                 );
                             })}
@@ -321,26 +309,24 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
                             <button
                                 type='button'
                                 onClick={runAutomatedConversation}
-                                className='inline-flex items-center gap-2 bg-[#008069] hover:bg-[#006e5a] text-white font-medium text-sm px-5 py-2.5 rounded cursor-pointer'
+                                className='btn btn-primary btn-md inline-flex items-center gap-2'
                             >
                                 <MdRefresh className={`w-5 h-5 ${isPlaying ? 'animate-spin' : ''}`} />
                                 <span>{data?.replay_text}</span>
                             </button>
-                            {data?.replay_subtext && (
-                                <p className='text-xs text-slate-500 font-normal'>{data?.replay_subtext}</p>
-                            )}
+                            {data?.replay_subtext && <p className='text-xs text-slate-500'>{data?.replay_subtext}</p>}
                         </div>
                     </div>
 
-                    <div className='lg:col-span-6 flex flex-col items-center justify-center gap-4 w-full relative py-2 sm:py-6'>
+                    <div className='lg:col-span-6 flex flex-col items-center justify-center gap-4 w-full relative'>
                         <div className='flex lg:hidden justify-center select-none'>
-                            <div className='bg-[#0F172A] text-white font-bold text-xs px-3.5 py-1.5 rounded-full shadow-md border border-slate-700 flex items-center gap-2 animate-bounce'>
+                            <div className='bg-slate-900 text-white font-bold text-xs px-3.5 py-1.5 rounded-full shadow-md border border-slate-700 flex items-center gap-2 animate-bounce'>
                                 <span className='w-2 h-2 rounded-full bg-emerald-400 animate-ping' />
-                                <span>Click "Let's Chat" below to test live! 👇</span>
+                                <span>{data?.hint_mobile}</span>
                             </div>
                         </div>
 
-                        <div className='absolute -right-2 xl:-right-12 top-1/2 -translate-y-1/2 hidden lg:flex items-center gap-2 pointer-events-none z-40 select-none'>
+                        <div className='absolute -right-2 xl:-right-12 top-1/2 -translate-y-1/2 hidden lg:flex items-center gap-2 pointer-events-none select-none'>
                             <svg
                                 width='48'
                                 height='26'
@@ -362,17 +348,17 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
                                     strokeLinejoin='round'
                                 />
                             </svg>
-                            <div className='bg-[#0F172A] text-white font-bold text-xs xl:text-[13px] px-3.5 py-1.5 rounded-full shadow-xl border border-slate-700 flex items-center gap-2 animate-bounce whitespace-nowrap'>
+                            <div className='bg-slate-900 text-white font-bold text-xs px-3.5 py-1.5 rounded-full shadow-xl border border-slate-700 flex items-center gap-2 animate-bounce'>
                                 <span className='w-2 h-2 rounded-full bg-emerald-400 animate-ping' />
-                                <span>Click to test live!</span>
+                                <span>{data?.hint_desktop}</span>
                             </div>
                         </div>
 
-                        <div className='relative w-full max-w-[295px] sm:max-w-[325px] bg-[#14151A] p-1.5 rounded-[44px] sm:rounded-[48px] shadow-[0_20px_50px_-15px_rgba(0,0,0,0.35),0_0_0_1px_#272930]'>
+                        <div className='relative w-full max-w-[320px] bg-slate-900 p-1.5 rounded-[44px] shadow-2xl'>
                             <div
                                 id='wa-chat-widget-parent'
                                 data-widget-open={isChatWidgetOpen ? 'true' : 'false'}
-                                className='relative w-full rounded-[38px] sm:rounded-[42px] overflow-hidden bg-[#EFEAE2] flex flex-col h-[620px] sm:h-[690px]'
+                                className='relative w-full rounded-[38px] overflow-hidden flex flex-col h-[640px]'
                             >
                                 <div id={widgetMountId} />
 
@@ -382,8 +368,8 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
                                 </div>
 
                                 <div className='flex flex-col h-full w-full'>
-                                    <div className='bg-[#008069] py-2 px-5 flex items-center justify-between text-white text-[11.5px] font-semibold relative z-30 select-none'>
-                                        <span>9:41</span>
+                                    <div className='bg-[#008069] py-2 px-5 flex items-center justify-between text-white text-xs font-semibold select-none'>
+                                        <span>{data?.status_time}</span>
                                         <div className='flex items-center gap-1.5 text-xs'>
                                             <svg className='w-3.5 h-3.5 fill-current' viewBox='0 0 24 24'>
                                                 <rect x='1' y='14' width='3' height='7' rx='0.5' />
@@ -403,22 +389,22 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
                                         </div>
                                     </div>
 
-                                    <div className='bg-[#008069] px-3 py-2 flex items-center justify-between text-white relative z-20'>
+                                    <div className='bg-[#008069] px-3 py-2 flex items-center justify-between text-white'>
                                         <div className='flex items-center gap-2'>
                                             <MdArrowBack className='w-4.5 h-4.5 text-white/90 cursor-pointer hover:text-white' />
-                                            <div className='w-8 h-8 rounded-full bg-gradient-to-tr from-pink-400 via-purple-400 to-amber-300 p-0.5 flex items-center justify-center shadow-xs'>
-                                                <div className='w-full h-full rounded-full bg-white/20 flex items-center justify-center text-xs'>
-                                                    🛍️
-                                                </div>
+                                            <div className='w-8 h-8 rounded-full bg-emerald-700 flex items-center justify-center'>
+                                                <div className='text-xs'>{activeMeta?.avatar}</div>
                                             </div>
                                             <div className='leading-tight'>
-                                                <p className='font-bold text-[12.5px] text-white flex items-center gap-1'>
-                                                    <span>UrbanStyle Store</span>
-                                                    <span className='text-[10px] text-[#53BDEB] font-bold'>✓</span>
+                                                <p className='font-bold text-xs text-white flex items-center gap-1'>
+                                                    <span>{activeMeta?.name}</span>
+                                                    <span className='text-xs text-sky-400 font-bold'>
+                                                        {data?.verified_badge}
+                                                    </span>
                                                 </p>
-                                                <p className='text-emerald-100 text-[10px] font-normal flex items-center gap-1'>
-                                                    <span className='w-1.5 h-1.5 rounded-full bg-[#25D366]' />
-                                                    <span>WhatsApp Business · online</span>
+                                                <p className='text-emerald-100 text-xs flex items-center gap-1'>
+                                                    <span className='w-1.5 h-1.5 rounded-full bg-emerald-400' />
+                                                    <span>{activeMeta?.status}</span>
                                                 </p>
                                             </div>
                                         </div>
@@ -432,23 +418,18 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
 
                                     <div
                                         ref={scrollRef}
-                                        className='flex-1 overflow-y-auto p-3 flex flex-col gap-3 relative'
-                                        style={{
-                                            backgroundColor: '#EFEAE2',
-                                            backgroundImage: 'radial-gradient(#d1d7db 1.2px, transparent 1.2px)',
-                                            backgroundSize: '20px 20px',
-                                        }}
+                                        className='flex-1 overflow-y-auto p-3 flex flex-col gap-3 relative wa-chat-bg'
                                     >
                                         <div className='flex justify-center'>
-                                            <span className='bg-white text-[#54656F] text-[9.5px] font-semibold px-2.5 py-0.5 rounded-md shadow-xs border border-gray-100/80 uppercase'>
-                                                TODAY
+                                            <span className='bg-white text-slate-500 text-xs font-semibold px-2.5 py-0.5 rounded shadow-xs border border-gray-100 uppercase'>
+                                                {data?.date_badge}
                                             </span>
                                         </div>
 
                                         <div className='flex justify-center'>
-                                            <span className='bg-[#FFEECD] text-[#54656F] text-[9px] px-3 py-1.5 rounded-lg text-center max-w-[94%] shadow-xs leading-tight border border-[#FFE0A3]/60 flex items-center gap-1'>
+                                            <span className='bg-[#FFEECD] text-slate-600 text-xs px-3 py-1.5 rounded-lg text-center max-w-[94%] border border-[#FFE0A3] flex items-center gap-1'>
                                                 <span>🔒</span>
-                                                <span>Messages and calls are end-to-end encrypted.</span>
+                                                <span>{data?.encryption_notice}</span>
                                             </span>
                                         </div>
 
@@ -461,10 +442,10 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
                                                     className={`flex ${isCustomer ? 'justify-end' : 'justify-start'}`}
                                                 >
                                                     <div
-                                                        className={`relative p-2.5 text-[12.5px] text-[#111B21] flex flex-col gap-1.5 ${
+                                                        className={`relative p-2.5 text-xs text-slate-900 flex flex-col gap-1.5 ${
                                                             isCustomer
-                                                                ? 'bg-[#D9FDD3] rounded-2xl rounded-tr-none shadow-sm border border-[#B9EAB3] max-w-[88%]'
-                                                                : 'bg-white rounded-2xl rounded-tl-none shadow-sm border border-gray-200/90 max-w-[94%]'
+                                                                ? 'bg-[#D9FDD3] rounded-2xl rounded-tr-none border border-[#B9EAB3] max-w-[88%]'
+                                                                : 'bg-white rounded-2xl rounded-tl-none border border-gray-200 max-w-[94%]'
                                                         }`}
                                                     >
                                                         {isCustomer && (
@@ -472,53 +453,49 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
                                                         )}
 
                                                         {!isCustomer && (
-                                                            <p className='text-[9.5px] font-bold uppercase text-[#0F6B4F]'>
-                                                                URBANSTYLE STORE
+                                                            <p className='text-xs font-bold uppercase text-emerald-800'>
+                                                                {msg?.label || activeMeta?.name?.toUpperCase()}
                                                             </p>
                                                         )}
 
                                                         {msg?.isLink ? (
                                                             <div className='flex flex-col gap-2'>
-                                                                <p className='leading-snug font-normal text-[#111B21] text-[12.5px]'>
-                                                                    Continue in our dedicated Chat Window:
-                                                                </p>
+                                                                <p className='text-xs text-slate-900'>{msg?.text}</p>
 
                                                                 <div
                                                                     onClick={handleLetsChatClick}
-                                                                    className='p-2.5 rounded-xl border-[1.5px] border-[#A6E0BC] bg-[#EFFAF2] shadow-xs hover:shadow-md hover:border-[#0F6B4F] cursor-pointer flex flex-col gap-2 relative group'
+                                                                    className='p-2.5 rounded-xl border border-emerald-200 bg-emerald-50/50 hover:bg-emerald-50 cursor-pointer flex flex-col gap-2'
                                                                 >
                                                                     <div className='flex items-center justify-between gap-1'>
-                                                                        <span className='font-bold text-[12.5px] text-[#0F6B4F] flex items-center gap-1'>
-                                                                            💬 MSG91 Chat Window
+                                                                        <span className='font-bold text-xs text-emerald-800 flex items-center gap-1'>
+                                                                            {data?.link_preview_title}
                                                                         </span>
                                                                     </div>
 
-                                                                    <div className='flex items-center justify-between border-t border-[#CFEBD9] py-1'>
-                                                                        <span className='text-[10.5px] text-[#0F6B4F] font-semibold flex items-center gap-1'>
-                                                                            chat.msg91.com/order-48291 ↗
+                                                                    <div className='flex items-center justify-between border-t border-emerald-100 py-1 text-xs'>
+                                                                        <span className='text-emerald-800 font-semibold'>
+                                                                            {data?.link_preview_url}
                                                                         </span>
-                                                                        <span className='text-[9.5px] text-gray-400 font-medium'>
-                                                                            10 KB
+                                                                        <span className='text-slate-400'>
+                                                                            {data?.link_preview_size}
                                                                         </span>
                                                                     </div>
 
                                                                     <div className='relative'>
-                                                                        <div className='text-white text-[12px] font-bold py-2 rounded-lg flex items-center justify-center gap-1 shadow-sm bg-[#0F6B4F] group-hover:bg-[#0c5942] relative overflow-hidden ring-2 ring-emerald-500/40'>
-                                                                            <span>Let's Chat ↗</span>
+                                                                        <div className='text-white text-xs font-bold py-2 rounded-lg flex items-center justify-center gap-1 bg-emerald-700 hover:bg-emerald-800'>
+                                                                            <span>{data?.lets_chat_btn}</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         ) : (
-                                                            <p className='leading-snug pr-11 font-normal'>
-                                                                {msg?.text}
-                                                            </p>
+                                                            <p className='pr-11'>{msg?.text}</p>
                                                         )}
 
-                                                        <div className='absolute right-2 bottom-1 flex items-center gap-1 text-[9px] text-[#667781]'>
-                                                            <span>{msg?.time || '10:40 AM'}</span>
+                                                        <div className='absolute right-2 bottom-1 flex items-center gap-1 text-xs text-slate-400'>
+                                                            <span>{msg?.time}</span>
                                                             {isCustomer && (
-                                                                <span className='text-[#53BDEB] font-bold text-[10px] leading-none'>
+                                                                <span className='text-sky-500 font-bold text-xs leading-none'>
                                                                     ✓✓
                                                                 </span>
                                                             )}
@@ -530,9 +507,9 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
 
                                         {isTyping && (
                                             <div className='flex justify-start relative z-10'>
-                                                <div className='bg-white px-3 py-1.5 shadow-xs flex gap-1 items-center rounded-2xl rounded-tl-none border border-gray-100'>
-                                                    <span className='text-[10px] text-gray-400 mr-1'>
-                                                        {data?.store_typing || 'Store is typing'}
+                                                <div className='bg-white px-3 py-1.5 flex gap-1 items-center rounded-2xl rounded-tl-none border border-gray-100'>
+                                                    <span className='text-xs text-slate-400 mr-1'>
+                                                        {data?.store_typing}
                                                     </span>
                                                     <span className='w-1.5 h-1.5 rounded-full bg-[#008069] animate-bounce' />
                                                     <span className='w-1.5 h-1.5 rounded-full bg-[#008069] animate-bounce' />
@@ -542,24 +519,24 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
                                         )}
                                     </div>
 
-                                    <div className='bg-[#F0F2F5] px-2.5 py-2 flex items-center gap-2 border-t border-[#E9EDEF] relative z-20'>
-                                        <div className='flex-1 bg-white rounded-full px-3 py-1.5 flex items-center gap-1.5 border border-[#E1E4E9]'>
+                                    <div className='bg-slate-100 px-2.5 py-2 flex items-center gap-2 border-t border-slate-200'>
+                                        <div className='flex-1 bg-white rounded-full px-3 py-1.5 flex items-center gap-1.5 border border-slate-200'>
                                             <span className='text-xs text-gray-400 cursor-pointer'>😊</span>
                                             <input
                                                 type='text'
                                                 disabled
-                                                placeholder={data?.input_placeholder || 'Message'}
-                                                className='flex-1 text-[11.5px] text-gray-700 bg-transparent outline-none cursor-default'
+                                                placeholder={data?.input_placeholder}
+                                                className='flex-1 text-xs text-slate-700 bg-transparent outline-none'
                                             />
                                             <span className='text-xs text-gray-400 cursor-pointer'>📎</span>
                                         </div>
-                                        <div className='w-7 h-7 rounded-full bg-[#00A884] flex items-center justify-center text-white text-[11px] shadow-sm cursor-pointer hover:bg-[#008f70]'>
+                                        <div className='w-7 h-7 rounded-full bg-[#008069] flex items-center justify-center text-white text-xs cursor-pointer'>
                                             🎙️
                                         </div>
                                     </div>
 
-                                    <div className='bg-[#F0F2F5] py-1 flex justify-center items-center'>
-                                        <div className='w-28 h-1 bg-[#111] rounded-full' />
+                                    <div className='bg-slate-100 py-1 flex justify-center items-center'>
+                                        <div className='w-28 h-1 bg-slate-900 rounded-full' />
                                     </div>
                                 </div>
                             </div>
