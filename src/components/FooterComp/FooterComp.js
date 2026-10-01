@@ -266,22 +266,15 @@ export default function FooterComp({ componentData, pageInfo }) {
                             )}
 
                             <div className='flex flex-col gap-4 mt-auto lg:items-end'>
-                                <a
-                                    target='_blank'
-                                    href={
-                                        'https://www.facebook.com/business/partner-directory/search?solution_type=messaging&ref=pd_home_hero_cta&id=5412005225590465&section=overview'
-                                    }
-                                >
-                                    <Image
-                                        className='w-40'
-                                        src={'/assets/icons/extras/meta-business-platform.svg'}
-                                        width={480}
-                                        height={480}
-                                        alt='Meta Business Platform'
-                                        loading='lazy'
-                                        sizes='(max-width: 768px) 120px, 160px'
-                                    />
-                                </a>
+                                <Image
+                                    className='w-40'
+                                    src={'/assets/icons/extras/meta-business-platform.svg'}
+                                    width={480}
+                                    height={480}
+                                    alt='Meta Business Platform'
+                                    loading='lazy'
+                                    sizes='(max-width: 768px) 120px, 160px'
+                                />
                             </div>
                         </div>
                     </div>
