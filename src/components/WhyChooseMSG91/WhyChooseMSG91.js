@@ -59,7 +59,18 @@ export default function WhyChooseMSG91({ data, pageInfo }) {
                                 ))}
                         </div>
                         <div className='w-full xl:max-w-[700px] lg:max-w-[320px] max-w-[280px] md:mx-6 mx-2 rounded-lg overflow-hidden'>
-                            {item?.img?.endsWith('.json') ? (
+                            {item?.video || item?.img?.endsWith?.('.webm') ? (
+                                <video
+                                    className='w-full h-auto object-cover rounded-2xl block'
+                                    autoPlay
+                                    loop
+                                    muted
+                                    playsInline
+                                    aria-label={item?.title}
+                                >
+                                    <source src={item?.video || item?.img} type='video/webm' />
+                                </video>
+                            ) : item?.img?.endsWith?.('.json') ? (
                                 <LottiePlayer lottie={item?.img} />
                             ) : item?.img ? (
                                 <Image
