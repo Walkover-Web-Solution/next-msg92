@@ -92,7 +92,6 @@ import FileHostingFormatsComp from '@/components/FileHostingComp/FormatsComp/For
 import WhatsAppHeroComp from '@/components/WhatsAppChatWindow/HeroComp/HeroComp';
 import WhatsAppProblemSolutionComp from '@/components/WhatsAppChatWindow/ProblemSolutionComp/ProblemSolutionComp';
 import WhatsAppStepsComp from '@/components/WhatsAppChatWindow/StepsComp/StepsComp';
-import WhatsAppUseCasesComp from '@/components/WhatsAppChatWindow/UseCasesComp/UseCasesComp';
 import WhatsAppComparisonComp from '@/components/WhatsAppChatWindow/ComparisonComp/ComparisonComp';
 import WhatsAppWhyComp from '@/components/WhatsAppChatWindow/WhyComp/WhyComp';
 import WhatsAppCTAComp from '@/components/WhatsAppChatWindow/CTAComp/CTAComp';
@@ -217,7 +216,6 @@ const Components = {
     WhatsAppHeroComp,
     WhatsAppProblemSolutionComp,
     WhatsAppStepsComp,
-    WhatsAppUseCasesComp,
     WhatsAppComparisonComp,
     WhatsAppWhyComp,
     WhatsAppCTAComp,

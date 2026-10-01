@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import Script from 'next/script';
 import { MdCheckCircle, MdRefresh, MdArrowBack, MdVideocam, MdCall, MdMoreVert } from 'react-icons/md';
 
 export default function WhatsAppStepsComp({ data, pageInfo }) {
@@ -7,7 +8,7 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
     const conversationStages = data?.conversation_stages || [];
     const widgetConfig = data?.widget_config || {
         widgetToken: '251a3',
-        parentId: 'wa-chat-widget-parent',
+        parentId: 'wa-chat-widget-mount',
         hide_launcher: true,
         show_widget_form: true,
         show_close_button: true,
@@ -20,54 +21,105 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
     const [isTyping, setIsTyping] = useState(false);
     const [visibleMessages, setVisibleMessages] = useState([]);
     const [isPlaying, setIsPlaying] = useState(false);
+    const [isWidgetScriptLoaded, setIsWidgetScriptLoaded] = useState(false);
+    const [isChatWidgetOpen, setIsChatWidgetOpen] = useState(false);
+    const [widgetInitTick, setWidgetInitTick] = useState(0);
 
     const sectionRef = useRef(null);
     const scrollRef = useRef(null);
     const timersRef = useRef([]);
+    const isChatWidgetOpenRef = useRef(false);
+    const isWidgetOpenRequestedRef = useRef(false);
+    const widgetMountId = 'wa-chat-widget-mount';
 
-    const initAndOpenWidget = (launch = true, delay = 0) => {
-        if (typeof window === 'undefined') return;
+    const updateChatWidgetVisibility = (isOpen) => {
+        isChatWidgetOpenRef.current = isOpen;
+        setIsChatWidgetOpen(isOpen);
+    };
 
-        const config = { ...widgetConfig, launch_widget: launch };
+    const destroyChatWidget = () => {
+        if (typeof document === 'undefined') return;
 
-        if (window.initChatWidget) {
-            window.initChatWidget(config, delay);
-            const manager = window.ctest_helloChatbotManager;
-            if (manager && manager.changeContainer) {
-                manager.changeContainer(widgetConfig?.parentId || 'wa-chat-widget-parent');
-            }
-            return;
-        }
+        const mount = document.getElementById(widgetMountId);
+        if (mount) mount.innerHTML = '';
+    };
 
-        if (!document.getElementById('msg91-live-chat-script')) {
-            const script = document.createElement('script');
-            script.id = 'msg91-live-chat-script';
-            script.type = 'text/javascript';
-            script.src = widgetConfig?.script_src || 'https://ctest.msg91.com/chat-widget.js';
-            script.onload = () => {
-                if (window.initChatWidget) {
-                    window.initChatWidget(config, delay);
-                }
-            };
-            document.head.appendChild(script);
+    const initChatWidgetInMount = () => {
+        if (typeof window === 'undefined' || !window.initChatWidget) return false;
+
+        const mount = document.getElementById(widgetMountId);
+        if (!mount) return false;
+
+        mount.innerHTML = '';
+        window.initChatWidget({ ...widgetConfig, parentId: widgetMountId, launch_widget: true }, 0);
+        return true;
+    };
+
+    const openChatWidget = () => {
+        updateChatWidgetVisibility(true);
+        setWidgetInitTick((tick) => tick + 1);
+
+        if (typeof window === 'undefined' || !window.initChatWidget) {
+            isWidgetOpenRequestedRef.current = true;
         }
     };
 
     useEffect(() => {
-        initAndOpenWidget(false);
+        if (typeof window === 'undefined') return;
+
+        if (window.initChatWidget) {
+            setIsWidgetScriptLoaded(true);
+            return;
+        }
+
+        const scriptPoll = setInterval(() => {
+            if (window.initChatWidget) {
+                setIsWidgetScriptLoaded(true);
+                clearInterval(scriptPoll);
+            }
+        }, 200);
+
+        return () => clearInterval(scriptPoll);
     }, []);
+
+    useEffect(() => {
+        if (!isChatWidgetOpen) {
+            destroyChatWidget();
+            return;
+        }
+
+        if (!isWidgetScriptLoaded) return;
+
+        initChatWidgetInMount();
+        isWidgetOpenRequestedRef.current = false;
+    }, [isChatWidgetOpen, widgetInitTick, isWidgetScriptLoaded]);
+
+    useEffect(() => {
+        if (!isWidgetScriptLoaded || !isWidgetOpenRequestedRef.current) return;
+        isWidgetOpenRequestedRef.current = false;
+        openChatWidget();
+    }, [isWidgetScriptLoaded]);
 
     const clearAllTimers = () => {
         timersRef.current.forEach(clearTimeout);
         timersRef.current = [];
     };
 
-    const handleCardClick = () => {
-        initAndOpenWidget(true, 500);
+    const handleLetsChatClick = () => {
+        clearAllTimers();
+        setCurrentStage(2);
+        openChatWidget();
+
+        timersRef.current.push(
+            setTimeout(() => {
+                setCurrentStage(3);
+            }, 700)
+        );
     };
 
     const runAutomatedConversation = () => {
         clearAllTimers();
+        updateChatWidgetVisibility(false);
         setIsPlaying(true);
         setCurrentStage(1);
         setVisibleMessages([]);
@@ -105,33 +157,46 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
         clearAllTimers();
         setIsTyping(false);
         setIsPlaying(false);
-        setCurrentStage(stageNum);
 
         const stage1Msg = conversationStages?.[0]?.messages?.[0];
         const stage2Msg = conversationStages?.[1]?.messages?.[0];
 
         if (stageNum === 1) {
-            if (stage1Msg) setVisibleMessages([stage1Msg]);
-        } else {
+            updateChatWidgetVisibility(false);
+            setCurrentStage(1);
             const combined = [];
             if (stage1Msg) combined.push(stage1Msg);
             if (stage2Msg) combined.push(stage2Msg);
             setVisibleMessages(combined);
-            initAndOpenWidget(true, 500);
+        } else if (stageNum === 2) {
+            setCurrentStage(2);
+            openChatWidget();
+            timersRef.current.push(
+                setTimeout(() => {
+                    setCurrentStage(3);
+                }, 700)
+            );
+        } else {
+            setCurrentStage(3);
+            openChatWidget();
         }
     };
 
     useEffect(() => {
-        let hasStarted = false;
+        if (typeof window === 'undefined') return;
+
         const observer = new IntersectionObserver(
             (entries) => {
                 const [entry] = entries;
-                if (entry.isIntersecting && !hasStarted) {
-                    hasStarted = true;
-                    runAutomatedConversation();
+                if (entry.isIntersecting) {
+                    if (!isChatWidgetOpenRef.current) runAutomatedConversation();
+                } else {
+                    clearAllTimers();
+                    setIsPlaying(false);
+                    setIsTyping(false);
                 }
             },
-            { threshold: 0.2 }
+            { threshold: 0.25 }
         );
 
         if (sectionRef.current) {
@@ -157,9 +222,28 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
 
     return (
         <section id='how-it-works' ref={sectionRef} className='bg-[#FAFAF9] border-t border-gray-100 overflow-hidden'>
-            <div className='container cont_p'>
-                <div className='text-center mb-14 sm:mb-16'>
-                    <h2 className='heading text-[#18181B] tracking-tight mb-4'>{data?.heading}</h2>
+            {widgetConfig?.script_src && (
+                <Script
+                    strategy='afterInteractive'
+                    src={widgetConfig?.script_src}
+                    onLoad={() => setIsWidgetScriptLoaded(true)}
+                    onReady={() => setIsWidgetScriptLoaded(true)}
+                />
+            )}
+
+            <div className='container cont_p flex flex-col gap-10'>
+                <div className='text-center flex flex-col gap-3'>
+                    <h2 className='heading text-[#18181B]'>
+                        {data?.heading_prefix ? (
+                            <>
+                                {data?.heading_prefix}
+                                <span className='text-[#529837]'>{data?.heading_accent}</span>
+                                {data?.heading_suffix}
+                            </>
+                        ) : (
+                            data?.heading
+                        )}
+                    </h2>
 
                     <p className='subheading text-[#4B5563] max-w-2xl mx-auto font-normal leading-relaxed'>
                         {data?.subheading}
@@ -167,90 +251,138 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
                 </div>
 
                 <div className='grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center max-w-6xl mx-auto'>
-                    <div className='lg:col-span-6 flex flex-col gap-4'>
-                        {data?.steps?.map((step, index) => {
-                            const stepNum = index + 1;
-                            const isCurrent = currentStage === stepNum;
-                            const isCompleted = currentStage > stepNum;
+                    <div className='lg:col-span-6 flex flex-col gap-6'>
+                        <div className='flex flex-col gap-4'>
+                            {data?.steps?.map((step, index) => {
+                                const stepNum = index + 1;
+                                const isCurrent = currentStage === stepNum;
+                                const isCompleted = currentStage > stepNum;
 
-                            return (
-                                <div
-                                    key={step?.n || index}
-                                    onClick={() => handleSelectStage(stepNum)}
-                                    className={`text-left rounded-2xl sm:rounded-3xl p-5 sm:p-6 border transition-all duration-300 flex flex-col justify-between cursor-pointer group relative overflow-hidden ${
-                                        isCurrent
-                                            ? 'bg-white border-[#529837] shadow-lg ring-2 ring-[#529837]/20 -translate-y-0.5'
-                                            : isCompleted
-                                              ? 'bg-emerald-50/50 border-emerald-200 shadow-2xs hover:bg-white'
-                                              : 'bg-white border-gray-200/80 shadow-xs hover:border-emerald-300 hover:shadow-md'
-                                    }`}
-                                >
-                                    <div className='flex items-center justify-between mb-2.5'>
-                                        <div className='flex items-center gap-3'>
-                                            <span
-                                                className={`font-bold text-xs px-3 py-1 rounded-full transition-colors ${
-                                                    isCurrent
-                                                        ? 'bg-[#529837] text-white shadow-xs'
-                                                        : isCompleted
-                                                          ? 'bg-[#DCF8C6] text-[#128C7E]'
-                                                          : 'bg-gray-100 text-[#6B7280]'
-                                                }`}
-                                            >
-                                                {step?.n || `0${stepNum}`}
-                                            </span>
-                                            <h3 className='font-bold text-base sm:text-lg text-[#18181B] group-hover:text-[#529837] transition-colors'>
-                                                {step?.title}
-                                            </h3>
+                                return (
+                                    <div
+                                        key={step?.n || index}
+                                        onClick={() => handleSelectStage(stepNum)}
+                                        className={`text-left rounded-xl p-5 border flex flex-col gap-2 cursor-pointer group relative ${
+                                            isCurrent
+                                                ? 'bg-white border-emerald-600 shadow-md ring-1 ring-emerald-600/30'
+                                                : isCompleted
+                                                  ? 'bg-slate-50/90 border-slate-200 hover:bg-white hover:border-emerald-200'
+                                                  : 'bg-white border-slate-200/80 hover:border-slate-300'
+                                        }`}
+                                    >
+                                        <div className='flex items-center justify-between gap-3'>
+                                            <div className='flex items-center gap-3'>
+                                                <div
+                                                    className={`w-9 h-9 rounded-lg font-bold text-xs flex items-center justify-center ${
+                                                        isCurrent
+                                                            ? 'bg-emerald-600 text-white'
+                                                            : isCompleted
+                                                              ? 'bg-emerald-100 text-emerald-700'
+                                                              : 'bg-slate-100 text-slate-500'
+                                                    }`}
+                                                >
+                                                    {step?.n || `0${stepNum}`}
+                                                </div>
+                                                <h3
+                                                    className={`font-semibold text-base sm:text-lg ${
+                                                        isCurrent ? 'text-slate-900 font-bold' : 'text-slate-800'
+                                                    }`}
+                                                >
+                                                    {step?.title}
+                                                </h3>
+                                            </div>
+
+                                            {isCompleted ? (
+                                                <span className='text-[11px] font-semibold text-emerald-700 flex items-center gap-1 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full'>
+                                                    <MdCheckCircle className='w-3.5 h-3.5' />
+                                                    <span>{data?.done_text}</span>
+                                                </span>
+                                            ) : isCurrent ? (
+                                                <span className='text-[11px] font-semibold text-emerald-800 flex items-center gap-1.5 bg-emerald-50 border border-emerald-300 px-2.5 py-0.5 rounded-full'>
+                                                    <span className='w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse' />
+                                                    <span>{data?.live_text}</span>
+                                                </span>
+                                            ) : (
+                                                <span className='text-xs text-slate-400 font-medium'>
+                                                    {data?.click_to_view}
+                                                </span>
+                                            )}
                                         </div>
 
-                                        {isCompleted ? (
-                                            <span className='text-[11px] font-semibold text-[#529837] flex items-center gap-1 bg-emerald-100/70 border border-emerald-200 px-2.5 py-0.5 rounded-full'>
-                                                <MdCheckCircle className='w-3.5 h-3.5' />
-                                                <span>{data?.done_text}</span>
-                                            </span>
-                                        ) : isCurrent ? (
-                                            <span className='text-[11px] font-semibold text-[#529837] flex items-center gap-1.5 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full'>
-                                                <span className='w-1.5 h-1.5 rounded-full bg-[#529837] animate-pulse' />
-                                                <span>{data?.live_text}</span>
-                                            </span>
-                                        ) : (
-                                            <span className='text-[11px] text-gray-400 group-hover:text-[#529837] transition-colors'>
-                                                {data?.click_to_view}
-                                            </span>
-                                        )}
+                                        <p className='text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pl-12'>
+                                            {step?.desc}
+                                        </p>
                                     </div>
+                                );
+                            })}
+                        </div>
 
-                                    <p className='text-xs sm:text-sm text-[#4B5563] leading-relaxed font-normal pl-11'>
-                                        {step?.desc}
-                                    </p>
-                                </div>
-                            );
-                        })}
-
-                        <div className='pt-2 flex items-center gap-3'>
+                        <div className='flex flex-col items-start gap-2'>
                             <button
+                                type='button'
                                 onClick={runAutomatedConversation}
-                                className='btn btn-md bg-[#529837] hover:bg-[#43822b] text-white border-0 px-6 rounded-xl shadow-sm hover:shadow-md gap-2 font-semibold text-sm'
+                                className='inline-flex items-center gap-2 bg-[#008069] hover:bg-[#006e5a] text-white font-medium text-sm px-5 py-2.5 rounded cursor-pointer'
                             >
-                                <MdRefresh className={`w-4 h-4 ${isPlaying ? 'animate-spin' : ''}`} />
-                                <span>{isPlaying ? data?.playing_text : data?.replay_text}</span>
+                                <MdRefresh className={`w-5 h-5 ${isPlaying ? 'animate-spin' : ''}`} />
+                                <span>{data?.replay_text}</span>
                             </button>
+                            {data?.replay_subtext && (
+                                <p className='text-xs text-slate-500 font-normal'>{data?.replay_subtext}</p>
+                            )}
                         </div>
                     </div>
 
-                    <div className='lg:col-span-6 flex justify-center w-full relative py-2 sm:py-6'>
-                        <div className='relative w-full max-w-[340px] sm:max-w-[380px] bg-[#0B0C0F] p-2.5 sm:p-3 rounded-[46px] sm:rounded-[54px] shadow-[0_30px_70px_-20px_rgba(15,23,42,0.45),inset_0_0_0_2px_#2A2C31]'>
+                    <div className='lg:col-span-6 flex flex-col items-center justify-center gap-4 w-full relative py-2 sm:py-6'>
+                        <div className='flex lg:hidden justify-center select-none'>
+                            <div className='bg-[#0F172A] text-white font-bold text-xs px-3.5 py-1.5 rounded-full shadow-md border border-slate-700 flex items-center gap-2 animate-bounce'>
+                                <span className='w-2 h-2 rounded-full bg-emerald-400 animate-ping' />
+                                <span>Click "Let's Chat" below to test live! 👇</span>
+                            </div>
+                        </div>
+
+                        <div className='absolute -right-2 xl:-right-12 top-1/2 -translate-y-1/2 hidden lg:flex items-center gap-2 pointer-events-none z-40 select-none'>
+                            <svg
+                                width='48'
+                                height='26'
+                                viewBox='0 0 54 28'
+                                fill='none'
+                                className='text-emerald-700 drop-shadow-sm'
+                            >
+                                <path
+                                    d='M52 14 C 36 8, 20 12, 6 14'
+                                    stroke='currentColor'
+                                    strokeWidth='3.5'
+                                    strokeLinecap='round'
+                                />
+                                <path
+                                    d='M16 6 L 5 14 L 16 22'
+                                    stroke='currentColor'
+                                    strokeWidth='3.5'
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
+                                />
+                            </svg>
+                            <div className='bg-[#0F172A] text-white font-bold text-xs xl:text-[13px] px-3.5 py-1.5 rounded-full shadow-xl border border-slate-700 flex items-center gap-2 animate-bounce whitespace-nowrap'>
+                                <span className='w-2 h-2 rounded-full bg-emerald-400 animate-ping' />
+                                <span>Click to test live!</span>
+                            </div>
+                        </div>
+
+                        <div className='relative w-full max-w-[295px] sm:max-w-[325px] bg-[#14151A] p-1.5 rounded-[44px] sm:rounded-[48px] shadow-[0_20px_50px_-15px_rgba(0,0,0,0.35),0_0_0_1px_#272930]'>
                             <div
                                 id='wa-chat-widget-parent'
-                                className='relative w-full rounded-[38px] sm:rounded-[44px] overflow-hidden bg-[#EFEAE2] flex flex-col h-[560px] sm:h-[640px]'
+                                data-widget-open={isChatWidgetOpen ? 'true' : 'false'}
+                                className='relative w-full rounded-[38px] sm:rounded-[42px] overflow-hidden bg-[#EFEAE2] flex flex-col h-[620px] sm:h-[690px]'
                             >
-                                <div className='absolute top-2.5 left-1/2 -translate-x-1/2 w-28 h-5 bg-black rounded-full z-[100000] flex items-center justify-between px-3 pointer-events-none'>
+                                <div id={widgetMountId} />
+
+                                <div className='absolute top-2.5 left-1/2 -translate-x-1/2 w-24 h-4.5 bg-black rounded-full z-[100000] flex items-center justify-between px-2.5 pointer-events-none'>
                                     <div className='w-2 h-2 rounded-full bg-[#151515] border border-gray-800' />
                                     <div className='w-2 h-2 rounded-full bg-[#0a192f]' />
                                 </div>
 
                                 <div className='flex flex-col h-full w-full'>
-                                    <div className='bg-[#008069] pt-2.5 pb-1 px-6 flex items-center justify-between text-white text-[12px] font-semibold tracking-tight relative z-30 select-none'>
+                                    <div className='bg-[#008069] py-2 px-5 flex items-center justify-between text-white text-[11.5px] font-semibold relative z-30 select-none'>
                                         <span>9:41</span>
                                         <div className='flex items-center gap-1.5 text-xs'>
                                             <svg className='w-3.5 h-3.5 fill-current' viewBox='0 0 24 24'>
@@ -271,36 +403,36 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
                                         </div>
                                     </div>
 
-                                    <div className='bg-[#008069] px-3.5 py-2.5 flex items-center justify-between text-white flex-shrink-0 relative z-20'>
-                                        <div className='flex items-center gap-2.5'>
-                                            <MdArrowBack className='w-5 h-5 text-white/90 cursor-pointer hover:text-white' />
-                                            <div className='w-9 h-9 rounded-full bg-gradient-to-tr from-pink-400 via-purple-400 to-amber-300 p-0.5 flex items-center justify-center flex-shrink-0 shadow-xs'>
-                                                <div className='w-full h-full rounded-full bg-white/20 backdrop-blur-xs flex items-center justify-center text-sm'>
+                                    <div className='bg-[#008069] px-3 py-2 flex items-center justify-between text-white relative z-20'>
+                                        <div className='flex items-center gap-2'>
+                                            <MdArrowBack className='w-4.5 h-4.5 text-white/90 cursor-pointer hover:text-white' />
+                                            <div className='w-8 h-8 rounded-full bg-gradient-to-tr from-pink-400 via-purple-400 to-amber-300 p-0.5 flex items-center justify-center shadow-xs'>
+                                                <div className='w-full h-full rounded-full bg-white/20 flex items-center justify-center text-xs'>
                                                     🛍️
                                                 </div>
                                             </div>
                                             <div className='leading-tight'>
-                                                <p className='font-bold text-[13px] text-white flex items-center gap-1'>
+                                                <p className='font-bold text-[12.5px] text-white flex items-center gap-1'>
                                                     <span>UrbanStyle Store</span>
-                                                    <span className='text-[11px] text-[#53BDEB] font-bold'>✓</span>
+                                                    <span className='text-[10px] text-[#53BDEB] font-bold'>✓</span>
                                                 </p>
-                                                <p className='text-emerald-100 text-[10.5px] font-normal flex items-center gap-1'>
+                                                <p className='text-emerald-100 text-[10px] font-normal flex items-center gap-1'>
                                                     <span className='w-1.5 h-1.5 rounded-full bg-[#25D366]' />
                                                     <span>WhatsApp Business · online</span>
                                                 </p>
                                             </div>
                                         </div>
 
-                                        <div className='flex items-center gap-2.5 text-white/90'>
-                                            <MdVideocam className='w-5 h-5 cursor-pointer hover:text-white' />
-                                            <MdCall className='w-4.5 h-4.5 cursor-pointer hover:text-white' />
-                                            <MdMoreVert className='w-5 h-5 cursor-pointer hover:text-white' />
+                                        <div className='flex items-center gap-2 text-white/90'>
+                                            <MdVideocam className='w-4.5 h-4.5 cursor-pointer hover:text-white' />
+                                            <MdCall className='w-4 h-4 cursor-pointer hover:text-white' />
+                                            <MdMoreVert className='w-4.5 h-4.5 cursor-pointer hover:text-white' />
                                         </div>
                                     </div>
 
                                     <div
                                         ref={scrollRef}
-                                        className='flex-1 overflow-y-auto p-3.5 space-y-3 relative'
+                                        className='flex-1 overflow-y-auto p-3 flex flex-col gap-3 relative'
                                         style={{
                                             backgroundColor: '#EFEAE2',
                                             backgroundImage: 'radial-gradient(#d1d7db 1.2px, transparent 1.2px)',
@@ -308,13 +440,13 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
                                         }}
                                     >
                                         <div className='flex justify-center'>
-                                            <span className='bg-white text-[#54656F] text-[10px] font-semibold px-3 py-1 rounded-md shadow-xs border border-gray-100/80 uppercase tracking-wide'>
+                                            <span className='bg-white text-[#54656F] text-[9.5px] font-semibold px-2.5 py-0.5 rounded-md shadow-xs border border-gray-100/80 uppercase'>
                                                 TODAY
                                             </span>
                                         </div>
 
                                         <div className='flex justify-center'>
-                                            <span className='bg-[#FFEECD] text-[#54656F] text-[9.5px] px-3.5 py-1.5 rounded-lg text-center max-w-[92%] shadow-xs leading-tight border border-[#FFE0A3]/60 flex items-center gap-1'>
+                                            <span className='bg-[#FFEECD] text-[#54656F] text-[9px] px-3 py-1.5 rounded-lg text-center max-w-[94%] shadow-xs leading-tight border border-[#FFE0A3]/60 flex items-center gap-1'>
                                                 <span>🔒</span>
                                                 <span>Messages and calls are end-to-end encrypted.</span>
                                             </span>
@@ -329,9 +461,9 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
                                                     className={`flex ${isCustomer ? 'justify-end' : 'justify-start'}`}
                                                 >
                                                     <div
-                                                        className={`relative p-3 text-[13px] text-[#111B21] transition-all duration-300 animate-fade-in ${
+                                                        className={`relative p-2.5 text-[12.5px] text-[#111B21] flex flex-col gap-1.5 ${
                                                             isCustomer
-                                                                ? 'bg-[#D9FDD3] rounded-2xl rounded-tr-none shadow-sm border border-[#B9EAB3] max-w-[86%]'
+                                                                ? 'bg-[#D9FDD3] rounded-2xl rounded-tr-none shadow-sm border border-[#B9EAB3] max-w-[88%]'
                                                                 : 'bg-white rounded-2xl rounded-tl-none shadow-sm border border-gray-200/90 max-w-[94%]'
                                                         }`}
                                                     >
@@ -340,55 +472,53 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
                                                         )}
 
                                                         {!isCustomer && (
-                                                            <p className='text-[10px] font-bold uppercase tracking-wider mb-1.5 text-[#0F6B4F]'>
+                                                            <p className='text-[9.5px] font-bold uppercase text-[#0F6B4F]'>
                                                                 URBANSTYLE STORE
                                                             </p>
                                                         )}
 
                                                         {msg?.isLink ? (
-                                                            <div>
-                                                                <p className='leading-snug mb-2.5 font-normal text-[#111B21] text-[13px]'>
+                                                            <div className='flex flex-col gap-2'>
+                                                                <p className='leading-snug font-normal text-[#111B21] text-[12.5px]'>
                                                                     Continue in our dedicated Chat Window:
                                                                 </p>
 
                                                                 <div
-                                                                    onClick={handleCardClick}
-                                                                    className='p-3 rounded-xl border-[1.5px] border-[#A6E0BC] bg-[#EFFAF2] shadow-xs hover:shadow-md transition-all duration-200 cursor-pointer flex flex-col gap-2'
+                                                                    onClick={handleLetsChatClick}
+                                                                    className='p-2.5 rounded-xl border-[1.5px] border-[#A6E0BC] bg-[#EFFAF2] shadow-xs hover:shadow-md hover:border-[#0F6B4F] cursor-pointer flex flex-col gap-2 relative group'
                                                                 >
-                                                                    <div className='flex items-center justify-between gap-2'>
-                                                                        <span className='font-bold text-[13.5px] text-[#0F6B4F] flex items-center gap-1'>
+                                                                    <div className='flex items-center justify-between gap-1'>
+                                                                        <span className='font-bold text-[12.5px] text-[#0F6B4F] flex items-center gap-1'>
                                                                             💬 MSG91 Chat Window
                                                                         </span>
                                                                     </div>
 
-                                                                    <p className='text-[11.5px] text-[#3B4250] leading-tight font-normal'>
-                                                                        Continue resolving order #48291
-                                                                    </p>
-
-                                                                    <div className='flex items-center justify-between pt-2 border-t border-[#CFEBD9]'>
-                                                                        <span className='text-[11px] text-[#0F6B4F] font-semibold flex items-center gap-1'>
+                                                                    <div className='flex items-center justify-between border-t border-[#CFEBD9] py-1'>
+                                                                        <span className='text-[10.5px] text-[#0F6B4F] font-semibold flex items-center gap-1'>
                                                                             chat.msg91.com/order-48291 ↗
                                                                         </span>
-                                                                        <span className='text-[10px] text-gray-400 font-medium'>
+                                                                        <span className='text-[9.5px] text-gray-400 font-medium'>
                                                                             10 KB
                                                                         </span>
                                                                     </div>
 
-                                                                    <div className='mt-1 text-white text-[12.5px] font-bold py-2 rounded-lg flex items-center justify-center gap-1.5 shadow-sm bg-[#0F6B4F] hover:bg-[#0c5942] transition-colors'>
-                                                                        <span>Let's Chat ↗</span>
+                                                                    <div className='relative'>
+                                                                        <div className='text-white text-[12px] font-bold py-2 rounded-lg flex items-center justify-center gap-1 shadow-sm bg-[#0F6B4F] group-hover:bg-[#0c5942] relative overflow-hidden ring-2 ring-emerald-500/40'>
+                                                                            <span>Let's Chat ↗</span>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         ) : (
-                                                            <p className='leading-snug pr-12 pb-0.5 font-normal'>
+                                                            <p className='leading-snug pr-11 font-normal'>
                                                                 {msg?.text}
                                                             </p>
                                                         )}
 
-                                                        <div className='absolute right-2.5 bottom-1 flex items-center gap-1 text-[9.5px] text-[#667781]'>
+                                                        <div className='absolute right-2 bottom-1 flex items-center gap-1 text-[9px] text-[#667781]'>
                                                             <span>{msg?.time || '10:40 AM'}</span>
                                                             {isCustomer && (
-                                                                <span className='text-[#53BDEB] font-bold text-[11px] leading-none'>
+                                                                <span className='text-[#53BDEB] font-bold text-[10px] leading-none'>
                                                                     ✓✓
                                                                 </span>
                                                             )}
@@ -412,24 +542,24 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
                                         )}
                                     </div>
 
-                                    <div className='bg-[#F0F2F5] px-3 py-2 flex items-center gap-2 border-t border-[#E9EDEF] flex-shrink-0 relative z-20'>
-                                        <div className='flex-1 bg-white rounded-full px-3.5 py-2 flex items-center gap-2 shadow-2xs border border-[#E1E4E9]'>
-                                            <span className='text-sm text-gray-400 cursor-pointer'>😊</span>
+                                    <div className='bg-[#F0F2F5] px-2.5 py-2 flex items-center gap-2 border-t border-[#E9EDEF] relative z-20'>
+                                        <div className='flex-1 bg-white rounded-full px-3 py-1.5 flex items-center gap-1.5 border border-[#E1E4E9]'>
+                                            <span className='text-xs text-gray-400 cursor-pointer'>😊</span>
                                             <input
                                                 type='text'
                                                 disabled
                                                 placeholder={data?.input_placeholder || 'Message'}
-                                                className='flex-1 text-[12px] text-gray-700 bg-transparent outline-none cursor-default'
+                                                className='flex-1 text-[11.5px] text-gray-700 bg-transparent outline-none cursor-default'
                                             />
-                                            <span className='text-sm text-gray-400 cursor-pointer'>📎</span>
+                                            <span className='text-xs text-gray-400 cursor-pointer'>📎</span>
                                         </div>
-                                        <div className='w-8 h-8 rounded-full bg-[#00A884] flex items-center justify-center text-white text-xs shadow-sm flex-shrink-0 cursor-pointer hover:bg-[#008f70] transition-colors'>
+                                        <div className='w-7 h-7 rounded-full bg-[#00A884] flex items-center justify-center text-white text-[11px] shadow-sm cursor-pointer hover:bg-[#008f70]'>
                                             🎙️
                                         </div>
                                     </div>
 
-                                    <div className='bg-[#F0F2F5] pb-1.5 pt-0.5 flex justify-center items-center flex-shrink-0'>
-                                        <div className='w-32 h-1 bg-[#111] rounded-full' />
+                                    <div className='bg-[#F0F2F5] py-1 flex justify-center items-center'>
+                                        <div className='w-28 h-1 bg-[#111] rounded-full' />
                                     </div>
                                 </div>
                             </div>
@@ -437,44 +567,6 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
                     </div>
                 </div>
             </div>
-
-            <style jsx global>{`
-                #wa-chat-widget-parent .popup-parent-container,
-                #wa-chat-widget-parent [id*='chatbot-iframe-container'],
-                #wa-chat-widget-parent .all_available_space-parent-container {
-                    position: absolute !important;
-                    top: 0 !important;
-                    left: 0 !important;
-                    right: 0 !important;
-                    bottom: 0 !important;
-                    width: 100% !important;
-                    height: 100% !important;
-                    max-height: 100% !important;
-                    min-height: 100% !important;
-                    border-radius: 0 !important;
-                    border: none !important;
-                    box-shadow: none !important;
-                    margin: 0 !important;
-                    z-index: 1000 !important;
-                }
-                #wa-chat-widget-parent iframe {
-                    width: 100% !important;
-                    height: 100% !important;
-                    min-height: 100% !important;
-                    border: none !important;
-                    border-radius: 0 !important;
-                }
-                body > [id*='chatbot-launcher'],
-                body > [id*='launcher-container'],
-                .msg91-chatbot-launcher,
-                .chatbot-launcher-container,
-                .floating-launcher-container {
-                    display: none !important;
-                    visibility: hidden !important;
-                    opacity: 0 !important;
-                    pointer-events: none !important;
-                }
-            `}</style>
         </section>
     );
 }

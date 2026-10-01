@@ -9,6 +9,7 @@ export default function HeadComp({ data, pageInfo }) {
         <>
             {pageInfo?.page !== 'demochatbot' &&
                 pageInfo?.page !== 'contact-us' &&
+                pageInfo?.page !== 'whatsapp-chat-window' &&
                 !pageInfo?.baseURL?.startsWith('pricing') && (
                     <>
                         <Script

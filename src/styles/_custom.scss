@@ -418,3 +418,93 @@ $button-transition-timing: 100ms;
     animation: chatFadeIn 0.25s ease-out forwards;
 }
 
+#wa-chat-widget-mount,
+#wa-chat-widget-parent .popup-parent-container,
+#wa-chat-widget-parent [id*='chatbot-iframe-container'],
+#wa-chat-widget-parent .all_available_space-parent-container {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    min-height: 100% !important;
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    z-index: 1000 !important;
+}
+
+#wa-chat-widget-mount iframe,
+#wa-chat-widget-parent iframe {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+#wa-chat-widget-parent[data-widget-open='false'] #wa-chat-widget-mount,
+#wa-chat-widget-parent[data-widget-open='false'] .popup-parent-container,
+#wa-chat-widget-parent[data-widget-open='false'] [id*='chatbot-iframe-container'],
+#wa-chat-widget-parent[data-widget-open='false'] .all_available_space-parent-container {
+    display: none !important;
+}
+
+body > [id*='chatbot-launcher'],
+body > [id*='launcher-container'],
+.msg91-chatbot-launcher,
+.chatbot-launcher-container,
+.floating-launcher-container {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+@keyframes floatFlow1 {
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-14px) rotate(1deg);
+    }
+}
+
+@keyframes floatFlow2 {
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(12px) rotate(-1.5deg);
+    }
+}
+
+@keyframes floatFlow3 {
+    0%,
+    100% {
+        transform: translateY(0px) translateX(0px);
+    }
+    33% {
+        transform: translateY(-10px) translateX(5px);
+    }
+    66% {
+        transform: translateY(8px) translateX(-4px);
+    }
+}
+
+.animate-float-1 {
+    animation: floatFlow1 6s ease-in-out infinite;
+}
+.animate-float-2 {
+    animation: floatFlow2 7.5s ease-in-out infinite;
+}
+.animate-float-3 {
+    animation: floatFlow3 8.5s ease-in-out infinite;
+}
+
