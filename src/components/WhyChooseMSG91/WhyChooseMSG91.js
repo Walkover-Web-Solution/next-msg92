@@ -7,14 +7,24 @@ import getURL from '@/utils/getURL';
 
 export default function WhyChooseMSG91({ data, pageInfo }) {
     const isReports = pageInfo?.page === 'reports';
-    const bgClass = isReports ? 'reports_lite_bg' : 'bg-[#f4fcf4]';
+    const bgClass = data?.bg || (isReports ? 'reports_lite_bg' : 'bg-[#f4fcf4]');
 
     return (
         <div className={bgClass}>
             <div className='container cont cont_p cont_gap'>
                 <div className='cont cont_w gap-2 '>
-                    <h2 className='text-3xl font-bold'>{data?.heading}</h2>
-                    <p>{data?.subheading}</p>
+                    <h2 className='heading text-[#18181B] tracking-tight'>
+                        {data?.heading_prefix ? (
+                            <>
+                                {data?.heading_prefix}
+                                <span className='text-[#529837]'>{data?.heading_accent}</span>
+                                {data?.heading_suffix}
+                            </>
+                        ) : (
+                            data?.heading
+                        )}
+                    </h2>
+                    <p className='subheading text-[#4B5563] font-normal'>{data?.subheading}</p>
                 </div>
                 {data?.content.map((item, index) => (
                     <div
@@ -28,13 +38,15 @@ export default function WhyChooseMSG91({ data, pageInfo }) {
                                 <h3 className='text-2xl font-bold'>{item?.title}</h3>
                                 <p className='font-bold'>{item?.subtitle}</p>
                             </div>
-                            <p>{item?.description}</p>
-                            <ul className='list-disc'>
-                                {item?.highlights.map((hl, i) => (
-                                    <li key={i}>{hl}</li>
-                                ))}
-                            </ul>
-                            {item?.footer && <p>{item?.footer}.</p>}
+                            {item?.description && <p>{item?.description}</p>}
+                            {item?.highlights?.length > 0 && (
+                                <ul className='list-disc pl-5 flex flex-col gap-1'>
+                                    {item?.highlights.map((hl, i) => (
+                                        <li key={i}>{hl}</li>
+                                    ))}
+                                </ul>
+                            )}
+                            {item?.footer && <p>{item?.footer}</p>}
                             {item?.cta && (
                                 <LinkButton
                                     href={item?.cta?.link}
@@ -58,8 +70,19 @@ export default function WhyChooseMSG91({ data, pageInfo }) {
                                     </CalendlyModal>
                                 ))}
                         </div>
-                        <div className='w-full xl:max-w-[700px] lg:max-w-[320px] max-w-[280px] md:mx-6 mx-2 rounded-lg overflow-hidden'>
-                            {item?.img?.endsWith('.json') ? (
+                        <div className='w-full xl:max-w-[700px] lg:max-w-[500px] max-w-[320px] md:mx-6 mx-2 rounded-2xl overflow-hidden shadow-md border border-gray-100'>
+                            {item?.video || item?.img?.endsWith?.('.webm') ? (
+                                <video
+                                    className='w-full h-auto object-cover rounded-2xl block'
+                                    autoPlay
+                                    loop
+                                    muted
+                                    playsInline
+                                    aria-label={item?.title}
+                                >
+                                    <source src={item?.video || item?.img} type='video/webm' />
+                                </video>
+                            ) : item?.img?.endsWith?.('.json') ? (
                                 <LottiePlayer lottie={item?.img} />
                             ) : item?.img ? (
                                 <Image

@@ -41,7 +41,7 @@ export default function MoreServicesComp({ data }) {
                                     <h4 className='text-lg font-semibold'>{service?.heading}</h4>
                                     <p className='text-base'>{service?.description}</p>
                                 </div>
-                                {data?.linkText && <LinkText className='link-btn'>{data.linkText}</LinkText>}
+                                <LinkText className='link-btn'>{data?.linkText}</LinkText>
                             </a>
                         ))}
                 </div>
