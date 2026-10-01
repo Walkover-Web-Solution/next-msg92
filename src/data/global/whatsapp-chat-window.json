@@ -28,17 +28,21 @@
         "subheading": "A seamless transition from WhatsApp to dedicated resolution — experience it live below.",
         "done_text": "Done",
         "live_text": "Live",
+        "click_to_view": "Click to view",
         "replay_text": "Replay WhatsApp flow",
+        "replay_subtext": "Restart automated walkthrough",
         "playing_text": "Playing WhatsApp Chat...",
+        "hint_mobile": "Click \"Let's Chat\" below to test live! 👇",
+        "hint_desktop": "Click to test live!",
         "status_time": "9:41",
         "verified_badge": "✓",
         "date_badge": "TODAY",
-        "encryption_notice": "🔒 Messages and calls are end-to-end encrypted.",
+        "encryption_notice": "Messages and calls are end-to-end encrypted.",
         "link_preview_title": "💬 MSG91 Chat Window",
-        "link_preview_url": "chat.msg91.com/order-48291",
+        "link_preview_url": "chat.msg91.com/order-48291 ↗",
         "link_preview_size": "10 KB",
-        "lets_chat_btn": "Let's Chat",
-        "store_typing": "Store typing",
+        "lets_chat_btn": "Let's Chat ↗",
+        "store_typing": "Store is typing",
         "input_placeholder": "Message",
         "widget_config": {
             "widgetToken": "251a3",
@@ -109,8 +113,7 @@
         ]
     },
     "WhyChooseMSG91": {
-        "heading_prefix": "Everything You Need to Continue ",
-        "heading_accent": "Customer Conversations",
+        "heading": "Everything You Need to Continue Customer Conversations",
         "subheading": "A unified platform to automate, assist, and scale customer conversations beyond WhatsApp.",
         "content": [
             {
@@ -307,27 +310,27 @@
             {
                 "title": "Continue Without Starting Over",
                 "desc": "Customers pick up exactly where they left off on WhatsApp — no friction, no repeated context.",
-                "icon": "link"
+                "icon": "MdLink"
             },
             {
                 "title": "Automate More Conversations",
                 "desc": "AI chatbots and flow bots handle the majority of queries so your team focuses on what matters.",
-                "icon": "bot"
+                "icon": "MdSmartToy"
             },
             {
                 "title": "Bring Agents in When Needed",
                 "desc": "Live agents join the conversation at the right moment with full context already in view.",
-                "icon": "agent"
+                "icon": "MdSupportAgent"
             },
             {
                 "title": "Choose the Right Channel",
                 "desc": "Route conversations across chat, voice, or AI based on query type and customer preference.",
-                "icon": "radio"
+                "icon": "MdRadio"
             },
             {
                 "title": "Handle More With Less Effort",
                 "desc": "Scale support volume without scaling headcount — automation does the heavy lifting.",
-                "icon": "scale"
+                "icon": "MdBalance"
             }
         ]
     },
