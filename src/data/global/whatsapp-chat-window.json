@@ -1,0 +1,471 @@
+{
+    "HeadComp": {
+        "title": "MSG91 WhatsApp Chat Window — Cost-Effective Customer Conversations",
+        "description": "Continue customer conversations beyond WhatsApp with MSG91 Chat Window — built for AI chat, automation, and human support."
+    },
+    "WhatsAppHeroComp": {
+        "product_name": "WhatsApp",
+        "product_icon": "/assets/icons/products/whatsapp.svg",
+        "heading_prefix": "WhatsApp Chat Window for ",
+        "heading_accent": "Cost-Effective",
+        "heading_suffix": " Customer\nConversations",
+        "subheading": "Continue customer conversations beyond WhatsApp\nwith MSG91 Chat Window — built for AI chat,\nautomation, and human support.",
+        "primary_btn": "Get Started",
+        "primary_btn_link": "https://control.msg91.com/signup/",
+        "secondary_btn": "Book a Demo",
+        "video": "/assets/whatsapp_chat_window/hero_section.webm"
+    },
+    "WhatsAppProblemSolutionComp": {
+        "bg": "bg-[#F4FCF4]",
+        "heading_prefix": "Reduce WhatsApp Messaging Costs\n",
+        "heading_accent": "Without Ending Conversations",
+        "subheading": "Start on WhatsApp and continue seamlessly on Chat Window without per-message charges.",
+        "video": "/assets/whatsapp_chat_window/pricing_loop.webm"
+    },
+    "WhatsAppStepsComp": {
+        "heading_prefix": "How WhatsApp Chat Window ",
+        "heading_accent": "Works",
+        "subheading": "A seamless transition from WhatsApp to dedicated resolution — experience it live below.",
+        "done_text": "Done",
+        "live_text": "Live",
+        "click_to_view": "Click to view",
+        "replay_text": "Replay WhatsApp flow",
+        "replay_subtext": "Restart automated walkthrough",
+        "playing_text": "Playing WhatsApp Chat...",
+        "hint_mobile": "Click \"Let's Chat\" below to test live! 👇",
+        "hint_desktop": "Click to test live!",
+        "status_time": "9:41",
+        "verified_badge": "✓",
+        "date_badge": "TODAY",
+        "encryption_notice": "Messages and calls are end-to-end encrypted.",
+        "link_preview_title": "💬 MSG91 Chat Window",
+        "link_preview_url": "chat.msg91.com/order-48291 ↗",
+        "link_preview_size": "10 KB",
+        "lets_chat_btn": "Let's Chat ↗",
+        "store_typing": "Store is typing",
+        "input_placeholder": "Message",
+        "widget_config": {
+            "widgetToken": "251a3",
+            "parentId": "wa-chat-widget-mount",
+            "hide_launcher": true,
+            "show_widget_form": true,
+            "show_close_button": true,
+            "show_send_button": true,
+            "fullscreen": true,
+            "theme": "system",
+            "script_src": "https://ctest.msg91.com/chat-widget.js"
+        },
+        "conversation_stages": [
+            {
+                "stage": 1,
+                "title": "Start on WhatsApp",
+                "desc": "The customer starts a conversation through WhatsApp.",
+                "avatar": "🛍️",
+                "name": "UrbanStyle Store",
+                "status": "WhatsApp Business · online",
+                "messages": [
+                    {
+                        "id": "m1",
+                        "role": "customer",
+                        "text": "Hi! My order #48291 hasn't arrived yet.",
+                        "time": "10:40 AM"
+                    }
+                ]
+            },
+            {
+                "stage": 2,
+                "title": "Shift to Chat Window",
+                "desc": "Move the ongoing conversation to MSG91 Chat Window.",
+                "avatar": "🛍️",
+                "name": "UrbanStyle Store",
+                "status": "WhatsApp Business · online",
+                "messages": [
+                    {
+                        "id": "m2",
+                        "role": "business",
+                        "label": "URBANSTYLE STORE",
+                        "text": "Continue in our dedicated Chat Window:",
+                        "time": "10:41 AM",
+                        "isLink": true
+                    }
+                ]
+            }
+        ],
+        "steps": [
+            {
+                "n": "01",
+                "stepNum": 1,
+                "title": "Start on WhatsApp",
+                "desc": "The customer starts a conversation through WhatsApp."
+            },
+            {
+                "n": "02",
+                "stepNum": 2,
+                "title": "Shift to Chat Window",
+                "desc": "Move the ongoing conversation to MSG91 Chat Window."
+            },
+            {
+                "n": "03",
+                "stepNum": 3,
+                "title": "Continue the Conversation",
+                "desc": "Use AI, automation or human agents to respond."
+            }
+        ]
+    },
+    "WhyChooseMSG91": {
+        "heading": "Everything You Need to Continue Customer Conversations",
+        "subheading": "A unified platform to automate, assist, and scale customer conversations beyond WhatsApp.",
+        "content": [
+            {
+                "title": "AI Chatbot",
+                "subtitle": "Instant 24/7 AI Resolution",
+                "highlights": [
+                    "Instant automated answers for routine inquiries 24/7",
+                    "Zero per-message WhatsApp costs for unlimited customer turns",
+                    "Context-preserved instant escalation to human agents"
+                ],
+                "video": "/assets/whatsapp_chat_window/tile_chatbot.webm"
+            },
+            {
+                "title": "Flow Bot",
+                "subtitle": "Structured Self-Serve Workflows",
+                "highlights": [
+                    "Drag-and-drop conversational journey builder",
+                    "Guided self-serve options for orders, tracking, & support",
+                    "Dynamic API integrations to fetch real-time customer data"
+                ],
+                "video": "/assets/whatsapp_chat_window/tile_flow.webm"
+            },
+            {
+                "title": "Human Agent",
+                "subtitle": "Live Omnichannel Takeover",
+                "highlights": [
+                    "Unified team inbox with complete WhatsApp chat history",
+                    "One-click agent assignment with private notes & collaboration",
+                    "Unlimited agent messaging with zero incremental costs"
+                ],
+                "video": "/assets/whatsapp_chat_window/tile_agent.webm"
+            },
+            {
+                "title": "Calling & Voice AI",
+                "subtitle": "Seamless Audio & Voice Resolution",
+                "highlights": [
+                    "1-click browser calling directly from the chat window",
+                    "Voice AI agents for automated spoken support",
+                    "Real-time call recording, transcription, and summaries"
+                ],
+                "video": "/assets/whatsapp_chat_window/tile_voice.webm"
+            }
+        ]
+    },
+    "FeatureComp": {
+        "heading": "One Chat Window for Every Customer Conversation",
+        "subheading": "From support to sales, MSG91 Chat Window adapts seamlessly to any customer journey.",
+        "bg": "bg-[#F9FAFB]",
+        "features": [
+            {
+                "name": "Order & Delivery Support",
+                "subtitle": "E-Commerce & Logistics",
+                "content": "Help customers track orders, update delivery details, handle returns, and resolve refund-related questions in one continuous conversation.",
+                "img": "/assets/whatsapp_chat_window/usecase_order_delivery.webp"
+            },
+            {
+                "name": "Sales & Lead Qualification",
+                "subtitle": "Revenue & Growth",
+                "content": "Answer product questions, understand customer requirements, qualify leads, and connect high-intent customers with your sales team.",
+                "img": "/assets/whatsapp_chat_window/usecase_sales_leads.webp"
+            },
+            {
+                "name": "Payment Support",
+                "subtitle": "Billing & Transactions",
+                "content": "Handle payment failures, transaction questions, refund requests, and payment-related queries through automated or agent-assisted conversations.",
+                "img": "/assets/whatsapp_chat_window/usecase_payment_support.webp"
+            },
+            {
+                "name": "Customer Support",
+                "subtitle": "Omnichannel Helpdesk",
+                "content": "Let AI handle common questions while human agents step in for complex issues that require personalized support or decision-making.",
+                "img": "/assets/whatsapp_chat_window/usecase_customer_support.webp"
+            },
+            {
+                "name": "Customer Onboarding",
+                "subtitle": "SaaS & Activation",
+                "content": "Guide new customers through setup, verification, documentation, and other onboarding steps with automated conversation flows.",
+                "img": "/assets/whatsapp_chat_window/usecase_onboarding.webp"
+            },
+            {
+                "name": "Product Discovery",
+                "subtitle": "Catalog & Retail",
+                "content": "Help customers find the right product or service by answering questions, providing recommendations, and guiding them toward purchase.",
+                "img": "/assets/whatsapp_chat_window/usecase_product_discovery.webp"
+            }
+        ]
+    },
+    "WhatsAppComparisonComp": {
+        "heading_prefix": "A Smarter Way to Handle ",
+        "heading_accent": "WhatsApp Conversations",
+        "subheading": "See the direct difference between staying strictly inside WhatsApp vs. continuing through MSG91 Chat Window.",
+        "colTraditional": "Traditional WhatsApp Flow",
+        "colTraditionalSub": "Without MSG91 Chat Window",
+        "colTraditionalBadge": "High Cost",
+        "colMsg91": "With MSG91 Chat Window",
+        "colMsg91Sub": "Smart Conversation Management",
+        "colMsg91Badge": "✓ Recommended",
+        "traditional_flow": [
+            {
+                "label": "Customer sends a message",
+                "icon": "whatsapp"
+            },
+            {
+                "label": "Your reply",
+                "tag": "Charged",
+                "icon": "cost"
+            },
+            {
+                "label": "Bot reply",
+                "tag": "Charged",
+                "icon": "cost"
+            },
+            {
+                "label": "Your next reply",
+                "tag": "Charged",
+                "icon": "cost"
+            }
+        ],
+        "msg91_flow": [
+            {
+                "label": "Customer starts on WhatsApp",
+                "icon": "whatsapp"
+            },
+            {
+                "label": "Continue in Chat Window",
+                "icon": "window"
+            },
+            {
+                "label": "Bot reply",
+                "tag": "Free",
+                "icon": "bot"
+            },
+            {
+                "label": "Next replies",
+                "tag": "Free",
+                "icon": "agent"
+            }
+        ],
+        "outcomeTraditionalHint": "More conversation = Higher WhatsApp costs",
+        "outcomeMsg91Hint": "Start on WhatsApp. Continue in MSG91 Chat Window.",
+        "rows": [
+            {
+                "feature": "Starting Point",
+                "icon": "chat",
+                "traditional": "Customer starts on WhatsApp",
+                "msg91": "Customer starts on WhatsApp",
+                "isNeutral": true
+            },
+            {
+                "feature": "Ongoing Flow",
+                "icon": "loop",
+                "traditional": "Every reply continues through WhatsApp",
+                "msg91": "Longer conversations move to Chat Window"
+            },
+            {
+                "feature": "Message Volume",
+                "icon": "scale",
+                "traditional": "More customer replies mean more WhatsApp messages",
+                "msg91": "Fewer unnecessary WhatsApp messages"
+            },
+            {
+                "feature": "Cost Impact",
+                "icon": "cost",
+                "traditional": "More messages can increase messaging costs",
+                "msg91": "Reduce messaging costs by continuing conversations in Chat Window"
+            },
+            {
+                "feature": "Automation & Team",
+                "icon": "bot",
+                "traditional": "Customer conversations stay limited to WhatsApp",
+                "msg91": "Customers can continue with AI, automation or human agents"
+            },
+            {
+                "feature": "Interface",
+                "icon": "window",
+                "traditional": "Each interaction requires another WhatsApp response",
+                "msg91": "One Chat Window handles the ongoing conversation"
+            },
+            {
+                "feature": "Usage Control",
+                "icon": "shield",
+                "traditional": "Higher WhatsApp messaging volume",
+                "msg91": "Better control over WhatsApp message usage"
+            }
+        ],
+        "outcomeTraditional": "⚠️ Outcome: Escalating per-message billing & channel limits",
+        "outcomeMsg91": "✨ Outcome: Lower messaging costs + AI & human flexibility"
+    },
+    "WhatsAppWhyComp": {
+        "heading_prefix": "Turn WhatsApp Conversations Into a ",
+        "heading_accent": "Connected Customer Experience",
+        "subheading": "MSG91 Chat Window gives you the tools to make every conversation count.",
+        "reasons": [
+            {
+                "title": "Continue Without Starting Over",
+                "desc": "Customers pick up exactly where they left off on WhatsApp — no friction, no repeated context.",
+                "icon": "MdLink"
+            },
+            {
+                "title": "Automate More Conversations",
+                "desc": "AI chatbots and flow bots handle the majority of queries so your team focuses on what matters.",
+                "icon": "MdSmartToy"
+            },
+            {
+                "title": "Bring Agents in When Needed",
+                "desc": "Live agents join the conversation at the right moment with full context already in view.",
+                "icon": "MdSupportAgent"
+            },
+            {
+                "title": "Choose the Right Channel",
+                "desc": "Route conversations across chat, voice, or AI based on query type and customer preference.",
+                "icon": "MdRadio"
+            },
+            {
+                "title": "Handle More With Less Effort",
+                "desc": "Scale support volume without scaling headcount — automation does the heavy lifting.",
+                "icon": "MdBalance"
+            }
+        ]
+    },
+    "WhatsAppCTAComp": {
+        "heading_prefix": "Ready to Continue Customer Conversations ",
+        "heading_accent": "Beyond WhatsApp?",
+        "subheading": "Give customers a simpler way to keep talking while reducing unnecessary WhatsApp messaging.",
+        "primary_btn": "Get Started",
+        "primary_btn_link": "https://control.msg91.com/signup/",
+        "secondary_btn": "Explore Live Demo",
+        "secondary_btn_link": "#problem-solution",
+        "footnote": "No credit card required · Connect WhatsApp in minutes",
+        "floating_bubbles": [
+            {
+                "text": "Where is my order?",
+                "left": "4%",
+                "top": "18%",
+                "dir": "customer",
+                "animationClass": "animate-float-1"
+            },
+            {
+                "text": "Your order ships today! 🚚",
+                "left": "74%",
+                "top": "16%",
+                "dir": "business",
+                "animationClass": "animate-float-2"
+            },
+            {
+                "text": "Can I get a refund?",
+                "left": "5%",
+                "top": "62%",
+                "dir": "customer",
+                "animationClass": "animate-float-3"
+            },
+            {
+                "text": "I'll connect you to support.",
+                "left": "72%",
+                "top": "64%",
+                "dir": "business",
+                "animationClass": "animate-float-1"
+            },
+            {
+                "text": "Thanks for the quick reply! ✨",
+                "left": "16%",
+                "top": "84%",
+                "dir": "customer",
+                "animationClass": "animate-float-2"
+            }
+        ],
+        "floating_icons": [
+            {
+                "icon": "whatsapp",
+                "left": "10%",
+                "top": "40%",
+                "animationClass": "animate-float-2"
+            },
+            {
+                "icon": "ai",
+                "left": "86%",
+                "top": "38%",
+                "animationClass": "animate-float-1"
+            },
+            {
+                "icon": "bot",
+                "left": "20%",
+                "top": "10%",
+                "animationClass": "animate-float-3"
+            },
+            {
+                "icon": "voice",
+                "left": "84%",
+                "top": "80%",
+                "animationClass": "animate-float-2"
+            },
+            {
+                "icon": "agent",
+                "left": "64%",
+                "top": "86%",
+                "animationClass": "animate-float-1"
+            }
+        ]
+    },
+    "FaqsComp": {
+        "heading": "Frequently Asked Questions",
+        "subheading": "Everything you need to know about MSG91 WhatsApp Chat Window.",
+        "faqs": [
+            {
+                "question": "What is MSG91 WhatsApp Chat Window?",
+                "answer": "MSG91 WhatsApp Chat Window is a dedicated customer conversation platform that lets businesses move ongoing WhatsApp conversations into a persistent chat window — enabling AI chatbots, flow bots, human agents, and voice AI to handle queries without relying solely on WhatsApp messages."
+            },
+            {
+                "question": "How does the Chat Window help reduce WhatsApp messaging costs?",
+                "answer": "Once a conversation is initiated on WhatsApp, MSG91 shifts it to the Chat Window for all subsequent exchanges. This means customers and agents can continue communicating without triggering additional per-message charges on WhatsApp, reducing your overall messaging bill significantly."
+            },
+            {
+                "question": "Do customers need to download an app to use the Chat Window?",
+                "answer": "No. The MSG91 Chat Window is web-based and accessible directly through a link sent on WhatsApp. Customers can open it in any mobile browser or desktop browser — no app download required."
+            },
+            {
+                "question": "What types of automation does the Chat Window support?",
+                "answer": "The Chat Window supports AI chatbots for instant FAQ resolution, flow bots for guided conversation journeys, and voice AI for call-to-chat transitions. You can configure automation rules, triggers, and escalation paths from within the MSG91 dashboard."
+            },
+            {
+                "question": "How does the conversation shift from WhatsApp to the Chat Window?",
+                "answer": "When a customer messages on WhatsApp, MSG91 sends a contextual link that opens the Chat Window. The conversation history and context are preserved, so the customer can continue seamlessly without repeating themselves."
+            },
+            {
+                "question": "Can human agents and AI work together in the same conversation?",
+                "answer": "Yes. MSG91 Chat Window supports hybrid workflows where the AI handles initial queries and either escalates to a human agent based on intent or routes the conversation automatically. Agents have full visibility of the prior chat history."
+            },
+            {
+                "question": "Is MSG91 Chat Window secure and compliant?",
+                "answer": "MSG91 follows industry-standard security practices including data encryption in transit and at rest, role-based access controls, and complies with applicable data protection regulations. Enterprise security and compliance documentation is available on request."
+            },
+            {
+                "question": "How do I get started with MSG91 WhatsApp Chat Window?",
+                "answer": "Click the 'Get Started' button on this page to create your MSG91 account. The onboarding wizard will walk you through connecting your WhatsApp Business number, configuring the Chat Window, and setting up your first automation flow — typically in under 30 minutes."
+            }
+        ]
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}
