@@ -44,12 +44,6 @@
         "lets_chat_btn": "Let's Chat ↗",
         "store_typing": "Store is typing",
         "input_placeholder": "Message",
-        "widget_config": {
-            "parentId": "wa-chat-widget-mount",
-            "launch_widget": true,
-            "show_send_button": true,
-            "theme": "light"
-        },
         "conversation_stages": [
             {
                 "stage": 1,

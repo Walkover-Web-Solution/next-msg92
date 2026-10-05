@@ -1,123 +1,21 @@
 import { useState, useEffect, useRef } from 'react';
 import { MdCheckCircle, MdRefresh, MdArrowBack, MdVideocam, MdCall, MdMoreVert } from 'react-icons/md';
+import Script from 'next/script';
 
 export default function WhatsAppStepsComp({ data, pageInfo }) {
     if (!data) return null;
 
     const conversationStages = data?.conversation_stages || [];
-    const widgetConfig = data?.widget_config;
 
     const [currentStage, setCurrentStage] = useState(1);
     const [isTyping, setIsTyping] = useState(false);
     const [visibleMessages, setVisibleMessages] = useState([]);
     const [isPlaying, setIsPlaying] = useState(false);
-    const [isChatWidgetOpen, setIsChatWidgetOpen] = useState(false);
 
     const sectionRef = useRef(null);
     const scrollRef = useRef(null);
     const phoneMockupRef = useRef(null);
     const timersRef = useRef([]);
-    const isChatWidgetOpenRef = useRef(false);
-    const isWidgetOpenRequestedRef = useRef(false);
-    const widgetMountId = 'wa-chat-widget-mount';
-    const widgetScriptId = 'wa-chat-widget-script';
-
-    const updateChatWidgetVisibility = (isOpen) => {
-        isChatWidgetOpenRef.current = isOpen;
-        setIsChatWidgetOpen(isOpen);
-    };
-
-    const logChatWidget = (step, detail) => {
-        console.log('[WhatsAppChatWidget]', step, detail || '');
-    };
-
-    const getWidgetSnapshot = () => {
-        const mount = document.getElementById(widgetMountId);
-        const iframe = mount?.querySelector('iframe');
-        const popup = document.querySelector('.popup-parent-container');
-
-        return {
-            widgetOpen: document.getElementById('wa-chat-widget-parent')?.getAttribute('data-widget-open'),
-            iframeInMount: !!iframe,
-            iframeSrc: iframe?.src || '',
-            popupParent: popup?.parentElement?.id || '',
-            popupDisplay: popup ? window.getComputedStyle(popup).display : '',
-        };
-    };
-
-    const launchChatWidget = () => {
-        if (typeof window === 'undefined' || typeof document === 'undefined') return;
-        if (!document.getElementById(widgetMountId) || !window.initChatWidget) {
-            logChatWidget('init skipped', {
-                mount: !!document.getElementById(widgetMountId),
-                initChatWidget: !!window.initChatWidget,
-            });
-            return;
-        }
-
-        const helloConfig = {
-            widgetToken: process.env.WHATSAPP_CHAT_WIDGET_TOKEN,
-            launch_widget: true,
-            show_send_button: widgetConfig?.show_send_button ?? true,
-            theme: widgetConfig?.theme || 'light',
-            parentId: widgetMountId,
-        };
-
-        logChatWidget('initChatWidget', {
-            parentId: helloConfig.parentId,
-            hasToken: !!helloConfig.widgetToken,
-            launch_widget: helloConfig.launch_widget,
-        });
-        window.initChatWidget(helloConfig, 0);
-        logChatWidget('after init', getWidgetSnapshot());
-        setTimeout(() => {
-            logChatWidget('after init 500ms', getWidgetSnapshot());
-        }, 500);
-    };
-
-    const closeChatWidget = () => {
-        logChatWidget('closeChatWidget');
-        isWidgetOpenRequestedRef.current = false;
-        updateChatWidgetVisibility(false);
-    };
-
-    const openChatWidget = () => {
-        if (typeof window === 'undefined' || typeof document === 'undefined') return;
-
-        updateChatWidgetVisibility(true);
-        isWidgetOpenRequestedRef.current = true;
-        logChatWidget('openChatWidget', {
-            initReady: !!window.initChatWidget,
-            scriptLoaded: !!document.getElementById(widgetScriptId),
-        });
-
-        if (window.initChatWidget) {
-            isWidgetOpenRequestedRef.current = false;
-            launchChatWidget();
-            return;
-        }
-
-        if (document.getElementById(widgetScriptId)) {
-            logChatWidget('script already loading');
-            return;
-        }
-
-        const script = document.createElement('script');
-        script.id = widgetScriptId;
-        script.type = 'text/javascript';
-        script.src = process.env.CHAT_WIDGET_URL;
-        logChatWidget('loading script', script.src);
-        script.onload = () => {
-            logChatWidget('script loaded', { openRequested: isWidgetOpenRequestedRef.current });
-            if (!isWidgetOpenRequestedRef.current) return;
-            isWidgetOpenRequestedRef.current = false;
-            launchChatWidget();
-        };
-        script.onerror = () => {
-            logChatWidget('script failed', script.src);
-        };
-        document.head.appendChild(script);
-    };
 
     const clearAllTimers = () => {
         timersRef.current.forEach(clearTimeout);
@@ -125,21 +23,28 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
     };
 
     const handleLetsChatClick = () => {
-        logChatWidget('handleLetsChatClick');
         clearAllTimers();
-        setCurrentStage(2);
-        openChatWidget();
+        setCurrentStage(3);
 
-        timersRef.current.push(
-            setTimeout(() => {
-                setCurrentStage(3);
-            }, 700)
-        );
+        if (typeof window !== 'undefined' && window.initChatWidget) {
+            window.initChatWidget(
+                {
+                    widgetToken: process.env.WHATSAPP_CHAT_WIDGET_TOKEN,
+                    hide_launcher: false,
+                    show_widget_form: true,
+                    show_close_button: true,
+                    launch_widget: true,
+                    show_send_button: true,
+                    theme: 'system',
+                    parentId: 'phone-mockup-chat-widget',
+                },
+                0
+            );
+        }
     };
 
     const runAutomatedConversation = () => {
         clearAllTimers();
-        closeChatWidget();
         setIsPlaying(true);
         setCurrentStage(1);
         setVisibleMessages([]);
@@ -168,38 +73,33 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
                 if (stage1Msg) combined.push(stage1Msg);
                 if (stage2Msg) combined.push(stage2Msg);
                 setVisibleMessages(combined);
+                setCurrentStage(2);
                 setIsPlaying(false);
             }, 2000)
         );
     };
 
     const handleSelectStage = (stageNum) => {
-        logChatWidget('handleSelectStage', stageNum);
         clearAllTimers();
         setIsTyping(false);
         setIsPlaying(false);
+        setCurrentStage(stageNum);
+
+        if (stageNum === 3) {
+            handleLetsChatClick();
+            return;
+        }
 
         const stage1Msg = conversationStages?.[0]?.messages?.[0];
         const stage2Msg = conversationStages?.[1]?.messages?.[0];
 
         if (stageNum === 1) {
-            closeChatWidget();
-            setCurrentStage(1);
+            setVisibleMessages(stage1Msg ? [stage1Msg] : []);
+        } else {
             const combined = [];
             if (stage1Msg) combined.push(stage1Msg);
             if (stage2Msg) combined.push(stage2Msg);
             setVisibleMessages(combined);
-        } else if (stageNum === 2) {
-            setCurrentStage(2);
-            openChatWidget();
-            timersRef.current.push(
-                setTimeout(() => {
-                    setCurrentStage(3);
-                }, 700)
-            );
-        } else {
-            setCurrentStage(3);
-            openChatWidget();
         }
 
         if (typeof window !== 'undefined' && window.innerWidth < 1024 && (stageNum === 2 || stageNum === 3)) {
@@ -214,7 +114,7 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
             (entries) => {
                 const [entry] = entries;
                 if (entry.isIntersecting) {
-                    if (!isChatWidgetOpenRef.current) runAutomatedConversation();
+                    runAutomatedConversation();
                 } else {
                     clearAllTimers();
                     setIsPlaying(false);
@@ -247,6 +147,7 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
 
     return (
         <section id='how-it-works' ref={sectionRef} className='bg-slate-50 border-t border-gray-100 overflow-hidden'>
+            <Script src={`${process.env.CHAT_WIDGET_URL}`} strategy='afterInteractive' />
             <div className='container cont_p flex flex-col gap-10'>
                 <div className='text-center flex flex-col gap-3'>
                     <h2 className='heading'>
@@ -383,13 +284,7 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
                             ref={phoneMockupRef}
                             className='relative w-full max-w-[320px] bg-slate-900 p-1.5 rounded-[44px] shadow-2xl'
                         >
-                            <div
-                                id='wa-chat-widget-parent'
-                                data-widget-open={isChatWidgetOpen ? 'true' : 'false'}
-                                className='relative w-full rounded-[38px] overflow-hidden flex flex-col h-[640px]'
-                            >
-                                <div id={widgetMountId} />
-
+                            <div className='relative w-full rounded-[38px] overflow-hidden flex flex-col h-[640px]'>
                                 <div className='absolute top-2.5 left-1/2 -translate-x-1/2 w-24 h-4.5 bg-black rounded-full z-[100000] flex items-center justify-between px-2.5 pointer-events-none'>
                                     <div className='w-2 h-2 rounded-full bg-[#151515] border border-gray-800' />
                                     <div className='w-2 h-2 rounded-full bg-[#0a192f]' />
@@ -567,6 +462,15 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
                                         <div className='w-28 h-1 bg-slate-900 rounded-full' />
                                     </div>
                                 </div>
+
+                                <div
+                                    id='phone-mockup-chat-widget'
+                                    className={`absolute inset-0 z-40 bg-white transition-opacity duration-300 ${
+                                        currentStage === 3
+                                            ? 'opacity-100 pointer-events-auto'
+                                            : 'opacity-0 pointer-events-none'
+                                    }`}
+                                />
                             </div>
                         </div>
                     </div>
