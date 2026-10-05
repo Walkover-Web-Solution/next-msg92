@@ -370,26 +370,26 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
                                     </div>
 
                                     <div className='bg-[#008069] px-3 py-2 flex items-center justify-between text-white'>
-                                        <div className='flex items-center gap-2 min-w-0'>
-                                            <MdArrowBack className='w-4.5 h-4.5 shrink-0 text-white/90 cursor-pointer hover:text-white' />
-                                            <div className='w-8 h-8 shrink-0 rounded-full bg-emerald-700 flex items-center justify-center'>
+                                        <div className='flex items-center gap-2'>
+                                            <MdArrowBack className='w-4.5 h-4.5 text-white/90 cursor-pointer hover:text-white' />
+                                            <div className='w-8 h-8 rounded-full bg-emerald-700 flex items-center justify-center'>
                                                 <div className='text-xs'>{activeMeta?.avatar}</div>
                                             </div>
-                                            <div className='leading-tight min-w-0'>
-                                                <p className='font-bold text-xs text-white flex items-center gap-1 whitespace-nowrap'>
+                                            <div className='leading-tight'>
+                                                <p className='font-bold text-xs text-white flex items-center gap-1'>
                                                     <span>{activeMeta?.name}</span>
                                                     <span className='text-xs text-sky-400 font-bold'>
                                                         {data?.verified_badge}
                                                     </span>
                                                 </p>
                                                 <p className='text-emerald-100 text-xs flex items-center gap-1 whitespace-nowrap'>
-                                                    <span className='w-1.5 h-1.5 shrink-0 rounded-full bg-emerald-400' />
+                                                    <span className='w-1.5 h-1.5 rounded-full bg-emerald-400' />
                                                     <span>{activeMeta?.status}</span>
                                                 </p>
                                             </div>
                                         </div>
 
-                                        <div className='flex items-center gap-1 shrink-0 text-white/90'>
+                                        <div className='flex items-center gap-1 text-white/90'>
                                             <MdVideocam className='w-4.5 h-4.5 cursor-pointer hover:text-white' />
                                             <MdCall className='w-4 h-4 cursor-pointer hover:text-white' />
                                             <MdMoreVert className='w-4.5 h-4.5 cursor-pointer hover:text-white' />
