@@ -14,10 +14,10 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
     const [isPlaying, setIsPlaying] = useState(false);
     const [isWidgetScriptLoaded, setIsWidgetScriptLoaded] = useState(false);
     const [isChatWidgetOpen, setIsChatWidgetOpen] = useState(false);
-    const [widgetInitTick, setWidgetInitTick] = useState(0);
 
     const sectionRef = useRef(null);
     const scrollRef = useRef(null);
+    const phoneMockupRef = useRef(null);
     const timersRef = useRef([]);
     const isChatWidgetOpenRef = useRef(false);
     const isWidgetOpenRequestedRef = useRef(false);
@@ -30,66 +30,52 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
 
     const destroyChatWidget = () => {
         if (typeof document === 'undefined') return;
-
         const mount = document.getElementById(widgetMountId);
         if (mount) mount.innerHTML = '';
     };
 
     const initChatWidgetInMount = () => {
         if (typeof window === 'undefined' || !window.initChatWidget) return false;
-
         const mount = document.getElementById(widgetMountId);
         if (!mount) return false;
-
         mount.innerHTML = '';
-        window.initChatWidget({ ...widgetConfig, parentId: widgetMountId, launch_widget: true }, 0);
+        const widgetToken = process.env.WHATSAPP_CHAT_WIDGET_TOKEN;
+        window.initChatWidget({ ...widgetConfig, widgetToken, parentId: widgetMountId, launch_widget: true }, 0);
         return true;
+    };
+
+    useEffect(() => {
+        if (typeof window !== 'undefined' && window.initChatWidget) {
+            setIsWidgetScriptLoaded(true);
+        }
+    }, []);
+
+    const handleWidgetScriptReady = () => {
+        setIsWidgetScriptLoaded(true);
+        if (isWidgetOpenRequestedRef.current) {
+            isWidgetOpenRequestedRef.current = false;
+            updateChatWidgetVisibility(true);
+            initChatWidgetInMount();
+        }
     };
 
     const openChatWidget = () => {
         updateChatWidgetVisibility(true);
-        setWidgetInitTick((tick) => tick + 1);
 
-        if (typeof window === 'undefined' || !window.initChatWidget) {
+        if (typeof window === 'undefined') return;
+
+        if (window.initChatWidget) {
+            initChatWidgetInMount();
+        } else {
             isWidgetOpenRequestedRef.current = true;
         }
     };
 
     useEffect(() => {
-        if (typeof window === 'undefined') return;
-
-        if (window.initChatWidget) {
-            setIsWidgetScriptLoaded(true);
-            return;
-        }
-
-        const scriptPoll = setInterval(() => {
-            if (window.initChatWidget) {
-                setIsWidgetScriptLoaded(true);
-                clearInterval(scriptPoll);
-            }
-        }, 200);
-
-        return () => clearInterval(scriptPoll);
-    }, []);
-
-    useEffect(() => {
         if (!isChatWidgetOpen) {
             destroyChatWidget();
-            return;
         }
-
-        if (!isWidgetScriptLoaded) return;
-
-        initChatWidgetInMount();
-        isWidgetOpenRequestedRef.current = false;
-    }, [isChatWidgetOpen, widgetInitTick, isWidgetScriptLoaded]);
-
-    useEffect(() => {
-        if (!isWidgetScriptLoaded || !isWidgetOpenRequestedRef.current) return;
-        isWidgetOpenRequestedRef.current = false;
-        openChatWidget();
-    }, [isWidgetScriptLoaded]);
+    }, [isChatWidgetOpen]);
 
     const clearAllTimers = () => {
         timersRef.current.forEach(clearTimeout);
@@ -171,6 +157,10 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
             setCurrentStage(3);
             openChatWidget();
         }
+
+        if (typeof window !== 'undefined' && window.innerWidth < 1024 && (stageNum === 2 || stageNum === 3)) {
+            phoneMockupRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
     };
 
     useEffect(() => {
@@ -213,14 +203,12 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
 
     return (
         <section id='how-it-works' ref={sectionRef} className='bg-slate-50 border-t border-gray-100 overflow-hidden'>
-            {widgetConfig?.script_src && (
-                <Script
-                    strategy='afterInteractive'
-                    src={widgetConfig?.script_src}
-                    onLoad={() => setIsWidgetScriptLoaded(true)}
-                    onReady={() => setIsWidgetScriptLoaded(true)}
-                />
-            )}
+            <Script
+                strategy='afterInteractive'
+                src={process.env.CHAT_WIDGET_URL}
+                onLoad={handleWidgetScriptReady}
+                onReady={handleWidgetScriptReady}
+            />
 
             <div className='container cont_p flex flex-col gap-10'>
                 <div className='text-center flex flex-col gap-3'>
@@ -354,7 +342,10 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
                             </div>
                         </div>
 
-                        <div className='relative w-full max-w-[320px] bg-slate-900 p-1.5 rounded-[44px] shadow-2xl'>
+                        <div
+                            ref={phoneMockupRef}
+                            className='relative w-full max-w-[320px] bg-slate-900 p-1.5 rounded-[44px] shadow-2xl'
+                        >
                             <div
                                 id='wa-chat-widget-parent'
                                 data-widget-open={isChatWidgetOpen ? 'true' : 'false'}

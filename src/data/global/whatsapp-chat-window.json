@@ -45,15 +45,13 @@
         "store_typing": "Store is typing",
         "input_placeholder": "Message",
         "widget_config": {
-            "widgetToken": "251a3",
             "parentId": "wa-chat-widget-mount",
             "hide_launcher": true,
             "show_widget_form": true,
             "show_close_button": true,
             "show_send_button": true,
             "fullscreen": true,
-            "theme": "system",
-            "script_src": "https://ctest.msg91.com/chat-widget.js"
+            "theme": "system"
         },
         "conversation_stages": [
             {
