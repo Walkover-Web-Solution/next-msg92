@@ -418,6 +418,14 @@ $button-transition-timing: 100ms;
     animation: chatFadeIn 0.25s ease-out forwards;
 }
 
+#wa-chat-widget-mount {
+    pointer-events: none;
+}
+
+#wa-chat-widget-parent .popup-parent-container {
+    pointer-events: auto;
+}
+
 #wa-chat-widget-mount,
 #wa-chat-widget-parent .popup-parent-container,
 #wa-chat-widget-parent [id*='chatbot-iframe-container'],

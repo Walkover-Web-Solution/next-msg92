@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react';
-import Script from 'next/script';
 import { MdCheckCircle, MdRefresh, MdArrowBack, MdVideocam, MdCall, MdMoreVert } from 'react-icons/md';
 
 export default function WhatsAppStepsComp({ data, pageInfo }) {
@@ -12,7 +11,6 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
     const [isTyping, setIsTyping] = useState(false);
     const [visibleMessages, setVisibleMessages] = useState([]);
     const [isPlaying, setIsPlaying] = useState(false);
-    const [isWidgetScriptLoaded, setIsWidgetScriptLoaded] = useState(false);
     const [isChatWidgetOpen, setIsChatWidgetOpen] = useState(false);
 
     const sectionRef = useRef(null);
@@ -22,60 +20,58 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
     const isChatWidgetOpenRef = useRef(false);
     const isWidgetOpenRequestedRef = useRef(false);
     const widgetMountId = 'wa-chat-widget-mount';
+    const widgetScriptId = 'wa-chat-widget-script';
 
     const updateChatWidgetVisibility = (isOpen) => {
         isChatWidgetOpenRef.current = isOpen;
         setIsChatWidgetOpen(isOpen);
     };
 
-    const destroyChatWidget = () => {
-        if (typeof document === 'undefined') return;
-        const mount = document.getElementById(widgetMountId);
-        if (mount) mount.innerHTML = '';
+    const launchChatWidget = () => {
+        if (typeof window === 'undefined' || !window.initChatWidget) return;
+        if (!document.getElementById(widgetMountId)) return;
+
+        const helloConfig = {
+            widgetToken: process.env.WHATSAPP_CHAT_WIDGET_TOKEN,
+            launch_widget: true,
+            show_send_button: widgetConfig?.show_send_button ?? true,
+            theme: widgetConfig?.theme || 'light',
+            parentId: widgetMountId,
+        };
+
+        window.initChatWidget(helloConfig, 0);
     };
 
-    const initChatWidgetInMount = () => {
-        if (typeof window === 'undefined' || !window.initChatWidget) return false;
-        const mount = document.getElementById(widgetMountId);
-        if (!mount) return false;
-        mount.innerHTML = '';
-        const widgetToken = process.env.WHATSAPP_CHAT_WIDGET_TOKEN;
-        window.initChatWidget({ ...widgetConfig, widgetToken, parentId: widgetMountId, launch_widget: true }, 0);
-        return true;
-    };
-
-    useEffect(() => {
-        if (typeof window !== 'undefined' && window.initChatWidget) {
-            setIsWidgetScriptLoaded(true);
-        }
-    }, []);
-
-    const handleWidgetScriptReady = () => {
-        setIsWidgetScriptLoaded(true);
-        if (isWidgetOpenRequestedRef.current) {
-            isWidgetOpenRequestedRef.current = false;
-            updateChatWidgetVisibility(true);
-            initChatWidgetInMount();
-        }
+    const closeChatWidget = () => {
+        isWidgetOpenRequestedRef.current = false;
+        updateChatWidgetVisibility(false);
     };
 
     const openChatWidget = () => {
+        if (typeof window === 'undefined' || typeof document === 'undefined') return;
+
         updateChatWidgetVisibility(true);
 
-        if (typeof window === 'undefined') return;
-
         if (window.initChatWidget) {
-            initChatWidgetInMount();
-        } else {
-            isWidgetOpenRequestedRef.current = true;
+            launchChatWidget();
+            return;
         }
-    };
 
-    useEffect(() => {
-        if (!isChatWidgetOpen) {
-            destroyChatWidget();
-        }
-    }, [isChatWidgetOpen]);
+        isWidgetOpenRequestedRef.current = true;
+
+        if (document.getElementById(widgetScriptId)) return;
+
+        const script = document.createElement('script');
+        script.id = widgetScriptId;
+        script.type = 'text/javascript';
+        script.src = process.env.CHAT_WIDGET_URL;
+        script.onload = () => {
+            if (!isWidgetOpenRequestedRef.current) return;
+            isWidgetOpenRequestedRef.current = false;
+            launchChatWidget();
+        };
+        document.head.appendChild(script);
+    };
 
     const clearAllTimers = () => {
         timersRef.current.forEach(clearTimeout);
@@ -96,7 +92,7 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
 
     const runAutomatedConversation = () => {
         clearAllTimers();
-        updateChatWidgetVisibility(false);
+        closeChatWidget();
         setIsPlaying(true);
         setCurrentStage(1);
         setVisibleMessages([]);
@@ -139,7 +135,7 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
         const stage2Msg = conversationStages?.[1]?.messages?.[0];
 
         if (stageNum === 1) {
-            updateChatWidgetVisibility(false);
+            closeChatWidget();
             setCurrentStage(1);
             const combined = [];
             if (stage1Msg) combined.push(stage1Msg);
@@ -203,13 +199,6 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
 
     return (
         <section id='how-it-works' ref={sectionRef} className='bg-slate-50 border-t border-gray-100 overflow-hidden'>
-            <Script
-                strategy='afterInteractive'
-                src={process.env.CHAT_WIDGET_URL}
-                onLoad={handleWidgetScriptReady}
-                onReady={handleWidgetScriptReady}
-            />
-
             <div className='container cont_p flex flex-col gap-10'>
                 <div className='text-center flex flex-col gap-3'>
                     <h2 className='heading'>
@@ -381,26 +370,26 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
                                     </div>
 
                                     <div className='bg-[#008069] px-3 py-2 flex items-center justify-between text-white'>
-                                        <div className='flex items-center gap-2'>
-                                            <MdArrowBack className='w-4.5 h-4.5 text-white/90 cursor-pointer hover:text-white' />
-                                            <div className='w-8 h-8 rounded-full bg-emerald-700 flex items-center justify-center'>
+                                        <div className='flex items-center gap-2 min-w-0'>
+                                            <MdArrowBack className='w-4.5 h-4.5 shrink-0 text-white/90 cursor-pointer hover:text-white' />
+                                            <div className='w-8 h-8 shrink-0 rounded-full bg-emerald-700 flex items-center justify-center'>
                                                 <div className='text-xs'>{activeMeta?.avatar}</div>
                                             </div>
-                                            <div className='leading-tight'>
-                                                <p className='font-bold text-xs text-white flex items-center gap-1'>
+                                            <div className='leading-tight min-w-0'>
+                                                <p className='font-bold text-xs text-white flex items-center gap-1 whitespace-nowrap'>
                                                     <span>{activeMeta?.name}</span>
                                                     <span className='text-xs text-sky-400 font-bold'>
                                                         {data?.verified_badge}
                                                     </span>
                                                 </p>
-                                                <p className='text-emerald-100 text-xs flex items-center gap-1'>
-                                                    <span className='w-1.5 h-1.5 rounded-full bg-emerald-400' />
+                                                <p className='text-emerald-100 text-xs flex items-center gap-1 whitespace-nowrap'>
+                                                    <span className='w-1.5 h-1.5 shrink-0 rounded-full bg-emerald-400' />
                                                     <span>{activeMeta?.status}</span>
                                                 </p>
                                             </div>
                                         </div>
 
-                                        <div className='flex items-center gap-2 text-white/90'>
+                                        <div className='flex items-center gap-1 shrink-0 text-white/90'>
                                             <MdVideocam className='w-4.5 h-4.5 cursor-pointer hover:text-white' />
                                             <MdCall className='w-4 h-4 cursor-pointer hover:text-white' />
                                             <MdMoreVert className='w-4.5 h-4.5 cursor-pointer hover:text-white' />
