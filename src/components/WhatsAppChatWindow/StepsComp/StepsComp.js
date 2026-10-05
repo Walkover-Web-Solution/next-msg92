@@ -27,9 +27,33 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
         setIsChatWidgetOpen(isOpen);
     };
 
+    const logChatWidget = (step, detail) => {
+        console.log('[WhatsAppChatWidget]', step, detail || '');
+    };
+
+    const getWidgetSnapshot = () => {
+        const mount = document.getElementById(widgetMountId);
+        const iframe = mount?.querySelector('iframe');
+        const popup = document.querySelector('.popup-parent-container');
+
+        return {
+            widgetOpen: document.getElementById('wa-chat-widget-parent')?.getAttribute('data-widget-open'),
+            iframeInMount: !!iframe,
+            iframeSrc: iframe?.src || '',
+            popupParent: popup?.parentElement?.id || '',
+            popupDisplay: popup ? window.getComputedStyle(popup).display : '',
+        };
+    };
+
     const launchChatWidget = () => {
-        if (typeof window === 'undefined' || !window.initChatWidget) return;
-        if (!document.getElementById(widgetMountId)) return;
+        if (typeof window === 'undefined' || typeof document === 'undefined') return;
+        if (!document.getElementById(widgetMountId) || !window.initChatWidget) {
+            logChatWidget('init skipped', {
+                mount: !!document.getElementById(widgetMountId),
+                initChatWidget: !!window.initChatWidget,
+            });
+            return;
+        }
 
         const helloConfig = {
             widgetToken: process.env.WHATSAPP_CHAT_WIDGET_TOKEN,
@@ -39,10 +63,20 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
             parentId: widgetMountId,
         };
 
+        logChatWidget('initChatWidget', {
+            parentId: helloConfig.parentId,
+            hasToken: !!helloConfig.widgetToken,
+            launch_widget: helloConfig.launch_widget,
+        });
         window.initChatWidget(helloConfig, 0);
+        logChatWidget('after init', getWidgetSnapshot());
+        setTimeout(() => {
+            logChatWidget('after init 500ms', getWidgetSnapshot());
+        }, 500);
     };
 
     const closeChatWidget = () => {
+        logChatWidget('closeChatWidget');
         isWidgetOpenRequestedRef.current = false;
         updateChatWidgetVisibility(false);
     };
@@ -51,24 +85,36 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
         if (typeof window === 'undefined' || typeof document === 'undefined') return;
 
         updateChatWidgetVisibility(true);
+        isWidgetOpenRequestedRef.current = true;
+        logChatWidget('openChatWidget', {
+            initReady: !!window.initChatWidget,
+            scriptLoaded: !!document.getElementById(widgetScriptId),
+        });
 
         if (window.initChatWidget) {
+            isWidgetOpenRequestedRef.current = false;
             launchChatWidget();
             return;
         }
 
-        isWidgetOpenRequestedRef.current = true;
-
-        if (document.getElementById(widgetScriptId)) return;
+        if (document.getElementById(widgetScriptId)) {
+            logChatWidget('script already loading');
+            return;
+        }
 
         const script = document.createElement('script');
         script.id = widgetScriptId;
         script.type = 'text/javascript';
         script.src = process.env.CHAT_WIDGET_URL;
+        logChatWidget('loading script', script.src);
         script.onload = () => {
+            logChatWidget('script loaded', { openRequested: isWidgetOpenRequestedRef.current });
             if (!isWidgetOpenRequestedRef.current) return;
             isWidgetOpenRequestedRef.current = false;
             launchChatWidget();
+        };
+        script.onerror = () => {
+            logChatWidget('script failed', script.src);
         };
         document.head.appendChild(script);
     };
@@ -79,6 +125,7 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
     };
 
     const handleLetsChatClick = () => {
+        logChatWidget('handleLetsChatClick');
         clearAllTimers();
         setCurrentStage(2);
         openChatWidget();
@@ -127,6 +174,7 @@ export default function WhatsAppStepsComp({ data, pageInfo }) {
     };
 
     const handleSelectStage = (stageNum) => {
+        logChatWidget('handleSelectStage', stageNum);
         clearAllTimers();
         setIsTyping(false);
         setIsPlaying(false);
