@@ -418,7 +418,9 @@ $button-transition-timing: 100ms;
 #wa-chat-widget-mount,
 #wa-chat-widget-parent .popup-parent-container,
 #wa-chat-widget-parent [id*='chatbot-iframe-container'],
-#wa-chat-widget-parent .all_available_space-parent-container {
+#wa-chat-widget-parent .all_available_space-parent-container,
+#wa-chat-widget-parent .hello-full-screen-interfaceEmbed,
+#wa-chat-widget-parent [class*='full-screen'] {
     position: absolute !important;
     top: 0 !important;
     left: 0 !important;
@@ -447,7 +449,9 @@ $button-transition-timing: 100ms;
 #wa-chat-widget-parent[data-widget-open='false'] #wa-chat-widget-mount,
 #wa-chat-widget-parent[data-widget-open='false'] .popup-parent-container,
 #wa-chat-widget-parent[data-widget-open='false'] [id*='chatbot-iframe-container'],
-#wa-chat-widget-parent[data-widget-open='false'] .all_available_space-parent-container {
+#wa-chat-widget-parent[data-widget-open='false'] .all_available_space-parent-container,
+#wa-chat-widget-parent[data-widget-open='false'] .hello-full-screen-interfaceEmbed,
+#wa-chat-widget-parent[data-widget-open='false'] [class*='full-screen'] {
     display: none !important;
 }
 
