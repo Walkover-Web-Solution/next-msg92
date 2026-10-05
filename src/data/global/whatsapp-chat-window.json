@@ -46,12 +46,9 @@
         "input_placeholder": "Message",
         "widget_config": {
             "parentId": "wa-chat-widget-mount",
-            "hide_launcher": true,
-            "show_widget_form": true,
-            "show_close_button": true,
+            "launch_widget": true,
             "show_send_button": true,
-            "fullscreen": true,
-            "theme": "system"
+            "theme": "light"
         },
         "conversation_stages": [
             {
