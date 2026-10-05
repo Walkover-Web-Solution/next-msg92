@@ -102,6 +102,7 @@ const nextConfig = {
         // Chat Widget Config
         CHAT_WIDGET_TOKEN: getEnvValue('CHAT_WIDGET_TOKEN'),
         ECOMMERCE_WIDGET_TOKEN: getEnvValue('ECOMMERCE_WIDGET_TOKEN'),
+        WHATSAPP_CHAT_WIDGET_TOKEN: getEnvValue('WHATSAPP_CHAT_WIDGET_TOKEN'),
         CHAT_WIDGET_URL: getEnvValue('CHAT_WIDGET_URL'),
 
         // WhatsApp Outbound Config
