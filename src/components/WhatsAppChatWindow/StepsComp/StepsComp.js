@@ -229,7 +229,7 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
                             <button
                                 type='button'
                                 onClick={runAutomatedConversation}
-                                className='btn btn-whatsapp-chat btn-md inline-flex items-center gap-2'
+                                className='btn btn-whatsapp-chat btn-md gap-2'
                             >
                                 <MdRefresh className={`w-5 h-5 ${isPlaying ? 'animate-spin' : ''}`} />
                                 <span>{data?.replay_text}</span>
@@ -239,14 +239,14 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
                     </div>
 
                     <div className='lg:col-span-6 flex flex-col items-center justify-center gap-4 w-full relative'>
-                        <div className='flex lg:hidden justify-center select-none'>
+                        <div className='flex lg:hidden justify-center'>
                             <div className='bg-slate-900 text-white font-bold text-xs px-3.5 py-1.5 rounded-full shadow-md border border-slate-700 flex items-center gap-2 animate-bounce'>
                                 <span className='w-2 h-2 rounded-full bg-whatsappChat-accent animate-ping' />
                                 <span>{data?.hint_mobile}</span>
                             </div>
                         </div>
 
-                        <div className='absolute -right-2 xl:-right-12 top-1/2 -translate-y-1/2 hidden lg:flex items-center gap-2 pointer-events-none select-none'>
+                        <div className='absolute -right-2 xl:-right-12 top-1/2 -translate-y-1/2 hidden lg:flex items-center gap-2 pointer-events-none'>
                             <svg
                                 width='48'
                                 height='26'
@@ -285,7 +285,7 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
                                 </div>
 
                                 <div className='flex flex-col h-full w-full'>
-                                    <div className='bg-whatsappChat-teal py-2 px-5 flex items-center justify-between text-white text-xs font-semibold select-none'>
+                                    <div className='bg-whatsappChat-teal py-2 px-5 flex items-center justify-between text-white text-xs font-semibold'>
                                         <span>{data?.status_time}</span>
                                         <div className='flex items-center gap-1.5 text-xs'>
                                             <svg className='w-3.5 h-3.5 fill-current' viewBox='0 0 24 24'>
@@ -312,14 +312,14 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
                                             <div className='w-8 h-8 rounded-full bg-whatsappChat-dark flex items-center justify-center'>
                                                 <div className='text-xs'>{activeMeta?.avatar}</div>
                                             </div>
-                                            <div className='leading-tight'>
+                                            <div>
                                                 <p className='font-bold text-xs text-white flex items-center gap-1'>
                                                     <span>{activeMeta?.name}</span>
                                                     <span className='text-xs text-sky-400 font-bold'>
                                                         {data?.verified_badge}
                                                     </span>
                                                 </p>
-                                                <p className='text-whatsappChat-light text-xs flex items-center gap-1 whitespace-nowrap'>
+                                                <p className='text-whatsappChat-light text-xs flex items-center gap-1'>
                                                     <span className='w-1.5 h-1.5 rounded-full bg-whatsappChat-accent' />
                                                     <span>{activeMeta?.status}</span>
                                                 </p>
@@ -412,7 +412,7 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
                                                         <div className='absolute right-2 bottom-1 flex items-center gap-1 text-xs text-slate-400'>
                                                             <span>{msg?.time}</span>
                                                             {isCustomer && (
-                                                                <span className='text-sky-500 font-bold text-xs leading-none'>
+                                                                <span className='text-sky-500 font-bold text-xs'>
                                                                     ✓✓
                                                                 </span>
                                                             )}
@@ -457,7 +457,7 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
 
                                 <div
                                     id='phone-mockup-chat-widget'
-                                    className={`absolute inset-0 z-40 bg-white transition-opacity duration-300 ${
+                                    className={`absolute inset-0 z-40 bg-white ${
                                         currentStage === 3
                                             ? 'opacity-100 pointer-events-auto'
                                             : 'opacity-0 pointer-events-none'
