@@ -67,10 +67,10 @@ export default function WhatsAppComparisonComp({ pageInfo, data }) {
                 <div className='bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-lg grid grid-cols-1 lg:grid-cols-12 max-w-6xl mx-auto w-full'>
                     <div className='lg:col-span-6 p-6 lg:p-10 flex flex-col justify-center gap-8'>
                         <div className='flex flex-col gap-2'>
-                            <span className='text-xs font-bold uppercase tracking-wider text-whatsappChat-primary'>
+                            <span className='text-xs font-bold uppercase text-whatsappChat-primary'>
                                 {data?.kicker}
                             </span>
-                            <h3 className='text-2xl lg:text-3xl font-bold leading-tight'>{data?.title}</h3>
+                            <h3 className='text-2xl lg:text-3xl font-bold'>{data?.title}</h3>
                         </div>
 
                         <button
@@ -78,15 +78,15 @@ export default function WhatsAppComparisonComp({ pageInfo, data }) {
                             role='switch'
                             aria-checked={isChatWindowOn}
                             onClick={handleToggleSwitch}
-                            className='flex items-center gap-4 text-left cursor-pointer select-none'
+                            className='flex items-center gap-4 text-left cursor-pointer'
                         >
                             <div
-                                className={`w-16 h-9 rounded-full p-1 transition-colors duration-300 relative flex items-center ${
+                                className={`w-16 h-9 rounded-full p-1 relative flex items-center ${
                                     isChatWindowOn ? 'bg-whatsappChat-primary' : 'bg-slate-300'
                                 }`}
                             >
                                 <div
-                                    className={`w-7 h-7 rounded-full bg-white shadow-md transition-transform duration-300 transform ${
+                                    className={`w-7 h-7 rounded-full bg-white shadow-md ${
                                         isChatWindowOn ? 'translate-x-7' : 'translate-x-0'
                                     }`}
                                 />
@@ -103,7 +103,7 @@ export default function WhatsAppComparisonComp({ pageInfo, data }) {
                         </button>
 
                         <div
-                            className={`p-6 rounded-2xl border transition-all duration-300 flex flex-col gap-2 ${
+                            className={`p-6 rounded-2xl border flex flex-col gap-2 ${
                                 isChatWindowOn
                                     ? 'bg-whatsappChat-light border-whatsappChat-primary/30'
                                     : 'bg-slate-50 border-slate-200'
@@ -112,7 +112,7 @@ export default function WhatsAppComparisonComp({ pageInfo, data }) {
                             <span className='text-xs font-medium text-slate-500'>{data?.bill_label}</span>
                             <div className='flex items-center'>
                                 <span
-                                    className={`text-4xl lg:text-5xl font-extrabold transition-all duration-300 ${
+                                    className={`text-4xl lg:text-5xl font-extrabold ${
                                         isChatWindowOn ? 'text-whatsappChat-primary' : 'text-rose-600'
                                     }`}
                                 >
@@ -128,7 +128,7 @@ export default function WhatsAppComparisonComp({ pageInfo, data }) {
                     <div className='lg:col-span-6 bg-slate-100 p-6 lg:p-10 flex items-center justify-center'>
                         <div className='w-full max-w-md bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 flex flex-col'>
                             <div
-                                className={`px-4 py-3 flex items-center justify-between text-white transition-colors duration-300 ${
+                                className={`px-4 py-3 flex items-center justify-between text-white ${
                                     isChatWindowOn ? 'bg-whatsappChat-primary' : 'bg-whatsappChat-teal'
                                 }`}
                             >
@@ -144,7 +144,7 @@ export default function WhatsAppComparisonComp({ pageInfo, data }) {
                             </div>
 
                             <div
-                                className={`p-4 flex flex-col gap-3 min-h-[340px] transition-colors duration-300 ${
+                                className={`p-4 flex flex-col gap-3 min-h-[340px] ${
                                     isChatWindowOn ? 'bg-slate-50' : 'wa-chat-bg'
                                 }`}
                             >
@@ -152,12 +152,8 @@ export default function WhatsAppComparisonComp({ pageInfo, data }) {
                                     const isIncoming = msg?.type === 'in';
                                     return (
                                         <div key={index} className='flex flex-col gap-3'>
-                                            {index === 1 && (
-                                                <div
-                                                    className={`flex justify-center transition-all duration-300 overflow-hidden ${
-                                                        isChatWindowOn ? 'opacity-100 max-h-10' : 'opacity-0 max-h-0'
-                                                    }`}
-                                                >
+                                            {index === 1 && isChatWindowOn && (
+                                                <div className='flex justify-center'>
                                                     <span className='text-xs font-semibold text-whatsappChat-dark bg-whatsappChat-light border border-whatsappChat-primary/30 px-3 py-1 rounded-full'>
                                                         {data?.continued_notice}
                                                     </span>
@@ -166,7 +162,7 @@ export default function WhatsAppComparisonComp({ pageInfo, data }) {
 
                                             <div className={`flex ${isIncoming ? 'justify-start' : 'justify-end'}`}>
                                                 <div
-                                                    className={`relative px-3.5 py-2 text-xs text-slate-900 rounded-2xl max-w-[80%] flex flex-col gap-1 shadow-sm transition-all duration-300 ${
+                                                    className={`relative px-3.5 py-2 text-xs text-slate-900 rounded-2xl max-w-[80%] flex flex-col gap-1 shadow-sm ${
                                                         isIncoming
                                                             ? 'bg-white rounded-tl-none'
                                                             : isChatWindowOn
@@ -176,17 +172,13 @@ export default function WhatsAppComparisonComp({ pageInfo, data }) {
                                                 >
                                                     {!isIncoming && (
                                                         <div className='flex items-center justify-between gap-3'>
+                                                            {isChatWindowOn && (
+                                                                <span className='text-[10px] font-bold text-whatsappChat-dark'>
+                                                                    {msg?.role}
+                                                                </span>
+                                                            )}
                                                             <span
-                                                                className={`text-[10px] font-bold text-whatsappChat-dark transition-all duration-300 ${
-                                                                    isChatWindowOn
-                                                                        ? 'opacity-100'
-                                                                        : 'opacity-0 h-0 overflow-hidden'
-                                                                }`}
-                                                            >
-                                                                {msg?.role}
-                                                            </span>
-                                                            <span
-                                                                className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full transition-all duration-300 ${
+                                                                className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full ${
                                                                     isChatWindowOn
                                                                         ? 'bg-whatsappChat-primary text-white'
                                                                         : 'bg-amber-400 text-amber-950 shadow-sm'
@@ -196,7 +188,7 @@ export default function WhatsAppComparisonComp({ pageInfo, data }) {
                                                             </span>
                                                         </div>
                                                     )}
-                                                    <p className='leading-snug'>{msg?.text}</p>
+                                                    <p>{msg?.text}</p>
                                                 </div>
                                             </div>
                                         </div>

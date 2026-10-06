@@ -19,7 +19,7 @@ export default function WhatsAppWhyComp({ pageInfo, data }) {
                 </div>
                 <div className='flex flex-col gap-2'>
                     <h3 className='font-semibold text-lg'>{reason?.title}</h3>
-                    <p className='text-sm leading-relaxed'>{reason?.desc}</p>
+                    <p className='text-sm'>{reason?.desc}</p>
                 </div>
             </div>
         );

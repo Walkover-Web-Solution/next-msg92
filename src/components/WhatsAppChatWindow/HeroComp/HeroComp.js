@@ -40,7 +40,7 @@ export default function WhatsAppHeroComp({ pageInfo, data }) {
 
                         <p className='subheading'>{data?.subheading}</p>
 
-                        <div className='flex flex-row gap-4 items-center'>
+                        <div className='flex gap-4 items-center'>
                             {data?.primary_btn && (
                                 <a
                                     href={primaryUrl}

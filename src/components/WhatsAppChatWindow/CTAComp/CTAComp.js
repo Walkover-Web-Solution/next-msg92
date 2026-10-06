@@ -19,7 +19,7 @@ export default function WhatsAppCTAComp({ pageInfo, data }) {
                 {floatingBubbles.map((bubble, index) => (
                     <div
                         key={`bubble-${index}`}
-                        className={`absolute px-4 py-2.5 rounded-xl text-xs font-medium shadow-md border whitespace-nowrap ${
+                        className={`absolute px-4 py-2.5 rounded-xl text-xs font-medium shadow-md border ${
                             bubble?.dir === 'customer'
                                 ? 'bg-white border-slate-200 text-slate-700'
                                 : 'bg-whatsappChat-bubble border-whatsappChat-teal/20 text-whatsappChat-teal'
@@ -67,7 +67,7 @@ export default function WhatsAppCTAComp({ pageInfo, data }) {
                                 href={primaryUrl}
                                 target='_blank'
                                 rel='noopener noreferrer'
-                                className='btn btn-whatsapp-chat btn-md inline-flex items-center gap-2 w-full sm:w-auto'
+                                className='btn btn-whatsapp-chat btn-md gap-2 w-full sm:w-auto'
                             >
                                 <span>{data?.primary_btn}</span>
                                 <MdArrowForward className='w-4 h-4' />
