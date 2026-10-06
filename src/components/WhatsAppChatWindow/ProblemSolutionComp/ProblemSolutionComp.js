@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-export default function WhatsAppProblemSolutionComp({ data }) {
+export default function WhatsAppProblemSolutionComp({ pageInfo, data }) {
     if (!data) return null;
 
     const videoSrc = data?.video;
@@ -38,32 +38,22 @@ export default function WhatsAppProblemSolutionComp({ data }) {
     }, []);
 
     return (
-        <section ref={containerRef} className={`w-full ${data?.bg || 'bg-[#F4FCF4]'} overflow-hidden`}>
+        <section ref={containerRef} className={`w-full ${data?.bg} overflow-hidden`}>
             <div className='container cont_p flex flex-col gap-8 lg:gap-10 items-center'>
-                {(data?.heading_prefix || data?.heading) && (
+                {data?.heading_prefix && (
                     <div className='text-center flex flex-col gap-3 max-w-4xl mx-auto'>
-                        <h2 className='heading whitespace-pre-line text-[#18181B]'>
-                            {data?.heading_prefix ? (
-                                <>
-                                    {data?.heading_prefix}
-                                    <span className='text-[#529837]'>{data?.heading_accent}</span>
-                                    {data?.heading_suffix}
-                                </>
-                            ) : (
-                                data?.heading
-                            )}
+                        <h2 className='heading'>
+                            {data?.heading_prefix}
+                            <span className='text-whatsappChat-primary'>{data?.heading_accent}</span>
+                            {data?.heading_suffix}
                         </h2>
 
-                        {data?.subheading && (
-                            <p className='subheading whitespace-pre-line text-[#4B5563] max-w-2xl mx-auto'>
-                                {data?.subheading}
-                            </p>
-                        )}
+                        {data?.subheading && <p className='subheading max-w-2xl mx-auto'>{data?.subheading}</p>}
                     </div>
                 )}
 
                 {videoSrc && (
-                    <div className='w-full max-w-5xl rounded-2xl overflow-hidden shadow-md bg-white border border-emerald-100/80'>
+                    <div className='w-full max-w-5xl rounded-2xl overflow-hidden shadow-md bg-white border border-slate-200'>
                         <video
                             ref={videoRef}
                             className='w-full h-auto object-cover block'
@@ -71,7 +61,7 @@ export default function WhatsAppProblemSolutionComp({ data }) {
                             loop
                             muted
                             playsInline
-                            aria-label={data?.heading || 'WhatsApp Chat Window Pricing & Solution'}
+                            aria-label={data?.heading_prefix}
                         >
                             <source src={videoSrc} type='video/webm' />
                         </video>

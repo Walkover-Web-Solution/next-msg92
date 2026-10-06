@@ -33,6 +33,16 @@ module.exports = {
                     light: '#EEF2FF',
                     border: '#C7D2FE',
                 },
+                whatsappChat: {
+                    primary: '#529837',
+                    hover: '#43822b',
+                    light: '#F4FCF4',
+                    dark: '#15803d',
+                    accent: '#38A14E',
+                    official: '#25D366',
+                    teal: '#128C7E',
+                    bubble: '#DCF8C6',
+                },
             },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
