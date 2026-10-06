@@ -16,7 +16,7 @@
         "video": "/assets/whatsapp_chat_window/hero_section.webm"
     },
     "WhatsAppProblemSolutionComp": {
-        "bg": "bg-[#F4FCF4]",
+        "bg": "bg-whatsappChat-light",
         "heading_prefix": "Reduce WhatsApp Messaging Costs\n",
         "heading_accent": "Without Ending Conversations",
         "subheading": "Start on WhatsApp and continue seamlessly on Chat Window without per-message charges.",
@@ -150,7 +150,7 @@
     "FeatureComp": {
         "heading": "One Chat Window for Every Customer Conversation",
         "subheading": "From support to sales, MSG91 Chat Window adapts seamlessly to any customer journey.",
-        "bg": "bg-[#F9FAFB]",
+        "bg": "bg-slate-50",
         "features": [
             {
                 "name": "Order & Delivery Support",
@@ -193,103 +193,53 @@
     "WhatsAppComparisonComp": {
         "heading_prefix": "A Smarter Way to Handle ",
         "heading_accent": "WhatsApp Conversations",
-        "subheading": "See the direct difference between staying strictly inside WhatsApp vs. continuing through MSG91 Chat Window.",
-        "colTraditional": "Traditional WhatsApp Flow",
-        "colTraditionalSub": "Without MSG91 Chat Window",
-        "colTraditionalBadge": "High Cost",
-        "colMsg91": "With MSG91 Chat Window",
-        "colMsg91Sub": "Smart Conversation Management",
-        "colMsg91Badge": "✓ Recommended",
-        "traditional_flow": [
+        "heading_suffix": "",
+        "subheading": "Flip one switch and watch the same conversation stop costing you money.",
+        "kicker": "Try it",
+        "title": "What if the chat continued in MSG91 Chat Window?",
+        "switch_off_title": "WhatsApp only",
+        "switch_off_desc": "Every reply is a paid message",
+        "switch_on_title": "MSG91 Chat Window on",
+        "switch_on_desc": "Chat moves off WhatsApp after hello",
+        "bill_label": "Cost of the replies in this chat",
+        "bill_off_amount": "$$$",
+        "bill_on_amount": "$0",
+        "bill_off_desc": "3 replies, 3 paid WhatsApp messages",
+        "bill_on_desc": "3 replies, all free in Chat Window",
+        "chat_off_title": "WhatsApp",
+        "chat_on_title": "MSG91 Chat Window",
+        "continued_notice": "↓ Continued in Chat Window",
+        "free_tag": "Free",
+        "coin_tag": "$",
+        "chat_messages": [
             {
-                "label": "Customer sends a message",
-                "icon": "whatsapp"
+                "type": "in",
+                "text": "Hi, where's my order?"
             },
             {
-                "label": "Your reply",
-                "tag": "Charged",
-                "icon": "cost"
+                "type": "out",
+                "role": "AI bot",
+                "text": "It's on the way 🚚"
             },
             {
-                "label": "Bot reply",
-                "tag": "Charged",
-                "icon": "cost"
+                "type": "in",
+                "text": "Can I change the address?"
             },
             {
-                "label": "Your next reply",
-                "tag": "Charged",
-                "icon": "cost"
+                "type": "out",
+                "role": "Agent",
+                "text": "Sure, send it here"
+            },
+            {
+                "type": "in",
+                "text": "Thanks!"
+            },
+            {
+                "type": "out",
+                "role": "Agent",
+                "text": "Done ✅"
             }
-        ],
-        "msg91_flow": [
-            {
-                "label": "Customer starts on WhatsApp",
-                "icon": "whatsapp"
-            },
-            {
-                "label": "Continue in Chat Window",
-                "icon": "window"
-            },
-            {
-                "label": "Bot reply",
-                "tag": "Free",
-                "icon": "bot"
-            },
-            {
-                "label": "Next replies",
-                "tag": "Free",
-                "icon": "agent"
-            }
-        ],
-        "outcomeTraditionalHint": "More conversation = Higher WhatsApp costs",
-        "outcomeMsg91Hint": "Start on WhatsApp. Continue in MSG91 Chat Window.",
-        "rows": [
-            {
-                "feature": "Starting Point",
-                "icon": "chat",
-                "traditional": "Customer starts on WhatsApp",
-                "msg91": "Customer starts on WhatsApp",
-                "isNeutral": true
-            },
-            {
-                "feature": "Ongoing Flow",
-                "icon": "loop",
-                "traditional": "Every reply continues through WhatsApp",
-                "msg91": "Longer conversations move to Chat Window"
-            },
-            {
-                "feature": "Message Volume",
-                "icon": "scale",
-                "traditional": "More customer replies mean more WhatsApp messages",
-                "msg91": "Fewer unnecessary WhatsApp messages"
-            },
-            {
-                "feature": "Cost Impact",
-                "icon": "cost",
-                "traditional": "More messages can increase messaging costs",
-                "msg91": "Reduce messaging costs by continuing conversations in Chat Window"
-            },
-            {
-                "feature": "Automation & Team",
-                "icon": "bot",
-                "traditional": "Customer conversations stay limited to WhatsApp",
-                "msg91": "Customers can continue with AI, automation or human agents"
-            },
-            {
-                "feature": "Interface",
-                "icon": "window",
-                "traditional": "Each interaction requires another WhatsApp response",
-                "msg91": "One Chat Window handles the ongoing conversation"
-            },
-            {
-                "feature": "Usage Control",
-                "icon": "shield",
-                "traditional": "Higher WhatsApp messaging volume",
-                "msg91": "Better control over WhatsApp message usage"
-            }
-        ],
-        "outcomeTraditional": "⚠️ Outcome: Escalating per-message billing & channel limits",
-        "outcomeMsg91": "✨ Outcome: Lower messaging costs + AI & human flexibility"
+        ]
     },
     "WhatsAppWhyComp": {
         "heading_prefix": "Turn WhatsApp Conversations Into a ",
@@ -371,31 +321,31 @@
         ],
         "floating_icons": [
             {
-                "icon": "whatsapp",
+                "icon": "MdChat",
                 "left": "10%",
                 "top": "40%",
                 "animationClass": "animate-float-2"
             },
             {
-                "icon": "ai",
+                "icon": "MdAutoAwesome",
                 "left": "86%",
                 "top": "38%",
                 "animationClass": "animate-float-1"
             },
             {
-                "icon": "bot",
+                "icon": "MdSmartToy",
                 "left": "20%",
                 "top": "10%",
                 "animationClass": "animate-float-3"
             },
             {
-                "icon": "voice",
+                "icon": "MdRecordVoiceOver",
                 "left": "84%",
                 "top": "80%",
                 "animationClass": "animate-float-2"
             },
             {
-                "icon": "agent",
+                "icon": "MdSupportAgent",
                 "left": "64%",
                 "top": "86%",
                 "animationClass": "animate-float-1"

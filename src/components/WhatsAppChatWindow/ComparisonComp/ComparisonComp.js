@@ -1,157 +1,209 @@
-import { BsWhatsapp } from 'react-icons/bs';
-import { HiSparkles } from 'react-icons/hi2';
-import { MdClose, MdCheck, MdSmartToy, MdSupportAgent } from 'react-icons/md';
+import { useState, useEffect, useRef } from 'react';
+import { RiWhatsappFill } from 'react-icons/ri';
 
-const flowIcons = {
-    whatsapp: <BsWhatsapp className='w-4 h-4 text-[#25D366]' />,
-    cost: <span className='text-sm font-semibold text-rose-500'>$</span>,
-    window: <HiSparkles className='w-4 h-4 text-[#529837]' />,
-    bot: <MdSmartToy className='w-4 h-4 text-[#529837]' />,
-    agent: <MdSupportAgent className='w-4 h-4 text-[#529837]' />,
-};
-
-export default function WhatsAppComparisonComp({ data }) {
+export default function WhatsAppComparisonComp({ pageInfo, data }) {
     if (!data) return null;
 
-    const traditionalFlow = data?.traditional_flow || [];
-    const msg91Flow = Array.isArray(data?.msg91_flow) ? data.msg91_flow : [];
-    const compareRows = (data?.rows || []).filter((row) => !row?.isNeutral);
+    const [isChatWindowOn, setIsChatWindowOn] = useState(false);
+    const [hasUserInteracted, setHasUserInteracted] = useState(false);
+    const sectionRef = useRef(null);
+
+    const handleToggleSwitch = () => {
+        setHasUserInteracted(true);
+        setIsChatWindowOn((prev) => !prev);
+    };
+
+    useEffect(() => {
+        if (typeof window === 'undefined' || hasUserInteracted) return;
+
+        let intervalId = null;
+        let timeoutId = null;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const [entry] = entries;
+                if (entry.isIntersecting && !hasUserInteracted) {
+                    timeoutId = setTimeout(() => {
+                        if (!hasUserInteracted) {
+                            setIsChatWindowOn(true);
+                            intervalId = setInterval(() => {
+                                if (!hasUserInteracted) {
+                                    setIsChatWindowOn((prev) => !prev);
+                                }
+                            }, 3600);
+                        }
+                    }, 1200);
+                } else {
+                    if (timeoutId) clearTimeout(timeoutId);
+                    if (intervalId) clearInterval(intervalId);
+                }
+            },
+            { threshold: 0.35 }
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => {
+            observer.disconnect();
+            if (timeoutId) clearTimeout(timeoutId);
+            if (intervalId) clearInterval(intervalId);
+        };
+    }, [hasUserInteracted]);
 
     return (
-        <section id='comparison' className='bg-[#FAFAF9] border-y'>
+        <section id='comparison' ref={sectionRef} className='bg-slate-50 border-y border-slate-200'>
             <div className='container cont_p flex flex-col gap-10'>
                 <div className='text-center flex flex-col gap-3'>
-                    <h2 className='heading text-[#18181B]'>
+                    <h2 className='heading'>
                         {data?.heading_prefix}
-                        <span className='text-[#529837]'>{data?.heading_accent}</span>
+                        <span className='text-whatsappChat-primary'>{data?.heading_accent}</span>
                         {data?.heading_suffix}
                     </h2>
-                    <p className='subheading text-[#4B5563] max-w-2xl mx-auto'>{data?.subheading}</p>
+                    {data?.subheading && <p className='subheading max-w-2xl mx-auto'>{data?.subheading}</p>}
                 </div>
 
-                <div className='grid grid-cols-1 lg:grid-cols-2 gap-6'>
-                    <div className='bg-rose-50/60 border border-rose-100 rounded-lg p-6 flex flex-col justify-between gap-6'>
-                        <div className='flex flex-col gap-6'>
-                            <div className='flex items-start justify-between gap-3'>
-                                <div className='flex items-start gap-3'>
-                                    <div className='w-8 h-8 rounded-full bg-rose-100 text-rose-500 flex items-center justify-center'>
-                                        <MdClose className='w-4 h-4' />
-                                    </div>
-                                    <div className='flex flex-col gap-1'>
-                                        <h3 className='font-semibold text-lg text-[#18181B]'>{data?.colTraditional}</h3>
-                                        <p className='text-sm text-[#4B5563]'>{data?.colTraditionalSub}</p>
-                                    </div>
-                                </div>
-                                {data?.colTraditionalBadge && (
-                                    <span className='text-[11px] font-semibold text-rose-700 bg-white border border-rose-200 px-2.5 py-0.5 rounded-full'>
-                                        {data?.colTraditionalBadge}
-                                    </span>
-                                )}
-                            </div>
-
-                            {traditionalFlow.length > 0 && (
-                                <div className='grid grid-cols-2 lg:grid-cols-4 gap-2'>
-                                    {traditionalFlow.map((step, index) => (
-                                        <div
-                                            key={index}
-                                            className='bg-white border border-rose-100 rounded-lg p-3 flex flex-col gap-2'
-                                        >
-                                            <div className='flex items-center justify-between gap-1'>
-                                                {flowIcons[step?.icon]}
-                                                {step?.tag && (
-                                                    <span className='text-[10px] font-semibold text-rose-600 bg-rose-50 border border-rose-100 px-1.5 py-0.5 rounded-full'>
-                                                        {step?.tag}
-                                                    </span>
-                                                )}
-                                            </div>
-                                            <p className='text-xs font-medium text-[#18181B]'>{step?.label}</p>
-                                        </div>
-                                    ))}
-                                </div>
-                            )}
-
-                            <div className='grid grid-cols-1 sm:grid-cols-2 gap-3'>
-                                {compareRows.map((row, index) => (
-                                    <div key={index} className='flex items-start gap-2'>
-                                        <MdClose className='w-4 h-4 text-rose-400' />
-                                        <p className='text-xs text-[#4B5563] leading-relaxed'>{row?.traditional}</p>
-                                    </div>
-                                ))}
-                            </div>
+                <div className='bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-lg grid grid-cols-1 lg:grid-cols-12 max-w-6xl mx-auto w-full'>
+                    <div className='lg:col-span-6 p-6 lg:p-10 flex flex-col justify-center gap-8'>
+                        <div className='flex flex-col gap-2'>
+                            <span className='text-xs font-bold uppercase tracking-wider text-whatsappChat-primary'>
+                                {data?.kicker}
+                            </span>
+                            <h3 className='text-2xl lg:text-3xl font-bold leading-tight'>{data?.title}</h3>
                         </div>
 
-                        {(data?.outcomeTraditional || data?.outcomeTraditionalHint) && (
-                            <div className='bg-rose-100/80 rounded-lg p-4 flex flex-col gap-1'>
-                                {data?.outcomeTraditional && (
-                                    <p className='text-xs font-semibold text-rose-900'>{data?.outcomeTraditional}</p>
-                                )}
-                                {data?.outcomeTraditionalHint && (
-                                    <p className='text-xs text-rose-800'>{data?.outcomeTraditionalHint}</p>
-                                )}
+                        <button
+                            type='button'
+                            role='switch'
+                            aria-checked={isChatWindowOn}
+                            onClick={handleToggleSwitch}
+                            className='flex items-center gap-4 text-left cursor-pointer select-none'
+                        >
+                            <div
+                                className={`w-16 h-9 rounded-full p-1 transition-colors duration-300 relative flex items-center ${
+                                    isChatWindowOn ? 'bg-whatsappChat-primary' : 'bg-slate-300'
+                                }`}
+                            >
+                                <div
+                                    className={`w-7 h-7 rounded-full bg-white shadow-md transition-transform duration-300 transform ${
+                                        isChatWindowOn ? 'translate-x-7' : 'translate-x-0'
+                                    }`}
+                                />
                             </div>
-                        )}
+
+                            <div className='flex flex-col'>
+                                <span className='font-bold text-base text-slate-900'>
+                                    {isChatWindowOn ? data?.switch_on_title : data?.switch_off_title}
+                                </span>
+                                <span className='text-xs text-slate-500'>
+                                    {isChatWindowOn ? data?.switch_on_desc : data?.switch_off_desc}
+                                </span>
+                            </div>
+                        </button>
+
+                        <div
+                            className={`p-6 rounded-2xl border transition-all duration-300 flex flex-col gap-2 ${
+                                isChatWindowOn
+                                    ? 'bg-whatsappChat-light border-whatsappChat-primary/30'
+                                    : 'bg-slate-50 border-slate-200'
+                            }`}
+                        >
+                            <span className='text-xs font-medium text-slate-500'>{data?.bill_label}</span>
+                            <div className='flex items-center'>
+                                <span
+                                    className={`text-4xl lg:text-5xl font-extrabold transition-all duration-300 ${
+                                        isChatWindowOn ? 'text-whatsappChat-primary' : 'text-rose-600'
+                                    }`}
+                                >
+                                    {isChatWindowOn ? data?.bill_on_amount : data?.bill_off_amount}
+                                </span>
+                            </div>
+                            <p className='text-xs text-slate-600 font-medium'>
+                                {isChatWindowOn ? data?.bill_on_desc : data?.bill_off_desc}
+                            </p>
+                        </div>
                     </div>
 
-                    <div className='bg-[#529837]/5 border border-[#529837]/20 rounded-lg p-6 flex flex-col justify-between gap-6'>
-                        <div className='flex flex-col gap-6'>
-                            <div className='flex items-start justify-between gap-3'>
-                                <div className='flex items-start gap-3'>
-                                    <div className='w-8 h-8 rounded-full bg-[#529837] text-white flex items-center justify-center'>
-                                        <MdCheck className='w-4 h-4' />
-                                    </div>
-                                    <div className='flex flex-col gap-1'>
-                                        <h3 className='font-semibold text-lg text-[#18181B]'>{data?.colMsg91}</h3>
-                                        <p className='text-sm text-[#529837]'>{data?.colMsg91Sub}</p>
-                                    </div>
+                    <div className='lg:col-span-6 bg-slate-100 p-6 lg:p-10 flex items-center justify-center'>
+                        <div className='w-full max-w-md bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 flex flex-col'>
+                            <div
+                                className={`px-4 py-3 flex items-center justify-between text-white transition-colors duration-300 ${
+                                    isChatWindowOn ? 'bg-whatsappChat-primary' : 'bg-whatsappChat-teal'
+                                }`}
+                            >
+                                <div className='flex items-center gap-2 font-semibold text-sm'>
+                                    <RiWhatsappFill className='w-5 h-5' />
+                                    <span>{isChatWindowOn ? data?.chat_on_title : data?.chat_off_title}</span>
                                 </div>
-                                {data?.colMsg91Badge && (
-                                    <span className='text-[11px] font-semibold text-emerald-900 bg-white border border-[#529837]/30 px-2.5 py-0.5 rounded-full'>
-                                        {data?.colMsg91Badge}
-                                    </span>
-                                )}
+                                <div className='flex items-center gap-1.5'>
+                                    <span className='w-2 h-2 rounded-full bg-white/40' />
+                                    <span className='w-2 h-2 rounded-full bg-white/40' />
+                                    <span className='w-2 h-2 rounded-full bg-white/40' />
+                                </div>
                             </div>
 
-                            {msg91Flow.length > 0 && (
-                                <div className='grid grid-cols-2 lg:grid-cols-4 gap-2'>
-                                    {msg91Flow.map((step, index) => (
-                                        <div
-                                            key={index}
-                                            className='bg-white border border-[#529837]/20 rounded-lg p-3 flex flex-col gap-2'
-                                        >
-                                            <div className='flex items-center justify-between gap-1'>
-                                                {flowIcons[step?.icon]}
-                                                {step?.tag && (
-                                                    <span className='text-[10px] font-semibold text-[#529837] bg-[#529837]/10 border border-[#529837]/20 px-1.5 py-0.5 rounded-full'>
-                                                        {step?.tag}
+                            <div
+                                className={`p-4 flex flex-col gap-3 min-h-[340px] transition-colors duration-300 ${
+                                    isChatWindowOn ? 'bg-slate-50' : 'wa-chat-bg'
+                                }`}
+                            >
+                                {data?.chat_messages?.map((msg, index) => {
+                                    const isIncoming = msg?.type === 'in';
+                                    return (
+                                        <div key={index} className='flex flex-col gap-3'>
+                                            {index === 1 && (
+                                                <div
+                                                    className={`flex justify-center transition-all duration-300 overflow-hidden ${
+                                                        isChatWindowOn ? 'opacity-100 max-h-10' : 'opacity-0 max-h-0'
+                                                    }`}
+                                                >
+                                                    <span className='text-xs font-semibold text-whatsappChat-dark bg-whatsappChat-light border border-whatsappChat-primary/30 px-3 py-1 rounded-full'>
+                                                        {data?.continued_notice}
                                                     </span>
-                                                )}
-                                            </div>
-                                            <p className='text-xs font-medium text-[#18181B]'>{step?.label}</p>
-                                        </div>
-                                    ))}
-                                </div>
-                            )}
+                                                </div>
+                                            )}
 
-                            <div className='grid grid-cols-1 sm:grid-cols-2 gap-3'>
-                                {compareRows.map((row, index) => (
-                                    <div key={index} className='flex items-start gap-2'>
-                                        <MdCheck className='w-4 h-4 text-[#529837]' />
-                                        <p className='text-xs text-[#18181B] leading-relaxed'>{row?.msg91}</p>
-                                    </div>
-                                ))}
+                                            <div className={`flex ${isIncoming ? 'justify-start' : 'justify-end'}`}>
+                                                <div
+                                                    className={`relative px-3.5 py-2 text-xs text-slate-900 rounded-2xl max-w-[80%] flex flex-col gap-1 shadow-sm transition-all duration-300 ${
+                                                        isIncoming
+                                                            ? 'bg-white rounded-tl-none'
+                                                            : isChatWindowOn
+                                                              ? 'bg-white border border-whatsappChat-primary/30 rounded-tr-none'
+                                                              : 'bg-whatsappChat-bubble rounded-tr-none'
+                                                    }`}
+                                                >
+                                                    {!isIncoming && (
+                                                        <div className='flex items-center justify-between gap-3'>
+                                                            <span
+                                                                className={`text-[10px] font-bold text-whatsappChat-dark transition-all duration-300 ${
+                                                                    isChatWindowOn
+                                                                        ? 'opacity-100'
+                                                                        : 'opacity-0 h-0 overflow-hidden'
+                                                                }`}
+                                                            >
+                                                                {msg?.role}
+                                                            </span>
+                                                            <span
+                                                                className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full transition-all duration-300 ${
+                                                                    isChatWindowOn
+                                                                        ? 'bg-whatsappChat-primary text-white'
+                                                                        : 'bg-amber-400 text-amber-950 shadow-sm'
+                                                                }`}
+                                                            >
+                                                                {isChatWindowOn ? data?.free_tag : data?.coin_tag}
+                                                            </span>
+                                                        </div>
+                                                    )}
+                                                    <p className='leading-snug'>{msg?.text}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    );
+                                })}
                             </div>
                         </div>
-
-                        {(data?.outcomeMsg91 || data?.outcomeMsg91Hint) && (
-                            <div className='bg-[#529837]/10 rounded-lg p-4 flex flex-col gap-1'>
-                                {data?.outcomeMsg91 && (
-                                    <p className='text-xs font-semibold text-emerald-950'>{data?.outcomeMsg91}</p>
-                                )}
-                                {data?.outcomeMsg91Hint && (
-                                    <p className='text-xs text-[#529837]'>{data?.outcomeMsg91Hint}</p>
-                                )}
-                            </div>
-                        )}
                     </div>
                 </div>
             </div>
