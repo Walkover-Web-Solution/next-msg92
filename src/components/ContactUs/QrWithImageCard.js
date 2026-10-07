@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { MdCheckCircle } from 'react-icons/md';
 import GetMdIcons from '@/utils/getMdIcons';
 
-export default function RcsSection({ data }) {
+export default function QrWithImageCard({ data }) {
     if (!data) return null;
 
     return (
