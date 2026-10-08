@@ -1,5 +1,3 @@
-import { toast } from 'react-toastify';
-
 export function getErrorMessage(err) {
     return err?.message;
 }
@@ -41,6 +39,4 @@ export function otpWidgetSetup() {
     injectOtpWidgetScriptIfNeeded();
 }
 
-export function handleMobileWidgetFailure(err) {
-    toast.error(getErrorMessage(err));
-}
+export function handleMobileWidgetFailure(err) {}
