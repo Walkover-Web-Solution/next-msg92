@@ -40,9 +40,9 @@ export default function QrWithImageCard({ data }) {
                         <Image
                             src={data.phoneImage}
                             alt={data?.heading}
-                            width={200}
-                            height={400}
-                            className='w-48 h-auto lg:-translate-x-4'
+                            width={250}
+                            height={550}
+                            className='w-43 h-auto lg:-translate-x-4'
                         />
                     )}
 
