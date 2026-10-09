@@ -3,13 +3,13 @@ import { MdCheckCircle, MdRefresh, MdArrowBack, MdVideocam, MdCall, MdMoreVert }
 import Script from 'next/script';
 
 export default function WhatsAppStepsComp({ pageInfo, data }) {
-    const conversationStages = data?.conversation_stages || [];
+    const conversationStages = data?.conversation_stages;
 
     const [currentStage, setCurrentStage] = useState(1);
     const [isTyping, setIsTyping] = useState(false);
     const [visibleMessages, setVisibleMessages] = useState([]);
     const [isPlaying, setIsPlaying] = useState(false);
-    const [scriptLoaded, setScriptLoaded] = useState(false);
+    const [isScriptLoaded, setIsScriptLoaded] = useState(false);
 
     const sectionRef = useRef(null);
     const scrollRef = useRef(null);
@@ -27,9 +27,9 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
     };
 
     const getStageMessages = () => {
-        const stage1Msg = stagesRef.current?.[0]?.messages?.[0];
-        const stage2Msg = stagesRef.current?.[1]?.messages?.[0];
-        return { stage1Msg, stage2Msg };
+        const firstStageMessage = stagesRef.current?.[0]?.messages?.[0];
+        const secondStageMessage = stagesRef.current?.[1]?.messages?.[0];
+        return { firstStageMessage, secondStageMessage };
     };
 
     const openWidget = () => {
@@ -48,12 +48,12 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
         setVisibleMessages([]);
         setIsTyping(true);
 
-        const { stage1Msg, stage2Msg } = getStageMessages();
+        const { firstStageMessage, secondStageMessage } = getStageMessages();
 
         timersRef.current.push(
             setTimeout(() => {
                 setIsTyping(false);
-                if (stage1Msg) setVisibleMessages([stage1Msg]);
+                if (firstStageMessage) setVisibleMessages([firstStageMessage]);
             }, 500)
         );
 
@@ -62,42 +62,46 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
         timersRef.current.push(
             setTimeout(() => {
                 setIsTyping(false);
-                setVisibleMessages([stage1Msg, stage2Msg].filter(Boolean));
+                setVisibleMessages([firstStageMessage, secondStageMessage].filter(Boolean));
                 setCurrentStage(2);
                 setIsPlaying(false);
             }, 2000)
         );
     };
 
-    const handleSelectStage = (stageNum) => {
+    const handleSelectStage = (stageNumber) => {
         clearAllTimers();
         setIsTyping(false);
         setIsPlaying(false);
 
-        if (stageNum === 3) {
+        if (stageNumber === 3) {
             openWidget();
             return;
         }
 
         widgetOpenRef.current = false;
-        setCurrentStage(stageNum);
+        setCurrentStage(stageNumber);
 
-        const { stage1Msg, stage2Msg } = getStageMessages();
-        setVisibleMessages(stageNum === 1 ? [stage1Msg].filter(Boolean) : [stage1Msg, stage2Msg].filter(Boolean));
+        const { firstStageMessage, secondStageMessage } = getStageMessages();
+        setVisibleMessages(
+            stageNumber === 1
+                ? [firstStageMessage].filter(Boolean)
+                : [firstStageMessage, secondStageMessage].filter(Boolean)
+        );
 
-        if (typeof window !== 'undefined' && window.innerWidth < 1024 && stageNum === 2) {
+        if (typeof window !== 'undefined' && window.innerWidth < 1024 && stageNumber === 2) {
             phoneMockupRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
     };
 
     useEffect(() => {
         if (typeof window !== 'undefined' && window.initChatWidget) {
-            setScriptLoaded(true);
+            setIsScriptLoaded(true);
         }
     }, []);
 
     useEffect(() => {
-        if (currentStage !== 3 || !scriptLoaded || widgetInitRef.current) return;
+        if (currentStage !== 3 || !isScriptLoaded || widgetInitRef.current) return;
         if (typeof window === 'undefined' || !window.initChatWidget) return;
 
         const container = document.getElementById('phone-mockup-chat-widget');
@@ -120,18 +124,18 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
             },
             0
         );
-    }, [currentStage, scriptLoaded]);
+    }, [currentStage, isScriptLoaded]);
 
     useEffect(() => {
         if (typeof window === 'undefined') return;
-        const el = sectionRef.current;
-        if (!el) return;
+        const sectionElement = sectionRef.current;
+        if (!sectionElement) return;
 
         const observer = new IntersectionObserver(
-            ([entry]) => {
+            ([intersectionEntry]) => {
                 if (widgetOpenRef.current) return;
 
-                if (entry.isIntersecting) {
+                if (intersectionEntry.isIntersecting) {
                     runAutomatedConversation();
                 } else {
                     clearAllTimers();
@@ -142,7 +146,7 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
             { threshold: 0.25 }
         );
 
-        observer.observe(el);
+        observer.observe(sectionElement);
 
         return () => {
             observer.disconnect();
@@ -168,8 +172,8 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
             <Script
                 src={process.env.CHAT_WIDGET_URL}
                 strategy='afterInteractive'
-                onLoad={() => setScriptLoaded(true)}
-                onReady={() => setScriptLoaded(true)}
+                onLoad={() => setIsScriptLoaded(true)}
+                onReady={() => setIsScriptLoaded(true)}
             />
             <div className='container cont_p flex flex-col gap-10'>
                 <div className='text-center flex flex-col gap-3'>
@@ -186,20 +190,20 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
                     <div className='lg:col-span-6 flex flex-col gap-6'>
                         <div className='flex flex-col gap-4'>
                             {data?.steps?.map((step, index) => {
-                                const stepNum = index + 1;
-                                const isCurrent = currentStage === stepNum;
-                                const isCompleted = currentStage > stepNum;
+                                const stepNumber = index + 1;
+                                const isCurrent = currentStage === stepNumber;
+                                const isCompleted = currentStage > stepNumber;
 
                                 return (
                                     <div
                                         key={step?.n || index}
                                         role='button'
                                         tabIndex={0}
-                                        onClick={() => handleSelectStage(stepNum)}
-                                        onKeyDown={(e) => {
-                                            if (e.key === 'Enter' || e.key === ' ') {
-                                                e.preventDefault();
-                                                handleSelectStage(stepNum);
+                                        onClick={() => handleSelectStage(stepNumber)}
+                                        onKeyDown={(event) => {
+                                            if (event.key === 'Enter' || event.key === ' ') {
+                                                event.preventDefault();
+                                                handleSelectStage(stepNumber);
                                             }
                                         }}
                                         className={`text-left rounded-xl p-5 border flex gap-3 cursor-pointer ${
@@ -377,12 +381,12 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
                                             </span>
                                         </div>
 
-                                        {visibleMessages.map((msg) => {
-                                            const isCustomer = msg?.role === 'customer';
+                                        {visibleMessages.map((message) => {
+                                            const isCustomer = message?.role === 'customer';
 
                                             return (
                                                 <div
-                                                    key={msg?.id || msg?.text}
+                                                    key={message?.id || message?.text}
                                                     className={`flex ${isCustomer ? 'justify-end' : 'justify-start'}`}
                                                 >
                                                     <div
@@ -398,13 +402,15 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
 
                                                         {!isCustomer && (
                                                             <p className='text-xs font-bold uppercase text-whatsappChat-dark'>
-                                                                {msg?.label || activeMeta?.name?.toUpperCase()}
+                                                                {message?.label || activeMeta?.name?.toUpperCase()}
                                                             </p>
                                                         )}
 
-                                                        {msg?.isLink ? (
+                                                        {message?.isLink ? (
                                                             <div className='flex flex-col gap-2'>
-                                                                <p className='text-xs text-slate-900'>{msg?.text}</p>
+                                                                <p className='text-xs text-slate-900'>
+                                                                    {message?.text}
+                                                                </p>
 
                                                                 <div
                                                                     onClick={openWidget}
@@ -433,11 +439,11 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
                                                                 </div>
                                                             </div>
                                                         ) : (
-                                                            <p className='pr-11'>{msg?.text}</p>
+                                                            <p className='pr-11'>{message?.text}</p>
                                                         )}
 
                                                         <div className='absolute right-2 bottom-1 flex items-center gap-1 text-xs text-slate-400'>
-                                                            <span>{msg?.time}</span>
+                                                            <span>{message?.time}</span>
                                                             {isCustomer && (
                                                                 <span className='text-sky-500 font-bold text-xs'>
                                                                     ✓✓
