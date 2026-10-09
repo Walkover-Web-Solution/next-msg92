@@ -3,7 +3,7 @@ import GetMdIcons from '@/utils/getMdIcons';
 export default function WhatsAppWhyComp({ pageInfo, data }) {
     if (!data) return null;
 
-    const reasons = data?.reasons || [];
+    const reasons = data?.reasons;
     const firstRowReasons = reasons.slice(0, 3);
     const secondRowReasons = reasons.slice(3, 5);
 
@@ -14,7 +14,7 @@ export default function WhatsAppWhyComp({ pageInfo, data }) {
                 key={index}
                 className='bg-white rounded-xl border border-slate-200 p-6 flex flex-col justify-between gap-4'
             >
-                <div className='w-12 h-12 rounded-lg bg-whatsappChat-light flex items-center justify-center text-whatsappChat-primary'>
+                <div className='w-12 h-12 rounded-xl bg-whatsappChat-surface flex items-center justify-center text-whatsappChat-primary'>
                     {Icon && <Icon className='h-6 w-6' />}
                 </div>
                 <div className='flex flex-col gap-2'>
