@@ -354,29 +354,6 @@ $button-transition-timing: 100ms;
     }
 }
 
-#phone-mockup-chat-widget {
-    position: absolute !important;
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    z-index: 40 !important;
-
-    #hello-chatbot-iframe-container {
-        position: absolute !important;
-        inset: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        border-radius: 38px !important;
-        overflow: hidden !important;
-    }
-
-    iframe {
-        width: 100% !important;
-        height: 100% !important;
-        border: none !important;
-        border-radius: 38px !important;
-    }
-}
 
 .contact-chat-widget {
     width: 100%;
