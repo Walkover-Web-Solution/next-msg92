@@ -3,121 +3,139 @@ import { MdCheckCircle, MdRefresh, MdArrowBack, MdVideocam, MdCall, MdMoreVert }
 import Script from 'next/script';
 
 export default function WhatsAppStepsComp({ pageInfo, data }) {
-    if (!data) return null;
-
-    const conversationStages = data?.conversation_stages || [];
+    const conversationStages = data?.conversation_stages;
 
     const [currentStage, setCurrentStage] = useState(1);
     const [isTyping, setIsTyping] = useState(false);
     const [visibleMessages, setVisibleMessages] = useState([]);
     const [isPlaying, setIsPlaying] = useState(false);
+    const [isScriptLoaded, setIsScriptLoaded] = useState(false);
 
     const sectionRef = useRef(null);
     const scrollRef = useRef(null);
     const phoneMockupRef = useRef(null);
     const timersRef = useRef([]);
 
+    const widgetOpenRef = useRef(false);
+    const widgetInitRef = useRef(false);
+    const stagesRef = useRef(conversationStages);
+    stagesRef.current = conversationStages;
+
     const clearAllTimers = () => {
         timersRef.current.forEach(clearTimeout);
         timersRef.current = [];
     };
 
-    const handleLetsChatClick = () => {
-        clearAllTimers();
-        setCurrentStage(3);
+    const getStageMessages = () => {
+        const firstStageMessage = stagesRef.current?.[0]?.messages?.[0];
+        const secondStageMessage = stagesRef.current?.[1]?.messages?.[0];
+        return { firstStageMessage, secondStageMessage };
+    };
 
-        if (typeof window !== 'undefined' && window.initChatWidget) {
-            const container = document.getElementById('phone-mockup-chat-widget');
-            if (container) container.innerHTML = '';
-            window.initChatWidget(
-                {
-                    widgetToken: process.env.WHATSAPP_CHAT_WIDGET_TOKEN,
-                    hide_launcher: true,
-                    launch_widget: true,
-                    show_close_button: false,
-                    show_minimize_button: false,
-                    show_widget_form: false,
-                    show_send_button: true,
-                    fullScreen: true,
-                    theme: 'light',
-                    parentId: 'phone-mockup-chat-widget',
-                },
-                0
-            );
-        }
+    const openWidget = () => {
+        clearAllTimers();
+        widgetOpenRef.current = true;
+        setIsTyping(false);
+        setIsPlaying(false);
+        setCurrentStage(3);
     };
 
     const runAutomatedConversation = () => {
         clearAllTimers();
+        widgetOpenRef.current = false;
         setIsPlaying(true);
         setCurrentStage(1);
         setVisibleMessages([]);
         setIsTyping(true);
 
-        const stage1Msg = conversationStages?.[0]?.messages?.[0];
-        const stage2Msg = conversationStages?.[1]?.messages?.[0];
+        const { firstStageMessage, secondStageMessage } = getStageMessages();
 
         timersRef.current.push(
             setTimeout(() => {
                 setIsTyping(false);
-                if (stage1Msg) setVisibleMessages([stage1Msg]);
+                if (firstStageMessage) setVisibleMessages([firstStageMessage]);
             }, 500)
         );
 
-        timersRef.current.push(
-            setTimeout(() => {
-                setIsTyping(true);
-            }, 1200)
-        );
+        timersRef.current.push(setTimeout(() => setIsTyping(true), 1200));
 
         timersRef.current.push(
             setTimeout(() => {
                 setIsTyping(false);
-                const combined = [];
-                if (stage1Msg) combined.push(stage1Msg);
-                if (stage2Msg) combined.push(stage2Msg);
-                setVisibleMessages(combined);
+                setVisibleMessages([firstStageMessage, secondStageMessage].filter(Boolean));
                 setCurrentStage(2);
                 setIsPlaying(false);
             }, 2000)
         );
     };
 
-    const handleSelectStage = (stageNum) => {
+    const handleSelectStage = (stageNumber) => {
         clearAllTimers();
         setIsTyping(false);
         setIsPlaying(false);
-        setCurrentStage(stageNum);
 
-        if (stageNum === 3) {
-            handleLetsChatClick();
+        if (stageNumber === 3) {
+            openWidget();
             return;
         }
 
-        const stage1Msg = conversationStages?.[0]?.messages?.[0];
-        const stage2Msg = conversationStages?.[1]?.messages?.[0];
+        widgetOpenRef.current = false;
+        setCurrentStage(stageNumber);
 
-        if (stageNum === 1) {
-            setVisibleMessages(stage1Msg ? [stage1Msg] : []);
-        } else {
-            const combined = [];
-            if (stage1Msg) combined.push(stage1Msg);
-            if (stage2Msg) combined.push(stage2Msg);
-            setVisibleMessages(combined);
-        }
+        const { firstStageMessage, secondStageMessage } = getStageMessages();
+        setVisibleMessages(
+            stageNumber === 1
+                ? [firstStageMessage].filter(Boolean)
+                : [firstStageMessage, secondStageMessage].filter(Boolean)
+        );
 
-        if (typeof window !== 'undefined' && window.innerWidth < 1024 && (stageNum === 2 || stageNum === 3)) {
+        if (typeof window !== 'undefined' && window.innerWidth < 1024 && stageNumber === 2) {
             phoneMockupRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
     };
 
     useEffect(() => {
+        if (typeof window !== 'undefined' && window.initChatWidget) {
+            setIsScriptLoaded(true);
+        }
+    }, []);
+
+    useEffect(() => {
+        if (currentStage !== 3 || !isScriptLoaded || widgetInitRef.current) return;
+        if (typeof window === 'undefined' || !window.initChatWidget) return;
+
+        const container = document.getElementById('phone-mockup-chat-widget');
+        if (!container) return;
+
+        widgetInitRef.current = true;
+
+        window.initChatWidget(
+            {
+                widgetToken: process.env.WHATSAPP_CHAT_WIDGET_TOKEN,
+                hide_launcher: true,
+                launch_widget: true,
+                show_close_button: false,
+                show_minimize_button: false,
+                show_widget_form: false,
+                show_send_button: true,
+                fullScreen: true,
+                theme: 'light',
+                parentId: 'phone-mockup-chat-widget',
+            },
+            0
+        );
+    }, [currentStage, isScriptLoaded]);
+
+    useEffect(() => {
         if (typeof window === 'undefined') return;
+        const sectionElement = sectionRef.current;
+        if (!sectionElement) return;
 
         const observer = new IntersectionObserver(
-            (entries) => {
-                const [entry] = entries;
-                if (entry.isIntersecting) {
+            ([intersectionEntry]) => {
+                if (widgetOpenRef.current) return;
+
+                if (intersectionEntry.isIntersecting) {
                     runAutomatedConversation();
                 } else {
                     clearAllTimers();
@@ -128,15 +146,13 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
             { threshold: 0.25 }
         );
 
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
-        }
+        observer.observe(sectionElement);
 
         return () => {
             observer.disconnect();
             clearAllTimers();
         };
-    }, [conversationStages]);
+    }, []);
 
     useEffect(() => {
         if (scrollRef.current) {
@@ -147,11 +163,18 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
         }
     }, [visibleMessages, isTyping]);
 
+    if (!data) return null;
+
     const activeMeta = conversationStages?.[0];
 
     return (
         <section id='how-it-works' ref={sectionRef} className='bg-slate-50 border-t border-slate-200 overflow-hidden'>
-            <Script src={`${process.env.CHAT_WIDGET_URL}`} strategy='afterInteractive' />
+            <Script
+                src={process.env.CHAT_WIDGET_URL}
+                strategy='afterInteractive'
+                onLoad={() => setIsScriptLoaded(true)}
+                onReady={() => setIsScriptLoaded(true)}
+            />
             <div className='container cont_p flex flex-col gap-10'>
                 <div className='text-center flex flex-col gap-3'>
                     <h2 className='heading'>
@@ -167,14 +190,22 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
                     <div className='lg:col-span-6 flex flex-col gap-6'>
                         <div className='flex flex-col gap-4'>
                             {data?.steps?.map((step, index) => {
-                                const stepNum = index + 1;
-                                const isCurrent = currentStage === stepNum;
-                                const isCompleted = currentStage > stepNum;
+                                const stepNumber = index + 1;
+                                const isCurrent = currentStage === stepNumber;
+                                const isCompleted = currentStage > stepNumber;
 
                                 return (
                                     <div
                                         key={step?.n || index}
-                                        onClick={() => handleSelectStage(stepNum)}
+                                        role='button'
+                                        tabIndex={0}
+                                        onClick={() => handleSelectStage(stepNumber)}
+                                        onKeyDown={(event) => {
+                                            if (event.key === 'Enter' || event.key === ' ') {
+                                                event.preventDefault();
+                                                handleSelectStage(stepNumber);
+                                            }
+                                        }}
                                         className={`text-left rounded-xl p-5 border flex gap-3 cursor-pointer ${
                                             isCurrent
                                                 ? 'bg-white border-whatsappChat-primary shadow-md'
@@ -350,12 +381,12 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
                                             </span>
                                         </div>
 
-                                        {visibleMessages.map((msg) => {
-                                            const isCustomer = msg?.role === 'customer';
+                                        {visibleMessages.map((message) => {
+                                            const isCustomer = message?.role === 'customer';
 
                                             return (
                                                 <div
-                                                    key={msg?.id || msg?.text}
+                                                    key={message?.id || message?.text}
                                                     className={`flex ${isCustomer ? 'justify-end' : 'justify-start'}`}
                                                 >
                                                     <div
@@ -371,16 +402,18 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
 
                                                         {!isCustomer && (
                                                             <p className='text-xs font-bold uppercase text-whatsappChat-dark'>
-                                                                {msg?.label || activeMeta?.name?.toUpperCase()}
+                                                                {message?.label || activeMeta?.name?.toUpperCase()}
                                                             </p>
                                                         )}
 
-                                                        {msg?.isLink ? (
+                                                        {message?.isLink ? (
                                                             <div className='flex flex-col gap-2'>
-                                                                <p className='text-xs text-slate-900'>{msg?.text}</p>
+                                                                <p className='text-xs text-slate-900'>
+                                                                    {message?.text}
+                                                                </p>
 
                                                                 <div
-                                                                    onClick={handleLetsChatClick}
+                                                                    onClick={openWidget}
                                                                     className='p-2.5 rounded-xl border border-whatsappChat-primary/20 bg-whatsappChat-light hover:bg-whatsappChat-light/70 cursor-pointer flex flex-col gap-2'
                                                                 >
                                                                     <div className='flex items-center justify-between gap-1'>
@@ -406,11 +439,11 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
                                                                 </div>
                                                             </div>
                                                         ) : (
-                                                            <p className='pr-11'>{msg?.text}</p>
+                                                            <p className='pr-11'>{message?.text}</p>
                                                         )}
 
                                                         <div className='absolute right-2 bottom-1 flex items-center gap-1 text-xs text-slate-400'>
-                                                            <span>{msg?.time}</span>
+                                                            <span>{message?.time}</span>
                                                             {isCustomer && (
                                                                 <span className='text-sky-500 font-bold text-xs'>
                                                                     ✓✓
