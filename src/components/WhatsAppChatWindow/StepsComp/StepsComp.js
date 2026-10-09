@@ -46,7 +46,7 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
         container.innerHTML = '';
         window.initChatWidget(
             {
-                widgetToken: '251a3',
+                widgetToken: process.env.WHATSAPP_CHAT_WIDGET_TOKEN,
                 hide_launcher: true,
                 launch_widget: true,
                 show_close_button: false,
@@ -151,7 +151,7 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
         <section id='how-it-works' ref={sectionRef} className='bg-slate-50 border-t border-slate-200 overflow-hidden'>
             <Script
                 strategy='afterInteractive'
-                src='https://ctest.msg91.com/chat-widget.js'
+                src={process.env.CHAT_WIDGET_URL}
                 onLoad={() => setWidgetScriptLoaded(true)}
             />
             <div className='container cont_p flex flex-col gap-10'>
