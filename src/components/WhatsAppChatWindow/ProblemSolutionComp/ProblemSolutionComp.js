@@ -53,7 +53,7 @@ export default function WhatsAppProblemSolutionComp({ pageInfo, data }) {
                 )}
 
                 {videoSrc && (
-                    <div className='w-full max-w-5xl rounded-2xl overflow-hidden shadow-md bg-white border border-slate-200'>
+                    <div className='w-full max-w-5xl rounded-xl overflow-hidden shadow-md bg-white border border-slate-200'>
                         <video
                             ref={videoRef}
                             className='w-full h-auto object-cover block'

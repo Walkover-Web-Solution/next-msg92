@@ -36,6 +36,9 @@ module.exports = {
                 whatsappChat: {
                     primary: '#529837',
                     hover: '#43822b',
+                    surface: '#F4FCF4',
+                    textDark: '#15803d',
+                    border: 'rgba(82, 152, 55, 0.3)',
                     light: '#F4FCF4',
                     dark: '#15803d',
                     accent: '#38A14E',

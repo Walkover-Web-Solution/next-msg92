@@ -64,7 +64,7 @@ export default function WhatsAppComparisonComp({ pageInfo, data }) {
                     {data?.subheading && <p className='subheading max-w-2xl mx-auto'>{data?.subheading}</p>}
                 </div>
 
-                <div className='bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-lg grid grid-cols-1 lg:grid-cols-12 max-w-6xl mx-auto w-full'>
+                <div className='bg-white border border-slate-200 rounded-xl overflow-hidden shadow-lg grid grid-cols-1 lg:grid-cols-12 max-w-6xl mx-auto w-full'>
                     <div className='lg:col-span-6 p-6 lg:p-10 flex flex-col justify-center gap-8'>
                         <div className='flex flex-col gap-2'>
                             <span className='text-xs font-bold uppercase text-whatsappChat-primary'>
@@ -103,9 +103,9 @@ export default function WhatsAppComparisonComp({ pageInfo, data }) {
                         </button>
 
                         <div
-                            className={`p-6 rounded-2xl border flex flex-col gap-2 ${
+                            className={`p-6 rounded-xl border flex flex-col gap-2 ${
                                 isChatWindowOn
-                                    ? 'bg-whatsappChat-light border-whatsappChat-primary/30'
+                                    ? 'bg-whatsappChat-surface border-whatsappChat-border'
                                     : 'bg-slate-50 border-slate-200'
                             }`}
                         >
@@ -126,7 +126,7 @@ export default function WhatsAppComparisonComp({ pageInfo, data }) {
                     </div>
 
                     <div className='lg:col-span-6 bg-slate-100 p-6 lg:p-10 flex items-center justify-center'>
-                        <div className='w-full max-w-md bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 flex flex-col'>
+                        <div className='w-full max-w-md bg-white rounded-xl overflow-hidden shadow-lg border border-slate-200 flex flex-col'>
                             <div
                                 className={`px-4 py-3 flex items-center justify-between text-white ${
                                     isChatWindowOn ? 'bg-whatsappChat-primary' : 'bg-whatsappChat-teal'
@@ -154,7 +154,7 @@ export default function WhatsAppComparisonComp({ pageInfo, data }) {
                                         <div key={index} className='flex flex-col gap-3'>
                                             {index === 1 && isChatWindowOn && (
                                                 <div className='flex justify-center'>
-                                                    <span className='text-xs font-semibold text-whatsappChat-dark bg-whatsappChat-light border border-whatsappChat-primary/30 px-3 py-1 rounded-full'>
+                                                    <span className='text-xs font-semibold text-whatsappChat-textDark bg-whatsappChat-surface border border-whatsappChat-border px-3 py-1 rounded-full'>
                                                         {data?.continued_notice}
                                                     </span>
                                                 </div>
@@ -162,18 +162,18 @@ export default function WhatsAppComparisonComp({ pageInfo, data }) {
 
                                             <div className={`flex ${isIncoming ? 'justify-start' : 'justify-end'}`}>
                                                 <div
-                                                    className={`relative px-3.5 py-2 text-xs text-slate-900 rounded-2xl max-w-[80%] flex flex-col gap-1 shadow-sm ${
+                                                    className={`relative px-3.5 py-2 text-xs text-slate-900 rounded-xl max-w-[80%] flex flex-col gap-1 shadow-sm ${
                                                         isIncoming
                                                             ? 'bg-white rounded-tl-none'
                                                             : isChatWindowOn
-                                                              ? 'bg-white border border-whatsappChat-primary/30 rounded-tr-none'
-                                                              : 'bg-whatsappChat-bubble rounded-tr-none'
+                                                              ? 'bg-white border border-whatsappChat-border'
+                                                              : 'bg-whatsappChat-bubble'
                                                     }`}
                                                 >
                                                     {!isIncoming && (
                                                         <div className='flex items-center justify-between gap-3'>
                                                             {isChatWindowOn && (
-                                                                <span className='text-[10px] font-bold text-whatsappChat-dark'>
+                                                                <span className='text-[10px] font-bold text-whatsappChat-textDark'>
                                                                     {msg?.role}
                                                                 </span>
                                                             )}
