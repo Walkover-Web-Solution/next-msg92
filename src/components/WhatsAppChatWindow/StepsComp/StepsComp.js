@@ -12,6 +12,8 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
     const [isTyping, setIsTyping] = useState(false);
     const [visibleMessages, setVisibleMessages] = useState([]);
     const [isPlaying, setIsPlaying] = useState(false);
+    const [isChatModalOpen, setIsChatModalOpen] = useState(false);
+    const [widgetScriptLoaded, setWidgetScriptLoaded] = useState(false);
 
     const sectionRef = useRef(null);
     const scrollRef = useRef(null);
@@ -32,20 +34,35 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
         setIsPlaying(false);
         setCurrentStage(3);
         setVisibleMessages([firstStageMessage, secondStageMessage].filter(Boolean));
-
-        if (typeof window !== 'undefined' && window.initChatWidget) {
-            const helloConfig = {
-                widgetToken: process.env.WHATSAPP_CHAT_WIDGET_TOKEN,
-                hide_launcher: true,
-                show_widget_form: false,
-                show_close_button: true,
-                launch_widget: true,
-                show_send_button: true,
-                theme: 'light',
-            };
-            window.initChatWidget(helloConfig, 0);
-        }
+        setIsChatModalOpen(true);
     };
+
+    useEffect(() => {
+        if (!isChatModalOpen || !widgetScriptLoaded || !window.initChatWidget) return;
+
+        const container = document.getElementById('whatsappChatDemoWidget');
+        if (!container) return;
+
+        container.innerHTML = '';
+        window.initChatWidget(
+            {
+                widgetToken: '251a3',
+                hide_launcher: true,
+                launch_widget: true,
+                show_close_button: false,
+                show_widget_form: false,
+                show_send_button: true,
+                parentId: 'whatsappChatDemoWidget',
+                fullScreen: true,
+                theme: 'light',
+            },
+            0
+        );
+
+        return () => {
+            container.innerHTML = '';
+        };
+    }, [isChatModalOpen, widgetScriptLoaded]);
 
     const runAutomatedConversation = () => {
         clearAllTimers();
@@ -132,7 +149,11 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
 
     return (
         <section id='how-it-works' ref={sectionRef} className='bg-slate-50 border-t border-slate-200 overflow-hidden'>
-            <Script src={process.env.CHAT_WIDGET_URL} strategy='afterInteractive' />
+            <Script
+                strategy='afterInteractive'
+                src='https://ctest.msg91.com/chat-widget.js'
+                onLoad={() => setWidgetScriptLoaded(true)}
+            />
             <div className='container cont_p flex flex-col gap-10'>
                 <div className='text-center flex flex-col gap-3'>
                     <h2 className='heading'>
@@ -144,16 +165,8 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
                     {data?.subheading && <p className='subheading max-w-2xl mx-auto'>{data?.subheading}</p>}
                 </div>
 
-                <div
-                    className={`grid grid-cols-1 md:grid-cols-12 gap-8 items-center mx-auto duration-300 ${
-                        currentStage === 3 ? 'max-w-7xl' : 'max-w-6xl'
-                    }`}
-                >
-                    <div
-                        className={`flex flex-col gap-6 duration-300 ${
-                            currentStage === 3 ? 'md:col-span-6 lg:col-span-4' : 'md:col-span-12 lg:col-span-6'
-                        }`}
-                    >
+                <div className='grid grid-cols-1 lg:grid-cols-12 gap-8 items-center max-w-6xl mx-auto'>
+                    <div className='lg:col-span-6 flex flex-col gap-6'>
                         <div className='flex flex-col gap-4'>
                             {data?.steps?.map((step, index) => {
                                 const stepNumber = index + 1;
@@ -237,24 +250,12 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
                         </div>
                     </div>
 
-                    <div
-                        className={`flex flex-col items-center justify-center gap-4 w-full relative transition-all duration-300 ${
-                            currentStage === 3
-                                ? 'md:col-span-6 lg:col-span-4 md:items-center'
-                                : 'md:col-span-12 lg:col-span-6'
-                        }`}
-                    >
+                    <div className='lg:col-span-6 flex flex-col items-center justify-center gap-4 w-full'>
                         <div
                             ref={phoneMockupRef}
-                            className={`relative w-full bg-slate-900 p-1.5 rounded-[40px] shadow-2xl transition-all duration-300 ${
-                                currentStage === 3 ? 'max-w-[280px]' : 'max-w-[310px]'
-                            }`}
+                            className='relative w-full bg-slate-900 p-1.5 rounded-[40px] shadow-2xl max-w-[310px]'
                         >
-                            <div
-                                className={`relative w-full rounded-[34px] overflow-hidden flex flex-col transition-all duration-300 ${
-                                    currentStage === 3 ? 'h-[560px]' : 'h-[600px]'
-                                }`}
-                            >
+                            <div className='relative w-full rounded-[34px] overflow-hidden flex flex-col h-[600px]'>
                                 <div className='absolute top-2.5 left-1/2 -translate-x-1/2 w-24 h-4.5 bg-black rounded-full z-50 flex items-center justify-between px-2.5 pointer-events-none'>
                                     <div className='w-2 h-2 rounded-full bg-black/90 border border-gray-800' />
                                     <div className='w-2 h-2 rounded-full bg-slate-950' />
@@ -449,6 +450,26 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
                     </div>
                 </div>
             </div>
+
+            {isChatModalOpen && (
+                <dialog className='modal z-[1001]' open>
+                    <div className='modal-box relative p-0 overflow-hidden max-w-4xl w-full'>
+                        <button
+                            type='button'
+                            onClick={() => setIsChatModalOpen(false)}
+                            className='btn btn-sm btn-circle btn-ghost absolute right-3 top-3 z-50 bg-white/90'
+                        >
+                            ✕
+                        </button>
+                        <div id='whatsappChatDemoWidget' className='w-full' style={{ minHeight: '680px' }} />
+                    </div>
+                    <form method='dialog' className='modal-backdrop'>
+                        <button type='button' onClick={() => setIsChatModalOpen(false)}>
+                            close
+                        </button>
+                    </form>
+                </dialog>
+            )}
         </section>
     );
 }
