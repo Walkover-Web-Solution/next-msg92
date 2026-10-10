@@ -4,14 +4,16 @@ import HreflangTagComp from './HreflangTagComp';
 
 export default function HeadComp({ data, pageInfo }) {
     const isEcommerceStore = pageInfo?.page === 'ecommerce-store';
+    const isWhatsAppChatWindowPage =
+        pageInfo?.page === 'whatsapp-chat-window' ||
+        pageInfo?.baseURL?.includes('whatsapp-chat-window') ||
+        pageInfo?.pathURL?.includes('whatsapp-chat-window');
 
     return (
         <>
             {pageInfo?.page !== 'demochatbot' &&
                 pageInfo?.page !== 'contact-us' &&
-                pageInfo?.page !== 'whatsapp-chat-window' &&
-                pageInfo?.baseURL !== 'whatsapp-chat-window' &&
-                !pageInfo?.pathURL?.includes('whatsapp-chat-window') &&
+                !isWhatsAppChatWindowPage &&
                 !pageInfo?.baseURL?.startsWith('pricing') && (
                     <>
                         <Script
