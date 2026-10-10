@@ -13,6 +13,7 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
     const [visibleMessages, setVisibleMessages] = useState([]);
     const [isPlaying, setIsPlaying] = useState(false);
     const [isChatModalOpen, setIsChatModalOpen] = useState(false);
+    const [shouldLoadWidgetScript, setShouldLoadWidgetScript] = useState(false);
     const [widgetScriptLoaded, setWidgetScriptLoaded] = useState(false);
 
     const sectionRef = useRef(null);
@@ -34,11 +35,12 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
         setIsPlaying(false);
         setCurrentStage(3);
         setVisibleMessages([firstStageMessage, secondStageMessage].filter(Boolean));
+        setShouldLoadWidgetScript(true);
         setIsChatModalOpen(true);
     };
 
     useEffect(() => {
-        if (!isChatModalOpen || !widgetScriptLoaded || !window.initChatWidget) return;
+        if (typeof window === 'undefined' || !isChatModalOpen || !widgetScriptLoaded || !window.initChatWidget) return;
 
         const container = document.getElementById('whatsappChatDemoWidget');
         if (!container) return;
@@ -46,7 +48,7 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
         container.innerHTML = '';
         window.initChatWidget(
             {
-                widgetToken: '251a3',
+                widgetToken: process.env.WHATSAPP_CHAT_WIDGET_TOKEN,
                 hide_launcher: true,
                 launch_widget: true,
                 show_close_button: false,
@@ -149,11 +151,15 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
 
     return (
         <section id='how-it-works' ref={sectionRef} className='bg-slate-50 border-t border-slate-200 overflow-hidden'>
-            <Script
-                strategy='afterInteractive'
-                src='https://ctest.msg91.com/chat-widget.js'
-                onLoad={() => setWidgetScriptLoaded(true)}
-            />
+            {shouldLoadWidgetScript && (
+                <Script
+                    id='whatsappChatDemoWidgetScript'
+                    strategy='afterInteractive'
+                    src={process.env.CHAT_WIDGET_URL}
+                    onLoad={() => setWidgetScriptLoaded(true)}
+                    onReady={() => setWidgetScriptLoaded(true)}
+                />
+            )}
             <div className='container cont_p flex flex-col gap-10'>
                 <div className='text-center flex flex-col gap-3'>
                     <h2 className='heading'>
