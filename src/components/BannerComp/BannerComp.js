@@ -164,19 +164,18 @@ export default function BannerComp({ pageInfo, data }) {
                     </div>
                 )}
                 {!data?.code && data?.banner_video && data?.not_absolute && (
-                    <div className={data?.banner_video_wrap_class}>
+                    <div className='lg:w-1/2'>
                         <video
-                            className={data?.banner_video_class}
+                            className={
+                                data?.compact_video ? 'w-full max-w-[500px] lg:max-w-full xl:max-w-[600px]' : 'w-full'
+                            }
                             autoPlay
                             muted
                             loop
                             playsInline
                             aria-label={data?.tagline}
                         >
-                            <source
-                                src={data?.banner_video}
-                                type={data?.banner_video?.endsWith?.('.mp4') ? 'video/mp4' : 'video/webm'}
-                            />
+                            <source src={data?.banner_video} type='video/webm' />
                         </video>
                     </div>
                 )}
