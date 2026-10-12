@@ -37,17 +37,18 @@ export default function BannerComp({ pageInfo, data }) {
                         )}
                         <span
                             className={`text-xl uppercase tracking-widest ${
-                                data?.tagline_class || `${data?.slug}_dark_text`
+                                data?.tagline_class ? 'text-accent' : `${data?.slug}_dark_text`
                             }`}
                         >
                             {data?.tagline}
                         </span>
                         <h1
                             className={
-                                data?.heading_class ||
-                                (data?.slug === 'whatsapp' || data?.slug === 'reports'
-                                    ? 'whatsapp__heading'
-                                    : 'heading')
+                                data?.heading_class
+                                    ? 'text-2xl md:text-4xl font-semibold'
+                                    : data?.slug === 'whatsapp' || data?.slug === 'reports'
+                                      ? 'whatsapp__heading'
+                                      : 'heading'
                             }
                         >
                             {data?.heading}
@@ -167,7 +168,7 @@ export default function BannerComp({ pageInfo, data }) {
                     <div className='lg:w-1/2'>
                         <video
                             className={
-                                data?.compact_video ? 'w-full max-w-[500px] lg:max-w-full xl:max-w-[600px]' : 'w-full'
+                                data?.compact_video ? 'w-full xl:max-w-[600px] lg:max-w-full max-w-[500px]' : 'w-full'
                             }
                             autoPlay
                             muted
