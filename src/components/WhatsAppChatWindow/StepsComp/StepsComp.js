@@ -2,6 +2,22 @@ import { useState, useEffect, useRef } from 'react';
 import { MdCheckCircle, MdRefresh, MdArrowBack, MdVideocam, MdCall, MdMoreVert } from 'react-icons/md';
 import Script from 'next/script';
 
+const sendWidgetDebugLog = (hypothesisId, location, message, data = {}) => {
+    fetch('http://127.0.0.1:7257/ingest/b793e390-f4eb-4a66-a46a-52f4889d25bd', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-Debug-Session-Id': 'ea2c69' },
+        body: JSON.stringify({
+            sessionId: 'ea2c69',
+            runId: 'pre-fix',
+            hypothesisId,
+            location,
+            message,
+            data,
+            timestamp: Date.now(),
+        }),
+    }).catch(() => {});
+};
+
 export default function WhatsAppStepsComp({ pageInfo, data }) {
     const conversationStages = data?.conversation_stages;
     const activeMeta = conversationStages?.[0];
@@ -20,6 +36,7 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
     const timersRef = useRef([]);
     const isChatModalOpenRef = useRef(false);
     const widgetInitializedRef = useRef(false);
+    const relevantMutationCountRef = useRef(0);
 
     const firstStageMessage = conversationStages?.[0]?.messages?.[0];
     const secondStageMessage = conversationStages?.[1]?.messages?.[0];
@@ -31,6 +48,12 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
 
     const closeChatWidget = () => {
         const container = document.getElementById('whatsappChatDemoWidget');
+        // #region agent log
+        sendWidgetDebugLog('A', 'StepsComp.js:closeChatWidget', 'Parent close handler invoked', {
+            containerConnected: Boolean(container?.isConnected),
+            containerChildren: container?.childElementCount ?? -1,
+        });
+        // #endregion
         if (container) container.innerHTML = '';
         widgetInitializedRef.current = false;
         isChatModalOpenRef.current = false;
@@ -38,6 +61,12 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
     };
 
     const openChatWidget = () => {
+        // #region agent log
+        sendWidgetDebugLog('A', 'StepsComp.js:openChatWidget', 'Parent open handler invoked', {
+            scriptLoaded: widgetScriptLoaded,
+            alreadyInitialized: widgetInitializedRef.current,
+        });
+        // #endregion
         clearAllTimers();
         setIsTyping(false);
         setIsPlaying(false);
@@ -51,6 +80,19 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
     useEffect(() => {
         if (typeof window === 'undefined') return;
 
+        // #region agent log
+        sendWidgetDebugLog('A,C', 'StepsComp.js:mount', 'WhatsApp steps component mounted', {
+            pathname: window.location.pathname,
+            chatWidgetScripts: Array.from(document.querySelectorAll('script[src*="chat-widget"]')).map((script) => {
+                try {
+                    return new URL(script.src).origin;
+                } catch {
+                    return 'invalid-url';
+                }
+            }),
+        });
+        // #endregion
+
         // Soft-nav from other pages can leave the global Hello launcher alive
         window.helloConfig = undefined;
         document
@@ -61,7 +103,91 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
                 if (node.closest('#whatsappChatDemoWidget')) return;
                 node.remove();
             });
+
+        return () => {
+            // #region agent log
+            sendWidgetDebugLog('A', 'StepsComp.js:unmount', 'WhatsApp steps component unmounted', {
+                modalOpenRef: isChatModalOpenRef.current,
+                initializedRef: widgetInitializedRef.current,
+            });
+            // #endregion
+        };
     }, []);
+
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+
+        const handleWidgetMessage = (event) => {
+            if (!event.origin.includes('msg91.com') && !event.origin.includes('phone91.com')) return;
+            const eventData = event.data;
+            // #region agent log
+            sendWidgetDebugLog('D', 'StepsComp.js:message', 'Widget postMessage received', {
+                origin: event.origin,
+                dataType: typeof eventData,
+                action:
+                    eventData && typeof eventData === 'object'
+                        ? eventData.type || eventData.action || eventData.event || null
+                        : null,
+                keys:
+                    eventData && typeof eventData === 'object'
+                        ? Object.keys(eventData)
+                              .filter((key) => !/message|text|name|email|phone|token/i.test(key))
+                              .slice(0, 10)
+                        : [],
+            });
+            // #endregion
+        };
+
+        window.addEventListener('message', handleWidgetMessage);
+        return () => window.removeEventListener('message', handleWidgetMessage);
+    }, []);
+
+    useEffect(() => {
+        if (typeof window === 'undefined' || !isChatModalOpen) return;
+
+        const observer = new MutationObserver((mutations) => {
+            const relevantMutation = mutations.some((mutation) => {
+                const nodes = [...mutation.addedNodes, ...mutation.removedNodes];
+                return (
+                    mutation.target?.id === 'whatsappChatDemoWidget' ||
+                    mutation.target?.id === 'hello-chatbot-iframe-container' ||
+                    nodes.some(
+                        (node) =>
+                            node.nodeType === Node.ELEMENT_NODE &&
+                            (node.id === 'whatsappChatDemoWidget' ||
+                                node.id === 'hello-chatbot-iframe-container' ||
+                                node.tagName === 'IFRAME' ||
+                                node.querySelector?.('#hello-chatbot-iframe-container, iframe'))
+                    )
+                );
+            });
+            if (!relevantMutation || relevantMutationCountRef.current >= 8) return;
+            relevantMutationCountRef.current += 1;
+
+            const container = document.getElementById('whatsappChatDemoWidget');
+            const iframe = container?.querySelector('iframe');
+            // #region agent log
+            sendWidgetDebugLog('B,C', 'StepsComp.js:mutation', 'Relevant widget DOM mutation', {
+                mutationNumber: relevantMutationCountRef.current,
+                containerConnected: Boolean(container?.isConnected),
+                containerChildren: container?.childElementCount ?? -1,
+                iframeConnected: Boolean(iframe?.isConnected),
+                iframeDisplay: iframe ? getComputedStyle(iframe).display : null,
+                iframeVisibility: iframe ? getComputedStyle(iframe).visibility : null,
+                iframeOrigin: (() => {
+                    try {
+                        return iframe?.src ? new URL(iframe.src).origin : null;
+                    } catch {
+                        return 'invalid-url';
+                    }
+                })(),
+            });
+            // #endregion
+        });
+
+        observer.observe(document.body, { childList: true, subtree: true });
+        return () => observer.disconnect();
+    }, [isChatModalOpen]);
 
     useEffect(() => {
         if (typeof window === 'undefined' || !isChatModalOpen || !widgetScriptLoaded || !window.initChatWidget) {
@@ -75,6 +201,22 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
         window.helloConfig = undefined;
         container.innerHTML = '';
         widgetInitializedRef.current = true;
+        relevantMutationCountRef.current = 0;
+        // #region agent log
+        sendWidgetDebugLog('B,C', 'StepsComp.js:init', 'Calling initChatWidget', {
+            containerConnected: container.isConnected,
+            existingChildren: container.childElementCount,
+            chatWidgetScriptOrigins: Array.from(document.querySelectorAll('script[src*="chat-widget"]')).map(
+                (script) => {
+                    try {
+                        return new URL(script.src).origin;
+                    } catch {
+                        return 'invalid-url';
+                    }
+                }
+            ),
+        });
+        // #endregion
         window.initChatWidget(
             {
                 widgetToken: process.env.WHATSAPP_CHAT_WIDGET_TOKEN,
@@ -90,6 +232,17 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
             0
         );
     }, [isChatModalOpen, widgetScriptLoaded]);
+
+    useEffect(() => {
+        // #region agent log
+        sendWidgetDebugLog('A', 'StepsComp.js:modalState', 'Parent modal state changed', {
+            isChatModalOpen,
+            modalOpenRef: isChatModalOpenRef.current,
+            initializedRef: widgetInitializedRef.current,
+            dialogPresent: Boolean(document.querySelector('dialog[open] #whatsappChatDemoWidget')),
+        });
+        // #endregion
+    }, [isChatModalOpen]);
 
     const runAutomatedConversation = () => {
         if (isChatModalOpenRef.current) return;
