@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import { MdCheckCircle, MdRefresh, MdArrowBack, MdVideocam, MdCall, MdMoreVert } from 'react-icons/md';
-import Script from 'next/script';
 
 const sendWidgetDebugLog = (hypothesisId, location, message, data = {}) => {
     fetch('http://127.0.0.1:7257/ingest/b793e390-f4eb-4a66-a46a-52f4889d25bd', {
@@ -27,15 +26,12 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
     const [visibleMessages, setVisibleMessages] = useState([]);
     const [isPlaying, setIsPlaying] = useState(false);
     const [isChatModalOpen, setIsChatModalOpen] = useState(false);
-    const [shouldLoadWidgetScript, setShouldLoadWidgetScript] = useState(false);
-    const [widgetScriptLoaded, setWidgetScriptLoaded] = useState(false);
 
     const sectionRef = useRef(null);
     const scrollRef = useRef(null);
     const phoneMockupRef = useRef(null);
     const timersRef = useRef([]);
     const isChatModalOpenRef = useRef(false);
-    const widgetInitializedRef = useRef(false);
     const relevantMutationCountRef = useRef(0);
 
     const firstStageMessage = conversationStages?.[0]?.messages?.[0];
@@ -54,8 +50,6 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
             containerChildren: container?.childElementCount ?? -1,
         });
         // #endregion
-        if (container) container.innerHTML = '';
-        widgetInitializedRef.current = false;
         isChatModalOpenRef.current = false;
         setIsChatModalOpen(false);
     };
@@ -63,8 +57,7 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
     const openChatWidget = () => {
         // #region agent log
         sendWidgetDebugLog('A', 'StepsComp.js:openChatWidget', 'Parent open handler invoked', {
-            scriptLoaded: widgetScriptLoaded,
-            alreadyInitialized: widgetInitializedRef.current,
+            modalAlreadyOpen: isChatModalOpenRef.current,
         });
         // #endregion
         clearAllTimers();
@@ -72,7 +65,6 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
         setIsPlaying(false);
         setCurrentStage(3);
         setVisibleMessages([firstStageMessage, secondStageMessage].filter(Boolean));
-        setShouldLoadWidgetScript(true);
         isChatModalOpenRef.current = true;
         setIsChatModalOpen(true);
     };
@@ -108,7 +100,6 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
             // #region agent log
             sendWidgetDebugLog('A', 'StepsComp.js:unmount', 'WhatsApp steps component unmounted', {
                 modalOpenRef: isChatModalOpenRef.current,
-                initializedRef: widgetInitializedRef.current,
             });
             // #endregion
         };
@@ -190,55 +181,10 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
     }, [isChatModalOpen]);
 
     useEffect(() => {
-        if (typeof window === 'undefined' || !isChatModalOpen || !widgetScriptLoaded || !window.initChatWidget) {
-            return;
-        }
-        if (widgetInitializedRef.current) return;
-
-        const container = document.getElementById('whatsappChatDemoWidget');
-        if (!container) return;
-
-        window.helloConfig = undefined;
-        container.innerHTML = '';
-        widgetInitializedRef.current = true;
-        relevantMutationCountRef.current = 0;
-        // #region agent log
-        sendWidgetDebugLog('B,C', 'StepsComp.js:init', 'Calling initChatWidget', {
-            containerConnected: container.isConnected,
-            existingChildren: container.childElementCount,
-            chatWidgetScriptOrigins: Array.from(document.querySelectorAll('script[src*="chat-widget"]')).map(
-                (script) => {
-                    try {
-                        return new URL(script.src).origin;
-                    } catch {
-                        return 'invalid-url';
-                    }
-                }
-            ),
-        });
-        // #endregion
-        window.initChatWidget(
-            {
-                widgetToken: process.env.WHATSAPP_CHAT_WIDGET_TOKEN,
-                hide_launcher: true,
-                launch_widget: true,
-                show_close_button: false,
-                show_widget_form: false,
-                show_send_button: true,
-                parentId: 'whatsappChatDemoWidget',
-                fullScreen: true,
-                theme: 'light',
-            },
-            0
-        );
-    }, [isChatModalOpen, widgetScriptLoaded]);
-
-    useEffect(() => {
         // #region agent log
         sendWidgetDebugLog('A', 'StepsComp.js:modalState', 'Parent modal state changed', {
             isChatModalOpen,
             modalOpenRef: isChatModalOpenRef.current,
-            initializedRef: widgetInitializedRef.current,
             dialogPresent: Boolean(document.querySelector('dialog[open] #whatsappChatDemoWidget')),
         });
         // #endregion
@@ -335,14 +281,6 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
 
     return (
         <section id='how-it-works' ref={sectionRef} className='bg-slate-50 border-t border-slate-200 overflow-hidden'>
-            {shouldLoadWidgetScript && (
-                <Script
-                    id='whatsappChatDemoWidgetScript'
-                    strategy='afterInteractive'
-                    src={process.env.CHAT_WIDGET_URL}
-                    onLoad={() => setWidgetScriptLoaded(true)}
-                />
-            )}
             <div className='container cont_p flex flex-col gap-10'>
                 <div className='text-center flex flex-col gap-3'>
                     <h2 className='heading'>
@@ -657,7 +595,14 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
                         >
                             ✕
                         </button>
-                        <div id='whatsappChatDemoWidget' className='w-full' style={{ minHeight: '680px' }} />
+                        <div id='whatsappChatDemoWidget' className='w-full h-[680px]'>
+                            <iframe
+                                title='MSG91 WhatsApp chat window demo'
+                                src='/whatsapp-chat-window-widget'
+                                allow='microphone'
+                                className='w-full h-full border-0'
+                            />
+                        </div>
                     </div>
                     <form method='dialog' className='modal-backdrop'>
                         <button type='button' onClick={closeChatWidget}>
