@@ -17,14 +17,13 @@
         "banner_img": "",
         "banner_video": "/assets/one-api/hero-section.webm",
         "not_absolute": true,
-        "banner_video_wrap_class": "w-full lg:w-[58%] xl:w-1/2 flex justify-center lg:justify-end",
-        "banner_video_class": "w-full max-w-[500px] lg:max-w-full xl:max-w-[600px]",
         "getstarted_btn": "Get Started",
         "schedule_meet": "Schedule a Meeting",
         "trustedByComp": {
             "heading": "",
             "logos": []
-        }
+        },
+        "compact_video": true
     },
     "FeatureComp": {
         "heading": "Features",
@@ -103,7 +102,6 @@
         "heading": "Industry Applications",
         "subheading": "See how teams across industries use ONE API for reliable multi-channel communication.",
         "bg": "bg-gray-100",
-        "img_wrap_class": "xl:max-w-[560px] lg:max-w-[280px] max-w-[240px]",
         "content": [
             {
                 "title": "Banking and Financial Alerts",
@@ -209,7 +207,8 @@
                 ],
                 "img": "/assets/one-api/industry-application/government_and_public_services.webp"
             }
-        ]
+        ],
+        "compact_img": true
     },
     "FaqsComp": {
         "heading": "Frequently Asked Questions",

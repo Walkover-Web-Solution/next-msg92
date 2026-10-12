@@ -8,7 +8,6 @@ import getURL from '@/utils/getURL';
 export default function WhyChooseMSG91({ data, pageInfo }) {
     const isReports = pageInfo?.page === 'reports';
     const bgClass = data?.bg || (isReports ? 'reports_lite_bg' : 'bg-[#ecf7ec]');
-    const imgWrapClass = data?.img_wrap_class;
 
     return (
         <div className={bgClass}>
@@ -59,7 +58,13 @@ export default function WhyChooseMSG91({ data, pageInfo }) {
                                     </CalendlyModal>
                                 ))}
                         </div>
-                        <div className={`w-full ${imgWrapClass} md:mx-6 mx-2 rounded-lg overflow-hidden`}>
+                        <div
+                            className={`w-full ${
+                                data?.compact_img
+                                    ? 'xl:max-w-[560px] lg:max-w-[280px] max-w-[240px]'
+                                    : 'xl:max-w-[700px] lg:max-w-[320px] max-w-[280px]'
+                            } md:mx-6 mx-2 rounded-lg overflow-hidden`}
+                        >
                             {item?.video || item?.img?.endsWith?.('.webm') ? (
                                 <video
                                     className='w-full h-auto object-cover rounded-2xl block'
