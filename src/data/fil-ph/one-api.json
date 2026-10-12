@@ -103,7 +103,7 @@
         "heading": "Industry Applications",
         "subheading": "See how teams across industries use ONE API for reliable multi-channel communication.",
         "bg": "bg-gray-100",
-        "compact_img": true,
+        "img_wrap_class": "xl:max-w-[560px] lg:max-w-[280px] max-w-[240px]",
         "content": [
             {
                 "title": "Banking and Financial Alerts",
