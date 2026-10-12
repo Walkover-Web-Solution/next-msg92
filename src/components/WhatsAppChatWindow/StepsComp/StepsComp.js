@@ -3,8 +3,6 @@ import { MdCheckCircle, MdRefresh, MdArrowBack, MdVideocam, MdCall, MdMoreVert }
 import Script from 'next/script';
 
 export default function WhatsAppStepsComp({ pageInfo, data }) {
-    if (!data) return null;
-
     const conversationStages = data?.conversation_stages;
     const activeMeta = conversationStages?.[0];
 
@@ -20,6 +18,8 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
     const scrollRef = useRef(null);
     const phoneMockupRef = useRef(null);
     const timersRef = useRef([]);
+    const isChatModalOpenRef = useRef(false);
+    const widgetInitializedRef = useRef(false);
 
     const firstStageMessage = conversationStages?.[0]?.messages?.[0];
     const secondStageMessage = conversationStages?.[1]?.messages?.[0];
@@ -29,6 +29,14 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
         timersRef.current = [];
     };
 
+    const closeChatWidget = () => {
+        const container = document.getElementById('whatsappChatDemoWidget');
+        if (container) container.innerHTML = '';
+        widgetInitializedRef.current = false;
+        isChatModalOpenRef.current = false;
+        setIsChatModalOpen(false);
+    };
+
     const openChatWidget = () => {
         clearAllTimers();
         setIsTyping(false);
@@ -36,16 +44,37 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
         setCurrentStage(3);
         setVisibleMessages([firstStageMessage, secondStageMessage].filter(Boolean));
         setShouldLoadWidgetScript(true);
+        isChatModalOpenRef.current = true;
         setIsChatModalOpen(true);
     };
 
     useEffect(() => {
-        if (typeof window === 'undefined' || !isChatModalOpen || !widgetScriptLoaded || !window.initChatWidget) return;
+        if (typeof window === 'undefined') return;
+
+        // Soft-nav from other pages can leave the global Hello launcher alive
+        window.helloConfig = undefined;
+        document
+            .querySelectorAll(
+                '#hello-chat-widget, #hello-chatbot-iframe-container, iframe[src*="msg91.com/chatbot"], iframe[src*="phone91.com"]'
+            )
+            .forEach((node) => {
+                if (node.closest('#whatsappChatDemoWidget')) return;
+                node.remove();
+            });
+    }, []);
+
+    useEffect(() => {
+        if (typeof window === 'undefined' || !isChatModalOpen || !widgetScriptLoaded || !window.initChatWidget) {
+            return;
+        }
+        if (widgetInitializedRef.current) return;
 
         const container = document.getElementById('whatsappChatDemoWidget');
         if (!container) return;
 
+        window.helloConfig = undefined;
         container.innerHTML = '';
+        widgetInitializedRef.current = true;
         window.initChatWidget(
             {
                 widgetToken: process.env.WHATSAPP_CHAT_WIDGET_TOKEN,
@@ -60,13 +89,11 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
             },
             0
         );
-
-        return () => {
-            container.innerHTML = '';
-        };
     }, [isChatModalOpen, widgetScriptLoaded]);
 
     const runAutomatedConversation = () => {
+        if (isChatModalOpenRef.current) return;
+
         clearAllTimers();
         setIsPlaying(true);
         setCurrentStage(1);
@@ -121,6 +148,8 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
 
         const observer = new IntersectionObserver(
             ([intersectionEntry]) => {
+                if (isChatModalOpenRef.current) return;
+
                 if (intersectionEntry.isIntersecting) {
                     runAutomatedConversation();
                 } else {
@@ -141,13 +170,15 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
     }, []);
 
     useEffect(() => {
-        if (scrollRef.current) {
-            scrollRef.current.scrollTo({
-                top: scrollRef.current.scrollHeight,
-                behavior: 'smooth',
-            });
-        }
-    }, [visibleMessages, isTyping]);
+        if (isChatModalOpen || !scrollRef.current) return;
+
+        scrollRef.current.scrollTo({
+            top: scrollRef.current.scrollHeight,
+            behavior: 'smooth',
+        });
+    }, [visibleMessages, isTyping, isChatModalOpen]);
+
+    if (!data) return null;
 
     return (
         <section id='how-it-works' ref={sectionRef} className='bg-slate-50 border-t border-slate-200 overflow-hidden'>
@@ -157,7 +188,6 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
                     strategy='afterInteractive'
                     src={process.env.CHAT_WIDGET_URL}
                     onLoad={() => setWidgetScriptLoaded(true)}
-                    onReady={() => setWidgetScriptLoaded(true)}
                 />
             )}
             <div className='container cont_p flex flex-col gap-10'>
@@ -458,11 +488,18 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
             </div>
 
             {isChatModalOpen && (
-                <dialog className='modal z-[1001]' open>
+                <dialog
+                    className='modal z-[1001]'
+                    open
+                    onCancel={(event) => {
+                        event.preventDefault();
+                        closeChatWidget();
+                    }}
+                >
                     <div className='modal-box relative p-0 overflow-hidden max-w-4xl w-full'>
                         <button
                             type='button'
-                            onClick={() => setIsChatModalOpen(false)}
+                            onClick={closeChatWidget}
                             className='btn btn-sm btn-circle btn-ghost absolute right-3 top-3 z-50 bg-white/90'
                         >
                             ✕
@@ -470,7 +507,7 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
                         <div id='whatsappChatDemoWidget' className='w-full' style={{ minHeight: '680px' }} />
                     </div>
                     <form method='dialog' className='modal-backdrop'>
-                        <button type='button' onClick={() => setIsChatModalOpen(false)}>
+                        <button type='button' onClick={closeChatWidget}>
                             close
                         </button>
                     </form>
