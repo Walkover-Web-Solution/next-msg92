@@ -35,22 +35,23 @@ export default function BannerComp({ pageInfo, data }) {
                                 <span className='font-semibold text-2xl'>{data?.product?.name}</span>
                             </div>
                         )}
-                        <span className={`text-xl uppercase tracking-widest ${data?.slug}_dark_text`}>
+                        <span
+                            className={`text-xl uppercase tracking-widest ${
+                                data?.tagline_class || `${data?.slug}_dark_text`
+                            }`}
+                        >
                             {data?.tagline}
                         </span>
-                        {data?.product ? (
-                            <h1
-                                className={
-                                    data?.slug === 'whatsapp' || data?.slug === 'reports'
-                                        ? 'whatsapp__heading'
-                                        : 'heading'
-                                }
-                            >
-                                {data?.heading}
-                            </h1>
-                        ) : (
-                            <h1 className='heading'>{data?.heading}</h1>
-                        )}
+                        <h1
+                            className={
+                                data?.heading_class ||
+                                (data?.slug === 'whatsapp' || data?.slug === 'reports'
+                                    ? 'whatsapp__heading'
+                                    : 'heading')
+                            }
+                        >
+                            {data?.heading}
+                        </h1>
                         <p
                             className={
                                 data?.slug === 'whatsapp' || data?.slug === 'reports'
@@ -163,9 +164,19 @@ export default function BannerComp({ pageInfo, data }) {
                     </div>
                 )}
                 {!data?.code && data?.banner_video && data?.not_absolute && (
-                    <div className='lg:w-1/2'>
-                        <video className='w-full' autoPlay muted loop playsInline aria-label={data?.tagline}>
-                            <source src={data?.banner_video} type='video/webm' />
+                    <div className={data?.banner_video_wrap_class}>
+                        <video
+                            className={data?.banner_video_class}
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            aria-label={data?.tagline}
+                        >
+                            <source
+                                src={data?.banner_video}
+                                type={data?.banner_video?.endsWith?.('.mp4') ? 'video/mp4' : 'video/webm'}
+                            />
                         </video>
                     </div>
                 )}
