@@ -35,6 +35,10 @@ const securityHeaders = [
     },
 ];
 
+const embeddableSecurityHeaders = securityHeaders.map((header) =>
+    header.key === 'X-Frame-Options' ? { ...header, value: 'SAMEORIGIN' } : header
+);
+
 const nextConfig = {
     trailingSlash: false,
     reactStrictMode: false,
@@ -56,7 +60,11 @@ const nextConfig = {
     async headers() {
         return [
             {
-                source: '/(.*)',
+                source: '/whatsapp-chat-window-widget',
+                headers: embeddableSecurityHeaders,
+            },
+            {
+                source: '/((?!whatsapp-chat-window-widget).*)',
                 headers: securityHeaders,
             },
             {
