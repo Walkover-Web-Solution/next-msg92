@@ -7,7 +7,7 @@ import getURL from '@/utils/getURL';
 
 export default function WhyChooseMSG91({ data, pageInfo }) {
     const isReports = pageInfo?.page === 'reports';
-    const bgClass = data?.bg || (isReports ? 'reports_lite_bg' : 'bg-[#ecf7ec]');
+    const bgClass = data?.bg || (isReports ? 'reports_lite_bg' : 'bg-[#f4fcf4]');
 
     return (
         <div className={bgClass}>

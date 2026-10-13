@@ -13,7 +13,7 @@ export default function WhatsAppCTAComp({ pageInfo, data }) {
     return (
         <section
             id='get-started'
-            className='relative overflow-hidden bg-gradient-to-br from-emerald-50 via-whatsappChat-light to-slate-50 border-t border-slate-200'
+            className='relative overflow-hidden bg-gradient-to-br from-sky-50 via-whatsappChat-light to-slate-50 border-t border-slate-200'
         >
             <div className='absolute inset-0 pointer-events-none hidden md:block'>
                 {floatingBubbles.map((bubble, index) => (
@@ -35,7 +35,7 @@ export default function WhatsAppCTAComp({ pageInfo, data }) {
                     return (
                         <div
                             key={`icon-${index}`}
-                            className={`absolute w-11 h-11 rounded-xl bg-white border border-emerald-100 shadow-md flex items-center justify-center ${
+                            className={`absolute w-11 h-11 rounded-xl bg-white border border-sky-100 shadow-md flex items-center justify-center ${
                                 item?.animationClass
                             }`}
                             style={{ left: item?.left, top: item?.top }}
@@ -52,7 +52,7 @@ export default function WhatsAppCTAComp({ pageInfo, data }) {
             <div className='container cont_p relative z-10'>
                 <div className='max-w-3xl mx-auto text-center flex flex-col gap-6 items-center'>
                     <div className='flex flex-col gap-3'>
-                        <h2 className='heading'>
+                        <h2 className='heading font-semibold text-3xl md:text-4xl'>
                             {data?.heading_prefix}
                             <span className='text-whatsappChat-primary'>{data?.heading_accent}</span>
                             {data?.heading_suffix}

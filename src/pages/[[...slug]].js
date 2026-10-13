@@ -93,7 +93,6 @@ import FileHostingStepsComp from '@/components/FileHostingComp/StepsComp/StepsCo
 import FileHostingUseCasesComp from '@/components/FileHostingComp/UseCasesComp/UseCasesComp';
 import FileHostingFormatsComp from '@/components/FileHostingComp/FormatsComp/FormatsComp';
 import BenefitSection from '@/components/OneApiBenefitComp/BenefitSection';
-import WhatsAppHeroComp from '@/components/WhatsAppChatWindow/HeroComp/HeroComp';
 import WhatsAppProblemSolutionComp from '@/components/WhatsAppChatWindow/ProblemSolutionComp/ProblemSolutionComp';
 import WhatsAppStepsComp from '@/components/WhatsAppChatWindow/StepsComp/StepsComp';
 import WhatsAppComparisonComp from '@/components/WhatsAppChatWindow/ComparisonComp/ComparisonComp';
@@ -219,7 +218,6 @@ const Components = {
     FileHostingUseCasesComp,
     FileHostingComparisonComp: FileHostingFeatureHighlightComp,
     FileHostingFormatsComp,
-    WhatsAppHeroComp,
     WhatsAppProblemSolutionComp,
     WhatsAppStepsComp,
     WhatsAppComparisonComp,
