@@ -11,10 +11,14 @@ export default function StepsComp({ data }) {
                 </header>
 
                 {data?.steps?.length > 0 && (
-                    <div className='relative max-w-5xl mx-auto'>
+                    <div className={`relative mx-auto ${data?.theme ? 'w-full' : 'max-w-5xl'}`}>
                         <div className='hidden md:block absolute top-[20px] left-[12%] right-[12%] h-px bg-gray-200 pointer-events-none' />
 
-                        <div className='grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 relative z-10'>
+                        <div
+                            className={`grid grid-cols-2 gap-6 sm:gap-8 relative z-10 ${
+                                data?.theme ? 'md:grid-cols-5' : 'md:grid-cols-4'
+                            }`}
+                        >
                             {data?.steps?.map((step, index) => (
                                 <div key={index} className='flex flex-col items-center text-center gap-3'>
                                     {step?.number && (

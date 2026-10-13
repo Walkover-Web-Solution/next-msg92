@@ -25,7 +25,6 @@ export default function WhatsAppCTAComp({ data, pageInfo }) {
     return (
         <section
             id='get-started'
-            data-theme={data?.theme}
             className='relative overflow-hidden bg-gradient-to-br from-emerald-50 via-[#DCF8C6]/50 to-teal-50'
         >
             <div className='absolute inset-0 pointer-events-none hidden md:block'>

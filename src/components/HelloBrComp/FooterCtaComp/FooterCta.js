@@ -5,7 +5,11 @@ export default function FooterCta({ data }) {
     if (!data?.heading) return null;
 
     return (
-        <section className='bg-slate-950 py-20 lg:py-28' data-theme={data?.theme}>
+        <section
+            className={`py-20 lg:py-28 ${
+                data?.theme ? 'bg-gradient-to-br from-blue-50 via-[#DBEAFE]/50 to-indigo-50' : 'bg-slate-950'
+            }`}
+        >
             <div className='container cont _p'>
                 <div className='cont text-center'>
                     {data?.label && (
@@ -15,17 +19,13 @@ export default function FooterCta({ data }) {
                     )}
                     <h2
                         className={`mb-5 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl ${
-                            data?.bg ? 'text-primary' : 'text-white'
+                            data?.theme ? 'text-slate-900' : 'text-white'
                         }`}
                     >
                         {data.heading}
                     </h2>
                     {data?.description && (
-                        <p
-                            className={`mx-auto mb-10 w-full max-w-[min(42rem,60vw)] text-base md:text-lg lg:mb-12 ${
-                                data?.bg ? 'text-gray-600' : 'text-gray-400'
-                            }`}
-                        >
+                        <p className='mx-auto mb-10 w-full max-w-[min(42rem,60vw)] text-base text-gray-400 md:text-lg lg:mb-12'>
                             {data.description}
                         </p>
                     )}
@@ -35,10 +35,10 @@ export default function FooterCta({ data }) {
                                 href={data.primaryHref}
                                 target={/^https?:\/\//i.test(String(data.primaryHref)) ? '_blank' : undefined}
                                 rel={/^https?:\/\//i.test(String(data.primaryHref)) ? 'noopener noreferrer' : undefined}
-                                className={`inline-flex w-full min-w-0 items-center justify-center gap-2 rounded-lg px-6 py-3.5 text-sm font-semibold text-white transition sm:w-auto sm:text-base ${
-                                    data?.bg
-                                        ? 'whatsapp_bg hover:opacity-90'
-                                        : 'bg-indigo-600 shadow-xl shadow-indigo-600/40 hover:bg-indigo-500'
+                                className={`inline-flex w-full min-w-0 items-center justify-center gap-2 rounded-lg px-6 py-3.5 text-sm font-semibold text-white shadow-xl transition sm:w-auto sm:text-base ${
+                                    data?.theme
+                                        ? 'bg-blue-600 shadow-blue-600/30 hover:bg-blue-700'
+                                        : 'bg-indigo-600 shadow-indigo-600/40 hover:bg-indigo-500'
                                 }`}
                             >
                                 <MdCalendarToday className='h-5 w-5 shrink-0' aria-hidden />
@@ -52,11 +52,7 @@ export default function FooterCta({ data }) {
                                 rel={
                                     /^https?:\/\//i.test(String(data.secondaryHref)) ? 'noopener noreferrer' : undefined
                                 }
-                                className={`inline-flex w-full min-w-0 items-center justify-center gap-2 rounded-lg border bg-transparent px-6 py-3.5 text-sm font-semibold transition sm:w-auto sm:text-base ${
-                                    data?.bg
-                                        ? 'border-gray-300 text-primary hover:border-gray-400 hover:bg-gray-50'
-                                        : 'border-gray-600 text-white hover:border-gray-500 hover:bg-white/5'
-                                }`}
+                                className='inline-flex w-full min-w-0 items-center justify-center gap-2 rounded-lg border border-gray-600 bg-transparent px-6 py-3.5 text-sm font-semibold text-white transition hover:border-gray-500 hover:bg-white/5 sm:w-auto sm:text-base'
                             >
                                 {data.secondaryLabel}
                                 <span aria-hidden>→</span>
