@@ -283,7 +283,7 @@ export default function WhatsAppStepsComp({ pageInfo, data }) {
         <section id='how-it-works' ref={sectionRef} className='bg-slate-50 border-t border-slate-200 overflow-hidden'>
             <div className='container cont_p flex flex-col gap-10'>
                 <div className='text-center flex flex-col gap-3'>
-                    <h2 className='heading'>
+                    <h2 className='heading font-semibold text-3xl md:text-4xl'>
                         {data?.heading_prefix}
                         <span className='text-whatsappChat-primary'>{data?.heading_accent}</span>
                         {data?.heading_suffix}
