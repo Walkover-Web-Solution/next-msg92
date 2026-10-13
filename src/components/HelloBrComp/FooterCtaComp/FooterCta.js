@@ -5,7 +5,7 @@ export default function FooterCta({ data }) {
     if (!data?.heading) return null;
 
     return (
-        <section className='bg-slate-950 py-20 lg:py-28'>
+        <section className='bg-slate-950 py-20 lg:py-28' data-theme={data?.theme}>
             <div className='container cont _p'>
                 <div className='cont text-center'>
                     {data?.label && (
