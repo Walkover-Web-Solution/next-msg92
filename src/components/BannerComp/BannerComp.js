@@ -38,22 +38,18 @@ export default function BannerComp({ pageInfo, data }) {
                         <span className={`text-xl uppercase tracking-widest ${data?.slug}_dark_text`}>
                             {data?.tagline}
                         </span>
-                        {data?.product ? (
-                            <h1
-                                className={
-                                    data?.slug === 'whatsapp' || data?.slug === 'reports'
-                                        ? 'whatsapp__heading'
-                                        : 'heading'
-                                }
-                            >
-                                {data?.heading}
-                            </h1>
-                        ) : (
-                            <h1 className='heading'>{data?.heading}</h1>
-                        )}
+                        <h1
+                            className={
+                                data?.slug === 'whatsapp' || data?.slug === 'reports' || data?.use_whatsapp_heading
+                                    ? 'whatsapp__heading'
+                                    : 'heading'
+                            }
+                        >
+                            {data?.heading}
+                        </h1>
                         <p
                             className={
-                                data?.slug === 'whatsapp' || data?.slug === 'reports'
+                                data?.slug === 'whatsapp' || data?.slug === 'reports' || data?.use_whatsapp_heading
                                     ? 'whatsapp__subheading'
                                     : 'subheading'
                             }

@@ -3,17 +3,41 @@
         "title": "MSG91 WhatsApp Chat Window — Cost-Effective Customer Conversations",
         "description": "Continue customer conversations beyond WhatsApp with MSG91 Chat Window — built for AI chat, automation, and human support."
     },
-    "WhatsAppHeroComp": {
-        "product_name": "WhatsApp",
-        "product_icon": "/assets/icons/products/whatsapp.svg",
-        "heading_prefix": "WhatsApp Chat Window for ",
-        "heading_accent": "Cost-Effective",
-        "heading_suffix": " Customer\nConversations",
-        "subheading": "Continue customer conversations beyond WhatsApp\nwith MSG91 Chat Window — built for AI chat,\nautomation, and human support.",
-        "primary_btn": "Get Started",
-        "primary_btn_link": "https://control.msg91.com/signup/",
-        "secondary_btn": "Book a Demo",
-        "video": "/assets/whatsapp_chat_window/hero_section.webm"
+    "BannerComp": {
+        "slug": "sms",
+        "use_whatsapp_heading": true,
+        "tagline": "WhatsApp Chat Window",
+        "heading": "WhatsApp Chat Window for Cost-Effective Customer Conversations.",
+        "subheading": "Continue customer conversations beyond WhatsApp with MSG91 Chat Window — built for AI chat, automation, and human support.",
+        "banner_video": "/assets/whatsapp_chat_window/hero_section.webm",
+        "not_absolute": "true",
+        "getstarted_btn": "Get Started",
+        "schedule_meet": "Book a Demo",
+        "trustedByComp": {
+            "heading": "Trusted by 30,000+ global businesses",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
     },
     "WhatsAppProblemSolutionComp": {
         "bg": "bg-whatsappChat-light",
@@ -102,6 +126,7 @@
         ]
     },
     "WhyChooseMSG91": {
+        "bg": "bg-whatsappChat-light",
         "heading": "Everything You Need to Continue Customer Conversations",
         "subheading": "A unified platform to automate, assist, and scale customer conversations beyond WhatsApp.",
         "content": [
