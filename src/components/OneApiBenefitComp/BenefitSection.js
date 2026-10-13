@@ -13,7 +13,7 @@ export default function BenefitSection({ data }) {
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 cont_gap w-full'>
                 {data?.cards?.map((item, index) => {
-                    const Icon = item?.icon ? MdIcons[item.icon] : null;
+                    const Icon = MdIcons[item.icon];
 
                     return (
                         <div key={index} className='border rounded-xl p-6 bg-base-100 min-h-[240px] flex flex-col'>
