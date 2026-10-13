@@ -5,15 +5,20 @@ export default function FooterCta({ data }) {
     if (!data?.heading) return null;
 
     return (
-        <section className='bg-slate-950 py-20 lg:py-28'>
+        <section className={`py-20 lg:py-28 ${
+            data?.theme
+                ? 'bg-gradient-to-br from-blue-50 via-[#DBEAFE]/50 to-indigo-50'
+                : 'bg-slate-950'
+        }`}>
             <div className='container cont _p'>
                 <div className='cont text-center'>
                     {data?.label && (
                         <p className='py-2 text-xs font-semibold uppercase tracking-[0.25em] text-indigo-600'>
                             {data.label}
                         </p>
-                    )}
-                    <h2 className='mb-5 text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-5xl'>
+                    )}  
+                    <h2 className={`mb-5 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl ${
+                        data?.theme ? 'text-slate-900' : 'text-white'}`}>
                         {data.heading}
                     </h2>
                     {data?.description && (
@@ -27,7 +32,11 @@ export default function FooterCta({ data }) {
                                 href={data.primaryHref}
                                 target={/^https?:\/\//i.test(String(data.primaryHref)) ? '_blank' : undefined}
                                 rel={/^https?:\/\//i.test(String(data.primaryHref)) ? 'noopener noreferrer' : undefined}
-                                className='inline-flex w-full min-w-0 items-center justify-center gap-2 rounded-lg bg-indigo-600 px-6 py-3.5 text-sm font-semibold text-white shadow-xl shadow-indigo-600/40 transition hover:bg-indigo-500 sm:w-auto sm:text-base'
+                                className={`inline-flex w-full min-w-0 items-center justify-center gap-2 rounded-lg px-6 py-3.5 text-sm font-semibold text-white shadow-xl transition sm:w-auto sm:text-base ${
+                                    data?.theme
+                                        ? 'bg-blue-600 shadow-blue-600/30 hover:bg-blue-700'
+                                        : 'bg-indigo-600 shadow-indigo-600/40 hover:bg-indigo-500'
+                                }`}
                             >
                                 <MdCalendarToday className='h-5 w-5 shrink-0' aria-hidden />
                                 {data.primaryLabel}
