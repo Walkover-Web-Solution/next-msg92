@@ -35,22 +35,24 @@ export default function BannerComp({ pageInfo, data }) {
                                 <span className='font-semibold text-2xl'>{data?.product?.name}</span>
                             </div>
                         )}
-                        <span className={`text-xl uppercase tracking-widest ${data?.slug}_dark_text`}>
+                        <span
+                            className={`text-xl uppercase tracking-widest ${
+                                data?.tagline_class ? 'text-accent' : `${data?.slug}_dark_text`
+                            }`}
+                        >
                             {data?.tagline}
                         </span>
-                        {data?.product ? (
-                            <h1
-                                className={
-                                    data?.slug === 'whatsapp' || data?.slug === 'reports'
-                                        ? 'whatsapp__heading'
-                                        : 'heading'
-                                }
-                            >
-                                {data?.heading}
-                            </h1>
-                        ) : (
-                            <h1 className='heading'>{data?.heading}</h1>
-                        )}
+                        <h1
+                            className={
+                                data?.heading_class
+                                    ? 'text-2xl md:text-4xl font-semibold'
+                                    : data?.slug === 'whatsapp' || data?.slug === 'reports'
+                                      ? 'whatsapp__heading'
+                                      : 'heading'
+                            }
+                        >
+                            {data?.heading}
+                        </h1>
                         <p
                             className={
                                 data?.slug === 'whatsapp' || data?.slug === 'reports'
@@ -164,7 +166,16 @@ export default function BannerComp({ pageInfo, data }) {
                 )}
                 {!data?.code && data?.banner_video && data?.not_absolute && (
                     <div className='lg:w-1/2'>
-                        <video className='w-full' autoPlay muted loop playsInline aria-label={data?.tagline}>
+                        <video
+                            className={
+                                data?.compact_video ? 'w-full xl:max-w-[600px] lg:max-w-full max-w-[500px]' : 'w-full'
+                            }
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            aria-label={data?.tagline}
+                        >
                             <source src={data?.banner_video} type='video/webm' />
                         </video>
                     </div>
