@@ -11,7 +11,7 @@ const iconMap = {
 
 export default function BenefitSection({ data }) {
     return (
-        <div className='container cont_p cont cont_gap items-center'>
+        <div className='container py-8 cont cont_gap items-center'>
             <div className='cont justify-center items-center cont_w text-center'>
                 <h2 className='text-3xl md:text-4xl font-bold my-2'>{data?.heading}</h2>
 
