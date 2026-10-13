@@ -13,15 +13,36 @@
         "tagline_class": true,
         "heading_class": true,
         "heading": "Make Messaging Changes Instantly - Without Repeated Deployment",
-        "subheading": "Switching channels, updating templates, or adding fallback logic should not require code changes and deployment cycles. ONE API by MSG91 makes your communication layer dynamic so you can adapt delivery logic and content in real time without touching backend systems.",
+        "subheading": "Switch channels, update templates, and configure fallback logic in real time from your dashboard — without code changes or waiting on deployments.",
         "banner_img": "",
         "banner_video": "/assets/one-api/hero-section.webm",
         "not_absolute": true,
         "getstarted_btn": "Get Started",
         "schedule_meet": "Schedule a Meeting",
         "trustedByComp": {
-            "heading": "",
-            "logos": []
+            "heading": "Trusted by 30,000+ global businesses",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
         },
         "compact_video": true
     },
