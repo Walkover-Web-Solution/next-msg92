@@ -1,26 +1,19 @@
-import { MdSecurity, MdTune, MdPower, MdLogin, MdPeople, MdNotificationsActive } from 'react-icons/md';
-
-const iconMap = {
-    MdSecurity,
-    MdTune,
-    MdPower,
-    MdLogin,
-    MdPeople,
-    MdNotificationsActive,
-};
+import * as MdIcons from 'react-icons/md';
 
 export default function BenefitSection({ data }) {
+    if (!data) return null;
+
     return (
         <div className='container cont_p cont cont_gap items-center'>
             <div className='cont justify-center items-center cont_w text-center'>
                 <h2 className='text-3xl md:text-4xl font-bold my-2'>{data?.heading}</h2>
 
-                <p className='text-lg my-2'>{data?.subheading}</p>
+                {data?.subheading && <p className='text-lg my-2'>{data.subheading}</p>}
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 cont_gap w-full'>
                 {data?.cards?.map((item, index) => {
-                    const Icon = iconMap[item?.icon];
+                    const Icon = item?.icon ? MdIcons[item.icon] : null;
 
                     return (
                         <div key={index} className='border rounded-xl p-6 bg-base-100 min-h-[240px] flex flex-col'>

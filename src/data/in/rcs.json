@@ -1,56 +1,26 @@
 {
   "HeadComp": {
-    "title": "RCS Message:  Learn how to send RCS messages on Android & iPhone",
-    "description": "MSG91 is a top RCS messaging provider in India. Discover RCS pricing & how to send RCS messages on Android and iPhone using Google RCS Messages, withexamples."
+    "title": "RCS Business Messaging in India | MSG91",
+    "description": "Upgrade customer engagement with RCS Business Messaging in India. Send branded messages, rich media, interactive campaigns, and automated updates with MSG91."
+
   },
   "BannerComp": {
-    "slug": "rcs",
-    "product": {
-      "name": "RCS",
-      "icon": "/assets/icons/products/rcs.svg"
-    },
-    "code": true,
-    "tagline": "Rich Communication Services",
-    "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
-    "subheading": "RCS messaging is an integrated channel that enables businesses to engage customers through rich, immersive, two-way conversations.",
-    "banner_img": "/assets/global/hello/banner.webp",
-    "getstarted_btn": "Get Started",
-    "getstarted_btn_link": "https://calendly.com/revenue-squad/solutions-meet",
-    "text_h2": "RCS Example API:"
+  "slug": "rcs",
+  "product": {
+    "name": "RCS",
+    "icon": "/assets/icons/products/rcs.svg"
   },
-  "FeatureComp": {
-    "heading": "Features of Google RCS Messages",
-    "iconColor": "text-otp",
-    "features": [
-      {
-        "icon": "",
-        "name": "Corporate Communications with Branding",
-        "content": "<strong>Distinguish by branding </strong>Enhance your brand's visibility in the SMS inbox using a distinctive sender ID and logo. Utilize a visually appealing interface to effectively engage customers.",
-        "img": "/assets/global/rcs/rcs-communications-branding.svg"
-      },
-      {
-        "icon": "",
-        "name": "Provide Multimedia Interactions",
-        "content": "Enhance your brand communication by delivering RCS messages that build trust. Incorporate your logo, brand name, videos, images, and carousels into your messaging to increase conversions.",
-        "img": "/assets/global/rcs/rcs-multimedia-interactions.svg"
-      },
-      {
-        "icon": "",
-        "name": "Boost Sales Through Interactive Conversations",
-        "content": "Craft an engaging conversation experience with images, videos, carousels, and interactive action buttons. Stand out from competitors by sending engaging and reliable Google RCS messages that drive conversions.",
-        "img": "/assets/global/rcs/rcs-boost-sales.svg"
-      },
-      {
-        "icon": "",
-        "name": "Enhanced Customer Trust",
-        "content": " <strong>Understand your customer's habits </strong>Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility.",
-        "img": "/assets/global/rcs/rcs-customer-trust.svg"
-      }
-    ]
-  },
-  "TrustedByComp": {
+  "code": false,
+  "tagline": "Rich Communication Services",
+  "heading": "RCS Business Messaging for Interactive Customer Communication",
+  "subheading": "From branded campaigns and product showcases to automated chatbots and seamless API integrations, discover how Rich Communication Services (RCS) helps you manage different customer communication needs through one powerful messaging solution. Deliver richer customer experiences with an RCS solution designed for businesses in India.",
+  "banner_video": "/assets/rcs/msg91-rcs-hero.webm",
+  "not_absolute": "true",
+  "getstarted_btn": "Get Started",
+  "getstarted_btn_link": "https://calendly.com/revenue-squad/solutions-meet",
+  "text_h2": "RCS Business Messaging API:",
+  "trustedByComp": {
     "heading": "Trusted by 30,000+ global businesses",
-    "fullwidth": true,
     "logos": [
       {
         "name": "Razorpay",
@@ -77,12 +47,668 @@
         "url": "/assets/trusted_by/ixigo.svg"
       }
     ]
+  }
+},
+  "FeatureComp": {
+  "heading": "Everything You Need to Create Powerful RCS Messaging Experiences",
+  "subheading": "Go beyond traditional SMS with Rich Communication Services (RCS). Combine verified branding, rich media, interactive conversations, and seamless integrations to make every customer interaction more meaningful.",
+  "iconColor": "text-otp",
+  "features": [
+    {
+      "icon": "",
+      "name": "Verified and Branded RCS Messaging",
+      "content": "<strong>Build Customer Confidence with Every Branded Message</strong> Give your business a recognizable identity with verified RCS sender profiles that display your brand name, logo, and authentication details. Help customers identify legitimate communications while creating a consistent brand experience across promotional campaigns, transactional updates, and customer interactions.",
+      "img": "/assets/rcs/msg91-rcs-01-verified-branding.webp",
+      "more_content": {
+  "usecases": [
+    {
+      "name": "Branded OTP Notifications",
+      "description": "Send authentication-related messages through a recognizable business profile, where the required authentication workflow is supported."
+    },
+    {
+      "name": "Banking Alerts",
+      "description": "Deliver account activity, transaction notifications, and service announcements with visible sender branding."
+    },
+    {
+      "name": "Order Confirmations",
+      "description": "Help shoppers recognize genuine purchase confirmations from your business."
+    },
+    {
+      "name": "Payment Reminders",
+      "description": "Share pending payment and billing information under an authenticated sender identity."
+    },
+    {
+      "name": "Insurance Renewals",
+      "description": "Send policy renewal notifications and important updates through a recognizable business profile."
+    }
+  ],
+  "features": [
+    "Verified business identity displayed in the messaging inbox.",
+    "Business name and logo visible to customers.",
+    "Consistent brand presentation across different campaigns.",
+    "Recognizable sender profiles for promotional and service messages.",
+    "Professional messaging experience that helps strengthen customer confidence."
+  ]
+}
+    },
+    {
+      "icon": "",
+      "name": "Rich Media RCS Campaigns",
+      "content": "<strong>Make Every Promotion More Visual and Engaging</strong> Replace plain text messages with engaging multimedia experiences using Rich Communication Services. Combine high-quality images, videos, promotional content, and interactive elements to showcase your products and services more effectively. Use rich cards to present a featured product or service with an image, description, and clickable action. Help customers discover offers and understand your business without relying on lengthy text descriptions.",
+      "img": "/assets/rcs/msg91-rcs-02-rich-media.webp",
+      "more_content": {
+        "usecases": [
+          {
+            "name": "New Product Launches",
+            "description": "Introduce products through images, promotional videos, and feature demonstrations."
+          },
+          {
+            "name": "Festive Sale Campaigns",
+            "description": "Promote Diwali, Holi, and seasonal shopping offers using visually engaging messages."
+          },
+          {
+            "name": "Real Estate Project Launches",
+            "description": "Showcase new residential projects through property photographs and video previews."
+          },
+          {
+            "name": "Automobile Promotions",
+            "description": "Highlight new car models, features, and limited-period dealership offers."
+          },
+          {
+            "name": "Travel Package Promotions",
+            "description": "Showcase holiday destinations, resorts, and travel experiences using rich media."
+          }
+        ],
+        "features": [
+          "Support for high-quality images and multimedia content.",
+          "Video-based product and service promotions.",
+          "Rich card templates with images, descriptions, and interactive actions.",
+          "Rich content combined with clickable customer actions.",
+          "Multimedia messaging for marketing and customer communication."
+        ]
+      }
+    },
+    {
+      "icon": "",
+      "name": "Interactive Product Cards and Carousels",
+      "content": "<strong>Turn Product Discovery into an Interactive Shopping Experience</strong> Make it easier for customers to explore multiple products within a single RCS message. Use swipeable carousels and interactive product cards to display images, descriptions, and relevant action buttons. Add video-enabled carousels to showcase product demonstrations and different offerings in a more engaging format. Create a convenient browsing experience that helps customers discover offerings and move toward purchase decisions.",
+      "img": "/assets/rcs/msg91-rcs-03-carousels.webp",
+      "more_content": {
+        "usecases": [
+          {
+            "name": "Product Catalogue Browsing",
+            "description": "Display multiple products within a swipeable message carousel."
+          },
+          {
+            "name": "New Collection Showcases",
+            "description": "Introduce fashion, jewellery, or footwear collections through interactive cards."
+          },
+          {
+            "name": "Product Variant Comparisons",
+            "description": "Present different smartphone models, vehicle variants, or appliance options."
+          },
+          {
+            "name": "Combo Offers",
+            "description": "Showcase product bundles and promotional packages with individual action buttons."
+          },
+          {
+            "name": "Property Listings",
+            "description": "Present multiple apartments, villas, or residential projects within one message."
+          }
+        ],
+        "features": [
+          "Swipeable carousels displaying multiple offerings.",
+          "Product cards with images, titles, and descriptions.",
+          "Individual action buttons for relevant product pages.",
+          "Video-enabled carousels for interactive product showcases.",
+          "Convenient browsing within the customer's messaging application."
+        ]
+      }
+    },
+    {
+      "icon": "",
+      "name": "One-Tap Actions and Suggested Replies",
+      "content": "<strong>Make Customer Interactions Faster with Clickable Actions</strong> Simplify customer journeys by adding interactive buttons and predefined responses to your RCS messages. Help customers explore products, confirm appointments, visit websites, or connect with your business without manually typing responses. Add calendar events, provide direct calling options, and help customers view business locations through supported RCS actions. Turn everyday communication into convenient, action-oriented experiences.",
+      "img": "/assets/rcs/msg91-rcs-04-one-tap-actions.webp",
+      "more_content": {
+        "usecases": [
+          {
+            "name": "Appointment Confirmation",
+            "description": "Let customers confirm or request changes to scheduled appointments."
+          },
+          {
+            "name": "Book a Demo",
+            "description": "Allow interested prospects to open a demo booking page directly from an RCS message."
+          },
+          {
+            "name": "Event Registration",
+            "description": "Direct customers to webinar registrations, exhibitions, and event booking pages, with an option to add scheduled events to their calendar."
+          },
+          {
+            "name": "Click-to-Call Enquiries",
+            "description": "Help customers contact sales or support teams using a call action."
+          },
+          {
+            "name": "Payment Link Access",
+            "description": "Direct customers to a secure external payment page for completing transactions."
+          },
+          {
+            "name": "Store Location and Directions",
+            "description": "Help customers open a business location in their maps application to find directions to the nearest store, showroom, or service centre."
+          }
+        ],
+        "features": [
+          "Suggested reply buttons for quick customer responses.",
+          "Open URL actions for accessing websites, product pages, and booking links.",
+          "Dial actions for connecting with businesses on supported devices.",
+          "Create Calendar Event actions for adding appointments and events to a calendar.",
+          "View Location actions for opening business addresses and directions in supported maps applications."
+        ]
+      }
+    },
+    {
+      "icon": "",
+      "name": "Two-Way RCS Conversations",
+      "content": "<strong>Transform One-Way Notifications into Meaningful Conversations</strong> Create interactive customer experiences with RCS Business Messaging that allows users to respond directly to your messages. Move beyond traditional broadcast communication by enabling customers to ask questions, share responses, and continue conversations within their messaging inbox. Customers can also share their location through supported RCS actions when location details are required for assistance or service requests. Connect automated messaging with human assistance when needed.",
+      "img": "/assets/rcs/msg91-rcs-05-two-way-conversations.webp",
+      "more_content": {
+        "usecases": [
+          {
+            "name": "Pre-Sales Product Enquiries",
+            "description": "Answer questions about specifications, pricing, and product availability."
+          },
+          {
+            "name": "Order Modification Requests",
+            "description": "Allow customers to enquire about changing delivery addresses or order details."
+          },
+          {
+            "name": "Return and Refund Enquiries",
+            "description": "Collect questions about return eligibility, refund status, and exchange options."
+          },
+          {
+            "name": "Service Enquiries",
+            "description": "Discuss service availability, requirements, and estimated costs."
+          },
+          {
+            "name": "Post-Purchase Feedback",
+            "description": "Invite customers to share detailed feedback and ask follow-up questions."
+          },
+          {
+            "name": "Location-Based Service Requests",
+            "description": "Allow customers to share their current location when requesting roadside assistance, home services, or nearby support."
+          }
+        ],
+        "features": [
+          "Two-way communication within supported RCS conversations.",
+          "Customer responses to promotional and service messages.",
+          "Interactive suggested replies for guided communication.",
+          "Share Location actions for collecting customer-provided location details.",
+          "Support for automated and human-assisted conversations."
+        ]
+      }
+    },
+    {
+      "icon": "",
+      "name": "Personalized RCS Marketing Campaigns",
+      "content": "<strong>Deliver Relevant Messages That Connect with Every Customer</strong> Make customer engagement more meaningful with personalized RCS campaigns tailored to individual preferences, purchase activities, and communication history. Share relevant offers, product recommendations, and timely updates that match different customer journeys, helping businesses create more targeted communication experiences.",
+      "img": "/assets/rcs/msg91-rcs-06-personalized-campaigns.webp",
+      "more_content": {
+        "usecases": [
+          {
+            "name": "Abandoned Cart Recovery",
+            "description": "Remind shoppers about products left in their carts with relevant links."
+          },
+          {
+            "name": "Birthday and Anniversary Offers",
+            "description": "Send personalized greetings, discount codes, and special rewards."
+          },
+          {
+            "name": "Repeat Purchase Reminders",
+            "description": "Reach customers when previously purchased products may need replenishment."
+          },
+          {
+            "name": "VIP Customer Campaigns",
+            "description": "Share exclusive deals and early access offers with loyalty members."
+          },
+          {
+            "name": "Inactive Customer Re-engagement",
+            "description": "Encourage previous customers to return through tailored promotional messages."
+          }
+        ],
+        "features": [
+          "Customer name and message personalization.",
+          "Audience segmentation for targeted campaigns.",
+          "Personalized product recommendations and offers.",
+          "Customer journey-based communication triggers.",
+          "Relevant promotional content for different customer groups."
+        ]
+      }
+    },
+    {
+      "icon": "",
+      "name": "RCS Business Messaging API Integration",
+      "content": "<strong>Connect Rich Messaging with Your Existing Business Systems</strong> Integrate RCS into your applications, CRM platforms, and automated workflows using MSG91's RCS Business Messaging API. Trigger customer communications directly from your business systems, streamline repetitive messaging tasks, and manage interactive communication without manually initiating every message. Create text-based RCS templates for straightforward notifications or use interactive formats when customers need additional information or actions.",
+      "img": "/assets/rcs/msg91-rcs-07-api-integration.webp",
+      "more_content": {
+        "usecases": [
+          {
+            "name": "Order Status Automation",
+            "description": "Trigger purchase confirmations and order processing updates from connected systems."
+          },
+          {
+            "name": "Shipping and Delivery Updates",
+            "description": "Send automated dispatch, tracking, and delivery status messages."
+          },
+          {
+            "name": "Appointment Reminder Automation",
+            "description": "Trigger reminders based on bookings recorded in scheduling software."
+          },
+          {
+            "name": "Subscription Renewal Alerts",
+            "description": "Notify customers about upcoming renewals using billing system events."
+          },
+          {
+            "name": "Lead Follow-Up Automation",
+            "description": "Send messages when prospects submit forms or reach specific CRM stages."
+          }
+        ],
+        "features": [
+          "API integration with websites and business applications.",
+          "CRM and customer engagement platform connectivity.",
+          "Automated messaging through predefined triggers.",
+          "Text message templates for straightforward transactional and service notifications.",
+          "Scalable integration for growing business communication requirements."
+        ]
+      }
+    },
+    {
+      "icon": "",
+      "name": "RCS Campaign Analytics and Performance Tracking",
+      "content": "<strong>Understand Customer Engagement with Detailed Messaging Insights</strong> Measure the effectiveness of your campaigns using supported delivery reports, read receipts, and customer interaction metrics. Understand how recipients engage with your messages, identify which actions attract attention, and use available performance insights to improve future communication strategies.",
+      "img": "/assets/rcs/msg91-rcs-08-analytics.webp",
+      "more_content": {
+        "usecases": [
+          {
+            "name": "Message Delivery Tracking",
+            "description": "Monitor how many campaign messages were sent and successfully delivered."
+          },
+          {
+            "name": "Read Rate Analysis",
+            "description": "Understand how many recipients opened or read supported RCS messages."
+          },
+          {
+            "name": "Button Click Tracking",
+            "description": "Identify which promotional buttons attract the most customer interactions."
+          },
+          {
+            "name": "Campaign Comparison",
+            "description": "Compare engagement results across separate marketing campaigns."
+          },
+          {
+            "name": "Conversion Funnel Analysis",
+            "description": "Combine RCS interaction data with website analytics to evaluate downstream customer actions."
+          }
+        ],
+        "features": [
+          "Message sent and delivered status reporting.",
+          "Read receipt monitoring on supported messaging environments.",
+          "Button-wise click and interaction tracking.",
+          "Campaign delivery, read, and click-rate insights.",
+          "Performance dashboards for evaluating communication effectiveness."
+        ]
+      }
+    },
+    {
+      "icon": "",
+      "name": "Automatic WhatsApp-to-RCS Fallback",
+      "content": "<strong>Keep Important Messages Moving When WhatsApp Delivery Fails</strong> Avoid manually resending failed WhatsApp messages with MSG91's automatic WhatsApp-to-RCS fallback capability. When a WhatsApp message is not delivered, a configured workflow can automatically attempt delivery through RCS, helping businesses maintain communication across supported messaging channels.",
+      "img": "/assets/rcs/msg91-rcs-09-whatsapp-to-rcs-fallback.webp",
+      "more_content": {
+        "usecases": [
+          {
+            "name": "Failed Order Notifications",
+            "description": "Attempt RCS delivery when WhatsApp order updates remain undelivered."
+          },
+          {
+            "name": "Payment Due Reminders",
+            "description": "Retry important payment reminders through another supported channel."
+          },
+          {
+            "name": "Delivery Attempt Notifications",
+            "description": "Redirect failed WhatsApp delivery-related messages through RCS."
+          },
+          {
+            "name": "Booking Confirmation Recovery",
+            "description": "Attempt alternate delivery of reservation confirmations."
+          },
+          {
+            "name": "Service Disruption Alerts",
+            "description": "Retry time-sensitive outage and maintenance communications."
+          }
+        ],
+        "features": [
+          "Automatic detection of unsuccessful WhatsApp delivery.",
+          "Configured fallback from WhatsApp to RCS messaging.",
+          "Alternative delivery attempts without manual intervention.",
+          "Cross-channel messaging for supported recipient devices.",
+          "Improved continuity of important customer communication workflows."
+        ]
+      }
+    },
+    {
+      "icon": "",
+      "name": "AI-Powered RCS Chatbot for 24/7 Support",
+      "content": "<strong>Respond to Customer Enquiries Anytime with Automated Conversations</strong> Let your RCS chatbot manage customer conversations from simple FAQs to complex, multi-step enquiries without constant human intervention. Deliver instant, multilingual assistance, automate customer interactions, and guide users through personalized conversations around the clock. When human expertise is needed, seamlessly transfer conversations to your support team through MSG91 Hello without losing context.",
+      "img": "/assets/rcs/msg91-rcs-10-ai-chatbot.webp",
+      "more_content": {
+        "usecases": [
+          {
+            "name": "Order Tracking Chatbot",
+            "description": "Help customers check shipment status, delivery updates, and order-related information through connected systems."
+          },
+          {
+            "name": "Product Recommendation Chatbot",
+            "description": "Understand customer preferences, answer detailed product questions, and suggest suitable options."
+          },
+          {
+            "name": "Complex Query Resolution",
+            "description": "Handle multi-step customer enquiries, troubleshoot common issues, and guide users through relevant solutions."
+          },
+          {
+            "name": "Multilingual Customer Support",
+            "description": "Respond to customer questions in English, Hindi, and other configured languages."
+          },
+          {
+            "name": "Lead Qualification Chatbot",
+            "description": "Understand customer requirements, answer sales-related questions, and connect qualified prospects with agents."
+          }
+        ],
+        "features": [
+          "Automated customer responses available 24/7.",
+          "Interactive chatbot conversations within RCS messaging.",
+          "Suggested replies for guided customer interactions.",
+          "Chatbot-to-human handover through MSG91 Hello.",
+          "Conversation history accessible to agents for continued assistance."
+        ]
+      }
+    },
+    {
+      "icon": "",
+      "name": "Unified RCS Customer Support with MSG91 Hello",
+      "content": "<strong>Bring Every RCS Customer Conversation into One Shared Inbox</strong> Manage incoming RCS customer replies through MSG91 Hello and give your support team a centralized workspace for handling enquiries. Let chatbots manage routine questions while human agents take over conversations that require personal attention, with access to previous chat context.",
+      "img": "/assets/rcs/msg91-rcs-11-hello-unified-support.webp",
+      "more_content": {
+        "usecases": [
+          {
+            "name": "Live Customer Support",
+            "description": "Let support agents respond to incoming RCS customer enquiries."
+          },
+          {
+            "name": "Chatbot-to-Agent Handover",
+            "description": "Transfer conversations that require human assistance."
+          },
+          {
+            "name": "Complaint Escalation",
+            "description": "Continue unresolved customer complaints with a support representative."
+          },
+          {
+            "name": "Sales Enquiry Follow-Ups",
+            "description": "Let agents respond to interested prospects after an interactive campaign."
+          },
+          {
+            "name": "Multi-Agent Customer Support",
+            "description": "Help teams manage incoming conversations through a shared inbox."
+          }
+        ],
+        "features": [
+          "Centralized inbox for incoming RCS customer conversations.",
+          "Human-agent responses through MSG91 Hello.",
+          "Mobile app access for managing customer enquiries.",
+          "Chatbot-to-agent handover for complex conversations.",
+          "Shared conversation history for better customer context."
+        ]
+      }
+    },
+    {
+      "icon": "",
+      "name": "End-to-End RCS Onboarding with MSG91",
+      "content": "<strong>From Business Registration to Your First Campaign, We Help You at Every Step</strong> Getting started with RCS Business Messaging becomes easier with MSG91's dedicated onboarding team. From business verification and branded sender setup to API integration and campaign testing, our team guides you through the complete onboarding journey. With AI-assisted template creation and hands-on setup assistance, you can prepare your RCS campaigns without navigating every technical requirement independently.",
+      "img": "/assets/rcs/msg91-rcs-12-ai-templates-onboarding.webp",
+      "more_content": {
+        "usecases": [
+          {
+            "name": "RCS Business Registration",
+            "description": "Get guidance on registering your business and completing the required verification process."
+          },
+          {
+            "name": "Branded Sender Setup",
+            "description": "Configure your business name, logo, and sender profile with onboarding assistance."
+          },
+          {
+            "name": "AI-Assisted Template Creation",
+            "description": "Prepare rich promotional and customer communication templates using AI-assisted tools."
+          },
+          {
+            "name": "API Integration Setup",
+            "description": "Get guidance on connecting RCS with your applications, CRM platforms, and automated workflows."
+          },
+          {
+            "name": "First Campaign Launch",
+            "description": "Receive assistance with configuration, testing, and preparing your initial RCS campaign."
+          }
+        ],
+        "features": [
+          "AI-assisted RCS message template creation.",
+          "Dedicated onboarding team for initial setup.",
+          "AI-assisted message template creation.",
+          "Technical assistance with API integration and campaign configuration.",
+          "End-to-end support during testing and initial campaign activation."
+        ]
+      }
+    },
+    {
+      "icon": "",
+      "name": "Dedicated RCS Customer Support Across Multiple Channels",
+      "content": "<strong>Get the Assistance You Need Without Waiting for a Response</strong> Your RCS journey doesn't end after onboarding. MSG91 provides continued customer support through email, WhatsApp, calls, and scheduled meetings, making it easier to connect with our team whenever you need assistance. Whether you're facing a technical issue, have questions about your campaigns, or need guidance on messaging workflows, our support team is available through multiple communication channels to help you move forward.",
+      "img": "/assets/rcs/msg91-rcs-13-dedicated-support.webp",
+      "more_content": {
+        "usecases": [
+          {
+            "name": "Technical Assistance",
+            "description": "Get help with API integration, configuration issues, and troubleshooting."
+          },
+          {
+            "name": "Campaign Support",
+            "description": "Receive guidance on RCS campaign setup, message templates, and delivery-related queries."
+          },
+          {
+            "name": "Integration Guidance",
+            "description": "Discuss technical requirements and resolve challenges when connecting RCS with existing business systems."
+          },
+          {
+            "name": "Issue Resolution",
+            "description": "Connect with the MSG91 team through email, WhatsApp, calls, or meetings to address operational concerns."
+          },
+          {
+            "name": "Post-Launch Support",
+            "description": "Get continued assistance with RCS messaging workflows, campaign management, and configuration."
+          }
+        ],
+        "features": [
+          "Submit detailed enquiries and receive assistance from the MSG91 support team via email.",
+          "Connect with the support team through WhatsApp for quick communication and follow-ups.",
+          "Discuss technical issues, configuration questions, and operational concerns directly over calls.",
+          "Get assistance through email, WhatsApp, phone calls, and scheduled online meetings without needing to visit the MSG91 office.",
+          "Receive ongoing technical support, campaign guidance, and issue resolution assistance even after completing RCS onboarding."
+        ]
+      }
+    }
+  ]
+  },
+  "FooterCta": {
+    "theme": "rcs",
+    "heading": "Make Every Customer Message More Engaging",
+    "description": "Turn simple notifications into branded, interactive conversations with MSG91's RCS Business Messaging platform.",
+    "primaryLabel": "Start Messaging with MSG91",
+    "primaryHref": "https://control.msg91.com/signup/"
+},
+  "ChannelsComp": {
+    "heading": "Why Choose MSG91 for RCS Business Messaging in India?",
+    "subheading": "Indian businesses need more than a messaging channel. They need a reliable way to reach customers, simplify communication, and create meaningful interactions at scale.",
+    "channels": [
+        {
+            "icon": "/assets/global/rcs/rcs-boost-sales.svg",
+            "name": "Built for Growing Indian Businesses",
+            "description": "Whether you're a startup, D2C brand, or enterprise, MSG91 helps you manage branded customer communication as your business grows."
+        },
+        {
+            "icon": "/assets/icons/products/oneapi.svg",
+            "name": "Easy Integration with Existing Systems",
+            "description": "Use the RCS Messaging API to connect messaging with your CRM, website, application, or existing customer engagement workflows."
+        },
+        {
+            "icon": "/assets/global/hello/new/icon-ai-enabled-chat.svg",
+            "name": "24/7 Chatbot with Human Support",
+            "description": "Automate routine conversations through RCS chatbots and seamlessly hand over customer enquiries to your team through MSG91 Hello."
+        },
+        {
+            "icon": "/assets/icons/products/hello.svg",
+            "name": "One Platform for Business Communication",
+            "description": "Manage RCS alongside SMS, WhatsApp, Email, and Voice through MSG91's communication ecosystem."
+        },
+        {
+            "icon": "/assets/icons/products/segmento.svg",
+            "name": "Personalized Customer Engagement",
+            "description": "Deliver relevant offers, updates, reminders, and notifications based on customer journeys and business requirements."
+        },
+        {
+            "icon": "/assets/global/segmento/segmento-open-api.svg",
+            "name": "Developer-Friendly Infrastructure",
+            "description": "Simplify implementation with API documentation and integration capabilities designed for automated business messaging."
+        }
+    ]
+  },
+  "GridFeatureComp": {
+  "heading": "How to Get Started with MSG91 RCS",
+  "subheading": "Get guided support from initial business verification to campaign launch, with ongoing assistance from the MSG91 team.",
+  "features": [
+    {
+      "name": "01. Connect with the MSG91 Team",
+      "content": "Share your business details and messaging requirements to initiate RCS onboarding."
+    },
+    {
+      "name": "02. Complete Business Verification",
+      "content": "Get guidance through the required business registration, agent verification, and approval process."
+    },
+    {
+      "name": "03. Configure Your Messaging Experience",
+      "content": "Set up branded messages, templates, APIs, chatbot flows, and supported messaging workflows based on your business requirements."
+    },
+    {
+      "name": "04. Test and Launch Your Campaigns",
+      "content": "Validate your RCS messaging experience and complete the required configuration before launching your campaigns."
+    },
+    {
+      "name": "05. Get Ongoing Assistance",
+      "content": "Access MSG91 support for implementation questions, campaign management, configuration, and post-launch assistance."
+    }
+  ]
+},
+  "BenefitSection": {
+  "heading": "How RCS Business Messaging Benefits Your Business",
+  "subheading": "Make customer communication more engaging, trustworthy, and efficient with branded messaging, rich media, and interactive experiences.",
+  "cards": [
+    {
+      "icon": "MdChat",
+      "heading": "Improve Customer Engagement",
+      "description": "Use multimedia content, suggested replies, and interactive buttons to make your campaigns more engaging than plain text messages."
+    },
+    {
+      "icon": "MdVerifiedUser",
+      "heading": "Strengthen Customer Trust",
+      "description": "Verified business profiles help customers recognize your brand and identify legitimate business communication."
+    },
+    {
+      "icon": "MdShoppingCart",
+      "heading": "Create Better Shopping Experiences",
+      "description": "Showcase products, highlight offers, and guide customers toward purchases using interactive product cards and action buttons."
+    },
+    {
+      "icon": "MdNotificationsActive",
+      "heading": "Simplify Customer Communication",
+      "description": "Deliver useful updates, reminders, and notifications through a familiar messaging interface."
+    },
+    {
+      "icon": "MdAutorenew",
+      "heading": "Reduce Manual Communication Efforts",
+      "description": "Use the RCS Messaging API to automate repetitive communication workflows and connect customer messaging with existing business systems."
+    },
+    {
+      "icon": "MdAnalytics",
+      "heading": "Understand Customer Interactions",
+      "description": "Use supported delivery, read, and engagement information to evaluate messaging performance and improve future campaigns."
+    }
+  ]
   },
   "SEOComp": {
     "heading": "What is RCS messaging?",
     "description": "RCS (Rich Communication Services) is an upgrade to SMS, offering features like read receipts, typing indicators, multimedia sharing, and interactive buttons for a more engaging messaging experience.",
-    "data": "<div className=\"d-flex flex-column gap-2\"><h2 className=\"c-fs-2\">What is RCS messaging?</h2><p>RCS (Rich Communication Services) is an upgrade to SMS, offering features like read receipts, typing indicators, multimedia sharing, and interactive buttons for a more engaging messaging experience.</p></div><div className=\"d-flex flex-column gap-2\"><h2 className=\"c-fs-2\">How to send RCS messages</h2><p>To send RCS messages using an API, you can use MSG91's services. With MSG91, businesses can integrate RCS messaging directly into their applications to reach customers more interactively. Alternatively, to send RCS messages on mobile, you can use an RCS-enabled app like Google Messages. Both the sender and recipient need to have RCS activated through their carrier or app settings for messages to be delivered with RCS features.</p></div><div className=\"d-flex flex-column gap-2\"><h2 className=\"c-fs-2\">Is RCS available in India?</h2><p>Yes, RCS messaging is available in India through major carriers and supported apps, including Google Messages.</p></div><div className=\"d-flex flex-column gap-2\"><h2 className=\"c-fs-2\">How to send RCS messages on Android</h2><p>Open Google Messages and go to Settings. Enable \"Chat features\" (RCS). Start a conversation with RCS-enabled contacts.</p></div><div className=\"d-flex flex-column gap-2\"><h2 className=\"c-fs-2\">How to send RCS messages on iPhone</h2><p>Currently, iPhones do not natively support RCS. However, RCS features can be accessed through third-party apps on both iPhone, although they are less common.</p></div><div className=\"d-flex flex-column gap-2\"><h2 className=\"c-fs-2\">How to Send RCS Messages Using MSG91</h2><ul class='list-decimal px-4 '><li><strong>Sign Up on MSG91:</strong> Create an account on MSG91, an RCS messaging provider.</li><li><strong>Set Up RCS Messaging:</strong> Contact MSG91 to enable RCS for your business account. You’ll get API access for RCS messaging.</li><li><strong>Configure API Integration:</strong> Use MSG91's RCS API documentation to integrate RCS with your application or CRM for automated messaging.</li><li ><strong>Compose and Send Messages:</strong> Customize your message with images, videos, carousels, or buttons, and send them directly to RCS-enabled contacts.</li><li>Track Engagement: Monitor message delivery, read receipts, and customer responses to enhance engagement.</li></ul></div>"
-},
+    "data": "<div className=\"d-flex flex-column gap-2\"><h2 className=\"text-base\">What is RCS messaging?</h2><p>RCS (Rich Communication Services) is an upgrade to SMS, offering features like read receipts, typing indicators, multimedia sharing, and interactive buttons for a more engaging messaging experience.</p></div><div className=\"d-flex flex-column gap-2\"><h2 className=\"text-base\">How to send RCS messages</h2><p>To send RCS messages using an API, you can use MSG91's services. With MSG91, businesses can integrate RCS messaging directly into their applications to reach customers more interactively. Alternatively, to send RCS messages on mobile, you can use an RCS-enabled app like Google Messages. Both the sender and recipient need to have RCS activated through their carrier or app settings for messages to be delivered with RCS features.</p></div><div className=\"d-flex flex-column gap-2\"><h2 className=\"text-base\">Is RCS available in India?</h2><p>Yes, RCS messaging is available in India through major carriers and supported apps, including Google Messages.</p></div><div className=\"d-flex flex-column gap-2\"><h2 className=\"text-base\">How to send RCS messages on Android</h2><p>Open Google Messages and go to Settings. Enable \"Chat features\" (RCS). Start a conversation with RCS-enabled contacts.</p></div><div className=\"d-flex flex-column gap-2\"><h2 className=\"text-base\">How to send RCS messages on iPhone</h2><p>Currently, iPhones do not natively support RCS. However, RCS features can be accessed through third-party apps on both iPhone, although they are less common.</p></div><div className=\"d-flex flex-column gap-2\"><h2 className=\"text-base\">How to Send RCS Messages Using MSG91</h2><ul class='list-decimal px-4 '><li><strong>Sign Up on MSG91:</strong> Create an account on MSG91, an RCS messaging provider.</li><li><strong>Set Up RCS Messaging:</strong> Contact MSG91 to enable RCS for your business account. You’ll get API access for RCS messaging.</li><li><strong>Configure API Integration:</strong> Use MSG91's RCS API documentation to integrate RCS with your application or CRM for automated messaging.</li><li ><strong>Compose and Send Messages:</strong> Customize your message with images, videos, carousels, or buttons, and send them directly to RCS-enabled contacts.</li><li>Track Engagement: Monitor message delivery, read receipts, and customer responses to enhance engagement.</li></ul></div>"
+  },
+  "WhatsAppCTAComp": {
+  "theme": "rcs",
+  "heading_prefix": "Make Every Customer ",
+  "heading_accent": "Interaction Count",
+  "subheading": "Bring rich media, branded communication, and automation together with MSG91's RCS Business Messaging API.",
+  "primary_btn": "Book a Demo",
+  "floating_bubbles": [],
+  "floating_icons": []
+  },
+  "FaqsComp": {
+  "heading": "Frequently Asked Questions",
+  "faqs": [
+    {
+      "question": "What is RCS Business Messaging?",
+      "answer": "RCS Business Messaging enables businesses to communicate with customers using branded, interactive messages containing images, videos, carousels, suggested replies, and action buttons within supported messaging applications."
+    },
+    {
+      "question": "How is RCS different from traditional SMS?",
+      "answer": "Traditional SMS primarily supports text messages, while Rich Communication Services supports richer multimedia content, interactive elements, verified business profiles, and enhanced conversational capabilities on compatible devices."
+    },
+    {
+      "question": "What is an RCS Business Messaging API?",
+      "answer": "An RCS Business Messaging API allows businesses to integrate rich messaging into their websites, applications, CRM systems, and automated communication workflows."
+    },
+    {
+      "question": "Can businesses use RCS messaging for marketing campaigns?",
+      "answer": "Yes. Businesses can use RCS for product promotions, personalized offers, launches, and customer engagement campaigns, subject to consent requirements and applicable messaging policies."
+    },
+    {
+      "question": "Does RCS support images, videos, and carousels?",
+      "answer": "Yes. RCS supports rich media, including images, videos, and interactive carousels, allowing businesses to create more engaging messaging experiences."
+    },
+    {
+      "question": "Can customers reply to RCS business messages?",
+      "answer": "Yes. Supported RCS experiences allow customers to respond to messages, use suggested replies, and interact with businesses through conversational messaging."
+    },
+    {
+      "question": "Is RCS Business Messaging available in India?",
+      "answer": "Yes. RCS Business Messaging is available in India, although delivery and supported features depend on device compatibility, messaging application, carrier support, and business eligibility."
+    },
+    {
+      "question": "Can RCS messages be sent to both Android and iPhone users?",
+      "answer": "RCS is supported on compatible Android devices and supported iPhones. Availability depends on operating system version, carrier support, messaging settings, and the specific business messaging experience."
+    },
+    {
+      "question": "How can I integrate RCS into my application?",
+      "answer": "You can use MSG91's RCS Messaging API to integrate messaging into supported applications and workflows after completing the necessary business onboarding and setup."
+    },
+    {
+      "question": "How can I start sending RCS messages using MSG91?",
+      "answer": "Create an MSG91 account, initiate RCS business onboarding, complete the required verification and agent setup, and configure your messaging campaigns or API integration."
+    }
+  ]
+  },
   "PreFooterComp": {
     "content": "Start building your ideal customer engagement experience",
     "buttons": {
