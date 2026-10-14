@@ -165,7 +165,7 @@
     {
       "name": "One-Tap Actions and Suggested Replies",
       "content": "<strong>Make Customer Interactions Faster with Clickable Actions</strong> Simplify customer journeys by adding interactive buttons and predefined responses to your RCS messages. Help customers explore products, confirm appointments, visit websites, or connect with your business without manually typing responses. Add calendar events, provide direct calling options, and help customers view business locations through supported RCS actions. Turn everyday communication into convenient, action-oriented experiences.",
-      "img": "/assets/rcs/msg91-rcs-04-one-tap-actions.webp",
+      "img": "/assets/rcs/one_tap_actions.webp",
       "more_content": {
         "usecases": [
           {
