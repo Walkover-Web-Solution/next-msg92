@@ -83,6 +83,12 @@ body {
             @apply border-[var(--hello-dark-color)] text-[var(--hello-dark-color)] bg-transparent hover:bg-[var(--hello-color)] hover:text-black;
         }
     }
+    &.btn-whatsapp-chat {
+        @apply bg-whatsappChat-primary text-white border border-whatsappChat-primary hover:bg-whatsappChat-hover hover:border-whatsappChat-hover outline-none shadow-none;
+        &.btn-outline {
+            @apply border border-whatsappChat-primary text-whatsappChat-primary bg-transparent hover:bg-whatsappChat-primary hover:border-whatsappChat-primary hover:text-white;
+        }
+    }
 }
 
 .list-disc {
@@ -348,29 +354,6 @@ $button-transition-timing: 100ms;
     }
 }
 
-#phone-mockup-chat-widget {
-    position: absolute !important;
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    z-index: 40 !important;
-
-    #hello-chatbot-iframe-container {
-        position: absolute !important;
-        inset: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        border-radius: 38px !important;
-        overflow: hidden !important;
-    }
-
-    iframe {
-        width: 100% !important;
-        height: 100% !important;
-        border: none !important;
-        border-radius: 38px !important;
-    }
-}
 
 .contact-chat-widget {
     width: 100%;
