@@ -541,6 +541,7 @@
 },
   "HelloStartupWhy": {
     "theme": "rcs",
+    "hideDecorativeBox": true,
     "heading": "Why Choose MSG91 for RCS Business Messaging in India?",
     "description": "Indian businesses need more than a messaging channel. They need a reliable way to reach customers, simplify communication, and create meaningful interactions at scale.",
     "cards": [

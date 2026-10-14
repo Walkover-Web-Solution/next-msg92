@@ -7,7 +7,7 @@ export default function FooterCta({ data }) {
     return (
         <section
             className={`py-20 lg:py-28 ${
-                data?.theme ? 'bg-gradient-to-br from-blue-50 via-[#DBEAFE]/50 to-indigo-50' : 'bg-slate-950'
+                data?.theme ? 'bg-gradient-to-br from-blue-100 via-indigo-20 to-violet-10' : 'bg-slate-950'
             }`}
         >
             <div className='container cont _p'>
