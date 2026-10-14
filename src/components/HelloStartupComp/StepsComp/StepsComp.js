@@ -4,7 +4,9 @@ export default function StepsComp({ data }) {
     return (
         <section>
             <div className='container cont_p flex flex-col gap-8'>
-                <header className='text-center max-w-3xl mx-auto flex flex-col gap-4'>
+                <header
+                    className={`text-center mx-auto flex flex-col gap-4 ${data?.theme ? 'max-w-4xl' : 'max-w-3xl'}`}
+                >
                     {data?.kicker && <p className='text-xs font-semibold text-accent'>{data?.kicker}</p>}
                     <h2 className='heading font-semibold'>{data?.heading}</h2>
                     {data?.description && <p className='subheading max-w-2xl mx-auto'>{data?.description}</p>}
