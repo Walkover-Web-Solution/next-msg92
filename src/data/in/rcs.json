@@ -165,7 +165,7 @@
     {
       "name": "One-Tap Actions and Suggested Replies",
       "content": "<strong>Make Customer Interactions Faster with Clickable Actions</strong> Simplify customer journeys by adding interactive buttons and predefined responses to your RCS messages. Help customers explore products, confirm appointments, visit websites, or connect with your business without manually typing responses. Add calendar events, provide direct calling options, and help customers view business locations through supported RCS actions. Turn everyday communication into convenient, action-oriented experiences.",
-      "img": "/assets/rcs/one_tap_actions.webp",
+      "img": "/assets/rcs/msg91-rcs-04-one-tap-actions.webp",
       "more_content": {
         "usecases": [
           {
@@ -538,7 +538,7 @@
     "description": "Turn simple notifications into branded, interactive conversations with MSG91's RCS Business Messaging platform.",
     "primaryLabel": "Start Messaging with MSG91",
     "primaryHref": "https://control.msg91.com/signup/"
-  },
+},
   "HelloStartupWhy": {
     "theme": "rcs",
     "heading": "Why Choose MSG91 for RCS Business Messaging in India?",
@@ -578,8 +578,8 @@
 },
   "HelloStartupSteps": {
     "theme": "rcs",
-    "heading": "Get Started with MSG91 RCS",
-    "description": "From business verification to campaign launch, the MSG91 team guides you through every step.",
+    "heading": "How to Get Started with MSG91 RCS",
+    "description": "This is a recommended additional section because your presentation emphasizes onboarding assistance rather than leaving businesses to complete setup independently.",
     "steps": [
         {
             "number": "1",
