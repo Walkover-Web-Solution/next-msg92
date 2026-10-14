@@ -5,8 +5,8 @@ export default function BenefitSection({ data }) {
 
     return (
         <div className='container cont_p cont cont_gap items-center'>
-            <div className='cont justify-center items-center cont_w text-center'>
-                <h2 className='text-3xl md:text-4xl font-bold my-2'>{data?.heading}</h2>
+            <div className='text-center mx-auto flex flex-col gap-4 max-w-4xl'>
+                <h2 className='heading font-semibold my-2'>{data?.heading}</h2>
 
                 {data?.subheading && <p className='text-lg my-2'>{data.subheading}</p>}
             </div>
