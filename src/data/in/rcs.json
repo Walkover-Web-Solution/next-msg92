@@ -129,7 +129,7 @@
     {
       "name": "Interactive Product Cards and Carousels",
       "content": "<strong>Turn Product Discovery into an Interactive Shopping Experience</strong> Make it easier for customers to explore multiple products within a single RCS message. Use swipeable carousels and interactive product cards to display images, descriptions, and relevant action buttons. Add video-enabled carousels to showcase product demonstrations and different offerings in a more engaging format. Create a convenient browsing experience that helps customers discover offerings and move toward purchase decisions.",
-      "img": "/assets/rcs/carousels.webp",
+      "video": "/assets/rcs/carousels.webm",
       "more_content": {
         "usecases": [
           {
@@ -165,7 +165,7 @@
     {
       "name": "One-Tap Actions and Suggested Replies",
       "content": "<strong>Make Customer Interactions Faster with Clickable Actions</strong> Simplify customer journeys by adding interactive buttons and predefined responses to your RCS messages. Help customers explore products, confirm appointments, visit websites, or connect with your business without manually typing responses. Add calendar events, provide direct calling options, and help customers view business locations through supported RCS actions. Turn everyday communication into convenient, action-oriented experiences.",
-      "img": "/assets/rcs/one_tap_actions.webp",
+      "video": "/assets/rcs/one_tap_actions.webm",
       "more_content": {
         "usecases": [
           {
@@ -205,7 +205,7 @@
     {
       "name": "Two-Way RCS Conversations",
       "content": "<strong>Transform One-Way Notifications into Meaningful Conversations</strong> Create interactive customer experiences with RCS Business Messaging that allows users to respond directly to your messages. Move beyond traditional broadcast communication by enabling customers to ask questions, share responses, and continue conversations within their messaging inbox. Customers can also share their location through supported RCS actions when location details are required for assistance or service requests. Connect automated messaging with human assistance when needed.",
-      "img": "/assets/rcs/two_way_conversations.webp",
+      "video": "/assets/rcs/two_way_conversations.webm",
       "more_content": {
         "usecases": [
           {
@@ -353,7 +353,7 @@
     {
       "name": "Automatic WhatsApp-to-RCS Fallback",
       "content": "<strong>Keep Important Messages Moving When WhatsApp Delivery Fails</strong> Avoid manually resending failed WhatsApp messages with MSG91's automatic WhatsApp-to-RCS fallback capability. When a WhatsApp message is not delivered, a configured workflow can automatically attempt delivery through RCS, helping businesses maintain communication across supported messaging channels.",
-      "img": "/assets/rcs/whatsapp_to_rcs_fallback.webp",
+      "video": "/assets/rcs/whatsapp_to_rcs_fallback.webm",
       "more_content": {
         "usecases": [
           {
@@ -425,7 +425,7 @@
     {
       "name": "Unified RCS Customer Support with MSG91 Hello",
       "content": "<strong>Bring Every RCS Customer Conversation into One Shared Inbox</strong> Manage incoming RCS customer replies through MSG91 Hello and give your support team a centralized workspace for handling enquiries. Let chatbots manage routine questions while human agents take over conversations that require personal attention, with access to previous chat context.",
-      "img": "/assets/rcs/hello_unified_support.webp",
+      "video": "/assets/rcs/hello_unified_support.webm",
       "more_content": {
         "usecases": [
           {
@@ -497,7 +497,7 @@
     {
       "name": "Dedicated RCS Customer Support Across Multiple Channels",
       "content": "<strong>Get the Assistance You Need Without Waiting for a Response</strong> Your RCS journey doesn't end after onboarding. MSG91 provides continued customer support through email, WhatsApp, calls, and scheduled meetings, making it easier to connect with our team whenever you need assistance. Whether you're facing a technical issue, have questions about your campaigns, or need guidance on messaging workflows, our support team is available through multiple communication channels to help you move forward.",
-      "img": "/assets/rcs/dedicated_support.webp",
+      "video": "/assets/rcs/dedicated_support.webm",
       "more_content": {
         "usecases": [
           {
