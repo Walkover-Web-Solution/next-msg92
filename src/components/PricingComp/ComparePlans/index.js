@@ -1,5 +1,5 @@
 import { useRef, useMemo, useState, useEffect } from 'react';
-import { MdCheck, MdClose, MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import { MdCheck, MdClose, MdChevronLeft, MdChevronRight, MdInfoOutline } from 'react-icons/md';
 import { formatPriceAmount } from '@/utils/pricing/formatPrice';
 
 const SCROLL_DISTANCE = 300;
@@ -35,7 +35,7 @@ function CompareTable({ tableRef, planNames, rows, tabtype, featuresColumnLabel 
             <table className='table-fixed min-w-max w-full border-collapse text-sm'>
                 <thead className='bg-slate-50 sticky top-0 z-30'>
                     <tr className='border-b border-slate-200'>
-                        <th className='w-[140px] sm:w-auto min-w-[160px] px-3 py-2 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider sticky left-0 bg-slate-50 z-40 border-r border-slate-200'>
+                        <th className='w-[150px] sm:w-auto min-w-[160px] px-3 py-2 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider sticky left-0 bg-slate-50 z-40 border-r border-slate-200'>
                             {featuresColumnLabel}
                         </th>
                         {planNames.map((name, index) => (
@@ -54,8 +54,22 @@ function CompareTable({ tableRef, planNames, rows, tabtype, featuresColumnLabel 
                             key={row.label}
                             className={`border-b border-slate-100 last:border-b-0 ${rowIndex % 2 === 0 ? 'bg-white' : 'bg-slate-50'}`}
                         >
-                            <td className='min-w-[140px] px-3 py-2 text-xs text-slate-700 font-semibold sticky left-0 bg-inherit z-20 border-r border-slate-100'>
-                                {row.label}
+                            <td className='min-w-[150px] px-3 py-2 text-xs text-slate-700 font-semibold sticky left-0 bg-inherit z-20 border-r border-slate-100'>
+                                <span className='inline-flex items-center gap-1'>
+                                    {row.label}
+                                    {!row.isPrice && !row.isService && row.hasCustomValue && row.customValue && (
+                                        <span className='relative shrink-0 group/feature-info'>
+                                            <MdInfoOutline
+                                                size={13}
+                                                className='text-slate-400 hover:text-indigo-600 cursor-pointer transition-colors'
+                                                aria-label={row.customValue}
+                                            />
+                                            <span className='absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 w-max max-w-[200px] rounded-md bg-slate-800 px-2 py-1 text-[11px] font-normal text-white opacity-0 group-hover/feature-info:opacity-100 transition-opacity pointer-events-none z-50 whitespace-normal text-center'>
+                                                {row.customValue}
+                                            </span>
+                                        </span>
+                                    )}
+                                </span>
                             </td>
                             {row.values.map((value, index) => (
                                 <td
@@ -136,13 +150,27 @@ function buildTableData(pricingData, tabtype, currency, locale) {
         });
     });
 
-    const featureRows = featureNames.map((name) => ({
-        label: name,
-        values: plans.map((plan) => {
+    const featureRows = featureNames.map((name) => {
+        let hasCustomValue = false;
+        let customValue = null;
+        for (const plan of plans) {
             const match = (plan?.features ?? []).find((f) => f?.name === name);
-            return match?.included ?? false;
-        }),
-    }));
+            if (match?.hasCustomValue && match?.customValue) {
+                hasCustomValue = true;
+                customValue = match.customValue;
+                break;
+            }
+        }
+        return {
+            label: name,
+            hasCustomValue,
+            customValue,
+            values: plans.map((plan) => {
+                const match = (plan?.features ?? []).find((f) => f?.name === name);
+                return match?.included ?? false;
+            }),
+        };
+    });
 
     const seenServices = new Set();
     const serviceNames = [];
