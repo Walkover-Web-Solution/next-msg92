@@ -587,7 +587,21 @@ function PlanCard({
                                     ) : (
                                         <MdClose size={15} className='text-slate-300 shrink-0 mt-0.5' />
                                     )}
-                                    {feature?.name}
+                                    <span className='flex items-center gap-1'>
+                                        {feature?.name}
+                                        {feature?.hasCustomValue && feature?.customValue && (
+                                            <span className='relative shrink-0 group/feature-info'>
+                                                <MdInfoOutline
+                                                    size={13}
+                                                    className='text-slate-400 hover:text-indigo-600 cursor-pointer transition-colors'
+                                                    aria-label={feature?.customValue}
+                                                />
+                                                <span className='absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 w-max max-w-[200px] rounded-md bg-slate-800 px-2 py-1 text-[11px] text-white opacity-0 group-hover/feature-info:opacity-100 transition-opacity pointer-events-none z-50 whitespace-normal text-center'>
+                                                    {feature?.customValue}
+                                                </span>
+                                            </span>
+                                        )}
+                                    </span>
                                 </li>
                             ))}
                         </ul>
