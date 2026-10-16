@@ -256,19 +256,6 @@ class StepTwo extends React.Component {
                                                 onChange={(data) => {
                                                     mobileNumberData = data;
                                                     const value = data.fullNumber?.replace('+', '');
-                                                    console.log('[Signup Mobile Debug] onChange', {
-                                                        countryCode: data?.countryCode,
-                                                        dialCode: data?.dialCode,
-                                                        phoneNumber: data?.phoneNumber,
-                                                        fullNumber: data?.fullNumber,
-                                                        smsIdentifier: value,
-                                                        isValid: data?.isValid,
-                                                        phoneNumberLength: data?.phoneNumber?.length,
-                                                        hasLeadingZero: Boolean(
-                                                            data?.phoneNumber &&
-                                                            String(data.phoneNumber).startsWith('0')
-                                                        ),
-                                                    });
                                                     if (value !== smsIdentifier) {
                                                         smsIdentifier = value;
                                                         this.props.identifierChange(true);
@@ -314,13 +301,6 @@ class StepTwo extends React.Component {
                                                 } else if (!smsIdentifier) {
                                                     toast.error('Please enter a mobile number.');
                                                 } else {
-                                                    console.log('[Signup Mobile Debug] sendOtp', {
-                                                        smsIdentifier,
-                                                        fullNumber: mobileNumberData?.fullNumber,
-                                                        phoneNumber: mobileNumberData?.phoneNumber,
-                                                        countryCode: mobileNumberData?.countryCode,
-                                                        isValid: mobileNumberData?.isValid,
-                                                    });
                                                     this.props.sendOtp(smsIdentifier, true);
                                                 }
                                             }}
