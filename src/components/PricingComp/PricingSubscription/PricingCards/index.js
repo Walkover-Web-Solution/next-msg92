@@ -1,6 +1,6 @@
 import getURL from '@/utils/getURL';
 import { formatPriceAmount, formatUnitPrice, formatZeroPrice } from '@/utils/pricing/formatPrice';
-import { useMemo, useRef, useCallback, useState } from 'react';
+import { useMemo, useRef, useCallback, useState, useEffect } from 'react';
 import {
     MdChevronLeft,
     MdChevronRight,
@@ -107,8 +107,6 @@ export default function PricingCards({
         }
         return flags;
     }, [pricingData]);
-
-    const { useEffect } = require('react');
 
     useEffect(() => {
         const el = monthlyScrollRef.current;
