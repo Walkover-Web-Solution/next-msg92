@@ -40,7 +40,7 @@ export default function CaseStudyComp({ data, pageInfo }) {
                                             width={400}
                                             height={400}
                                             alt={caseStudy?.slug}
-                                            className='h-[50px] w-fit'
+                                            className='h-[50px] w-fit '
                                             loading='lazy'
                                         />
                                         <h3 className='text-xl font-medium'>{caseStudy?.title}</h3>
@@ -48,7 +48,7 @@ export default function CaseStudyComp({ data, pageInfo }) {
                                             <div dangerouslySetInnerHTML={{ __html: caseStudy?.caseStudies }}></div>
                                         </div>
 
-                                        <div className='flex flex-wrap gap-2'>
+                                        <div className='flex flex-wrap  gap-2'>
                                             {caseStudy?.tags?.map((tag, i) => {
                                                 return (
                                                     <div

@@ -1,4 +1,11 @@
+import { useMemo } from 'react';
+import { appendMsg91QueryToUrl } from '@/components/SignupCompNew/SignupUtils/cookieUtils';
+
 export default function ThankYouComp({ data }) {
+    const loginUrl = useMemo(() => {
+        const baseUrl = process.env.LOGIN_URL || 'https://control.msg91.com/signin/';
+        return appendMsg91QueryToUrl(baseUrl);
+    }, []);
     return (
         <>
             <div className='flex flex-col container py-40 cont_gap'>

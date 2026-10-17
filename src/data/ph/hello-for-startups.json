@@ -132,7 +132,7 @@
             {
                 "label": "UP TO",
                 "value": "Fair use",
-                "sublabel": "AI usage policy\napplies"
+                "sublabel": "AI usage\npolicy applies"
             }
         ],
         "notice": "<strong>Grow beyond a limit?</strong> Your account and data stay intact — you simply move to a paid Hello plan."
@@ -169,27 +169,27 @@
         "description": "Your data, conversations and setup stay exactly as they are. No migration. No disruption."
     },
     "Faqs": {
-        "heading": "Frequently asked questions",
+        "heading": "Good to know.",
         "items": [
             {
                 "question": "Is it genuinely free?",
-                "answer": "Yes — within the usage limits above, for as long as you remain eligible."
+                "answer": "Yes — within the stated usage limits and for as long as your business remains eligible for the program."
             },
             {
                 "question": "Why do you need financial documents?",
                 "answer": "To fairly and consistently verify that your revenue is below ₱ 2,500,000. It is a mandatory requirement of this program."
             },
             {
-                "question": "What if I exceed the ticket or agent limit?",
-                "answer": "You'll be prompted to upgrade to a paid plan; your account and data continue uninterrupted."
+                "question": "What happens if I exceed a ticket or agent limit?",
+                "answer": "You'll be invited to move to a suitable paid plan. Your existing account, conversations and data remain intact."
             },
             {
                 "question": "What happens at annual review if I've grown?",
-                "answer": "You transition to a paid plan — nothing is lost."
+                "answer": "If you no longer meet the criteria, we'll help you transition to a paid Hello plan without migration or disruption."
             },
             {
                 "question": "Can access be withdrawn?",
-                "answer": "Yes, if eligibility is no longer met or the Terms are breached."
+                "answer": "Eligibility may be reviewed or access withdrawn if program requirements or usage terms are no longer met."
             }
         ]
     },

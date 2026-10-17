@@ -131,7 +131,7 @@
             {
                 "label": "UP TO",
                 "value": "Fair use",
-                "sublabel": "AI usage policy\napplies"
+                "sublabel": "AI usage\npolicy applies"
             }
         ],
         "notice": "<strong>Grow beyond a limit?</strong> Your account and data stay intact — you simply move to a paid Hello plan."
@@ -168,27 +168,27 @@
         "description": "Your data, conversations and setup stay exactly as they are. No migration. No disruption."
     },
     "Faqs": {
-        "heading": "Frequently asked questions",
+        "heading": "Good to know.",
         "items": [
             {
                 "question": "Is it genuinely free?",
-                "answer": "Yes — within the usage limits above, for as long as you remain eligible."
+                "answer": "Yes — within the stated usage limits and for as long as your business remains eligible for the program."
             },
             {
                 "question": "Why do you need financial statements?",
-                "answer": "Financial statements help us verify revenue objectively and ensure this initiative supports early-stage startups that need it most."
+                "answer": "They help us verify the revenue requirement and confirm that the business qualifies for the early-stage program."
             },
             {
-                "question": "What if I exceed the ticket or agent limit?",
-                "answer": "If you cross the limits, you will simply be invited to upgrade to a paid Hello plan. Your account and data will continue completely uninterrupted."
+                "question": "What happens if I exceed a ticket or agent limit?",
+                "answer": "You'll be invited to move to a suitable paid plan. Your existing account, conversations and data remain intact."
             },
             {
                 "question": "What happens at annual review if I've grown?",
-                "answer": "Growing revenue is great news! We will help you smoothly transition to a regular paid plan with zero migration hassle and no downtime."
+                "answer": "If you no longer meet the criteria, we'll help you transition to a paid Hello plan without migration or disruption."
             },
             {
                 "question": "Can access be withdrawn?",
-                "answer": "Access remains active as long as you remain eligible and adhere to fair use policies. If eligibility terms are violated, access may be revoked after prior notice."
+                "answer": "Eligibility may be reviewed or access withdrawn if program requirements or usage terms are no longer met."
             }
         ]
     },

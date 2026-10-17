@@ -27,7 +27,7 @@ import TermsComp from '@/components/TermsComp/TermsComp';
 import ContactUsComp from '@/components/ContactUs';
 import getPageInfo from '@/utils/getPageInfo';
 import getCommonCompData from '@/utils/getCommonCompData';
-import SignUp from '@/components/signupComp/SignUp';
+import SignupParentComp from '@/components/SignupCompNew/SignupParentComp';
 import ChatBotComp from '@/components/ChatBotComp/ChatBotComp';
 import MagicLinkComp from '@/components/MagicLinkComp/MagicLinkComp';
 import WhatsappLinkComp from '@/components/WhatsappLinkComp/WhatsappLinkComp';
@@ -51,7 +51,10 @@ import MigrateFromTextlocal from '@/components/migrateFromTextlocal/migrateFromT
 import WhatsAppIntegrations from '@/components/WhatsAppIntegrations';
 import WhatsAppAccountVerification from '@/components/WhatsAppAccountVerification';
 import FeatureWithBulletGroup from '@/components/FeatureWithBulletGroup';
+import GridFeatureComp from '@/components/GridFeatureComp/GridFeatureComp';
 import FeatureSliderComp from '@/components/FeatureSliderComp/FeatureSliderComp';
+
+// New Components
 import Hero from '@/components/IntegrationComp/Hero/Hero';
 import ProblemSolution from '@/components/IntegrationComp/ProblemSolution/ProblemSolution';
 import Benefits from '@/components/IntegrationComp/Benefits/Benefits';
@@ -90,6 +93,11 @@ import FileHostingStepsComp from '@/components/FileHostingComp/StepsComp/StepsCo
 import FileHostingUseCasesComp from '@/components/FileHostingComp/UseCasesComp/UseCasesComp';
 import FileHostingFormatsComp from '@/components/FileHostingComp/FormatsComp/FormatsComp';
 import BenefitSection from '@/components/OneApiBenefitComp/BenefitSection';
+import WhatsAppProblemSolutionComp from '@/components/WhatsAppChatWindow/ProblemSolutionComp/ProblemSolutionComp';
+import WhatsAppStepsComp from '@/components/WhatsAppChatWindow/StepsComp/StepsComp';
+import WhatsAppComparisonComp from '@/components/WhatsAppChatWindow/ComparisonComp/ComparisonComp';
+import WhatsAppWhyComp from '@/components/WhatsAppChatWindow/WhyComp/WhyComp';
+import WhatsAppCTAComp from '@/components/WhatsAppChatWindow/CTAComp/CTAComp';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -130,7 +138,7 @@ const Components = {
     NewHelloComp,
     TermsComp,
     ContactUsComp,
-    SignUp,
+    SignUp: SignupParentComp,
     ChatBotComp,
     MagicLinkComp,
     WhatsappLinkComp,
@@ -174,6 +182,7 @@ const Components = {
     WhatsAppIntegrations,
     WhatsAppAccountVerification,
     FeatureWithBulletGroup,
+    GridFeatureComp,
     FeatureBulletGroup: FeatureWithBulletGroup,
     ReportsChannels: FeatureWithBulletGroup,
     FeatureSliderComp,
@@ -198,6 +207,7 @@ const Components = {
     HelloStartupSteps,
     HelloStartupGrow,
     HelloStartupFooterCta,
+    WhatsAppChatWindowCTA: HelloStartupFooterCta,
     HelloStartupTerms,
     CategoriesComp,
     SetupStepsComp,
@@ -208,6 +218,11 @@ const Components = {
     FileHostingUseCasesComp,
     FileHostingComparisonComp: FileHostingFeatureHighlightComp,
     FileHostingFormatsComp,
+    WhatsAppProblemSolutionComp,
+    WhatsAppStepsComp,
+    WhatsAppComparisonComp,
+    WhatsAppWhyComp,
+    WhatsAppCTAComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {

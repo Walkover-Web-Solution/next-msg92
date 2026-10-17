@@ -205,7 +205,9 @@ export default function PricingSMSOTP({ data, type, country, initialData }) {
                                             );
                                         })}
                                     </div>
-                                    <div className='d-none d-lg-block text-center text-dark c-fw-m'>Cost per SMS</div>
+                                    <div className='d-none d-lg-block text-center text-dark font-normal'>
+                                        Cost per SMS
+                                    </div>
                                 </div>
                                 <p className='flex gap-1 text-2xl items-end flex-wrap '>
                                     <span className='text-3xl font-bold'>
