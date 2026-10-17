@@ -44,9 +44,11 @@ export default function BannerComp({ pageInfo, data }) {
                         </span>
                         <h1
                             className={
-                                data?.slug === 'whatsapp' || data?.slug === 'reports' || data?.use_whatsapp_heading
-                                    ? 'whatsapp__heading'
-                                    : 'heading'
+                                data?.heading_class
+                                    ? 'text-2xl md:text-4xl font-semibold'
+                                    : data?.slug === 'whatsapp' || data?.slug === 'reports'
+                                      ? 'whatsapp__heading'
+                                      : 'heading'
                             }
                         >
                             {data?.heading}
