@@ -211,10 +211,10 @@ export default function FooterComp({ componentData, pageInfo }) {
                                         <Image
                                             src='/assets/icons/social/facebook.svg'
                                             alt='Facebook'
-                                            width={24}
-                                            height={24}
+                                            width={13}
+                                            height={23}
                                             loading='lazy'
-                                            sizes='24px'
+                                            sizes='13px'
                                         />
                                     </a>
                                     <a
@@ -278,16 +278,16 @@ export default function FooterComp({ componentData, pageInfo }) {
                                 />
                                 {pageInfo?.country !== 'in' && (
                                     <>
-                                        <div className='h-8 w-px bg-gray-700' />
+                                        <div className='h-8 sm:h-9 md:h-10 lg:h-12 xl:h-14 w-px bg-gray-700 shrink-0' />
                                         <a
                                             href='https://www.g2.com/products/msg91/take_survey?utm_source=review-widget'
                                             title='Leave a review of MSG91 on G2'
                                             target='_blank'
                                             rel='noopener noreferrer'
-                                            className='group inline-flex items-center rounded-lg overflow-hidden border border-white/20 hover:border-white/50 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer'
+                                            className='group inline-flex items-center rounded-md overflow-hidden border border-white/20 hover:border-white/50 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer shrink-0'
                                         >
                                             <img
-                                                className='w-36'
+                                                className='w-32 sm:w-36 md:w-40 lg:w-48 xl:w-52'
                                                 alt='Review MSG91 on G2'
                                                 src='https://www.g2.com/products/msg91/widgets/stars?color=white&type=reviews'
                                             />
