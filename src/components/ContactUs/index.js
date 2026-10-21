@@ -38,9 +38,7 @@ export default function ContactUsComp({ data, pageInfo }) {
                     {supportCard && <ContactCard card={supportCard} icon={MdOutlineSupportAgent} />}
                 </div>
 
-                {pageInfo?.country === 'in' && (data?.qrWithImage || data?.rcs) && (
-                    <QrWithImageCard data={data?.qrWithImage || data?.rcs} />
-                )}
+                {pageInfo?.country === 'in' && data?.rcs && <QrWithImageCard data={data?.rcs} />}
             </div>
 
             <BookingModal

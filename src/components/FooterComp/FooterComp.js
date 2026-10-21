@@ -266,15 +266,16 @@ export default function FooterComp({ componentData, pageInfo }) {
                                 />
                             )}
 
-                            <div className='flex items-center gap-4 mt-auto lg:justify-end'>
+                            <div className='flex items-center gap-6 mt-auto lg:justify-end'>
                                 <a
                                     target='_blank'
                                     href={
                                         'https://www.facebook.com/business/partner-directory/search?solution_type=messaging&ref=pd_home_hero_cta&id=5412005225590465&section=overview'
                                     }
+                                    className='opacity-90 hover:opacity-100 transition-opacity'
                                 >
                                     <Image
-                                        className='w-36 -translate-x-3'
+                                        className='w-32'
                                         src={'/assets/icons/extras/meta-business-platform.svg'}
                                         width={480}
                                         height={480}
@@ -285,15 +286,17 @@ export default function FooterComp({ componentData, pageInfo }) {
                                 </a>
                                 {pageInfo?.country !== 'in' && (
                                     <>
+                                        <div className='h-8 w-px bg-gray-700' />
                                         <a
                                             href='https://www.g2.com/products/msg91/take_survey?utm_source=review-widget'
                                             title='Leave a review of MSG91 on G2'
                                             target='_blank'
                                             rel='noopener noreferrer'
+                                            className='group inline-flex items-center rounded-lg overflow-hidden border border-white/20 hover:border-white/50 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer'
                                         >
                                             <img
                                                 className='full-width'
-                                                style={{ maxWidth: '160px' }}
+                                                style={{ maxWidth: '140px' }}
                                                 alt='Review MSG91 on G2'
                                                 src='https://www.g2.com/products/msg91/widgets/stars?color=white&type=reviews'
                                             />
