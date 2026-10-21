@@ -287,8 +287,7 @@ export default function FooterComp({ componentData, pageInfo }) {
                                             className='group inline-flex items-center rounded-lg overflow-hidden border border-white/20 hover:border-white/50 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer'
                                         >
                                             <img
-                                                className='full-width'
-                                                style={{ maxWidth: '140px' }}
+                                                className='w-36'
                                                 alt='Review MSG91 on G2'
                                                 src='https://www.g2.com/products/msg91/widgets/stars?color=white&type=reviews'
                                             />
