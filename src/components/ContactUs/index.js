@@ -16,7 +16,7 @@ const SECTION_STYLE = {
     backgroundSize: '48px 48px',
 };
 
-export default function ContactUsComp({ data }) {
+export default function ContactUsComp({ data, pageInfo }) {
     const [isBookingOpen, setIsBookingOpen] = useState(false);
     const [widgetScriptLoaded, setWidgetScriptLoaded] = useState(false);
 
@@ -38,7 +38,9 @@ export default function ContactUsComp({ data }) {
                     {supportCard && <ContactCard card={supportCard} icon={MdOutlineSupportAgent} />}
                 </div>
 
-                {(data?.qrWithImage || data?.rcs) && <QrWithImageCard data={data?.qrWithImage || data?.rcs} />}
+                {pageInfo?.country === 'in' && (data?.qrWithImage || data?.rcs) && (
+                    <QrWithImageCard data={data?.qrWithImage || data?.rcs} />
+                )}
             </div>
 
             <BookingModal

@@ -2,6 +2,7 @@ import getNestedURL from '@/utils/getNestedURL';
 import getPricingURL from '@/utils/pricing/getPricingURL';
 import getURL from '@/utils/getURL';
 import Image from 'next/image';
+import Script from 'next/script';
 
 export default function FooterComp({ componentData, pageInfo }) {
     const hidden = componentData?.hide?.includes(pageInfo?.page);
@@ -265,16 +266,47 @@ export default function FooterComp({ componentData, pageInfo }) {
                                 />
                             )}
 
-                            <div className='flex flex-col gap-4 mt-auto lg:items-end'>
-                                <Image
-                                    className='w-40'
-                                    src={'/assets/icons/extras/meta-business-platform.svg'}
-                                    width={480}
-                                    height={480}
-                                    alt='Meta Business Platform'
-                                    loading='lazy'
-                                    sizes='(max-width: 768px) 120px, 160px'
-                                />
+                            <div className='flex items-center gap-4 mt-auto lg:justify-end'>
+                                <a
+                                    target='_blank'
+                                    href={
+                                        'https://www.facebook.com/business/partner-directory/search?solution_type=messaging&ref=pd_home_hero_cta&id=5412005225590465&section=overview'
+                                    }
+                                >
+                                    <Image
+                                        className='w-36 -translate-x-3'
+                                        src={'/assets/icons/extras/meta-business-platform.svg'}
+                                        width={480}
+                                        height={480}
+                                        alt='Meta Business Platform'
+                                        loading='lazy'
+                                        sizes='(max-width: 768px) 120px, 160px'
+                                    />
+                                </a>
+                                {pageInfo?.country !== 'in' && (
+                                    <>
+                                        <a
+                                            href='https://www.g2.com/products/msg91/take_survey?utm_source=review-widget'
+                                            title='Leave a review of MSG91 on G2'
+                                            target='_blank'
+                                            rel='noopener noreferrer'
+                                        >
+                                            <img
+                                                className='full-width'
+                                                style={{ maxWidth: '160px' }}
+                                                alt='Review MSG91 on G2'
+                                                src='https://www.g2.com/products/msg91/widgets/stars?color=white&type=reviews'
+                                            />
+                                        </a>
+                                        <Script
+                                            id='g2-rating-schema'
+                                            strategy='afterInteractive'
+                                            dangerouslySetInnerHTML={{
+                                                __html: `(function(a,b,c,d){window.fetch("https://www.g2.com/products/msg91/rating_schema.json").then(e=>e.json()).then(f=>{c=a.createElement(b);c.type="application/ld+json";c.text=JSON.stringify(f);d=a.getElementsByTagName(b)[0];d.parentNode.insertBefore(c,d);});})(document,"script");`,
+                                            }}
+                                        />
+                                    </>
+                                )}
                             </div>
                         </div>
                     </div>
