@@ -267,23 +267,15 @@ export default function FooterComp({ componentData, pageInfo }) {
                             )}
 
                             <div className='flex items-center gap-6 mt-auto lg:justify-end'>
-                                <a
-                                    target='_blank'
-                                    href={
-                                        'https://www.facebook.com/business/partner-directory/search?solution_type=messaging&ref=pd_home_hero_cta&id=5412005225590465&section=overview'
-                                    }
-                                    className='opacity-90 hover:opacity-100 transition-opacity'
-                                >
-                                    <Image
-                                        className='w-32'
-                                        src={'/assets/icons/extras/meta-business-platform.svg'}
-                                        width={480}
-                                        height={480}
-                                        alt='Meta Business Platform'
-                                        loading='lazy'
-                                        sizes='(max-width: 768px) 120px, 160px'
-                                    />
-                                </a>
+                                <Image
+                                    className='w-32'
+                                    src={'/assets/icons/extras/meta-business-platform.svg'}
+                                    width={480}
+                                    height={480}
+                                    alt='Meta Business Platform'
+                                    loading='lazy'
+                                    sizes='(max-width: 768px) 120px, 160px'
+                                />
                                 {pageInfo?.country !== 'in' && (
                                     <>
                                         <div className='h-8 w-px bg-gray-700' />
