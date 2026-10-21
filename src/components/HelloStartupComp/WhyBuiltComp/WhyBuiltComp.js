@@ -37,7 +37,7 @@ export default function WhyBuiltComp({ data }) {
                                     )}
                                 </div>
 
-                                {index < 3 && (
+                                {index < 3 && !data?.hideDecorativeBox && (
                                     <div
                                         aria-hidden='true'
                                         className='hidden sm:flex absolute -right-3 -bottom-7 w-44 h-28 border border-sky-100 bg-white rounded-xl p-3 flex-col gap-2 pointer-events-none'

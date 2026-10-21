@@ -466,6 +466,14 @@
             }
         ]
     },
+    "WhatsAppChatWindowCTA": {
+        "heading_prefix": "WhatsApp Chat Window for",
+        "heading_accent": "Cost-Effective Customer Conversations.",
+        "heading": "WhatsApp Chat Window for Cost-Effective Customer Conversations.",
+        "subheading": "Engage customers in real-time, resolve queries faster, and reduce communication costs within the 24-hour service window.",
+        "btn_text": "WhatsApp Chat Window",
+        "btn_link": "/whatsapp-chat-window"
+    },
     "PreFooterComp": {
         "content": "Start building your ideal customer engagement experience",
         "buttons": {

@@ -546,6 +546,14 @@
             }
         ]
     },
+    "WhatsAppChatWindowCTA": {
+        "heading_prefix": "WhatsApp Chat Window para sa",
+        "heading_accent": "Matipid na Pakikipag-usap sa Customer.",
+        "heading": "WhatsApp Chat Window para sa Matipid na Pakikipag-usap sa Customer.",
+        "subheading": "Makipag-ugnayan sa mga customer sa real-time, lutasin ang mga katanungan nang mas mabilis, at bawasan ang gastos sa loob ng 24-oras na service window.",
+        "btn_text": "WhatsApp Chat Window",
+        "btn_link": "/whatsapp-chat-window"
+    },
     "PreFooterComp": {
         "content": "Simulan ang paggawa ng iyong ideal na karanasan sa pakikisalamuha sa customer",
         "buttons": {

@@ -546,6 +546,14 @@
             }
         ]
     },
+    "WhatsAppChatWindowCTA": {
+        "heading_prefix": "Janela de Conversa do WhatsApp para",
+        "heading_accent": "Conversas Econômicas com Clientes.",
+        "heading": "Janela de Conversa do WhatsApp para Conversas Econômicas com Clientes.",
+        "subheading": "Interaja com clientes em tempo real, resolva consultas com mais rapidez e reduza custos dentro da janela de serviço de 24 horas.",
+        "btn_text": "WhatsApp Chat Window",
+        "btn_link": "/whatsapp-chat-window"
+    },
     "PreFooterComp": {
         "content": "Comece a construir a experiência de engajamento do cliente ideal",
         "buttons": {

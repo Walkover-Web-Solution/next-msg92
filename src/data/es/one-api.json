@@ -1,6 +1,6 @@
 {
     "HeadComp": {
-        "title": "ONE API by MSG91 - Dynamic Multi-Channel Messaging Without Deployment",
+        "title": "ONE API - Dynamic Multi-Channel Messaging Without Deployment",
         "description": "Manage channels, templates, fallback, OTP routing, and alerts in real time without backend changes."
     },
     "BannerComp": {
@@ -10,16 +10,41 @@
             "icon": "/assets/icons/products/oneapi.svg"
         },
         "tagline": "Real-time Messaging Control",
+        "tagline_class": true,
+        "heading_class": true,
         "heading": "Make Messaging Changes Instantly - Without Repeated Deployment",
-        "subheading": "Switching channels, updating templates, or adding fallback logic should not require code changes and deployment cycles. ONE API by MSG91 makes your communication layer dynamic so you can adapt delivery logic and content in real time without touching backend systems.",
+        "subheading": "Switch channels, update templates, and configure fallback logic in real time from your dashboard — without code changes or waiting on deployments.",
         "banner_img": "",
-        "banner_video": "/assets/one-api/hero-section.mp4",
+        "banner_video": "/assets/one-api/hero-section.webm",
         "not_absolute": true,
         "getstarted_btn": "Get Started",
+        "schedule_meet": "Schedule a Meeting",
         "trustedByComp": {
-            "heading": "",
-            "logos": []
-        }
+            "heading": "Trusted by 30,000+ global businesses",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        },
+        "compact_video": true
     },
     "FeatureComp": {
         "heading": "Features",
@@ -58,51 +83,189 @@
             }
         ]
     },
-    "IndustryFeatureComp": {
+    "BenefitSection": {
+        "heading": "Infrastructure for messages that can't afford to fail",
+        "subheading": "OTPs, payment confirmations, fraud alerts and incident pages are not \"nice to send.\" ONE API gives you one dependable layer that keeps them moving, whatever happens to a single channel.",
+        "cards": [
+            {
+                "icon": "MdSecurity",
+                "heading": "Critical messages always find a way through",
+                "description": "If SMS fails, WhatsApp, RCS, Email or Voice takes over automatically. One channel having a bad day no longer means a customer missing an OTP or a payment alert."
+            },
+            {
+                "icon": "MdTune",
+                "heading": "Change anything without deploying anything",
+                "description": "Switch channels, edit templates and adjust routing from the dashboard. Your backend stays untouched, so fixes take minutes instead of sprints."
+            },
+            {
+                "icon": "MdPower",
+                "heading": "One integration, every channel",
+                "description": "Integrate one API instead of five. Add or swap channels later without new integrations, new code paths or new maintenance."
+            },
+            {
+                "icon": "MdLogin",
+                "heading": "Fewer failed logins and abandoned transactions",
+                "description": "Send OTPs on SMS with WhatsApp, Email or Voice as backup, so users get in the first time."
+            },
+            {
+                "icon": "MdPeople",
+                "heading": "Business teams move without waiting on engineering",
+                "description": "Ops and product teams can update content, respond to compliance changes and run template A/B tests without a ticket in the dev queue."
+            },
+            {
+                "icon": "MdNotificationsActive",
+                "heading": "Alerts that reach a human, not just an inbox",
+                "description": "Fire API-failure, queue-delay and threshold alerts across SMS, WhatsApp and Voice, in parallel or as an escalation sequence, so incidents get caught early."
+            }
+        ]
+    },
+    "WhyChooseMSG91": {
         "heading": "Industry Applications",
         "subheading": "See how teams across industries use ONE API for reliable multi-channel communication.",
-        "bg": "bg-white",
-        "iconColor": "text-campaign",
-        "features": [
+        "bg": "bg-gray-100",
+        "content": [
             {
-                "name": "Banking and Financial Alerts",
-                "content": "<p><strong>Build reliable financial communication systems with fallback-backed delivery.</strong></p><p>Support critical transaction and security communication across channels.</p><ul><li>Send transaction alerts across multiple channels</li><li>Enable fallback for fraud and security notifications</li><li>Deliver OTPs for secure authentication</li><li>Provide real-time account updates</li><li>Ensure reliable payment confirmations</li></ul>",
+                "title": "Banking and Financial Alerts",
+                "subtitle": "Build reliable financial communication systems with fallback-backed delivery.",
+                "description": "Support critical transaction and security communication across channels.",
+                "highlights": [
+                    "Send transaction alerts across multiple channels",
+                    "Enable fallback for fraud and security notifications",
+                    "Deliver OTPs for secure authentication",
+                    "Provide real-time account updates",
+                    "Ensure reliable payment confirmations"
+                ],
                 "img": "/assets/one-api/industry-application/banking_and_financial_services.webp"
             },
             {
-                "name": "E-commerce and Customer Notifications",
-                "content": "<p><strong>Manage order updates and customer communication seamlessly.</strong></p><p>Centralize notifications across SMS, WhatsApp, and Email for better customer visibility and lower support load.</p><ul><li>Send order confirmations instantly</li><li>Provide shipping and delivery updates</li><li>Notify users of payment status</li><li>Enable OTP verification during checkout</li><li>Manage return and refund communication</li></ul>",
+                "title": "E-commerce and Customer Notifications",
+                "subtitle": "Manage order updates and customer communication seamlessly.",
+                "description": "Centralize notifications across SMS, WhatsApp, and Email for better customer visibility and lower support load.",
+                "highlights": [
+                    "Send order confirmations instantly",
+                    "Provide shipping and delivery updates",
+                    "Notify users of payment status",
+                    "Enable OTP verification during checkout",
+                    "Manage return and refund communication"
+                ],
                 "img": "/assets/one-api/industry-application/e_commerce.webp"
             },
             {
-                "name": "Healthcare and Patient Communication",
-                "content": "<p><strong>Enable reliable patient communication and healthcare alerts.</strong></p><p>Deliver timely reminders, reports, and emergency updates across multiple channels.</p><ul><li>Send appointment reminders and confirmations</li><li>Deliver lab reports and test result notifications</li><li>Trigger emergency alerts across multiple channels</li><li>Share prescription and follow-up reminders</li><li>Enable real-time patient communication updates</li></ul>",
+                "title": "Healthcare and Patient Communication",
+                "subtitle": "Enable reliable patient communication and healthcare alerts.",
+                "description": "Deliver timely reminders, reports, and emergency updates across multiple channels.",
+                "highlights": [
+                    "Send appointment reminders and confirmations",
+                    "Deliver lab reports and test result notifications",
+                    "Trigger emergency alerts across multiple channels",
+                    "Share prescription and follow-up reminders",
+                    "Enable real-time patient communication updates"
+                ],
                 "img": "/assets/one-api/industry-application/healthcare.webp"
             },
             {
-                "name": "Logistics and Delivery Systems",
-                "content": "<p><strong>Streamline delivery communication and tracking updates in real time.</strong></p><p>Automate dispatch, delay, and completion updates with multi-channel reliability.</p><ul><li>Send real-time shipment tracking updates</li><li>Notify customers about delivery status changes</li><li>Trigger alerts for delays or exceptions</li><li>Enable OTP-based delivery verification</li><li>Communicate with drivers and field agents</li></ul>",
+                "title": "Logistics and Delivery Systems",
+                "subtitle": "Streamline delivery communication and tracking updates in real time.",
+                "description": "Automate dispatch, delay, and completion updates with multi-channel reliability.",
+                "highlights": [
+                    "Send real-time shipment tracking updates",
+                    "Notify customers about delivery status changes",
+                    "Trigger alerts for delays or exceptions",
+                    "Enable OTP-based delivery verification",
+                    "Communicate with drivers and field agents"
+                ],
                 "img": "/assets/one-api/industry-application/logistics_and_delivery.webp"
             },
             {
-                "name": "Education and EdTech Platforms",
-                "content": "<p><strong>Improve student communication and engagement with multi-channel messaging.</strong></p><p>Keep students, parents, and faculty informed through timely, reliable notifications.</p><ul><li>Send class schedules and reminders</li><li>Notify students about exams and results</li><li>Share announcements and important updates</li><li>Deliver fee payment reminders</li><li>Enable real-time communication with parents and students</li></ul>",
+                "title": "Education and EdTech Platforms",
+                "subtitle": "Improve student communication and engagement with multi-channel messaging.",
+                "description": "Keep students, parents, and faculty informed through timely, reliable notifications.",
+                "highlights": [
+                    "Send class schedules and reminders",
+                    "Notify students about exams and results",
+                    "Share announcements and important updates",
+                    "Deliver fee payment reminders",
+                    "Enable real-time communication with parents and students"
+                ],
                 "img": "/assets/one-api/industry-application/education_and_edtech.webp"
             },
             {
-                "name": "Enterprise IT and Internal Alerts",
-                "content": "<p><strong>Manage internal alerts and system notifications across teams.</strong></p><p>Ensure incidents and operational updates reach the right teams immediately.</p><ul><li>Send system alerts to internal teams</li><li>Notify teams about incidents or failures</li><li>Enable escalation workflows for critical alerts</li><li>Deliver updates across multiple channels</li><li>Improve coordination between departments</li></ul>",
+                "title": "Enterprise IT and Internal Alerts",
+                "subtitle": "Manage internal alerts and system notifications across teams.",
+                "description": "Ensure incidents and operational updates reach the right teams immediately.",
+                "highlights": [
+                    "Send system alerts to internal teams",
+                    "Notify teams about incidents or failures",
+                    "Enable escalation workflows for critical alerts",
+                    "Deliver updates across multiple channels",
+                    "Improve coordination between departments"
+                ],
                 "img": "/assets/one-api/industry-application/enterprise_it.webp"
             },
             {
-                "name": "Insurance and Policy Communication",
-                "content": "<p><strong>Enhance policyholder communication with reliable notification systems.</strong></p><p>Streamline claims, renewals, and payment communication with fallback-enabled delivery.</p><ul><li>Send policy renewal reminders</li><li>Notify users about claim status updates</li><li>Deliver premium payment alerts</li><li>Share policy documents and updates</li><li>Enable secure OTP verification for transactions</li></ul>",
+                "title": "Insurance and Policy Communication",
+                "subtitle": "Enhance policyholder communication with reliable notification systems.",
+                "description": "Streamline claims, renewals, and payment communication with fallback-enabled delivery.",
+                "highlights": [
+                    "Send policy renewal reminders",
+                    "Notify users about claim status updates",
+                    "Deliver premium payment alerts",
+                    "Share policy documents and updates",
+                    "Enable secure OTP verification for transactions"
+                ],
                 "img": "/assets/one-api/industry-application/insurance.webp"
             },
             {
-                "name": "Government and Public Services",
-                "content": "<p><strong>Enable scalable citizen communication and public notifications.</strong></p><p>Handle high-volume announcements, emergency alerts, and service updates with reliable multi-channel delivery.</p><ul><li>Send public announcements and alerts</li><li>Deliver emergency notifications</li><li>Notify citizens about service updates</li><li>Enable OTP verification for government services</li><li>Support large-scale communication campaigns</li></ul>",
+                "title": "Government and Public Services",
+                "subtitle": "Enable scalable citizen communication and public notifications.",
+                "description": "Handle high-volume announcements, emergency alerts, and service updates with reliable multi-channel delivery.",
+                "highlights": [
+                    "Send public announcements and alerts",
+                    "Deliver emergency notifications",
+                    "Notify citizens about service updates",
+                    "Enable OTP verification for government services",
+                    "Support large-scale communication campaigns"
+                ],
                 "img": "/assets/one-api/industry-application/government_and_public_services.webp"
+            }
+        ],
+        "compact_img": true
+    },
+    "FaqsComp": {
+        "heading": "Frequently Asked Questions",
+        "subheading": "Everything you need to know about running critical messaging on ONE API.",
+        "faqs": [
+            {
+                "question": "What is ONE API by MSG91?",
+                "answer": "ONE API is a single API that lets you send messages across multiple channels through configurable flows. You define your channels, templates and fallback logic in MSG91, and your application makes one call. Channel changes then happen from the dashboard rather than in your code."
+            },
+            {
+                "question": "How is it different from integrating each channel API separately?",
+                "answer": "With separate integrations, every new channel or routing change means new code, testing and deployment. With ONE API, you integrate once and manage channels, priority and fallback in a Flow, which saves engineering time and removes a common source of failure."
+            },
+            {
+                "question": "Which channels does ONE API support?",
+                "answer": "SMS, WhatsApp, RCS, Email, Voice and Push Notifications."
+            },
+            {
+                "question": "How does multi-channel fallback work?",
+                "answer": "You set a priority order in your Flow, for example, SMS first, then WhatsApp, then Voice. If the primary channel fails to deliver, ONE API automatically triggers the next one, so critical messages don't depend on a single route."
+            },
+            {
+                "question": "Can I change channels or templates without redeploying my code?",
+                "answer": "Yes. Once your application is integrated with a Flow, you can switch channels, update templates and modify routing from the MSG91 dashboard without backend changes or a release. This includes A/B testing message content."
+            },
+            {
+                "question": "Can I use ONE API for OTP delivery?",
+                "answer": "Yes. A common setup is SMS as the primary channel with WhatsApp, Email or Voice as fallbacks. This raises the odds that users receive their OTP and complete login or payment on the first attempt."
+            },
+            {
+                "question": "Can I use it for internal alerts and system monitoring?",
+                "answer": "Yes. Teams use ONE API to send API-failure, queue and threshold alerts across SMS, WhatsApp and Voice, in parallel or as an escalation chain, so incidents reach the right people quickly."
+            },
+            {
+                "question": "How do I get started, and how long does setup take?",
+                "answer": "Create a Flow in your MSG91 dashboard: select the channel, name the Flow, choose a template and save. Voice Flows also need a caller ID. MSG91 then generates a sample JSON request you can drop into your application. Templates must be approved under each channel's rules first, such as DLT registration for SMS in India and Meta approval for WhatsApp."
             }
         ]
     },

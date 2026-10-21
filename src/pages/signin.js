@@ -4,12 +4,7 @@ import React, { useCallback, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { MdHelpOutline } from 'react-icons/md';
 import { getQueryParamsDeatils, setCookie, getCookie, loginWithGitHubAccount } from '@/utils/utilis';
-import {
-    getErrorMessage,
-    handleMobileWidgetFailure,
-    otpWidgetSetup,
-    waitForInitSendOTP,
-} from '@/utils/otpSigninWidget';
+import { getErrorMessage, otpWidgetSetup, waitForInitSendOTP } from '@/utils/otpSigninWidget';
 import { toast } from 'react-toastify';
 import Image from 'next/image';
 const SUCCESS_REDIRECTION_URL = process.env.API_BASE_URL + '/api/nexusRedirection.php?session=:session';
@@ -109,7 +104,7 @@ export default function SignIn() {
                     console.log(error);
                 }
             },
-            failure: handleMobileWidgetFailure,
+            failure: (error) => {},
         };
         waitForInitSendOTP()
             .then(() => window.initSendOTP(configuration))
