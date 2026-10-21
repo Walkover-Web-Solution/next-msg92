@@ -131,7 +131,7 @@
             {
                 "label": "UP TO",
                 "value": "Fair use",
-                "sublabel": "AI usage\npolicy applies"
+                "sublabel": "AI usage policy\napplies"
             }
         ],
         "notice": "<strong>Grow beyond a limit?</strong> Your account and data stay intact — you simply move to a paid Hello plan."
@@ -168,27 +168,27 @@
         "description": "Your data, conversations and setup stay exactly as they are. No migration. No disruption."
     },
     "Faqs": {
-        "heading": "Good to know.",
+        "heading": "Frequently asked questions",
         "items": [
             {
                 "question": "Is it genuinely free?",
-                "answer": "Yes — within the stated usage limits and for as long as your business remains eligible for the program."
+                "answer": "Yes — within the usage limits above, for as long as you remain eligible."
             },
             {
                 "question": "Why do you need financial documents?",
-                "answer": "They help us verify the revenue requirement and confirm that the business qualifies for the early-stage program."
+                "answer": "To fairly and consistently verify that your revenue is below AED 250,000. It is a mandatory requirement of this program."
             },
             {
-                "question": "What happens if I exceed a ticket or agent limit?",
-                "answer": "You'll be invited to move to a suitable paid plan. Your existing account, conversations and data remain intact."
+                "question": "What if I exceed the ticket or agent limit?",
+                "answer": "You'll be prompted to upgrade to a paid plan; your account and data continue uninterrupted."
             },
             {
                 "question": "What happens at annual review if I've grown?",
-                "answer": "If you no longer meet the criteria, we'll help you transition to a paid Hello plan without migration or disruption."
+                "answer": "You transition to a paid plan — nothing is lost."
             },
             {
                 "question": "Can access be withdrawn?",
-                "answer": "Eligibility may be reviewed or access withdrawn if program requirements or usage terms are no longer met."
+                "answer": "Yes, if eligibility is no longer met or the Terms are breached."
             }
         ]
     },
