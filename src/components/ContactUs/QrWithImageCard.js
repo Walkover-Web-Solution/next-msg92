@@ -66,7 +66,7 @@ export default function QrWithImageCard({ data }) {
                             <ul className='flex flex-col gap-3 w-full'>
                                 {data.scanTips.map((tip, index) => (
                                     <li key={index} className='flex items-center gap-3 text-sm text-primary'>
-                                        <MdCheckCircle className='text-xl text-accent' />
+                                        <MdCheckCircle className='text-xl text-accent shrink-0' />
                                         <span>{tip}</span>
                                     </li>
                                 ))}
