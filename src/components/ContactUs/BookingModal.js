@@ -1,13 +1,32 @@
 import { useEffect } from 'react';
 
+function restoreGlobalChatLauncher() {
+    window.chatWidget?.SendDataToBot?.({
+        parentId: '',
+        hide_launcher: false,
+        fullScreen: false,
+        launch_widget: false,
+    });
+    document.getElementById('hello-chatbot-iframe-container')?.classList?.remove('hello-full-screen-interfaceEmbed');
+    window.chatWidget?.close?.();
+    if (window.helloConfig) {
+        window.initChatWidget?.({ ...window.helloConfig, hide_launcher: false, launch_widget: false }, 0);
+    }
+    window.chatWidget?.show?.();
+}
+
 export default function BookingModal({ isOpen, onClose, widgetToken, widgetScriptLoaded }) {
+    const handleClose = () => {
+        restoreGlobalChatLauncher();
+        onClose();
+    };
+
     useEffect(() => {
         if (!isOpen || !widgetScriptLoaded || !window.initChatWidget) return;
 
         const container = document.getElementById('contactChatWidget');
         if (!container) return;
 
-        container.innerHTML = '';
         window.initChatWidget(
             {
                 widgetToken,
@@ -22,7 +41,7 @@ export default function BookingModal({ isOpen, onClose, widgetToken, widgetScrip
         );
 
         return () => {
-            container.innerHTML = '';
+            restoreGlobalChatLauncher();
         };
     }, [isOpen, widgetScriptLoaded, widgetToken]);
 
@@ -33,7 +52,7 @@ export default function BookingModal({ isOpen, onClose, widgetToken, widgetScrip
             <div className='modal-box relative p-0 overflow-hidden max-w-4xl w-full'>
                 <button
                     type='button'
-                    onClick={onClose}
+                    onClick={handleClose}
                     className='btn btn-sm btn-circle btn-ghost absolute right-3 top-3 z-50 bg-white/90'
                 >
                     ✕
@@ -41,7 +60,7 @@ export default function BookingModal({ isOpen, onClose, widgetToken, widgetScrip
                 <div id='contactChatWidget' className='w-full' style={{ minHeight: '680px' }} />
             </div>
             <form method='dialog' className='modal-backdrop'>
-                <button type='button' onClick={onClose}>
+                <button type='button' onClick={handleClose}>
                     close
                 </button>
             </form>
