@@ -6,7 +6,6 @@
   Referrer-Policy: no-referrer-when-downgrade
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   Content-Security-Policy: default-src 'self'; script-src 'self'; object-src 'none';
-  X-Robots-Tag: noindex, nofollow
   Access-Control-Allow-Origin: https://msg91.com
   Access-Control-Allow-Methods: GET
   Access-Control-Allow-Headers: Content-Type
