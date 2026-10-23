@@ -1,0 +1,32 @@
+{
+    "HeadComp": {
+        "title": "Login | MSG91",
+        "description": "Continue to your MSG91 workspace. Sign in to access the complete suite of MSG91 products."
+    },
+    "SignIn": {
+        "heading": "Signin to avail a complete suite of MSG91 products",
+        "features": [
+            "Engage users across SMS, WhatsApp, Email, Voice & RCS",
+            "Automate journeys with Campaign & Segmento",
+            "AI-powered support with Hello Ticketing",
+            "Personalize communication using real-time segmentation",
+            "Increase retention, engagement & revenue from one platform",
+            "APIs built for scale, reliability & speed"
+        ],
+        "trusted": "Trusted by 30000+ startups and enterprises",
+        "loginHeading": "Login",
+        "loginSubheading": "Continue to your MSG91 workspace.",
+        "developerSsoLabel": "Developer SSO",
+        "directCredentialsLabel": "Direct credentials",
+        "loginWithOtpLabel": "Login with OTP",
+        "needAccountText": "Need an account?",
+        "signupLinkLabel": "Sign up",
+        "signupLinkHref": "/signup",
+        "supportLabel": "Support",
+        "supportHref": "/contact-us",
+        "logoAlt": "msg91-logo",
+        "microsoftAriaLabel": "Sign in with Microsoft",
+        "zohoAriaLabel": "Sign in with Zoho",
+        "githubAriaLabel": "Sign in with GitHub"
+    }
+}
