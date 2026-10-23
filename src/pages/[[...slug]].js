@@ -7,7 +7,6 @@ import FooterComp from '@/components/FooterComp/FooterComp';
 import MenuBarComp from '@/components/menuBarComp/menuBarComp';
 import MoreServicesComp from '@/components/MoreServicesComp/MoreServicesComp';
 import NotFoundComp from '@/components/NotFoundComp/NotFoundComp';
-import NotificationBarComp from '@/components/notificationBarComp/notificationBarComp';
 import PreFooterComp from '@/components/PreFooterComp/PreFooterComp';
 import ProductsComp from '@/components/ProductsComp/ProductsComp';
 import SEOComp from '@/components/SEOComp/SEOComp';
@@ -117,7 +116,6 @@ const Components = {
     MenuBarComp,
     MoreServicesComp,
     NotFoundComp,
-    NotificationBarComp,
     PreFooterComp,
     ProductsComp,
     SEOComp,
@@ -239,13 +237,12 @@ export default function Page({ data, commonData, pageInfo }) {
     return (
         <>
             {pageInfo?.page !== ''}
-            <NotificationBarComp
-                componentData={commonData?.notification}
-                country={pageInfo?.country}
+
+            <MenuBarComp
+                componentData={commonData?.menu}
+                notificationData={commonData?.notification}
                 pageInfo={pageInfo}
             />
-
-            <MenuBarComp componentData={commonData?.menu} pageInfo={pageInfo} />
             {data &&
                 Object.keys(data).map((key) => {
                     const pageData = data[key];
