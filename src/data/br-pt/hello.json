@@ -9,7 +9,7 @@
         "video": "/assets/hello-br/br-pt/dashboard.webm",
         "videoAlt": "Prévia do painel e da caixa de entrada Hello",
         "getstarted_btn": "Começar agora",
-        "getstarted_btn_link": "https://web.msg91.com/signup",
+        "getstarted_btn_link": "https://msg91.com/signup",
         "specialist_btn": "Agendar uma demo",
         "specialist_btn_link": "https://calendly.com/hello-shared-inbox/hello-meeting"
     },
@@ -158,7 +158,7 @@
             }
         ],
         "ctaLabel": "Começar agora",
-        "ctaHref": "https://web.msg91.com/signup"
+        "ctaHref": "https://msg91.com/signup"
     },
     "Pricing": {
         "label": "PLANOS E PREÇOS",
@@ -266,7 +266,7 @@
         "heading": "Veja como a Hello simplifica o suporte ao cliente",
         "description": "Descubra como nossa plataforma de engajamento do cliente ajuda empresas a responder mais rápido e atender melhor.",
         "primaryLabel": "Começar agora",
-        "primaryHref": "https://web.msg91.com/signup",
+        "primaryHref": "https://msg91.com/signup",
         "secondaryLabel": "Agendar uma demo",
         "secondaryHref": "https://calendly.com/hello-shared-inbox/hello-meeting"
     }
