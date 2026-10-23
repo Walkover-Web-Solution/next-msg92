@@ -42,6 +42,14 @@ const securityHeaders = [
     },
 ];
 
+// Block indexing on non-production hosts (e.g. web.msg91.com)
+if (getEnvValue('BASE_URL') !== 'https://msg91.com') {
+    securityHeaders.push({
+        key: 'X-Robots-Tag',
+        value: 'noindex, nofollow',
+    });
+}
+
 const embeddableSecurityHeaders = securityHeaders.map((header) =>
     header.key === 'X-Frame-Options' ? { ...header, value: 'SAMEORIGIN' } : header
 );
