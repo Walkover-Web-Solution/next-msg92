@@ -402,67 +402,99 @@
         ]
     },
     "FaqsComp": {
-        "heading": "FAQ for Marketing Automation:",
+        "heading": "Frequently Asked Questions",
         "faqs": [
             {
                 "question": "What is WhatsApp Business API?",
-                "answer": "<ul class='list-disc'><li>The WhatsApp Business API is a tool offered by WhatsApp that enables businesses to integrate WhatsApp messaging into their customer service, marketing, and engagement strategies.</li><li>It is particularly designed for medium and large enterprises to automate interactions and send messages from the official WhatsApp app to customers.</li><li>Through this API, businesses can enhance customer experiences by enabling chat services on their websites or applications.</li></ul>"
+                "answer": "WhatsApp Business API, officially called the WhatsApp Business Platform, helps businesses send bulk messages, automate customer conversations, and integrate WhatsApp with websites, CRMs, and applications. As a WhatsApp Business API service provider, MSG91 enables businesses of all sizes to manage marketing campaigns, transactional notifications, AI-powered conversations, and customer support through one platform."
             },
             {
-                "question": "How can businesses use AI for WhatsApp chat?",
-                "answer": "<ul class='list-disc'><li>By integrating AI with WhatsApp Business API, businesses can create automated chatbots that provide instant replies to customer inquiries.</li><li>AI-based solutions can analyze incoming messages and respond appropriately, increasing efficiency in customer service without the need for human intervention.</li><li>Popular AI platforms can be integrated with WhatsApp via API to deliver seamless AI-driven chat experiences.</li></ul>"
+                "question": "How is WhatsApp Business API different from the WhatsApp Business App?",
+                "answer": "The WhatsApp Business App is designed for manually managing customer chats, while WhatsApp Business API supports bulk campaigns, automation, multiple agents, and integrations. MSG91 also offers WhatsApp Coexistence, allowing eligible businesses to use the Business App and API with the same number for manual chats and automated communication.<br/><br/>Businesses can follow the <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/whatsapp-coexistence'>WhatsApp Coexistence setup guide</a>."
             },
             {
-                "question": "Can WhatsApp messages be sent via API for free?",
-                "answer": "<ul class='list-disc'><li>WhatsApp Business API does require a subscription or payment depending on the service plan.</li><li>However, Facebook offers some pricing flexibility for click-to-WhatsApp ads, where businesses may avoid session charges.</li><li>It's best to review the latest pricing on the official Facebook or WhatsApp developer website.</li></ul>"
+                "question": "Why should businesses choose MSG91 as their WhatsApp Business API provider?",
+                "answer": "MSG91 brings WhatsApp Business API, bulk messaging, transactional WhatsApp messaging, marketing campaigns, AI chatbots, and customer support together on one platform. Businesses choose MSG91 for:<ul class='list-disc'><li><strong>Transparent pricing:</strong> Meta's official WhatsApp messaging rates with zero markup.</li><li><strong>Easy setup and use:</strong> A user-friendly dashboard for bulk campaigns through CSV uploads, without coding.</li><li><strong>AI chatbots and live support:</strong> Automated customer conversations with human-agent assistance through MSG91 Hello.</li><li><strong>Lower service costs:</strong> MSG91 Chat Window reduces WhatsApp service message charges by continuing conversations outside WhatsApp.</li><li><strong>Reliable communication:</strong> Automatic SMS, RCS, and Email fallback when a WhatsApp message fails.</li></ul>"
             },
             {
-                "question": "How does WhatsApp API integration work?",
-                "answer": "<ul class='list-disc'><li>WhatsApp API integration involves setting up the API to work with your website or application.</li><li>This enables your business to send messages from WhatsApp to users directly on their phones, facilitating real-time engagement.</li><li>Integration requires a WhatsApp Business account and an MSG91 account for developers to set up.</li></ul>"
+                "question": "What is the WhatsApp Business API pricing in India?",
+                "answer": "WhatsApp Business API pricing in India has two parts: Meta’s per-message charges and the MSG91 platform fee. MSG91 adds no markup on Meta’s message rates.<br/><br/>Meta’s current rates in India are:<ul class='list-disc'><li>Marketing messages: ₹0.8631 per message</li><li>Utility messages (order updates, reminders): ₹0.115 per message</li><li>Authentication messages (OTPs): ₹0.115 per message</li><li>Service messages (business replies to customers): ₹0.115 per message</li></ul>The MSG91 WhatsApp platform fee is ₹500 per month per WhatsApp number. It’s free for the initial two months. 18% GST is extra.<br/><br/>For example, 10,000 marketing messages cost about ₹8,631 plus GST. See the latest rates on the <a class='text-link active-link' target='_blank' href='https://msg91.com/in/pricing/whatsapp'>MSG91 WhatsApp Business API India pricing page</a>."
             },
             {
-                "question": "How can I use WhatsApp Business API with my website/CRM?",
-                "answer": "<ul class='list-disc'><li>You can integrate WhatsApp Business API with your website to allow customers to reach you via click-to-chat links or automated response buttons.</li><li>Using HTML, JavaScript, and the API documentation, developers can configure 'Send WhatsApp Message' buttons on a website.</li><li>Integration can be done through your WhatsApp Business account setup and by following the instructions on the official WhatsApp developer site.</li></ul>"
+                "question": "Does MSG91 have the same pricing as Meta?",
+                "answer": "Yes, in India, MSG91 charges the same per-message rates as Meta, with no extra charges per message. In some countries, our per-message rates are even lower than Meta’s. The platform fee is ₹0 for the initial 2 months, then ₹500 per WhatsApp number per month."
             },
             {
-                "question": "What do I need to start using WhatsApp Business API?",
-                "answer": "To begin using WhatsApp Business API, you need: <br/> <ul class='list-disc'><li>WhatsApp Business Account</li><li>A phone number dedicated to the business account</li><li>Access to Facebook's developer platform at <a class='text-link active-link' target='_blank' href='https://developers.facebook.com/'>https://developers.facebook.com/</a></li><li>API credentials for integration</li><li>MSG91 Account <a class='text-link active-link' target='_blank' href='https://msg91.com/signup?utm_source=msg91Website&source=msg91Whatsapp'>(click here to register)</a></li></ul>"
+                "question": "Are there any hidden charges? If not, why does MSG91 charge the same as Meta?",
+                "answer": "No, there are no hidden WhatsApp messaging charges. MSG91 charges the same per-message rates as Meta in India. Our profit comes from a flat platform fee of ₹500 per WhatsApp number per month, applicable after the initial 2 months. In some countries, our per-message rates are even lower than Meta’s."
             },
             {
-                "question": "Can WhatsApp Business API be used for enterprises?",
-                "answer": "<ul class='list-disc'><li>Yes, the WhatsApp Business API is ideal for enterprises looking to implement robust customer service and engagement solutions.</li><li>It provides a scalable solution that can support high message volumes, perfect for enterprises handling multiple customer inquiries daily.</li><li>Enterprises can also benefit from automated AI chatbots integrated with the API.</li></ul>"
+                "question": "What are the latest WhatsApp Business API pricing changes?",
+                "answer": "Meta introduced service-message charges on October 1, 2026. The first 1,000 service messages per WhatsApp business phone number each month remain free. Additional service messages are billed at the recipient country's rate.<br/><br/>Utility templates sent within an active customer service window also became chargeable, subject to Meta's free-entry-point exceptions. These changes make message-volume management especially important for customer support teams."
             },
             {
-                "question": "Is there a web interface for WhatsApp Business API?",
-                "answer": "<ul class='list-disc'><li>Yes, MSG91 offers a web-based panel for easy understanding and implementation.</li><li>The WhatsApp Web API does not have a direct, visual interface like the regular WhatsApp Web. However, messages can be sent and received via API requests programmatically, which developers can configure using code or cloud-hosted solutions.</li></ul>"
+                "question": "How does MSG91 Chat Window reduce WhatsApp service message costs?",
+                "answer": "MSG91 Chat Window lets businesses continue conversations without paying Meta for messages exchanged inside the dedicated chat experience.<br/><br/>Customers can start on WhatsApp and move into Chat Window, with the conversation appearing in MSG91 Hello. AI chatbots, flow bots, and human agents can continue assisting them under the same support experience.<br/><br/>Messages sent through WhatsApp remain chargeable. The <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/how-'>MSG91 Chat Window setup guide</a> explains the process."
             },
             {
-                "question": "How is the WhatsApp Business API different from the regular WhatsApp app?",
-                "answer": "<ul class='list-disc'><li>Unlike the WhatsApp app used for personal messaging, the WhatsApp Business API is designed specifically for businesses.</li><li>The API allows for automated messaging, integration with other software solutions, and bulk messaging while adhering to WhatsApp’s policies.</li><li>It is intended for use through programmatic integration rather than a direct user interface.</li></ul>"
+                "question": "How do I set up WhatsApp Business API with MSG91, and how long does it take?",
+                "answer": "A prepared, eligible Meta business can onboard a WhatsApp number in about 5 minutes. Steps:<ul class='list-disc'><li>Create an MSG91 account.</li><li>Connect your Meta Business Portfolio.</li><li>Add your business number.</li><li>Verify it with an OTP.</li></ul>You’ll need: business details, website information, and documents if Meta requests verification. Approval can take longer if Meta needs extra review.<br/><br/>The <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/whatsapp-number-integration---onboarding'>MSG91 WhatsApp onboarding guide</a> explains each step."
             },
             {
-                "question": "What is required to set up the WhatsApp API with a cloud account?",
-                "answer": "<ul class='list-disc'><li>Registering your WhatsApp Business Account</li><li>Securing API credentials from Facebook's developer portal</li></ul>"
+                "question": "How can businesses get the WhatsApp green tick or blue verification badge?",
+                "answer": "Meta grants WhatsApp verification badges to eligible businesses; an API provider cannot guarantee approval.<br/><br/>Businesses should complete the required business verification, maintain accurate business details, and meet Meta's eligibility criteria. Official Business Account verification and Meta Verified are distinct programs with different requirements.<br/><br/>MSG91 provides guidance through its <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/how-to-apply-for-whatsapp-green-tick-verification'>WhatsApp verification documentation</a>."
             },
             {
-                "question": "How does WhatsApp API help with customer service?",
-                "answer": "<ul class='list-disc'><li>WhatsApp API is highly beneficial for customer service as it enables quick responses and easy follow-up with customers.</li><li>With AI chatbot integration, businesses can automate frequent queries, freeing up customer service representatives to handle more complex cases.</li><li>The API supports two-way communication, ensuring customers get real-time updates on their inquiries.</li></ul>"
+                "question": "Can a WhatsApp Business API number get blocked, and how many messages can it send?",
+                "answer": "Yes. Meta can restrict a WhatsApp number for spam complaints, policy violations, or suspicious messaging activity. Businesses can review their phone number's quality rating in WhatsApp Manager.<br/><br/>Meta also sets business-initiated messaging limits at the business-portfolio level. New portfolios may start at 250 unique recipients per rolling 24 hours, with higher limits unlocked as Meta's criteria are met.<br/><br/>Businesses should obtain consent, use approved templates, and follow MSG91's account safety guidance."
             },
             {
-                "question": "Can I integrate WhatsApp API with existing business applications?",
-                "answer": "<ul class='list-disc'><li>Yes, the WhatsApp API can be integrated with various applications, including CRM systems and e-commerce platforms.</li><li>Developers can set up API calls to trigger messages based on user actions, such as order confirmations, shipping updates, or customer service inquiries.</li><li>Custom integration solutions can be built for your business needs with the help of a developer.</li></ul>"
+                "question": "Is customer data secure with MSG91 WhatsApp Business API?",
+                "answer": "MSG91 maintains documented information-security controls and publishes a SOC 2 Type 2 report.<br/><br/>Businesses can review its security certifications when evaluating MSG91 for customer communication. Proper data protection also depends on how businesses configure access permissions, manage customer information, and comply with applicable privacy requirements."
             },
             {
-                "question": "What phone number should be used for WhatsApp Business API?",
-                "answer": "<ul class='list-disc'><li>A dedicated business phone number is required for the WhatsApp Business API.</li><li>This number must not be linked to a personal WhatsApp account; it will be verified and registered through the API setup process on the Facebook developer platform.</li></ul>"
+                "question": "Can I switch WhatsApp API providers and manage multiple business numbers with MSG91?",
+                "answer": "Yes. MSG91 supports migration from another WhatsApp API service provider and onboarding multiple WhatsApp business numbers within an account.<br/><br/>Migration requires access to the relevant Meta Business Portfolio, WhatsApp Business Account, and number verification settings. Businesses can manage separate numbers for sales, support, or other operations, with subscriptions handled per number.<br/><br/>The <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/whatsapp-number-integration---onboarding'>onboarding documentation</a> includes migration options."
             },
             {
-                "question": "Can I manage WhatsApp API messages on the web?",
-                "answer": "Yes, you can manage WhatsApp for sending and receiving messages using MSG91 HELLO (Web-based dashboards developed to provide real-time monitoring of conversations)."
+                "question": "How can businesses use AI chatbots and human agents for WhatsApp customer support?",
+                "answer": "MSG91 supports both rule-based and AI-powered WhatsApp chatbots, along with human-agent assistance through Hello.<br/><br/>Rule-based bots guide customers through predefined steps, while AI chatbots can understand multilingual enquiries, maintain context, and handle complex requests using connected business systems.<br/><br/>When personal assistance is required, the conversation can move to an agent in Hello, where teams manage customer enquiries through a shared inbox."
             },
             {
-                "question": "Are there free options available for WhatsApp API?",
-                "answer": "<ul class='list-disc'><li>The WhatsApp API itself is not free for most business functions, as costs may be associated with sending and receiving messages.</li><li>However, Click-to-WhatsApp ads provide a budget-friendly way to initiate conversations without incurring session charges for specific interactions.</li></ul>"
+                "question": "Can businesses send bulk WhatsApp campaigns and personalize messages without coding?",
+                "answer": "Yes. MSG91's WhatsApp marketing software allows businesses to send bulk campaigns through CSV uploads without building an API integration.<br/><br/>Businesses can personalize approved templates, segment audiences, schedule promotions, and monitor campaign performance. MSG91 also supports opt-out rules so recipients can unsubscribe from unwanted messages.<br/><br/>This is useful for product launches, festive campaigns, loyalty offers, and customer re-engagement."
+            },
+            {
+                "question": "Can WhatsApp Business API send OTPs, reminders, and approved message templates?",
+                "answer": "Yes. MSG91 supports WhatsApp message templates for OTPs, order confirmations, shipping updates, payment notifications, appointment reminders, and promotional campaigns.<br/><br/>Businesses can create templates through the MSG91 dashboard and use API integrations to trigger messages automatically. Templates can include images, videos, personalized variables, and interactive buttons.<br/><br/>All WhatsApp message templates must be submitted to Meta for approval before they can be used for business-initiated messaging.<br/><br/>The <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/how-to-create-a-template-for-whatsapp'>WhatsApp template creation guide</a> explains the approval process."
+            },
+            {
+                "question": "Can customers browse products and make payments through WhatsApp?",
+                "answer": "Yes. MSG91 supports WhatsApp product catalogues and payment-enabled shopping workflows using payment gateways such as Razorpay, PayU, and Cashfree. Gateway availability depends on whether the business is using catalogue payments, chatbot payments, or payment-link APIs.<br/><br/>Businesses can showcase products with images, descriptions, and prices, allowing customers to browse and select items directly within WhatsApp. By integrating a supported payment gateway, businesses can guide customers through the payment process, making shopping and checkout more convenient.<br/><br/>MSG91 documents payment configuration with providers such as Razorpay in its <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/whatsapp-payments-config-for-razorpay-'>WhatsApp payment setup guide</a>."
+            },
+            {
+                "question": "What are WhatsApp Flows, and how do they help businesses?",
+                "answer": "WhatsApp Flows let customers complete structured tasks directly within WhatsApp.<br/><br/>Businesses can use them for appointment bookings, lead forms, event registrations, feedback collection, and service requests. Customers follow guided steps without opening a separate website.<br/><br/>MSG91 supports approved WhatsApp Flow templates through its API, making it easier to connect these interactions with business processes."
+            },
+            {
+                "question": "How do Click-to-WhatsApp Ads help businesses generate leads?",
+                "answer": "Click-to-WhatsApp Ads connect Facebook and Instagram advertisements directly to WhatsApp conversations.<br/><br/>When someone clicks an ad, they can enquire about products, request a quotation, or book a service. MSG91 supports automated replies and chatbots for these incoming leads, helping businesses respond quickly.<br/><br/>MSG91 charges no additional panel fee for the Click-to-WhatsApp Ads feature. Meta's advertising and messaging charges remain separate."
+            },
+            {
+                "question": "Can customers make WhatsApp voice calls to a business using MSG91?",
+                "answer": "Yes. MSG91 provides WhatsApp Voice Calling for eligible Cloud API numbers.<br/><br/>Businesses can configure calling through the MSG91 dashboard or API after meeting Meta's requirements. Customers can initiate calls when calling is enabled for the number.<br/><br/>Businesses can also configure WhatsApp Voice AI for automated voice interactions. Calling eligibility, routing, and availability should be confirmed during setup.<br/><br/>The <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/whatsapp-voice-calling-voice-chatbot'>WhatsApp calling guide</a> explains the configuration."
+            },
+            {
+                "question": "Can MSG91 WhatsApp Business API integrate with Shopify, websites, and CRM platforms?",
+                "answer": "Yes. MSG91 supports WhatsApp integrations with Shopify, Zoho, Freshworks, WebEngage, MoEngage, CleverTap, Wix, Google Sheets, Tally, and Giddh.<br/><br/>Businesses can automate communication based on website events, CRM updates, or customer purchases. Developers can also use MSG91 APIs for custom integrations, including order notifications, lead follow-ups, and customer support workflows."
+            },
+            {
+                "question": "What happens when a WhatsApp message fails, and can businesses track delivery?",
+                "answer": "MSG91 allows businesses to track failed WhatsApp messages and configure SMS or RCS fallback for another delivery attempt.<br/><br/>Campaign reports show delivery statuses, failures, and customer engagement. Businesses can investigate problems through the <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/how-to-get-whatsapp-reports'>WhatsApp reporting guide</a>.<br/><br/>MSG91 also provides assistance with messaging issues, templates, and integrations through email, WhatsApp, calls, and scheduled meetings."
+            },
+            {
+                "question": "Which industries can benefit from WhatsApp Business API, and how can they use it?",
+                "answer": "WhatsApp Business API can benefit businesses across industries by automating customer communication, improving engagement, and simplifying sales and support processes.<ul class='list-disc'><li><strong>E-commerce:</strong> Abandoned cart recovery, order tracking, and returns.</li><li><strong>D2C Brands:</strong> Personalized promotions, product launches, and loyalty campaigns.</li><li><strong>Hospitality:</strong> Booking confirmations, check-in details, and guest assistance.</li><li><strong>Real Estate:</strong> Property enquiries, lead qualification, and site visit scheduling.</li><li><strong>Fintech:</strong> Payment reminders, authentication, and account updates.</li><li><strong>Edtech:</strong> Enrollment enquiries, class reminders, and student support.</li><li><strong>Healthcare:</strong> Appointment confirmations and administrative enquiries.</li><li><strong>Event Management:</strong> Registrations, ticket notifications, and event updates.</li><li><strong>SaaS:</strong> Trial onboarding, demo reminders, and subscription notifications.</li></ul>MSG91 supports these use cases through WhatsApp marketing software, APIs, automated workflows, AI chatbots, and human-agent assistance through Hello. Businesses from other eligible industries can also use WhatsApp Business API according to their communication requirements."
             }
         ]
     },
