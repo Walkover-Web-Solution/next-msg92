@@ -8,7 +8,6 @@ import { getErrorMessage, otpWidgetSetup, waitForInitSendOTP } from '@/utils/otp
 import { toast } from 'react-toastify';
 import Image from 'next/image';
 import HeadComp from '@/components/HeadComp/HeadComp';
-import signinData from '@/data/global/signin.json';
 const SUCCESS_REDIRECTION_URL = process.env.API_BASE_URL + '/api/nexusRedirection.php?session=:session';
 const MOBILE_EMAIL_LOGIN_URL = process.env.API_BASE_URL + '/api/v5/nexus/mobileEmailLogin';
 const GOOGLE_LOGIN_URL = process.env.API_BASE_URL + '/api/v5/nexus/googleLogin';
@@ -20,7 +19,6 @@ const OUTLOOK_SIGNIN_REDIRECT_URL = `${process.env.REDIRECT_URL}/outlook-token`;
 
 export default function SignIn() {
     const router = useRouter();
-    const data = signinData?.SignIn;
     const hitLoginAPI = useCallback((url, payload, showError = true) => {
         const requestOptions = {
             method: 'POST',
@@ -150,7 +148,14 @@ export default function SignIn() {
 
     return (
         <>
-            <HeadComp pageInfo={{ page: 'signin' }} data={signinData?.HeadComp} />
+            <HeadComp
+                pageInfo={{ page: 'signin' }}
+                data={{
+                    title: 'Login | MSG91',
+                    description:
+                        'Continue to your MSG91 workspace. Sign in to access the complete suite of MSG91 products.',
+                }}
+            />
             <section className='signin flex flex-col-reverse md:flex-row md:items-start'>
                 <div className='flex w-full flex-col gap-8 bg-secondary px-2 py-10 sm:px-10 sm:py-16 md:min-h-screen md:w-1/2 md:py-20 lg:w-1/3 xl:w-1/4'>
                     <div className='flex flex-col gap-6'>
@@ -159,26 +164,29 @@ export default function SignIn() {
                             width={420}
                             height={420}
                             className='hidden h-auto w-32 shrink-0 md:block'
-                            alt={data?.logoAlt}
+                            alt='msg91-logo'
                             loading='lazy'
                         />
-                        <h1 className='hidden text-2xl font-medium md:block'>{data?.heading}</h1>
+                        <h1 className='hidden text-2xl font-medium md:block'>
+                            Signin to avail a complete suite of MSG91 products
+                        </h1>
                         <ul className='list-disc space-y-3 pl-1 text-sm marker:text-accent'>
-                            {(data?.features || []).map((feature, index) => (
-                                <li key={index}>{feature}</li>
-                            ))}
+                            <li>Engage users across SMS, WhatsApp, Email, Voice & RCS</li>
+                            <li>Automate journeys with Campaign & Segmento</li>
+                            <li>AI-powered support with Hello Ticketing</li>
+                            <li>Personalize communication using real-time segmentation</li>
+                            <li>Increase retention, engagement & revenue from one platform</li>
+                            <li>APIs built for scale, reliability & speed</li>
                         </ul>
-                        <p className='m-0 text-lg'>{data?.trusted}</p>
+                        <p className='m-0 text-lg'>Trusted by 30000+ startups and enterprises</p>
                     </div>
                 </div>
 
                 <div className='flex w-full flex-col px-4 py-14 sm:px-10 sm:py-16 md:py-24 lg:px-22'>
                     <div className='mx-auto flex w-full max-w-[480px] flex-col gap-10 md:mx-0'>
                         <header className='flex flex-col gap-2'>
-                            <h1 className='m-0 text-3xl font-bold leading-none tracking-tight text-primary'>
-                                {data?.loginHeading}
-                            </h1>
-                            <p className='text-base text-slate-500'>{data?.loginSubheading}</p>
+                            <h1 className='m-0 text-3xl font-bold leading-none tracking-tight text-primary'>Login</h1>
+                            <p className='text-base text-slate-500'>Continue to your MSG91 workspace.</p>
                         </header>
 
                         <section className='flex flex-col gap-4' aria-labelledby='signin-developer-sso-heading'>
@@ -187,7 +195,7 @@ export default function SignIn() {
                                     id='signin-developer-sso-heading'
                                     className='shrink-0 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-400'
                                 >
-                                    {data?.developerSsoLabel}
+                                    Developer SSO
                                 </h2>
                                 <span className='h-px flex-1 bg-slate-200' aria-hidden />
                             </div>
@@ -204,7 +212,7 @@ export default function SignIn() {
                                     type='button'
                                     onClick={() => loginWithOutlook()}
                                     className='flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-slate-300 bg-white transition hover:bg-slate-50'
-                                    aria-label={data?.microsoftAriaLabel}
+                                    aria-label='Sign in with Microsoft'
                                 >
                                     <img src='/img/microsoft-svg.svg' className='h-6 w-6' alt='' />
                                 </button>
@@ -212,7 +220,7 @@ export default function SignIn() {
                                     type='button'
                                     onClick={() => loginWithZoho()}
                                     className='flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-slate-300 bg-white transition hover:bg-slate-50'
-                                    aria-label={data?.zohoAriaLabel}
+                                    aria-label='Sign in with Zoho'
                                 >
                                     <img src='/img/icon-zogo.svg' className='h-5 w-5' alt='' />
                                 </button>
@@ -220,7 +228,7 @@ export default function SignIn() {
                                     type='button'
                                     onClick={() => loginWithGitHub()}
                                     className='flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-slate-300 bg-white transition hover:bg-slate-50'
-                                    aria-label={data?.githubAriaLabel}
+                                    aria-label='Sign in with GitHub'
                                 >
                                     <img src='/img/icon-github.svg' className='h-6 w-6' alt='' />
                                 </button>
@@ -233,7 +241,7 @@ export default function SignIn() {
                                     id='signin-direct-credentials-heading'
                                     className='shrink-0 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-400'
                                 >
-                                    {data?.directCredentialsLabel}
+                                    Direct credentials
                                 </h2>
                                 <span className='h-px flex-1 bg-slate-200' aria-hidden />
                             </div>
@@ -242,23 +250,23 @@ export default function SignIn() {
                                 className='w-1/2 rounded-lg border border-primary bg-primary px-4 py-3 text-center text-base font-medium text-white transition hover:opacity-90'
                                 onClick={() => initLoginWithOTP()}
                             >
-                                {data?.loginWithOtpLabel}
+                                Login with OTP
                             </button>
                         </section>
 
                         <footer className='flex flex-col gap-4 border-t border-slate-100 pt-6 sm:flex-row sm:items-center sm:justify-between'>
                             <p className='text-sm text-slate-600'>
-                                {data?.needAccountText}{' '}
-                                <a href={data?.signupLinkHref} className='font-medium text-link active-link'>
-                                    {data?.signupLinkLabel}
+                                Need an account?{' '}
+                                <a href='/signup' className='font-medium text-link active-link'>
+                                    Sign up
                                 </a>
                             </p>
                             <a
-                                href={data?.supportHref}
+                                href='/contact-us'
                                 className='inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-400 transition hover:text-slate-600'
                             >
                                 <MdHelpOutline className='text-lg' aria-hidden />
-                                {data?.supportLabel}
+                                Support
                             </a>
                         </footer>
                     </div>
