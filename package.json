@@ -7,7 +7,8 @@
         "build": "next build",
         "start": "next start -p 3030",
         "lint": "next lint",
-        "prepare": "husky"
+        "prepare": "husky",
+        "check:pages": "node scripts/check-page-data.mjs"
     },
     "dependencies": {
         "@react-oauth/google": "^0.12.1",
