@@ -40,3 +40,6 @@ next-env.d.ts
 .env.local
 .env.prod
 .env.test
+
+# private admin data (experiment events, drafts, settings)
+/.admin-data/
