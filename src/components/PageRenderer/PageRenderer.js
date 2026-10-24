@@ -2,10 +2,12 @@ import { useRouter } from 'next/router';
 import FooterComp from '@/components/FooterComp/FooterComp';
 import MenuBarComp from '@/components/menuBarComp/menuBarComp';
 import NotificationBarComp from '@/components/notificationBarComp/notificationBarComp';
+import ExperimentExposure from '@/components/PageRenderer/ExperimentExposure';
 import { resolveSection } from '@/components/PageRenderer/sectionRegistry';
 
 // Renders a JSON-driven page: notification bar, menu, each top-level key of `data` in order, footer.
-export default function PageRenderer({ data, commonData, pageInfo }) {
+// `experiment` is set only when an experiment route rendered an assigned variant of this page.
+export default function PageRenderer({ data, commonData, pageInfo, experiment }) {
     const router = useRouter();
     const browserPathCase = router.asPath;
     // Check if 'country' cookie is set; if not, set it to pageInfo.country
@@ -44,6 +46,7 @@ export default function PageRenderer({ data, commonData, pageInfo }) {
                 })}
 
             <FooterComp componentData={commonData?.footer} pageInfo={pageInfo} />
+            {experiment && <ExperimentExposure experiment={experiment} />}
         </>
     );
 }

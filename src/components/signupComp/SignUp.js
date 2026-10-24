@@ -10,6 +10,7 @@ import StepTwo from './StepTwo/StepTwo';
 import StepThree from './StepThree/StepThree';
 import { useRouter } from 'next/router';
 import { preconnect } from 'react-dom';
+import { trackExperimentOutcome } from '@/utils/experimentEvents';
 
 const SUCCESS_REDIRECTION_URL = process.env.API_BASE_URL + '/api/nexusRedirection.php?session=:session';
 
@@ -119,6 +120,7 @@ export default class SignUp extends React.Component {
             if (this.state?.signupByGitHub && !this.state?.githubCode) {
                 return this.setStep(1);
             }
+            trackExperimentOutcome('signup_started');
         } else if (step === 3) {
             this.setState({
                 emailAccessToken: null,
@@ -385,6 +387,7 @@ export default class SignUp extends React.Component {
                     emailIdentifier: null,
                 });
                 if (result?.status === 'success') {
+                    trackExperimentOutcome('signup_verified');
                     if (result?.data?.data?.nextStep === 'createNewCompany') {
                         this.setStep(3);
                     } else if (result?.data?.data?.nextStep === 'createNewCompanyFromSignup') {
@@ -475,6 +478,7 @@ export default class SignUp extends React.Component {
                 this.setState({ isLoading: false });
                 this.setSession(result);
                 if (result?.status === 'success') {
+                    trackExperimentOutcome('signup_completed');
                     this.setStep(4);
                     setTimeout(() => {
                         location.href = this.buildSuccessRedirect(result?.data?.sessionDetails?.PHPSESSID);
