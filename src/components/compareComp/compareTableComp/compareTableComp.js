@@ -14,6 +14,63 @@ export default function CompareTableComp({ data }) {
             features = globalFeatures;
             break;
     }
+    if (data?.type) {
+        return (
+            <div className='container cont cont_p gap-6'>
+                <h2 className='heading font-semibold'>{data.heading}</h2>
+
+                {data.tableHeading && <h3 className='text-xl font-bold'>{data.tableHeading}</h3>}
+
+                <div className='hidden md:block max-w-[1200px] mx-auto w-full rounded-lg border border-gray-200 bg-base-100 overflow-hidden'>
+                    <div className='overflow-x-auto'>
+                        <table className='table min-w-[900px] w-full'>
+                            <thead>
+                                <tr>
+                                    <th className='w-1/4 py-6 px-4'>{data.featureLabel}</th>
+
+                                    {data.columns?.map((col, index) => (
+                                        <th
+                                            key={col.key}
+                                            className={`py-6 px-4 text-black ${
+                                                index === 0 ? 'rounded-t-lg bg-[#F0F7FF]' : ''
+                                            }`}
+                                        >
+                                            {col.label}
+                                        </th>
+                                    ))}
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                {data.rows?.map((row, index) => (
+                                    <tr key={row.feature || index}>
+                                        <td className='font-semibold border-x border-300 text-base text-gray-500'>
+                                            {row.feature}
+                                        </td>
+
+                                        {data.columns?.map((col, colIndex) => (
+                                            <td
+                                                key={col.key}
+                                                className={`border-r border-300 px-6 py-6 text-base align-top ${
+                                                    colIndex === 0 ? 'bg-[#F0F7FF]' : 'text-gray-500'
+                                                }`}
+                                            >
+                                                {row[col.key]}
+                                            </td>
+                                        ))}
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                {data.summary && <p>{data.summary}</p>}
+
+                {data.pricingNote && <p className='text-sm italic'>{data.pricingNote}</p>}
+            </div>
+        );
+    }
     return (
         <div className='container cont cont_p gap-12'>
             <div className='cont gap-4'>
