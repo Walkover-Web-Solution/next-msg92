@@ -1,0 +1,401 @@
+{
+  "version": 1,
+  "seededOn": "2026-10-24",
+  "entries": [
+    {
+      "id": "twilio",
+      "name": "Twilio",
+      "status": "confirmed",
+      "category": "direct",
+      "website": "https://www.twilio.com",
+      "overlap": "Developer CPaaS: SMS, WhatsApp, Verify (OTP), Voice, Email via SendGrid",
+      "relevance": "high",
+      "cadenceDays": 30,
+      "scope": ["pricing", "positioning", "product"],
+      "sources": [
+        { "label": "SMS pricing (India)", "url": "https://www.twilio.com/en-us/sms/pricing/in" },
+        { "label": "WhatsApp pricing", "url": "https://www.twilio.com/en-us/whatsapp/pricing" },
+        { "label": "Verify pricing", "url": "https://www.twilio.com/en-us/verify/pricing" },
+        { "label": "Support plans", "url": "https://www.twilio.com/en-us/support-plans" },
+        { "label": "Studio / Serverless pricing", "url": "https://www.twilio.com/en-us/serverless/pricing" }
+      ],
+      "notes": "2026-10-24: India SMS $0.0832/segment (intl/alpha); WhatsApp fee $0.005/msg + Meta; Verify $0.05/success + channel. MSG91 vs page has claim risks C-5..C-7."
+    },
+    {
+      "id": "gupshup",
+      "name": "Gupshup",
+      "status": "confirmed",
+      "category": "direct",
+      "website": "https://www.gupshup.ai",
+      "overlap": "WhatsApp, RCS, SMS messaging and conversational AI agents; India-origin",
+      "relevance": "high",
+      "cadenceDays": 30,
+      "scope": ["pricing", "positioning", "product"],
+      "sources": [
+        { "label": "Homepage", "url": "https://www.gupshup.ai/" },
+        { "label": "WhatsApp self-serve pricing", "url": "https://www.gupshup.ai/pricing" }
+      ],
+      "notes": "2026-10-24: Gupshup fee $0.001/msg, Meta fees passed through. gupshup.io 301s to gupshup.ai. No MSG91 vs page."
+    },
+    {
+      "id": "infobip",
+      "name": "Infobip",
+      "status": "confirmed",
+      "category": "direct",
+      "website": "https://www.infobip.com",
+      "overlap": "Enterprise omnichannel CPaaS, 2FA, chatbots",
+      "relevance": "high",
+      "cadenceDays": 30,
+      "scope": ["pricing", "positioning", "product"],
+      "sources": [
+        { "label": "Pricing overview", "url": "https://www.infobip.com/pricing" },
+        { "label": "SMS pricing", "url": "https://www.infobip.com/sms/pricing" },
+        { "label": "WhatsApp pricing", "url": "https://www.infobip.com/whatsapp-business/pricing" }
+      ],
+      "notes": "No numeric prices in fetched content on 2026-10-24 (calculator-driven). WhatsApp pricing URL taken from pricing page links, not fetched."
+    },
+    {
+      "id": "sinch",
+      "name": "Sinch",
+      "status": "confirmed",
+      "category": "direct",
+      "website": "https://sinch.com",
+      "overlap": "CPaaS: SMS/RCS, WhatsApp, Verification, Voice, Email (Mailgun, Mailjet)",
+      "relevance": "high",
+      "cadenceDays": 30,
+      "scope": ["pricing", "positioning", "product"],
+      "sources": [
+        { "label": "Homepage", "url": "https://sinch.com/" },
+        { "label": "SMS pricing", "url": "https://sinch.com/pricing/sms/" }
+      ],
+      "notes": "SMS pricing page showed US/CA rates only on 2026-10-24."
+    },
+    {
+      "id": "tata-kaleyra",
+      "name": "Tata Communications Kaleyra",
+      "status": "confirmed",
+      "category": "direct",
+      "website": "https://www.tatacommunications.com/kaleyra",
+      "overlap": "India enterprise CPaaS: SMS, WhatsApp, RCS, Voice, Email, Video, OTP use cases",
+      "relevance": "high",
+      "cadenceDays": 30,
+      "scope": ["positioning", "product"],
+      "sources": [
+        { "label": "Kaleyra product page", "url": "https://www.tatacommunications.com/kaleyra" }
+      ],
+      "notes": "kaleyra.com 301s to Tata Communications. No public pricing seen."
+    },
+    {
+      "id": "route-mobile",
+      "name": "Route Mobile (Proximus)",
+      "status": "confirmed",
+      "category": "direct",
+      "website": "https://www.routemobile.com",
+      "overlap": "A2P SMS, Route OTP, RCS, WhatsApp, Email, Voice/CCaaS; India ties",
+      "relevance": "high",
+      "cadenceDays": 30,
+      "scope": ["positioning", "product"],
+      "sources": [
+        { "label": "Homepage", "url": "https://www.routemobile.com/" }
+      ],
+      "notes": "Claims Leader in 2026 Gartner MQ for CPaaS (not independently verified). No public pricing seen."
+    },
+    {
+      "id": "exotel",
+      "name": "Exotel",
+      "status": "confirmed",
+      "category": "direct",
+      "website": "https://exotel.com",
+      "overlap": "India voice, contact center, DLT SMS/OTP, WhatsApp",
+      "relevance": "medium",
+      "cadenceDays": 30,
+      "scope": ["pricing", "positioning", "product"],
+      "sources": [
+        { "label": "Homepage", "url": "https://exotel.com/" },
+        { "label": "SMS product", "url": "https://exotel.com/products/sms/" }
+      ],
+      "notes": "Medium-high: also overlaps Hello via contact center. 7-day trial with Rs 500 credit (2026-10-24)."
+    },
+    {
+      "id": "wati",
+      "name": "Wati",
+      "status": "confirmed",
+      "category": "direct",
+      "website": "https://www.wati.io",
+      "overlap": "WhatsApp API inbox, broadcasts, chatbots for SMEs",
+      "relevance": "high",
+      "cadenceDays": 30,
+      "scope": ["pricing", "positioning", "product"],
+      "sources": [
+        { "label": "Pricing", "url": "https://www.wati.io/pricing/" }
+      ],
+      "notes": "2026-10-24: Growth Rs 2,699 / Pro Rs 5,799 / Business Rs 16,799 per month (quarterly). Markup on Meta fees not stated."
+    },
+    {
+      "id": "interakt",
+      "name": "Interakt",
+      "status": "confirmed",
+      "category": "direct",
+      "website": "https://www.interakt.shop",
+      "overlap": "WhatsApp/Instagram commerce messaging for Indian SMEs",
+      "relevance": "high",
+      "cadenceDays": 30,
+      "scope": ["pricing", "positioning", "product"],
+      "sources": [
+        { "label": "Pricing", "url": "https://www.interakt.shop/pricing/" }
+      ],
+      "notes": "2026-10-24: marketing Rs 0.949-0.970/msg by plan; only Enterprise labelled no markup."
+    },
+    {
+      "id": "aisensy",
+      "name": "AiSensy",
+      "status": "confirmed",
+      "category": "direct",
+      "website": "https://aisensy.com",
+      "overlap": "WhatsApp API marketing and automation for Indian SMEs",
+      "relevance": "high",
+      "cadenceDays": 30,
+      "scope": ["pricing", "positioning", "product"],
+      "sources": [
+        { "label": "Pricing", "url": "https://aisensy.com/pricing" }
+      ],
+      "notes": "2026-10-24: marketing Rs 1.09/msg; AI Agent Builder Rs 1,350/mo (contradicts MSG91 page claim C-9)."
+    },
+    {
+      "id": "bird",
+      "name": "Bird (formerly MessageBird)",
+      "status": "confirmed",
+      "category": "direct",
+      "website": "https://bird.com",
+      "overlap": "Omnichannel messaging APIs, inbox, Verify, email",
+      "relevance": "medium",
+      "cadenceDays": 30,
+      "scope": ["pricing", "positioning", "product"],
+      "sources": [
+        { "label": "Pricing", "url": "https://bird.com/pricing" }
+      ],
+      "notes": "MSG91 vs page uses old name and seat/chatbot fees not shown on current pricing (C-8)."
+    },
+    {
+      "id": "vonage",
+      "name": "Vonage",
+      "status": "confirmed",
+      "category": "direct",
+      "website": "https://www.vonage.com/communications-apis/",
+      "overlap": "Developer CPaaS: Messages API (SMS, RCS, WhatsApp, Viber, Messenger), Voice, Verify",
+      "relevance": "medium",
+      "cadenceDays": 60,
+      "scope": ["pricing", "product"],
+      "sources": [
+        { "label": "Messages API overview (docs)", "url": "https://developer.vonage.com/en/messages/overview" },
+        { "label": "SMS pricing", "url": "https://www.vonage.com/communications-apis/sms/pricing/" }
+      ],
+      "notes": "vonage.com pages returned HTTP 403 to the fetcher on 2026-10-24; monitor may need a browser-based fetch."
+    },
+    {
+      "id": "plivo",
+      "name": "Plivo",
+      "status": "confirmed",
+      "category": "direct",
+      "website": "https://www.plivo.com",
+      "overlap": "Developer SMS and Voice APIs (mainly US/global pages for MSG91)",
+      "relevance": "low",
+      "cadenceDays": 60,
+      "scope": ["pricing", "product"],
+      "sources": [
+        { "label": "SMS pricing (India)", "url": "https://www.plivo.com/sms/pricing/in/" }
+      ],
+      "notes": "2026-10-24: India domestic routes not supported; ILDO $0.08/SMS. Relevance higher for US market."
+    },
+    {
+      "id": "textlocal",
+      "name": "Textlocal",
+      "status": "candidate",
+      "category": "direct",
+      "website": "https://www.textlocal.in",
+      "overlap": "Bulk SMS for SMEs (reported closed)",
+      "relevance": "low",
+      "cadenceDays": 180,
+      "scope": ["positioning"],
+      "sources": [
+        { "label": "Webex Interact Textlocal notice", "url": "https://webexinteract.com/textlocal/" }
+      ],
+      "notes": "textlocal.in refused connections 2026-10-24. Webex Interact notice: closed 31 July 2026 (region not stated). Consider retiring entry."
+    },
+    {
+      "id": "freshchat",
+      "name": "Freshchat (Freshworks)",
+      "status": "confirmed",
+      "category": "indirect",
+      "website": "https://www.freshworks.com/live-chat-software/",
+      "overlap": "Support messaging incl. WhatsApp; competes with Hello",
+      "relevance": "medium",
+      "cadenceDays": 60,
+      "scope": ["pricing", "product"],
+      "sources": [
+        { "label": "Pricing", "url": "https://www.freshworks.com/live-chat-software/pricing/" }
+      ],
+      "notes": "MSG91 vs page has high-risk errors C-1, C-2."
+    },
+    {
+      "id": "intercom",
+      "name": "Intercom",
+      "status": "confirmed",
+      "category": "indirect",
+      "website": "https://www.intercom.com",
+      "overlap": "Support platform and AI agent; competes with Hello",
+      "relevance": "medium",
+      "cadenceDays": 60,
+      "scope": ["pricing", "product"],
+      "sources": [
+        { "label": "Pricing", "url": "https://www.intercom.com/pricing" }
+      ],
+      "notes": "2026-10-24: Essential $29 or $19/seat; Fin $0.99/outcome."
+    },
+    {
+      "id": "zendesk",
+      "name": "Zendesk",
+      "status": "confirmed",
+      "category": "indirect",
+      "website": "https://www.zendesk.com",
+      "overlap": "Helpdesk suite with WhatsApp/SMS add-ons; competes with Hello",
+      "relevance": "low",
+      "cadenceDays": 90,
+      "scope": ["pricing"],
+      "sources": [
+        { "label": "Pricing", "url": "https://www.zendesk.com/pricing/" }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "tawk",
+      "name": "tawk.to",
+      "status": "confirmed",
+      "category": "indirect",
+      "website": "https://www.tawk.to",
+      "overlap": "Free live chat and ticketing; competes with Hello for SMBs",
+      "relevance": "medium",
+      "cadenceDays": 60,
+      "scope": ["pricing", "product"],
+      "sources": [
+        { "label": "Pricing", "url": "https://www.tawk.to/pricing/" }
+      ],
+      "notes": "MSG91 vs page claim risk C-11."
+    },
+    {
+      "id": "delightchat",
+      "name": "DelightChat",
+      "status": "confirmed",
+      "category": "indirect",
+      "website": "https://www.delightchat.io",
+      "overlap": "Shopify-focused WhatsApp/social support inbox",
+      "relevance": "low",
+      "cadenceDays": 90,
+      "scope": ["pricing"],
+      "sources": [
+        { "label": "Pricing", "url": "https://www.delightchat.io/pricing" }
+      ],
+      "notes": "MSG91 vs page claim risks C-3, C-4."
+    },
+    {
+      "id": "meta-whatsapp-cloud-api",
+      "name": "Meta WhatsApp Cloud API (direct)",
+      "status": "confirmed",
+      "category": "substitute",
+      "website": "https://developers.facebook.com/docs/whatsapp/cloud-api/overview",
+      "overlap": "Developers integrating WhatsApp directly without a BSP",
+      "relevance": "high",
+      "cadenceDays": 30,
+      "scope": ["pricing", "product"],
+      "sources": [
+        { "label": "WhatsApp pricing", "url": "https://developers.facebook.com/docs/whatsapp/pricing/" },
+        { "label": "Cloud API overview", "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/overview" }
+      ],
+      "notes": "Meta rate changes drive every WhatsApp competitor's pricing; 2026-10-01 service/utility charges resumed. INR billing migration deadline 2026-12-31."
+    },
+    {
+      "id": "firebase-phone-auth",
+      "name": "Firebase Authentication (phone)",
+      "status": "confirmed",
+      "category": "substitute",
+      "website": "https://firebase.google.com/docs/auth",
+      "overlap": "App developers needing SMS OTP login",
+      "relevance": "medium",
+      "cadenceDays": 90,
+      "scope": ["pricing"],
+      "sources": [
+        { "label": "Firebase pricing", "url": "https://firebase.google.com/pricing" }
+      ],
+      "notes": "Phone auth billed per SMS on Blaze; India rate on Identity Platform pricing (not fetched)."
+    },
+    {
+      "id": "aws-end-user-messaging",
+      "name": "AWS End User Messaging",
+      "status": "confirmed",
+      "category": "substitute",
+      "website": "https://aws.amazon.com/end-user-messaging/",
+      "overlap": "AWS-native SMS, WhatsApp, voice, push",
+      "relevance": "medium",
+      "cadenceDays": 90,
+      "scope": ["pricing"],
+      "sources": [
+        { "label": "Pricing", "url": "https://aws.amazon.com/end-user-messaging/pricing/" }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "sendgrid",
+      "name": "SendGrid (Twilio)",
+      "status": "confirmed",
+      "category": "substitute",
+      "website": "https://www.twilio.com/en-us/sendgrid",
+      "overlap": "Transactional email API; substitute for MSG91 Email",
+      "relevance": "medium",
+      "cadenceDays": 90,
+      "scope": ["pricing", "product"],
+      "sources": [
+        { "label": "SendGrid landing", "url": "https://www.twilio.com/en-us/sendgrid" }
+      ],
+      "notes": "sendgrid.com/en-us/pricing 301s to the landing page, which showed no plan prices on 2026-10-24. Find the Email API pricing URL next run."
+    },
+    {
+      "id": "manual-whatsapp-app",
+      "name": "WhatsApp Business app + spreadsheets (manual)",
+      "status": "candidate",
+      "category": "workaround",
+      "website": "",
+      "overlap": "Small teams messaging customers by hand before adopting an API",
+      "relevance": "medium",
+      "cadenceDays": 180,
+      "scope": ["positioning"],
+      "sources": [],
+      "notes": "No source; inferred."
+    },
+    {
+      "id": "do-nothing",
+      "name": "Do nothing / email only",
+      "status": "candidate",
+      "category": "workaround",
+      "website": "",
+      "overlap": "Businesses not yet messaging customers on mobile channels",
+      "relevance": "low",
+      "cadenceDays": 180,
+      "scope": ["positioning"],
+      "sources": [],
+      "notes": "No source; inferred."
+    },
+    {
+      "id": "operator-direct",
+      "name": "Telecom operator direct / in-house SMS gateway",
+      "status": "candidate",
+      "category": "workaround",
+      "website": "",
+      "overlap": "Very large senders negotiating routes and DLT setup themselves",
+      "relevance": "low",
+      "cadenceDays": 180,
+      "scope": ["positioning"],
+      "sources": [],
+      "notes": "No source; inferred."
+    }
+  ]
+}

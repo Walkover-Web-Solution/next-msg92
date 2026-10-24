@@ -26,6 +26,8 @@ This repository is the public marketing website for MSG91 (msg91.com), a cloud c
 
 ## Problems Solved & Value Proposition
 
+Detailed audiences, messages, CTAs and the claim register are in [POSITIONING.md](POSITIONING.md); alternatives in [COMPETITORS.md](COMPETITORS.md). This section stays high level.
+
 What the site markets is taken from the product menu in `src/data/global/common.json` (`menu.products_list`) and the home page metadata in `src/data/global/home.json`. The differentiators below are the site's own claims, not verified facts.
 
 | Customer Problem                                     | How We Solve It                                                                                          | Unique Value / Differentiator                                                                      |
@@ -51,7 +53,7 @@ These are **inferred** from how the code is built. Confirm them before treating 
 > Not determinable from the repository: there are no KPIs, analytics goals or priorities in the code or docs. Google Tag Manager and Microsoft Clarity are loaded (see [CONTRACTS.md](CONTRACTS.md)), but no conversion targets are defined. Needs a human.
 
 - **Top Priorities:** The approved goal is sign-up conversion from the ICP above. Anything more specific (which products or countries come first) needs a human.
-- **Key Success Metrics:** Not recorded.
+- **Key Success Metrics:** Not recorded. What the site can measure today (and what it cannot) is in [MEASUREMENT.md](MEASUREMENT.md); targets are Q-022.
 
 ## Boundaries & Non-Goals
 
