@@ -22,11 +22,13 @@ The site has one goal: turn a visitor on a country-localized page into an MSG91 
 
 | Flow Name                           | Trigger / Starting Route                                                                               | Target Outcome                                                                     | Primary Route & Component                                                                                                                                               |
 | ----------------------------------- | ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1. Land on a localized page         | Any URL, e.g. `/`, `/in/sms`, `/ae/whatsapp`                                                           | Country-specific page rendered; `country` and `msg91_query` cookies set            | `src/pages/[[...slug]].js:Page`                                                                                                                                         |
+| 1. Land on a localized page         | Any URL, e.g. `/`, `/in/sms`, `/ae/whatsapp`                                                           | Country-specific page rendered; `country` and `msg91_query` cookies set            | `src/components/PageRenderer/PageRenderer.js:PageRenderer`                                                                                                              |
 | 2. Sign up                          | `/signup` (all "Sign up" CTAs go here via `src/utils/getURL.js:getURL`)                                | Account created; browser sent to the MSG91 app with a session                      | `src/components/signupComp/SignUp.js:SignUp`                                                                                                                            |
 | 3. Check pricing                    | `/pricing/<product>`, `/<country>/pricing/<product>`                                                   | Plans, rate cards and calculators shown in the country's currency                  | `src/pages/[country]/pricing/[products].js:getServerSideProps` → `src/components/PricingComp/index.js:PricingComp`                                                      |
 | 4. Contact or register for an event | `/contact-us`, `/<country>/contact-us`, `/event-registration`                                          | Sales or support reached; event registration stored and WhatsApp confirmation sent | `src/components/ContactUs/index.js:ContactUsComp`, `src/components/EventRegistrationComp/RegistrationForm.js:RegistrationForm`                                          |
 | 5. Use a free tool                  | `/free-whatsapp-link-generator`, `/free-apple-messages-for-business-link-generator` (also per country) | Link, QR code and embeddable widget snippet generated                              | `src/components/WhatsappLinkComp/WhatsappLinkComp.js:WhatsappLinkComp`, `src/components/AppleMessagesLinkComp/AppleMessagesLinkComp.js:MSG91AppleMessagesLinkGenerator` |
+
+Admin journeys (private, operator-only) are at the end: [visitor in an experiment](#detailed-journey-visitor-in-an-experiment), [edit knowledge](#detailed-journey-operator-edits-knowledge), [run an experiment](#detailed-journey-operator-runs-an-experiment) and [analyses](#detailed-journey-analyses-and-research-runs).
 
 Not covered here: the `/guide` blog, the startup application form (`src/components/StartupFormsComp/`), the chatbot demo (`src/pages/demochatbot.js`) and the voice-extension login page (`src/pages/verify.js`).
 
@@ -60,7 +62,7 @@ sequenceDiagram
 
 1. **User Action & Route:**
     - URL: any path not claimed by a more specific page. `/<country>/pricing/<product>`, `/pricing/<product>`, `/guide/*`, `/github-auth-token`, `/outlook-token`, `/verify` and `/demochatbot` have their own files under `src/pages/`.
-    - Entry component: `src/pages/[[...slug]].js:Page`.
+    - Entry component: `src/components/PageRenderer/PageRenderer.js:PageRenderer`.
     - Trigger: navigation. `src/pages/[[...slug]].js:getStaticPaths` returns no paths and `fallback: 'blocking'`, so each URL is rendered on its first request and then served from cache. `getStaticProps` sets no `revalidate`, so a page only changes on the next deploy.
 2. **State & Validation:**
     - `src/utils/getPageInfo.js:getPageInfo` reads the country from the URL only. The first segment is a country if it matches a `shortname` in `src/data/availableCountries.json`. Otherwise the country is `global`. The IP address and the `Accept-Language` header are not used.
@@ -94,12 +96,12 @@ sequenceDiagram
 
 ### 5. Failure Modes & Recovery Paths
 
-| Failure Scenario                                             | Where Caught                                       | UI Feedback                                | Recovery / Fallback Action                                                         |
-| ------------------------------------------------------------ | -------------------------------------------------- | ------------------------------------------ | ---------------------------------------------------------------------------------- |
-| Unknown page or country                                      | `src/pages/api/data.js:handler` (`require` throws) | 404 page                                   | None. Add the JSON file under `src/data/<country>/`                                |
-| JSON key with no registered component                        | `src/pages/[[...slug]].js:Page`                    | Section silently missing; `console.error`  | Register the component in `Components`                                             |
-| Hello BR pricing fetch fails during first-request generation | `getStaticProps` `try/catch`                       | Pricing section falls back to client fetch | `src/components/HelloBrComp/PricingComp/Pricing.js` calls `GET /api/pricing/hello` |
-| Cookie write blocked                                         | Not handled                                        | None                                       | Sign-up UTM attribution is lost                                                    |
+| Failure Scenario                                             | Where Caught                                               | UI Feedback                                | Recovery / Fallback Action                                                         |
+| ------------------------------------------------------------ | ---------------------------------------------------------- | ------------------------------------------ | ---------------------------------------------------------------------------------- |
+| Unknown page or country                                      | `src/pages/api/data.js:handler` (`require` throws)         | 404 page                                   | None. Add the JSON file under `src/data/<country>/`                                |
+| JSON key with no registered component                        | `src/components/PageRenderer/PageRenderer.js:PageRenderer` | Section silently missing; `console.error`  | Register the component in `Components`                                             |
+| Hello BR pricing fetch fails during first-request generation | `getStaticProps` `try/catch`                               | Pricing section falls back to client fetch | `src/components/HelloBrComp/PricingComp/Pricing.js` calls `GET /api/pricing/hello` |
+| Cookie write blocked                                         | Not handled                                                | None                                       | Sign-up UTM attribution is lost                                                    |
 
 ---
 
@@ -377,3 +379,48 @@ Both tools follow the same steps: form, then link, then QR code, then a widget s
 
 > [!WARNING]
 > `generateWidgetScript` puts user-typed strings into the snippet inside JavaScript template literals (`` ` ``) without escaping. A backtick or `${` in the welcome text or message breaks the generated code, or runs as JavaScript on the site where the user pastes it. Escape the strings before adding new fields.
+
+---
+
+## Detailed Journey: Visitor in an experiment
+
+1. A visitor requests a URL that has a running experiment. `src/proxy.js` reads the live config (cached 5 s), creates `msg91_vid` if missing, picks the arm deterministically and rewrites to `/exp-view/<id>/<arm>/<path>`. The address bar does not change.
+2. `src/pages/exp-view/[id]/[arm]/[[...slug]].js` loads the same props as the catch-all (`loadPageProps`), applies the arm's overrides and renders `PageRenderer` with `Cache-Control: private, no-store`. If the experiment stopped in the last few seconds, it renders the baseline.
+3. After hydration, `ExperimentExposure` sends an exposure beacon and pushes `experiment_exposure` to `dataLayer`.
+4. If the visitor signs up, `SignUp` sends `signup_started`, `signup_verified` and `signup_completed` outcome beacons (only when `msg91_exp_on=1`). The event API attributes them to the versions listed in `msg91_exp`.
+
+| Failure                                                       | Behaviour                                                               |
+| ------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| Admin store unreadable                                        | `getLiveConfig` logs and routes nobody: everyone gets the normal page   |
+| Beacon blocked (extensions, no JS)                            | Visitor is not counted as exposed; the page still works                 |
+| Experiment paused or stopped                                  | Proxy stops routing within ~5 s; in-flight rewrites render the baseline |
+| Event with the wrong arm, unknown experiment or stale version | Rejected (`202` with `accepted: false` and a reason)                    |
+
+## Detailed Journey: Operator edits knowledge
+
+1. `/admin/knowledge` lists every doc with status, owner, verification date and open changes (it also re-checks pending changes). `/admin/knowledge/<id>` shows the rendered effective revision, its source and revision SHA.
+2. **Edit** → _Save draft_ stores a proposed change with the base blob SHA. A second operator saving the same draft with an older `updatedAt` gets a 409 (`stale_draft`).
+3. _Submit for review_ (`POST /api/admin/knowledge/changes/<id>` `submit`):
+    - file changed since the base → status **conflict**; _Rebase on current_ moves the draft onto the new revision for another review;
+    - another change to the same doc pending → 409 `pending_exists`;
+    - `local` mode → file written to the working tree, status **pending** ("commit and open a PR");
+    - `github` mode → branch `admin/<doc>-<id>` + commit + PR into `GITHUB_WRITEBACK_BASE`, status **pending** with the PR link;
+    - any repository error → **sync_failed** with the message; _Retry submit_ is offered. A failed save is never shown as effective.
+4. **Effective** when the PR is merged (GitHub) or the change is committed (local). Only then do agents read it, because they read the repository. Closed PRs become **rejected**; a working tree that no longer holds the change becomes **superseded**.
+5. **History** lists commits for the file; _Restore as draft_ starts a new draft from an old revision (it goes through review like any change).
+
+## Detailed Journey: Operator runs an experiment
+
+1. `/admin/experiments` → _Create draft_ with a name and a JSON-driven URL (pricing routes are refused).
+2. On the experiment page: fill the plan (hypothesis, metrics, baseline rate, MDE, review date, approver, rollback), edit arms (name, weight, overrides JSON) and preview each arm at `<url>?exp_preview=<id>:<arm>` (admin session required, never tracked).
+3. _Validate tracking_ sends synthetic exposure + outcome events per arm through `/api/exp/event` and checks they are recorded as synthetic. Any material edit clears the validation.
+4. _Launch_ (owner, release switch on, checklist complete). Results show collecting / insufficient data / inconclusive / better / worse / harmful / invalid per [EXPERIMENTS.md](EXPERIMENTS.md).
+5. _Pause_ (editor+) for safety; _Stop & keep baseline_, _Promote_ (opens a page-JSON PR and routes everyone to the arm) and _Retire_ (owner). Material changes after launch require a confirmed new version.
+6. Extra challenger ideas use _Propose challenger_: placed as an arm if a slot is free before launch, otherwise queued.
+
+## Detailed Journey: Analyses and research runs
+
+- **Scheduled:** an external cron calls `POST /api/admin/cron/tick` (`Authorization: Bearer $CRON_SECRET`), or `ADMIN_SCHEDULER=inprocess` runs `tick()` every `ADMIN_SCHEDULER_MINUTES`. Each due analysis claims a run with a slot dedupe key; overlapping ticks skip it.
+- **Event-triggered:** `?event=deploy` (post-deploy checks), experiment launch (experiment health), knowledge change effective (freshness).
+- **Manual:** _Run now_ on `/admin/analyses`; _Check due sources now_ on `/admin/research`.
+- **Failure:** the run is stored as failed with the error and a retry time (5 min × 2^attempt, up to `maxRetries`). Budgets exhausted → `budget_exhausted`, resumable next day or after raising the budget. Pause switches stop scheduled runs but not manual ones.

@@ -125,7 +125,7 @@ Modals: there is no shared modal component. `BannerComp`, `PreFooterComp` and `C
 
 ### Section component contract
 
-Most pages render through `src/pages/[[...slug]].js`. Each top-level key in the page JSON is looked up in its `Components` map and rendered in JSON order as:
+Most pages render through `src/pages/[[...slug]].js`. Each top-level key in the page JSON is looked up in the `Components` map of `src/components/PageRenderer/sectionRegistry.js` and rendered in JSON order as:
 
 ```jsx
 <Component key={`section-${key}`} data={pageData} pageInfo={pageInfo} browserPathCase={router.asPath} />
@@ -185,6 +185,48 @@ All copy lives in page JSON (`src/data/<country>/<page>.json`), with one file pe
 - **Localisation:** `br-pt` is Portuguese ("Comece gratuitamente", "Fale com as vendas") and `fil-ph` is Filipino ("Magsimula", "Presyo"). Some components still hard-code English fallbacks and branch only on `br-pt` (for example `FeatureComp`'s "Use Cases" / "Key Features" labels and `FaqsComp`'s "Frequently Asked Questions" default). Filipino pages therefore show English there.
 - **Rich text:** FAQ answers, feature `content`, `SEOComp.data` and terms pages are HTML strings rendered with `dangerouslySetInnerHTML`. Use plain tags (`<p>`, `<ul>`, `<a>`, `<strong>`). Class names inside them must also exist in a scanned file (see the Tailwind warning above).
 - **Errors and empty states:** handled per form (toasts in signup and contact). There is no shared microcopy convention.
+
+### Brand Voice & Terminology
+
+Status: **observed + proposed.** This was recovered from copy on 2026-10-24 (term counts are occurrences in `src/data/`). No brand guide has been approved. Messaging strategy (audiences, promise, claim register) is in [POSITIONING.md](POSITIONING.md). This section covers only how to write.
+
+**Voice (observed, keep):** plain, direct B2B language addressed to "you". Lead with the outcome for the reader's situation, then how it works. Keep sentences short. Write for developers _and_ business buyers on the same page: give the outcome in the heading and the API detail in the body or code sample.
+
+**Terminology:**
+
+| Use                                                      | Not                                        | Evidence                                                                                                       |
+| -------------------------------------------------------- | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| MSG91                                                    | Msg91, MSG 91                              | 2,352 uses, all in this form                                                                                   |
+| WhatsApp                                                 | Whatsapp                                   | 2,962 vs 94 (e.g. the `free-whatsapp-link-generator` title "Create a Whatsapp link")                           |
+| URL Shortener / Short URL                                | URL Shortner, ShortUrl                     | "Shortner" (19 uses, e.g. home `MoreServicesComp`) is a misspelling. "ShortUrl" (11) is used as the page title |
+| KnowledgeBase (product name)                             | Knowledgebase, Knowledge Base              | 64 vs 11 variants                                                                                              |
+| ONE API (product name)                                   | One API, OneAPI                            | 154 vs 12                                                                                                      |
+| Hello, Campaign, Segmento, OTP Widget, RCS, Voice, Email | Generic lower-case "hello" for the product | Product names in `common.json` `menu.products_list`                                                            |
+| email                                                    | e-mail                                     | "e-mail" appears 140 times, mostly in policy pages. Leave legal text as written                                |
+| Sign up (verb), sign-up (noun)                           | Signup in body copy                        | Button label "Sign Up" comes from `common.json` `signup_btn`                                                   |
+| Contact sales                                            | Contact Sales                              | 209 vs 0                                                                                                       |
+
+**CTA wording rules:**
+
+1. **The label must match the destination.** "Get Started" means self-serve sign-up. A link to a meeting must say "Book a demo", "Schedule a Meeting" or "Talk to Sales". Today the RCS "Get Started" buttons open a Calendly sales meeting ([POSITIONING.md](POSITIONING.md#calls-to-action--destinations)).
+2. **Say "free" only when the free terms are defined and linked.** Write "Get Started for Free" only where a free plan or credits exist. "FREE forever" needs a linked plan definition.
+3. **Keep one primary CTA per section.** The secondary CTA uses `btn-outline`. Use the casing already in that file ("Get Started" in banners, "Get started" in pre-footers).
+
+**Claims rules:** a number, superlative, customer logo or certification must have an entry in the [claim register](POSITIONING.md#claim-to-evidence-register). Reuse the registered wording; don't introduce a new figure for the same fact. Keep competitor statements dated and sourced ([COMPETITORS.md](COMPETITORS.md)). Logo `name` (used as alt text) must match the image file.
+
+**Do / Don't (from real copy):**
+
+| Don't (current copy)                                                                                         | Do (example rewrite, unapproved)                                  | Why                                                |
+| ------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------- | -------------------------------------------------- |
+| "Seamless Global messaging and communications." (`whatsapp.json` banner)                                     | "Send WhatsApp updates, offers and support replies from one API." | Name the reader's job, not an adjective            |
+| "Boost customer engagement and build trust" (`voice.json`)                                                   | "Make and receive calls in your app with a voice API."            | Says what the product does                         |
+| "Get Started" → Calendly (`rcs.json`)                                                                        | "Book an RCS demo" → Calendly                                     | Label matches destination                          |
+| "Trusted by 30,000+ in businesses" (one country copy)                                                        | "Trusted by 30,000+ global businesses" (the registered wording)   | One wording per claim                              |
+| `{"name": "Ixigo", "url": "/assets/trusted_by/indian-oil.svg"}` (was in every `home.json`; fixed 2026-10-24) | Name and image refer to the same company                          | Alt text must describe the image                   |
+| "URL Shortner"                                                                                               | "URL Shortener"                                                   | Spelling                                           |
+| "Switch to MSG91 Easily Before October 31, 2025" (still live on 2026-10-24)                                  | Refresh the copy or retire the page with a relevant redirect      | Date-bound copy must have an owner and an end date |
+
+**Localization:** translated folders (`br-pt`, `fil-ph`) need translated CTAs and microcopy. Never copy an English claim into a translated page with a different number. Translate the registered claim exactly.
 
 ## SEO & Metadata Expectations
 
