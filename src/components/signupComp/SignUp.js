@@ -11,7 +11,7 @@ import StepThree from './StepThree/StepThree';
 import { useRouter } from 'next/router';
 import { preconnect } from 'react-dom';
 
-let SUCCESS_REDIRECTION_URL = process.env.API_BASE_URL + '/api/nexusRedirection.php?session=:session';
+const SUCCESS_REDIRECTION_URL = process.env.API_BASE_URL + '/api/nexusRedirection.php?session=:session';
 
 const OTPRetryModes = {
     Sms: '11',
@@ -49,12 +49,6 @@ export default class SignUp extends React.Component {
 
     componentDidMount = () => {
         this.msg91Query = getCookie('msg91_query');
-        if (this.msg91Query) {
-            const queryParams = this.msg91Query.startsWith('?')
-                ? this.msg91Query.replace('?', '&')
-                : '&' + this.msg91Query;
-            SUCCESS_REDIRECTION_URL += queryParams;
-        }
 
         this.otpWidgetSetup();
 
@@ -80,21 +74,28 @@ export default class SignUp extends React.Component {
                 .then((response) => response?.json())
                 .then((result) => {
                     if (result?.status === 'success') {
-                        let redirectUrl = SUCCESS_REDIRECTION_URL?.replace(':session', payload.session);
-                        const signupDate = getCookie('signup_date');
-                        const interestedServices = getCookie('interested_services');
-                        if (signupDate) redirectUrl += `&signup_date=${encodeURIComponent(signupDate)}`;
-                        if (interestedServices)
-                            redirectUrl += `&interested_services=${encodeURIComponent(interestedServices)}`;
-                        Object.entries(getUtmFromCookies()).forEach(([key, value]) => {
-                            if (value) redirectUrl += `&${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
-                        });
-                        location.href = redirectUrl;
+                        location.href = this.buildSuccessRedirect(payload.session);
                     }
                 });
         } catch (error) {
             console.log('No Session Found');
         }
+    };
+
+    // Dashboard hand-off URL: session, landing query (msg91_query), sign-up details and cookies.
+    buildSuccessRedirect = (session) => {
+        let redirectUrl = SUCCESS_REDIRECTION_URL.replace(':session', session);
+        if (this.msg91Query) {
+            redirectUrl += this.msg91Query.startsWith('?') ? this.msg91Query.replace('?', '&') : '&' + this.msg91Query;
+        }
+        const signupDate = getCookie('signup_date');
+        const interestedServices = getCookie('interested_services');
+        if (signupDate) redirectUrl += `&signup_date=${encodeURIComponent(signupDate)}`;
+        if (interestedServices) redirectUrl += `&interested_services=${encodeURIComponent(interestedServices)}`;
+        Object.entries(getUtmFromCookies()).forEach(([key, value]) => {
+            if (value) redirectUrl += `&${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
+        });
+        return redirectUrl;
     };
 
     setStep = (step) => {
@@ -390,19 +391,7 @@ export default class SignUp extends React.Component {
                         this.setStep(3);
                     } else if (result?.data?.data?.nextStep === 'loginIntoExistingAccount') {
                         this.setState({ isLoading: true });
-                        let redirectUrl = SUCCESS_REDIRECTION_URL?.replace(
-                            ':session',
-                            result?.data?.sessionDetails?.PHPSESSID
-                        );
-                        const signupDate = getCookie('signup_date');
-                        const interestedServices = getCookie('interested_services');
-                        if (signupDate) redirectUrl += `&signup_date=${encodeURIComponent(signupDate)}`;
-                        if (interestedServices)
-                            redirectUrl += `&interested_services=${encodeURIComponent(interestedServices)}`;
-                        Object.entries(getUtmFromCookies()).forEach(([key, value]) => {
-                            if (value) redirectUrl += `&${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
-                        });
-                        location.href = redirectUrl;
+                        location.href = this.buildSuccessRedirect(result?.data?.sessionDetails?.PHPSESSID);
                     } else if (result?.data?.data?.nextStep === 'hasInvitations') {
                         this.setState({ invitations: result?.data?.data?.invitations });
                         this.setStep(3);
@@ -488,19 +477,7 @@ export default class SignUp extends React.Component {
                 if (result?.status === 'success') {
                     this.setStep(4);
                     setTimeout(() => {
-                        let redirectUrl = SUCCESS_REDIRECTION_URL?.replace(
-                            ':session',
-                            result?.data?.sessionDetails?.PHPSESSID
-                        );
-                        const signupDate = getCookie('signup_date');
-                        const interestedServices = getCookie('interested_services');
-                        if (signupDate) redirectUrl += `&signup_date=${encodeURIComponent(signupDate)}`;
-                        if (interestedServices)
-                            redirectUrl += `&interested_services=${encodeURIComponent(interestedServices)}`;
-                        Object.entries(getUtmFromCookies()).forEach(([key, value]) => {
-                            if (value) redirectUrl += `&${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
-                        });
-                        location.href = redirectUrl;
+                        location.href = this.buildSuccessRedirect(result?.data?.sessionDetails?.PHPSESSID);
                     }, 10);
                 } else if (result?.hasError) {
                     toast.error(result?.errors?.[0] ?? result?.errors);
