@@ -18,7 +18,7 @@ export default function ExperienceComp({ data }) {
                 {data?.subheading && <h3 className='subheading'>{data.subheading}</h3>}
             </header>
 
-            <div className='mt-8'>
+            <div className='my-3'>
                 <div className='flex flex-col gap-5 text-left'>
                     {data?.description && <p className='text-base md:text-lg text-gray-600'>{data.description}</p>}
 
@@ -28,7 +28,7 @@ export default function ExperienceComp({ data }) {
                         <ul className='flex flex-col gap-3'>
                             {data.features.map((feature, index) => (
                                 <li key={index} className='flex items-start gap-3 text-base'>
-                                    <MdCheckCircle className='mt-1 shrink-0 text-xl text-accent' aria-hidden='true' />
+                                    <MdCheckCircle className='my-1 shrink-0 text-xl text-accent' aria-hidden='true' />
                                     <span>{feature}</span>
                                 </li>
                             ))}
@@ -40,7 +40,7 @@ export default function ExperienceComp({ data }) {
             </div>
 
             {NestedComponent && (
-                <div className='mt-8'>
+                <div className='my-6'>
                     <NestedComponent data={data.rcs} />
                 </div>
             )}
