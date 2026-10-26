@@ -1,10 +1,12 @@
 # MSG91 Web (Next.js)
 
-A Next.js 14 website for MSG91 with localized data, MDX-powered blog, Tailwind CSS + DaisyUI styling, and widget/analytics integrations.
+> AI agents and new engineers: start at [AGENTS.md](AGENTS.md) and [docs/README.md](docs/README.md). Those docs are verified against the code; where this README disagrees, they win.
+
+A Next.js 16 website for MSG91 with localized data, MDX-powered blog, Tailwind CSS + DaisyUI styling, and widget/analytics integrations.
 
 ## Tech Stack
 
-- Next.js 14 (React 18)
+- Next.js 16, pages router (React 19)
 - Tailwind CSS + DaisyUI
 - SCSS partials
 - MDX via `next-mdx-remote`
@@ -13,7 +15,7 @@ A Next.js 14 website for MSG91 with localized data, MDX-powered blog, Tailwind C
 
 ## Requirements
 
-- Node.js ≥ 18
+- Node.js ≥ 20.9 (required by Next.js 16)
 - npm ≥ 10
 
 ## Getting Started
@@ -47,12 +49,13 @@ A Next.js 14 website for MSG91 with localized data, MDX-powered blog, Tailwind C
 - `npm run dev` — Start dev server on 3030
 - `npm run build` — Production build
 - `npm start` — Serve production build on 3030
-- `npm run lint` — Next.js lint
+- `npm run lint` — currently broken: Next.js 16 removed `next lint` (see docs/OPEN_QUESTIONS.md)
+- `node scripts/check-page-data.mjs` — checks every page JSON key is a registered component
 - `npm run prepare` — Setup Husky
 
 ## Environment Variables
 
-Configured in `next.config.mjs` and injected into the app:
+Configured in `next.config.mjs` and injected into the app. The full table with where each is read is in [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md).
 
 - **URLs**
     - `BASE_URL`
@@ -62,10 +65,7 @@ Configured in `next.config.mjs` and injected into the app:
     - `SUBSCRIPTION_PRICING_URL`
     - `VOICE_API_URL`
     - `LOGIN_URL`
-    - `CHATBOT_BASE_URL`
     - `HELLO_API_URL`
-    - `CHATBOT_TEMPLATE_TEST_URL`
-    - `WHATSAPP_PRICING_URL`
     - `IMESSAGE_URL`
 
 - **Client IDs**

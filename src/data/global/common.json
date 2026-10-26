@@ -279,10 +279,6 @@
                     "name": "Free WhatsApp link generator",
                     "link": "free-whatsapp-link-generator"
                 },
-                   {
-                    "name": "Free Apple Link Generator",
-                    "link": "free-apple-messages-for-business-link-generator"
-                },
                 {
                     "name": "Free Apple Link Generator",
                     "link": "free-apple-messages-for-business-link-generator"
@@ -393,10 +389,6 @@
                 {
                     "name": "Cost comparison",
                     "link": "cost-comparision"
-                },
-                {
-                    "name": "Event registration",
-                    "link": "event-registration"
                 }
             ]
         },
@@ -475,6 +467,10 @@
                     "link": "https://www.youtube.com/@WalkoverWS"
                 }
             ]
+        },
+        "address": {
+            "name": "Superheroes, Inc.",
+            "address": "1111B S Governors Ave, STE 26780,<br/>Dover, DE 19904"
         }
     }
 }

@@ -48,7 +48,7 @@ export default function RegistrationForm({ data }) {
         }
         const websiteField = fields.find((field) => field?.name === 'website');
         if (websiteField && !WEBSITE_REGEX.test(formValues?.[websiteField?.name]?.trim())) {
-            toast.error(data?.errors?.website || 'Please enter a valid website URL.');
+            toast.error(data?.errors?.website);
             return;
         }
 

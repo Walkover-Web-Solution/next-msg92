@@ -1,0 +1,44 @@
+{
+    "skill": "create-ai-docs",
+    "skill_version": "2.0.0",
+    "created": "2026-10-22",
+    "last_run": {
+        "mode": "prepare",
+        "commit": "701fd33a",
+        "date": "2026-10-22"
+    },
+    "canonical_docs": [
+        "AGENTS.md",
+        "docs/VISION.md",
+        "docs/ARCHITECTURE.md",
+        "docs/FLOWS.md",
+        "docs/DESIGN.md",
+        "docs/CONTRACTS.md",
+        "docs/DEVELOPMENT.md",
+        "docs/DECISIONS.md",
+        "docs/OPEN_QUESTIONS.md"
+    ],
+    "docs": {
+        "AGENTS.md": "AGENTS.md",
+        "CLAUDE.md": "(adapter: @AGENTS.md)",
+        "docs/README.md": "docs-README.md",
+        "docs/VISION.md": "VISION.md",
+        "docs/ARCHITECTURE.md": "ARCHITECTURE.md",
+        "docs/FLOWS.md": "FLOWS.md",
+        "docs/DESIGN.md": "DESIGN.md",
+        "docs/CONTRACTS.md": "CONTRACTS.md",
+        "docs/DEVELOPMENT.md": "DEVELOPMENT.md",
+        "docs/DECISIONS.md": "DECISIONS.md",
+        "docs/OPEN_QUESTIONS.md": "OPEN_QUESTIONS.md"
+    },
+    "skipped_templates": {
+        "docs/00-24 numbered guides": "Replaced by the nine canonical docs; a ~24k-line marketing site doesn't need 25 files and they would duplicate facts",
+        "docs/modules/*": "Feature areas fit inside ARCHITECTURE.md and FLOWS.md without exceeding size budgets",
+        "docs/api/*": "Seven small internal API routes are covered in CONTRACTS.md",
+        "docs/database/*": "No database; page data is static JSON documented in CONTRACTS.md",
+        "docs/ui/*": "Shared components are catalogued in DESIGN.md",
+        "docs/current-infrastructure/*": "External MSG91 services are listed in CONTRACTS.md and ARCHITECTURE.md",
+        "docs/plans, docs/brainstorms": "Written per change, never generated"
+    },
+    "superseded": []
+}

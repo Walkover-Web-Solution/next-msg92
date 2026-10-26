@@ -7,6 +7,7 @@ import { getQueryParamsDeatils, setCookie, getCookie, loginWithGitHubAccount } f
 import { getErrorMessage, otpWidgetSetup, waitForInitSendOTP } from '@/utils/otpSigninWidget';
 import { toast } from 'react-toastify';
 import Image from 'next/image';
+import HeadComp from '@/components/HeadComp/HeadComp';
 const SUCCESS_REDIRECTION_URL = process.env.API_BASE_URL + '/api/nexusRedirection.php?session=:session';
 const MOBILE_EMAIL_LOGIN_URL = process.env.API_BASE_URL + '/api/v5/nexus/mobileEmailLogin';
 const GOOGLE_LOGIN_URL = process.env.API_BASE_URL + '/api/v5/nexus/googleLogin';
@@ -147,6 +148,14 @@ export default function SignIn() {
 
     return (
         <>
+            <HeadComp
+                pageInfo={{ page: 'signin' }}
+                data={{
+                    title: 'Login | MSG91',
+                    description:
+                        'Continue to your MSG91 workspace. Sign in to access the complete suite of MSG91 products.',
+                }}
+            />
             <section className='signin flex flex-col-reverse md:flex-row md:items-start'>
                 <div className='flex w-full flex-col gap-8 bg-secondary px-2 py-10 sm:px-10 sm:py-16 md:min-h-screen md:w-1/2 md:py-20 lg:w-1/3 xl:w-1/4'>
                     <div className='flex flex-col gap-6'>
