@@ -164,7 +164,7 @@
         "services": [
             {
                 "icon": "/assets/icons/products/shorturl.svg",
-                "name": "URL Shortner",
+                "name": "URL Shortener",
                 "img": "/assets/global/index/services/shorturl.svg",
                 "heading": "Make your long URLs short",
                 "description": "Automatically shortens URL and tracks your success, one click at a time. Turn your long, messy links into short, memorable branded links",
