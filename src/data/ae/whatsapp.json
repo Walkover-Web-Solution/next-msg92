@@ -3,6 +3,44 @@
         "title": "WhatsApp API for businesses | MSG91-United Arab Emirates",
         "description": "Deliver instant notifications and customer support with MSG91’s WhatsApp API. Connect with your audience in real time through the world’s leading chat platform."
     },
+    "BannerComp": {
+        "slug": "whatsapp",
+        "product": {
+            "name": "WhatsApp",
+            "icon": "/assets/icons/products/whatsapp.svg"
+        },
+        "tagline": "WhatsApp Business Solutions",
+        "heading": "Seamless Global messaging and communications.",
+        "subheading": "Use Developer Friendly API to ensure smooth, real-time communication with your customers globally, enhancing engagement and satisfaction.",
+        "lottie": "/assets/lotties/global-whatsapp.json",
+        "getstarted_btn": "Get Started",
+        "schedule_meet": "Schedule a Meeting",
+        "trustedByComp": {
+            "heading": "Trusted by 30,000+ global businesses",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
+    },
     "WhyChooseMSG91": {
         "heading": "Why Choose MSG91 for WhatsApp Business?",
         "subheading": "MSG91 makes WhatsApp your most powerful communication channel — for marketing, support, sales, and everything in between. Reach customers where they actually respond.",
@@ -75,44 +113,6 @@
             ],
             "img": "/assets/us/whatsapp/drive_sales_directly_on_whatsapp.json",
             "schedule_meet": "Book a Meeting"
-        }
-    },
-    "BannerComp": {
-        "slug": "whatsapp",
-        "product": {
-            "name": "WhatsApp",
-            "icon": "/assets/icons/products/whatsapp.svg"
-        },
-        "tagline": "WhatsApp Business Solutions",
-        "heading": "Seamless Global messaging and communications.",
-        "subheading": "Use Developer Friendly API to ensure smooth, real-time communication with your customers globally, enhancing engagement and satisfaction.",
-        "lottie": "/assets/lotties/global-whatsapp.json",
-        "getstarted_btn": "Get Started",
-        "schedule_meet": "Schedule a Meeting",
-        "trustedByComp": {
-            "heading": "Trusted by 30,000+ global businesses",
-            "logos": [
-                {
-                    "name": "Xiaomi",
-                    "url": "/assets/trusted_by/xiaomi.svg"
-                },
-                {
-                    "name": "Unacademy",
-                    "url": "/assets/trusted_by/unacademy.svg"
-                },
-                {
-                    "name": "Dream11",
-                    "url": "/assets/trusted_by/dream11.svg"
-                },
-                {
-                    "name": "Indeed",
-                    "url": "/assets/trusted_by/indeed.svg"
-                },
-                {
-                    "name": "Ixigo",
-                    "url": "/assets/trusted_by/ixigo.svg"
-                }
-            ]
         }
     },
     "FeatureComp": {
