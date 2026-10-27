@@ -11,8 +11,8 @@
     "icon": "/assets/icons/products/rcs.svg"
   },
   "code": false,
-  "heading": "RCS Business Messaging with Smart SMS Fallback",
-  "subheading": "From branded campaigns and interactive product showcases to AI-powered chatbots and API integrations, MSG91 helps businesses create richer customer experiences. When RCS delivery fails, automatic RCS-to-SMS fallback keeps important updates moving without manual intervention. Customize automatic fallback across RCS, SMS, WhatsApp, and Email—your way.",
+  "heading": "RCS Business Messaging with Auto SMS Fallback",
+  "subheading": "From branded campaigns and interactive product showcases to AI-powered chatbots and API integrations, MSG91 helps businesses create richer customer experiences. When RCS delivery fails, automatic RCS-to-SMS fallback keeps important updates moving without manual intervention. Customize automatic fallback across SMS, WhatsApp, and Email—your way.",
   "banner_video": "/assets/rcs/hero_section.webm",
   "not_absolute": "true",
   "getstarted_btn": "Get Started",
