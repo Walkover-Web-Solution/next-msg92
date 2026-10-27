@@ -100,6 +100,11 @@
 @include product-color('rcs');
 @include product-color('email');
 @include product-color('whatsapp');
+
+.whatsapp_hover_lite:hover {
+    background-color: var(--whatsapp-lite-color) !important;
+}
+
 @include product-color('voice');
 @include product-color('numbers');
 @include product-color('shorturl');

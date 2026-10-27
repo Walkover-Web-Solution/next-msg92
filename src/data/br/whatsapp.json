@@ -1,6 +1,6 @@
 {
     "HeadComp": {
-        "title": "WhatsApp Business API in Brazil | Marketing & AI – MSG91",
+        "title": "WhatsApp Business Platform in Brazil | Marketing & AI – MSG91",
         "description": "Grow your business with MSG91 WhatsApp Business API in Brazil. Automate campaigns, customer support, AI chatbots and transactional messages in one platform."
     },
     "BannerComp": {
@@ -11,7 +11,7 @@
         },
         "tagline": "WhatsApp Business Platform in Brazil",
         "heading": "Turn Everyday Conversations Into More Sales and Happier Customers",
-        "subheading": "Your customers are already using WhatsApp to ask questions, explore products, and connect with businesses. Why make them wait for a response? With MSG91 WhatsApp Business API, you can send personalised campaigns, automate customer conversations, share real-time updates, and manage support from one platform. Whether you're running an online store in São Paulo or managing customer enquiries across Brazil, MSG91 helps you communicate faster and keep every conversation moving.",
+        "subheading": "Your customers are already using WhatsApp to ask questions, explore products, and connect with businesses. Why make them wait for a response? With MSG91 WhatsApp Business Platform, you can send personalised campaigns, automate customer conversations, share real-time updates, and manage support from one platform. Whether you're running an online store in São Paulo or managing customer enquiries across Brazil, MSG91 helps you communicate faster and keep every conversation moving.",
         "lottie": "/assets/lotties/global-whatsapp.json",
         "getstarted_btn": "Get Started",
         "schedule_meet": "Book a Demo",
@@ -49,21 +49,28 @@
             "MSG91 helps your business automate repetitive communication while keeping your team available for conversations that need personal attention.",
             "From sending the first message to managing follow-ups and customer support, everything works together."
         ],
+        "cta": {
+            "text": "Get Started"
+        },
         "ways_heading": "Four Ways MSG91 Helps Your Business",
         "ways": [
             {
+                "icon": "MdCampaign",
                 "title": "Marketing",
                 "description": "Reach opted-in customers with campaigns that match their interests."
             },
             {
+                "icon": "MdNotificationsActive",
                 "title": "Notifications",
                 "description": "Automatically send order updates, reminders, OTPs, and other important messages."
             },
             {
+                "icon": "MdSupportAgent",
                 "title": "Customer Support",
                 "description": "Answer questions with AI chatbots and connect customers with human agents."
             },
             {
+                "icon": "MdShoppingCart",
                 "title": "Sales",
                 "description": "Help customers explore products, enquire about services, and move towards a purchase."
             }
@@ -107,7 +114,7 @@
             },
             {
                 "name": "Transactional WhatsApp Messaging",
-                "content": "Customers expect important updates without having to chase your team for them. With the WhatsApp Business Cloud API in Brazil, MSG91 connects approved transactional messages to business events, helping companies send order confirmations, payment notifications, service updates, and other essential information automatically.",
+                "content": "Customers expect important updates without having to chase your team for them. With the WhatsApp Business Platform in Brazil, MSG91 connects approved transactional messages to business events, helping companies send order confirmations, payment notifications, service updates, and other essential information automatically.",
                 "more_content": {
                     "usecases": [
                         {
@@ -261,7 +268,8 @@
                         "Automated lead qualification before agent involvement.",
                         "CRM-connected sales follow-ups through supported integrations."
                     ]
-                }
+                },
+                "img": "/assets/us/whatsapp/drive_sales_directly_on_whatsapp.json"
             },
             {
                 "name": "Click-to-WhatsApp Ads for Lead Generation",
@@ -400,7 +408,7 @@
                 "img": "/assets/in/whatsapp/whatsapp-click-counts.svg"
             },
             {
-                "name": "Base64 Media Support for WhatsApp API",
+                "name": "Base64 Media Support for WhatsApp Platform",
                 "content": "Sending documents and media shouldn't require developers to build unnecessary file-hosting steps for every supported workflow. MSG91's WhatsApp integration includes Base64 media support, allowing compatible file content to be supplied through supported API payload formats rather than requiring businesses to manually manage a public media URL in every case.",
                 "more_content": {
                     "usecases": [
@@ -559,7 +567,8 @@
                         "Payment requests connected to sales or service conversations.",
                         "Automated payment reminders and follow-ups where supported."
                     ]
-                }
+                },
+                "img": "/assets/lotties/global-whatsapp.json"
             },
             {
                 "name": "WhatsApp Opt-Out and Blacklist Management",
@@ -598,7 +607,7 @@
             },
             {
                 "name": "Audience Segmentation for Targeted WhatsApp Communication",
-                "content": "A customer who buys pet food doesn't necessarily want offers for home furniture. MSG91 helps businesses organise contacts into relevant groups using available customer information and supported segmentation workflows. As WhatsApp Business API providers in Brazil serve businesses with different audiences, having the flexibility to target the right contacts helps make campaigns more useful and less repetitive.",
+                "content": "A customer who buys pet food doesn't necessarily want offers for home furniture. MSG91 helps businesses organise contacts into relevant groups using available customer information and supported segmentation workflows. As WhatsApp Business service provider in Brazil serve businesses with different audiences, having the flexibility to target the right contacts helps make campaigns more useful and less repetitive.",
                 "more_content": {
                     "usecases": [
                         {
@@ -629,7 +638,7 @@
             },
             {
                 "name": "WhatsApp Integrations, APIs, and Webhooks",
-                "content": "WhatsApp becomes more useful when it works with the software your business already uses. As a WhatsApp Business API service provider in Brazil, MSG91 offers supported integrations, messaging APIs, and webhooks to connect WhatsApp with e-commerce systems, CRMs, and custom applications. This allows businesses to trigger messages from real events and receive supported messaging updates in their systems.",
+                "content": "WhatsApp becomes more useful when it works with the software your business already uses. As a WhatsApp Business Platform, MSG91 offers supported integrations, messaging APIs, and webhooks to connect WhatsApp with e-commerce systems, CRMs, and custom applications. This allows businesses to trigger messages from real events and receive supported messaging updates in their systems.",
                 "more_content": {
                     "usecases": [
                         {
@@ -764,11 +773,13 @@
                 "button": {
                     "name": "Explore the MSG91 Chat Window Setup Guide",
                     "link": "https://msg91.com/help/whatsapp/how-"
-                }
+                },
+                "video": "/assets/global/whatsapp/hero_section.webm"
             }
         ]
     },
     "FooterCta": {
+        "bg": true,
         "heading": "Your WhatsApp Communication Should Work as Hard as You Do",
         "description": "From seasonal promotions to everyday customer support, MSG91 helps your business manage conversations without unnecessary manual work.",
         "primaryLabel": "Get Started With MSG91",
@@ -801,7 +812,7 @@
             },
             {
                 "title": "Get Help From Setup to Everyday Operations",
-                "description": "MSG91's onboarding team can assist with Meta account connection, number verification, template configuration, integrations, and getting your first messaging workflows running. Support is available through email, WhatsApp, calls, and scheduled meetings, with automated assistance for supported questions."
+                "description": "MSG91's onboarding team can help with Meta account setup, number verification, templates, and integrations with support available by email, WhatsApp, calls, and meetings."
             },
             {
                 "title": "Communicate with Confidence Through Strong Security",
@@ -850,34 +861,35 @@
         ]
     },
     "WhatsAppProcessSteps": {
+        "kicker": "How to Get Started With MSG91 WhatsApp Business Platform",
         "heading": "From Account Setup to Your First Message",
         "steps": [
             {
                 "number": "1",
                 "icon": "MdEditNote",
-                "title": "Create your MSG91 account",
+                "title": "Create Your MSG91 Account",
                 "description": "Sign up for MSG91 and select WhatsApp from the dashboard."
             },
             {
                 "number": "2",
                 "icon": "MdLink",
-                "title": "Connect your business",
+                "title": "Connect Your Business",
                 "description": "Connect your Meta Business Portfolio, add an eligible Brazilian phone number (+55), and complete the required verification."
             },
             {
                 "number": "3",
                 "icon": "MdSettings",
-                "title": "Configure your communication",
-                "description": "Create approved WhatsApp templates, connect your business systems, and set up campaigns, chatbots, or notification workflows."
+                "title": "Configure Your Communication",
+                "description": "Create approved WhatsApp templates, connect relevant business systems, and set up your campaigns, chatbots, or notification workflows."
             },
             {
                 "number": "4",
                 "icon": "MdChatBubbleOutline",
-                "title": "Start communicating",
-                "description": "Send eligible messages, manage enquiries through Hello, and review performance in MSG91 reporting."
+                "title": "Start Communicating",
+                "description": "Send eligible messages, manage customer enquiries through Hello, and review performance through MSG91 reporting."
             }
         ],
-        "note": "Already using the WhatsApp Business App? Eligible businesses in Brazil may be able to use WhatsApp Coexistence or migrate an existing number, subject to Meta's requirements. The MSG91 onboarding team can help with account configuration, number setup, templates, and integrations.",
+        "note": "Already using the WhatsApp Business App? Eligible businesses in Brazil may be able to use WhatsApp Coexistence or migrate an existing number, subject to Meta's requirements. Need assistance? The MSG91 onboarding team can help with account configuration, number setup, templates, and integrations.",
         "cta": {
             "text": "Start Using WhatsApp Business API"
         }

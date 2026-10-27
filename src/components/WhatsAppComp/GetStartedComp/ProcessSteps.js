@@ -1,4 +1,4 @@
-import { MdEditNote, MdLink, MdSettings, MdChatBubbleOutline } from 'react-icons/md';
+import { MdEditNote, MdLink, MdSettings, MdChatBubbleOutline, MdChevronRight } from 'react-icons/md';
 import getURL from '@/utils/getURL';
 
 const iconMap = {
@@ -11,59 +11,75 @@ const iconMap = {
 export default function ProcessSteps({ data, pageInfo }) {
     if (!data?.heading) return null;
 
+    const steps = data?.steps || [];
+
     return (
         <section>
             <div className='container cont cont_p cont_gap'>
                 <header className='cont cont_gap items-center text-center'>
-                    {data?.kicker && <p className='text-sm font-semibold text-whatsapp'>{data?.kicker}</p>}
-                    <h2 className='heading'>{data?.heading}</h2>
+                    {data?.kicker && <p className='text-2xl md:text-3xl font-bold text-primary'>{data?.kicker}</p>}
+                    <h2 className='text-lg md:text-xl font-semibold text-gray-600'>{data?.heading}</h2>
                     {data?.description && <p className='subheading'>{data?.description}</p>}
                 </header>
 
-                {data?.steps?.length > 0 && (
-                    <div className='relative w-full'>
-                        <div className='hidden lg:block absolute top-10 left-[10%] right-[10%] border-t border-dashed border-gray-200 z-0 pointer-events-none' />
+                {steps?.length > 0 && (
+                    <ul className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 cont_gap'>
+                        {steps?.map((step, index) => {
+                            const Icon = iconMap[step?.icon];
+                            const isLast = index === steps.length - 1;
 
-                        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 cont_gap relative z-10'>
-                            {data?.steps?.map((step, index) => {
-                                const Icon = iconMap[step?.icon];
+                            return (
+                                <li key={index} className='relative flex'>
+                                    <article className='cont cont_gap w-full rounded-2xl border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-[var(--whatsapp-color)]'>
+                                        <div className='flex items-center justify-between'>
+                                            <span className='whatsapp_lite_bg flex h-12 w-12 items-center justify-center rounded-xl'>
+                                                {Icon && <Icon size={26} className='text-whatsapp' />}
+                                            </span>
+                                            {step?.number && (
+                                                <span className='whatsapp_lite_bg rounded-full px-3 py-1 text-xs font-bold text-whatsapp'>
+                                                    Step {step?.number}
+                                                </span>
+                                            )}
+                                        </div>
+                                        <div className='cont gap-2'>
+                                            {step?.title && (
+                                                <h3 className='text-lg font-bold leading-snug'>{step?.title}</h3>
+                                            )}
+                                            {step?.description && (
+                                                <p className='text-base leading-relaxed text-gray-600'>
+                                                    {step?.description}
+                                                </p>
+                                            )}
+                                        </div>
+                                    </article>
 
-                                return (
-                                    <div key={index} className='cont cont_gap items-center text-center'>
-                                        <span className='whatsapp_lite_bg flex h-20 w-20 items-center justify-center rounded-full relative z-10'>
-                                            {Icon && <Icon size={30} className='text-whatsapp' />}
+                                    {!isLast && (
+                                        <span
+                                            aria-hidden
+                                            className='absolute -right-5 top-8 z-10 hidden h-7 w-7 items-center justify-center rounded-full border border-gray-200 bg-white text-whatsapp lg:flex'
+                                        >
+                                            <MdChevronRight size={18} />
                                         </span>
-                                        {step?.number && (
-                                            <p className='text-sm font-bold text-whatsapp'>Step {step?.number}</p>
-                                        )}
-                                        {step?.title && <h3 className='text-lg font-bold'>{step?.title}</h3>}
-                                        {step?.description && (
-                                            <p className='text-base text-gray-600'>{step?.description}</p>
-                                        )}
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    </div>
+                                    )}
+                                </li>
+                            );
+                        })}
+                    </ul>
                 )}
 
                 {(data?.note || data?.cta?.text) && (
-                    <div className='cont cont_gap items-center w-full'>
-                        {data?.note && (
-                            <div className='flex w-full'>
-                                <span className='w-1 whatsapp_bg shrink-0' aria-hidden />
-                                <div className='whatsapp_lite_bg flex-1 p-4'>
-                                    <p className='text-base text-gray-600'>{data?.note}</p>
-                                </div>
-                            </div>
-                        )}
+                    <div className='whatsapp_lite_bg flex w-full flex-col cont_gap rounded-2xl p-6 md:flex-row md:items-center md:justify-between md:p-8'>
+                        {data?.note && <p className='flex-1 text-base text-gray-600'>{data?.note}</p>}
                         {data?.cta?.text && (
                             <a
                                 href={getURL('signup', pageInfo?.page, pageInfo)}
                                 target='_blank'
                                 rel='noopener noreferrer'
+                                className='shrink-0'
                             >
-                                <button className='btn btn-md whatsapp_bg text-white'>{data?.cta?.text}</button>
+                                <button className='btn btn-md whatsapp_bg w-full text-white md:w-auto'>
+                                    {data?.cta?.text}
+                                </button>
                             </a>
                         )}
                     </div>
