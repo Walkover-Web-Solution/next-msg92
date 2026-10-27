@@ -199,7 +199,7 @@
       },
       {
         "name": "Two-Way RCS Business Messaging",
-        "content": "<strong>Turn Customer Queries into Conversations</strong> <p>From product enquiries, order tracking, booking confirmations, and payment assistance to returns, refunds, complaint resolution, appointment scheduling, lead qualification, and technical support, MSG91 helps businesses manage customer conversations with AI-powered chatbots and human agents.</p> <p>With <a href=\"https://msg91.com/hello\">MSG91 Hello</a>, businesses can automate customer interactions and seamlessly transfer conversations from AI chatbots to human agents whenever needed. Agents can also respond to customers on RCS directly from their phones using the free MSG91 Hello mobile application, available for Android and iOS.Get started with  <a href=\"https://apps.apple.com/in/app/hello-chatbot-shared-inbox/id1635375551\">Hello iOS Application</a> and <a href=\"https://play.google.com/store/apps/details?id=com.hellornapp\">Hello Android Application</a> right away.</p>",
+        "content": "<strong>Turn Customer Queries into Conversations</strong> <p>From product enquiries, order tracking, booking confirmations, and payment assistance to returns, refunds, complaint resolution, appointment scheduling, lead qualification, and technical support, MSG91 helps businesses manage customer conversations with AI-powered chatbots and human agents.</p> <p>With <a href=\"https://msg91.com/hello\" class='text-link active-link' target='_blank'>MSG91 Hello</a>, businesses can automate customer interactions and seamlessly transfer conversations from AI chatbots to human agents whenever needed. Agents can also respond to customers on RCS directly from their phones using the free MSG91 Hello mobile application, available for Android and iOS.Get started with  <a href=\"https://apps.apple.com/in/app/hello-chatbot-shared-inbox/id1635375551\" class='text-link active-link' target='_blank'>Hello iOS Application</a> and <a href=\"https://play.google.com/store/apps/details?id=com.hellornapp\" class='text-link active-link' target='_blank'>Hello Android Application</a> right away.</p>",
         "more_content": {
           "usecases": [
             {
@@ -343,7 +343,7 @@
       },
       {
         "name": "Automatic RCS-to-SMS Fallback",
-        "content": "<strong>When RCS Delivery Fails, SMS Takes Over</strong> <p>Important customer updates shouldn't depend on a single delivery attempt. With MSG91's automatic RCS-to-SMS fallback, retry failed RCS messages through SMS without manually resending them. Businesses can also configure supported multichannel messaging workflows across RCS, <a href=\"http://msg91.com/sms\">SMS</a>, <a href=\"http://msg91.com/whatsapp\">WhatsApp</a>, and <a href=\"http://msg91.com/email\">Email</a> based on their communication requirements.</p>",
+        "content": "<strong>When RCS Delivery Fails, SMS Takes Over</strong> <p>Important customer updates shouldn't depend on a single delivery attempt. With MSG91's automatic RCS-to-SMS fallback, retry failed RCS messages through SMS without manually resending them. Businesses can also configure supported multichannel messaging workflows across RCS, <a href=\"http://msg91.com/sms\" class='text-link active-link' target='_blank'>SMS</a>, <a href=\"http://msg91.com/whatsapp\" class='text-link active-link' target='_blank'>WhatsApp</a>, and <a href=\"http://msg91.com/email\" class='text-link active-link' target='_blank'>Email</a> based on their communication requirements.</p>",
         "more_content": {
           "usecases": [
             {
@@ -379,7 +379,7 @@
       },
       {
         "name": "AI-Powered RCS Chatbot for Customer Support",
-        "content": "<strong>Let AI Handle Every Question of your Customer</strong> <p>From answering product enquiries to resolving delivery issues, MSG91's <a href=\"https://msg91.com/chatbot\">AI-powered chatbot</a> helps businesses manage customer conversations without relying on human agents for every request. With connected business systems, AI can check order details, recommend products, refund, exchange, and guide customers through multiple steps, and complete supported actions. When human assistance is needed, conversations can be transferred to human agent from chatbot smoothly through <a href=\"https://msg91.com/hello\">MSG91 Hello</a>.</p>",
+        "content": "<strong>Let AI Handle Every Question of your Customer</strong> <p>From answering product enquiries to resolving delivery issues, MSG91's <a href=\"https://msg91.com/chatbot\" class='text-link active-link' target='_blank'>AI-powered chatbot</a> helps businesses manage customer conversations without relying on human agents for every request. With connected business systems, AI can check order details, recommend products, refund, exchange, and guide customers through multiple steps, and complete supported actions. When human assistance is needed, conversations can be transferred to human agent from chatbot smoothly through <a href=\"https://msg91.com/hello\"  class='text-link active-link' target='_blank'>MSG91 Hello</a>.</p>",
         "more_content": {
           "usecases": [
             {
@@ -415,7 +415,7 @@
       },
       {
         "name": "Unified RCS Customer Support with MSG91 Hello",
-        "content": "<strong>Keep Customer Conversations Connected, Even When AI Needs Help</strong> <p>Not every customer question can be solved by automation. With <a href=\"https://msg91.com/hello\">MSG91 Hello</a>, manage RCS conversations in one shared inbox, seamlessly hand over queries to human agents when asked from the customer, and keep conversation history for better support. The Hello mobile app also helps your team respond to customers anytime, anywhere.</p>",
+        "content": "<strong>Keep Customer Conversations Connected, Even When AI Needs Help</strong> <p>Not every customer question can be solved by automation. With <a href=\"https://msg91.com/hello\" class='text-link active-link' target='_blank'>MSG91 Hello</a>, manage RCS conversations in one shared inbox, seamlessly hand over queries to human agents when asked from the customer, and keep conversation history for better support. The Hello mobile app also helps your team respond to customers anytime, anywhere.</p>",
         "more_content": {
           "usecases": [
             {
@@ -451,7 +451,7 @@
       },
       {
         "name": "End-to-End RCS Onboarding with MSG91",
-        "content": "<strong>From Registration to Your First Campaign, Get the Guidance You Need</strong> <p>Getting started with RCS Business Messaging is simple with MSG91. First, <a href=\"https://calendly.com/msg91-rcs/15-min-rcs-meeting\">schedule a meeting</a> with our RCS specialist team to discuss your requirements. Our team then collects your business details and documents, guides you through registration, and helps you get your RCS agent verified and approved. Once your agent is ready, create your message templates and launch your first RCS campaign through the MSG91 dashboard or API, with end-to-end support from our team throughout the registration process.</p>",
+        "content": "<strong>From Registration to Your First Campaign, Get the Guidance You Need</strong> <p>Getting started with RCS Business Messaging is simple with MSG91. First, <a href=\"https://calendly.com/msg91-rcs/15-min-rcs-meeting\" class='text-link active-link' target='_blank'>schedule a meeting</a> with our RCS specialist team to discuss your requirements. Our team then collects your business details and documents, guides you through registration, and helps you get your RCS agent verified and approved. Once your agent is ready, create your message templates and launch your first RCS campaign through the MSG91 dashboard or API, with end-to-end support from our team throughout the registration process.</p>",
         "more_content": {
           "usecases": [
             {
@@ -487,7 +487,7 @@
       },
       {
         "name": "Automated RCS Workflows and Smart Follow-Ups",
-        "content": "<strong>Turn Every Customer Action into the Next Conversation</strong> <p>Why stop at one message when you can automate the entire customer journey? With MSG91 Flow, <a href=\"https://msg91.com/campaign\">create automated workflows</a> across RCS, SMS, WhatsApp, and Email based on customer actions. Whether someone clicks a button, reads a message, or doesn't respond, automatically trigger the next message on the right channel. Set delays in minutes, hours, or days to keep conversations moving without manual follow-ups.</p>",
+        "content": "<strong>Turn Every Customer Action into the Next Conversation</strong> <p>Why stop at one message when you can automate the entire customer journey? With MSG91 Flow, <a href=\"https://msg91.com/campaign\" class='text-link active-link' target='_blank'>create automated workflows</a> across RCS, SMS, WhatsApp, and Email based on customer actions. Whether someone clicks a button, reads a message, or doesn't respond, automatically trigger the next message on the right channel. Set delays in minutes, hours, or days to keep conversations moving without manual follow-ups.</p>",
         "more_content": {
           "usecases": [
             {
@@ -523,7 +523,7 @@
       },
       {
         "name": "Dedicated RCS Customer Support from MSG91",
-        "content": "<strong>Get the Support You Need, Even After Going Live</strong> <p>Your RCS messaging requirements don't end with your first campaign. MSG91 provides ongoing assistance with API integrations, template configuration, delivery concerns, and messaging workflows. Connect with <a href=\"https://msg91.com/contact-us\">the support team</a> through email, WhatsApp, calls, or scheduled meetings to get help with technical questions and campaign-related requirements.</p>",
+        "content": "<strong>Get the Support You Need, Even After Going Live</strong> <p>Your RCS messaging requirements don't end with your first campaign. MSG91 provides ongoing assistance with API integrations, template configuration, delivery concerns, and messaging workflows. Connect with <a href=\"https://msg91.com/contact-us\" class='text-link active-link' target='_blank'>the support team</a> through email, WhatsApp, calls, or scheduled meetings to get help with technical questions and campaign-related requirements.</p>",
         "more_content": {
           "usecases": [
             {
@@ -814,7 +814,7 @@
       {
         "icon": "🔁",
         "title": "Automatic RCS-to-SMS Fallback",
-        "description": "<strong>When RCS can't deliver, keep important updates moving</strong>. <p>MSG91 can retry failed RCS messages through configured <a href=\"https://msg91.com/sms\">SMS</a> fallback workflows, including order updates and appointment reminders.\n\n𝗘𝘅𝗮𝗺𝗽𝗹𝗲: If an e-commerce delivery notification fails over RCS, MSG91 attempts to send the essential update through SMS.\n\n𝗪𝗵𝘆 𝗠𝗦𝗚𝟵𝟭: Automated fallback reduces manual effort and gives important notifications an alternative delivery route.</p>",
+        "description": "<strong>When RCS can't deliver, keep important updates moving</strong>. <p>MSG91 can retry failed RCS messages through configured <a href=\"https://msg91.com/sms\" class='text-link active-link' target='_blank'>SMS</a> fallback workflows, including order updates and appointment reminders.\n\n𝗘𝘅𝗮𝗺𝗽𝗹𝗲: If an e-commerce delivery notification fails over RCS, MSG91 attempts to send the essential update through SMS.\n\n𝗪𝗵𝘆 𝗠𝗦𝗚𝟵𝟭: Automated fallback reduces manual effort and gives important notifications an alternative delivery route.</p>",
         "links": [
           {
             "label": "SMS",
@@ -825,7 +825,7 @@
       {
         "icon": "🤖",
         "title": "AI-Powered RCS Chatbots That Go Beyond FAQs",
-        "description": "<strong>Handle more customer questions without adding more manual work</strong> <p>MSG91's <a href=\"https://msg91.com/chatbot\">AI chatbot</a> helps businesses answer routine questions and manage detailed requests through connected systems.\n\n𝗘𝘅𝗮𝗺𝗽𝗹𝗲: A customer looking for a laptop for video editing under ₹70,000 can be asked about software preferences and receive recommendations from the retailer's connected catalogue. When personal assistance is required, the conversation can move to a human agent through MSG91 Hello.\n\n𝗪𝗵𝘆 𝗠𝗦𝗚𝟵𝟭: Manage more customer enquiries through AI while keeping human support available when needed.</p>",
+        "description": "<strong>Handle more customer questions without adding more manual work</strong> <p>MSG91's <a href=\"https://msg91.com/chatbot\" class='text-link active-link' target='_blank'>AI chatbot</a> helps businesses answer routine questions and manage detailed requests through connected systems.\n\n𝗘𝘅𝗮𝗺𝗽𝗹𝗲: A customer looking for a laptop for video editing under ₹70,000 can be asked about software preferences and receive recommendations from the retailer's connected catalogue. When personal assistance is required, the conversation can move to a human agent through MSG91 Hello.\n\n𝗪𝗵𝘆 𝗠𝗦𝗚𝟵𝟭: Manage more customer enquiries through AI while keeping human support available when needed.</p>",
         "links": [
           {
             "label": "AI chatbot",
@@ -846,7 +846,7 @@
       {
         "icon": "💬",
         "title": "One Communication Platform for Multiple Channels",
-        "description": "<strong>Manage more than RCS with MSG91</strong> <p>Bring RCS together with <a href=\"https://msg91.com/sms\">SMS</a>, <a href=\"https://msg91.com/whatsapp\">WhatsApp</a>, <a href=\"http://msg91.com/email\">email</a>, and <a href=\"http://msg91.com/voice\">voice capabilities</a>. Businesses can choose the channels that fit their communication needs instead of relying on a single messaging service for every interaction.\n\n𝗪𝗵𝘆 𝗠𝗦𝗚𝟵𝟭: Access multiple business communication channels through a connected platform.</p>",
+        "description": "<strong>Manage more than RCS with MSG91</strong> <p>Bring RCS together with <a href=\"https://msg91.com/sms\" class='text-link active-link' target='_blank'>SMS</a>, <a href=\"https://msg91.com/whatsapp\" class='text-link active-link' target='_blank'>WhatsApp</a>, <a href=\"http://msg91.com/email\" class='text-link active-link' target='_blank'>email</a>, and <a href=\"http://msg91.com/voice\" class='text-link active-link' target='_blank'>voice capabilities</a>. Businesses can choose the channels that fit their communication needs instead of relying on a single messaging service for every interaction.\n\n𝗪𝗵𝘆 𝗠𝗦𝗚𝟵𝟭: Access multiple business communication channels through a connected platform.</p>",
         "links": [
           {
             "label": "SMS",
@@ -959,7 +959,7 @@
       {
         "number": "1",
         "title": "Create Your MSG91 Account & Connect with Our Team",
-        "description": "<p><a href=\"https://msg91.com/signup\">Sign up for MSG91</a> and <a href=\"https://calendly.com/msg91-rcs/15-min-rcs-meeting\">schedule a meeting</a> with our RCS specialists to discuss your business requirements.</p>"
+        "description": "<p><a href=\"https://msg91.com/signup\" class='text-link active-link' target='_blank'>Sign up for MSG91</a> and <a href=\"https://calendly.com/msg91-rcs/15-min-rcs-meeting\" class='text-link active-link' target='_blank'>schedule a meeting</a> with our RCS specialists to discuss your business requirements.</p>"
       },
       {
         "number": "2",
@@ -1059,7 +1059,7 @@
       },
       {
         "question": "RCS vs WhatsApp: Which is better and more cost-effective for businesses in India?",
-        "answer": "Both RCS and WhatsApp serve different communication needs. RCS reaches customers through their default messaging inbox with verified branding, rich media, and interactive actions, while WhatsApp is useful for ongoing customer conversations and support. MSG91's promotional RCS messages start at ₹0.29 per message, which can be more cost-effective than WhatsApp marketing messages depending on the applicable rates and campaign requirements. With MSG91, businesses can use both channels and create automated fallback workflows across RCS, WhatsApp, SMS, and Email. Compare <a href=\"https://msg91.com/in/pricing/whatsapp\">MSG91 WhatsApp pricing</a> and <a href=\"https://msg91.com/in/pricing/rcs\">RCS pricing</a> to evaluate costs."
+        "answer": "Both RCS and WhatsApp serve different communication needs. RCS reaches customers through their default messaging inbox with verified branding, rich media, and interactive actions, while WhatsApp is useful for ongoing customer conversations and support. MSG91's promotional RCS messages start at ₹0.29 per message, which can be more cost-effective than WhatsApp marketing messages depending on the applicable rates and campaign requirements. With MSG91, businesses can use both channels and create automated fallback workflows across RCS, WhatsApp, SMS, and Email. Compare <a href=\"https://msg91.com/in/pricing/whatsapp\" class='text-link active-link' target='_blank'>MSG91 WhatsApp pricing</a> and <a href=\"https://msg91.com/in/pricing/rcs\" class='text-link active-link' target='_blank'>RCS pricing</a> to evaluate costs."
       },
       {
         "question": "How can e-commerce, D2C, and other industries use RCS Business Messaging in India?",
@@ -1079,7 +1079,7 @@
       },
       {
         "question": "Can customers reply to RCS messages, and does MSG91 support multilingual AI chatbots?",
-        "answer": "Yes. Customers can reply to RCS messages through text or suggested replies. MSG91's multilingual <a href=\"https://msg91.com/chatbot\">AI-powered chatbot</a> can handle FAQs, product enquiries, order updates, and complex, multi-step requests in multiple languages, enabling businesses to communicate with customers in their preferred language. With connected business systems, the chatbot can retrieve information and assist with relevant actions. When human assistance is needed, conversations can be seamlessly transferred to support agents through <a href=\"https://msg91.com/hello\">MSG91 Hello</a>."
+        "answer": "Yes. Customers can reply to RCS messages through text or suggested replies. MSG91's multilingual <a href=\"https://msg91.com/chatbot\" class='text-link active-link' target='_blank'>AI-powered chatbot</a> can handle FAQs, product enquiries, order updates, and complex, multi-step requests in multiple languages, enabling businesses to communicate with customers in their preferred language. With connected business systems, the chatbot can retrieve information and assist with relevant actions. When human assistance is needed, conversations can be seamlessly transferred to support agents through <a href=\"https://msg91.com/hello\" class='text-link active-link' target='_blank'>MSG91 Hello</a>."
       },
       {
         "question": "Can businesses track RCS campaign performance?",
@@ -1087,7 +1087,7 @@
       },
       {
         "question": "How much does RCS Business Messaging cost in India?",
-        "answer": "MSG91 offers three RCS Business Messaging plans for businesses in India:<ul><li><strong>Launch – ₹2,000/month:</strong> ₹0.15 per transactional message and ₹0.35 per promotional message.</li><li><strong>Build – ₹5,000/month:</strong> ₹0.12 per transactional message and ₹0.32 per promotional message.</li><li><strong>Grow – ₹10,000/month:</strong> ₹0.12 per transactional message and ₹0.29 per promotional message.</li></ul>Each plan includes RCS wallet credit equal to its monthly price, with 18% GST charged separately. Promotional and transactional RCS agents require separate plans. (Prices till October 2026)<p>For plan features, volume requirements, and the latest rates, explore <a href=\"https://msg91.com/in/pricing/rcs\">MSG91 RCS Pricing in India</a>.</p>"
+        "answer": "MSG91 offers three RCS Business Messaging plans for businesses in India:<ul><li><strong>Launch – ₹2,000/month:</strong> ₹0.15 per transactional message and ₹0.35 per promotional message.</li><li><strong>Build – ₹5,000/month:</strong> ₹0.12 per transactional message and ₹0.32 per promotional message.</li><li><strong>Grow – ₹10,000/month:</strong> ₹0.12 per transactional message and ₹0.29 per promotional message.</li></ul>Each plan includes RCS wallet credit equal to its monthly price, with 18% GST charged separately. Promotional and transactional RCS agents require separate plans. (Prices till October 2026)<p>For plan features, volume requirements, and the latest rates, explore <a href=\"https://msg91.com/in/pricing/rcs\" class='text-link active-link' target='_blank'>MSG91 RCS Pricing in India</a>.</p>"
       },
       {
         "question": "Which MSG91 RCS pricing plan offers the lowest rates, and can businesses get custom pricing?",
@@ -1095,7 +1095,7 @@
       },
       {
         "question": "Does MSG91 charge for failed RCS messages or SMS fallback?",
-        "answer": "No. MSG91 does not charge for failed RCS messages under its stated billing terms. However, when automatic fallback sends messages through SMS, charges apply according to the number of SMS messages sent and the applicable <a href=\"https://msg91.com/in/pricing/sms\">MSG91 SMS pricing</a>. WhatsApp and Email fallback messages are billed according to their respective channel rates."
+        "answer": "No. MSG91 does not charge for failed RCS messages under its stated billing terms. However, when automatic fallback sends messages through SMS, charges apply according to the number of SMS messages sent and the applicable <a href=\"https://msg91.com/in/pricing/sms\" class='text-link active-link' target='_blank'>MSG91 SMS pricing</a>. WhatsApp and Email fallback messages are billed according to their respective channel rates."
       },
       {
         "question": "Do businesses need separate plans for promotional and transactional RCS messages?",
@@ -1127,7 +1127,7 @@
       },
       {
         "question": "Can I try RCS Business Messaging before signing up, and how do I get started with MSG91?",
-        "answer": "Yes. MSG91 provides a live RCS experience through a QR code that allows users with RCS-enabled Android devices to explore branded and interactive messaging. Businesses can also request a personalized demo. To get started, <a href=\"https://msg91.com/signup\">create an MSG91 account</a> and <a href=\"https://calendly.com/msg91-rcs/15-min-rcs-meeting\">schedule a meeting</a> with the MSG91 RCS specialist team. Submit your business documents for verification and RCS agent registration, prepare your message templates, and choose between dashboard-based campaigns and API integration. MSG91 provides onboarding, template, API, campaign, and delivery-related support through email, WhatsApp, phone calls, and scheduled meetings."
+        "answer": "Yes. MSG91 provides a live RCS experience through a QR code that allows users with RCS-enabled Android devices to explore branded and interactive messaging. Businesses can also request a personalized demo. To get started, <a href=\"https://msg91.com/signup\" class='text-link active-link' target='_blank'>create an MSG91 account</a> and <a href=\"https://calendly.com/msg91-rcs/15-min-rcs-meeting\" class='text-link active-link' target='_blank'>schedule a meeting</a> with the MSG91 RCS specialist team. Submit your business documents for verification and RCS agent registration, prepare your message templates, and choose between dashboard-based campaigns and API integration. MSG91 provides onboarding, template, API, campaign, and delivery-related support through email, WhatsApp, phone calls, and scheduled meetings."
       }
     ]
   },

@@ -24,7 +24,7 @@ function FeatureCard({ feature, index, featureKey, total, openedFeatures, setOpe
                     {feature?.subheading && <span className='font-bold'>{feature?.subheading}</span>}
                     {feature?.content && (
                         <div
-                            className='text-base leading-relaxed flex flex-col gap-3 [&>p]:m-0 [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:flex [&>ul]:flex-col [&>ul]:gap-2 [&>ul>li]:leading-snug [&_a]:text-blue-600'
+                            className='text-base leading-relaxed flex flex-col gap-3 [&>p]:m-0 [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:flex [&>ul]:flex-col [&>ul]:gap-2 [&>ul>li]:leading-snug'
                             dangerouslySetInnerHTML={{ __html: feature?.content }}
                         />
                     )}
