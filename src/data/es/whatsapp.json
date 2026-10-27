@@ -943,7 +943,7 @@
     "PreFooterComp": {
         "content": "Better Conversations Start With Better Connections. From a customer's first enquiry to their latest service update, MSG91 helps your team keep communication timely and organised. Bring WhatsApp marketing, automation, sales, and support together with MSG91 WhatsApp Business Platform in Spain.",
         "buttons": {
-            "getStarted": {
+            "contactSales": {
                 "text": "Book a Free Demo",
                 "link": "https://calendly.com/d/y3n-29s-29h?back=1"
             }
