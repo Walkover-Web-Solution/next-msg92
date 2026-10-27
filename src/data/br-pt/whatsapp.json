@@ -9,14 +9,14 @@
             "name": "WhatsApp",
             "icon": "/assets/icons/products/whatsapp.svg"
         },
-        "tagline": "API Oficial do WhatsApp Business para Vender e Atender Melhor",
-        "heading": "Da Primeira Pergunta ao Próximo Pedido, Tudo Mais Simples.",
-        "subheading": "Seus clientes já usam o WhatsApp para tirar dúvidas, conhecer produtos, acompanhar pedidos e falar com empresas. Mas será que sua equipe consegue responder a todas essas mensagens sem atrasos? Com a MSG91 e a API oficial do WhatsApp Business, sua empresa pode enviar campanhas personalizadas, automatizar conversas, compartilhar atualizações importantes e gerenciar o atendimento em um só lugar. Seja em uma loja virtual de São Paulo ou em uma empresa que atende clientes de diferentes regiões do Brasil, a MSG91 ajuda você a manter cada conversa em andamento, sem depender de respostas manuais o tempo todo.",
+        "tagline": "Marketing, automação e atendimento no WhatsApp",
+        "heading": "Plataforma WhatsApp Business para empresas no Brasil",
+        "subheading": "Envie campanhas, atualizações de pedidos e códigos de verificação pelo WhatsApp. Automatize respostas com chatbots de IA sem código e ofereça um atendimento personalizado. Com a MSG91, todas as conversas de marketing, vendas e atendimento ficam em uma única plataforma fácil de usar.",
         "lottie": "/assets/lotties/brpt-whatsapp.json",
         "getstarted_btn": "Começar com a MSG91",
         "schedule_meet": "Agendar uma demonstração",
         "trustedByComp": {
-            "heading": "Mais de 30 mil empresas no mundo confiam na MSG91 | Soluções na plataforma oficial do WhatsApp Business | Automação com IA",
+            "heading": "Em conformidade com o GDPR. Certificação SOC 2 Tipo II",
             "logos": [
                 {
                     "name": "Xiaomi",
@@ -879,7 +879,7 @@
                 "number": "2",
                 "icon": "MdLink",
                 "title": "Conecte Sua Empresa",
-                "description": "Vincule seu portfólio empresarial da Meta, adicione um número brasileiro elegível (+55) e conclua as verificações necessárias."
+                "description": "Vincule seu portfólio empresarial da Meta, adicione um número elegível e conclua as verificações necessárias."
             },
             {
                 "number": "3",
@@ -894,7 +894,7 @@
                 "description": "Envie mensagens elegíveis, gerencie as conversas pelo Hello e acompanhe os resultados pelos relatórios da MSG91."
             }
         ],
-        "note": "Já utiliza o aplicativo WhatsApp Business? Empresas elegíveis no Brasil podem ter a opção de utilizar o WhatsApp Coexistence ou migrar um número existente, de acordo com os requisitos e limitações da Meta. Precisa de ajuda? A equipe de implantação da MSG91 pode orientar na configuração da conta, conexão do número, templates e integrações.",
+        "note": "Já utiliza o aplicativo WhatsApp Business? Empresas elegíveis podem ter a opção de utilizar o WhatsApp Coexistence ou migrar um número existente, de acordo com os requisitos e limitações da Meta. Precisa de ajuda? A equipe de implantação da MSG91 pode orientar na configuração da conta, conexão do número, templates e integrações.",
         "cta": {
             "text": "Começar com a MSG91"
         }
@@ -945,7 +945,9 @@
         ]
     },
     "PreFooterComp": {
-        "content": "Seus Clientes Já Estão no WhatsApp. Sua Empresa Está Preparada? Seja para anunciar uma novidade, responder a uma dúvida ou acompanhar um pedido, a MSG91 ajuda sua empresa a manter a comunicação organizada e próxima dos clientes. Reúna marketing, atendimento, vendas e automação para WhatsApp com a MSG91 e a API oficial do WhatsApp Business.",
+        "content": "Seus Clientes Já Estão no WhatsApp. Sua Empresa Está Preparada?",
+        "description": "Seja para anunciar uma novidade, responder a uma dúvida ou acompanhar um pedido, a MSG91 ajuda sua empresa a manter a comunicação organizada e próxima dos clientes. Reúna marketing, atendimento, vendas e automação para WhatsApp com a MSG91 e a API oficial do WhatsApp Business.",
+        "fullWidth": true,
         "buttons": {
             "salesModal": {
                 "text": "Agendar uma demonstração",
