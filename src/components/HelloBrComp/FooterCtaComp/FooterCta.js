@@ -4,8 +4,15 @@ import { MdCalendarToday } from 'react-icons/md';
 export default function FooterCta({ data }) {
     if (!data?.heading) return null;
 
+    const isLight = Boolean(data?.bg);
+    const primaryBtnClass = isLight
+        ? data?.theme === 'rcs'
+            ? 'bg-accent hover:opacity-90'
+            : 'whatsapp_bg hover:opacity-90'
+        : 'bg-indigo-600 shadow-xl shadow-indigo-600/40 hover:bg-indigo-500';
+
     return (
-        <section className={`${data?.bg ? 'bg-white' : 'bg-slate-950'} py-20 lg:py-28`}>
+        <section className={`${isLight ? 'bg-white' : 'bg-slate-950'} py-20 lg:py-28`}>
             <div className='container cont _p'>
                 <div className='cont text-center'>
                     {data?.label && (
@@ -15,7 +22,7 @@ export default function FooterCta({ data }) {
                     )}
                     <h2
                         className={`mb-5 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl ${
-                            data?.bg ? 'text-primary' : 'text-white'
+                            isLight ? 'text-primary' : 'text-white'
                         }`}
                     >
                         {data.heading}
@@ -23,7 +30,7 @@ export default function FooterCta({ data }) {
                     {data?.description && (
                         <p
                             className={`mx-auto mb-10 w-full max-w-[min(42rem,60vw)] text-base md:text-lg lg:mb-12 ${
-                                data?.bg ? 'text-gray-600' : 'text-gray-400'
+                                isLight ? 'text-gray-600' : 'text-gray-400'
                             }`}
                         >
                             {data.description}
@@ -35,11 +42,7 @@ export default function FooterCta({ data }) {
                                 href={data.primaryHref}
                                 target={/^https?:\/\//i.test(String(data.primaryHref)) ? '_blank' : undefined}
                                 rel={/^https?:\/\//i.test(String(data.primaryHref)) ? 'noopener noreferrer' : undefined}
-                                className={`inline-flex w-full min-w-0 items-center justify-center gap-2 rounded-lg px-6 py-3.5 text-sm font-semibold text-white transition sm:w-auto sm:text-base ${
-                                    data?.bg
-                                        ? 'whatsapp_bg hover:opacity-90'
-                                        : 'bg-indigo-600 shadow-xl shadow-indigo-600/40 hover:bg-indigo-500'
-                                }`}
+                                className={`inline-flex w-full min-w-0 items-center justify-center gap-2 rounded-lg px-6 py-3.5 text-sm font-semibold text-white transition sm:w-auto sm:text-base ${primaryBtnClass}`}
                             >
                                 <MdCalendarToday className='h-5 w-5 shrink-0' aria-hidden />
                                 {data.primaryLabel}
