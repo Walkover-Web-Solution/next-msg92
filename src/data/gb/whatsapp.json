@@ -9,14 +9,14 @@
             "name": "WhatsApp",
             "icon": "/assets/icons/products/whatsapp.svg"
         },
-        "tagline": "WhatsApp Business Platform in the UK: Every Chat, Handled Better",
-        "heading": "Be There When Customers Need an Answer.",
-        "subheading": "A customer wants to arrange a delivery. Another needs to change a booking. Someone else has a question before placing an order. Customers expect businesses to make communication straightforward. But when every message depends on manual replies, even simple enquiries take longer than they should. MSG91 helps UK businesses automate WhatsApp messages, manage customer conversations, and bring marketing, sales, and support together in one platform. Whether you're running an independent shop or managing a growing service business, MSG91 helps you stay responsive without adding unnecessary work to your team's day.",
+        "tagline": "WhatsApp marketing, automation and customer service",
+        "heading": "WhatsApp Business Platform for UK businesses",
+        "subheading": "Send WhatsApp campaigns, order updates and verification codes. Automate customer replies with no-code AI chatbots and give personalised support. MSG91 keeps all your marketing, sales and customer service conversations in one easy platform.",
         "lottie": "/assets/lotties/global-whatsapp.json",
         "getstarted_btn": "Get Started With MSG91",
         "schedule_meet": "Book a Free Demo",
         "trustedByComp": {
-            "heading": "Trusted by 30,000+ Businesses Worldwide | Official WhatsApp Business Platform | AI-Powered Automation",
+            "heading": "GDPR compliant. SOC 2 Type II certified.",
             "logos": [
                 {
                     "name": "Xiaomi",

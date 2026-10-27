@@ -9,14 +9,14 @@
             "name": "WhatsApp",
             "icon": "/assets/icons/products/whatsapp.svg"
         },
-        "tagline": "WhatsApp Business Platform in the UAE",
-        "heading": "Turn Customer Conversations Into Real Business Opportunities",
-        "subheading": "Your customers don't want to wait hours for a response. Whether they're asking about a property, checking a delivery, or booking a service, they expect quick and convenient communication. MSG91 helps UAE businesses connect with customers through WhatsApp, automate routine conversations, send personalised campaigns, and manage support from one platform. From growing retailers in Dubai to service businesses in Abu Dhabi and Sharjah, MSG91 helps your team stay connected without managing every message manually.",
+        "tagline": "WhatsApp marketing and customer service",
+        "heading": "WhatsApp Business Platform for businesses in the UAE",
+        "subheading": "MSG91 is a no-code WhatsApp platform trusted by 30,000+ businesses. Send opt-in campaigns, order updates and OTPs, automate replies with multilingual AI chatbots and give personalised support, all from one easy platform.",
         "lottie": "/assets/lotties/global-whatsapp.json",
         "getstarted_btn": "Get Started",
         "schedule_meet": "Book a Demo",
         "trustedByComp": {
-            "heading": "Trusted by 30,000+ Businesses Worldwide | Official WhatsApp Business Platform | AI-Powered Communication",
+            "heading": "Data centre in the Gulf region. GDPR compliant. SOC 2 Type II certified.",
             "logos": [
                 {
                     "name": "Xiaomi",
