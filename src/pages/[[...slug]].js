@@ -96,6 +96,7 @@ import WhatsAppStepsComp from '@/components/WhatsAppChatWindow/StepsComp/StepsCo
 import WhatsAppComparisonComp from '@/components/WhatsAppChatWindow/ComparisonComp/ComparisonComp';
 import WhatsAppWhyComp from '@/components/WhatsAppChatWindow/WhyComp/WhyComp';
 import WhatsAppCTAComp from '@/components/WhatsAppChatWindow/CTAComp/CTAComp';
+import ExperienceComp from '@/components/ExperienceComp/ExperienceComp';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -123,6 +124,7 @@ const Components = {
     FeatureComp,
     BenefitSection,
     IndustryFeatureComp: FeatureComp,
+    ExperienceComp,
     AboutUsComp,
     DevelopersComp,
     StartupComp,
