@@ -9,14 +9,14 @@
             "name": "WhatsApp",
             "icon": "/assets/icons/products/whatsapp.svg"
         },
-        "tagline": "WhatsApp Business Platform in the UK: Every Chat, Handled Better",
-        "heading": "Be There When Customers Need an Answer.",
-        "subheading": "A customer wants to arrange a delivery. Another needs to change a booking. Someone else has a question before placing an order. Customers expect businesses to make communication straightforward. But when every message depends on manual replies, even simple enquiries take longer than they should. MSG91 helps UK businesses automate WhatsApp messages, manage customer conversations, and bring marketing, sales, and support together in one platform. Whether you're running an independent shop or managing a growing service business, MSG91 helps you stay responsive without adding unnecessary work to your team's day.",
+        "tagline": "WhatsApp marketing, automation and customer service",
+        "heading": "WhatsApp Business Platform for UK businesses",
+        "subheading": "Send WhatsApp campaigns, order updates and verification codes. Automate customer replies with no-code AI chatbots and give personalised support. MSG91 keeps all your marketing, sales and customer service conversations in one easy platform.",
         "lottie": "/assets/lotties/global-whatsapp.json",
         "getstarted_btn": "Get Started With MSG91",
         "schedule_meet": "Book a Free Demo",
         "trustedByComp": {
-            "heading": "Trusted by 30,000+ Businesses Worldwide | Official WhatsApp Business Platform | AI-Powered Automation",
+            "heading": "GDPR compliant. SOC 2 Type II certified.",
             "logos": [
                 {
                     "name": "Xiaomi",
@@ -76,7 +76,7 @@
         ]
     },
     "FeatureComp": {
-        "heading": "Features of MSG91 WhatsApp Business API",
+        "heading": "Features of MSG91 WhatsApp Business Platform",
         "subheading": "More Ways to Connect. Less Work to Manage. From promotional campaigns to everyday customer support, MSG91 brings your essential WhatsApp communication tools into one connected platform.",
         "iconColor": "text-campaign",
         "features": [
@@ -875,7 +875,7 @@
                 "number": "2",
                 "icon": "MdLink",
                 "title": "Connect Your Business",
-                "description": "Connect your Meta Business Portfolio, add an eligible UK telephone number (+44), and complete the required verification. Where Meta requests additional business verification, relevant company-registration details or other applicable business documents may be required."
+                "description": "Connect your Meta Business Portfolio, add an eligible number, and complete the required verification. Where Meta requests additional business verification, relevant company-registration details or other applicable business documents may be required."
             },
             {
                 "number": "3",
@@ -890,7 +890,7 @@
                 "description": "Send eligible messages, manage customer conversations through Hello, and review performance through MSG91 reports."
             }
         ],
-        "note": "Already using a WhatsApp Business number? An eligible +44 number may be migrated to the API under Meta's onboarding requirements. However, WhatsApp Coexistence—which allows simultaneous use of the WhatsApp Business App and Cloud API on the same number—is not currently supported for UK numbers under MSG91's published guidelines. Need help? MSG91's onboarding team can assist with account setup, number verification, templates, and integrations.",
+        "note": "Already using a WhatsApp Business number? An eligible number may be migrated to the API under Meta's onboarding requirements. However, WhatsApp Coexistence—which allows simultaneous use of the WhatsApp Business App and Cloud API on the same number—is not currently supported under MSG91's published guidelines. Need help? MSG91's onboarding team can assist with account setup, number verification, templates, and integrations.",
         "cta": {
             "text": "Get Started With MSG91"
         }
@@ -936,12 +936,14 @@
             },
             {
                 "question": "How can UK businesses set up WhatsApp Business API and get support from MSG91?",
-                "answer": "<ul class='list-disc'><li>Getting started with WhatsApp automation shouldn't require coding skills or a technical team. MSG91 makes WhatsApp Cloud API setup simple, even for business owners and teams without development experience.</li><li>From a user-friendly dashboard, you can connect your WhatsApp number, create campaigns, configure supported chatbots, and manage customer conversations without writing code.</li><li>Get started in four simple steps: <br/> <ul class='list-disc'><li><strong>1:</strong> <a class='text-link active-link' target='_blank' href='https://control.msg91.com/signup/'>Create your MSG91 account</a>.</li><li><strong>2:</strong> Connect your Meta Business Portfolio.</li><li><strong>3:</strong> Add an eligible UK WhatsApp number (+44).</li><li><strong>4:</strong> Complete verification and configure your messages.</li></ul></li><li>That's it! Once connected, you can create approved templates, launch campaigns, and manage conversations directly from the dashboard.</li><li>Advanced custom integrations may require technical configuration, and additional Meta verification can affect activation time.</li><li><strong>Do I need Companies House registration, and can I keep my +44 number?</strong> Companies House details may be requested during additional Meta business verification, but aren't mandatory for every initial setup. Documentation requirements may differ for sole traders.</li><li>Already using WhatsApp Business? You may be able to migrate an eligible +44 number to MSG91. However, WhatsApp Coexistence isn't currently supported for UK numbers, so simultaneous use of the Business App and API on the same number isn't available through that feature.</li><li>Need help? MSG91 offers 24/7 customer assistance, combining expert human support through email, WhatsApp, calls, and scheduled Google Meet sessions with round-the-clock AI that handles routine questions and complex technical enquiries.</li><li>With <a class='text-link active-link' href='/gb/hello'>MSG91 Hello</a>, you can also provide your customers with AI-powered conversations, a shared inbox, and seamless handover to human agents.</li><li>From your first WhatsApp setup to everyday customer communication, MSG91 makes automation easier to manage.</li><li>Explore the <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/whatsapp-number-integration---onboarding'>WhatsApp onboarding guide</a> or contact MSG91 support.</li></ul>"
+                "answer": "<ul class='list-disc'><li>Getting started with WhatsApp automation shouldn't require coding skills or a technical team. MSG91 makes WhatsApp Cloud API setup simple, even for business owners and teams without development experience.</li><li>From a user-friendly dashboard, you can connect your WhatsApp number, create campaigns, configure supported chatbots, and manage customer conversations without writing code.</li><li>Get started in four simple steps: <br/> <ul class='list-disc'><li><strong>1:</strong> <a class='text-link active-link' target='_blank' href='https://control.msg91.com/signup/'>Create your MSG91 account</a>.</li><li><strong>2:</strong> Connect your Meta Business Portfolio.</li><li><strong>3:</strong> Add an eligible number.</li><li><strong>4:</strong> Complete verification and configure your messages.</li></ul></li><li>That's it! Once connected, you can create approved templates, launch campaigns, and manage conversations directly from the dashboard.</li><li>Advanced custom integrations may require technical configuration, and additional Meta verification can affect activation time.</li><li><strong>Do I need Companies House registration, and can I keep my +44 number?</strong> Companies House details may be requested during additional Meta business verification, but aren't mandatory for every initial setup. Documentation requirements may differ for sole traders.</li><li>Already using WhatsApp Business? You may be able to migrate an eligible +44 number to MSG91. However, WhatsApp Coexistence isn't currently supported for UK numbers, so simultaneous use of the Business App and API on the same number isn't available through that feature.</li><li>Need help? MSG91 offers 24/7 customer assistance, combining expert human support through email, WhatsApp, calls, and scheduled Google Meet sessions with round-the-clock AI that handles routine questions and complex technical enquiries.</li><li>With <a class='text-link active-link' href='/gb/hello'>MSG91 Hello</a>, you can also provide your customers with AI-powered conversations, a shared inbox, and seamless handover to human agents.</li><li>From your first WhatsApp setup to everyday customer communication, MSG91 makes automation easier to manage.</li><li>Explore the <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/whatsapp-number-integration---onboarding'>WhatsApp onboarding guide</a> or contact MSG91 support.</li></ul>"
             }
         ]
     },
     "PreFooterComp": {
-        "content": "Make Every Customer Conversation Easier. From the first question to the final service update, MSG91 helps your business communicate clearly, respond efficiently, and stay organised. Bring WhatsApp marketing, automation, sales, and customer support together with MSG91 WhatsApp Business Platform in the UK.",
+        "content": "Make Every Customer Conversation Easier.",
+        "description": "From the first question to the final service update, MSG91 helps your business communicate clearly, respond efficiently, and stay organised. Bring WhatsApp marketing, automation, sales, and customer support together with MSG91 WhatsApp Business Platform in the UK.",
+        "fullWidth": true,
         "buttons": {
             "contactSales": {
                 "text": "Book a Free Demo",
