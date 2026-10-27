@@ -179,6 +179,7 @@ const Components = {
     Steps,
     Testimonials,
     FooterCta,
+    FooterCtaAfterBenefits: FooterCta,
     Faqs,
     G2Badges,
     Pricing,
