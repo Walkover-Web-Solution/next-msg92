@@ -19,14 +19,12 @@ const iconMap = {
 export default function SplitColumns({ data, pageInfo }) {
     if (!data?.heading) return null;
 
-    const ways = data?.ways || [];
-
     return (
         <section className='whatsapp_lite_bg'>
             <div className='container cont cont_p'>
                 <div className='flex flex-col lg:flex-row lg:items-start cont_gap lg:gap-16'>
                     <div className='flex-1 cont cont_gap'>
-                        <h2 className='text-3xl md:text-4xl font-bold'>{data?.heading}</h2>
+                        <h2 className='whatsapp__heading'>{data?.heading}</h2>
                         <span className='h-1 w-16 whatsapp_bg rounded-full' aria-hidden />
                         {data?.paragraphs?.map((paragraph, index) => (
                             <p key={index} className='text-base md:text-lg text-gray-600'>
@@ -35,7 +33,7 @@ export default function SplitColumns({ data, pageInfo }) {
                         ))}
                         {data?.cta?.text && (
                             <a
-                                href={data?.cta?.link || getURL('signup', pageInfo?.page, pageInfo)}
+                                href={getURL('signup', pageInfo?.page, pageInfo)}
                                 target='_blank'
                                 rel='noopener noreferrer'
                                 className='group w-fit'
@@ -51,7 +49,7 @@ export default function SplitColumns({ data, pageInfo }) {
                         )}
                     </div>
 
-                    {(data?.ways_heading || ways?.length > 0) && (
+                    {(data?.ways_heading || data?.ways?.length > 0) && (
                         <div className='flex-1 cont cont_gap w-full'>
                             {data?.ways_heading && (
                                 <div className='flex items-center gap-2'>
@@ -59,9 +57,9 @@ export default function SplitColumns({ data, pageInfo }) {
                                     <h3 className='text-xl md:text-2xl font-bold'>{data?.ways_heading}</h3>
                                 </div>
                             )}
-                            {ways?.length > 0 && (
+                            {data?.ways?.length > 0 && (
                                 <ul className='cont cont_gap'>
-                                    {ways?.map((way, index) => {
+                                    {data?.ways?.map((way, index) => {
                                         const Icon = iconMap[way?.icon];
 
                                         return (

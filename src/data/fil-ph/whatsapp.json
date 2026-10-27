@@ -946,7 +946,7 @@
     "PreFooterComp": {
         "content": "Bawat Customer Message, May Pagkakataong Mapalago ang Negosyo. Mula sa unang tanong na \"Available pa po?\" hanggang sa order confirmation at after-sales support, mas madaling asikasuhin ang customer conversations kapag magkakakonekta ang iyong tools. Pagsamahin ang WhatsApp marketing, AI automation, sales, at customer support sa MSG91.",
         "buttons": {
-            "getStarted": {
+            "contactSales": {
                 "text": "Book a Free Demo",
                 "link": "https://calendly.com/d/y3n-29s-29h?back=1"
             }

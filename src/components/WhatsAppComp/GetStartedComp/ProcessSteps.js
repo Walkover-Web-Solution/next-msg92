@@ -11,26 +11,32 @@ const iconMap = {
 export default function ProcessSteps({ data, pageInfo }) {
     if (!data?.heading) return null;
 
-    const steps = data?.steps || [];
-
     return (
         <section>
             <div className='container cont cont_p cont_gap'>
                 <header className='cont cont_gap items-center text-center'>
-                    {data?.kicker && <p className='text-2xl md:text-3xl font-bold text-primary'>{data?.kicker}</p>}
-                    <h2 className='text-lg md:text-xl font-semibold text-gray-600'>{data?.heading}</h2>
-                    {data?.description && <p className='subheading'>{data?.description}</p>}
+                    {data?.kicker && <h2 className='whatsapp__heading text-primary'>{data?.kicker}</h2>}
+                    {data?.heading && (
+                        <p
+                            className={
+                                data?.kicker ? 'whatsapp__subheading text-gray-600' : 'whatsapp__heading text-primary'
+                            }
+                        >
+                            {data?.heading}
+                        </p>
+                    )}
+                    {data?.description && <p className='text-base text-gray-600 max-w-2xl'>{data?.description}</p>}
                 </header>
 
-                {steps?.length > 0 && (
+                {data?.steps?.length > 0 && (
                     <ul className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 cont_gap'>
-                        {steps?.map((step, index) => {
+                        {data?.steps?.map((step, index) => {
                             const Icon = iconMap[step?.icon];
-                            const isLast = index === steps.length - 1;
+                            const isLast = index === data?.steps?.length - 1;
 
                             return (
                                 <li key={index} className='relative flex'>
-                                    <article className='cont cont_gap w-full rounded-2xl border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-[var(--whatsapp-color)]'>
+                                    <article className='cont cont_gap w-full rounded-2xl border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-green-600'>
                                         <div className='flex items-center justify-between'>
                                             <span className='whatsapp_lite_bg flex h-12 w-12 items-center justify-center rounded-xl'>
                                                 {Icon && <Icon size={26} className='text-whatsapp' />}
@@ -56,7 +62,7 @@ export default function ProcessSteps({ data, pageInfo }) {
                                     {!isLast && (
                                         <span
                                             aria-hidden
-                                            className='absolute -right-5 top-8 z-10 hidden h-7 w-7 items-center justify-center rounded-full border border-gray-200 bg-white text-whatsapp lg:flex'
+                                            className='absolute -right-3.5 top-8 z-10 hidden h-7 w-7 items-center justify-center rounded-full border border-gray-200 bg-white text-whatsapp lg:flex'
                                         >
                                             <MdChevronRight size={18} />
                                         </span>
