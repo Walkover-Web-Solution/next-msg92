@@ -22,7 +22,7 @@ export default function handler(req, res) {
                     }
                 }
             }
-            if (data?.common) {
+            if (data?.common || data?.show === false) {
                 data = require(`@/data/notfound.json`);
             }
         } catch (err) {
