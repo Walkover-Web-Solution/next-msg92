@@ -17,7 +17,7 @@ export default function WhyBuiltComp({ data }) {
                         }`}
                     >
                         <h2 className='text-3xl sm:text-4xl lg:text-5xl font-bold whitespace-pre-line leading-tight'>
-                            {data.heading}
+                            {data?.heading}
                         </h2>
 
                         {data?.description && (
@@ -26,7 +26,7 @@ export default function WhyBuiltComp({ data }) {
                                     data?.centered ? 'mx-auto' : 'md:text-right'
                                 }`}
                             >
-                                {data.description}
+                                {data?.description}
                             </p>
                         )}
                     </div>
@@ -48,7 +48,7 @@ export default function WhyBuiltComp({ data }) {
                                     <h3 className='subheading font-bold'>{card?.title}</h3>
                                     {card?.description && (
                                         <div
-                                            className='text-sm text-gray-600 whitespace-pre-line [&_a]:text-blue-600'
+                                            className='text-sm text-gray-600 whitespace-pre-line'
                                             dangerouslySetInnerHTML={{ __html: card.description }}
                                         />
                                     )}

@@ -31,8 +31,8 @@ export default function StepsComp({ data }) {
                                     <div className='flex flex-col gap-1'>
                                         <h3 className='text-base font-bold'>{step?.title}</h3>
                                         <div
-                                            className='text-sm text-gray-600 [&_a]:text-blue-600'
-                                            dangerouslySetInnerHTML={{ __html: step?.description || '' }}
+                                            className='text-sm text-gray-600'
+                                            dangerouslySetInnerHTML={{ __html: step?.description }}
                                         />
                                     </div>
                                 </div>
