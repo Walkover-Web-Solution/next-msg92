@@ -129,7 +129,6 @@ const Components = {
     BenefitSection,
     IndustryFeatureComp: FeatureComp,
     ExperienceComp,
-    PricingComp,
     AboutUsComp,
     DevelopersComp,
     StartupComp,
