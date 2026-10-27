@@ -76,10 +76,7 @@ const nextConfig = {
         SUBSCRIPTION_PRICING_URL: getEnvValue('SUBSCRIPTION_PRICING_URL'),
         VOICE_API_URL: getEnvValue('VOICE_API_URL'),
         LOGIN_URL: getEnvValue('LOGIN_URL'),
-        CHATBOT_BASE_URL: getEnvValue('CHATBOT_BASE_URL'),
         HELLO_API_URL: getEnvValue('HELLO_API_URL'),
-        CHATBOT_TEMPLATE_TEST_URL: getEnvValue('CHATBOT_TEMPLATE_TEST_URL'),
-        WHATSAPP_PRICING_URL: getEnvValue('WHATSAPP_PRICING_URL'),
         IMESSAGE_URL: getEnvValue('IMESSAGE_URL'),
 
         // Client IDs
