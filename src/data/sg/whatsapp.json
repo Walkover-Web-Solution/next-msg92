@@ -76,7 +76,7 @@
         ]
     },
     "FeatureComp": {
-        "heading": "Features of MSG91 WhatsApp Business API",
+        "heading": "Features of MSG91 WhatsApp Business Platform",
         "subheading": "Everything You Need to Manage Customer Conversations. From a promotional message to an ongoing support request, MSG91 gives businesses the tools to manage WhatsApp communication without unnecessary manual work.",
         "iconColor": "text-campaign",
         "features": [
@@ -873,7 +873,7 @@
                 "number": "2",
                 "icon": "MdLink",
                 "title": "Connect Your Business",
-                "description": "Connect your Meta Business Portfolio, add an eligible Singapore phone number (+65), and complete the required verification. Where Meta requires additional business verification, your Singapore business registration details, including ACRA/UEN information where applicable, may be needed."
+                "description": "Connect your Meta Business Portfolio, add an eligible number, and complete the required verification. Where Meta requires additional business verification, your Singapore business registration details, including ACRA/UEN information where applicable, may be needed."
             },
             {
                 "number": "3",
@@ -888,7 +888,7 @@
                 "description": "Send eligible messages, handle customer replies through Hello, and review communication results through MSG91 reports."
             }
         ],
-        "note": "Already using a Singapore WhatsApp Business number? Eligible +65 numbers may be able to use WhatsApp Coexistence, allowing the WhatsApp Business App and API to operate on the same number, subject to Meta's requirements and feature limitations. Eligible number migration is another option. Need help with setup? The MSG91 team can assist with business onboarding, number verification, template configuration, and integration requirements.",
+        "note": "Already using a WhatsApp Business number? Eligible numbers may be able to use WhatsApp Coexistence, allowing the WhatsApp Business App and API to operate on the same number, subject to Meta's requirements and feature limitations. Eligible number migration is another option. Need help with setup? The MSG91 team can assist with business onboarding, number verification, template configuration, and integration requirements.",
         "cta": {
             "text": "Get Started With MSG91"
         }
@@ -934,12 +934,14 @@
             },
             {
                 "question": "Can Singapore businesses complete WhatsApp Cloud API setup without developers?",
-                "answer": "<ul class='list-disc'><li>Absolutely! MSG91 makes WhatsApp Cloud API setup simple, even for people without coding or technical experience. Our user-friendly dashboard guides you through connecting your WhatsApp number and getting started with automated communication.</li><li>Get started in four steps: <br/> <ul class='list-disc'><li><strong>1:</strong> <a class='text-link active-link' target='_blank' href='https://control.msg91.com/signup/'>Create your MSG91 account</a>.</li><li><strong>2:</strong> Connect your Meta Business Portfolio.</li><li><strong>3:</strong> Add an eligible Singapore WhatsApp number (+65).</li><li><strong>4:</strong> Complete verification and configure your messages.</li></ul></li><li>That's it! Once connected, you can create approved templates, run campaigns, configure supported chatbots, and manage conversations without writing code.</li><li>Already using WhatsApp Business? Eligible businesses can use <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/whatsapp-coexistence'>WhatsApp Coexistence</a> to keep the Business App and API on the same +65 number or migrate an eligible number from another provider.</li><li>Do I need ACRA registration or a UEN? These details may be requested during additional Meta business verification, but aren't mandatory for every initial setup. Advanced custom integrations may still require technical configuration.</li><li>Need help? MSG91 offers 24/7 customer assistance, combining expert human support through email, WhatsApp, calls, and scheduled Google Meet sessions with round-the-clock AI that handles routine questions and complex technical enquiries.</li><li>With <a class='text-link active-link' href='/sg/hello'>MSG91 Hello</a>, you can also provide your own customers with AI-powered support, a shared inbox, and seamless handover to human agents.</li><li>From initial setup to everyday customer communication, MSG91 keeps things simple and connected.</li><li>Explore the <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/whatsapp-number-integration---onboarding'>WhatsApp onboarding guide</a>, <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/whatsapp-coexistence'>WhatsApp Coexistence guide</a>, or contact MSG91 support.</li></ul>"
+                "answer": "<ul class='list-disc'><li>Absolutely! MSG91 makes WhatsApp Cloud API setup simple, even for people without coding or technical experience. Our user-friendly dashboard guides you through connecting your WhatsApp number and getting started with automated communication.</li><li>Get started in four steps: <br/> <ul class='list-disc'><li><strong>1:</strong> <a class='text-link active-link' target='_blank' href='https://control.msg91.com/signup/'>Create your MSG91 account</a>.</li><li><strong>2:</strong> Connect your Meta Business Portfolio.</li><li><strong>3:</strong> Add an eligible number.</li><li><strong>4:</strong> Complete verification and configure your messages.</li></ul></li><li>That's it! Once connected, you can create approved templates, run campaigns, configure supported chatbots, and manage conversations without writing code.</li><li>Already using WhatsApp Business? Eligible businesses can use <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/whatsapp-coexistence'>WhatsApp Coexistence</a> to keep the Business App and API on the same +65 number or migrate an eligible number from another provider.</li><li>Do I need ACRA registration or a UEN? These details may be requested during additional Meta business verification, but aren't mandatory for every initial setup. Advanced custom integrations may still require technical configuration.</li><li>Need help? MSG91 offers 24/7 customer assistance, combining expert human support through email, WhatsApp, calls, and scheduled Google Meet sessions with round-the-clock AI that handles routine questions and complex technical enquiries.</li><li>With <a class='text-link active-link' href='/sg/hello'>MSG91 Hello</a>, you can also provide your own customers with AI-powered support, a shared inbox, and seamless handover to human agents.</li><li>From initial setup to everyday customer communication, MSG91 keeps things simple and connected.</li><li>Explore the <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/whatsapp-number-integration---onboarding'>WhatsApp onboarding guide</a>, <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/whatsapp-coexistence'>WhatsApp Coexistence guide</a>, or contact MSG91 support.</li></ul>"
             }
         ]
     },
     "PreFooterComp": {
-        "content": "Your Business Moves Fast. Your WhatsApp Communication Can Too. From the first customer enquiry to the final service update, MSG91 helps your team keep communication organised without unnecessary manual work. Bring WhatsApp marketing, AI chatbots, automation, sales, and customer support together with MSG91 WhatsApp Business API in Singapore.",
+        "content": "Your Business Moves Fast. Your WhatsApp Communication Can Too.",
+        "description": "From the first customer enquiry to the final service update, MSG91 helps your team keep communication organised without unnecessary manual work. Bring WhatsApp marketing, AI chatbots, automation, sales, and customer support together with MSG91 WhatsApp Business Platform in Singapore.",
+        "fullWidth": true,
         "buttons": {
             "contactSales": {
                 "text": "Book a Free Demo",

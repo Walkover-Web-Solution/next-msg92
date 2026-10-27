@@ -67,6 +67,25 @@ export default function PreFooterComp({ data, pageInfo }) {
                             />
                         </div>
                     </div>
+                ) : data?.fullWidth ? (
+                    <div className='container cont gap-6 items-center text-center'>
+                        <h2 className='text-3xl font-bold md:text-4xl'>{content}</h2>
+                        {data?.description && (
+                            <div className='w-full cont gap-2 text-base md:text-lg text-gray-600'>
+                                {(Array.isArray(data?.description) ? data.description : [data.description]).map(
+                                    (paragraph, index) => (
+                                        <p
+                                            key={index}
+                                            className={data?.singleLineDescription ? 'lg:whitespace-nowrap' : undefined}
+                                        >
+                                            {paragraph}
+                                        </p>
+                                    )
+                                )}
+                            </div>
+                        )}
+                        <PreFooterButtons data={data} pageInfo={pageInfo} onOpenModal={() => setIsModalOpen(true)} />
+                    </div>
                 ) : (
                     <div className='container flex flex-col items-center gap-6 md:flex-row md:justify-between'>
                         <p className='text-3xl font-bold lg:w-1/2'>{content}</p>

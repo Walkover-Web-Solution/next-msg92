@@ -77,7 +77,7 @@
         ]
     },
     "FeatureComp": {
-        "heading": "Features of MSG91 WhatsApp Business API",
+        "heading": "Features of MSG91 WhatsApp Business Platform",
         "subheading": "Everything Your Business Needs to Communicate Better. From sending promotional messages to managing customer enquiries and measuring campaign performance, MSG91 gives UAE businesses the tools to make WhatsApp communication easier, faster, and more organised.",
         "iconColor": "text-campaign",
         "features": [
@@ -874,7 +874,7 @@
                 "number": "2",
                 "icon": "MdLink",
                 "title": "Connect Your Business",
-                "description": "Connect your Meta Business Portfolio, add an eligible UAE business phone number (+971), and complete the necessary verification. Meta may request additional information or business documents, including a trade licence where applicable."
+                "description": "Connect your Meta Business Portfolio, add an eligible number, and complete the necessary verification. Meta may request additional information or business documents, including a trade licence where applicable."
             },
             {
                 "number": "3",
@@ -889,7 +889,7 @@
                 "description": "Send eligible messages, manage customer enquiries through Hello, and review message performance from the dashboard."
             }
         ],
-        "note": "Already using the WhatsApp Business App? Eligible UAE businesses may be able to use WhatsApp Coexistence or migrate an existing number, subject to Meta's onboarding requirements. Need assistance? MSG91's onboarding team can guide you through account setup, verification, template configuration, and technical integrations.",
+        "note": "Already using the WhatsApp Business App? Eligible businesses may be able to use WhatsApp Coexistence or migrate an existing number, subject to Meta's onboarding requirements. Need assistance? MSG91's onboarding team can guide you through account setup, verification, template configuration, and technical integrations.",
         "cta": {
             "text": "Start Using WhatsApp Business API"
         }
@@ -935,12 +935,14 @@
             },
             {
                 "question": "How can UAE businesses set up WhatsApp Business API and get ongoing support from MSG91?",
-                "answer": "<ul class='list-disc'><li>Absolutely! MSG91 makes WhatsApp Cloud API setup simple, even if you have no coding or technical experience. Our user-friendly dashboard helps you connect your WhatsApp number and start automating customer communication.</li><li>Get started in four steps: <br/> <ul class='list-disc'><li><strong>1:</strong> <a class='text-link active-link' target='_blank' href='https://control.msg91.com/signup/'>Create your MSG91 account</a>.</li><li><strong>2:</strong> Connect your Meta Business Portfolio.</li><li><strong>3:</strong> Add an eligible UAE WhatsApp number (+971).</li><li><strong>4:</strong> Complete verification and configure your messages.</li></ul></li><li>That's it! Once connected, you can create approved templates, launch campaigns, and build supported chatbots without writing code.</li><li>Already using WhatsApp Business? Eligible businesses can use <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/whatsapp-coexistence'>WhatsApp Coexistence</a> to keep the Business App and API on the same +971 number or migrate from another provider.</li><li>A UAE trade licence may be requested for additional Meta business verification but isn't mandatory for every initial setup. Advanced custom integrations may require technical configuration.</li><li>Need help? MSG91 offers 24/7 customer assistance, combining expert human support through email, WhatsApp, calls, and scheduled Google Meet sessions with round-the-clock AI that handles routine questions and complex technical enquiries.</li><li>With <a class='text-link active-link' href='/ae/hello'>MSG91 Hello</a>, you can also provide your customers with AI-powered support, a shared inbox, and seamless human-agent handovers.</li><li>Explore the <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/whatsapp-number-integration---onboarding'>WhatsApp setup guide</a> and <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/whatsapp-coexistence'>WhatsApp Coexistence guide</a>.</li></ul>"
+                "answer": "<ul class='list-disc'><li>Absolutely! MSG91 makes WhatsApp Cloud API setup simple, even if you have no coding or technical experience. Our user-friendly dashboard helps you connect your WhatsApp number and start automating customer communication.</li><li>Get started in four steps: <br/> <ul class='list-disc'><li><strong>1:</strong> <a class='text-link active-link' target='_blank' href='https://control.msg91.com/signup/'>Create your MSG91 account</a>.</li><li><strong>2:</strong> Connect your Meta Business Portfolio.</li><li><strong>3:</strong> Add an eligible number.</li><li><strong>4:</strong> Complete verification and configure your messages.</li></ul></li><li>That's it! Once connected, you can create approved templates, launch campaigns, and build supported chatbots without writing code.</li><li>Already using WhatsApp Business? Eligible businesses can use <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/whatsapp-coexistence'>WhatsApp Coexistence</a> to keep the Business App and API on the same +971 number or migrate from another provider.</li><li>A UAE trade licence may be requested for additional Meta business verification but isn't mandatory for every initial setup. Advanced custom integrations may require technical configuration.</li><li>Need help? MSG91 offers 24/7 customer assistance, combining expert human support through email, WhatsApp, calls, and scheduled Google Meet sessions with round-the-clock AI that handles routine questions and complex technical enquiries.</li><li>With <a class='text-link active-link' href='/ae/hello'>MSG91 Hello</a>, you can also provide your customers with AI-powered support, a shared inbox, and seamless human-agent handovers.</li><li>Explore the <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/whatsapp-number-integration---onboarding'>WhatsApp setup guide</a> and <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/whatsapp-coexistence'>WhatsApp Coexistence guide</a>.</li></ul>"
             }
         ]
     },
     "PreFooterComp": {
-        "content": "Your Customers Are Already on WhatsApp. Make Every Conversation Count. Whether you're answering customer questions, sending order updates, launching campaigns, or managing a growing support team, MSG91 helps your business communicate more efficiently. Bring marketing, automation, sales, and customer support together with MSG91 WhatsApp Business API in the UAE.",
+        "content": "Your Customers Are Already on WhatsApp. Make Every Conversation Count.",
+        "description": "Whether you're answering customer questions, sending order updates, launching campaigns, or managing a growing support team, MSG91 helps your business communicate more efficiently. Bring marketing, automation, sales, and customer support together with MSG91 WhatsApp Business Platform in the UAE.",
+        "fullWidth": true,
         "buttons": {
             "getStarted": {
                 "text": "Get Started",
