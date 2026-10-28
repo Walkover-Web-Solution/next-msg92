@@ -20,7 +20,7 @@ export default function FaqsComp({ data, notCont }) {
                                     </h3>
                                     <div className='collapse-content '>
                                         <div
-                                            className=' pt-3 text-lg '
+                                            className=' pt-3 text-lg'
                                             dangerouslySetInnerHTML={{ __html: faq?.answer }}
                                         ></div>
                                     </div>

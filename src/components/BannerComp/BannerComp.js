@@ -55,7 +55,7 @@ export default function BannerComp({ pageInfo, data }) {
                         </h1>
                         <p
                             className={
-                                data?.slug === 'whatsapp' || data?.slug === 'reports'
+                                data?.slug === 'whatsapp' || data?.slug === 'reports' || data?.use_whatsapp_heading
                                     ? 'whatsapp__subheading'
                                     : 'subheading'
                             }

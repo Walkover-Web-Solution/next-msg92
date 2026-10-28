@@ -2,28 +2,36 @@ import Head from 'next/head';
 import Script from 'next/script';
 import HreflangTagComp from './HreflangTagComp';
 
-export default function HeadComp({ data, pageInfo }) {
+export default function HeadComp({ data, pageInfo, browserPathCase }) {
     const isEcommerceStore = pageInfo?.page === 'ecommerce-store';
+    const pageSlug =
+        `${pageInfo?.page || ''} ${pageInfo?.baseURL || ''} ${pageInfo?.pathURL || ''} ${browserPathCase || ''}`.toLowerCase();
+    const skipGlobalChatWidget =
+        pageInfo?.page === 'demochatbot' ||
+        pageInfo?.page === 'contact-us' ||
+        pageInfo?.page === 'whatsapp-chat-window' ||
+        pageSlug.includes('whatsapp-chat-window') ||
+        pageInfo?.baseURL?.startsWith('pricing');
 
     return (
         <>
-            {pageInfo?.page !== 'demochatbot' &&
-                pageInfo?.page !== 'contact-us' &&
-                !pageInfo?.baseURL?.startsWith('pricing') && (
-                    <>
-                        <Script
-                            strategy='afterInteractive'
-                            dangerouslySetInnerHTML={{
-                                __html: `var helloConfig = {
-              widgetToken: '${isEcommerceStore ? process.env.ECOMMERCE_WIDGET_TOKEN : process.env.CHAT_WIDGET_TOKEN}',
-              hide_launcher: false
-            };`,
-                            }}
-                        />
-
-                        <Script onload='initChatWidget(helloConfig, 0)' src={`${process.env.CHAT_WIDGET_URL}`} />
-                    </>
-                )}
+            {!skipGlobalChatWidget && (
+                <Script
+                    id='msg91-global-chat-widget'
+                    strategy='afterInteractive'
+                    src={`${process.env.CHAT_WIDGET_URL}`}
+                    onLoad={() => {
+                        if (typeof window === 'undefined' || !window.initChatWidget) return;
+                        window.helloConfig = {
+                            widgetToken: isEcommerceStore
+                                ? process.env.ECOMMERCE_WIDGET_TOKEN
+                                : process.env.CHAT_WIDGET_TOKEN,
+                            hide_launcher: false,
+                        };
+                        window.initChatWidget(window.helloConfig, 0);
+                    }}
+                />
+            )}
 
             <Script
                 strategy='afterInteractive'
@@ -35,6 +43,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-NWZKLRJ');`,
                 }}
             />
+
+            <script src='https://ref.admin.hostnsoft.com/tracker.js' />
 
             {pageInfo?.country === 'in' && (
                 <>

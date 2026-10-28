@@ -1,4 +1,4 @@
-import { getCookie, setCookie, setUtm } from '@/utils/utilis';
+import { getCookie, setCookie, setUtm, sanitizeMsg91QuerySearch } from '@/utils/utilis';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
@@ -13,7 +13,10 @@ export default function handleBrawserCookies() {
     useEffect(() => {
         const search = window.location.search;
         if (search) {
-            setCookie('msg91_query', search, 30);
+            const sanitized = sanitizeMsg91QuerySearch(search);
+            if (sanitized) {
+                setCookie('msg91_query', sanitized, 30);
+            }
         } else if (plugin) {
             setCookie('msg91_query', `?utm_campaign=tigerplugin&utm_source=${plugin}&utm_medium=website`, 30); //By Hardik
         }
