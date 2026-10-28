@@ -3,6 +3,7 @@ import getCommonCompData from '@/utils/getCommonCompData';
 import getPricing from '@/utils/pricing/getPricing';
 import getVoicePricing from '@/utils/pricing/getVoicePricing';
 import getSmsOtpPricing from '@/utils/pricing/getSmsOtpPricing';
+import availableCountries from '@/data/availableCountries.json';
 
 export default function PricingCountryPage({ pricingData, pageInfo, pageData, commonData, products, country }) {
     return (
@@ -20,6 +21,10 @@ export default function PricingCountryPage({ pricingData, pageInfo, pageData, co
 export const getServerSideProps = async (context) => {
     const country = context?.params?.country || 'global';
     const product = context?.params?.products;
+    // An unknown country prefix has no common.json; answer 404 instead of crashing with a 500.
+    if (!availableCountries.some((c) => c.shortname.toLowerCase() === country)) {
+        return { notFound: true };
+    }
     const commonData = getCommonCompData(country);
 
     let pricingData;

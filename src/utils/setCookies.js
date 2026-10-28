@@ -12,6 +12,8 @@ export default function handleBrawserCookies() {
 
     useEffect(() => {
         const search = window.location.search;
+        // Admin pages and experiment previews are internal traffic, not landing attribution.
+        if (window.location.pathname.startsWith('/admin') || search.includes('exp_preview=')) return;
         if (search) {
             setCookie('msg91_query', search, 30);
         } else if (plugin) {

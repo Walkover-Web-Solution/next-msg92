@@ -1,5 +1,5 @@
 // Checks that every top-level key in the page JSON under src/data/ is registered in the
-// `Components` map of src/pages/[[...slug]].js. An unregistered key renders nothing and only
+// `Components` map in src/components/PageRenderer/sectionRegistry.js. An unregistered key renders nothing and only
 // logs a console error in the browser, so typos ship silently without this check.
 // Usage: node scripts/check-page-data.mjs
 import fs from 'node:fs';
@@ -8,11 +8,11 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dataDir = path.join(root, 'src/data');
-const pageSource = fs.readFileSync(path.join(root, 'src/pages/[[...slug]].js'), 'utf8');
+const registrySource = fs.readFileSync(path.join(root, 'src/components/PageRenderer/sectionRegistry.js'), 'utf8');
 
-const registryBlock = pageSource.match(/const Components = \{([\s\S]*?)\n\};/);
+const registryBlock = registrySource.match(/export const Components = \{([\s\S]*?)\n\};/);
 if (!registryBlock) {
-    console.error('Could not find `const Components = {...}` in src/pages/[[...slug]].js');
+    console.error('Could not find `export const Components = {...}` in src/components/PageRenderer/sectionRegistry.js');
     process.exit(2);
 }
 const registered = new Set(
@@ -58,7 +58,9 @@ for (const folder of pageFolders) {
         const json = JSON.parse(fs.readFileSync(file, 'utf8'));
         for (const key of Object.keys(json)) {
             if (!registered.has(key) && !nonComponentKeys.has(key) && !knownUnregisteredKeys.has(key)) {
-                problems.push(`${path.relative(root, file)}: "${key}" is not registered in src/pages/[[...slug]].js`);
+                problems.push(
+                    `${path.relative(root, file)}: "${key}" is not registered in src/components/PageRenderer/sectionRegistry.js`
+                );
             }
         }
     }

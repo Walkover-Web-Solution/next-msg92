@@ -60,6 +60,15 @@ const nextConfig = {
                 headers: securityHeaders,
             },
             {
+                // Private admin and its APIs are never indexed (access is enforced server-side).
+                source: '/admin/:path*',
+                headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+            },
+            {
+                source: '/api/admin/:path*',
+                headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+            },
+            {
                 source: '/lotties/(.*)',
                 headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
             },
