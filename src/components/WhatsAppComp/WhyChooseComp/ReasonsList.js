@@ -1,8 +1,6 @@
 export default function ReasonsList({ data }) {
     if (!data?.heading) return null;
 
-    const isOdd = data?.reasons?.length % 2 === 1;
-
     return (
         <section className='whatsapp_lite_bg'>
             <div className='container cont cont_p cont_gap'>
@@ -12,7 +10,7 @@ export default function ReasonsList({ data }) {
                     {data?.description && <p className='text-base md:text-lg text-gray-600'>{data?.description}</p>}
                 </header>
 
-                <ul className='grid grid-cols-1 md:grid-cols-2 gap-px overflow-hidden rounded-2xl border border-green-200 bg-green-200'>
+                <ul className='grid grid-cols-1 md:grid-cols-2 gap-px overflow-hidden rounded-xl border border-green-200 bg-green-200'>
                     {data?.reasons?.map((reason, index) => (
                         <li
                             key={index}
@@ -33,7 +31,7 @@ export default function ReasonsList({ data }) {
                         </li>
                     ))}
 
-                    {isOdd && <li aria-hidden='true' className='hidden md:block bg-white' />}
+                    {data?.reasons?.length % 2 === 1 && <li aria-hidden='true' className='hidden md:block bg-white' />}
                 </ul>
             </div>
         </section>
