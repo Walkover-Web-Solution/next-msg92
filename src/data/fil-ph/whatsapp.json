@@ -872,7 +872,7 @@
                 "number": "1",
                 "icon": "MdEditNote",
                 "title": "Gumawa ng MSG91 Account",
-                "description": "Mag-sign up sa MSG91 at buksan ang WhatsApp channel sa dashboard."
+                "description": "<a href='/signup' target='_blank' class='text-accent hover:underline'>Mag-sign up</a> sa MSG91 at buksan ang WhatsApp channel sa dashboard."
             },
             {
                 "number": "2",

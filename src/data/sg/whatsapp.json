@@ -867,7 +867,7 @@
                 "number": "1",
                 "icon": "MdEditNote",
                 "title": "Create Your MSG91 Account",
-                "description": "Sign up for MSG91 and open the WhatsApp channel from the dashboard."
+                "description": "<a href='/signup' target='_blank' class='text-accent hover:underline'>Sign up</a> for MSG91 and open the WhatsApp channel from the dashboard."
             },
             {
                 "number": "2",
