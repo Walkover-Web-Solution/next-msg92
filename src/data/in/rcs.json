@@ -11,8 +11,8 @@
     "icon": "/assets/icons/products/rcs.svg"
   },
   "code": false,
-  "heading": "RCS Business Messaging with Auto SMS Fallback",
-  "subheading": "From branded campaigns and interactive product showcases to AI-powered chatbots and API integrations, MSG91 helps businesses create richer customer experiences. When RCS delivery fails, automatic RCS-to-SMS fallback keeps important updates moving without manual intervention. Customize automatic fallback across SMS, WhatsApp, and Email—your way.",
+  "heading": "RCS Business Messaging with Auto Fallback Messages.",
+  "subheading": "MSG91’s RCS messaging platform helps businesses run branded campaigns, interactive product showcases, AI-powered chatbots and API integrations. If any message fails to deliver, you can set RCS as the fallback. Customized automatic fallback across SMS, WhatsApp, Email and Voice so every message reaches your customer.",
   "banner_video": "/assets/rcs/hero_section.webm",
   "not_absolute": "true",
   "getstarted_btn": "Get Started",
@@ -91,7 +91,7 @@
       },
       {
         "name": "Rich Media Messaging for Engaging RCS Campaigns",
-        "content": "<strong>Show Customers What You're Offering, Not Just Tell Them</strong> From festive collections and product launches to property showcases and travel packages, MSG91 helps businesses turn plain-text promotions into visual RCS campaigns. Share images, videos, locations, URLs and Rich Cards directly in messages, giving customers a clearer view of your products and more reasons to explore your offers.",
+        "content": "<strong>Show Customers What You're Offering, Not Just Tell Them</strong> From festive collections and product launches to property showcases and travel packages, MSG91 helps businesses turn plain-text promotions into visual RCS campaigns. Share images, videos, PDFs, locations, URLs and Rich Cards directly in messages, giving customers a clearer view of your products and more reasons to explore your offers.",
         "more_content": {
           "usecases": [
             {
@@ -606,7 +606,7 @@
       },
       {
         "name": "RCS for D2C Brands",
-        "content": "<strong>Build Customer Relationships That Last Beyond Checkout</strong> <p>RCS helps D2C brands reach customers in their phone’s default messaging app, with no app download needed. Every message shows your verified brand name and logo, so customers trust it and open it. Unlike plain SMS, you can share product images, videos, carousels and buttons like Shop Now or <em>Reorder</em> in one message.<br/><br/>D2C brands use RCS to launch products, send personalized offers and bring customers back for repeat orders. With MSG91 Segmento, you can group customers by past orders or interests and send each group the right RCS campaign in one click.</p>",
+        "content": "<strong>Build Customer Relationships That Last Beyond Checkout</strong> <p>RCS helps D2C brands reach customers in their phone’s default messaging app, with no app download needed. Every message shows your verified brand name and logo, so customers trust it and open it. Unlike plain SMS, you can share product images, videos, documents, carousels and buttons like Shop Now or <em>Reorder</em> in one message.<br/><br/>D2C brands use RCS to launch products, send personalized offers and bring customers back for repeat orders. With MSG91 Segmento, you can group customers by past orders or interests and send each group the right RCS campaign in one click.</p>",
         "more_content": {
           "usecases": [
             {
@@ -900,7 +900,7 @@
         "sms": "❌ Only sender ID"
       },
       {
-        "feature": "Images, videos and carousels",
+        "feature": "Images, videos, documents and carousels",
         "rcs": "✅ Yes",
         "whatsapp": "✅ Yes",
         "sms": "❌ Text only"
@@ -949,7 +949,7 @@
       }
     ],
     "summary": "Which one should you use? Use all three together, and get some of the most competitive rates on every channel. Whether you send RCS, WhatsApp or SMS, MSG91 gives you low prices, with even better rates as your volume grows. If one channel fails, your message moves to the next one automatically, so your message still reaches your customer.",
-    "pricingNote": "Prices exclude 18% GST. RCS rates depend on your monthly plan. WhatsApp rates are Meta's charges, plus MSG91's ₹500/month platform fee per number. Till October 2026."
+    "pricingNote": "Prices exclude 18% GST. RCS rates depend on your monthly plan."
   },
   "HelloStartupSteps": {
     "theme": "rcs",
@@ -979,7 +979,7 @@
       {
         "number": "5",
         "title": "Get Ongoing Support",
-        "description": "Access MSG91's team through email, WhatsApp, calls, or scheduled meetings for campaign assistance, API integrations, and technical support."
+        "description": "<p>Access MSG91's team through email, WhatsApp, calls, or <a href=\"https://msg91.com/in/contact-us\" class='text-link active-link' target='_blank'>scheduled meetings</a> for campaign assistance, API integrations, and technical support.</p>"
       }
     ]
   },
@@ -990,7 +990,7 @@
       {
         "icon": "MdChat",
         "heading": "Get More Customers to Engage",
-        "description": "Turn plain text into rich messages with images, videos, carousels and buttons. Customers are more likely to read, tap and reply."
+        "description": "Turn plain text into rich messages with images, videos, documents, carousels and buttons. Customers are more likely to read, tap and reply."
       },
       {
         "icon": "MdVerifiedUser",
@@ -1047,7 +1047,7 @@
     "faqs": [
       {
         "question": "What is RCS Business Messaging, and how is it different from SMS?",
-        "answer": "RCS Business Messaging is an upgraded version of SMS that allows businesses to send verified, branded, and interactive messages through customers' default messaging apps. Unlike traditional SMS, RCS includes business logos, verified sender profiles, images, videos, Rich Cards, carousels, interactive buttons, read receipts, and two-way conversations. SMS remains useful for OTPs, basic notifications, and fallback delivery. Customers can receive RCS messages without downloading a separate app."
+        "answer": "RCS Business Messaging is an upgraded version of SMS that allows businesses to send verified, branded, and interactive messages through customers' default messaging apps. Unlike traditional SMS, RCS includes business logos, verified sender profiles, images, videos, PDFs, Rich Cards, carousels, interactive buttons, read receipts, and two-way conversations. SMS remains useful for OTPs, basic notifications, and fallback delivery. Customers can receive RCS messages without downloading a separate app."
       },
       {
         "question": "Is RCS Business Messaging available in India, and does it work on iPhones?",
