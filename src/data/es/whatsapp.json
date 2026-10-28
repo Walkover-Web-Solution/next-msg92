@@ -869,25 +869,25 @@
                 "number": "1",
                 "icon": "MdEditNote",
                 "title": "Create Your Account",
-                "description": "<a href='/signup' target='_blank' class='text-accent hover:underline'>Sign up</a> for MSG91 and access the WhatsApp channel in your dashboard."
+                "description": "<a href='https://msg91.com/signup' target='_blank' class='text-accent hover:underline'>Sign up</a> for MSG91 and access the WhatsApp channel in your dashboard."
             },
             {
                 "number": "2",
                 "icon": "MdLink",
                 "title": "Connect Your Business",
-                "description": "Connect your Meta Business Portfolio, add an eligible number, and complete the required verification. Meta may request additional business-registration details or documents, such as a company's registered legal information and NIF, when applicable."
+                "description": "<a href='https://msg91.com/help/whatsapp/how-to-begin-with-whatsapp' target='_blank' class='text-accent hover:underline'>Connect your Meta Business Portfolio</a>, add an eligible number, and complete the required <a href='https://msg91.com/help/whatsapp/how-to-get-your-business-account-verified-on-whatsapp' target='_blank' class='text-accent hover:underline'>verification</a>. Meta may request additional business-registration details or documents, such as a company's registered legal information and NIF, when applicable."
             },
             {
                 "number": "3",
                 "icon": "MdSettings",
                 "title": "Configure Your Messaging",
-                "description": "Create approved WhatsApp templates, connect compatible applications, and set up the campaigns, notifications, or chatbots your business needs."
+                "description": "<a href='https://msg91.com/help/whatsapp/step-by-step-process-to-configure-whatsapp-api-in-msg91' target='_blank' class='text-accent hover:underline'>Create approved WhatsApp templates</a>, connect compatible applications, and set up the campaigns, notifications, or chatbots your business needs."
             },
             {
                 "number": "4",
                 "icon": "MdChatBubbleOutline",
                 "title": "Start Communicating",
-                "description": "Send eligible messages, manage customer enquiries through Hello, and review performance in MSG91 reports."
+                "description": "<a href='https://msg91.com/help/whatsapp/send-whatsapp' target='_blank' class='text-accent hover:underline'>Send eligible messages</a>, manage customer enquiries through Hello, and review performance in MSG91 reports."
             }
         ],
         "note": "Already using a WhatsApp Business number? An eligible number may be migrated to the API under Meta's onboarding requirements. However, WhatsApp Coexistence—the feature that allows simultaneous use of the Business App and API on the same number—is not currently supported under MSG91's documented guidelines. Need assistance? The MSG91 onboarding team can help with number configuration, verification, templates, and integrations.",

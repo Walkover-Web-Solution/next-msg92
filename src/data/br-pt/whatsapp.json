@@ -873,25 +873,25 @@
                 "number": "1",
                 "icon": "MdEditNote",
                 "title": "Crie Sua Conta",
-                "description": "Cadastre-se na MSG91 e acesse o canal WhatsApp pelo painel."
+                "description": "<a href='https://msg91.com/signup' target='_blank' class='text-accent hover:underline'>Cadastre-se</a> na MSG91 e acesse o canal WhatsApp pelo painel."
             },
             {
                 "number": "2",
                 "icon": "MdLink",
                 "title": "Conecte Sua Empresa",
-                "description": "Vincule seu portfólio empresarial da Meta, adicione um número elegível e conclua as verificações necessárias."
+                "description": "<a href='https://msg91.com/help/whatsapp/how-to-begin-with-whatsapp' target='_blank' class='text-accent hover:underline'>Vincule seu portfólio empresarial da Meta</a>, adicione um número elegível e conclua as <a href='https://msg91.com/help/whatsapp/how-to-get-your-business-account-verified-on-whatsapp' target='_blank' class='text-accent hover:underline'>verificações necessárias</a>."
             },
             {
                 "number": "3",
                 "icon": "MdSettings",
                 "title": "Configure Suas Mensagens",
-                "description": "Crie templates aprovados, conecte os sistemas relevantes e configure campanhas, chatbots ou notificações automáticas."
+                "description": "<a href='https://msg91.com/help/whatsapp/step-by-step-process-to-configure-whatsapp-api-in-msg91' target='_blank' class='text-accent hover:underline'>Crie templates aprovados</a>, conecte os sistemas relevantes e configure campanhas, chatbots ou notificações automáticas."
             },
             {
                 "number": "4",
                 "icon": "MdChatBubbleOutline",
                 "title": "Comece a Atender",
-                "description": "Envie mensagens elegíveis, gerencie as conversas pelo Hello e acompanhe os resultados pelos relatórios da MSG91."
+                "description": "<a href='https://msg91.com/help/whatsapp/send-whatsapp' target='_blank' class='text-accent hover:underline'>Envie mensagens elegíveis</a>, gerencie as conversas pelo Hello e acompanhe os resultados pelos relatórios da MSG91."
             }
         ],
         "note": "Já utiliza o aplicativo WhatsApp Business? Empresas elegíveis podem ter a opção de utilizar o WhatsApp Coexistence ou migrar um número existente, de acordo com os requisitos e limitações da Meta. Precisa de ajuda? A equipe de implantação da MSG91 pode orientar na configuração da conta, conexão do número, templates e integrações.",

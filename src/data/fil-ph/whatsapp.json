@@ -872,25 +872,25 @@
                 "number": "1",
                 "icon": "MdEditNote",
                 "title": "Gumawa ng MSG91 Account",
-                "description": "<a href='/signup' target='_blank' class='text-accent hover:underline'>Mag-sign up</a> sa MSG91 at buksan ang WhatsApp channel sa dashboard."
+                "description": "<a href='https://msg91.com/signup' target='_blank' class='text-accent hover:underline'>Mag-sign up</a> sa MSG91 at buksan ang WhatsApp channel sa dashboard."
             },
             {
                 "number": "2",
                 "icon": "MdLink",
                 "title": "Ikonekta ang Iyong Negosyo",
-                "description": "Ikonekta ang Meta Business Portfolio, magdagdag ng eligible number, at kumpletuhin ang verification requirements. Maaaring humingi ang Meta ng DTI o SEC documents kapag kailangan para sa business verification."
+                "description": "<a href='https://msg91.com/help/whatsapp/how-to-begin-with-whatsapp' target='_blank' class='text-accent hover:underline'>Ikonekta ang Meta Business Portfolio</a>, magdagdag ng eligible number, at kumpletuhin ang <a href='https://msg91.com/help/whatsapp/how-to-get-your-business-account-verified-on-whatsapp' target='_blank' class='text-accent hover:underline'>verification requirements</a>. Maaaring humingi ang Meta ng DTI o SEC documents kapag kailangan para sa business verification."
             },
             {
                 "number": "3",
                 "icon": "MdSettings",
                 "title": "I-configure ang Iyong Messaging",
-                "description": "Gumawa at mag-submit ng WhatsApp templates, mag-set up ng campaigns at chatbots, at ikonekta ang compatible business systems."
+                "description": "<a href='https://msg91.com/help/whatsapp/step-by-step-process-to-configure-whatsapp-api-in-msg91' target='_blank' class='text-accent hover:underline'>Gumawa at mag-submit ng WhatsApp templates</a>, mag-set up ng campaigns at chatbots, at ikonekta ang compatible business systems."
             },
             {
                 "number": "4",
                 "icon": "MdChatBubbleOutline",
                 "title": "Simulan ang Customer Communication",
-                "description": "Magpadala ng eligible messages, i-manage ang customer replies sa Hello, at subaybayan ang results gamit ang MSG91 reports."
+                "description": "<a href='https://msg91.com/help/whatsapp/send-whatsapp' target='_blank' class='text-accent hover:underline'>Magpadala ng eligible messages</a>, i-manage ang customer replies sa Hello, at subaybayan ang results gamit ang MSG91 reports."
             }
         ],
         "note": "May ginagamit ka nang WhatsApp Business number? Maaaring i-migrate ang eligible number sa WhatsApp Business Platform ayon sa onboarding requirements ng Meta. Pero sa kasalukuyang guidelines ng MSG91, hindi supported ang WhatsApp Coexistence. Ibig sabihin, hindi available ang sabay na paggamit ng Business App at WhatsApp Business Platform sa iisang numero sa pamamagitan ng feature na ito. Kailangan ng tulong sa setup? Puwedeng gabayan ka ng MSG91 onboarding team sa account registration, verification, templates, at integrations.",
