@@ -44,6 +44,9 @@ import SLAComp from '@/components/SLAComp/SLAComp';
 import EcommerceStoreComp from '@/components/EcommerceStoreComp/EcommerceStore';
 import CaseStudyPageComp from '@/components/CaseStudyComp/CaseStudyPageComp/CaseStudyPageComp';
 import WhyChooseMSG91 from '@/components/WhyChooseMSG91/WhyChooseMSG91';
+import WhatsAppReasonsList from '@/components/WhatsAppComp/WhyChooseComp/ReasonsList';
+import WhatsAppSplitColumns from '@/components/WhatsAppComp/OverviewComp/SplitColumns';
+import WhatsAppProcessSteps from '@/components/WhatsAppComp/GetStartedComp/ProcessSteps';
 import MigrateFromTextlocal from '@/components/migrateFromTextlocal/migrateFromTextlocal';
 import WhatsAppIntegrations from '@/components/WhatsAppIntegrations';
 import FeatureWithBulletGroup from '@/components/FeatureWithBulletGroup';
@@ -153,6 +156,12 @@ const Components = {
     CaseStudyPageComp,
     ChatBotPageComp,
     WhyChooseMSG91,
+    WhatsAppReasonsList,
+    WhatsAppWhyChoose: WhatsAppReasonsList,
+    WhatsAppSplitColumns,
+    WhatsAppOverview: WhatsAppSplitColumns,
+    WhatsAppProcessSteps,
+    WhatsAppGetStarted: WhatsAppProcessSteps,
     WhatsAppIntegrations,
     FeatureWithBulletGroup,
     FeatureBulletGroup: FeatureWithBulletGroup,
@@ -166,6 +175,7 @@ const Components = {
     Steps,
     Testimonials,
     FooterCta,
+    FooterCtaAfterBenefits: FooterCta,
     Faqs,
     G2Badges,
     Pricing,
