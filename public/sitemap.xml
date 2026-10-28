@@ -639,14 +639,6 @@
        <priority>0.6400</priority>
   </url>
   <url>
-       <loc>https://msg91.com/gdpr</loc>
-       <xhtml:link rel="alternate" hreflang="x-default" href="https://msg91.com/gdpr" />
-       <xhtml:link rel="alternate" hreflang="en" href="https://msg91.com/gdpr" />
-       <lastmod>2025-10-31T09:34:40+00:00</lastmod>
-       <changefreq>weekly</changefreq>
-       <priority>0.6400</priority>
-  </url>
-  <url>
        <loc>https://msg91.com/refund-policy</loc>
        <xhtml:link rel="alternate" hreflang="x-default" href="https://msg91.com/refund-policy" />
        <xhtml:link rel="alternate" hreflang="en" href="https://msg91.com/refund-policy" />
