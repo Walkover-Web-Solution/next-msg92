@@ -100,7 +100,7 @@
             },
             {
               "name": "New Product Launches",
-              "description": "Introduce products through images and promotional videos."
+              "description": "Introduce products through images, documents and promotional videos."
             },
             {
               "name": "Real Estate Promotions",
@@ -116,9 +116,9 @@
             }
           ],
           "features": [
-            "Image-based promotional messages.",
+            "Image and documents  based promotional messages.",
             "Video content for product and service showcases.",
-            "Rich Cards with images, descriptions, and actions.",
+            "Rich Cards with images, PDFs, descriptions, and actions.",
             "Interactive buttons alongside promotional content.",
             "Multimedia RCS marketing campaigns."
           ]
@@ -127,7 +127,7 @@
       },
       {
         "name": "Interactive RCS Product Cards and Carousels",
-        "content": "<strong>Let Customers Explore More in a Single Message</strong> Why send separate messages for every product when customers can explore your collection in one place? With MSG91's RCS carousels, showcase 10 products or services in a single swipeable message. Each card can include an image/video, description, and action button, making it easier for customers to compare options and explore what interests them.",
+        "content": "<strong>Let Customers Explore More in a Single Message</strong> Why send separate messages for every product when customers can explore your collection in one place? With MSG91's RCS carousels, showcase 10 products or services in a single swipeable message. Each card can include an image/video, description, documents, and action button, making it easier for customers to compare options and explore what interests them.",
         "more_content": {
           "usecases": [
             {
@@ -153,7 +153,7 @@
           ],
           "features": [
             "Swipeable product and service cards.",
-            "Individual images, titles, and descriptions.",
+            "Individual images, titles, PDFs and descriptions.",
             "Product-specific action buttons.",
             "Video-enabled carousels.",
             "Interactive product discovery within messages."
@@ -566,7 +566,7 @@
     "features": [
       {
         "name": "RCS for E-commerce",
-        "content": "<strong>Turn Product Discovery into More Purchases</strong> RCS helps e-commerce brands sell more with rich, branded messages. Show products in swipeable carousels with images, prices and a Shop Now button, and send personalized offers to the right customers.<br/><br/>With the MSG91 Shopify app, you can send abandoned cart reminders, order confirmations, shipping updates, and cancellation and refund alerts on RCS automatically, with no coding needed. Customers can reply to ask about their order, and the AI chatbot answers instantly.<br/><br/>If RCS isn’t delivered, MSG91 sends the message by SMS or WhatsApp, so no customer misses an update.",
+        "content": "<strong>Turn Product Discovery into More Purchases</strong> RCS helps e-commerce brands sell more with rich, branded messages. Show products in swipeable carousels with images, prices, PDFs and a Shop Now button, and send personalized offers to the right customers.<br/><br/>With the MSG91 Shopify app, you can send abandoned cart reminders, order confirmations, shipping updates, and cancellation and refund alerts on RCS automatically, with no coding needed. Customers can reply to ask about their order, and the AI chatbot answers instantly.<br/><br/>If RCS isn’t delivered, MSG91 sends the message by SMS or WhatsApp, so no customer misses an update.",
         "more_content": {
           "usecases": [
             {
@@ -579,7 +579,7 @@
             },
             {
               "name": "Flash Sales",
-              "description": "Promote limited-time deals with images, videos and carousels."
+              "description": "Promote limited-time deals with images, videos, documents and carousels."
             },
             {
               "name": "Returns & Refunds",
@@ -686,7 +686,7 @@
       },
       {
         "name": "RCS for Banking and Fintech",
-        "content": "<strong>Make Every Financial Message Clear and Trusted</strong> <p>Banks, NBFCs, fintech apps and insurance companies are among the biggest users of RCS in India. Finance and fintech make up over three-quarters of RCS traffic in India. Every message shows your verified brand profile, which helps customers tell real messages from phishing and fraud texts.<br/><br/>Send OTPs, transaction alerts and EMI reminders on RCS, with automatic SMS fallback so critical messages always reach the customer. MSG91’s AI chatbot can connect to your systems through APIs to answer questions about loan status, EMIs or account services, 24/7.<br/><br/>Use promotional RCS to grow your business too. Promote credit cards, loans, insurance plans and investment products with rich cards, images and Apply Now buttons.</p>",
+        "content": "<strong>Make Every Financial Message Clear and Trusted</strong> <p>Banks, NBFCs, fintech apps and insurance companies are among the biggest users of RCS in India. Finance and fintech make up over three-quarters of RCS traffic in India. Every message shows your verified brand profile, which helps customers tell real messages from phishing and fraud texts.<br/><br/>Send OTPs, transaction alerts and EMI reminders on RCS, with automatic SMS fallback so critical messages always reach the customer. MSG91’s AI chatbot can connect to your systems through APIs to answer questions about loan status, EMIs or account services, 24/7.<br/><br/>Use promotional RCS to grow your business too. Promote credit cards, loans, insurance plans and investment products with rich cards, images, documents and Apply Now buttons.</p>",
         "more_content": {
           "usecases": [
             {
@@ -875,8 +875,8 @@
   },
   "CompareTableComp": {
     "type": "messaging-channels",
-    "heading": "RCS vs WhatsApp vs SMS: Which Messaging Service",
-    "tableHeading": "Should Indian Businesses Use?",
+    "heading": "RCS vs WhatsApp vs SMS: Which Messaging Service Should Indian Businesses Use?",
+    "tableHeading": "",
     "featureLabel": "Feature",
     "columns": [
       {

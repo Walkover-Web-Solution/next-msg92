@@ -1,13 +1,17 @@
 import React from 'react';
 import { MdCalendarToday } from 'react-icons/md';
 
-export default function FooterCta({ data }) {
+export default function FooterCta({ data, pageInfo }) {
     if (!data?.heading) return null;
+
+    const isRcs = pageInfo?.page === 'rcs';
 
     return (
         <section
             className={`py-20 lg:py-28 ${
-                data?.theme ? 'bg-gradient-to-br from-blue-100 via-indigo-20 to-violet-10' : 'bg-slate-950'
+                pageInfo?.page === 'rcs' && data?.theme
+                    ? 'bg-gradient-to-br from-blue-100 via-indigo-20 to-violet-10'
+                    : 'bg-slate-950'
             }`}
         >
             <div className='container cont _p'>

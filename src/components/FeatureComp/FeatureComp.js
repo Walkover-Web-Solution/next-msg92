@@ -8,6 +8,7 @@ function FeatureCard({ feature, index, featureKey, total, openedFeatures, setOpe
     const Icon = GetMdIcons(feature?.icon);
     const isWide = (index + 1) % 3 === 0 || (index === total - 1 && total % 3 === 1);
     const isOpen = openedFeatures.includes(featureKey);
+    const isRcs = pageInfo?.page === 'rcs';
 
     return (
         <div
@@ -128,12 +129,19 @@ function FeatureCard({ feature, index, featureKey, total, openedFeatures, setOpe
 export default function FeatureComp({ data, pageInfo }) {
     const [openedFeatures, setOpenedFeatures] = useState([]);
     const features = data?.features || [];
+    const isRcs = pageInfo?.page === 'rcs';
 
     return (
         <div className={data?.bg || 'bg-neutral'}>
             <div className='container py-20 flex flex-col gap-6'>
-                {data?.heading && <h2 className='text-3xl font-bold'>{data.heading}</h2>}
-                {data?.subheading && <p className='text-lg text-gray-600 max-w-3xl'>{data.subheading}</p>}
+                {data?.heading && (
+                    <h2 className={`text-3xl font-bold ${isRcs ? 'text-center' : ''}`}>{data.heading}</h2>
+                )}
+                {data?.subheading && (
+                    <p className={`text-lg text-gray-600 max-w-3xl ${isRcs ? 'text-center mx-auto' : ''}`}>
+                        {data.subheading}
+                    </p>
+                )}
                 <div className='grid grid-cols-2 md:gap-12 gap-6'>
                     {features.map((feature, index) => (
                         <FeatureCard
