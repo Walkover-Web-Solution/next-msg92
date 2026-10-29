@@ -91,7 +91,7 @@ const nextConfig = {
         WIDGET_AUTH_TOKEN: getEnvValue('WIDGET_AUTH_TOKEN'),
         WIDGET_SCRIPT: getEnvValue('WIDGET_SCRIPT'),
 
-        //widget config for msg91 submitt 
+        //widget config for msg91 submitt
         SUMMIT_OTP_WIDGET_TOKEN: getEnvValue('SUMMIT_OTP_WIDGET_TOKEN'),
         SUMMIT_WIDGET_AUTH_TOKEN: getEnvValue('SUMMIT_WIDGET_AUTH_TOKEN'),
         SUMMIT_WIDGET_SCRIPT: getEnvValue('SUMMIT_WIDGET_SCRIPT'),
@@ -105,6 +105,11 @@ const nextConfig = {
         WHATSAPP_AUTHKEY: getEnvValue('WHATSAPP_AUTHKEY'),
         SUMMIT_WA_INTEGRATED_NUMBER: getEnvValue('SUMMIT_WA_INTEGRATED_NUMBER'),
         SUMMIT_WA_API_URL: getEnvValue('SUMMIT_WA_API_URL'),
+
+        // A/B experiment recording. Publishable: the key can only append events.
+        // Referenced from the client bundle in src/utils/experiments.js.
+        MW_EVENTS_URL: getEnvValue('MW_EVENTS_URL'),
+        MW_KEY: getEnvValue('MW_KEY'),
     },
 };
 

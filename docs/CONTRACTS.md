@@ -179,7 +179,7 @@ Sign-up request bodies sent to `API_BASE_URL` (UTM keys are spread in from the `
 - **Public site.** The site has no user auth of its own. API routes are unauthenticated.
 - **Sign-up session.** The `PHPSESSID` returned by the nexus APIs is stored in the plain JS cookie `sessionId` for 30 days. It is passed back to the server in the body (`session`) and in the final redirect query. It is not sent as a header.
 - **OAuth.** GitHub sign-in builds the authorize URL from `GITHUB_CLIENT_ID` and redirects back to `REDIRECT_URL` + `/github-auth-token`. That page (`src/pages/github-auth-token.js`) and `src/pages/outlook-token.js` forward the query string to `REDIRECT_URL` + `/signin` or `/signup`. The control panel exchanges the code. The site never sees a token.
-- **Client-exposed config.** Every key in `next.config.mjs` → `env` is inlined at build time wherever `process.env.<KEY>` appears. If that code is in the client bundle, the value ships to browsers. This is how the OTP and chat widget tokens (`OTP_WIDGET_TOKEN`, `WIDGET_AUTH_TOKEN`, `SUMMIT_OTP_WIDGET_TOKEN`, `SUMMIT_WIDGET_AUTH_TOKEN`, `CHAT_WIDGET_TOKEN`, `ECOMMERCE_WIDGET_TOKEN`) reach browsers, and they are designed to be public.
+- **Client-exposed config.** Every key in `next.config.mjs` → `env` is inlined at build time wherever `process.env.<KEY>` appears. If that code is in the client bundle, the value ships to browsers. This is how the OTP and chat widget tokens (`OTP_WIDGET_TOKEN`, `WIDGET_AUTH_TOKEN`, `SUMMIT_OTP_WIDGET_TOKEN`, `SUMMIT_WIDGET_AUTH_TOKEN`, `CHAT_WIDGET_TOKEN`, `ECOMMERCE_WIDGET_TOKEN`) reach browsers, and they are designed to be public. `MW_EVENTS_URL` and `MW_KEY` are the same kind of value: `src/utils/experiments.js` reads both in the browser. `MW_KEY` is publishable and can only append experiment events.
 
 > [!WARNING]
 > `WHATSAPP_AUTHKEY` is a server secret, but it is also listed in `next.config.mjs` `env`. Today only `src/pages/api/send-summit-whatsapp.js` reads it, so it is inlined only into the server bundle. If any component ever references `process.env.WHATSAPP_AUTHKEY`, the key leaks to every visitor. Server secrets belong in plain `process.env` at runtime, not in `env`.
@@ -212,20 +212,33 @@ The site has no shared envelope. Each source uses its own shape:
 | sessionStorage                                                                   | `msg91SummitBannerClosed`      | `'1'`                                             | tab                                                         | `SummitBanner.js` (cleared by `?preview_banner=true` or `?indore=true`)                                                                                                                                                                                                 |
 | sessionStorage                                                                   | `msg91_user_geo`               | `{city,country,region}` JSON                      | tab                                                         | `SummitBanner.js`                                                                                                                                                                                                                                                       |
 | DOM                                                                              | `.utm` anchors                 | `href` query merged with the `msg91_query` params | per render                                                  | `src/utils/utilis.js:setUtm`                                                                                                                                                                                                                                            |
+| localStorage                                                                     | `mw_visitor`                   | 32 hex characters                                 | until the visitor clears site data                          | `src/utils/experiments.js`. Written in the browser only, the first time `mwVariant` or `mwSend` runs with both env vars set. Not a cookie, so `getUtmFromCookies` does not copy it onto the sign-up redirect                                                            |
 
-The site uses no localStorage, IndexedDB or query-cache library.
+The site uses no IndexedDB or query-cache library. The only localStorage key is `mw_visitor` above.
 
 > [!WARNING]
 > `src/utils/utilis.js:getUtmFromCookies` returns **every** readable cookie, not only UTM ones. `SignUp.js` appends all of them to the redirect URL, including `sessionId`, `_ga`, Clarity cookies and `country`. Filter the keys before you add new cookies.
 
 ## Analytics & Telemetry Event Contracts
 
-| Tool               | ID            | Loaded in                                                                                  | Events                                                                                                                     |
-| ------------------ | ------------- | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
-| Google Tag Manager | `GTM-NWZKLRJ` | `src/components/HeadComp/HeadComp.js:HeadComp` and `src/pages/404.js` (`afterInteractive`) | Only the default GTM bootstrap push. No code calls `dataLayer.push`, so all events are configured inside the GTM container |
-| Microsoft Clarity  | `ru7xog184s`  | the same two files                                                                         | automatic session recording. No custom `clarity()` calls                                                                   |
+| Tool               | ID            | Loaded in                                                                                  | Events                                                                                                                                               |
+| ------------------ | ------------- | ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Google Tag Manager | `GTM-NWZKLRJ` | `src/components/HeadComp/HeadComp.js:HeadComp` and `src/pages/404.js` (`afterInteractive`) | Only the default GTM bootstrap push. No code calls `dataLayer.push`, so all events are configured inside the GTM container                           |
+| Microsoft Clarity  | `ru7xog184s`  | the same two files                                                                         | automatic session recording. No custom `clarity()` calls                                                                                             |
+| Experiment events  | `MW_KEY`      | `src/utils/experiments.js`, imported once from `src/pages/_app.js`                         | No experiment runs yet. A page calls `mwVariant(key, variants)` during render and `mwSend` after the variant is shown or the visitor acts. See below |
 
-There is no consent banner, so both tools load on every page, including non-production builds. Any tracked click or conversion therefore depends on DOM selectors inside GTM, and renaming CSS classes or ids can silently break those tags (see [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md)). The UTM attribution described above is carried to the control panel through cookies and the redirect query, not through analytics.
+There is no consent banner, so GTM and Clarity load on every page, including non-production builds. Any tracked click or conversion therefore depends on DOM selectors inside GTM, and renaming CSS classes or ids can silently break those tags (see [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md)). The UTM attribution described above is carried to the control panel through cookies and the redirect query, not through analytics.
+
+### Experiment events
+
+`src/utils/experiments.js` assigns a variant in the browser and can POST an event to `MW_EVENTS_URL`. The page does not wait for that request.
+
+- **When either env var is unset,** `mwVariant` still returns the control (the first variant) and `mwSend` returns without a request.
+- **On the server,** `mwVariant` returns the control and `mwSend` returns. The module does not store a visitor id in the Node process, so one request cannot pin every later request to the same variant.
+- **Body:** `{ "key": "<MW_KEY>", "visitor_id": "<32 hex chars from localStorage mw_visitor>", "event": "exposure" | "conversion", "experiment": "<key>", "variant": "<variant key>", "goal"?: "<goal>" }`.
+- **Transport:** `navigator.sendBeacon` when it accepts the body, otherwise `fetch` with `keepalive`, `credentials: 'omit'` and a 3 second abort. The call is not awaited. One failure sets an in-memory flag and later calls send nothing for that page view.
+- **What a page must not do:** call `mwSend` during render, hide the page while choosing a variant, or retry the request. Variants and weights come from the middleware definition, in that order, for example `[['control', 50], ['b', 50]]`.
+- **Host CSP:** `public/_headers` sets `default-src 'self'`, which would block this POST if the host applies that file. Whether it does is still open ([OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) Q-005). The events URL is configuration, so it is not added to the header file.
 
 ## Required / Unavailable Backend Capabilities
 
