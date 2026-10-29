@@ -21,7 +21,11 @@ export default class MyDocument extends Document {
     render() {
         return (
             <Html lang={this.props.lang} data-theme='light'>
-                <Head />
+                <Head>
+                    {/* SVG for browsers. PNG for clients that rasterize SVG onto white (Google's favicon proxy). */}
+                    <link rel='icon' href='/assets/brand/favicon.svg' type='image/svg+xml' />
+                    <link rel='icon' href='/assets/brand/favicon-96.png' type='image/png' sizes='96x96' />
+                </Head>
                 <body>
                     <Main />
                     <NextScript />
