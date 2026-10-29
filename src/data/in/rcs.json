@@ -2,10 +2,9 @@
   "HeadComp": {
     "title": "RCS Business Messaging Services in India | MSG91",
     "description": "Upgrade customer engagement with RCS Business Messaging in India. Send branded messages, rich media, interactive campaigns, and automated updates with MSG91."
-
   },
   "BannerComp": {
-    "slug": "whatsapp",
+    "slug": "rcs",
     "product": {
       "name": "RCS",
       "icon": "/assets/icons/products/rcs.svg"
@@ -752,52 +751,52 @@
     ]
   },
   "ExperienceComp": {
-  "heading": "Experience RCS Business Messaging Live",
-  "subheading": "See How Interactive RCS Messaging Really Works",
-  "description": "Why just read about RCS when you can experience it yourself? Scan the QR code to start a live RCS conversation with MSG91. Explore branded messaging, interactive buttons, and rich messaging experiences directly from your phone.",
-  "features": [
-    "Experience RCS messaging on your phone.",
-    "Explore branded and interactive conversations.",
-    "Connect directly with the MSG91 team."
-  ],
-  "scanLabel": "Scan to Try RCS Live",
-  "qrImage": "/assets/contact-us/rcs_qr_code.png",
-  "qrAlt": "QR code to start a live RCS conversation with MSG91",
-  "note": "Note: Available for Android users with RCS chats enabled in their messaging app.",
-  "rcs": {
-    "component": "QrWithImageCard",
-    "badge": "REACH US",
-    "heading": "Contact us via RCS",
-    "subheading": "Scan the code to start a conversation with our team over RCS, right from your messaging app.",
+    "heading": "Experience RCS Business Messaging Live",
+    "subheading": "See How Interactive RCS Messaging Really Works",
+    "description": "Why just read about RCS when you can experience it yourself? Scan the QR code to start a live RCS conversation with MSG91. Explore branded messaging, interactive buttons, and rich messaging experiences directly from your phone.",
     "features": [
-      {
-        "icon": "MdBolt",
-        "color": "text-hello",
-        "text": "Instant conversations"
-      },
-      {
-        "icon": "MdGridView",
-        "color": "text-blue-600",
-        "text": "Rich and interactive messaging"
-      },
-      {
-        "icon": "MdHeadset",
-        "color": "text-purple-600",
-        "text": "Direct support, no queue"
-      }
+      "Experience RCS messaging on your phone.",
+      "Explore branded and interactive conversations.",
+      "Connect directly with the MSG91 team."
     ],
-    "scanLabel": "Scan to chat",
-    "scanCaption": "Scan to start a conversation with MSG91.",
-    "rcsLink": "https://rbm.goog/message?bot-id=msg91_locv1fl3_agent%40rbm.goog&fallback=aHR0cHM6Ly9tc2c5MS5jb20vaW4&body=Hi",
-    "phoneImage": "/assets/contact-us/rcs_phone.webp",
+    "scanLabel": "Scan to Try RCS Live",
     "qrImage": "/assets/contact-us/rcs_qr_code.png",
-    "scanTips": [
-      "For Android users only",
-      "Enable RCS chats in your Messages settings",
-      "No app install needed"
-    ]
-  }
-},
+    "qrAlt": "QR code to start a live RCS conversation with MSG91",
+    "note": "Note: Available for Android users with RCS chats enabled in their messaging app.",
+    "rcs": {
+      "component": "QrWithImageCard",
+      "badge": "REACH US",
+      "heading": "Contact us via RCS",
+      "subheading": "Scan the code to start a conversation with our team over RCS, right from your messaging app.",
+      "features": [
+        {
+          "icon": "MdBolt",
+          "color": "text-hello",
+          "text": "Instant conversations"
+        },
+        {
+          "icon": "MdGridView",
+          "color": "text-blue-600",
+          "text": "Rich and interactive messaging"
+        },
+        {
+          "icon": "MdHeadset",
+          "color": "text-purple-600",
+          "text": "Direct support, no queue"
+        }
+      ],
+      "scanLabel": "Scan to chat",
+      "scanCaption": "Scan to start a conversation with MSG91.",
+      "rcsLink": "https://rbm.goog/message?bot-id=msg91_locv1fl3_agent%40rbm.goog&fallback=aHR0cHM6Ly9tc2c5MS5jb20vaW4&body=Hi",
+      "phoneImage": "/assets/contact-us/rcs_phone.webp",
+      "qrImage": "/assets/contact-us/rcs_qr_code.png",
+      "scanTips": [
+        "For Android users only",
+        "Enable RCS chats in your Messages settings",
+        "No app install needed"
+      ]
+    }
+  },
   "FooterCta": {
     "theme": "rcs",
     "bg": true,
