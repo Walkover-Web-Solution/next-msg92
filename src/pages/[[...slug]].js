@@ -89,6 +89,7 @@ import FileHostingStepsComp from '@/components/FileHostingComp/StepsComp/StepsCo
 import FileHostingUseCasesComp from '@/components/FileHostingComp/UseCasesComp/UseCasesComp';
 import FileHostingFormatsComp from '@/components/FileHostingComp/FormatsComp/FormatsComp';
 import BenefitSection from '@/components/OneApiBenefitComp/BenefitSection';
+import ExperienceComp from '@/components/ExperienceComp/ExperienceComp';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -116,6 +117,7 @@ const Components = {
     FeatureComp,
     BenefitSection,
     IndustryFeatureComp: FeatureComp,
+    ExperienceComp,
     AboutUsComp,
     DevelopersComp,
     StartupComp,
