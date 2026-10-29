@@ -358,6 +358,10 @@
                     "link": "startups"
                 },
                 {
+                    "name": "Hello for startups",
+                    "link": "hello-for-startups"
+                },
+                {
                     "name": "Partners and integrations",
                     "link": "partners-and-integrations"
                 },
@@ -392,10 +396,6 @@
                 {
                     "name": "Privacy policy",
                     "link": "privacy-policy"
-                },
-                {
-                    "name": "GDPR",
-                    "link": "gdpr"
                 },
                 {
                     "name": "Refund policy",
@@ -458,6 +458,10 @@
                     "link": "https://www.youtube.com/@WalkoverWS"
                 }
             ]
+        },
+        "address": {
+            "name": "WALKOVER TECHNOLOGIES - FZCO",
+            "address": "Building A1, Dubai Digital Park,<br/>Dubai Silicon Oasis, Dubai"
         }
     }
 }

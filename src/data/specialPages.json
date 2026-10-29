@@ -11,7 +11,6 @@
         "demochatbot",
         "terms-of-use",
         "privacy-policy",
-        "gdpr",
         "refund-policy",
         "no-spam",
         "startup-policy",
@@ -42,7 +41,9 @@
         "shorturl",
         "knowledgebase",
         "file-hosting",
-        "push-notification"
+        "push-notification",
+        "hello-for-startups",
+        "hello-for-startups-terms"
     ],
     "countries": [
         "in",

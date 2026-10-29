@@ -2,6 +2,7 @@ import getNestedURL from '@/utils/getNestedURL';
 import getPricingURL from '@/utils/pricing/getPricingURL';
 import getURL from '@/utils/getURL';
 import Image from 'next/image';
+import Script from 'next/script';
 
 export default function FooterComp({ componentData, pageInfo }) {
     const hidden = componentData?.hide?.includes(pageInfo?.page);
@@ -124,6 +125,17 @@ export default function FooterComp({ componentData, pageInfo }) {
                                                         </a>
                                                     </li>
                                                 );
+                                            } else if (link?.link === 'hello-for-startups') {
+                                                return (
+                                                    <li key={index} className='text-link-white'>
+                                                        <a
+                                                            href={getURL('product', link?.link, pageInfo)}
+                                                            className='text-gray-200'
+                                                        >
+                                                            {link?.name}
+                                                        </a>
+                                                    </li>
+                                                );
                                             } else {
                                                 return (
                                                     <li key={index} className='text-link-white'>
@@ -199,10 +211,10 @@ export default function FooterComp({ componentData, pageInfo }) {
                                         <Image
                                             src='/assets/icons/social/facebook.svg'
                                             alt='Facebook'
-                                            width={24}
-                                            height={24}
+                                            width={13}
+                                            height={23}
                                             loading='lazy'
-                                            sizes='24px'
+                                            sizes='13px'
                                         />
                                     </a>
                                     <a
@@ -254,23 +266,41 @@ export default function FooterComp({ componentData, pageInfo }) {
                                 />
                             )}
 
-                            <div className='flex flex-col gap-4 mt-auto lg:items-end'>
-                                <a
-                                    target='_blank'
-                                    href={
-                                        'https://www.facebook.com/business/partner-directory/search?solution_type=messaging&ref=pd_home_hero_cta&id=5412005225590465&section=overview'
-                                    }
-                                >
-                                    <Image
-                                        className='w-40'
-                                        src={'/assets/icons/extras/meta-business-platform.svg'}
-                                        width={480}
-                                        height={480}
-                                        alt='Meta Business Platform'
-                                        loading='lazy'
-                                        sizes='(max-width: 768px) 120px, 160px'
-                                    />
-                                </a>
+                            <div className='flex items-center gap-6 mt-auto lg:justify-end'>
+                                <Image
+                                    className='w-32'
+                                    src={'/assets/icons/extras/meta-business-platform.svg'}
+                                    width={480}
+                                    height={480}
+                                    alt='Meta Business Platform'
+                                    loading='lazy'
+                                    sizes='(max-width: 768px) 120px, 160px'
+                                />
+                                {pageInfo?.country !== 'in' && (
+                                    <>
+                                        <div className='h-8 sm:h-9 md:h-10 lg:h-12 xl:h-14 w-px bg-gray-700 shrink-0' />
+                                        <a
+                                            href='https://www.g2.com/products/msg91/take_survey?utm_source=review-widget'
+                                            title='Leave a review of MSG91 on G2'
+                                            target='_blank'
+                                            rel='noopener noreferrer'
+                                            className='group inline-flex items-center rounded-md overflow-hidden border border-white/20 hover:border-white/50 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer shrink-0'
+                                        >
+                                            <img
+                                                className='w-32 sm:w-36 md:w-40 lg:w-48 xl:w-52'
+                                                alt='Review MSG91 on G2'
+                                                src='https://www.g2.com/products/msg91/widgets/stars?color=white&type=reviews'
+                                            />
+                                        </a>
+                                        <Script
+                                            id='g2-rating-schema'
+                                            strategy='afterInteractive'
+                                            dangerouslySetInnerHTML={{
+                                                __html: `(function(a,b,c,d){window.fetch("https://www.g2.com/products/msg91/rating_schema.json").then(e=>e.json()).then(f=>{c=a.createElement(b);c.type="application/ld+json";c.text=JSON.stringify(f);d=a.getElementsByTagName(b)[0];d.parentNode.insertBefore(c,d);});})(document,"script");`,
+                                            }}
+                                        />
+                                    </>
+                                )}
                             </div>
                         </div>
                     </div>

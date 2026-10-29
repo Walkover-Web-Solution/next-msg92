@@ -168,6 +168,13 @@
             },
             "heading": "OTP Widget Pricing",
             "get_started": "Get Started",
+            "dialPlan": {
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
             "connectComp": {
                 "content": "OTP widget/SDK usage is free.",
                 "content2": "Channel wise pricing will be applicable for sending message.",

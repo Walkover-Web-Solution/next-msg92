@@ -363,6 +363,10 @@
                     "link": "startups"
                 },
                 {
+                    "name": "Hello for startups",
+                    "link": "hello-for-startups"
+                },
+                {
                     "name": "Partners and integrations",
                     "link": "partners-and-integrations"
                 },
@@ -397,10 +401,6 @@
                 {
                     "name": "Privacy policy",
                     "link": "privacy-policy"
-                },
-                {
-                    "name": "GDPR",
-                    "link": "gdpr"
                 },
                 {
                     "name": "Refund policy",

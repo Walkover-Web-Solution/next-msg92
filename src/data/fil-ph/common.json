@@ -363,6 +363,10 @@
                     "link": "startups"
                 },
                 {
+                    "name": "Hello for startups",
+                    "link": "hello-for-startups"
+                },
+                {
                     "name": "Mga Partner at Integrasyon",
                     "link": "partners-and-integrations"
                 },
@@ -397,10 +401,6 @@
                 {
                     "name": "Patakaran sa Privacy",
                     "link": "privacy-policy"
-                },
-                {
-                    "name": "GDPR",
-                    "link": "gdpr"
                 },
                 {
                     "name": "Patakaran sa Refund",
@@ -463,6 +463,10 @@
                     "link": "https://www.youtube.com/@WalkoverWS"
                 }
             ]
+        },
+        "address": {
+            "name": "Superheroes, Inc.",
+            "address": "1111B S Governors Ave, STE 26780,<br/>Dover, DE 19904"
         }
     }
 }

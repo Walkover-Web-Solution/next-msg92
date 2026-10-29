@@ -428,7 +428,7 @@ function getUniqueServiceNames(plans) {
         const servicesList = plan?.services ?? [];
         for (const service of servicesList) {
             const serviceName = service?.name;
-            const hasDialPlan = service?.dialPlan != null && service?.dialPlan?.data?.length > 0;
+            const hasDialPlan = service?.dialPlan != null;
             if (serviceName && !hasDialPlan) {
                 serviceNames.add(serviceName);
             }
@@ -552,7 +552,7 @@ function computePlanTotal(plan, tabtype, usageByService) {
         const serviceName = service?.name;
         if (!serviceName) continue;
 
-        const hasDialPlan = service?.dialPlan != null && service?.dialPlan?.data?.length > 0;
+        const hasDialPlan = service?.dialPlan != null;
         if (hasDialPlan) continue;
 
         const freeCredits = service?.freeCredit;
