@@ -9,6 +9,7 @@ covers:
         '.prettierrc.json',
         '.browserslistrc',
         'scripts/**',
+        'mcp/api-reference/**',
     ]
 verified_at: 701fd33a
 verified_on: 2026-10-22
@@ -91,11 +92,30 @@ The build passes at `701fd33a` and prerenders 285 pages, most of them `/guide/[s
 | Check Suite              | Command                                        | What It Validates                                                                                                                                                |
 | ------------------------ | ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Page-data registry check | `node scripts/check-page-data.mjs`             | Every top-level key in every page JSON under `src/data/` names a component registered in `src/pages/[[...slug]].js`                                              |
+| Internal API reference   | `node mcp/api-reference/check.mjs`             | `docs/internal-api.json` matches `src/pages/api`, `docs/INTERNAL_API.md` is current, and the MCP server answers `list_endpoints` and `read_endpoint` on `/mcp`   |
 | Production build         | `BASE_URL=http://localhost:3030 npm run build` | Compiles all pages and prerenders the blog                                                                                                                       |
 | Formatting               | `npx prettier --check <files>`                 | `.prettierrc.json` style (4 spaces, single quotes, width 120). The pre-commit hook (`.husky/pre-commit` → `lint-staged`) runs `prettier --write` on staged files |
 | Linting                  | `npm run lint`                                 | **Broken at baseline:** Next.js 16 removed `next lint`, so the script fails with "Invalid project directory provided". There is no ESLint config in the repo     |
 
 There is no TypeScript, no unit test runner and no end-to-end suite.
+
+## Internal API MCP server
+
+`mcp/api-reference/server.mjs` is a separate Node process. It is not a Next.js route and it does not start with `npm run dev`. It reads `docs/internal-api.json` and serves it over the Model Context Protocol. It holds no secrets and makes no outbound calls.
+
+```bash
+npm run mcp:api-docs
+```
+
+Agents connect to the path `/mcp`. Locally that is `http://127.0.0.1:8787/mcp`. Tools are `list_endpoints` and `read_endpoint`.
+
+To publish it, run the same process on its own host: `HOST=0.0.0.0 PORT=8787 MCP_PUBLIC_HOST=<hostname> node mcp/api-reference/server.mjs`. Put TLS in front of that process. The path stays `/mcp`. `HOST`, `PORT`, `MCP_PUBLIC_HOST` and `MCP_ALLOWED_ORIGINS` are process environment for this server only. They are not Next.js `env` keys and they are not listed in `.env.example`. Details and the client snippet are in `mcp/api-reference/README.md`.
+
+After editing `docs/internal-api.json`, regenerate the human page:
+
+```bash
+node mcp/api-reference/check.mjs --write
+```
 
 ## Safe Test-Data Guidance
 
