@@ -5,48 +5,49 @@
 
   },
   "BannerComp": {
-  "slug": "whatsapp",
-  "product": {
-    "name": "RCS",
-    "icon": "/assets/icons/products/rcs.svg"
-  },
-  "code": false,
-  "heading": "RCS Business Messaging with Auto Fallback Messages.",
-  "subheading": "MSG91’s RCS messaging platform helps businesses run branded campaigns, interactive product showcases, AI-powered chatbots and API integrations. If any message fails to deliver, you can set RCS as the fallback. Customized automatic fallback across SMS, WhatsApp, Email and Voice so every message reaches your customer.",
-  "banner_video": "/assets/rcs/hero_section.webm",
-  "not_absolute": "true",
-  "getstarted_btn": "Get Started",
-  "getstarted_btn_link": "https://calendly.com/revenue-squad/solutions-meet",
-  "text_h2": "RCS Business Messaging API:",
-  "trustedByComp": {
-    "heading": "Trusted by 30,000+ global businesses",
-    "logos": [
-      {
-        "name": "Razorpay",
-        "url": "/assets/trusted_by/razorpay.svg"
-      },
-      {
-        "name": "Xiaomi",
-        "url": "/assets/trusted_by/xiaomi.svg"
-      },
-      {
-        "name": "Unacademy",
-        "url": "/assets/trusted_by/unacademy.svg"
-      },
-      {
-        "name": "Dream11",
-        "url": "/assets/trusted_by/dream11.svg"
-      },
-      {
-        "name": "Indeed",
-        "url": "/assets/trusted_by/indeed.svg"
-      },
-      {
-        "name": "Ixigo",
-        "url": "/assets/trusted_by/ixigo.svg"
-      }
-    ]
-  }
+    "slug": "whatsapp",
+    "product": {
+      "name": "RCS",
+      "icon": "/assets/icons/products/rcs.svg"
+    },
+    "code": false,
+    "heading": "RCS Business Messaging with Auto Fallback Messages.",
+    "subheading": "MSG91’s RCS messaging platform helps businesses run branded campaigns, interactive product showcases, AI-powered chatbots and API integrations. If any message fails to deliver, you can set RCS as the fallback. Customized automatic fallback across SMS, WhatsApp, Email and Voice so every message reaches your customer.",
+    "banner_video": "/assets/rcs/hero_section.webm",
+    "not_absolute": "true",
+    "getstarted_btn": "Get Started",
+    "getstarted_btn_link": "https://calendly.com/revenue-squad/solutions-meet",
+    "schedule_meet": "Book a Free Demo",
+    "text_h2": "RCS Business Messaging API:",
+    "trustedByComp": {
+      "heading": "Trusted by 30,000+ global businesses",
+      "logos": [
+        {
+          "name": "Razorpay",
+          "url": "/assets/trusted_by/razorpay.svg"
+        },
+        {
+          "name": "Xiaomi",
+          "url": "/assets/trusted_by/xiaomi.svg"
+        },
+        {
+          "name": "Unacademy",
+          "url": "/assets/trusted_by/unacademy.svg"
+        },
+        {
+          "name": "Dream11",
+          "url": "/assets/trusted_by/dream11.svg"
+        },
+        {
+          "name": "Indeed",
+          "url": "/assets/trusted_by/indeed.svg"
+        },
+        {
+          "name": "Ixigo",
+          "url": "/assets/trusted_by/ixigo.svg"
+        }
+      ]
+    }
   },
   "FeatureComp": {
     "heading": "From Rich Media to AI Chatbots: Explore RCS Business Messaging Features",
