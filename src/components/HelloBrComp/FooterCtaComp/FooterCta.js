@@ -1,9 +1,10 @@
 import React from 'react';
 import { MdCalendarToday } from 'react-icons/md';
 
-export default function FooterCta({ data }) {
+export default function FooterCta({ data, pageInfo }) {
     if (!data?.heading) return null;
 
+    const isRcs = pageInfo?.page === 'rcs';
     const isLight = Boolean(data?.bg);
     const primaryBtnClass = isLight
         ? data?.theme === 'rcs'
@@ -12,7 +13,9 @@ export default function FooterCta({ data }) {
         : 'bg-indigo-600 shadow-xl shadow-indigo-600/40 hover:bg-indigo-500';
 
     return (
-        <section className={`${isLight ? 'bg-white' : 'bg-slate-950'} py-20 lg:py-28`}>
+        <section
+            className={`py-20 lg:py-28 ${isRcs && data?.theme ? 'bg-gradient-to-br from-blue-100 via-indigo-20 to-violet-10' : isLight ? 'bg-white' : 'bg-slate-950'}`}
+        >
             <div className='container cont _p'>
                 <div className='cont text-center'>
                     {data?.label && (
