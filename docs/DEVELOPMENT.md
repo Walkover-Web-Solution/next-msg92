@@ -16,11 +16,11 @@ verified_on: 2026-10-22
 
 # Development & Verification Guide
 
-Commands below were run on 2026-10-22 against `701fd33a` (Node 25.9.0, npm 11.12.1) unless marked otherwise.
+Commands below were run on 2026-10-22 against `701fd33a` (Node 25.9.0, npm 11.12.1) unless marked otherwise. The Node minimum, the README version line and the environment-file notes were rechecked at `98fefc31` (2026-10-29). The variable inventory is [CONFIGURATION.md](CONFIGURATION.md).
 
 ## Prerequisites & Runtime Environment
 
-- **Node.js:** `>=20.9.0`. This is the minimum for the installed Next.js 16.0.7. The repo has no `.nvmrc` or `engines` field. `README.md` still says Node ≥ 18, which is out of date.
+- **Node.js:** `>=20.9.0`. That is the `engines.node` value of `next@16.0.7` in `package-lock.json`. The repo has no `.nvmrc`, and `package.json` has no `engines` field. `README.md` states the same minimum (Node.js ≥ 20.9, Next.js 16, React 19).
 - **Package Manager:** npm (lockfile: `package-lock.json`). Use `npm ci` for a clean install.
 - **Required System Tools:** git. Python 3 only if you run the doc verifier.
 
@@ -35,7 +35,7 @@ Commands below were run on 2026-10-22 against `701fd33a` (Node 25.9.0, npm 11.12
     ```bash
     cp .env.example .env
     ```
-    `next.config.mjs` loads `.env` with `dotenv` and falls back to `process.env`. `.env.example` is written as `KEY: KEY` (YAML-like). Rewrite each line as `KEY=value` with the values from your team's secret store. Never commit `.env` (it is in `.gitignore`). <!-- verify:ignore -->
+    `next.config.mjs` loads `.env` with `dotenv` (`dotenv.config().parsed`) and uses `process.env` first (`getEnvValue`). `.env.example` is written as `KEY: KEY`. `dotenv` 16.4.5, the version in `package.json`, parses that colon form: copying the file unchanged sets each variable to its own name, which is a placeholder, not an empty value. Replace each placeholder with the value from the team's secret store. Two names that `next.config.mjs` reads are absent from `.env.example`: `ECOMMERCE_WIDGET_TOKEN` and `CHAT_WIDGET_URL` ([OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) Q-020). Never commit `.env` (`.gitignore` lists `.env`, `.env.local`, `.env.prod` and `.env.test`). <!-- verify:ignore -->
 3. **Start Development Server:**
     ```bash
     npm run dev
@@ -47,7 +47,9 @@ Commands below were run on 2026-10-22 against `701fd33a` (Node 25.9.0, npm 11.12
 
 ## Environment Variables Reference
 
-All variables are declared in the `env` block of `next.config.mjs`. Next.js inlines `process.env.X` at build time wherever `X` is referenced, so **any variable referenced from a component ends up in the public JavaScript bundle**. Only variables read solely under `src/pages/api/` stay server-side. Values are never stored in the repo; get them from the team's secret store.
+All variables are declared in the `env` block of `next.config.mjs`. Next.js inlines `process.env.X` at build time wherever `X` is referenced, so **any variable referenced from a component ends up in the public JavaScript bundle**. Only variables read solely under `src/pages/api/` stay server-side. Values are never stored in the repo; get them from the team's secret store. [CONFIGURATION.md](CONFIGURATION.md) also lists variables that are declared and not read, plus the Next.js flags that are not environment variables.
+
+Four names are in the `env` block and in `.env.example`, and no file under `src/` reads them: `GOOGLE_CLIENT_ID`, `ZOHO_CLIENT_ID`, `MSAL_CLIENT_ID`, `OTP_WIDGET_TOKEN_LOGIN`. See [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) Q-009.
 
 | Variable Name                 | Required          | Client-Exposed | Default Value | Description / Where Read                                                                                                                                                        |
 | ----------------------------- | ----------------- | -------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

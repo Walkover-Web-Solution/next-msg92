@@ -18,6 +18,8 @@ verified_on: 2026-10-22
 
 The site has one goal: turn a visitor on a country-localized page into an MSG91 sign-up (see [VISION.md](VISION.md)). The five journeys below carry that goal. Each one starts on a public page with no login. Every write goes either to MSG91 backends outside this repo or to one of the small proxy routes in `src/pages/api/`. Request and response shapes for every endpoint named here live in [CONTRACTS.md](CONTRACTS.md). How the page registry and data folders work is in [ARCHITECTURE.md](ARCHITECTURE.md).
 
+The landing-cookie string and the sign-up notes below were rechecked at `98fefc31` (2026-10-29). The rest of this file was last verified at `701fd33a`. WhatsApp landing sections added since then (`WhatsAppWhyChoose`, `WhatsAppOverview`, `WhatsAppGetStarted`) are still the catch-all page in journey 1. They are not a separate flow.
+
 ## Core User Journeys Map
 
 | Flow Name                           | Trigger / Starting Route                                                                               | Target Outcome                                                                     | Primary Route & Component                                                                                                                                               |
@@ -71,7 +73,7 @@ sequenceDiagram
 4. **Response & Persistence:**
     - `Page` renders the menu bar, then each top-level JSON key through the `Components` map, then the footer.
     - Cookies (client side only):
-        - `src/utils/setCookies.js:handleBrawserCookies` runs in `src/pages/_app.js` on every page. It copies `window.location.search` into the `msg91_query` cookie for 30 days. On `partners-and-integrations/<plugin>` pages that have no query string, it writes `utm_campaign=tigerplugin&utm_source=<plugin>` instead.
+        - `src/utils/setCookies.js:handleBrawserCookies` runs in `src/pages/_app.js` on every page. It copies `window.location.search` (including the leading `?`) into the `msg91_query` cookie for 30 days. When the search is empty and `router.asPath` contains `partners-and-integrations`, it writes `?utm_campaign=tigerplugin&utm_source=<segment>&utm_medium=website`, where `<segment>` is `asPath.split('/')[2]`.
         - `Page` writes `country=<pageInfo.country>` with `max-age=3600` if the cookie is missing. Picking a language in `src/components/notificationBarComp/notificationBarComp.js:NotificationBarComp` overwrites it.
 
 ### 3. Alternative Paths & Conditional Branches

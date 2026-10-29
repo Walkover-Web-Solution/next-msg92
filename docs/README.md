@@ -5,7 +5,7 @@ verified_on: 2026-10-22
 
 # Docs index
 
-These docs are written for AI coding agents and new engineers. Every claim was checked against the code at the commit in the verified_at frontmatter field, and the cleanup of 2026-10-22 was applied on top. Start at [../AGENTS.md](../AGENTS.md).
+These docs are written for AI coding agents and new engineers. Every claim was checked against the code at the commit in that file's verified_at frontmatter field, and the cleanup of 2026-10-22 was applied on top. [CONFIGURATION.md](CONFIGURATION.md) was written at `98fefc31`. Later corrections in the other docs name that commit where they were rechecked. Start at [../AGENTS.md](../AGENTS.md).
 
 | Doc                                    | Read it when                                            | Owns                                                                              |
 | -------------------------------------- | ------------------------------------------------------- | --------------------------------------------------------------------------------- |
@@ -14,7 +14,8 @@ These docs are written for AI coding agents and new engineers. Every claim was c
 | [FLOWS.md](FLOWS.md)                   | Changing sign-up, pricing, landing, forms or free tools | User journeys, branches, failure behaviour                                        |
 | [DESIGN.md](DESIGN.md)                 | Changing UI, copy or SEO                                | Tokens, section-component contract, shared components, SEO rules                  |
 | [CONTRACTS.md](CONTRACTS.md)           | Calling or changing an API, cookie or JSON shape        | `/api/*` routes, MSG91 backend calls, page-JSON schema, cookies, analytics        |
-| [DEVELOPMENT.md](DEVELOPMENT.md)       | Setting up, verifying, opening a PR                     | Commands, env vars, verification checklist, PR flow                               |
+| [CONFIGURATION.md](CONFIGURATION.md)   | Naming or changing a setting or environment variable    | Every env var and repo setting, with no secret values                             |
+| [DEVELOPMENT.md](DEVELOPMENT.md)       | Setting up, verifying, opening a PR                     | Commands, verification checklist, PR flow                                         |
 | [DECISIONS.md](DECISIONS.md)           | Before undoing an existing pattern                      | ADRs and lessons from reverts                                                     |
 | [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) | Something looks wrong or unexplained                    | Unknowns, security items, verification gaps, cleanup log                          |
 
@@ -27,3 +28,5 @@ These docs are written for AI coding agents and new engineers. Every claim was c
 - Non-goals (the current ones are inferred): [VISION.md](VISION.md#boundaries--non-goals).
 - The open WhatsApp relay and the committed session values: [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) Q-001 and Q-002.
 - Whether alternative OAuth sign-up is coming to `main`: [FLOWS.md](FLOWS.md) and Q-009.
+- Where `/gdpr` should go now that the page file is gone: [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) Q-019.
+- Why `.env.example` omits two chat-widget variables the code reads: Q-020.

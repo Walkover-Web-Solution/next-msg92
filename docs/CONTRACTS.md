@@ -94,7 +94,7 @@ A product slug that is missing from `products.*[].slug` returns 404 on the prici
 // countries.json: 248 entries, all with exactly these keys
 { "shortname":"AF", "name":"Afghanistan", "code":93, "currency":"INR" }
 // specialPages.json
-{ "global":[…26 slugs that are never country-prefixed], "products":[…17], "countries":["in","br","br-pt","ae","ph","fil-ph","sg","es","gb","us"],
+{ "global":[…25 entries that are never country-prefixed; "certificates" is listed twice, and "gdpr" was removed with src/data/global/gdpr.json], "products":[…17], "countries":["in","br","br-pt","ae","ph","fil-ph","sg","es","gb","us"],
   "pricing":["hello","campaign","segmento","otp","sms","rcs","email","whatsapp","voice","otpwidget"], "justNested":[…12 nested paths] }
 ```
 
