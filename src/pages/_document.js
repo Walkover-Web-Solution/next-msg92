@@ -22,9 +22,9 @@ export default class MyDocument extends Document {
         return (
             <Html lang={this.props.lang} data-theme='light'>
                 <Head>
-                    {/* SVG for browsers. PNG for clients that rasterize SVG onto white (Google's favicon proxy). */}
+                    <link rel='icon' type='image/png' sizes='192x192' href='/assets/brand/favicon-192.png' />
                     <link rel='icon' href='/assets/brand/favicon.svg' type='image/svg+xml' />
-                    <link rel='icon' href='/assets/brand/favicon-96.png' type='image/png' sizes='96x96' />
+                    <link rel='apple-touch-icon' href='/assets/brand/apple-touch-icon.png' />
                 </Head>
                 <body>
                     <Main />
