@@ -799,6 +799,7 @@
 },
   "FooterCta": {
     "theme": "rcs",
+    "bg": true,
     "heading": "Make Every Customer Message More Meaningful",
     "description": "Bring branded RCS campaigns, interactive product showcases, AI-powered conversations, and automated communication together with MSG91.",
     "primaryLabel": "Start Messaging with MSG91",

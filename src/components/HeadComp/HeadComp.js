@@ -15,22 +15,20 @@ export default function HeadComp({ data, pageInfo, browserPathCase }) {
 
     return (
         <>
-            {!skipGlobalChatWidget && (
-                <Script
-                    id='msg91-global-chat-widget'
-                    strategy='afterInteractive'
-                    src={`${process.env.CHAT_WIDGET_URL}`}
-                    onLoad={() => {
-                        if (typeof window === 'undefined' || !window.initChatWidget) return;
-                        window.helloConfig = {
-                            widgetToken: isEcommerceStore
-                                ? process.env.ECOMMERCE_WIDGET_TOKEN
-                                : process.env.CHAT_WIDGET_TOKEN,
-                            hide_launcher: false,
-                        };
-                        window.initChatWidget(window.helloConfig, 0);
-                    }}
-                />
+            {pageInfo?.page !== 'demochatbot' && (
+                <>
+                    <Script
+                        strategy='afterInteractive'
+                        dangerouslySetInnerHTML={{
+                            __html: `var helloConfig = {
+              widgetToken: '${isEcommerceStore ? process.env.ECOMMERCE_WIDGET_TOKEN : process.env.CHAT_WIDGET_TOKEN}',
+              hide_launcher: false
+            };`,
+                        }}
+                    />
+
+                    <Script onload='initChatWidget(helloConfig, 0)' src={`${process.env.CHAT_WIDGET_URL}`} />
+                </>
             )}
 
             <Script
@@ -43,8 +41,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-NWZKLRJ');`,
                 }}
             />
-
-            <script src='https://ref.admin.hostnsoft.com/tracker.js' />
 
             {pageInfo?.country === 'in' && (
                 <>
