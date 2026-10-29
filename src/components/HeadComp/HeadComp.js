@@ -42,8 +42,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 }}
             />
 
-            <script src='https://ref.admin.hostnsoft.com/tracker.js' />
-
             {pageInfo?.country === 'in' && (
                 <>
                     <Script
