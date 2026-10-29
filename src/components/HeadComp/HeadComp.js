@@ -82,8 +82,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <meta name='description' content={data?.description} />
                 <meta property='og:title' content={data?.title} />
                 <meta property='og:description' content={data?.description} />
-                <meta property='og:image' content={'/assets/brand/favicon.svg'} />
-                <link rel='icon' href='/assets/brand/favicon.svg' />
+                <meta property='og:image' content={'/assets/brand/favicon.png'} />
+                <link rel='icon' href='/assets/brand/favicon.svg' type='image/svg+xml' />
+                <link rel='icon' href='/assets/brand/favicon.png' type='image/png' sizes='40x40' />
+                <link rel='icon' href='/favicon.ico' sizes='any' />
                 <meta name='msvalidate.01' content='38DA8FFFF9D52A1C9236A51CEFEE7542' />
                 <meta property='og:url' content='https://msg91.com/' />
                 <meta property='og:type' content='website' />
