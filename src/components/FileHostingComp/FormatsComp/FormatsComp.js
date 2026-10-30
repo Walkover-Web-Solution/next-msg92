@@ -11,7 +11,7 @@ export default function FormatsComp({ data, pageInfo }) {
                     {data?.tagline && (
                         <span
                             className={`text-xs font-semibold sm:text-sm ${
-                                pageInfo?.page === 'hello' ? 'text-[var(--hello-dark-color)]' : 'text-fh'
+                                pageInfo?.page === 'hello' ? 'text-hello' : 'text-fh'
                             }`}
                         >
                             {data.tagline}
@@ -36,7 +36,7 @@ export default function FormatsComp({ data, pageInfo }) {
                             >
                                 <span
                                     className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl font-bold text-white ${
-                                        pageInfo?.page === 'hello' ? 'bg-[var(--hello-color)]' : 'bg-fh'
+                                        pageInfo?.page === 'hello' ? 'hello_bg' : 'bg-fh'
                                     }`}
                                 >
                                     {step?.number}

@@ -775,7 +775,8 @@
     "bg": true,
     "heading": "Give Every Customer a Better Way to Reach Your Team.",
     "description": "Bring conversations, AI automation and customer support together with MSG91 Hello.",
-    "primaryLabel": "Get Started"
+    "primaryLabel": "Get Started",
+    "primaryHref": "https://msg91.com/signup"
     },
     "RoiStats": {
     "label": "PERFORMANCE METRICS",

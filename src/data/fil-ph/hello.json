@@ -772,7 +772,8 @@
       "bg": true,
       "heading": "Maraming Tanong ang Iyong Customers. Gawing Mahalaga ang Bawat Sagot.",
       "description": "Pagsamahin ang messaging, AI automation at customer support teams gamit ang MSG91 Hello.",
-      "primaryLabel": "Magsimula Na"
+      "primaryLabel": "Magsimula Na",
+      "primaryHref": "https://msg91.com/signup"
     },
     "RoiStats": {
       "label": "MGA RESULTA",

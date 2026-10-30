@@ -3,9 +3,9 @@ export default function ReasonsList({ data, pageInfo }) {
 
     const isHello = pageInfo?.page === 'hello' || pageInfo?.page === 'hello-contact-center';
 
-    const sectionClass = isHello
-        ? 'border-t border-[var(--hello-color)] [background-image:linear-gradient(to_bottom,color-mix(in_srgb,var(--hello-color)_30%,white)_0%,white_100%)]'
-        : 'whatsapp_lite_bg';
+    const sectionClass = isHello ? 'border-t border-yellow-400 hello_gradient_bg' : 'whatsapp_lite_bg';
+
+    const hoverClass = isHello ? 'hello_hover_lite' : 'whatsapp_hover_lite';
 
     const isOdd = data?.reasons?.length % 2 === 1;
 
@@ -24,7 +24,7 @@ export default function ReasonsList({ data, pageInfo }) {
                     {data?.reasons?.map((reason, index) => (
                         <li
                             key={index}
-                            className='group flex flex-col gap-3 bg-white p-6 md:p-8 transition-colors duration-200 ${hoverClass}'
+                            className={`group flex flex-col gap-3 bg-white p-6 md:p-8 transition-colors duration-200 ${hoverClass}`}
                         >
                             <span
                                 aria-hidden='true'

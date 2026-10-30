@@ -776,7 +776,8 @@
     "bg": true,
     "heading": "Give Every Customer a Better Way to Reach Your Team.",
     "description": "Bring conversations, AI automation and customer support together with MSG91 Hello.",
-    "primaryLabel": "Get Started"
+    "primaryLabel": "Get Started",
+    "primaryHref": "https://msg91.com/signup"
     },
     "RoiStats": {
     "label": "PERFORMANCE METRICS",
@@ -873,6 +874,23 @@
         "description": "Give order and shipment enquiries a clearer process. Organise purchase-order questions, spare-parts requests, cargo updates and delivery complaints. With an appropriate system integration, agents and chatbots can retrieve available order or shipment information while unresolved problems remain assigned to the responsible team."
         }
     ]
+    },
+    "StartupSection": {
+        "kicker": "HELLO FOR STARTUPS",
+        "heading": "Enterprise-Level Support Tools. Startup-Friendly Cost.",
+        "description": "Your first customers deserve great support, even before you have a dedicated customer service department. MSG91 Hello for Startups gives eligible US businesses complimentary access to AI-powered customer support software. Bring email, website live chat and connected messaging channels into one workspace, automate common questions and manage every support ticket as your business grows.",
+        "benefits_heading": "What your startup gets:",
+        "benefits": [
+            "1,000 monthly support tickets",
+            "50 customer support agents",
+            "2 communication inboxes",
+            "AI chatbot access under the fair-use policy"
+        ],
+        "eligibility": "Registered US startups with annual revenue below $50,000 can apply, subject to document verification.",
+        "cta": {
+            "text": "Get Hello Free for Your Startup",
+            "link": "https://msg91.com/us/hello-for-startups"
+        }
     },
     "WhatsAppGetStarted": {
     "kicker": "HOW MSG91 HELLO WORKS",
