@@ -5,12 +5,15 @@ export default function FooterCta({ data, pageInfo }) {
     if (!data?.heading) return null;
 
     const isRcs = pageInfo?.page === 'rcs';
+    const isHello = pageInfo?.page === 'hello';
     const isLight = Boolean(data?.bg);
-    const primaryBtnClass = isLight
-        ? data?.theme === 'rcs'
-            ? 'bg-accent hover:opacity-90'
-            : 'whatsapp_bg hover:opacity-90'
-        : 'bg-indigo-600 shadow-xl shadow-indigo-600/40 hover:bg-indigo-500';
+    const primaryBtnClass = isHello
+        ? 'bg-yellow-500 hover:bg-yellow-600'
+        : isLight
+          ? data?.theme === 'rcs'
+              ? 'bg-accent hover:opacity-90'
+              : 'whatsapp_bg hover:opacity-90'
+          : 'bg-indigo-600 shadow-xl shadow-indigo-600/40 hover:bg-indigo-500';
 
     return (
         <section
