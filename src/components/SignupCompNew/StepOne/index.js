@@ -33,7 +33,7 @@ export default function StepOne() {
     const [phoneCountry, setPhoneCountry] = useState(null);
     const [showGmailModal, setShowGmailModal] = useState(false);
     const [pendingEmail, setPendingEmail] = useState(null);
-    const [pendingOtpFor, setPendingOtpFor] = useState(null); // 'email' | 'mobile' | null
+    const [pendingOtpFor, setPendingOtpFor] = useState(null);
     const emailInputRef = useRef(null);
     const emailOtpInputRef = useRef(null);
     const phoneOtpInputRef = useRef(null);
