@@ -10,6 +10,7 @@ export default function CountrySearchSelect({
     onChange,
     disabled = false,
     placeholder = 'Search country...',
+    className = '',
 }) {
     const valueKey = value?.id ?? '';
 
@@ -25,6 +26,7 @@ export default function CountrySearchSelect({
             getOptionSearchText={(c) => `${c.name} ${c.shortName || ''}`}
             placeholder={placeholder}
             disabled={disabled}
+            className={className}
             aria-label='Country'
             emptyMessage='No country found'
         />

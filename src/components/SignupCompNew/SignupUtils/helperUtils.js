@@ -66,7 +66,7 @@ export function setInitialStates(dispatch, state, urlParams) {
             }
             dispatch({
                 type: 'SET_ACTIVE_STEP',
-                payload: 2,
+                payload: 1,
             });
         }
     } catch (error) {

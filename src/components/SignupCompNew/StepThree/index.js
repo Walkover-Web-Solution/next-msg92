@@ -9,6 +9,7 @@ import { fetchCitiesByState, fetchCountries, fetchStatesByCountry, autoPopulateF
 import { updateSourceInUrlAndCookie } from '../SignupUtils/cookieUtils';
 import { GST_STATE_CODE_MAP } from '../SignupUtils/gstUtils';
 import { setSharedCookie } from '@/utils/utilis';
+import CountrySearchSelect from '../components/CountrySearchSelect';
 
 const sourceData = [
     { value: 'search_engine', label: 'Search engine (Google, Bing, Yahoo, etc)' },
@@ -43,6 +44,9 @@ export default function StepThree({ data }) {
     const [selectedServices, setSelectedServices] = useState(initialServices);
     const [source, setSource] = useState(() => getInitialSource());
     const [otherSource, setOtherSource] = useState(() => getInitialOtherSource());
+    const [fullName, setFullName] = useState(
+        state.userDetails?.firstName ? `${state.userDetails.firstName} ${state.userDetails.lastName || ''}`.trim() : ''
+    );
     const [companyName, setCompanyName] = useState(state?.companyDetails?.companyName || '');
     const [address, setAddress] = useState(state?.companyDetails?.address || '');
     const [postalCode, setPostalCode] = useState(state?.companyDetails?.zipcode || '');
@@ -223,20 +227,42 @@ export default function StepThree({ data }) {
     }
 
     const handleFinalRegistration = () => {
+        if (fullName?.trim()) {
+            setDetails('userDetails', dispatch, fullName.trim());
+        }
         setSharedCookie('signup_date', new Date().toISOString().split('T')[0], 30);
         const serviceLabels = selectedServices.map((key) => services[key]).filter(Boolean);
         if (serviceLabels.length) {
             setSharedCookie('interested_services', JSON.stringify(serviceLabels), 30);
         }
-        finalRegistration(dispatch, state);
+        finalRegistration(dispatch, {
+            ...state,
+            userDetails: {
+                firstName: fullName.trim().split(' ')[0] || state?.userDetails?.firstName || '',
+                lastName: fullName.trim().split(' ').slice(1).join(' ') || state?.userDetails?.lastName || '',
+            },
+            companyDetails: {
+                ...state?.companyDetails,
+                companyName,
+            },
+        });
     };
 
-    // Validation: Check if service and source are selected
+    // Validation: service, source, full name, company name, country
     const isFormValid = () => {
         const hasService = selectedServices.length > 0;
         const finalSource = source === 'other' ? otherSource.trim() : source;
         const hasSource = finalSource !== '';
-        return hasService && hasSource;
+        const hasName = fullName.trim() !== '';
+        const hasCompanyName = companyName.trim() !== '';
+        const hasCountry = !!selectedCountry?.id;
+        return hasService && hasSource && hasName && hasCompanyName && hasCountry;
+    };
+
+    const handleFullNameBlur = () => {
+        if (fullName?.trim()) {
+            setDetails('userDetails', dispatch, fullName.trim());
+        }
     };
 
     const canProceed = isFormValid();
@@ -247,62 +273,110 @@ export default function StepThree({ data }) {
                 <span className='text-green-600'>Account Created Successfully!</span>
                 <h1 className='text-2xl text-primary'>Welcome to MSG91</h1>
             </div>
-            <div className='cont gap-6 max-w-[820px]'>
-                <p>Tell us a bit more about yourself to personalize your journey.</p>
-                <div className='cont gap-3'>
-                    <div className='cont gap-1'>
-                        <h2 className='text-lg font-medium text-gray-700'>Which service are you interested in?</h2>
-                        <div className='flex flex-wrap gap-2'>
-                            {Object.entries(services).length > 0 &&
-                                Object.entries(services).map(([key, value]) => (
-                                    <div
-                                        onClick={() => handleServiceClick(key)}
-                                        key={key}
-                                        className={`border w-fit px-2 py-1 rounded text-sm flex items-center gap-1 cursor-pointer ${
-                                            selectedServices.includes(key)
-                                                ? 'bg-green-100 hover:bg-green-100'
-                                                : 'hover:bg-green-50'
-                                        }`}
-                                    >
-                                        <span className='text-gray-700'>{value}</span>
-                                        {selectedServices.includes(key) && (
-                                            <button aria-label={`Remove ${value}`}>
-                                                <MdClose />
-                                            </button>
-                                        )}
-                                    </div>
-                                ))}
+            <div className='cont gap-8 max-w-[640px] w-full'>
+                <div className='cont gap-4'>
+                    <div className='flex flex-col sm:flex-row gap-4 min-w-0'>
+                        <div className='flex flex-col gap-1 w-full min-w-0'>
+                            <label className='text-sm text-gray-700'>
+                                Full Name
+                                <span className='text-red-500'> *</span>
+                            </label>
+                            <input
+                                className='input input-bordered w-full'
+                                name='Name'
+                                type='text'
+                                required
+                                placeholder='John Doe'
+                                value={fullName}
+                                onChange={(e) => setFullName(e.target.value)}
+                                onBlur={handleFullNameBlur}
+                                aria-label='Full Name'
+                            />
+                        </div>
+                        <div className='flex flex-col gap-1 w-full min-w-0'>
+                            <label className='text-sm text-gray-700'>
+                                Company Name
+                                <span className='text-red-500'> *</span>
+                            </label>
+                            <input
+                                className='input input-bordered w-full'
+                                name='companyName'
+                                type='text'
+                                required
+                                placeholder='Walkover'
+                                value={companyName}
+                                onChange={(e) => setCompanyName(e.target.value)}
+                                aria-label='Company Name'
+                            />
                         </div>
                     </div>
-                    <div className='cont gap-1'>
-                        <h2 className='text-lg font-medium text-gray-700'>Where did you hear about us?</h2>
-                        <select
-                            className='select select-bordered w-full max-w-[420px]'
-                            onChange={(e) => handleSourceChange(e.target.value)}
-                            value={source || ''}
-                            aria-label='Source'
-                        >
-                            <option value=''>Select</option>
-                            {sourceData.map((opt) => (
-                                <option key={opt.value} value={opt.value}>
-                                    {opt.label}
-                                </option>
-                            ))}
-                        </select>
-                        {source === 'other' && (
-                            <input
-                                className='input input-bordered w-full max-w-[420px]'
-                                type='text'
-                                placeholder='Please specify'
-                                value={otherSource}
-                                onChange={(e) => setOtherSource(e.target.value)}
-                                aria-label='Other source'
-                            />
-                        )}
+                    <div className='flex flex-col gap-1 w-full min-w-0'>
+                        <label className='text-sm text-gray-700'>
+                            Country
+                            <span className='text-red-500'> *</span>
+                        </label>
+                        <CountrySearchSelect
+                            countries={countries}
+                            value={selectedCountry}
+                            onChange={(country) => handleCountryChange(country ? [country] : [])}
+                            placeholder='Search country...'
+                            className='!max-w-none'
+                        />
                     </div>
                 </div>
-            </div>
-            <div className='cont gap-2 max-w-[820px]'>
+
+                <div className='cont gap-2'>
+                    <h2 className='text-lg font-medium text-gray-700'>Which service are you interested in?</h2>
+                    <div className='flex flex-wrap gap-2'>
+                        {Object.entries(services).length > 0 &&
+                            Object.entries(services).map(([key, value]) => (
+                                <div
+                                    onClick={() => handleServiceClick(key)}
+                                    key={key}
+                                    className={`border w-fit px-2 py-1 rounded text-sm flex items-center gap-1 cursor-pointer ${
+                                        selectedServices.includes(key)
+                                            ? 'bg-green-100 hover:bg-green-100'
+                                            : 'hover:bg-green-50'
+                                    }`}
+                                >
+                                    <span className='text-gray-700'>{value}</span>
+                                    {selectedServices.includes(key) && (
+                                        <button aria-label={`Remove ${value}`}>
+                                            <MdClose />
+                                        </button>
+                                    )}
+                                </div>
+                            ))}
+                    </div>
+                </div>
+
+                <div className='cont gap-2'>
+                    <h2 className='text-lg font-medium text-gray-700'>Where did you hear about us?</h2>
+                    <select
+                        className='select select-bordered w-full'
+                        onChange={(e) => handleSourceChange(e.target.value)}
+                        value={source || ''}
+                        aria-label='Source'
+                    >
+                        <option value=''>Select</option>
+                        {sourceData.map((opt) => (
+                            <option key={opt.value} value={opt.value}>
+                                {opt.label}
+                            </option>
+                        ))}
+                    </select>
+                    {source === 'other' && (
+                        <input
+                            className='input input-bordered w-full'
+                            type='text'
+                            placeholder='Please specify'
+                            value={otherSource}
+                            onChange={(e) => setOtherSource(e.target.value)}
+                            aria-label='Other source'
+                        />
+                    )}
+                </div>
+
                 <div className='cont gap-3'>
                     <div className='cont gap-1'>
                         <div className='flex flex-col gap-0'>
@@ -324,17 +398,6 @@ export default function StepThree({ data }) {
                             </p>
                         </div>
                         <div className={`flex-col gap-3 overflow-hidden ${isAddressOpen ? 'flex' : 'hidden'}`}>
-                            <div className='flex flex-col gap-1 w-full'>
-                                <label className='text-sm text-gray-700'>Company Name</label>
-                                <input
-                                    className='input input-bordered w-full'
-                                    type='text'
-                                    placeholder='Company Name'
-                                    value={companyName}
-                                    onChange={(e) => setCompanyName(e.target.value)}
-                                    aria-label='Company Name'
-                                />
-                            </div>
                             <div className='flex flex-col gap-1 w-full'>
                                 <label className='text-sm text-gray-700'>GST Number</label>
                                 <input
@@ -451,7 +514,7 @@ export default function StepThree({ data }) {
             <div className='gap-2 flex'>
                 <button
                     className='btn btn-primary btn-outline btn-md'
-                    onClick={() => dispatch({ type: 'SET_ACTIVE_STEP', payload: 2 })}
+                    onClick={() => dispatch({ type: 'SET_ACTIVE_STEP', payload: 1 })}
                     disabled={state.isLoading}
                 >
                     Back
