@@ -767,7 +767,8 @@
   "bg": true,
   "heading": "Every Customer Has a Question. Give Your Team a Better Way to Answer.",
   "description": "Bring customer conversations, automation and support teams together with MSG91 Hello.",
-  "primaryLabel": "Get Started"
+  "primaryLabel": "Get Started",
+  "primaryHref": "https://msg91.com/signup"
         },    
     "RoiStats": {
     "label": "PERFORMANCE METRICS",

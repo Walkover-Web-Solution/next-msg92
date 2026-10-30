@@ -25,9 +25,7 @@ export default function SplitColumns({ data, pageInfo }) {
 
     const isHello = pageInfo?.page === 'hello' || pageInfo?.page === 'hello-contact-center';
 
-    const sectionClass = isHello
-        ? 'hello_lite_bg [background-image:radial-gradient(ellipse_at_top,color-mix(in_srgb,var(--hello-color)_12%,white)_0%,white_75%)]'
-        : 'whatsapp_lite_bg';
+    const sectionClass = isHello ? 'hello_lite_bg hello_gradient_bg' : 'whatsapp_lite_bg';
 
     const accentClass = isHello ? 'text-hello-dark' : 'text-whatsapp';
 

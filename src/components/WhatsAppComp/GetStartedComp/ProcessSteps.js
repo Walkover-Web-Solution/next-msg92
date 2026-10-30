@@ -40,7 +40,7 @@ export default function ProcessSteps({ data, pageInfo }) {
                                     <article
                                         className={`cont cont_gap w-full rounded-xl border border-gray-200 bg-white p-6 transition-colors duration-200 ${
                                             pageInfo?.page === 'hello'
-                                                ? 'hover:border-[var(--hello-color)]'
+                                                ? 'hover:border-yellow-600'
                                                 : 'hover:border-green-600'
                                         }`}
                                     >
@@ -48,7 +48,7 @@ export default function ProcessSteps({ data, pageInfo }) {
                                             <span
                                                 className={`flex h-12 w-12 items-center justify-center rounded-xl ${
                                                     pageInfo?.page === 'hello'
-                                                        ? 'bg-[color-mix(in_srgb,var(--hello-color)_20%,white)]'
+                                                        ? 'hello_gradient_bg'
                                                         : 'whatsapp_lite_bg'
                                                 }`}
                                             >
@@ -56,9 +56,7 @@ export default function ProcessSteps({ data, pageInfo }) {
                                                     <Icon
                                                         size={26}
                                                         className={
-                                                            pageInfo?.page === 'hello'
-                                                                ? 'text-[var(--hello-dark-color)]'
-                                                                : 'text-whatsapp'
+                                                            pageInfo?.page === 'hello' ? 'text-hello' : 'text-whatsapp'
                                                         }
                                                     />
                                                 )}
@@ -67,7 +65,7 @@ export default function ProcessSteps({ data, pageInfo }) {
                                                 <span
                                                     className={`rounded-full px-3 py-1 text-xs font-bold ${
                                                         pageInfo?.page === 'hello'
-                                                            ? 'bg-[color-mix(in_srgb,var(--hello-color)_20%,white)] text-[var(--hello-dark-color)]'
+                                                            ? 'hello_gradient_bg text-hello'
                                                             : 'whatsapp_lite_bg text-whatsapp'
                                                     }`}
                                                 >

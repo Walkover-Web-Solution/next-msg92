@@ -54,9 +54,7 @@ export default function SecurityCompliance({ data, pageInfo }) {
                             >
                                 <span
                                     className={`mb-5 flex h-12 w-12 items-center justify-center rounded-lg ${
-                                        isHello
-                                            ? 'bg-[color-mix(in_srgb,var(--hello-color)_20%,white)] text-[var(--hello-dark-color)]'
-                                            : 'bg-indigo-50 text-indigo-600'
+                                        isHello ? 'hello_gradient_bg text-hello' : 'bg-indigo-50 text-indigo-600'
                                     }`}
                                     aria-hidden
                                 >

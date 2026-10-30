@@ -112,6 +112,10 @@
     background-color: var(--whatsapp-lite-color) !important;
 }
 
+.hello_hover_lite:hover {
+    background-color: var(--hello-lite-color);
+}
+
 @include product-color('voice');
 @include product-color('numbers');
 @include product-color('shorturl');
@@ -121,4 +125,8 @@
 
 .hello_analytics_bg {
     background-color: var(--hello-analytics-bg) !important;
+}
+
+.hello_gradient_bg {
+    background-image: linear-gradient(to bottom, var(--hello-lite-color), #fff);
 }
