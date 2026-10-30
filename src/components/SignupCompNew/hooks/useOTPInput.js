@@ -50,19 +50,23 @@ export function useOTPInput(otpLength = 6, autoFocus = false) {
             if (index === otpLength - 1 && isOtpComplete() && onEnter) {
                 onEnter();
             }
-        } else if (e.key === 'v' && (e.ctrlKey || e.metaKey)) {
-            e.preventDefault();
-            navigator.clipboard.readText().then((text) => {
-                const pastedOtp = text.replace(/\D/g, '').slice(0, otpLength);
-                const newOtp = [...otp];
-                for (let i = 0; i < pastedOtp.length && i < otpLength; i++) {
-                    newOtp[i] = pastedOtp[i];
-                }
-                setOtp(newOtp);
-                const nextIndex = Math.min(pastedOtp.length, otpLength - 1);
-                otpInputRefs.current[nextIndex]?.focus();
-            });
         }
+    };
+
+    const handleOtpPaste = (e) => {
+        e.preventDefault();
+        const text = e.clipboardData?.getData('text') || '';
+        const pastedOtp = text.replace(/\D/g, '').slice(0, otpLength);
+        if (!pastedOtp) return '';
+
+        const newOtp = new Array(otpLength).fill('');
+        for (let i = 0; i < pastedOtp.length; i++) {
+            newOtp[i] = pastedOtp[i];
+        }
+        setOtp(newOtp);
+        const nextIndex = Math.min(pastedOtp.length, otpLength - 1);
+        otpInputRefs.current[nextIndex]?.focus();
+        return newOtp.join('');
     };
 
     const resetOtp = () => {
@@ -81,6 +85,7 @@ export function useOTPInput(otpLength = 6, autoFocus = false) {
         otpInputRefs,
         handleOtpChange,
         handleOtpKeyDown,
+        handleOtpPaste,
         resetOtp,
         getOtpValue,
         isOtpComplete,

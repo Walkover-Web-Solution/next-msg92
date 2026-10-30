@@ -1,34 +1,19 @@
 import Image from 'next/image';
-import { useSignup, sendOtp, retryOtp, verifyOtp, setDetails, validateSignUp, resetPhoneOtp } from '../SignupUtils';
-import { getAvailableOtpMethods } from '../SignupUtils/otpUtils';
+import { useSignup, setDetails, validateSignUp } from '../SignupUtils';
 import { fetchCountries } from '../SignupUtils/apiUtils';
-import { useEffect, useState, useRef, useMemo } from 'react';
-import { MdEdit } from 'react-icons/md';
-import OTPInput from '../components/OTPInput';
-import ResendOTP from '../components/ResendOTP';
-import PhoneInput from '../components/PhoneInput';
+import { useEffect, useState } from 'react';
 import FormInput from '../components/FormInput';
 import CountrySearchSelect from '../components/CountrySearchSelect';
 import { useCountrySelector } from '../hooks/useCountrySelector';
 
 export default function StepTwo() {
     const { state, dispatch } = useSignup();
-    const otpInputRef = useRef(null);
 
     const [name, setName] = useState(
         state.userDetails?.firstName ? `${state.userDetails.firstName} ${state.userDetails.lastName || ''}`.trim() : ''
     );
     const [companyName, setCompanyName] = useState(state.companyDetails?.companyName || '');
-    const [phone, setPhone] = useState(state.mobileIdentifier || '');
-    const [phoneCountry, setPhoneCountry] = useState(null);
     const [continueAllowed, setContinueAllowed] = useState(false);
-
-    const otpLength = state.widgetData?.otpLength || 6;
-
-    const secondaryChannels = useMemo(
-        () => getAvailableOtpMethods(state?.allowedRetry?.mobile?.secondary, phoneCountry),
-        [state?.allowedRetry?.mobile?.secondary, phoneCountry]
-    );
 
     const {
         countries,
@@ -36,17 +21,14 @@ export default function StepTwo() {
         setSelectedCountry: setLocalSelectedCountry,
     } = useCountrySelector();
 
-    // Use root state selectedCountry if available, otherwise use local
     const selectedCountry = state.selectedCountry || localSelectedCountry;
 
-    // Fallback: fetch countries if not already loaded (e.g. direct navigation to this step)
     useEffect(() => {
         if (!state.countries) {
             fetchCountries(dispatch);
         }
     }, []);
 
-    // Sync local selectedCountry with root state
     useEffect(() => {
         if (state.selectedCountry && state.selectedCountry.id !== localSelectedCountry?.id) {
             setLocalSelectedCountry(state.selectedCountry);
@@ -54,45 +36,12 @@ export default function StepTwo() {
     }, [state.selectedCountry]);
 
     useEffect(() => {
-        if (state.mobileOtpVerified && name && companyName && phone) {
+        if (state.mobileOtpVerified && name && companyName) {
             setContinueAllowed(true);
+        } else {
+            setContinueAllowed(false);
         }
-    }, [state.mobileOtpVerified, name, companyName, phone]);
-
-    const handleSendOtp = () => {
-        const phoneNumber = phone?.trim();
-
-        if (!phoneNumber) {
-            dispatch({ type: 'SET_ERROR', payload: 'Please enter a phone number' });
-            return;
-        }
-
-        // Phone is already in E.164 format from react-phone-number-input (e.g., +919876543210)
-        sendOtp(phoneNumber, true, dispatch);
-    };
-
-    const handleResendWithChannel = (channel) => {
-        const requestId = state.mobileRequestId;
-        if (!requestId) {
-            dispatch({ type: 'SET_ERROR', payload: 'No phone request ID found. Please send OTP again.' });
-            return;
-        }
-        retryOtp(channel, requestId, dispatch);
-    };
-
-    const handleVerifyOtp = (otpValue) => {
-        const requestId = state.mobileRequestId;
-        if (!requestId) {
-            dispatch({ type: 'SET_ERROR', payload: 'No phone request ID found. Please resend OTP.' });
-            return;
-        }
-
-        const onSuccess = (data) => {};
-
-        const onError = (error) => {};
-
-        verifyOtp(otpValue, requestId, true, dispatch, state, onSuccess, onError);
-    };
+    }, [state.mobileOtpVerified, name, companyName]);
 
     const handleCountrySelect = (country) => {
         dispatch({ type: 'SET_SELECTED_COUNTRY', payload: country || null });
@@ -104,8 +53,6 @@ export default function StepTwo() {
             setDetails('userDetails', dispatch, name);
         } else if (type === 'companyName') {
             setDetails('companyName', dispatch, companyName);
-        } else if (type === 'phone') {
-            setDetails('phone', dispatch, phone);
         }
     };
 
@@ -118,7 +65,14 @@ export default function StepTwo() {
             return;
         }
 
+        if (!state.mobileOtpVerified || !state.mobileToken) {
+            dispatch({ type: 'SET_ERROR', payload: 'Email and Mobile should be verified.' });
+            dispatch({ type: 'SET_ACTIVE_STEP', payload: 1 });
+            return;
+        }
+
         setDetails('companyName', dispatch, companyName);
+        setDetails('userDetails', dispatch, name);
 
         if (state.session) {
             dispatch({ type: 'SET_ACTIVE_STEP', payload: 3 });
@@ -126,6 +80,7 @@ export default function StepTwo() {
             validateSignUp(dispatch, state);
         }
     };
+
     const clearGithubUrlParams = () => {
         if (typeof window === 'undefined') return;
         const currentUrl = new URL(window.location.href);
@@ -143,26 +98,12 @@ export default function StepTwo() {
         dispatch({ type: 'SET_ACTIVE_STEP', payload: 1 });
     };
 
-    const handleEditPhone = () => {
-        resetPhoneOtp(dispatch);
-    };
-
-    const handleEditVerifiedPhone = () => {
-        dispatch({ type: 'SET_PHONE_EDIT_FROM_VERIFIED' });
-        setContinueAllowed(false);
-    };
-
-    const handleResendOtp = () => {
-        const channel = secondaryChannels[0]?.channel || null;
-        handleResendWithChannel(channel);
-    };
-
     return (
         <div className='cont cont_gap'>
             <Image width={160} height={80} className='w-fit h-12' src={'/assets/brand/msg91.svg'} alt='MSG91 Logo' />
             <div className='cont gap-2'>
                 <h1 className='text-2xl text-primary'>Personal Details</h1>
-                <p className='text-sm text-gray-500'>Verify your mobile number to secure and activate your account</p>
+                <p className='text-sm text-gray-500'>Tell us a bit about yourself to finish setting up</p>
                 {state.signupByGitHub && <p className='text-sm text-success'>Email verified via GitHub</p>}
             </div>
             <div className='cont gap-3'>
@@ -197,82 +138,6 @@ export default function StepTwo() {
                         placeholder='Search country...'
                     />
                 </div>
-
-                {state.otpSent && otpLength ? (
-                    <div className='cont gap-3'>
-                        <p className='text-gray-500'></p>
-                        <div className='flex items-end gap-2'>
-                            <p className='text-gray-500'>
-                                OTP sent to <strong>{phone}</strong>
-                            </p>
-                            <MdEdit
-                                className='text-gray-500 hover:text-accent cursor-pointer mb-1'
-                                onClick={handleEditPhone}
-                                aria-label='Edit phone'
-                            />
-                        </div>
-                        <div className='flex gap-4'>
-                            <OTPInput
-                                ref={otpInputRef}
-                                length={otpLength}
-                                onComplete={handleVerifyOtp}
-                                onVerify={handleVerifyOtp}
-                                showVerifyButton={true}
-                                autoFocus={true}
-                                disabled={state.loadingType === 'verify'}
-                            />
-                            {state.isLoading && (
-                                <div className='flex items-center gap-2 text-accent'>
-                                    <div className='loading loading-spinner loading-sm'></div>
-                                    {state.loadingType === 'send' ? 'Sending OTP...' : 'Verifying OTP...'}
-                                </div>
-                            )}
-                        </div>
-                        <ResendOTP
-                            onResend={handleResendOtp}
-                            onResendWithChannel={handleResendWithChannel}
-                            onReset={() => otpInputRef.current?.resetOtp()}
-                            secondaryChannels={secondaryChannels}
-                            initialTime={30}
-                            autoStart={true}
-                        />
-                    </div>
-                ) : (
-                    <div className='cont gap-2'>
-                        <p className='text-gray-500'>Phone Number</p>
-                        <div className='flex items-center gap-4'>
-                            <PhoneInput
-                                value={phone}
-                                onChange={setPhone}
-                                onCountryChange={setPhoneCountry}
-                                onBlur={() => handleDetailsBlur('phone')}
-                                defaultCountry={selectedCountry}
-                                verified={state.mobileOtpVerified}
-                                placeholder='9876543210'
-                            />
-                            {state.mobileOtpVerified ? (
-                                <MdEdit
-                                    className='text-gray-500 hover:text-accent cursor-pointer text-xl'
-                                    onClick={handleEditVerifiedPhone}
-                                    aria-label='Edit phone number'
-                                />
-                            ) : state.isLoading ? (
-                                <div className='flex items-center gap-2 text-accent'>
-                                    <div className='loading loading-spinner loading-sm'></div>
-                                    Sending OTP...
-                                </div>
-                            ) : (
-                                <button
-                                    onClick={handleSendOtp}
-                                    className='btn btn-accent font-normal'
-                                    disabled={!phone?.trim()}
-                                >
-                                    Verify
-                                </button>
-                            )}
-                        </div>
-                    </div>
-                )}
             </div>
             <div className='flex gap-4'>
                 <button className='btn btn-primary btn-outline btn-md' onClick={handleBack}>
