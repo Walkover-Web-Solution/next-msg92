@@ -11,7 +11,7 @@ import checkSession, {
 } from '../SignupUtils';
 import getURLParams from '@/utils/getURLParams';
 import StepOne from '../StepOne';
-import StepThree from '../StepThree';
+import StepTwo from '../StepTwo';
 import Toast from '../SignupUtils/Toast';
 import Sidebar from '../Sidebar';
 
@@ -52,7 +52,7 @@ function SignupSteps({ pageInfo, data }) {
             <div className='w-full p-4 sm:p-12 lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:overflow-x-hidden'>
                 <Toast type='danger' />
                 {state.activeStep === 1 && <StepOne pageInfo={pageInfo} />}
-                {state.activeStep === 2 && <StepThree pageInfo={pageInfo} data={data} />}
+                {state.activeStep === 2 && <StepTwo pageInfo={pageInfo} data={data} />}
             </div>
         </div>
     );
@@ -62,7 +62,7 @@ export default function SignupPage({ pageInfo, data }) {
     return (
         <GoogleOAuthProvider clientId={`${process.env.GOOGLE_CLIENT_ID || ''}`}>
             <SignupProvider>
-                <SignupSteps pageInfo={pageInfo} data={data} />
+                <SignupSteps pageInfo={pageInfo} data={data} isAbSignup={isAbSignup} />
             </SignupProvider>
         </GoogleOAuthProvider>
     );

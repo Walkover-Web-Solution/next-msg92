@@ -1,150 +1,537 @@
+import getServices from '@/utils/getServices';
 import Image from 'next/image';
-import { useSignup, setDetails, validateSignUp } from '../SignupUtils';
-import { fetchCountries } from '../SignupUtils/apiUtils';
-import { useEffect, useState } from 'react';
-import FormInput from '../components/FormInput';
-import CountrySearchSelect from '../components/CountrySearchSelect';
+import { useCallback, useEffect, useState } from 'react';
+import { MdClose, MdOutlineKeyboardArrowDown } from 'react-icons/md';
+import { setDetails, useSignup, finalRegistration } from '../SignupUtils';
 import { useCountrySelector } from '../hooks/useCountrySelector';
+import { useGstLookup } from '../hooks/useGstLookup';
+import { fetchCitiesByState, fetchCountries, fetchStatesByCountry, autoPopulateFromIP } from '../SignupUtils/apiUtils';
+import { updateSourceInUrlAndCookie } from '../SignupUtils/cookieUtils';
+import { GST_STATE_CODE_MAP } from '../SignupUtils/gstUtils';
+import { setSharedCookie } from '@/utils/utilis';
+import CountrySearchSelect from '../components/CountrySearchSelect';
 
-export default function StepTwo() {
+const sourceData = [
+    { value: 'search_engine', label: 'Search engine (Google, Bing, Yahoo, etc)' },
+    { value: 'recommended_by_friend', label: 'Recommended by friend or colleague' },
+    { value: 'social_media', label: 'Social Media' },
+    { value: 'blog', label: 'Blog or Publication' },
+    { value: 'advertisement', label: 'Advertisement' },
+    { value: 'event', label: 'Event' },
+    { value: 'tiedelhincr', label: 'TiEDelhiNCR' },
+    { value: 'other', label: 'Other' },
+];
+
+export default function StepTwo({ data }) {
     const { state, dispatch } = useSignup();
+    const optionKeys = sourceData.map((opt) => opt.value);
+    const storedSource = state?.source || '';
 
-    const [name, setName] = useState(
+    const getInitialSource = () => {
+        if (!storedSource) return '';
+        return optionKeys.includes(storedSource) ? storedSource : 'other';
+    };
+
+    const getInitialOtherSource = () => {
+        if (!storedSource) return '';
+        return optionKeys.includes(storedSource) ? '' : storedSource;
+    };
+
+    const [services, setServices] = useState({});
+    const initialServices = Array.isArray(state?.companyDetails?.service)
+        ? [...new Set(state.companyDetails.service)]
+        : [];
+    const [selectedServices, setSelectedServices] = useState(initialServices);
+    const [source, setSource] = useState(() => getInitialSource());
+    const [otherSource, setOtherSource] = useState(() => getInitialOtherSource());
+    const [fullName, setFullName] = useState(
         state.userDetails?.firstName ? `${state.userDetails.firstName} ${state.userDetails.lastName || ''}`.trim() : ''
     );
-    const [companyName, setCompanyName] = useState(state.companyDetails?.companyName || '');
-    const [continueAllowed, setContinueAllowed] = useState(false);
+    const [companyName, setCompanyName] = useState(state?.companyDetails?.companyName || '');
+    const [address, setAddress] = useState(state?.companyDetails?.address || '');
+    const [postalCode, setPostalCode] = useState(state?.companyDetails?.zipcode || '');
+    const [isAddressOpen, setIsAddressOpen] = useState(false);
 
     const {
         countries,
-        selectedCountry: localSelectedCountry,
-        setSelectedCountry: setLocalSelectedCountry,
+        stateOptions,
+        cityOptions,
+        selectedCountry,
+        selectedState,
+        selectedCity,
+        selectedCountryId,
+        selectedStateId,
+        selectedCityId,
+        isLoadingCountries,
+        isLoadingStates,
+        isLoadingCities,
+        handleCountryChange,
+        handleStateChange,
+        handleCityChange,
+        setSelectedCountry,
     } = useCountrySelector();
 
-    const selectedCountry = state.selectedCountry || localSelectedCountry;
+    const prefillGstCountryData = useCallback(
+        async (gstStateNameOrCode, gstCityName) => {
+            const normalizedGstState = String(gstStateNameOrCode || '').trim();
+            const normalizedGstCity = String(gstCityName || '').trim();
+
+            const indiaCountry = countries.find((country) => country?.shortName?.toLowerCase() === 'in') || null;
+
+            if (!indiaCountry?.id) return;
+
+            if (!selectedCountry?.id || selectedCountry.id !== indiaCountry.id) {
+                await handleCountryChange([indiaCountry]);
+            }
+
+            const states = await fetchStatesByCountry(indiaCountry.id);
+            const resolvedStateName = GST_STATE_CODE_MAP[normalizedGstState];
+            if (!resolvedStateName) return;
+            const matchedState = states.find(
+                (stateOption) => stateOption?.name?.trim().toLowerCase() === resolvedStateName.trim().toLowerCase()
+            );
+
+            if (!matchedState) return;
+
+            await handleStateChange([matchedState]);
+
+            if (!normalizedGstCity) return;
+
+            const cities = await fetchCitiesByState(matchedState.id);
+            const normalizedCity = normalizedGstCity.split('(')[0].trim().toLowerCase();
+            const matchedCity = cities.find((cityOption) => cityOption?.name?.trim().toLowerCase() === normalizedCity);
+
+            if (!matchedCity) return;
+
+            handleCityChange([matchedCity]);
+        },
+        [countries, handleCityChange, handleCountryChange, handleStateChange, selectedCountry?.id]
+    );
+
+    const {
+        gstNumber,
+        validationError: gstValidationError,
+        isLoading: isGstLoading,
+        handleGstNumberChange,
+    } = useGstLookup({
+        dispatch,
+        initialGstNo: state?.companyDetails?.gstNo,
+        onAutofill: ({ address: gstAddress, postalCode: gstPostalCode, companyName: gstCompanyName }) => {
+            setAddress(gstAddress);
+            setPostalCode(gstPostalCode);
+            if (gstCompanyName) {
+                setCompanyName(gstCompanyName);
+            }
+        },
+        prefillGstCountryData,
+    });
 
     useEffect(() => {
-        if (!state.countries) {
-            fetchCountries(dispatch);
-        }
+        const initializeData = async () => {
+            const servicesData = await getServices();
+            setServices(servicesData.data.data);
+        };
+        initializeData();
     }, []);
 
     useEffect(() => {
-        if (state.selectedCountry && state.selectedCountry.id !== localSelectedCountry?.id) {
-            setLocalSelectedCountry(state.selectedCountry);
+        if (storedSource && optionKeys.length > 0 && !source) {
+            if (optionKeys.includes(storedSource)) {
+                setSource(storedSource);
+            } else {
+                setSource('other');
+                setOtherSource(storedSource);
+            }
+        }
+    }, [storedSource, optionKeys.length]);
+
+    useEffect(() => {
+        const fetchDataIfNeeded = async () => {
+            if (state.geoAutoPopulated) return;
+            // Fallback: If user navigates directly to StepTwo, fetch countries and auto-populate
+            if (!state.countries) {
+                const countriesData = await fetchCountries(dispatch);
+                // After countries are fetched, auto-populate from IP
+                if (countriesData?.length > 0) {
+                    // Pass existing ipData if available to avoid redundant API call
+                    await autoPopulateFromIP(dispatch, countriesData, state.ipData);
+                    dispatch({ type: 'SET_GEO_AUTO_POPULATED', payload: true });
+                }
+            } else if (!state.ipData && !state.selectedCountry) {
+                // If countries exist but no IP data and no country selected, run auto-populate
+                await autoPopulateFromIP(dispatch, state.countries, state.ipData);
+                dispatch({ type: 'SET_GEO_AUTO_POPULATED', payload: true });
+            }
+        };
+
+        fetchDataIfNeeded();
+    }, [dispatch, state.countries, state.geoAutoPopulated, state.ipData, state.selectedCountry]);
+
+    useEffect(() => {
+        if (state.selectedCountry && state.selectedCountry.id !== selectedCountry?.id) {
+            setSelectedCountry(state.selectedCountry);
         }
     }, [state.selectedCountry]);
 
     useEffect(() => {
-        if (state.mobileOtpVerified && name && companyName) {
-            setContinueAllowed(true);
-        } else {
-            setContinueAllowed(false);
+        setDetails('services', dispatch, selectedServices);
+    }, [dispatch, selectedServices]);
+
+    useEffect(() => {
+        const finalSource = source === 'other' ? otherSource : source;
+        if (finalSource) {
+            setDetails('source', dispatch, finalSource);
+            updateSourceInUrlAndCookie(finalSource);
         }
-    }, [state.mobileOtpVerified, name, companyName]);
+    }, [dispatch, otherSource, source]);
 
-    const handleCountrySelect = (country) => {
-        dispatch({ type: 'SET_SELECTED_COUNTRY', payload: country || null });
-        setLocalSelectedCountry(country || null);
-    };
-
-    const handleDetailsBlur = (type) => {
-        if (type === 'name') {
-            setDetails('userDetails', dispatch, name);
-        } else if (type === 'companyName') {
-            setDetails('companyName', dispatch, companyName);
-        }
-    };
-
-    const handleContinue = () => {
-        if (!continueAllowed) return;
-
-        if (state.signupByGitHub && !state.githubCode) {
-            dispatch({ type: 'RESET_GITHUB_SIGNUP' });
-            dispatch({ type: 'SET_ACTIVE_STEP', payload: 1 });
-            return;
-        }
-
-        if (!state.mobileOtpVerified || !state.mobileToken) {
-            dispatch({ type: 'SET_ERROR', payload: 'Email and Mobile should be verified.' });
-            dispatch({ type: 'SET_ACTIVE_STEP', payload: 1 });
-            return;
-        }
-
+    useEffect(() => {
         setDetails('companyName', dispatch, companyName);
-        setDetails('userDetails', dispatch, name);
+    }, [dispatch, companyName]);
 
-        if (state.session) {
-            dispatch({ type: 'SET_ACTIVE_STEP', payload: 3 });
+    useEffect(() => {
+        setDetails('addressDetails', dispatch, {
+            address,
+            zipcode: postalCode,
+            country: selectedCountry?.name,
+            state: selectedState,
+            city: selectedCity,
+            countryId: selectedCountryId,
+            stateId: selectedStateId,
+            cityId: selectedCityId,
+        });
+    }, [
+        address,
+        postalCode,
+        selectedCountry,
+        selectedState,
+        selectedCity,
+        selectedCountryId,
+        selectedStateId,
+        selectedCityId,
+    ]);
+
+    function handleServiceClick(key) {
+        if (selectedServices.includes(key)) {
+            setSelectedServices(selectedServices.filter((item) => item !== key));
         } else {
-            validateSignUp(dispatch, state);
+            setSelectedServices([...selectedServices, key]);
+        }
+    }
+
+    function handleSourceChange(value) {
+        setSource(value);
+        if (value !== 'other') {
+            setOtherSource('');
+        }
+    }
+
+    const handleFinalRegistration = () => {
+        if (fullName?.trim()) {
+            setDetails('userDetails', dispatch, fullName.trim());
+        }
+        setSharedCookie('signup_date', new Date().toISOString().split('T')[0], 30);
+        const serviceLabels = selectedServices.map((key) => services[key]).filter(Boolean);
+        if (serviceLabels.length) {
+            setSharedCookie('interested_services', JSON.stringify(serviceLabels), 30);
+        }
+        finalRegistration(dispatch, {
+            ...state,
+            userDetails: {
+                firstName: fullName.trim().split(' ')[0] || state?.userDetails?.firstName || '',
+                lastName: fullName.trim().split(' ').slice(1).join(' ') || state?.userDetails?.lastName || '',
+            },
+            companyDetails: {
+                ...state?.companyDetails,
+                companyName,
+            },
+        });
+    };
+
+    // Validation: service, source, full name, company name, country
+    const isFormValid = () => {
+        const hasService = selectedServices.length > 0;
+        const finalSource = source === 'other' ? otherSource.trim() : source;
+        const hasSource = finalSource !== '';
+        const hasName = fullName.trim() !== '';
+        const hasCompanyName = companyName.trim() !== '';
+        const hasCountry = !!selectedCountry?.id;
+        return hasService && hasSource && hasName && hasCompanyName && hasCountry;
+    };
+
+    const handleFullNameBlur = () => {
+        if (fullName?.trim()) {
+            setDetails('userDetails', dispatch, fullName.trim());
         }
     };
 
-    const clearGithubUrlParams = () => {
-        if (typeof window === 'undefined') return;
-        const currentUrl = new URL(window.location.href);
-        currentUrl.searchParams.delete('githubsignup');
-        currentUrl.searchParams.delete('code');
-        currentUrl.searchParams.delete('state');
-        window.history.replaceState(null, '', currentUrl.toString());
-    };
-
-    const handleBack = () => {
-        if (state.signupByGitHub) {
-            dispatch({ type: 'RESET_GITHUB_SIGNUP' });
-            clearGithubUrlParams();
-        }
-        dispatch({ type: 'SET_ACTIVE_STEP', payload: 1 });
-    };
-
+    const canProceed = isFormValid();
     return (
         <div className='cont cont_gap'>
             <Image width={160} height={80} className='w-fit h-12' src={'/assets/brand/msg91.svg'} alt='MSG91 Logo' />
             <div className='cont gap-2'>
-                <h1 className='text-2xl text-primary'>Personal Details</h1>
-                <p className='text-sm text-gray-500'>Tell us a bit about yourself to finish setting up</p>
-                {state.signupByGitHub && <p className='text-sm text-success'>Email verified via GitHub</p>}
+                <span className='text-green-600'>Account Created Successfully!</span>
+                <h1 className='text-2xl text-primary'>Welcome to MSG91</h1>
             </div>
-            <div className='cont gap-3'>
-                <FormInput
-                    label='Full Name'
-                    name='Name'
-                    type='text'
-                    required
-                    placeholder='John Doe'
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    onBlur={() => handleDetailsBlur('name')}
-                />
+            <div className='cont gap-8 max-w-[640px] w-full'>
+                <div className='cont gap-4'>
+                    <div className='flex flex-col sm:flex-row gap-4 min-w-0'>
+                        <div className='flex flex-col gap-1 w-full min-w-0'>
+                            <label className='text-sm text-gray-700'>
+                                Full Name
+                                <span className='text-red-500'> *</span>
+                            </label>
+                            <input
+                                className='input input-bordered w-full'
+                                name='Name'
+                                type='text'
+                                required
+                                placeholder='John Doe'
+                                value={fullName}
+                                onChange={(e) => setFullName(e.target.value)}
+                                onBlur={handleFullNameBlur}
+                                aria-label='Full Name'
+                            />
+                        </div>
+                        <div className='flex flex-col gap-1 w-full min-w-0'>
+                            <label className='text-sm text-gray-700'>
+                                Company Name
+                                <span className='text-red-500'> *</span>
+                            </label>
+                            <input
+                                className='input input-bordered w-full'
+                                name='companyName'
+                                type='text'
+                                required
+                                placeholder='Walkover'
+                                value={companyName}
+                                onChange={(e) => setCompanyName(e.target.value)}
+                                aria-label='Company Name'
+                            />
+                        </div>
+                    </div>
+                    <div className='flex flex-col gap-1 w-full min-w-0'>
+                        <label className='text-sm text-gray-700'>
+                            Country
+                            <span className='text-red-500'> *</span>
+                        </label>
+                        <CountrySearchSelect
+                            countries={countries}
+                            value={selectedCountry}
+                            onChange={(country) => handleCountryChange(country ? [country] : [])}
+                            placeholder='Search country...'
+                            className='!max-w-none'
+                        />
+                    </div>
+                </div>
 
-                <FormInput
-                    label='Company Name'
-                    name='companyName'
-                    type='text'
-                    required
-                    placeholder='Walkover'
-                    value={companyName}
-                    onChange={(e) => setCompanyName(e.target.value)}
-                    onBlur={() => handleDetailsBlur('companyName')}
-                />
+                <div className='cont gap-2'>
+                    <h2 className='text-lg font-medium text-gray-700'>Which service are you interested in?</h2>
+                    <div className='flex flex-wrap gap-2'>
+                        {Object.entries(services).length > 0 &&
+                            Object.entries(services).map(([key, value]) => (
+                                <div
+                                    onClick={() => handleServiceClick(key)}
+                                    key={key}
+                                    className={`border w-fit px-2 py-1 rounded text-sm flex items-center gap-1 cursor-pointer ${
+                                        selectedServices.includes(key)
+                                            ? 'bg-green-100 hover:bg-green-100'
+                                            : 'hover:bg-green-50'
+                                    }`}
+                                >
+                                    <span className='text-gray-700'>{value}</span>
+                                    {selectedServices.includes(key) && (
+                                        <button aria-label={`Remove ${value}`}>
+                                            <MdClose />
+                                        </button>
+                                    )}
+                                </div>
+                            ))}
+                    </div>
+                </div>
 
-                <div className='cont gap-1'>
-                    <p className='text-gray-500'>Country</p>
-                    <CountrySearchSelect
-                        countries={countries}
-                        value={selectedCountry}
-                        onChange={handleCountrySelect}
-                        placeholder='Search country...'
-                    />
+                <div className='cont gap-2'>
+                    <h2 className='text-lg font-medium text-gray-700'>Where did you hear about us?</h2>
+                    <select
+                        className='select select-bordered w-full'
+                        onChange={(e) => handleSourceChange(e.target.value)}
+                        value={source || ''}
+                        aria-label='Source'
+                    >
+                        <option value=''>Select</option>
+                        {sourceData.map((opt) => (
+                            <option key={opt.value} value={opt.value}>
+                                {opt.label}
+                            </option>
+                        ))}
+                    </select>
+                    {source === 'other' && (
+                        <input
+                            className='input input-bordered w-full'
+                            type='text'
+                            placeholder='Please specify'
+                            value={otherSource}
+                            onChange={(e) => setOtherSource(e.target.value)}
+                            aria-label='Other source'
+                        />
+                    )}
+                </div>
+
+                <div className='cont gap-3'>
+                    <div className='cont gap-1'>
+                        <div className='flex flex-col gap-0'>
+                            <button
+                                className='flex items-center gap-2 cursor-pointer w-fit'
+                                onClick={() => setIsAddressOpen(!isAddressOpen)}
+                                aria-expanded={isAddressOpen}
+                                aria-label='Toggle company details section'
+                            >
+                                <h2 className='text-lg font-medium text-gray-700 m-0'>Company details (Optional)</h2>
+                                <MdOutlineKeyboardArrowDown
+                                    className={`text-gray-500 text-2xl transition-all duration-100 ${
+                                        isAddressOpen ? 'rotate-180' : ''
+                                    }`}
+                                />
+                            </button>
+                            <p className='text-sm text-gray-500 m-0 leading-tight'>
+                                (This info will be used for billing purpose)
+                            </p>
+                        </div>
+                        <div className={`flex-col gap-3 overflow-hidden ${isAddressOpen ? 'flex' : 'hidden'}`}>
+                            <div className='flex flex-col gap-1 w-full'>
+                                <label className='text-sm text-gray-700'>GST Number</label>
+                                <input
+                                    className='input input-bordered w-full'
+                                    type='text'
+                                    placeholder='29AAWCS1086R2Z2'
+                                    value={gstNumber}
+                                    onChange={(e) => handleGstNumberChange(e.target.value)}
+                                    aria-label='GST Number'
+                                />
+                                {isGstLoading && <p className='text-xs text-gray-500'>Fetching GST details...</p>}
+                                {gstValidationError && <p className='text-xs text-red-600'>{gstValidationError}</p>}
+                            </div>
+                            <div className='flex flex-col gap-1 w-full'>
+                                <label className='text-sm text-gray-700'>House / Building / Apartment</label>
+                                <input
+                                    className='input input-bordered w-full'
+                                    type='text'
+                                    placeholder='405 - 406, Capt. C. S. Naidu Arcade, Old Palasia'
+                                    value={address}
+                                    onChange={(e) => setAddress(e.target.value)}
+                                    aria-label='Address'
+                                />
+                            </div>
+                            <div className='flex flex-col sm:flex-row gap-3 min-w-0'>
+                                <div className='flex flex-col gap-1 w-full min-w-0'>
+                                    <label className='text-sm text-gray-700'>Postal Code</label>
+                                    <input
+                                        className='input input-bordered w-full'
+                                        type='text'
+                                        placeholder='452009'
+                                        value={postalCode}
+                                        onChange={(e) => setPostalCode(e.target.value)}
+                                        aria-label='Postal code'
+                                    />
+                                </div>
+                                <div className='flex flex-col gap-1 w-full min-w-0'>
+                                    <label className='text-sm text-gray-700'>Country</label>
+                                    <select
+                                        className='select select-bordered w-full min-w-0 '
+                                        value={String(selectedCountryId ?? '')}
+                                        onChange={(e) => {
+                                            const country = countries.find((c) => String(c.id) === e.target.value);
+                                            handleCountryChange(country ? [country] : []);
+                                        }}
+                                        disabled={isLoadingCountries}
+                                        aria-label='Country'
+                                    >
+                                        <option value='' disabled>
+                                            {isLoadingCountries ? 'Loading countries...' : 'Select Country'}
+                                        </option>
+                                        {countries.map((country) => (
+                                            <option key={country.id} value={String(country.id)}>
+                                                {country.name}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+                            </div>
+                            <div className='flex flex-col sm:flex-row gap-3 min-w-0'>
+                                <div className='flex flex-col gap-1 w-full min-w-0'>
+                                    <label className='text-sm text-gray-700'>State</label>
+                                    <select
+                                        className='select select-bordered w-full min-w-0'
+                                        value={String(selectedStateId ?? '')}
+                                        onChange={(e) => {
+                                            const stateOpt = stateOptions.find(
+                                                (state) => String(state.id) === e.target.value
+                                            );
+                                            handleStateChange(stateOpt ? [stateOpt] : []);
+                                        }}
+                                        disabled={!selectedCountryId || isLoadingStates}
+                                        aria-label='State'
+                                    >
+                                        <option value='' disabled>
+                                            {isLoadingStates ? 'Loading states...' : 'Select State'}
+                                        </option>
+                                        {stateOptions.map((state) => (
+                                            <option key={state.id} value={String(state.id)}>
+                                                {state.name}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div className='flex flex-col gap-1 w-full min-w-0'>
+                                    <label className='text-sm text-gray-700'>City</label>
+                                    <select
+                                        className='select select-bordered w-full min-w-0'
+                                        value={String(selectedCityId ?? '')}
+                                        onChange={(e) => {
+                                            const cityOpt = cityOptions.find(
+                                                (city) => String(city.id) === e.target.value
+                                            );
+                                            handleCityChange(cityOpt ? [cityOpt] : []);
+                                        }}
+                                        disabled={!selectedStateId || isLoadingCities}
+                                        aria-label='City'
+                                    >
+                                        <option value='' disabled>
+                                            {isLoadingCities ? 'Loading cities...' : 'Select City'}
+                                        </option>
+                                        {cityOptions.map((city) => (
+                                            <option key={city.id} value={String(city.id)}>
+                                                {city.name}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div className='flex gap-4'>
-                <button className='btn btn-primary btn-outline btn-md' onClick={handleBack}>
+            <div className='gap-2 flex'>
+                <button
+                    className='btn btn-primary btn-outline btn-md'
+                    onClick={() => dispatch({ type: 'SET_ACTIVE_STEP', payload: 1 })}
+                    disabled={state.isLoading}
+                >
                     Back
                 </button>
-                <button onClick={handleContinue} className='btn btn-accent btn-md' disabled={!continueAllowed}>
-                    Continue
+                <button
+                    className='btn btn-accent btn-md'
+                    onClick={handleFinalRegistration}
+                    disabled={!canProceed || state.isLoading}
+                >
+                    {state.isLoading ? (
+                        <>
+                            <span className='loading loading-spinner loading-sm'></span>
+                            Processing...
+                        </>
+                    ) : (
+                        'Next'
+                    )}
                 </button>
             </div>
         </div>
