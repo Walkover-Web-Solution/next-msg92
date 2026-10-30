@@ -1,20 +1,967 @@
 {
     "HeadComp": {
-        "title": "Platform ng Suporta sa Customer para sa Iyong Negosyo ng MSG91-Pilipinas",
-        "description": "Ang HELLO ay isang matatag na omnichannel platform na nagpapalakas sa iyong customer support team. Maghatid ng natatanging karanasan sa serbisyo gamit ang mga insight na batay sa datos."
+        "title": "Software para sa Customer Support sa Pilipinas | MSG91 Hello",
+        "description": "Pabilisin ang customer service sa Pilipinas gamit ang MSG91 Hello. Pagsamahin ang WhatsApp, email, tawag at live chat sa isang sistemang may AI chatbot."
     },
-    "Banner": {
+    "BannerComp": {
         "slug": "hello",
         "product": {
+            "subname": "introducing",
             "name": "Hello",
             "icon": "/assets/icons/products/hello.svg"
         },
-        "tagline": "Software para sa Suporta sa Customer",
-        "heading": "Contact Center na Pinapagana ng AI",
-        "subheading": "Huwag mawalan ng pokus sa mahalaga. Huwag lang magresolba ng mga ticket—bumuo ng matibay na relasyon sa customer",
+        "tagline": "Cloud-Based na Sentro ng Serbisyo sa Customer",
+        "heading": "Software para sa Customer Support sa Pilipinas",
+        "subheading": "Pagsamahin ang WhatsApp, tawag, email, chat sa website, RCS, SMS, Apple Messages for Business, Instagram, Facebook Messenger at X (Twitter) sa iisang workspace. Gamit ang MSG91 Hello, mas madaling sagutin ang mga tanong ng customers, i-automate ang suporta gamit ang AI chatbots at subaybayan ang bawat kahilingan nang hindi nagpapalipat-lipat sa iba't ibang sistema.",
         "lottie": "/assets/global/hello/new_webp/hello_hero.json",
-        "getstarted_btn": "Magsimula",
-        "chatbot": "Chatbot"
+        "getstarted_btn": "Magsimula Na",
+        "schedule_meet": "Mag-book ng Libreng Demo",
+        "trustedByComp": {
+            "heading": "Pinagkakatiwalaan ng mga Nangungunang Kumpanya",
+            "logos": [
+            {
+                "name": "Xiaomi",
+                "url": "/assets/trusted_by/xiaomi.svg"
+            },
+            {
+                "name": "Unacademy",
+                "url": "/assets/trusted_by/unacademy.svg"
+            },
+            {
+                "name": "Dream11",
+                "url": "/assets/trusted_by/dream11.svg"
+            },
+            {
+                "name": "Indeed",
+                "url": "/assets/trusted_by/indeed.svg"
+            },
+            {
+                "name": "Ixigo",
+                "url": "/assets/trusted_by/ixigo.svg"
+            }
+            ]
+        }
+    },
+    "FeatureComp": {
+        "heading": "MGA PANGUNAHING KAKAYAHAN",
+        "subheading": "Lahat ng Usapan, Magkakaugnay. Mas Maayos na Serbisyo. Mula sa mga tanong tungkol sa online orders sa Metro Manila hanggang sa reservation requests sa Cebu at delivery concerns sa Davao, kailangan ng mga negosyo ng isang maaasahang paraan para pamahalaan ang kanilang customer conversations. Ang MSG91 Hello ay isang platform ng suporta sa customer na pinagsasama ang iba't ibang communication channels, AI automation at human support upang mas mapadali ang pang-araw-araw na operasyon.",
+        "iconColor": "text-campaign",
+        "features": [
+          {
+            "name": "Pinag-isang Inbox – Lahat ng Mensahe sa Isang Lugar",
+            "content": "May mga customer na nagtatanong sa Facebook Messenger, nagpapadala ng mga detalye ng order sa WhatsApp, nagtatanong o nakikipag-ugnayan sa Instagram o X (Twitter), o nagpapadala ng email. Sa MSG91 Hello, maaaring pamahalaan ng iyong team ang lahat ng suportadong channel sa iisang inbox. Makikita ng mga empleyado ang kasaysayan ng usapan, detalye ng customer at katayuan ng bawat kahilingan nang hindi lumilipat sa iba't ibang application. Maaari ring gamitin ng maraming atendante ang iisang konektadong WhatsApp number nang hindi nagpapalitan ng login. Para naman sa mga ahensiya at negosyong may maraming brand, nagbibigay ang One Inbox ng access sa iba't ibang awtorisadong company accounts mula sa isang workspace.",
+            "more_content": {
+              "usecases": [
+                {
+                  "name": "Tindahan ng Damit",
+                  "description": "Isang clothing store sa Quezon City ang sumasagot sa mga tanong tungkol sa sukat sa Instagram, delivery updates sa WhatsApp at return requests sa email mula sa iisang inbox."
+                },
+                {
+                  "name": "Ahensiya ng Real Estate",
+                  "description": "Isang property agency sa Makati ang nag-aayos ng mga tanong tungkol sa condominium units mula sa website chat, email at WhatsApp."
+                },
+                {
+                  "name": "Mga Kumpanyang BPO",
+                  "description": "Isang outsourcing company sa Cebu ang nagbibigay sa mga awtorisadong supervisor ng access sa magkakahiwalay na inbox ng kanilang mga kliyente."
+                },
+                {
+                  "name": "Mga Training Center",
+                  "description": "Isang skills training center sa Davao ang namamahala ng mga tanong tungkol sa kursong inaalok sa Facebook Messenger, website chat at WhatsApp."
+                }
+              ],
+              "features": [
+                "Isang inbox para sa WhatsApp, email, website chat, Instagram, Facebook Messenger at RCS",
+                "One Inbox para sa iba't ibang awtorisadong company accounts",
+                "Madaling paghahanap ng mga usapan at kasaysayan ng customer",
+                "Mga filter, tag at panloob na tala para sa bawat ticket",
+                "Maraming atendante sa iisang konektadong WhatsApp number",
+                "Kontroladong access para sa mga empleyado at manager"
+              ]
+            },
+            "img": "/assets/global/hello/new_webp/unify_every_conversation_empower_every_team.webp"
+          },
+          {
+            "name": "Mga AI Chatbot – Isang Bot na Pinagsasama ang Rules at AI",
+            "content": "Hindi lahat ng tanong ng customer ay nasasagot sa pamamagitan ng simpleng automated replies. Sa MSG91 Hello, maaari kang gumawa ng isang chatbot na pinagsasama ang rule-based steps at agentic AI sa iisang usapan. Maaari itong mangolekta ng impormasyon sa pamamagitan ng mga nakatakdang hakbang, umunawa ng mas komplikadong tanong, kumuha ng detalye mula sa konektadong sistema sa pamamagitan ng API at ilipat ang usapan sa isang human agent kapag kailangan. May access din ito sa mahigit 2,000 application connections, iba't ibang AI models na may backup options at automated assistance na available 24/7.",
+            "more_content": {
+              "usecases": [
+                {
+                  "name": "Tindahan ng Electronics",
+                  "description": "Kinokolekta muna ng chatbot ang model number ng refrigerator bago gamitin ang AI upang sagutin ang mga tanong tungkol sa compatibility at warranty."
+                },
+                {
+                  "name": "Serbisyo ng Ferry",
+                  "description": "Isang pasaherong nagtatanong tungkol sa Cebu–Bohol trip ang nagbibigay ng travel date bago kunin ng bot ang available na schedule mula sa konektadong reservation system."
+                },
+                {
+                  "name": "Mga Unibersidad",
+                  "description": "Isang unibersidad sa Maynila ang gumagamit ng chatbot para malaman ang gustong kurso ng estudyante at ipaliwanag ang admission requirements."
+                },
+                {
+                  "name": "Mga Subscription Service",
+                  "description": "Isang online learning provider ang gumagamit ng API upang tingnan ang subscription status ng customer at ipaliwanag ang renewal options."
+                }
+              ],
+              "features": [
+                "Rule-based steps at agentic AI sa iisang chatbot",
+                "Koneksyon sa mahigit 2,000 application sa pamamagitan ng integration ecosystem",
+                "API calls, webhooks at pagkuha ng impormasyon mula sa konektadong sistema",
+                "Iba't ibang AI models na may backup options",
+                "Visual chatbot builder para sa paggawa ng mga daloy ng usapan",
+                "Paglipat sa human agents at 24/7 automated assistance"
+              ]
+            },
+            "img": "/assets/global/hello/new_webp/chatbot.webp",
+            "button": {
+              "name": "Alamin Pa",
+              "link": "https://msg91.com/help/hello-contact-center/chatbots-in-hello"
+            }
+          },
+          {
+            "name": "MSG91 Chat Window – Ituloy ang Usapan Mula sa WhatsApp",
+            "content": "May mga concern na hindi natatapos sa isa o dalawang mensahe. Minsan ay kailangan ng karagdagang paliwanag, dokumento o follow-up mula sa support team. Sa MSG91 Chat Window, maaaring magsimula ang customer sa WhatsApp at ipagpatuloy ang usapan sa isang hiwalay na chat window habang nananatiling konektado ang orihinal na WhatsApp ticket. Maaaring sumagot ang AI chatbot o human agent sa pamamagitan ng Hello nang hindi nawawala ang konteksto ng usapan. Dahil hindi ipinapadala sa WhatsApp ang mga mensahe sa loob ng Chat Window, walang Meta WhatsApp per-message charges para sa mga mensaheng iyon.",
+            "more_content": {
+              "usecases": [
+                {
+                  "name": "Warranty ng Appliances",
+                  "description": "Isang customer ang nagre-report sa WhatsApp tungkol sa sirang washing machine at ipinagpapatuloy ang troubleshooting sa Chat Window."
+                },
+                {
+                  "name": "Condominium Turnover",
+                  "description": "Isang bagong unit owner ang nag-uulat ng problema sa unit at patuloy na nagpapadala ng detalye sa customer care team."
+                },
+                {
+                  "name": "Ahensiya ng Paglalakbay",
+                  "description": "Isang traveller ang nagsisimula ng tanong tungkol sa pagbabago ng holiday package sa WhatsApp at tinatalakay ang ibang itinerary options sa Chat Window."
+                },
+                {
+                  "name": "Suporta sa Insurance",
+                  "description": "Isang policyholder ang nagtatanong tungkol sa kinakailangang dokumento at nagpapatuloy sa mas detalyadong usapan kasama ang support representative."
+                }
+              ],
+              "features": [
+                "Pagpapatuloy ng usapan mula WhatsApp patungong Chat Window",
+                "Parehong WhatsApp-linked ticket",
+                "Pagpapanatili ng konteksto at kasaysayan ng usapan",
+                "Suporta mula sa AI chatbot at human agents",
+                "Walang Meta WhatsApp per-message charges sa loob ng Chat Window",
+                "Mga mensahe at suportadong voice-assistance options"
+              ]
+            },
+            "img": "/assets/global/hello/new_webp/connect_engage_and_convert_instantly.webp",
+            "button": {
+              "name": "Alamin Pa",
+              "link": "https://msg91.com/guide/how-customer-support-changes-with-msg91-chat-window"
+            }
+          },
+          {
+            "name": "Live Chat sa Website – Sagutin ang Bisita Habang Nasa Website Pa",
+            "content": "May mga bisita sa website na interesado nang bumili o mag-book ngunit may isang tanong pang kailangang masagot. Sa live chat ng MSG91 Hello, maaari silang direktang makipag-usap sa iyong team habang tinitingnan ang mga produkto o serbisyo. Maaari silang magpadala ng mensahe, file at voice note gamit ang mga suportadong feature ng widget. Sumasagot ang mga atendante mula sa Hello workspace, habang ang chatbot ay maaaring tumulong sa mga karaniwang tanong kahit wala pang available na human agent.",
+            "more_content": {
+              "usecases": [
+                {
+                  "name": "Mga Wedding Venue",
+                  "description": "Isang magkasintahang naghahanap ng event venue sa Tagaytay ang nagtatanong tungkol sa seating capacity at catering arrangements."
+                },
+                {
+                  "name": "Mga Packaging Supplier",
+                  "description": "Isang manufacturer sa Laguna ang tumatanggap ng mga tanong tungkol sa minimum order quantity at custom packaging."
+                },
+                {
+                  "name": "Mga Dental Clinic",
+                  "description": "Isang bisita sa website ang nagtatanong tungkol sa dental services at consultation requirements bago magpa-appointment."
+                },
+                {
+                  "name": "Mga Business Software Provider",
+                  "description": "Isang potential client ang nagtatanong kung compatible ang isang software sa kanilang accounting system bago mag-request ng demonstration."
+                }
+              ],
+              "features": [
+                "Nako-customize na chat widget sa website",
+                "Direktang pakikipag-usap sa mga bisita",
+                "Pagpapadala ng mga file at voice note",
+                "Pagsubaybay sa aktibidad ng mga bisita",
+                "Suporta mula sa AI chatbot at human agents",
+                "Konektadong history ng mga usapan"
+              ]
+            },
+            "img": "/assets/global/hello/new_webp/connect_engage_and_convert_instantly.webp",
+            "button": {
+              "name": "Alamin Pa",
+              "link": "https://msg91.com/help/hello-contact-center/integrate-channels-in-hello/chat-widget-integration"
+            }
+          },
+          {
+            "name": "Cloud Calling at IVR – Idirekta ang Bawat Tawag sa Tamang Departamento",
+            "content": "May mga problema na mas madaling ayusin sa pamamagitan ng tawag kaysa sa pagpapalitan ng mensahe. Pinagsasama ng MSG91 Hello ang incoming at outgoing calls sa customer support workflow upang mas madaling maayos ang pagtanggap, paglipat at pagsubaybay sa mga tawag. Maaaring gumawa ng multi-level IVR menus upang ang customer ay makapili ng department na kailangan niya. Maaari ring magsagawa ng mga suportadong outbound customer support calls ang agents gamit ang Hello mobile app.",
+            "more_content": {
+              "usecases": [
+                {
+                  "name": "Mga Ospital",
+                  "description": "Isang private hospital ang gumagamit ng IVR upang paghiwalayin ang mga tawag tungkol sa appointment, laboratory tests at billing concerns."
+                },
+                {
+                  "name": "Mga Car Dealership",
+                  "description": "Isang automotive service center ang nagdidirekta ng tawag sa service booking, repair updates o warranty assistance."
+                },
+                {
+                  "name": "Inter-Island Shipping",
+                  "description": "Isang passenger ferry operator ang naghihiwalay ng mga tawag tungkol sa booking, departure information at ticket changes."
+                },
+                {
+                  "name": "Mga Water Utility Provider",
+                  "description": "Isang customer na magre-report ng water interruption ay idinidirekta sa technical team sa halip na billing department."
+                }
+              ],
+              "features": [
+                "Pagtanggap at pagsasagawa ng mga business call",
+                "Multi-level IVR menus",
+                "Paglipat ng tawag sa tamang department o agent",
+                "Pagpili ng calling setup sa web, phone o parehong paraan",
+                "Outbound support calls mula sa Hello mobile app",
+                "Pagsubaybay sa call activity at kaugnay na ticket"
+              ]
+            },
+            "footer": "Ang availability ng mga lokal na numero at calling services ay nakadepende sa suportadong telephony service at naaangkop na regulasyon.",
+            "img": "/assets/global/hello/new_webp/handle_even_the_toughest_calls_with_ease.webp"
+          },
+          {
+            "name": "Bot na May AI Voice – Magtanong sa Website Nang Hindi Nagta-type",
+            "content": "Hindi lahat ng customer ay gustong mag-type ng mahahabang tanong, lalo na kapag gumagamit ng mobile phone. Ang AI Voice Bot ng Hello ay nagbibigay-daan upang makapagtanong ang mga bisita sa pamamagitan ng pagsasalita at makatanggap ng spoken responses gamit ang website chat widget. Nakabatay ang mga sagot sa naka-configure na impormasyon ng negosyo at sa agentic AI chatbot. Mas nagiging maginhawa ang website experience para sa mga bisitang mas komportable sa pagsasalita kaysa pagsusulat.",
+            "more_content": {
+              "usecases": [
+                {
+                  "name": "Mga Island Resort",
+                  "description": "Isang traveller ang nagtatanong nang pasalita kung kasama sa Palawan island-hopping package ang pagkain, transportasyon at kagamitan."
+                },
+                {
+                  "name": "Mga Fitness Center",
+                  "description": "Isang prospective member ang nagtatanong tungkol sa gym hours, group classes at membership facilities."
+                },
+                {
+                  "name": "Online Education",
+                  "description": "Isang working professional ang nagtatanong kung may weekend classes para sa certification programme."
+                },
+                {
+                  "name": "Mas Accessible na Website",
+                  "description": "Isang bisitang nahihirapang mag-type ang nagtatanong tungkol sa branch location at operating hours gamit ang boses."
+                }
+              ],
+              "features": [
+                "Pasalitang tanong at mga sagot sa audio",
+                "Voice interaction gamit ang website chat widget",
+                "Agentic AI para sa pag-unawa ng natural na pananalita",
+                "Nako-configure na impormasyon ng negosyo",
+                "Suporta sa mga angkop na voice-based enquiries"
+              ]
+            },
+            "img": "/assets/global/hello/new_webp/smartcue_ai.json",
+            "button": {
+              "name": "Alamin Pa",
+              "link": "https://msg91.com/help/hello-contact-center/voice-bot"
+            }
+          },
+          {
+            "name": "Matalinong Pamamahala ng Tickets – Walang Kahilingang Napapabayaan",
+            "content": "Hindi lahat ng concern ay kayang tapusin sa isang sagot. May mga problemang nangangailangan ng pagsusuri, pag-apruba, pagbisita ng technician o koordinasyon sa ibang department. Sa Hello, maaaring gawing support ticket ang bawat conversation at italaga ito sa responsableng empleyado. Maaari ring subaybayan, pansamantalang ipagpaliban at isara ang ticket kapag nalutas na ang problema. Dahil may conversation history, internal notes at filters, mas madaling makita kung ano na ang nangyari at kung ano pa ang kailangang gawin.",
+            "more_content": {
+              "usecases": [
+                {
+                  "name": "Mga Gadget Repair Shop",
+                  "description": "Isang repair center sa Greenhills ang sumusubaybay sa warranty request ng cellphone habang naghihintay ng replacement parts."
+                },
+                {
+                  "name": "Furniture Delivery",
+                  "description": "Isang online furniture store ang nagmo-monitor ng reklamo tungkol sa sirang mesa hanggang maihatid ang kapalit."
+                },
+                {
+                  "name": "Mga Internet Provider",
+                  "description": "Isang broadband company ang nagpapanatiling bukas sa ticket habang hinihintay ang pagbisita ng technician."
+                },
+                {
+                  "name": "Mga Paaralan",
+                  "description": "Isang college finance office ang sumusubaybay sa kahilingan ng estudyanteng itama ang maling naitalang tuition payment."
+                }
+              ],
+              "features": [
+                "Bukas, pansamantalang ipinagpaliban at saradong tickets",
+                "Pagtatalaga ng ticket sa responsableng agent",
+                "Kasaysayan ng usapan at customer details",
+                "Internal notes, tags at search filters",
+                "Pagsubaybay sa mga hindi pa nalulutas na kahilingan",
+                "Pagkontrol sa spam at blocked contacts"
+              ]
+            },
+            "img": "/assets/global/hello/new_webp/keep_support_flowing.webp"
+          },
+          {
+            "name": "Mga Awtomatikong Daloy ng Trabaho – Tamang Concern, Tamang Team",
+            "content": "Hindi kailangang manu-manong ipasa ng agents ang bawat mensaheng dumarating. Gamit ang workflow automation ng Hello, maaaring gumawa ng mga patakaran batay sa keywords, customer details, oras ng pagdating ng mensahe at iba pang kundisyon. Awtomatikong maipapadala ang acknowledgement, maitatalaga ang ticket sa tamang department o maipagpapatuloy ang usapan sa chatbot. Nababawasan nito ang paulit-ulit na pag-aayos ng mga kahilingan at mas nagiging malinaw kung sino ang responsable sa bawat concern.",
+            "more_content": {
+              "usecases": [
+                {
+                  "name": "Cash-on-Delivery Orders",
+                  "description": "Ang mga mensaheng tungkol sa failed COD delivery ay awtomatikong ipinapasa sa fulfilment team."
+                },
+                {
+                  "name": "Student Services",
+                  "description": "Ang mga kahilingan tungkol sa transcript ay napupunta sa registrar, habang ang tuition concerns ay napupunta sa finance office."
+                },
+                {
+                  "name": "Telecommunications",
+                  "description": "Ang mga mensaheng tungkol sa internet outage ay idinidirekta sa technical support at hindi sa sales department."
+                },
+                {
+                  "name": "Membership Services",
+                  "description": "Ang mga customer na nagme-message sa fitness center pagkatapos ng business hours ay nakatatanggap ng acknowledgement at follow-up ticket."
+                }
+              ],
+              "features": [
+                "Awtomatikong pag-route batay sa keywords at kundisyon",
+                "Pagtatalaga ng tickets sa tamang department",
+                "Mga acknowledgement ayon sa oras",
+                "AND/OR conditions para sa mas detalyadong automation",
+                "Pagpapasa ng usapan sa mga chatbot",
+                "Nako-configure na mga patakaran para sa iba't ibang concern"
+              ]
+            },
+            "img": "/assets/global/hello/new_webp/workflow_automation.json"
+          },
+          {
+            "name": "Suporta sa Iba't Ibang Wika – Mas Madaling Makipag-usap sa mga Customer",
+            "content": "May mga negosyong Pilipino na nagsisilbi sa lokal at internasyonal na customers. Sa MSG91 Hello, maaaring gamitin ang two-way text translation upang mabasa ng agent ang incoming message sa gusto niyang wika at makapagpadala ng sagot na isinasalin sa wika ng customer. Sinusuportahan nito ang mahigit 100 wika para sa text translation, kaya maaaring makipag-usap sa iba't ibang market mula sa iisang support workspace nang hindi gumagamit ng magkakahiwalay na translation tools.",
+            "more_content": {
+              "usecases": [
+                {
+                  "name": "Turismo",
+                  "description": "Isang resort sa Cebu ang sumasagot sa mga tanong ng mga turistang gumagamit ng Korean o Japanese sa pamamagitan ng suportadong pagsasalin."
+                },
+                {
+                  "name": "Export Businesses",
+                  "description": "Isang furniture exporter ang nakikipag-usap sa overseas distributors tungkol sa product specifications at shipping arrangements."
+                },
+                {
+                  "name": "Shared Services",
+                  "description": "Isang support team sa Manila ang sumasagot sa international customers gamit ang available incoming at outgoing translations."
+                },
+                {
+                  "name": "International Education",
+                  "description": "Isang school admissions office ang nagpapaliwanag ng enrolment requirements sa mga estudyanteng mula sa ibang bansa."
+                }
+              ],
+              "features": [
+                "Dalawang-direksiyong pagsasalin ng mga mensahe",
+                "Mahigit 100 suportadong wika",
+                "Incoming messages na isinasalin sa piniling wika ng agent",
+                "Outgoing replies na isinasalin para sa customer",
+                "Multilingual na usapan sa iisang inbox"
+              ]
+            },
+            "img": "/assets/global/hello/new_webp/multilingual_capabilities.webp"
+          },
+          {
+            "name": "Interactive WhatsApp – Gawing Mas Madali ang Pagpili ng Customer",
+            "content": "Hindi kailangang mahaba ang mensahe ng customer kung maaaring pumili na lang siya mula sa mga malinaw na opsyon. Sinusuportahan ng MSG91 Hello ang interactive WhatsApp messages gaya ng buttons, lists at product messages. Sa tulong ng konektadong Meta catalogue, maaaring magpakita ang negosyo ng mga produkto at tulungan ang customer na piliin ang kailangan niya. Magagamit din ang interactive messages para sa mga karaniwang support options at gabay sa susunod na hakbang ng conversation.",
+            "more_content": {
+              "usecases": [
+                {
+                  "name": "Mga Shoe Store",
+                  "description": "Ang customer ay pumipili sa buttons para sa size assistance, delivery information o exchange request."
+                },
+                {
+                  "name": "Mga Beauty Shop",
+                  "description": "Isang cosmetics store ang nagpapakita ng skincare products mula sa konektadong Meta catalogue."
+                },
+                {
+                  "name": "Mga Restaurant Group",
+                  "description": "Ang customer ay pumipili kung kailangan niya ng branch information, reservation assistance o order support."
+                },
+                {
+                  "name": "Mga Electronics Store",
+                  "description": "Isang customer ang pumipili sa WhatsApp list kung kailangan niya ng warranty information, accessories o product specifications."
+                }
+              ],
+              "features": [
+                "Mga interactive button at list sa WhatsApp",
+                "Mensahe para sa iisang produkto o listahan ng mga produkto",
+                "Koneksyon sa Meta product catalogue",
+                "Mga reusable interactive message configurations",
+                "Mga gabay na pagpipilian para sa customer service",
+                "Pagpapakita ng mga produkto sa WhatsApp"
+              ]
+            },
+            "img": "/assets/global/hello/new_webp/chat_to_checkout.json",
+            "button": {
+              "name": "Alamin Pa",
+              "link": "https://msg91.com/help/hello-contact-center/hello-faqs/interactive-message-in-hello"
+            }
+          },
+          {
+            "name": "Video Call at Screen Sharing – Ipakita ang Problema, Mas Madaling Resolbahin",
+            "content": "May mga technical issue na mahirap ipaliwanag sa pamamagitan lamang ng text. Sa suportadong video calling at screen-sharing features ng Hello, maaaring ipakita ng customer ang problema habang ginagabayan siya ng support agent. Para sa mga angkop na sitwasyon, maaari ring gumamit ng remote assistance na may pahintulot ng customer. Nakakatulong ito lalo na sa mga software at digital services na nangangailangan ng visual troubleshooting.",
+            "more_content": {
+              "usecases": [
+                {
+                  "name": "Mga Retail POS System",
+                  "description": "Isang store manager ang nagpapakita ng error sa point-of-sale dashboard habang nagbibigay ng gabay ang technical specialist."
+                },
+                {
+                  "name": "Payroll Software",
+                  "description": "Isang HR administrator ang nagbabahagi ng screen para ipakita ang problema sa pag-import ng attendance records."
+                },
+                {
+                  "name": "Online Learning",
+                  "description": "Isang estudyante ang nagpapakita ng error sa pag-access sa learning dashboard."
+                },
+                {
+                  "name": "Accounting Applications",
+                  "description": "Isang business owner ang humihingi ng tulong sa report export o pag-configure ng user permissions."
+                }
+              ],
+              "features": [
+                "Video assistance sa mga suportadong conversation",
+                "Pagbabahagi ng screen ng customer",
+                "Visual troubleshooting",
+                "Remote assistance na may pahintulot",
+                "Suportadong screen-control functionality",
+                "Gabay sa pag-aayos ng software settings"
+              ]
+            },
+            "img": "/assets/global/hello/new_webp/screen_control.webp"
+          },
+          {
+            "name": "Pagtutulungan ng mga Team – Malinaw ang Responsibilidad sa Bawat Concern",
+            "content": "May mga customer request na nangangailangan ng tulong mula sa sales, finance, technical support o management. Sa Hello, maaaring hatiin ang mga empleyado sa iba't ibang team, magtalaga ng tickets at magtakda ng access permissions. Dahil sa shared conversation history at internal notes, mas madaling maunawaan ng susunod na agent ang sitwasyon nang hindi pinauulit sa customer ang buong problema. Mas nagiging organisado ang koordinasyon sa pagitan ng iba't ibang departamento.",
+            "more_content": {
+              "usecases": [
+                {
+                  "name": "Mga BPO Team",
+                  "description": "Isang customer service operation sa Cebu ang naghihiwalay ng general enquiries, technical escalations at complaints para sa supervisor review."
+                },
+                {
+                  "name": "Mga Clinic",
+                  "description": "Ang reception staff ay humahawak ng appointments, habang ang awtorisadong billing team ay sumasagot sa payment concerns."
+                },
+                {
+                  "name": "Condominium Administration",
+                  "description": "Ang mga reklamo ng residente ay ipinapasa sa property administration, security o maintenance depende sa concern."
+                },
+                {
+                  "name": "Wholesale Distribution",
+                  "description": "Ang sales team ay sumasagot sa purchase enquiries, habang ang warehouse support ay tumitingin sa mga maling naihatid na order."
+                }
+              ],
+              "features": [
+                "Pamamahala ng agents at departments",
+                "Mga pahintulot batay sa tungkulin ng empleyado",
+                "Pagtatalaga ng tickets sa iba't ibang team",
+                "Kontrol sa access ng bawat inbox",
+                "Panloob na tala at shared ticket information",
+                "Koordinasyon nang hindi nagpapalitan ng login credentials"
+              ]
+            },
+            "img": "/assets/global/hello/new_webp/unify_every_conversation_empower_every_team.webp"
+          },
+          {
+            "name": "Mga Ulat at Feedback – Alamin Kung Ano ang Nangyayari sa Customer Support",
+            "content": "Hindi sapat na malaman lamang kung ilang messages ang nasagot. Mahalaga ring makita kung aling channels ang pinakaginagamit, gaano karaming tickets ang hawak ng bawat team at anong mga problemang paulit-ulit na lumalabas. Sa analytics dashboard ng Hello, maaaring tingnan ng managers ang ticket volumes, channel activity, agent performance at available customer feedback. Mas madaling matukoy kung kailan kailangan ng karagdagang support coverage at kung anong mga proseso ang dapat pagbutihin.",
+            "more_content": {
+              "usecases": [
+                {
+                  "name": "11.11 at 12.12 Sales",
+                  "description": "Isang online retailer ang sinusuri ang dami ng support requests sa iba't ibang channel habang may malalaking shopping campaigns."
+                },
+                {
+                  "name": "Back-to-School Season",
+                  "description": "Isang education provider ang naghahambing ng admission enquiries upang maiplano ang staffing."
+                },
+                {
+                  "name": "Mga Courier Service",
+                  "description": "Isang logistics manager ang sumusuri sa pagtaas ng delivery complaints sa iba't ibang panahon."
+                },
+                {
+                  "name": "Multi-Branch Retail",
+                  "description": "Isang support manager ang tumitingin sa customer ratings at ticket trends upang makita ang mga paulit-ulit na problema."
+                }
+              ],
+              "features": [
+                "Ulat tungkol sa tickets at kanilang katayuan",
+                "Pagsubaybay sa aktibidad ng agents at teams",
+                "Pagsusuri ng performance ng iba't ibang channels",
+                "Workload at working-hour reports",
+                "Customer feedback at ratings",
+                "Isang dashboard para sa support analytics"
+              ]
+            },
+            "img": "/assets/global/hello/new_webp/analytics.webp"
+          },
+          {
+            "name": "Customer Support sa Mobile – Magtrabaho Kahit Wala sa Opisina",
+            "content": "Hindi lahat ng empleyadong humahawak ng customer concerns ay laging nasa harap ng computer. Sa Android at iOS applications ng MSG91 Hello, maaaring tingnan ang messages, sagutin ang customers, makatanggap ng notifications at pamahalaan ang support tickets habang nasa field o nagtatrabaho nang remote. Maaari ring magsagawa ng suportadong outbound customer support calls gamit ang app. Mas nagiging madali ang pagsubaybay sa mahahalagang concerns kahit nasa labas ng opisina.",
+            "more_content": {
+              "usecases": [
+                {
+                  "name": "Field Service",
+                  "description": "Isang appliance technician sa Cavite ang tumitingin sa repair history ng customer bago pumunta sa bahay nito."
+                },
+                {
+                  "name": "Property Management",
+                  "description": "Isang condominium administrator ang sinusuri ang maintenance complaint habang nag-iinspeksyon ng gusali."
+                },
+                {
+                  "name": "Retail Operations",
+                  "description": "Isang store manager ang sumasagot sa urgent customer ticket habang nasa off-site sales event."
+                },
+                {
+                  "name": "Tour Operations",
+                  "description": "Isang tour coordinator ang nagfo-follow up sa booking concern habang nasa meeting point ng mga bisita."
+                }
+              ],
+              "features": [
+                "Mobile applications para sa Android at iOS",
+                "Pagsagot sa messages at pamamahala ng tickets",
+                "Pagtingin sa kasaysayan ng usapan",
+                "Mga notification para sa bagong enquiries",
+                "Pagtatalaga at pag-follow up sa tickets",
+                "Suportadong outbound customer support calls"
+              ]
+            },
+            "img": "/assets/global/hello/new_webp/mobile.webp"
+          },
+          {
+            "name": "Mga API at Integration – Ikonekta ang Customer Support sa Business Data",
+            "content": "Kapag nagtatanong ang customer kung natanggap na ang bayad, nasaan na ang parcel o kumpirmado na ang booking, karaniwan ay kailangang kumuha ng impormasyon mula sa ibang sistema. Sinusuportahan ng MSG91 Hello ang APIs, webhooks at koneksyon sa mahigit 2,000 application sa pamamagitan ng integration ecosystem nito. Sa tamang configuration, maaaring kumuha ng available na data ang chatbot at mga awtorisadong workflow mula sa CRM, payment, logistics at iba pang business systems. Nababawasan nito ang manual checking at mas nagiging kapaki-pakinabang ang mga sagot.",
+            "more_content": {
+              "usecases": [
+                {
+                  "name": "GCash at Maya Payments",
+                  "description": "Kinukuha ng chatbot ang payment status mula sa awtorisado at konektadong payment provider kapag nagtatanong ang customer kung natanggap ang transaksyon."
+                },
+                {
+                  "name": "Parcel Tracking",
+                  "description": "Isang courier company ang gumagamit ng logistics API upang ibigay ang pinakahuling available na delivery status."
+                },
+                {
+                  "name": "School Enrolment",
+                  "description": "Isang student information system ang nagbibigay ng available registration status sa awtorisadong support workflow."
+                },
+                {
+                  "name": "Real Estate CRM",
+                  "description": "Isang property agency ang nagtatala ng bagong buyer enquiry sa konektadong CRM para sa follow-up ng assigned adviser."
+                }
+              ],
+              "features": [
+                "Mahigit 2,000 application connections",
+                "API calls at webhook-based workflows",
+                "Koneksyon sa CRM at e-commerce platforms",
+                "Pagkuha ng payment at logistics data mula sa suportadong sistema",
+                "Awtorisadong access sa business information",
+                "Mga automated action sa pamamagitan ng integrations"
+              ]
+            },
+            "img": "/assets/global/hello/new_webp/workflow_automation.json"
+          }
+        ]
+      },
+    "FooterCta": {
+        "bg": true,
+        "heading": "Mas Maayos na Usapan. Mas Kaunting Mano-manong Trabaho.",
+        "description": "Pagsamahin ang customer conversations, AI automation at suporta ng iyong team sa iisang software para sa customer service sa Pilipinas na ginawa para gawing mas madali ang pang-araw-araw na operasyon.",
+        "primaryLabel": "Magsimula Na",
+        "primaryHref": "https://calendly.com/d/y3n-29s-29h?back=1",
+        "secondaryLabel": "Mag-iskedyul ng Meeting",
+        "secondaryHref": "/contact-us"
+    },
+    "WhatsAppOverview": {
+        "heading": "Tingnan Kung Paano Gumagana ang MSG91 Hello sa Bawat Conversation",
+        "paragraphs": [
+            "Alamin kung paano nagtutulungan ang customer communication, AI automation at reporting tools upang matulungan ang iyong team mula sa unang mensahe hanggang sa paglutas ng problema."
+        ],
+        "cta": {
+            "text": "Tuklasin ang Hello"
+        },
+        "ways_heading": "Silipin ang mga Kakayahan ng Produkto",
+        "ways": [
+            {
+            "icon": "MdSupportAgent",
+            "title": "Isang Inbox. Kitang-Kita ang Bawat Usapan.",
+            "description": "Makita ang mga mensahe mula sa konektadong channels, suriin ang customer history at italaga ang requests sa tamang agents. Halimbawa: Isang customer ang nagre-report ng kulang na item sa parcel. Binubuksan ng agent ang ticket, sinusuri ang naunang usapan at ipinapasa ang concern sa fulfilment team."
+            },
+            {
+            "icon": "MdSmartToy",
+            "title": "Isang Chatbot na May Rules, AI at APIs.",
+            "description": "Gumawa ng chatbot na nangongolekta ng impormasyon sa pamamagitan ng mga nakatakdang hakbang, sumasagot sa mas detalyadong tanong gamit ang AI at kumukuha ng data mula sa konektadong sistema. Halimbawa: Isang estudyante ang pumipili ng kurso at campus. Kinokolekta ng bot ang mga detalye at ipinapaliwanag ang admission requirements bago ipasa ang concern sa admissions team."
+            },
+            {
+            "icon": "MdAnalytics",
+            "title": "Mas Malinaw na Larawan ng Performance ng Iyong Team.",
+            "description": "Subaybayan ang tickets, channels, agent workload at customer feedback sa analytics dashboard. Halimbawa: Napansin ng isang retail manager ang pagdami ng support tickets pagkatapos ng payday sale kaya inayos niya ang staff assignments para sa susunod na campaign."
+            }
+        ],
+        "internal_link": {
+            "text": "Mga Gabay sa MSG91 Hello",
+            "url": "https://msg91.com/help/hello-contact-center"
+        }
+    },
+    "CompareTableComp": {
+        "type": "customer-support-software",
+        "heading": "Ano ang Naiiba sa MSG91 Hello?",
+        "tableHeading": "MSG91 Hello Kumpara sa Ibang Software para sa Customer Support",
+        "featureLabel": "Kakayahan",
+        "columns": [
+            {
+            "key": "hello",
+            "label": "MSG91 Hello"
+            },
+            {
+            "key": "other",
+            "label": "Ibang Software"
+            }
+        ],
+        "rows": [
+            {
+            "feature": "Bayad sa Agent",
+            "hello": "Walang limitasyon sa agents at walang bayad sa bawat lisensya ng agent",
+            "other": "Madalas may bayad sa bawat agent"
+            },
+            {
+            "feature": "Pagpapalawak ng Team",
+            "hello": "Magdagdag ng agents nang walang dagdag na bayad sa seat licences",
+            "other": "Maaaring tumaas ang gastos sa bawat bagong user"
+            },
+            {
+            "feature": "Suportadong Channels",
+            "hello": "WhatsApp, email, website chat, social media, RCS at suportadong tawag",
+            "other": "Nag-iiba ayon sa provider"
+            },
+            {
+            "feature": "Mga AI Chatbot",
+            "hello": "Rule-based steps at agentic AI sa iisang bot",
+            "other": "Nag-iiba ang kakayahan ng AI"
+            },
+            {
+            "feature": "Pagpili ng AI Model",
+            "hello": "Iba't ibang AI models na may backup options",
+            "other": "Nakasalalay sa platform"
+            },
+            {
+            "feature": "Mga Integration",
+            "hello": "Mahigit 2,000 app connections at API workflows",
+            "other": "Nag-iiba ang suportadong integrations"
+            },
+            {
+            "feature": "WhatsApp Chat Window",
+            "hello": "Ituloy ang WhatsApp conversation nang walang Meta per-message charges sa loob ng Chat Window",
+            "other": "Maaaring mangailangan ng ibang channel"
+            },
+            {
+            "feature": "Pamamahala ng Tickets",
+            "hello": "Magtalaga, sumubaybay, magpaliban at magsara ng tickets",
+            "other": "Nag-iiba ang mga feature"
+            },
+            {
+            "feature": "Cloud Calling at IVR",
+            "hello": "Mga suportadong tawag at call routing sa customer service workflow",
+            "other": "Maaaring mangailangan ng hiwalay na serbisyo"
+            },
+            {
+            "feature": "Mobile Calling",
+            "hello": "Magsagawa ng suportadong outbound calls mula sa mobile app",
+            "other": "Nag-iiba ang availability"
+            },
+            {
+            "feature": "Awtomatikong Workflows",
+            "hello": "Awtomatikong ticket routing at assignments",
+            "other": "Nakasalalay sa plano"
+            },
+            {
+            "feature": "Mga Ulat at Analytics",
+            "hello": "Pinagsamang ticket, agent at channel analytics",
+            "other": "Nag-iiba ang reporting capabilities"
+            },
+            {
+            "feature": "Seguridad",
+            "hello": "SOC 2 Type II audited, ISO 27001 at VAPT",
+            "other": "Nag-iiba ang certifications"
+            },
+            {
+            "feature": "Libreng Plano",
+            "hello": "Walang bayad, may 2 inbox at 50 tickets bawat buwan",
+            "other": "Hindi lahat ay may libreng plano"
+            }
+        ],
+        "summary": "Pinagsasama ng MSG91 Hello ang omnichannel support, AI chatbots, ticket management at workflow automation sa iisang platform, na may walang limitasyong agents at walang hiwalay na bayad sa bawat lisensya ng agent.",
+        "pricingNote": "May libre at may bayad na mga plano ang MSG91 Hello. Nakasalalay sa napiling plano ang inbox limits, ticket allowances, paggamit ng bot at communication charges. Tingnan ang kasalukuyang presyo at currency sa pricing page ng Pilipinas bago mag-publish ng partikular na halaga. Tingnan ang presyo: https://msg91.com/fil-ph/pricing/hello"
+    },
+    "WhatsAppWhyChoose": {
+  "heading": "Isang Platform para sa Mas Organisadong Customer Service",
+  "tagline": "BAKIT PILIIN ANG MSG91 HELLO?",
+  "description": "Hindi sapat ang pagkakaroon lamang ng isa pang inbox o chatbot. Kailangan ng negosyo ng sistemang nag-uugnay sa customer conversations, automation at mga empleyado nang hindi ginagawang mas komplikado ang trabaho. Ang MSG91 Hello ay isang platform ng suporta sa customer na tumutulong sa mga negosyong Pilipino na pamahalaan ang iba't ibang communication channels, AI chatbots at support teams sa iisang lugar.",
+  "reasons": [
+    {
+      "title": "Walang Limitasyon sa Agents. Walang Bayad sa Bawat Lisensya.",
+      "description": "Maaari kang magdagdag ng agents at teams nang hindi nagbabayad ng hiwalay na lisensya para sa bawat empleyado. Ang limitasyon ng iyong plano ay nakabatay sa inboxes at tickets, hindi sa dami ng support staff. Halimbawa: Isang lumalaking customer service company sa Cebu ang nagdaragdag ng empleyado mula 10 hanggang 30 agents nang walang karagdagang per-agent licence charges."
+    },
+    {
+      "title": "Isang Chatbot para sa Rule-Based at AI-Powered na Suporta.",
+      "description": "Gumawa ng iisang chatbot na kayang mangolekta ng detalye, umunawa ng komplikadong tanong, kumuha ng impormasyon gamit ang APIs at maglipat ng conversation sa human agent kapag kailangan. Halimbawa: Isang customer ang sumusunod sa guided warranty process bago magtanong tungkol sa repair eligibility. Sumasagot ang AI batay sa available information at inililipat ang mga kasong nangangailangan ng approval."
+    },
+    {
+      "title": "Ituloy ang WhatsApp Support sa Chat Window.",
+      "description": "Magsimula ng customer conversation sa WhatsApp at ipagpatuloy ang mas mahabang usapan sa MSG91 Chat Window habang nananatiling konektado ang orihinal na ticket. Halimbawa: Isang customer ang nagtatanong tungkol sa billing issue sa WhatsApp at ipinagpapatuloy ang pagtalakay ng detalye sa Chat Window."
+    },
+    {
+      "title": "Iisang Customer Support System para sa Iba't Ibang Channels.",
+      "description": "Pamahalaan ang WhatsApp, email, website chat, social messaging at suportadong calling services sa isang magkakaugnay na support workspace. Halimbawa: Isang kumpanyang may branches sa Manila, Cebu at Davao ang nagbibigay sa mga awtorisadong teams ng access sa kanilang kaugnay na inboxes at customer histories."
+    },
+    {
+      "title": "Mga Workflow na Akma sa Iyong Negosyo.",
+      "description": "Gumawa ng routing rules, chatbot journeys, ticket assignments at access controls ayon sa pangangailangan ng bawat department. Halimbawa: Isang healthcare provider ang nagpapadala ng appointment enquiries sa reception at billing concerns sa finance team."
+    },
+    {
+      "title": "Palawakin ang Customer Support Habang Lumalaki ang Negosyo.",
+      "description": "Magsimula sa mga channel at feature na kailangan mo ngayon at magdagdag ng integrations, automation at agents habang dumarami ang enquiries. Halimbawa: Isang maliit na online store ang nagsisimula sa email at website chat bago magdagdag ng WhatsApp at automated ticket routing."
+    },
+    {
+      "title": "Seguridad na Sinusuportahan ng SOC 2 Type II.",
+      "description": "Ang MSG91 ay may SOC 2 Type II-audited security practices, ISO 27001 certification at vulnerability assessment and penetration testing (VAPT). May role-based permissions at inbox access controls din ang Hello upang matulungan ang mga negosyo na pamahalaan kung sino ang maaaring makakita ng customer conversations. Seguridad at Certifications: https://msg91.com/certificates"
+    },
+    {
+      "title": "Platform na Pinagkakatiwalaan ng mga Negosyo.",
+      "description": "Ang MSG91 ay nakatanggap ng mahigit 200 reviews sa iba't ibang produkto nito sa G2 platform, na nagpapakita ng feedback at karanasan ng mga negosyong gumagamit ng communication at customer engagement solutions nito. G2 Reviews: https://www.g2.com/products/msg91/reviews"
+    }
+  ]
+    },
+    "BenefitSection": {
+  "heading": "Mas Magandang Customer Support, Mas Maayos na Operasyon",
+  "subheading": "Ang paggamit ng AI-powered na customer support sa Pilipinas ay dapat makatulong sa mas mabilis na pagsagot, mas kaunting paulit-ulit na gawain at mas organisadong pamamahala ng enquiries. Pinagsasama ng MSG91 Hello ang automation, customer communication at team collaboration upang mas makapagpokus ang iyong mga empleyado sa paglutas ng mga problema.",
+  "cards": [
+    {
+      "icon": "MdNotificationsActive",
+      "heading": "Bawasan ang Paghihintay ng mga Customer",
+      "description": "Tumutulong ang AI chatbots at automatic routing upang makakuha ang customers ng angkop na sagot nang mas maaga. Sa panahon ng online sale, maaaring sagutin ng bot ang mga karaniwang tanong tungkol sa delivery policy habang ang agents ay nag-iimbestiga ng missing parcels."
+    },
+    {
+      "icon": "MdPower",
+      "heading": "Subaybayan ang mga Hindi Pa Nalulutas na Kahilingan",
+      "description": "Sa tulong ng ticket status, assignments at internal notes, mas madaling makita kung anong mga request ang nangangailangan pa ng aksyon. Ang isang technical support ticket ay maaaring manatiling bukas hanggang matapos ang kailangang follow-up."
+    },
+    {
+      "icon": "MdTune",
+      "heading": "Bawasan ang Paulit-ulit na Trabaho ng Agents",
+      "description": "Ang awtomatikong pangongolekta ng impormasyon at koneksyon sa business systems ay nakakabawas sa manual tasks. Sa halip na paulit-ulit na tanungin ang customer tungkol sa pangunahing detalye, maaaring mangolekta muna ng impormasyon ang bot bago pumasok ang agent sa conversation."
+    },
+    {
+      "icon": "MdLogin",
+      "heading": "Gawing Mas Consistent ang Customer Service",
+      "description": "Ang mga konektadong inbox at malinaw na workflows ay tumutulong upang maging organisado ang pagsagot sa iba't ibang channels. Kapag muling nakipag-ugnayan ang customer, maaaring tingnan ng awtorisadong agent ang available na ticket history sa halip na hinging ulitin ang buong problema."
+    },
+    {
+      "icon": "MdPeople",
+      "heading": "Gumawa ng Mas Mahuhusay na Desisyon Gamit ang Data",
+      "description": "Ang mga ulat tungkol sa tickets, channels at agent performance ay tumutulong sa managers na makita ang mga madalas na problema at panahon ng mataas na demand. Maaaring suriin ng isang negosyo ang pagdami ng complaints pagkatapos ng malaking promotional campaign upang mapaghandaan ang susunod."
+    },
+    {
+      "icon": "MdSecurity",
+      "heading": "Palakihin ang Team nang Walang Per-Agent Licence Costs",
+      "description": "Magdagdag ng support employees habang lumalaki ang customer base nang hindi kailangang bumili ng hiwalay na lisensya para sa bawat isa. Maaaring pamahalaan ng mga negosyo ang gastos ayon sa kanilang napiling plano, ticket usage, inboxes at iba pang applicable services."
+    }
+  ]
+    },
+    "FooterCtaAfterBenefits": {
+      "bg": true,
+      "heading": "Maraming Tanong ang Iyong Customers. Gawing Mahalaga ang Bawat Sagot.",
+      "description": "Pagsamahin ang messaging, AI automation at customer support teams gamit ang MSG91 Hello.",
+      "primaryLabel": "Magsimula Na",
+      "primaryHref": "https://msg91.com/signup"
+    },
+    "RoiStats": {
+      "label": "MGA RESULTA",
+      "heading": "Mas Mabilis na Suporta. Mas Magaan na Trabaho.",
+      "subheading": "Bawasan ang paulit-ulit na customer inquiries at gawing mas mahusay ang araw-araw na customer service. Pinagsasama ng MSG91 Hello ang AI chatbots, automated ticket management at iba't ibang communication channels para mas madaling makapagbigay ng mabilis at maayos na suporta.",
+      "stats": [
+        {
+          "value": "65%",
+          "label": "Pagbawas sa support workload",
+          "accent": "emerald"
+        },
+        {
+          "value": "3X",
+          "label": "Pagtaas ng agent efficiency",
+          "accent": "indigo"
+        },
+        {
+          "value": "85%",
+          "label": "Pagbuti ng first response rate",
+          "accent": "violet"
+        },
+        {
+          "value": "2X",
+          "label": "Mas mabilis na pagresolba ng customer inquiries",
+          "accent": "amber"
+        }
+      ]
+    },
+    "Security": {
+      "label": "ENTERPRISE SECURITY",
+      "heading": "Mas Ligtas na Customer Data. Mas Maaasahang Suporta.",
+      "items": [
+        {
+          "icon": "lock",
+          "title": "ISO 27001 Certified",
+          "description": "International standard para sa information security, access controls at risk management."
+        },
+        {
+          "icon": "shield",
+          "title": "SOC 2 Type II Audited",
+          "description": "Independent audit na sumusuri sa security controls at pagiging epektibo ng mga ito sa loob ng takdang panahon."
+        },
+        {
+          "icon": "vapt",
+          "title": "VAPT Assessed",
+          "description": "Security testing na tumutulong matukoy ang vulnerabilities at mapalakas ang proteksyon ng system."
+        }
+      ]
+    },
+    "FileHostingFormatsComp": {
+      "tagline": "MGA INDUSTRIYANG AMING PINAGSISILBIHAN",
+      "heading": "Isang Platform, Iba't I Bang Pangangailangan ng mga Negosyo",
+      "subheading": "Ang MSG91 Hello ay isang software para sa customer support sa Pilipinas na tumutulong sa mga negosyo na ayusin ang conversations, awtomatikong sagutin ang angkop na enquiries at ikonekta ang customers sa tamang tao.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Online Shopping at Social Commerce",
+          "description": "Gawing mas madali ang pagtulong sa mga online shopper. Pagsamahin ang customer enquiries mula sa WhatsApp, website chat at suportadong social messaging channels. Tulungan ang shoppers sa product information, order updates, cash-on-delivery concerns, returns at exchanges. Sa panahon ng malalaking sale, maaaring sagutin ng chatbot ang mga karaniwang tanong habang ang agents ay nag-iimbestiga ng missing o incorrect deliveries."
+        },
+        {
+          "number": "02",
+          "title": "Pangangalagang Pangkalusugan at Diagnostics",
+          "description": "Mas organisadong suporta para sa mga pasyente. Tumulong sa appointment enquiries, clinic hours, routine test preparation at administrative concerns. Maaaring paghiwalayin ng isang medical center ang registration questions at billing issues habang nililimitahan ang access sa sensitibong impormasyon sa mga awtorisadong empleyado."
+        },
+        {
+          "number": "03",
+          "title": "Edukasyon at Online Learning",
+          "description": "Tulungan ang mga estudyante sa bawat hakbang. Magbigay ng impormasyon tungkol sa admissions, enrolment, course schedules, tuition documents at technical access sa learning platforms. Maaaring i-automate ng paaralan ang general enquiries habang ang staff ang humahawak ng concerns na nangangailangan ng personal na pagsusuri."
+        },
+        {
+          "number": "04",
+          "title": "Banking, Fintech at Remittance Services",
+          "description": "Mas malinaw na proseso para sa mga financial enquiries. Pamahalaan ang mga tanong tungkol sa general account procedures, remittance requirements, transaction status at dokumento. Sa pamamagitan ng awtorisadong integrations, maaaring kunin ang available payment information mula sa konektadong sistema, habang ang mga kasong nangangailangan ng account-specific decisions ay nananatili sa responsableng team."
+        },
+        {
+          "number": "05",
+          "title": "Real Estate at Property Management",
+          "description": "Ayusin ang komunikasyon mula sa property enquiry hanggang after-sales support. Pamahalaan ang viewing requests, property availability questions, turnover issues at maintenance complaints. Maaaring italaga ng property developer ang sales enquiries sa advisers habang ang after-sales team ay sumusubaybay sa mga problemang nai-report pagkatapos ng unit turnover."
+        },
+        {
+          "number": "06",
+          "title": "BPO, Shared Services at Technology",
+          "description": "Pagsamahin ang mga usapan at proseso ng support teams. Ayusin ang client-service conversations, technical issues, ticket assignments at team permissions sa iisang workspace. Maaaring pamahalaan ng BPO providers ang mga awtorisadong client inboxes, habang ang software companies ay gumagamit ng live chat at visual troubleshooting para sa technical assistance."
+        },
+        {
+          "number": "07",
+          "title": "Turismo, Hotel at Paglalakbay",
+          "description": "Tulungan ang mga bisita bago, habang at pagkatapos ng kanilang biyahe. Pamahalaan ang hotel enquiries, reservation changes, tour information, ferry schedules at guest assistance. Maaaring sagutin ng chatbot ang mga karaniwang tanong tungkol sa package inclusions at departure points habang ang reservation team ang humahawak ng individual booking changes."
+        },
+        {
+          "number": "08",
+          "title": "Logistics, Courier at Delivery Services",
+          "description": "Mas madaling subaybayan ang mga problema sa paghahatid. Ayusin ang tracking enquiries, failed delivery attempts, damaged parcels at pickup requests. Kapag may koneksyon sa logistics system, maaaring kunin ng chatbot o agent ang available shipment information habang ang mga hindi pa nalulutas na delivery concerns ay nananatili sa responsableng support team."
+        }
+      ]
+    },
+    "StartupSection": {
+      "kicker": "HELLO PARA SA MGA STARTUP",
+      "heading": "Simulan ang Negosyo. Ayusin Agad ang Customer Support.",
+      "description": "Kahit nagsisimula pa lang ang iyong negosyo, mahalagang mabilis at maayos ang pagsagot sa customers. Sa MSG91 Hello for Startups, maaaring gumamit ang mga kwalipikadong startup sa Pilipinas ng libreng customer support software. Pagsamahin ang conversations mula sa Messenger, WhatsApp, Instagram at website chat, gumamit ng AI chatbot at pamahalaan ang support tickets sa iisang platform.",
+      "benefits_heading": "Kasama sa Libreng Startup Plan:",
+      "benefits": [
+        "1,000 support tickets bawat buwan",
+        "50 agents para sa customer support",
+        "2 inboxes para sa connected channels",
+        "AI chatbot usage sa ilalim ng fair-use policy"
+      ],
+      "eligibility": "Maaaring mag-apply ang mga registered startup na may annual revenue na mas mababa sa US$50,000 o katumbas nito sa lokal na pera, subject sa verification.",
+      "cta": {
+        "text": "Mag-apply sa Hello Free for Startups",
+        "link": "https://msg91.com/fil-ph/hello-for-startups"
+      }
+    },
+    "WhatsAppGetStarted": {
+      "kicker": "PAANO GUMAGANA ANG MSG91 HELLO",
+      "heading": "Simulan ang Hello sa Apat na Simpleng Hakbang",
+      "steps": [
+        {
+          "number": "1",
+          "icon": "MdLink",
+          "title": "Ikonekta ang Iyong Communication Channels",
+          "description": "Gumawa ng mga inbox at ikonekta ang WhatsApp, email, website chat, social messaging at mga available na calling services."
+        },
+        {
+          "number": "2",
+          "icon": "MdSettings",
+          "title": "Ihanda ang Teams, Chatbots at Workflows",
+          "description": "Magdagdag ng agents, magtakda ng roles at permissions, at gumawa ng chatbots na pinagsasama ang rule-based steps, AI at API actions."
+        },
+        {
+          "number": "3",
+          "icon": "MdChatBubbleOutline",
+          "title": "Pamahalaan ang Customer Conversations",
+          "description": "Tumanggap ng enquiries, magtalaga ng tickets at sumagot sa iba't ibang konektadong channels. Maaari ring ipagpatuloy ng customer ang mga angkop na WhatsApp conversation sa MSG91 Chat Window."
+        },
+        {
+          "number": "4",
+          "icon": "MdAnalytics",
+          "title": "Subaybayan ang Performance at Pagbutihin ang Serbisyo",
+          "description": "Gumamit ng ticket reports, channel analytics at available customer feedback upang makita ang mga karaniwang problema at mapabuti ang koordinasyon ng team."
+        }
+      ],
+      "practice": {
+        "heading": "Paano Ito Gumagana sa Aktuwal na Negosyo",
+        "paragraphs": [
+          "Isang lumalaking home appliance retailer sa Pilipinas ang nagkokonekta ng WhatsApp, website chat at Facebook Messenger sa Hello.",
+          "Gumagawa ito ng magkakahiwalay na team para sa product enquiries, delivery assistance at after-sales support. Ang chatbot ang nangongolekta ng pangunahing order information, habang ang configured workflows ay nagdidirekta ng service requests sa tamang department.",
+          "Kapag may customer na nag-report ng problema sa na-deliver na appliance, nananatiling naka-assign ang ticket sa isang agent na maaaring tumingin sa naunang usapan at makipag-coordinate sa service team.",
+          "Habang dumarami ang enquiries sa panahon ng malalaking online sale, ginagamit ng manager ang ticket reports upang makita ang pinakaabalang channels at magdagdag ng support coverage kung kinakailangan."
+        ]
+      },
+      "cta": {
+        "text": "Simulan ang Paggamit ng Hello"
+      },
+      "G2Badges": {
+        "badges": [
+          {
+            "src": "/assets/hello-br/g2-badges/CommunicationPlatformasaService(CPaaS)_BestResults_Total.svg",
+            "alt": "G2 Best Results — Communication Platform as a Service"
+          },
+          {
+            "src": "/assets/hello-br/g2-badges/CommunicationPlatformasaService(CPaaS)_HighPerformer_HighPerformer.svg",
+            "alt": "G2 High Performer — Communication Platform as a Service"
+          },
+          {
+            "src": "/assets/hello-br/g2-badges/CommunicationPlatformasaService(CPaaS)_MomentumLeader_Leader.svg",
+            "alt": "G2 Momentum Leader — Communication Platform as a Service"
+          },
+          {
+            "src": "/assets/hello-br/g2-badges/CommunicationPlatformasaService(CPaaS)_MostImplementable_Total.svg",
+            "alt": "G2 Most Implementable — Communication Platform as a Service"
+          },
+          {
+            "src": "/assets/hello-br/g2-badges/Multi-FactorAuthentication(MFA)_BestRelationship_Total.svg",
+            "alt": "G2 Best Relationship — Multi-Factor Authentication"
+          },
+          {
+            "src": "/assets/hello-br/g2-badges/SMSMarketing_Leader_Leader.svg",
+            "alt": "G2 Leader — SMS Marketing"
+          },
+          {
+            "src": "/assets/hello-br/g2-badges/TransactionalEmail_BestSupport_Small-Business_QualityOfSupport.svg",
+            "alt": "G2 Best Support — Transactional Email"
+          }
+        ],
+        "heading": "Pinagkakatiwalaan ng Customers. Kinikilala ng mga Eksperto.",
+        "description": "Ang pagkilala sa MSG91 sa G2 ay nagpapakita ng feedback ng customers tungkol sa performance, implementation, customer relationships at support, na nakakatulong sa mga negosyong Pilipino na pumili ng customer support software."
+      }
     },
     "FeatureWithBulletGroup": {
         "heading": "Mga Tampok",
@@ -187,29 +1134,61 @@
         ]
     },
     "FaqsComp": {
-        "heading": "Mga Madalas Itanong",
-        "faqs": [
-            {
-                "question": "Paano mag-subscribe sa Hello Plan?",
-                "answer": "Sa Hello panel, i-click ang subscription tab na makikita sa kaliwang bahagi. Bubuksan nito ang pahina ng kasalukuyang plan at ang opsyon para bumili ng bagong plan. I-click ito at makakapili ka ng buwanan o taunang opsyon.\n Maaari ka ring direktang mag-subscribe sa plan mula sa website. Pumunta sa Hello Service, i-click ang 'Magsimula', punan ang kinakailangang detalye, at mag-subscribe sa plan."
-            },
-            {
-                "question": "May bayad ba ang AI chatbots?",
-                "answer": "Wala, walang bayad ang Chat Bot, may singil lang para sa basic at premium plans. Maaari mong gamitin ang chatbot sa libreng plan hanggang 50 ticket sa Hello, pagkatapos nito kailangan mong i-upgrade ang iyong Hello plan. Karaniwan, libre naming ibinibigay ang chatbot para sa trial.\n Maaari mong gamitin ang Chat Bot na ito sa WhatsApp, Instagram, Chat Widget sa iyong Website, Facebook, at iba pa. Subukan na ang Chat Bot ngayon."
-            },
-            {
-                "question": "May dagdag bang bayad para sa Instagram/Facebook Inbox?",
-                "answer": "<p>Maaari mong gamitin ang mga inbox na kasama sa iyong Hello Plan para sa Instagram o Whatsapp. Narito ang bilang ng inbox bawat plan.</p><ul><li>Libreng Plan- 2 inbox</li><li>Basic Plan- 2 inbox</li><li>Premium Plan- 3 inbox</li></ul><p>Kung nagamit mo na ang lahat ng inbox, maaari kang bumili ng bagong inbox sa basic at premium plan sa halagang 500 bawat isa.</p><p>Sa libreng plan, hindi ka makakabili ng dagdag na inbox. Kailangan mong mag-upgrade ng plan kung gusto mo ng dagdag na inbox.</p>"
-            },
-            {
-                "question": "Ano ang singil para sa mga ticket at dagdag na ticket sa Hello?",
-                "answer": "<p>Nagbibigay kami ng buwanang ticket sa bawat plan at kung maubos ito, maaari kang gumamit ng dagdag na ticket na babayaran mo sa postpaid billing.</p><p>Narito ang bilang ng ticket bawat plan:</p><ul><li>Libreng Plan- 50 ticket/buwan</li><li>Basic Plan- 1000 ticket/buwan</li><li>Premium Plan- 2000 ticket/buwan</li></ul><p>Dagdag na singil bawat ticket sa iba't ibang plan:</p><ul><li>Libreng Plan- walang opsyon para sa dagdag na ticket, kailangan mong mag-upgrade sa Basic o Premium.</li><li>Basic Plan- ₹0.5 bawat ticket</li><li>Premium Plan- ₹0.75 bawat ticket</li></ul>"
-            },
-            {
-                "question": "Maaari ko bang i-customize ang Hello Plan?",
-                "answer": "Oo, maaari kang magkaroon ng customized na plan para sa Hello. I-click ang link para mag-schedule ng meeting sa sales heads."
-            }
-        ]
+      "heading": "Mga Madalas Itanong Tungkol sa MSG91 Hello sa Pilipinas",
+      "faqs": [
+        {
+          "question": "Ano ang customer support software, at bakit ito kailangan ng mga negosyo sa Pilipinas?",
+          "answer": "<ul class=\"list-disc\"><li>Ang customer support software ay isang platform na tumutulong sa mga negosyo na tumanggap, mag-organisa, magtalaga, at sumagot sa mga tanong o reklamo ng customers.</li><li>Sa Pilipinas, maraming customers ang nakikipag-ugnayan sa mga negosyo gamit ang Facebook Messenger, Instagram, WhatsApp, email, at website chat. Kapag magkakahiwalay ang mga platform na ito, mas madaling may makaligtaang mensahe o maulit ang parehong sagot.</li><li>Ang MSG91 Hello ay customer support software sa Pilipinas na pinagsasama ang conversations, tickets, AI chatbots, automation, at reports sa iisang shared inbox.</li><li>May unlimited agents din ito na walang hiwalay na bayad para sa bawat agent licence.</li></ul>"
+        },
+        {
+          "question": "Ano ang MSG91 Hello, at paano ito gumagana?",
+          "answer": "<ul class=\"list-disc\"><li>Ang MSG91 Hello ay isang AI-powered software sa customer service na tumutulong sa mga negosyo na pamahalaan ang customer conversations sa isang platform.</li><li>Simple ang proseso:<ul class=\"list-disc\"><li><strong>Ikonekta ang channels:</strong> Idagdag ang WhatsApp, Messenger, Instagram, email, at website chat.</li><li><strong>Idagdag ang team:</strong> Mag-assign ng agents, departments, at permissions.</li><li><strong>Gumawa ng AI chatbot:</strong> Gumamit ng no-code builder at simpleng prompt.</li><li><strong>I-automate ang tickets:</strong> Ipadala ang bawat inquiry sa tamang agent o team.</li><li><strong>Subaybayan ang performance:</strong> Tingnan ang reports at customer feedback.</li></ul></li><li>Halimbawa, maaaring gamitin ng isang online shop sa Quezon City ang chatbot para sumagot sa delivery questions at mag-transfer ng refund concerns sa human agent.</li></ul>"
+        },
+        {
+          "question": "Anong communication channels ang maaaring pamahalaan sa MSG91 Hello?",
+          "answer": "<ul class=\"list-disc\"><li>Sa MSG91 Hello, maaaring pagsamahin ang WhatsApp, Facebook Messenger, Instagram, email, website live chat, SMS, RCS, X (Twitter), at configured calling services sa isang shared inbox. Maaari ring ikonekta ang Apple Messages for Business kung naka-enable ang integration.</li><li>Nakikita ng agents ang messages, ticket history, customer details, at internal notes sa iisang lugar.</li><li>Halimbawa, maaaring gamitin ng isang travel agency sa Palawan ang Messenger para sa package inquiries, email para sa booking documents, at website chat para sa mabilis na customer assistance.</li><li>May Hello mobile app din para sa Android at iOS.</li></ul>"
+        },
+        {
+          "question": "Maaari bang pagsamahin ang rule-based chatbot at agentic AI sa iisang bot?",
+          "answer": "<ul class=\"list-disc\"><li>Oo. Sa MSG91 Hello, maaaring gamitin ang rule-based steps at agentic AI sa iisang conversation.</li><li>Ang rule-based flow ay puwedeng mangolekta ng order number, booking date, o uri ng serbisyo. Pagkatapos, maaaring gamitin ang agentic AI para unawain ang follow-up questions at kumuha ng impormasyon mula sa connected systems.</li><li>Halimbawa, maaaring mangolekta ang chatbot ng tracking number at sagutin kung nasaan na ang parcel gamit ang connected delivery information.</li><li>Mayroon ding no-code builder, API integrations, maraming AI model options, at handover sa human agent.</li><li>Maaaring gumawa ng initial agentic AI chatbot sa loob lamang ng ilang minuto.</li></ul>"
+        },
+        {
+          "question": "Maaari bang gumamit ang maraming agents ng iisang WhatsApp Business number?",
+          "answer": "<ul class=\"list-disc\"><li>Oo. Pinapayagan ng MSG91 Hello ang maraming agents na sumagot mula sa isang connected WhatsApp Business number gamit ang magkakahiwalay na login.</li><li>Maaaring magtalaga ng tickets, gumawa ng departments, maglagay ng internal notes, at ilipat ang isang conversation sa ibang team.</li><li>Halimbawa, ang isang appliance retailer sa Davao ay maaaring magtalaga ng product questions sa sales, delivery concerns sa logistics, at warranty complaints sa customer support.</li><li>Dahil unlimited ang agents sa Hello plans, maaaring palakihin ang customer service team nang walang dagdag na per-agent licence fees.</li><li>Gusto mo bang gawing mas madali para sa customers na makipag-ugnayan sa negosyo mo sa WhatsApp? Gamitin ang <a class=\"text-link active-link\" href=\"https://msg91.com/free-whatsapp-link-generator\">Libreng WhatsApp Link Generator ng MSG91</a> para gumawa ng click-to-chat links, QR codes at website chat widgets na may optional pre-filled messages. Kapag nakakonekta na ang WhatsApp Business channel sa MSG91 Hello, maaaring pamahalaan ng team ang customer conversations sa shared inbox.</li></ul>"
+        },
+        {
+          "question": "Maaari bang pamahalaan ng customer support agents ang mga tawag gamit ang MSG91 Hello?",
+          "answer": "<ul class=\"list-disc\"><li>Oo. Nagbibigay ang MSG91 Hello ng cloud calling at IVR tools para sa mga naka-configure na customer service workflows.</li><li>Maaaring i-route ang calls sa tamang department, tingnan ang call details, at iugnay ang mga ito sa customer tickets.</li><li>Halimbawa, ang isang clinic sa Cebu ay maaaring mag-organisa ng appointment inquiries, billing questions, at follow-up requests sa magkakaibang teams.</li><li>Maaari ring magsagawa ng outbound support calls ang agents gamit ang Hello mobile app sa mga naka-configure na calling setup.</li><li>May AI voice assistance din para sa angkop na customer interactions, habang magkahiwalay ang setup para sa website voice bot at telephone calling.</li></ul>"
+        },
+        {
+          "question": "Ano ang MSG91 Chat Window, at paano ito nakakatulong sa WhatsApp support costs?",
+          "answer": "<ul class=\"list-disc\"><li>Ang MSG91 Chat Window ay nagbibigay-daan para magsimula ang customer ng conversation sa WhatsApp at ipagpatuloy ito sa isang hiwalay na chat window.</li><li>Nananatiling konektado ang conversation sa customer support workflow sa Hello.</li><li>Halimbawa, kung may customer na nagtatanong tungkol sa delayed delivery, maaaring simulan ang usapan sa WhatsApp at ituloy ang mas mahabang assistance sa Chat Window.</li><li>Walang Meta WhatsApp per-message charges para sa messages na ipinapadala sa loob ng Chat Window. Ang mga mensaheng ipinadala sa WhatsApp ay nananatiling sakop ng naaangkop na WhatsApp pricing.</li></ul>"
+        },
+        {
+          "question": "Ano ang pagkakaiba ng MSG91 Hello sa Zendesk, Freshdesk, Zoho Desk, at Intercom?",
+          "answer": "<ul class=\"list-disc\"><li>Isa sa mga pangunahing pagkakaiba ng MSG91 Hello ay ang unlimited agents na walang per-agent licence fees.</li><li>Pinagsasama rin nito ang omnichannel inbox, ticket management, AI chatbot, workflow automation, at configurable calling services.</li><li>Maaaring gamitin ang rule-based at agentic AI sa iisang chatbot, at may Chat Window para sa mas mahahabang WhatsApp-originated support conversations.</li><li>Para sa mga negosyong naghahanap ng AI customer support software sa Pilipinas, makakatulong ang Hello sa pag-manage ng maraming customer channels nang hindi gumagamit ng magkakahiwalay na helpdesk tools.</li><li>Nagkakaiba ang features at presyo ng ibang platforms depende sa kanilang plans.</li></ul>"
+        },
+        {
+          "question": "Magkano ang MSG91 Hello sa Pilipinas? May libreng plano ba?",
+          "answer": "<ul class=\"list-disc\"><li>Oo. May dalawang free plans at dalawang paid monthly plans ang MSG91 Hello para sa mga negosyo sa Pilipinas. Lahat ng plano ay may unlimited agents at teams, nang walang per-agent licence fees.</li><li><ul class=\"list-disc\"><li><strong>Live Chat – £0/buwan:</strong> 1 inbox at unlimited live-chat tickets. Angkop para sa mga negosyong nangangailangan ng libreng website chat widget.</li><li><strong>Free – £0/buwan:</strong> 2 inboxes at 50 tickets bawat buwan. Para sa maliliit na negosyong nagsisimula pa lang gumamit ng customer support software.</li><li><strong>Basic – £35/buwan:</strong> 2 inboxes, 1,000 tickets bawat buwan at £35 bot wallet para sa AI chatbot usage.</li><li><strong>Premium – £65/buwan:</strong> 3 inboxes, 2,000 tickets bawat buwan at £65 bot wallet para sa AI chatbot usage.</li></ul></li><li>May annual plans din ang MSG91 Hello. Dahil walang per-agent licence fees, maaaring palakihin ng mga negosyo sa Pilipinas ang kanilang customer support team nang hindi nadaragdagan ang bayad sa bawat bagong agent.</li><li><strong>Paalala:</strong> Naka-lista ang presyo sa GBP sa Philippines pricing page. Kumpirmahin ang billing currency at applicable taxes bago mag-subscribe.</li><li><a class=\"text-link active-link\" href=\"https://msg91.com/fil-ph/pricing/hello\">Tingnan ang Presyo ng MSG91 Hello sa Pilipinas</a></li></ul>"
+        },
+        {
+          "question": "May dagdag bang bayad para sa agents, tickets, inboxes, o AI bots?",
+          "answer": "<ul class=\"list-disc\"><li>Walang hiwalay na per-agent licence fees ang MSG91 Hello. May unlimited agents at teams sa lahat ng plano, kaya maaaring magdagdag ng support staff nang walang dagdag na bayad para sa bawat agent.</li><li>Para sa paid monthly plans, ang mga karagdagang charges ay:<ul class=\"list-disc\"><li><strong>Extra inbox:</strong> £9 bawat inbox sa Basic at Premium plans.</li><li><strong>Extra tickets:</strong> £0.012 bawat ticket sa Basic at £0.025 bawat ticket sa Premium kapag lumampas sa monthly ticket limit.</li><li><strong>AI bot usage:</strong> Kinukuha ang bayad mula sa bot wallet batay sa applicable rate card. Maaaring mag-top up kapag naubos ang wallet balance.</li></ul></li><li>Sa Free plan, hindi maaaring bumili ng extra inboxes o tickets. Kailangang mag-upgrade sa paid plan kung kailangan ng mas mataas na limits.</li><li>Maaaring magkaroon ng hiwalay na charges para sa messaging at calling services depende sa mga connected communication channels.</li><li><a class=\"text-link active-link\" href=\"https://msg91.com/fil-ph/pricing/hello\">Tingnan ang Kumpletong Pricing</a></li></ul>"
+        },
+        {
+          "question": "Is MSG91 Hello secure for Philippine businesses, and where is customer data stored?",
+          "answer": "<ul class=\"list-disc\"><li>Yes. MSG91 Hello helps Philippine businesses protect customer information through encryption, role-based access controls, and secure conversation management. MSG91 has undergone a <strong>SOC 2 Type II audit</strong> and holds <strong>ISO 27001 certification</strong>, supporting its commitment to data security.</li><li>MSG91 stores customer data for Philippine businesses in regional Asia-Pacific data centers.</li><li><a class=\"text-link active-link\" href=\"https://msg91.com/certificates\">View MSG91 Security Certificates</a></li></ul>"
+        },
+        {
+          "question": "May libreng MSG91 Hello plan ba para sa mga startup sa Pilipinas?",
+          "answer": "<ul class=\"list-disc\"><li>Oo. May <strong>Hello Free for Startups</strong> programme ang MSG91 para sa mga early-stage na negosyo sa Pilipinas na naghahanap ng customer support software nang walang paunang subscription fee.</li><li>Maaaring mag-apply ang mga registered startup na may annual revenue na mas mababa sa US$50,000 o katumbas nito sa lokal na pera, basta matugunan ang eligibility requirements.</li><li>Kasama sa programme ang:<ul class=\"list-disc\"><li>Hanggang 1,000 support tickets bawat buwan</li><li>50 agents at 2 inboxes</li><li>AI chatbot usage sa ilalim ng fair-use policy</li><li>Ticket management at customer support automation</li></ul></li><li>Halimbawa, ang isang bagong online shop sa Cebu ay maaaring gumamit ng Hello para sa Messenger inquiries, website chat at order-related support.</li><li>Kailangan ng business registration at financial documents para sa verification. Maaaring may hiwalay na messaging at calling charges.</li><li><a class=\"text-link active-link\" href=\"https://msg91.com/fil-ph/hello-for-startups\">Mag-apply sa Hello Free for Startups sa Pilipinas</a></li></ul>"
+        },
+        {
+          "question": "Paano makakatipid ng halos 95% sa customer support software ang mga negosyo sa Pilipinas gamit ang MSG91 Hello?",
+          "answer": "<ul class=\"list-disc\"><li>Sa ilang comparison scenarios, maaaring maging <strong>humigit-kumulang 95% na mas mababa ang estimated customer support software costs</strong> sa MSG91 Hello kumpara sa ibang platforms.</li><li>Halimbawa, para sa 3,000 monthly tickets, 12 support agents at 50% AI resolution:<ul class=\"list-disc\"><li><strong>MSG91 Hello:</strong> £59/buwan</li><li><strong>Freshdesk:</strong> £915/buwan</li><li><strong>Tinatayang matitipid:</strong> £856/buwan — <strong>94% na mas mababang gastos</strong></li></ul></li><li>Maaaring ihambing ng mga negosyo sa Pilipinas ang MSG91 Hello sa Zendesk, Freshdesk, Intercom, Zoho Desk at iba pang customer support platforms.</li><li>Ilagay lamang ang bilang ng tickets, agents at AI resolution rate sa calculator. Piliin ang GBP para sa comparison na tumutugma sa currency ng Philippines Hello pricing page.</li><li>Ang savings ay estimates at nakadepende sa aktuwal na paggamit at subscription plans.</li><li><a class=\"text-link active-link\" href=\"https://msg91.com/cost-comparision\">Ihambing ang Gastos sa Customer Support Software</a></li></ul>"
+        }
+      ]
     },
     "PreFooterComp": {
         "content": "Simulan ang paggawa ng iyong ideal na karanasan sa customer engagement",

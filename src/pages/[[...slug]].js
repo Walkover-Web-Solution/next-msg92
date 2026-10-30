@@ -97,6 +97,7 @@ import WhatsAppComparisonComp from '@/components/WhatsAppChatWindow/ComparisonCo
 import WhatsAppWhyComp from '@/components/WhatsAppChatWindow/WhyComp/WhyComp';
 import WhatsAppCTAComp from '@/components/WhatsAppChatWindow/CTAComp/CTAComp';
 import ExperienceComp from '@/components/ExperienceComp/ExperienceComp';
+import StartupSection from '@/components/StartupSectionComp/StartupSection';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -213,6 +214,7 @@ const Components = {
     WhatsAppComparisonComp,
     WhatsAppWhyComp,
     WhatsAppCTAComp,
+    StartupSection,
 };
 
 export default function Page({ data, commonData, pageInfo }) {

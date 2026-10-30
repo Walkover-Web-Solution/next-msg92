@@ -1,147 +1,1043 @@
 {
     "HeadComp": {
-        "title": "Customer Support Platform for your Business by MSG91-Spain",
-        "description": "HELLO is a powerful omnichannel platform designed to deliver exceptional customer support. Utilize data-driven insights to enhance the customer experience."
+        "title": "Customer Support Software in Spain | MSG91 Hello",
+        "description": "Discover AI customer support software in Spain with MSG91 Hello. Manage WhatsApp, email, live chat and support tickets using AI chatbots and automation."
     },
-    "NewHelloComp": {
-        "bannerComp": {
-            "slug": "hello",
-            "product": {
-                "subname": "introducing",
-                "name": "Hello",
-                "icon": "/assets/icons/products/hello.svg"
-            },
-            "tagline": "Boosting Customer Satisfaction",
-            "heading": "An <strong class='ai-fuled'>AI-Fueled </strong> Conversational HUB",
-            "subheading": "Seamlessly merging chat, email, call and video to resolve customer queries.",
-            "banner_img": "/assets/global/hello/new/hero.svg",
-            "getstarted_btn": "Get Started",
-            "chatbot": "Chatbot",
-            "trustedByComp": {
-                "heading": "Working with some of the best",
-                "logos": [
-                    {
-                        "name": "Xiaomi",
-                        "url": "/assets/trusted_by/xiaomi.svg"
-                    },
-                    {
-                        "name": "Unacademy",
-                        "url": "/assets/trusted_by/unacademy.svg"
-                    },
-                    {
-                        "name": "Dream11",
-                        "url": "/assets/trusted_by/dream11.svg"
-                    },
-                    {
-                        "name": "Indeed",
-                        "url": "/assets/trusted_by/indeed.svg"
-                    },
-                    {
-                        "name": "Ixigo",
-                        "url": "/assets/trusted_by/ixigo.svg"
-                    }
-                ]
-            }
-        },
-        "discover": {
-            "heading": "Discover the Powerhouse Communication Solution ",
-            "subheading": "When it comes to revolutionizing communication, look no further than HELLO by MSG91.",
-            "subtag": "Our cutting-edge application is designed to empower businesses across every industry with a suite of features that are not only transformative but also tailored to your needs.",
-            "tags": [
-                {
-                    "icon": "MdVideoCall",
-                    "name": "E-commerce"
-                },
-                {
-                    "icon": "",
-                    "name": "Fintech"
-                },
-                {
-                    "icon": "",
-                    "name": "Healthcare"
-                },
-                {
-                    "icon": "",
-                    "name": "Technology"
-                }
+    "BannerComp": {
+  "slug": "hello",
+  "product": {
+    "subname": "introducing",
+    "name": "Hello",
+    "icon": "/assets/icons/products/hello.svg"
+  },
+  "tagline": "Cloud Contact Centre Software",
+  "heading": "AI Customer Support Software in Spain",
+  "subheading": "Bring WhatsApp, calls, email, website chat, RCS, SMS, Apple Messages for Business, Instagram, Facebook Messenger and X (Twitter) into one connected workspace. MSG91 Hello is customer support software for businesses in Spain, helping teams automate customer enquiries, organise support tickets and deliver more efficient service with AI-powered assistance.",
+  "banner_img": "/assets/global/hello/new/hero.svg",
+  "getstarted_btn": "Get Started",
+  "schedule_meet": "Book a Free Demo",
+  "trustedByComp": {
+    "heading": "Working with some of the best",
+    "logos": [
+      {
+        "name": "Xiaomi",
+        "url": "/assets/trusted_by/xiaomi.svg"
+      },
+      {
+        "name": "Unacademy",
+        "url": "/assets/trusted_by/unacademy.svg"
+      },
+      {
+        "name": "Dream11",
+        "url": "/assets/trusted_by/dream11.svg"
+      },
+      {
+        "name": "Indeed",
+        "url": "/assets/trusted_by/indeed.svg"
+      },
+      {
+        "name": "Ixigo",
+        "url": "/assets/trusted_by/ixigo.svg"
+      }
+    ]
+  }
+    },
+    "FeatureComp": {
+      "heading": "One Connected Workspace. Every Customer Conversation Matters.",
+      "subheading": "A customer booking a hotel in Barcelona has different questions from someone ordering products online in Madrid or requesting property maintenance in Valencia. But every business needs the same foundation: clear communication, organised support and faster access to relevant information. MSG91 Hello brings customer support software in Spain beyond traditional ticketing, connecting communication channels, AI automation and support teams in one workspace.",
+      "iconColor": "text-campaign",
+      "features": [
+        {
+          "name": "Omnichannel Inbox – Bring Every Customer Conversation Together",
+          "content": "Your customers may contact you through WhatsApp, Instagram, email, X/Twitter, Facebook Messenger or website chat. Managing these conversations separately can make it difficult to maintain context and coordinate responses. MSG91 Hello brings supported channels into a shared inbox where agents can review available customer details, follow conversation histories and manage support tickets. Multiple employees can handle enquiries through the same connected WhatsApp number without sharing login credentials. One Inbox also allows authorised users to access multiple company accounts, helping businesses with several brands or client operations work from a connected environment.",
+          "more_content": {
+            "usecases": [
+              {
+                "name": "Fashion Retail",
+                "description": "A clothing retailer in Madrid manages Instagram sizing questions, WhatsApp delivery enquiries and email return requests from one support workspace."
+              },
+              {
+                "name": "Holiday Accommodation",
+                "description": "A property management company in Málaga organises guest questions about check-in, facilities and reservation details received through connected communication channels."
+              },
+              {
+                "name": "Digital Agencies",
+                "description": "A marketing agency in Barcelona manages authorised support inboxes for several client brands without repeatedly switching accounts."
+              },
+              {
+                "name": "Language Schools",
+                "description": "A Spanish language academy in Salamanca handles course enquiries received through Facebook Messenger, website chat and email."
+              }
             ],
-            "extra": "No matter if you're in ecommerce, fintech, healthcare, or any other field, HELLO is the ultimate solution to elevate your communication game."
-        },
-        "FeatureComp": {
             "features": [
-                {
-                    "icon": "/assets/global/hello/new/icon-ai-enabled-chat.svg",
-                    "color": "yellow",
-                    "name": "AI-Enabled Chatbot",
-                    "content": "<strong>Say hello to the future of customer engagement.</strong>Our AI-powered chatbot is your 24/7 virtual assistant, ready to engage with your customers, answer queries, and guide them seamlessly through their journey. Say goodbye to wait times and hello to instant, intelligent responses. Can be easily switched to Human agent when required.",
-                    "img": "/assets/global/hello/new/ai-enabled-chat.svg"
-                },
-                {
-                    "icon": "/assets/global/hello/new/icon-unlimited-agents.svg",
-                    "color": "purple",
-                    "name": "Unlimited Agents",
-                    "content": "<strong>Your team is limitless, and so are the possibilities with HELLO.</strong>We offer the flexibility of unlimited agents, ensuring that your entire workforce can collaborate, assist, and provide exceptional service to your customers, no matter the scale of your operations.",
-                    "img": "/assets/global/hello/new/unlimited-agents.svg"
-                },
-                {
-                    "icon": "/assets/global/hello/new/icon-workflow.svg",
-                    "color": "blue",
-                    "name": "Workflow Management",
-                    "content": "<strong>Streamline your operations like never before with our intuitive workflow management.</strong>From lead generation to order processing, HELLO ensures that every step of your customer interaction is organized, efficient, and tailored to your unique processes.",
-                    "img": "/assets/global/hello/new/workflow.svg"
-                },
-                {
-                    "icon": "/assets/global/hello/new/icon-video-call.svg",
-                    "color": "yellow",
-                    "name": "Video Call",
-                    "content": "<strong>Sometimes words aren't enough.</strong>With HELLO's video call and screen sharing capabilities, bridge the gap between face-to-face meetings and virtual interactions. Whether you're diagnosing a medical condition or demonstrating a product, our features enable clear, real-time communication.",
-                    "img": "/assets/global/hello/new/video-call.svg"
-                },
-                {
-                    "icon": "/assets/global/hello/new/icon-analytics.svg",
-                    "color": "purple",
-                    "name": "Analytics",
-                    "content": "<strong>Data-driven decisions are the backbone of success. </strong>HELLO's advanced analytics provide you with insightful metrics to understand customer behavior, agent performance, and trends. Harness this knowledge to refine your strategies and create impactful customer experiences.",
-                    "img": "/assets/global/hello/new/analytics.svg"
-                },
-                {
-                    "icon": "/assets/global/hello/new/icon-screen-sharing.svg",
-                    "color": "yellow",
-                    "name": "Screen sharing/Control",
-                    "content": "<Strong>Take control of the conversation like never before.</strong>With screen control, assist your customers by navigating their screens, resolving issues efficiently, and ensuring that they get the most out of your services. It's a level of support that truly stands out.",
-                    "img": "/assets/global/hello/new/screen-sharing.svg"
-                }
+              "Shared inbox for WhatsApp, email, website chat, Instagram, X/Twitter, Facebook Messenger and RCS",
+              "One Inbox for managing multiple authorised business accounts",
+              "Multiple agents using one connected WhatsApp number",
+              "Searchable conversation histories and customer information",
+              "Tags, filters and internal notes for enquiries",
+              "Role-based access for support teams and managers"
             ]
-        }, "FaqsComp": {
-            "heading": "Frequently Asked Questions",
-            "faqs": [
-                {
-                    "question": "How to subscribe to your Hello Plan.",
-                    "answer": "In the Hello panel, click on the subscription tab, that is available on the left corner. It will open the page of the current plan and also the option to purchase a new plan. Click on that and you will be able to select from monthly and yearly options\n You can directly subscribe to the plan from the website itself. There go to Hello Service click on Get Started, fill in the necessary details, and subscribe to the plan."
-                },
-                {
-                    "question": "Are there any charges for AI chatbots?",
-                    "answer": "No, there are no charges for Chat Bot, we are only charged for basic and premium plans. You can use the chatbot in a free plan till 50 tickets in Hello, after that you have to upgrade your Hello plan. Basically, we are providing the chatbot free for Trial purposes.\n You can use this Chat Bot in WhatsApp, Instagram, Chat Widget on your Website, Facebook and so on. So test the Chat Bot Now."
-                },
-                {
-                    "question": "Are there any extra charges for Instagram/ Facebook  Inbox?",
-                    "answer": "<p>You can use inboxes that are available in your Hello Plan for Instagram or Whatsapp. The number of inboxes assigned in each plan.</p><ul><li>Free Plan- 2 inboxes</li><li>Basic Plan- 2 inboxes</li><li>Premium Plan- 3 inboxes</li></ul><p>But in case you already have used the assigned inboxes you can always purchase a new inbox in basic and premium plan for rupees 500 each.</p><p>In case of a free plan you won't be able to purchase new inboxes. You have to upgrade the plan if you want the extra inbox.</p> "
-                },
-                {
-                    "question": "What are the charges for tickets and extra tickets in Hello?",
-                    "answer": "<p>We are providing monthly tickets with each plan and in case they end, you can also use extra tickets which you pay in postpaid billing.</p><p>Here are the number of tickets assigned in each plan:</p><ul><li>Free Plan- 50 tickets/monthly</li><li>Basic Plan- 1000 tickets/monthly</li><li>Premium Plan- 2000 tickets/monthly</li></ul><p>Extra Charges for each ticket in different plans:</p><ul><li>Free Plan- there is no option for more tickets in free plans as you have to upgrade the Hello Plan to Basic or Premium as per your choice.</li><li>Basic Plan- ₹0.5 per ticket</li><li>Premium Plan- ₹0.75 per ticket</li></ul>"
-                },
-                {
-                    "question": " Can I customize the Hello Plan?",
-                    "answer": "Yes, you can have a customized plan for hello. Click on the link to schedule the meeting with the sales heads."
-                }
-            ]
+          },
+          "img": "/assets/global/hello/new/unlimited-agents.svg"
         },
-        "prefooter": {
-            "text1": "At MSG91, we're not just offering a communication solution; We're offering a game-changer for businesses of all sizes and industries.",
-            "text2": "With HELLO, you're not just communicating – you're connecting, engaging, and thriving. Embrace the future of communication today.",
-            "text3": "Ready to transform the way you communicate? Say HELLO to your business's next big leap. Get started with HELLO by MSG91 now and experience the difference firsthand.",
-            "text4": "Unlock limitless possibilities with HELLO by MSG91. Your communication revolution starts here."
+        {
+          "name": "AI Chatbots – One Bot for Rules, AI and Complex Questions",
+          "content": "Customers don't always follow a fixed question-and-answer process. They may begin with a simple request and then ask for personalised information or details from another business system. MSG91 Hello lets you create one chatbot combining rule-based steps and agentic AI in the same conversation. Use predefined steps to collect customer information, let AI interpret complicated questions, retrieve available data through API calls and transfer cases requiring personal attention to human agents. With access to 2,000+ application connections, multiple AI model choices with backup options and automated assistance 24/7, businesses can handle a wider range of customer enquiries without building separate bots for each task.",
+          "more_content": {
+            "usecases": [
+              {
+                "name": "Automotive Parts",
+                "description": "A parts supplier in Zaragoza collects a vehicle model and component reference before AI checks compatibility against connected product information."
+              },
+              {
+                "name": "University Admissions",
+                "description": "A private university in Madrid collects an applicant's preferred programme and uses AI to explain course requirements and application procedures."
+              },
+              {
+                "name": "Subscription Services",
+                "description": "A digital learning provider retrieves a customer's current subscription details through an API before answering renewal-related questions."
+              },
+              {
+                "name": "Insurance Brokerage",
+                "description": "A broker in Bilbao guides customers through general claim-document requirements and transfers cases requiring individual assessment to authorised specialists."
+              }
+            ],
+            "features": [
+              "Rule-based steps and agentic AI in a single chatbot",
+              "2,000+ application connections through the integration ecosystem",
+              "API calls, webhooks and connected business data retrieval",
+              "Multiple AI model options with backup configurations",
+              "Visual chatbot builder for structured customer journeys",
+              "24/7 automated assistance with human-agent handover"
+            ]
+          },
+          "img": "/assets/global/hello/new/ai-enabled-chat.svg",
+          "button": {
+            "name": "Learn More",
+            "link": "https://msg91.com/help/hello-contact-center/chatbots-in-hello"
+          }
+        },
+        {
+          "name": "MSG91 Chat Window – Continue WhatsApp Conversations Without Repeated Messaging Charges",
+          "content": "A customer conversation may begin with one WhatsApp message but continue through several questions, clarifications and follow-ups. MSG91 Chat Window allows customers to move from WhatsApp into a dedicated chat experience while keeping the interaction connected to the original WhatsApp ticket. Agents and AI chatbots manage replies through Hello without losing the available conversation context. Messages exchanged inside Chat Window do not incur Meta's WhatsApp per-message charges, helping businesses reduce the cost of longer support conversations while keeping customers connected.",
+          "more_content": {
+            "usecases": [
+              {
+                "name": "Tour Operators",
+                "description": "A traveller enquires about a guided tour in Seville on WhatsApp and continues discussing itinerary changes and meeting arrangements in Chat Window."
+              },
+              {
+                "name": "Mortgage Advisory",
+                "description": "A prospective homeowner starts a WhatsApp enquiry and continues discussing required application documents with a support adviser."
+              },
+              {
+                "name": "Home Renovation",
+                "description": "A customer requests information about kitchen renovation services through WhatsApp and continues reviewing project requirements in Chat Window."
+              },
+              {
+                "name": "Vehicle Leasing",
+                "description": "A customer asks about a lease renewal on WhatsApp and continues discussing contract terms and available options with an agent."
+              }
+            ],
+            "features": [
+              "WhatsApp-to-Chat Window conversation continuation",
+              "Original WhatsApp-linked ticket retained",
+              "Available conversation context maintained",
+              "AI chatbot and human-agent assistance through Hello",
+              "No Meta WhatsApp per-message charges inside Chat Window",
+              "Text and supported voice-assistance options"
+            ]
+          },
+          "img": "/assets/global/hello/new/ai-enabled-chat.svg",
+          "button": {
+            "name": "Learn More",
+            "link": "https://msg91.com/guide/how-customer-support-changes-with-msg91-chat-window"
+          }
+        },
+        {
+          "name": "Website Live Chat – Help Visitors Before They Leave",
+          "content": "A visitor browsing your website may need one important answer before requesting a quotation, booking a consultation or purchasing a service. Hello's website live chat widget lets visitors contact your business directly from the page they are viewing. They can send messages, share files and use supported voice assistance, while agents respond through Hello. Chatbots can also handle suitable enquiries outside regular office hours, allowing businesses to provide assistance even when a human representative is not immediately available.",
+          "more_content": {
+            "usecases": [
+              {
+                "name": "Solar Installation",
+                "description": "A homeowner exploring solar panel options asks whether their property requires an initial technical assessment."
+              },
+              {
+                "name": "Furniture Manufacturing",
+                "description": "A visitor asks about custom wardrobe dimensions, finishes and manufacturing lead times while browsing a furniture website."
+              },
+              {
+                "name": "Legal Services",
+                "description": "A business owner visiting a law firm's website asks which documents are required for an initial commercial consultation."
+              },
+              {
+                "name": "SaaS Providers",
+                "description": "A prospective customer checks whether a software product integrates with an existing ERP system before requesting a demonstration."
+              }
+            ],
+            "features": [
+              "Customisable website live-chat widget",
+              "Real-time visitor conversations",
+              "Visitor activity monitoring",
+              "File sharing and voice notes",
+              "AI chatbot and human-agent assistance",
+              "Connected website enquiry histories"
+            ]
+          },
+          "img": "/assets/global/hello/new/workflow.svg",
+          "button": {
+            "name": "Learn More",
+            "link": "https://msg91.com/help/hello-contact-center/integrate-channels-in-hello/chat-widget-integration"
+          }
+        },
+        {
+          "name": "Cloud Calling & IVR – Connect Callers to the Right Department",
+          "content": "Not every customer issue is easy to resolve through messages. MSG91 Hello brings supported incoming and outgoing calls into customer service workflows, allowing businesses to create multi-level IVR menus, route calls to relevant departments and review call activity alongside customer tickets. Agents can use available calling options and initiate outbound support calls through the Hello mobile application. This gives service teams a more organised way to handle telephone enquiries and follow-up conversations.",
+          "more_content": {
+            "usecases": [
+              {
+                "name": "Private Healthcare",
+                "description": "A clinic network in Valencia directs callers to appointments, test information or administrative billing assistance through an IVR menu."
+              },
+              {
+                "name": "Vehicle Repair Centres",
+                "description": "An automotive workshop separates service bookings, repair-status enquiries and warranty assistance."
+              },
+              {
+                "name": "Equipment Rental",
+                "description": "A machinery rental company routes callers between new rental enquiries, equipment support and contract administration."
+              },
+              {
+                "name": "Property Maintenance",
+                "description": "A building services company directs residents reporting heating problems, plumbing issues or general maintenance requests to the appropriate team."
+              }
+            ],
+            "features": [
+              "Incoming and outgoing business calls through supported services",
+              "Multi-level IVR menus",
+              "Department and agent-based call routing",
+              "Call activity connected to support records",
+              "Web, phone and combined calling preferences",
+              "Outbound customer support calls from the Hello mobile app"
+            ]
+          },
+          "img": "/assets/global/hello/new/video-call.svg",
+          "footer": "Local telephone numbers and calling capabilities depend on available providers and applicable telecommunications requirements in Spain."
+        },
+        {
+          "name": "AI Voice Bot – Let Website Visitors Speak Instead of Type",
+          "content": "Typing isn't always convenient, particularly when customers use their phones or need to explain a detailed question. Hello's AI Voice Bot enables spoken interactions through the website chat widget, allowing visitors to ask questions and receive audio responses. The feature uses a supported agentic AI chatbot and its configured business information to answer suitable enquiries. This provides a more accessible way to explore products or services without requiring visitors to type long messages.",
+          "more_content": {
+            "usecases": [
+              {
+                "name": "Wine Tourism",
+                "description": "A visitor browsing a Rioja winery's website asks whether a tasting experience includes a guided cellar tour."
+              },
+              {
+                "name": "Fitness Clubs",
+                "description": "A prospective member asks about swimming facilities, group classes and membership options."
+              },
+              {
+                "name": "Professional Education",
+                "description": "A visitor asks whether a business certification course offers evening sessions."
+              },
+              {
+                "name": "Accessible Customer Service",
+                "description": "A customer who finds typing difficult asks about branch accessibility, available services and opening hours."
+              }
+            ],
+            "features": [
+              "Spoken customer questions and audio responses",
+              "Website chat-widget integration",
+              "Voice interaction with supported agentic AI chatbots",
+              "Natural-language assistance",
+              "Responses based on configured business information",
+              "Voice-based help for suitable enquiries"
+            ]
+          },
+          "img": "/assets/global/hello/new/ai-enabled-chat.svg",
+          "button": {
+            "name": "Learn More",
+            "link": "https://msg91.com/help/hello-contact-center/voice-bot"
+          }
+        },
+        {
+          "name": "Smart Ticket Management – Keep Every Support Request on Track",
+          "content": "Some customer issues require more than an immediate reply. A damaged order may need inspection, a repair may require another visit and a billing concern may need approval from another department. MSG91 Hello organises conversations into support tickets that agents can assign, track, snooze and close. Conversation histories, internal notes and search filters help teams understand previous actions and identify what needs to happen next, making unresolved customer requests easier to manage.",
+          "more_content": {
+            "usecases": [
+              {
+                "name": "Appliance Manufacturers",
+                "description": "A manufacturer tracks a dishwasher warranty complaint while arranging a technician visit and replacement component."
+              },
+              {
+                "name": "Community Property Management",
+                "description": "An administrator follows a garage-door malfunction reported by residents until repairs are completed."
+              },
+              {
+                "name": "Telecommunications Support",
+                "description": "A broadband provider keeps a service complaint open while awaiting technical investigation."
+              },
+              {
+                "name": "Furniture Delivery",
+                "description": "A retailer tracks a damaged sofa claim through inspection, approval and replacement delivery."
+              }
+            ],
+            "features": [
+              "Open, snoozed and closed ticket statuses",
+              "Agent assignment and ownership tracking",
+              "Searchable customer histories",
+              "Internal notes, filters and tags",
+              "Visibility of unresolved support requests",
+              "Spam and blocked-contact controls"
+            ]
+          },
+          "img": "/assets/global/hello/new/workflow.svg"
+        },
+        {
+          "name": "Automated Workflows – Send Enquiries Where They Belong",
+          "content": "Customer support becomes slower when employees need to manually decide who should handle every incoming message. MSG91 Hello lets businesses configure routing rules using keywords, customer details, enquiry timings and other available conditions. Tickets can be assigned automatically to relevant departments, acknowledgements can be sent and chatbots can collect information before a human agent joins. This helps businesses maintain a more consistent support process across teams.",
+          "more_content": {
+            "usecases": [
+              {
+                "name": "Accounting Consultancies",
+                "description": "Messages mentioning invoice corrections are automatically assigned to the accounting support team, while software-access enquiries reach technical support."
+              },
+              {
+                "name": "Fashion E-commerce",
+                "description": "Requests containing return or exchange-related keywords are routed to the after-sales department."
+              },
+              {
+                "name": "Utility Services",
+                "description": "Messages about electricity billing go to accounts, while reported service faults reach technical support."
+              },
+              {
+                "name": "Membership Businesses",
+                "description": "Customers contacting a sports club outside operating hours receive an acknowledgement and a ticket for follow-up."
+              }
+            ],
+            "features": [
+              "Keyword-based and condition-based workflow automation",
+              "Automatic ticket routing and department assignment",
+              "Time-based customer acknowledgements",
+              "AND/OR conditions for detailed rules",
+              "Chatbot routing and information collection",
+              "Custom workflows for different service categories"
+            ]
+          },
+          "img": "/assets/global/hello/new/workflow.svg"
+        },
+        {
+          "name": "Multilingual Support – Serve Customers Across Languages",
+          "content": "Spanish businesses often communicate with customers from different countries and language backgrounds. MSG91 Hello provides two-way text translation across 100+ supported languages, helping agents read incoming messages in their preferred language and send replies translated into the customer's language. This is useful for hotels, tourism companies, exporters and customer service teams supporting international markets. Businesses can maintain conversations within one support environment rather than using separate translation tools for every enquiry.",
+          "more_content": {
+            "usecases": [
+              {
+                "name": "Hospitality",
+                "description": "A hotel in Barcelona assists English-speaking guests with check-in questions while its support team works in Spanish."
+              },
+              {
+                "name": "Export Businesses",
+                "description": "A Spanish food producer responds to French-speaking distributors about shipment documentation and product information."
+              },
+              {
+                "name": "International Events",
+                "description": "A conference organiser answers registration and venue questions from overseas attendees."
+              },
+              {
+                "name": "Language Education",
+                "description": "A Spanish language school supports international students enquiring about accommodation, enrolment and course schedules."
+              }
+            ],
+            "features": [
+              "Two-way text translation within conversations",
+              "Translation across 100+ supported languages",
+              "Spanish, English, French, Portuguese and other supported languages",
+              "Incoming messages translated into the agent's chosen language",
+              "Outgoing replies translated for customers",
+              "Multilingual support through one shared inbox"
+            ]
+          },
+          "img": "/assets/global/hello/new_webp/multilingual_capabilities.webp"
+        },
+        {
+          "name": "Interactive WhatsApp – Make Customer Choices Easier",
+          "content": "Customers don't always need to type lengthy messages to explain what they're looking for. MSG91 Hello supports interactive WhatsApp messages, including buttons, lists and product messages, so businesses can present useful options during a conversation. With a connected Meta catalogue, companies can also display available products and help customers explore relevant items directly through WhatsApp.",
+          "more_content": {
+            "usecases": [
+              {
+                "name": "Footwear Retail",
+                "description": "A customer selects size assistance, delivery information or exchange support through WhatsApp buttons."
+              },
+              {
+                "name": "Beauty & Skincare",
+                "description": "A cosmetics retailer shares catalogue-linked skincare products for customers exploring different product ranges."
+              },
+              {
+                "name": "Restaurant Groups",
+                "description": "A customer chooses between booking assistance, opening-hour information and takeaway-related enquiries."
+              },
+              {
+                "name": "Home Electronics",
+                "description": "An electronics retailer provides interactive options for installation support, warranty information and accessory enquiries."
+              }
+            ],
+            "features": [
+              "Interactive WhatsApp buttons and lists",
+              "Individual product and product-list messages",
+              "Connected Meta product catalogues",
+              "Reusable message configurations",
+              "Guided customer-service options",
+              "Product discovery through WhatsApp"
+            ]
+          },
+          "lottie": "/assets/global/hello/new_webp/chat_to_checkout.json",
+          "button": {
+            "name": "Learn More",
+            "link": "https://msg91.com/help/hello-contact-center/hello-faqs/interactive-message-in-hello"
+          }
+        },
+        {
+          "name": "Video Calls & Screen Sharing – Resolve Problems Customers Can Show",
+          "content": "Some technical issues are easier to demonstrate than explain. MSG91 Hello supports video calls and screen sharing for eligible support conversations, helping agents understand what customers are experiencing. When supported, permission-based remote assistance allows teams to guide users through more detailed configuration problems. These tools are useful for businesses providing software, technical services and digital products.",
+          "more_content": {
+            "usecases": [
+              {
+                "name": "Accounting Software",
+                "description": "A finance administrator shares a screen to demonstrate an error while preparing a VAT-related report."
+              },
+              {
+                "name": "Hotel Management Systems",
+                "description": "A hotel employee shows a booking-dashboard issue to a software support specialist."
+              },
+              {
+                "name": "Industrial Software",
+                "description": "An operations manager receives visual guidance when configuring equipment-monitoring software."
+              },
+              {
+                "name": "Online Learning Platforms",
+                "description": "A student shares a screen to demonstrate difficulty accessing a course dashboard."
+              }
+            ],
+            "features": [
+              "Video support for eligible conversations",
+              "Customer screen sharing",
+              "Real-time visual troubleshooting",
+              "Permission-based remote assistance",
+              "Supported screen-control functionality",
+              "Guided software configuration assistance"
+            ]
+          },
+          "img": "/assets/global/hello/new/screen-sharing.svg"
+        },
+        {
+          "name": "Team Collaboration – Keep Departments Working Together",
+          "content": "A customer enquiry may involve sales, finance, technical support or after-sales service. MSG91 Hello helps businesses organise agents into teams, define roles, assign tickets and control access to relevant inboxes. Authorised employees can review customer histories and internal notes before responding, helping teams coordinate without asking customers to repeat the same information every time an enquiry reaches another department.",
+          "more_content": {
+            "usecases": [
+              {
+                "name": "Industrial Manufacturing",
+                "description": "A factory separates spare-parts enquiries, equipment maintenance questions and purchasing documentation across departments."
+              },
+              {
+                "name": "Private Medical Groups",
+                "description": "Reception staff handle appointment enquiries while authorised billing employees manage payment clarifications."
+              },
+              {
+                "name": "Retail Franchise Networks",
+                "description": "Local stores manage branch-specific customer enquiries while central managers oversee available support activity."
+              },
+              {
+                "name": "Professional Services",
+                "description": "A consultancy directs new-client requests to business development while existing-client service matters reach account managers."
+              }
+            ],
+            "features": [
+              "Agent and department management",
+              "Customisable roles and permissions",
+              "Team-based ticket assignments",
+              "Inbox-level access controls",
+              "Internal notes and shared ticket context",
+              "Collaboration across multiple business locations"
+            ]
+          },
+          "img": "/assets/global/hello/new/unlimited-agents.svg"
+        },
+        {
+          "name": "Support Analytics & Feedback – Understand What's Happening Across Your Team",
+          "content": "Handling customer enquiries is important, but businesses also need to understand the work behind those conversations. MSG91 Hello's analytics dashboard helps managers review ticket activity, channel distribution, agent workloads and available customer feedback. These insights can reveal recurring issues, busy periods and uneven workloads, helping teams make better decisions about customer service operations.",
+          "more_content": {
+            "usecases": [
+              {
+                "name": "Seasonal Retail",
+                "description": "A Spanish fashion retailer reviews ticket volumes during January sales and Black Friday campaigns to understand customer support demand."
+              },
+              {
+                "name": "Tourism Operations",
+                "description": "A hotel group compares enquiry volumes during peak summer travel periods."
+              },
+              {
+                "name": "Technology Services",
+                "description": "A software provider reviews recurring customer complaints following a product update."
+              },
+              {
+                "name": "Repair Networks",
+                "description": "A service manager analyses ticket volumes and customer feedback from completed repair requests."
+              }
+            ],
+            "features": [
+              "Ticket status and volume reports",
+              "Agent and team performance insights",
+              "Communication-channel analytics",
+              "Support workload and working-hour reports",
+              "Available customer feedback and ratings",
+              "Centralised analytics dashboard"
+            ]
+          },
+          "img": "/assets/global/hello/new/analytics.svg"
+        },
+        {
+          "name": "Mobile Customer Support – Keep Helping Customers Beyond the Office",
+          "content": "Customer support doesn't always take place at a desk. MSG91 Hello's Android and iOS applications allow agents to view conversations, respond to enquiries, check customer histories and manage support tickets while working remotely or travelling. The mobile application also enables supported outbound customer support calls, helping field teams and mobile employees stay connected to service requests.",
+          "more_content": {
+            "usecases": [
+              {
+                "name": "Real Estate",
+                "description": "A property consultant responds to buyer enquiries while travelling between apartment viewings in Valencia."
+              },
+              {
+                "name": "Field Maintenance",
+                "description": "A technician checks a customer's equipment service history before visiting an industrial site."
+              },
+              {
+                "name": "Event Operations",
+                "description": "An exhibition coordinator reviews an urgent customer enquiry while working at a trade fair in Barcelona."
+              },
+              {
+                "name": "Retail Management",
+                "description": "A store manager follows an important customer support ticket while moving between different shop locations."
+              }
+            ],
+            "features": [
+              "Android and iOS mobile applications",
+              "Mobile conversations and ticket management",
+              "Customer history access",
+              "Push notifications",
+              "Mobile ticket assignments and follow-ups",
+              "Supported outbound customer support calling"
+            ]
+          },
+          "img": "/assets/global/hello/new_webp/mobile.webp"
+        },
+        {
+          "name": "APIs & Integrations – Connect Customer Support to Business Data",
+          "content": "Many customer questions require information stored in another system. A shopper may ask whether a refund has been processed, a traveller may need a booking update or a business customer may want to check an order. MSG91 Hello supports APIs, webhooks and connections to 2,000+ applications through its integration ecosystem. With suitable integrations, chatbots and authorised support workflows can retrieve available information and trigger configured actions without requiring agents to manually search different business tools.",
+          "more_content": {
+            "usecases": [
+              {
+                "name": "Bizum Payment Enquiries",
+                "description": "A connected and authorised payment provider supplies recorded transaction status when a customer asks whether a Bizum payment was received."
+              },
+              {
+                "name": "E-commerce Orders",
+                "description": "A connected Shopify store provides relevant order information so support agents can assist customers with delivery questions."
+              },
+              {
+                "name": "Transport & Distribution",
+                "description": "A logistics system provides available parcel or cargo milestones when a customer requests an update."
+              },
+              {
+                "name": "Travel Bookings",
+                "description": "A connected reservation-management platform supplies booking information to an authorised support workflow."
+              }
+            ],
+            "features": [
+              "Connections to 2,000+ applications",
+              "API calls and webhook-based actions",
+              "CRM, e-commerce and booking-system integrations",
+              "Payment-status lookups through authorised connected providers",
+              "Retrieval of available order and shipment information",
+              "Automated support workflows using connected systems"
+            ]
+          },
+          "img": "/assets/global/hello/new/workflow.svg"
+        }
+      ]
+    },
+    "FooterCta": {
+    "bg": true,
+    "heading": "Fewer Disconnected Tools. Better Customer Conversations.",
+    "description": "Bring customer communication, intelligent automation and human assistance together with a customer support software for businesses in Spain designed to simplify everyday service.",
+    "primaryLabel": "Get Started",
+    "primaryHref": "https://calendly.com/d/y3n-29s-29h?back=1",
+    "secondaryLabel": "Schedule a Meeting",
+    "secondaryHref": "/contact-us",
+    "btn_class": "btn btn-hello btn-md"
+    },
+    "WhatsAppOverview": {
+    "heading": "See How MSG91 Hello Works Behind Every Customer Conversation",
+    "paragraphs": [
+        "Discover how connected communication, AI-powered automation and reporting work together to help teams handle customer enquiries."
+    ],
+    "cta": {
+        "text": "Explore Hello"
+    },
+    "ways_heading": "Explore the Features Behind Every Conversation",
+    "ways": [
+        {
+        "icon": "MdSupportAgent",
+        "title": "One Inbox. Clear Visibility Across Conversations.",
+        "description": "See customer messages from connected channels, review ticket histories and assign enquiries to the relevant agents. For example, a customer contacts a retailer about an incomplete delivery. The support agent reviews the existing ticket and assigns the issue to the fulfilment team."
+        },
+        {
+        "icon": "MdSmartToy",
+        "title": "Build One Bot. Combine Rules, AI and APIs.",
+        "description": "Create a chatbot that collects customer details through guided steps, understands detailed questions through AI and retrieves information from connected systems. For example, a prospective student selects a course, provides a preferred study schedule and asks about entry requirements. The same bot handles information collection and provides relevant guidance before involving an admissions adviser."
+        },
+        {
+        "icon": "MdAnalytics",
+        "title": "Understand Your Support Performance at a Glance.",
+        "description": "Review ticket volumes, agent activity, channel performance and customer feedback through Hello's reporting dashboard. For example, a support manager notices a rise in product-return enquiries during seasonal sales and adjusts team assignments accordingly."
+        }
+    ],
+    "internal_link": {
+        "text": "MSG91 Hello Help Guides",
+        "url": "https://msg91.com/help/hello-contact-center"
+    }
+    },
+    "CompareTableComp": {
+    "type": "customer-support-software",
+    "heading": "What Makes MSG91 Hello Different?",
+    "tableHeading": "MSG91 Hello vs Other Customer Support Software",
+    "featureLabel": "Feature",
+    "columns": [
+        {
+        "key": "hello",
+        "label": "MSG91 Hello"
+        },
+        {
+        "key": "other",
+        "label": "Other Customer Support Software"
+        }
+    ],
+    "rows": [
+        {
+        "feature": "Agent Pricing",
+        "hello": "Unlimited agents, no per-agent licence fees",
+        "other": "Often charged per agent"
+        },
+        {
+        "feature": "Team Expansion",
+        "hello": "Add agents without additional seat-licence costs",
+        "other": "Additional seats may increase costs"
+        },
+        {
+        "feature": "Omnichannel Support",
+        "hello": "WhatsApp, email, website chat, social media, RCS and supported calling",
+        "other": "Channel availability varies"
+        },
+        {
+        "feature": "AI Chatbots",
+        "hello": "Rule-based steps and agentic AI in one bot",
+        "other": "Capabilities vary by provider"
+        },
+        {
+        "feature": "AI Model Flexibility",
+        "hello": "Multiple AI model choices with backup options",
+        "other": "Model choices vary"
+        },
+        {
+        "feature": "AI Integrations",
+        "hello": "2,000+ application connections and API workflows",
+        "other": "Integration access varies"
+        },
+        {
+        "feature": "WhatsApp Chat Window",
+        "hello": "Continue WhatsApp-linked conversations without Meta per-message charges inside Chat Window",
+        "other": "May require another channel"
+        },
+        {
+        "feature": "Ticket Management",
+        "hello": "Assign, track, snooze and close tickets",
+        "other": "Features vary"
+        },
+        {
+        "feature": "Cloud Calling & IVR",
+        "hello": "Supported calling and IVR within customer service workflows",
+        "other": "Separate services may be necessary"
+        },
+        {
+        "feature": "Mobile Calling",
+        "hello": "Outbound support calls from the Hello mobile app",
+        "other": "Availability varies"
+        },
+        {
+        "feature": "Workflow Automation",
+        "hello": "Automatic ticket routing and assignments",
+        "other": "Depends on provider and plan"
+        },
+        {
+        "feature": "Analytics & Reports",
+        "hello": "Centralised ticket, agent and channel insights",
+        "other": "Reporting capabilities vary"
+        },
+        {
+        "feature": "Security",
+        "hello": "SOC 2 Type II audited, ISO 27001 and VAPT",
+        "other": "Certifications vary"
+        },
+        {
+        "feature": "Free Plan",
+        "hello": "Free plan with 2 inboxes and 50 monthly tickets",
+        "other": "Availability varies"
+        }
+    ],
+    "summary": "MSG91 Hello combines messaging, AI chatbots, ticket management, calling and support analytics in one platform, with unlimited agents and no separate per-agent licence fees.",
+    "pricingNote": "MSG91 Hello offers free and paid plans. Inbox allowances, ticket limits, BOT usage and communication charges depend on the selected plan. Review the pricing page for the displayed currency and current rates. View pricing: https://msg91.com/es/pricing/hello"
+    },
+    "WhatsAppWhyChoose": {
+    "heading": "A Customer Support Software for Businesses in Spain",
+    "tagline": "Your Business Needs More Than Another Inbox or Chatbot.",
+    "description": "Your business needs more than an inbox for answering messages. It needs a connected environment where customer conversations, automation and support teams can work together. MSG91 Hello brings AI assistance, omnichannel communication and ticket management into one workspace, helping companies manage customer service without relying on disconnected tools.",
+    "reasons": [
+        {
+        "title": "Unlimited Agents. No Per-Agent Licence Fees.",
+        "description": "Expand your customer support team without paying a separate licence fee for every employee. Your selected plan determines the relevant inbox and ticket allowances rather than charging according to agent headcount. Example: A growing e-commerce company expands its support staff from 8 to 20 employees before a seasonal campaign without additional per-agent licence costs."
+        },
+        {
+        "title": "One Chatbot Combining Rule-Based Steps and Agentic AI.",
+        "description": "Build a single chatbot that collects customer information, answers simple and complex enquiries, makes API calls and transfers conversations to human agents when appropriate. Example: A customer selects a technical support category, supplies a product reference and asks a detailed question. AI continues the conversation before involving a specialist if the issue cannot be resolved automatically."
+        },
+        {
+        "title": "Continue WhatsApp Support Through Chat Window.",
+        "description": "Let customers start conversations on WhatsApp and continue longer interactions through MSG91 Chat Window, maintaining the linked support ticket while reducing unnecessary WhatsApp messaging charges. Example: A customer starts a service complaint on WhatsApp and continues reviewing the next steps with a support representative through Chat Window."
+        },
+        {
+        "title": "Omnichannel Customer Support in Spain.",
+        "description": "Manage WhatsApp, email, website chat, social media and supported voice services from one customer support environment. Example: A business operating across Madrid, Barcelona and Valencia gives authorised teams access to relevant customer enquiries and ticket information."
+        },
+        {
+        "title": "Multilingual Support for International Customer Enquiries.",
+        "description": "Use two-way text translation to help agents communicate with customers in Spanish, English, French, Portuguese and other supported languages. Example: A hotel support team receives a question in French while its agents manage the conversation using Spanish translations."
+        },
+        {
+        "title": "Flexible Workflows for Growing Teams.",
+        "description": "Configure chatbot journeys, ticket routing, agent responsibilities and inbox access according to how your business handles customer requests. Example: A property management company directs repair complaints to maintenance employees while rental-contract enquiries reach administration."
+        },
+        {
+        "title": "Security Backed by SOC 2 Type II.",
+        "description": "MSG91 follows independently audited security practices, including SOC 2 Type II auditing, ISO 27001 certification and vulnerability assessment and penetration testing (VAPT). Hello also provides role-based permissions and inbox access controls to help businesses manage customer communication more securely. Security & Certifications: https://msg91.com/certificates"
+        },
+        {
+        "title": "A Platform Backed by Global Customer Trust.",
+        "description": "MSG91 has received 200+ reviews across its products on the G2 platform, reflecting customer experiences with its communication and customer engagement solutions. G2 Reviews: https://www.g2.com/products/msg91/reviews"
+        }
+    ]
+    },
+    "BenefitSection": {
+    "heading": "Better Customer Support Begins with Better Coordination",
+    "subheading": "AI customer support software in Spain should help your business resolve enquiries more efficiently, reduce repetitive work and make communication easier for employees and customers. MSG91 Hello connects automation, support teams and customer conversations so your business can focus on solving problems instead of managing separate tools.",
+    "cards": [
+        {
+        "icon": "MdNotificationsActive",
+        "heading": "Reduce Waiting Time for Routine Enquiries",
+        "description": "AI chatbots and automated routing help customers receive relevant assistance sooner, even when human agents are not immediately available. An online retailer can let a chatbot answer questions about delivery policies while employees focus on incorrect orders and refund exceptions."
+        },
+        {
+        "icon": "MdPower",
+        "heading": "Keep Important Customer Requests Visible",
+        "description": "Ticket statuses, assignments and shared histories help teams track enquiries that still require attention. A maintenance request remains assigned to the responsible team until the required service and follow-up are completed."
+        },
+        {
+        "icon": "MdTune",
+        "heading": "Give Agents More Time for Complex Problems",
+        "description": "Automated information collection and connected business systems reduce repeated manual work. Instead of asking the same questions throughout a conversation, agents can review the information already collected by the chatbot or connected workflow."
+        },
+        {
+        "icon": "MdLogin",
+        "heading": "Maintain Consistent Service Across Channels",
+        "description": "Shared conversation context and organised workflows help employees manage enquiries across WhatsApp, website chat, email and supported social channels. When a customer contacts another department, authorised agents can review available ticket information before responding."
+        },
+        {
+        "icon": "MdPeople",
+        "heading": "Improve Support Decisions with Operational Data",
+        "description": "Analytics for ticket volumes, channel activity and agent workloads help managers identify recurring issues and busy periods. A travel company can review the increase in booking-related enquiries during summer and plan support coverage around expected demand."
+        },
+        {
+        "icon": "MdSecurity",
+        "heading": "Expand Support Without Per-Agent Licensing",
+        "description": "As customer enquiries grow, businesses can add employees without purchasing separate support licences for every agent. Teams can scale according to ticket requirements, inbox needs and other services included in their selected plan."
+        }
+    ]
+    },
+    "FooterCtaAfterBenefits": {
+    "bg": true,
+    "heading": "Give Every Customer a Better Way to Reach Your Team.",
+    "description": "Bring conversations, AI automation and customer support together with MSG91 Hello.",
+    "primaryLabel": "Get Started",
+    "primaryHref": "https://msg91.com/signup"
+    },
+    "RoiStats": {
+    "label": "PERFORMANCE METRICS",
+    "heading": "Better Customer Service Starts with Better Efficiency.",
+    "subheading": "Reduce repetitive enquiries, improve response times and simplify daily support operations. MSG91 Hello brings AI automation, ticket management and customer conversations together to help Spanish businesses deliver more efficient service.",
+    "stats": [
+        {
+        "value": "65%",
+        "label": "Reduction in support workload",
+        "accent": "emerald"
+        },
+        {
+        "value": "3X",
+        "label": "Increase in agent efficiency",
+        "accent": "indigo"
+        },
+        {
+        "value": "85%",
+        "label": "Improvement in first response rate",
+        "accent": "violet"
+        },
+        {
+        "value": "2X",
+        "label": "Faster customer query resolution",
+        "accent": "amber"
+        }
+    ]
+    },
+    "Security": {
+    "label": "ENTERPRISE SECURITY",
+    "heading": "Protect Customer Information with Confidence",
+    "items": [
+        {
+        "icon": "lock",
+        "title": "ISO 27001 Certified",
+        "description": "International standard for information security management, risk assessment and access controls."
+        },
+        {
+        "icon": "shield",
+        "title": "SOC 2 Type II Audited",
+        "description": "Independent audit assessing the effectiveness of security controls over a defined period."
+        },
+        {
+        "icon": "vapt",
+        "title": "VAPT Assessed",
+        "description": "Vulnerability assessments and penetration tests help detect and address potential security weaknesses."
+        }
+    ]
+    },
+    "FileHostingFormatsComp": {
+    "tagline": "INDUSTRIES WE SERVE",
+    "heading": "One Support Platform. Different Business Needs Across Spain.",
+    "subheading": "From online retail and hospitality to healthcare, financial services and logistics, organisations face different customer service challenges. MSG91 Hello provides customer support software in Spain that helps businesses organise enquiries, automate suitable interactions and connect customers with the right support teams.",
+    "steps": [
+        {
+        "number": "01",
+        "title": "E-commerce & Fashion Retail",
+        "description": "Make customer support part of a better shopping experience. Manage questions about product availability, sizes, deliveries, exchanges and returns across connected communication channels. During seasonal sales, chatbots can answer routine policy questions while agents investigate missing parcels, damaged products and refund requests."
+        },
+        {
+        "number": "02",
+        "title": "Travel, Tourism & Hospitality",
+        "description": "Support travellers when plans change. Organise reservation questions, arrival instructions, package details, booking modifications and guest assistance. A hotel or tour operator can automate general service information while its reservations team manages individual changes and special requests."
+        },
+        {
+        "number": "03",
+        "title": "Healthcare & Private Clinics",
+        "description": "Keep administrative patient enquiries organised. Support questions about appointments, consultation schedules, routine preparation instructions and billing. A clinic can direct scheduling requests to reception while authorised administrative employees handle payment-related questions."
+        },
+        {
+        "number": "04",
+        "title": "Education & Training",
+        "description": "Give students clearer information throughout enrolment. Manage course enquiries, admission documents, class schedules and student-service requests. A training centre can use a chatbot for general course information while admissions advisers manage individual programme selection and enrolment concerns."
+        },
+        {
+        "number": "05",
+        "title": "Banking, Fintech & Insurance",
+        "description": "Organise service enquiries that require reliable follow-up. Handle general questions about documentation, service procedures, payment-status enquiries and claim-related processes. With authorised integrations, available transaction information can be retrieved from connected systems while sensitive decisions remain with appropriate specialists."
+        },
+        {
+        "number": "06",
+        "title": "Real Estate & Property Management",
+        "description": "Keep property enquiries and after-sales issues connected. Manage property viewings, rental questions, maintenance requests and resident complaints. Property companies can assign leasing enquiries to commercial teams while maintenance employees track reported faults and repairs."
+        },
+        {
+        "number": "07",
+        "title": "SaaS & Technology",
+        "description": "Help users resolve technical issues more efficiently. Connect website chat, AI assistance, support tickets and visual troubleshooting. A software company can use screen sharing to guide a customer through configuration problems and retain the relevant details in the support ticket."
+        },
+        {
+        "number": "08",
+        "title": "Manufacturing, Logistics & Distribution",
+        "description": "Give order and shipment enquiries a clearer process. Organise purchase-order questions, spare-parts requests, cargo updates and delivery complaints. With an appropriate system integration, agents and chatbots can retrieve available order or shipment information while unresolved problems remain assigned to the responsible team."
+        }
+    ]
+    },
+    "StartupSection": {
+    "kicker": "HELLO FOR STARTUPS",
+    "heading": "Grow Your Startup. Not Your Support Software Bill.",
+    "description": "Your startup needs reliable customer support long before it needs a large support budget. MSG91 Hello for Startups helps eligible Spanish businesses get started with customer support software at no subscription cost. Manage conversations across connected WhatsApp, email and website chat channels, automate customer enquiries and organise tickets in one workspace.",
+    "benefits_heading": "What your startup gets:",
+    "benefits": [
+        "1,000 customer support tickets monthly",
+        "50 agents for your support team",
+        "2 connected communication inboxes",
+        "AI chatbot usage under the fair-use policy"
+    ],
+    "eligibility": "Registered startups in Spain with annual revenue below US$50,000 or the applicable local equivalent can apply, subject to verification.",
+    "cta": {
+        "text": "Get Hello Free for Your Startup",
+        "link": "https://msg91.com/es/hello-for-startups"
+    }
+    },
+    "WhatsAppGetStarted": {
+    "kicker": "HOW MSG91 HELLO WORKS",
+    "heading": "Get Started with Hello in Four Simple Steps",
+    "steps": [
+        {
+        "number": "1",
+        "icon": "MdLink",
+        "title": "Connect Your Communication Channels",
+        "description": "Create inboxes and connect WhatsApp, email, website chat, social messaging and available calling services."
+        },
+        {
+        "number": "2",
+        "icon": "MdSettings",
+        "title": "Set Up Teams, Chatbots and Workflows",
+        "description": "Add agents, assign permissions and create chatbots combining rule-based steps, agentic AI and API actions."
+        },
+        {
+        "number": "3",
+        "icon": "MdChatBubbleOutline",
+        "title": "Manage Customer Conversations",
+        "description": "Receive enquiries, assign tickets and respond through connected channels. Customers can also continue suitable WhatsApp conversations through MSG91 Chat Window."
+        },
+        {
+        "number": "4",
+        "icon": "MdAnalytics",
+        "title": "Review Performance and Improve Support",
+        "description": "Use analytics, ticket reports and available feedback to understand recurring issues and improve customer service operations."
+        }
+    ],
+    "practice": {
+        "heading": "How It Works in Practice",
+        "paragraphs": [
+        "A property maintenance company in Spain connects WhatsApp, email and website chat to MSG91 Hello.",
+        "It creates separate support teams for heating systems, plumbing, electrical problems and administrative enquiries. A chatbot collects the property reference, issue category and customer contact information before the workflow assigns the ticket to the relevant department.",
+        "If a tenant reports an unresolved heating problem, the maintenance team can review the ticket, record follow-up actions and coordinate a technician visit.",
+        "As the company manages more properties, managers use ticket and workload reports to identify recurring service requests and organise additional support resources."
+        ]
+    },
+    "cta": {
+        "text": "Start Using Hello"
+    },
+    "G2Badges": {
+        "badges": [
+        {
+            "src": "/assets/hello-br/g2-badges/CommunicationPlatformasaService(CPaaS)_BestResults_Total.svg",
+            "alt": "G2 Best Results — Communication Platform as a Service"
+        },
+        {
+            "src": "/assets/hello-br/g2-badges/CommunicationPlatformasaService(CPaaS)_HighPerformer_HighPerformer.svg",
+            "alt": "G2 High Performer — Communication Platform as a Service"
+        },
+        {
+            "src": "/assets/hello-br/g2-badges/CommunicationPlatformasaService(CPaaS)_MomentumLeader_Leader.svg",
+            "alt": "G2 Momentum Leader — Communication Platform as a Service"
+        },
+        {
+            "src": "/assets/hello-br/g2-badges/CommunicationPlatformasaService(CPaaS)_MostImplementable_Total.svg",
+            "alt": "G2 Most Implementable — Communication Platform as a Service"
+        },
+        {
+            "src": "/assets/hello-br/g2-badges/Multi-FactorAuthentication(MFA)_BestRelationship_Total.svg",
+            "alt": "G2 Best Relationship — Multi-Factor Authentication"
+        },
+        {
+            "src": "/assets/hello-br/g2-badges/SMSMarketing_Leader_Leader.svg",
+            "alt": "G2 Leader — SMS Marketing"
+        },
+        {
+            "src": "/assets/hello-br/g2-badges/TransactionalEmail_BestSupport_Small-Business_QualityOfSupport.svg",
+            "alt": "G2 Best Support — Transactional Email"
+        }
+        ],
+        "heading": "Appreciated by Customers. Recognised by Experts.",
+        "description": "MSG91's recognition on G2 highlights customer feedback across implementation, product performance, relationships and support, giving Spanish businesses greater confidence when evaluating customer support software."
+    }
+    },
+    "FaqsComp": {
+    "heading": "Frequently Asked Questions – MSG91 Hello Spain",
+    "faqs": [
+        {
+        "question": "What is customer support software, and why do Spanish businesses need it?",
+        "answer": "<ul class=\"list-disc\"><li>Customer support software helps companies receive customer inquiries, organize conversations, assign tickets, and resolve problems from one platform.</li><li>For businesses in Spain, customers may contact brands through WhatsApp, email, website live chat, Instagram, or Facebook Messenger.</li><li>When these channels operate separately, support teams can miss important messages or struggle to follow previous conversations.</li><li>MSG91 Hello is customer support software for businesses in Spain that combines communication channels, AI chatbots, ticket management, and workflow automation in one workspace.</li><li>With unlimited agents and no individual per-agent license fees, growing businesses can expand support operations without adding separate license costs for every employee.</li></ul>"
+        },
+        {
+        "question": "What is MSG91 Hello, and how does it work in Spain?",
+        "answer": "<ul class=\"list-disc\"><li>MSG91 Hello is an AI-powered customer service platform that brings customer conversations, automation, ticket management, and reporting together.</li><li>Businesses can connect their communication channels, invite agents, configure departments, and create ticket-routing workflows.</li><li>The no-code chatbot builder helps teams set up an initial agentic AI bot using a simple prompt. Rule-based steps and API integrations can then be added as needed.</li><li>For example, a Madrid-based online retailer can use an AI chatbot to answer delivery questions in Spanish and transfer complex return inquiries to a customer service agent.</li><li>Managers can review ticket volumes, unresolved issues, and customer satisfaction reports.</li></ul>"
+        },
+        {
+        "question": "Which communication channels can Spanish businesses manage through MSG91 Hello?",
+        "answer": "<ul class=\"list-disc\"><li>MSG91 Hello supports shared-inbox workflows across WhatsApp, Instagram, Facebook Messenger, email, website live chat, SMS, RCS, X (Twitter), and configured calling services. Apple Messages for Business can also be connected where enabled.</li><li>Each conversation can be organized as a ticket, keeping customer history, internal notes, and support responsibilities visible.</li><li>For example, a Barcelona travel agency can answer booking inquiries through website chat, manage itinerary changes through WhatsApp, and respond to emailed cancellations from the same workspace.</li><li>Agents can also manage customer conversations using the Hello mobile app.</li></ul>"
+        },
+        {
+        "question": "Can MSG91 Hello combine rule-based flows and agentic AI in one chatbot?",
+        "answer": "<ul class=\"list-disc\"><li>Yes. MSG91 Hello lets businesses combine fixed chatbot steps with conversational agentic AI.</li><li>Rule-based steps can collect a reservation reference, order number, or preferred service. Agentic AI can then understand follow-up questions and use connected information to provide relevant answers.</li><li>For example, a Spanish hotel chain can first ask customers for their booking reference and then answer questions about check-in times, room facilities, or reservation policies.</li><li>The no-code builder supports different AI models, API connections, multilingual responses, and transfer to human agents.</li><li>Businesses can configure an initial agentic AI chatbot in minutes.</li></ul>"
+        },
+        {
+        "question": "Can multiple agents manage one WhatsApp Business number using MSG91 Hello?",
+        "answer": "<ul class=\"list-disc\"><li>Yes. MSG91 Hello lets several authorized agents respond through one connected WhatsApp Business number using individual logins.</li><li>Managers can assign tickets, organize departments, add private notes, and review the full conversation history.</li><li>For example, a Spanish furniture company can route product questions to sales, delivery requests to logistics, and return inquiries to customer support.</li><li>Hello includes unlimited agents across its plans, making it easier to expand teams without paying extra per-agent license fees.</li><li>Businesses can also manage WhatsApp alongside email, website chat, and social messaging channels.</li><li>Want to make it easier for customers to contact your business on WhatsApp? Use MSG91's <a class=\"text-link active-link\" href=\"https://msg91.com/es/free-whatsapp-link-generator\">Free WhatsApp Link Generator</a> to create click-to-chat links, QR codes and website chat widgets with optional pre-filled messages. Once your WhatsApp Business channel is connected to MSG91 Hello, your support team can manage customer conversations from the shared inbox.</li></ul>"
+        },
+        {
+        "question": "Can customer support teams in Spain manage calls through MSG91 Hello?",
+        "answer": "<ul class=\"list-disc\"><li>MSG91 Hello offers cloud calling and IVR features within configured customer service workflows.</li><li>Businesses can organize call routing, direct customers to departments, and maintain relevant call records alongside support tickets.</li><li>For example, a medical center in Valencia can direct appointment inquiries, administrative questions, and billing requests to the correct teams.</li><li>The Hello mobile app also supports outbound customer service calls in compatible calling configurations.</li><li>AI voice assistance can be added to suitable customer experiences, with distinct setup requirements for website voice interactions and telephone-based services.</li></ul>"
+        },
+        {
+        "question": "What is MSG91 Chat Window, and how does it reduce WhatsApp support costs?",
+        "answer": "<ul class=\"list-disc\"><li>MSG91 Chat Window allows customers to start a support conversation on WhatsApp and continue it in a separate chat window linked to Hello.</li><li>This is useful when resolving detailed questions about refunds, bookings, delivery problems, or technical support.</li><li>For example, a Spanish electronics retailer can receive a WhatsApp inquiry about a defective item and move the longer troubleshooting conversation into Chat Window.</li><li>Messages sent within Chat Window do not incur Meta WhatsApp per-message charges.</li><li>Messages sent on WhatsApp remain subject to the applicable WhatsApp rates.</li></ul>"
+        },
+        {
+        "question": "How is MSG91 Hello different from Zendesk, Freshdesk, Zoho Desk, and Intercom?",
+        "answer": "<ul class=\"list-disc\"><li>MSG91 Hello offers unlimited agents without individual per-agent license fees, together with omnichannel messaging, AI chatbots, ticket management, and workflow automation.</li><li>Businesses can combine rule-based and agentic AI in one chatbot, connect external applications through APIs, and continue WhatsApp-originated conversations through Chat Window.</li><li>For Spanish companies evaluating AI customer support software, Hello provides an alternative to managing messaging, automation, and customer service through separate platforms.</li><li>Competing products also provide extensive support features, although pricing, AI capabilities, and integration access vary by provider and plan.</li></ul>"
+        },
+        {
+        "question": "How much does MSG91 Hello cost in Spain? Is there a free plan?",
+        "answer": "<ul class=\"list-disc\"><li>Yes. MSG91 Hello's Spain pricing page lists free and paid monthly plans.</li><li><ul class=\"list-disc\"><li><strong>Live Chat – £0/month:</strong> One inbox with unlimited website live-chat tickets.</li><li><strong>Free – £0/month:</strong> Two inboxes and 50 tickets monthly.</li><li><strong>Basic – £35/month:</strong> Two inboxes and 1,000 tickets monthly.</li><li><strong>Premium – £65/month:</strong> Three inboxes and 2,000 tickets monthly.</li></ul></li><li>All plans include unlimited agents.</li><li><strong>Currency note:</strong> The Spain pricing page currently displays GBP, not EUR. Businesses should confirm the applicable billing currency, bot-wallet allocation, and taxes before subscribing.</li><li><a class=\"text-link active-link\" href=\"https://msg91.com/es/pricing/hello?utm_source=chatgpt.com\">Explore MSG91 Hello Spain Pricing</a></li></ul>"
+        },
+        {
+        "question": "Are there additional charges for agents, tickets, inboxes, or AI bots?",
+        "answer": "<ul class=\"list-disc\"><li>MSG91 Hello does not charge separate per-agent license fees.</li><li>For paid monthly plans, the Spain pricing page lists:<ul class=\"list-disc\"><li><strong>Extra inboxes:</strong> £9 per inbox.</li><li><strong>Additional tickets:</strong> £0.012 per ticket on Basic and £0.025 on Premium.</li><li><strong>AI bot usage:</strong> Subject to the applicable bot rate card and plan allocation.</li></ul></li><li>Businesses using the Free plan can upgrade when they need higher limits.</li><li>Separate communication or calling charges may apply depending on the services used.</li><li><a class=\"text-link active-link\" href=\"https://msg91.com/es/pricing/hello?utm_source=chatgpt.com\">View Complete Pricing</a></li></ul>"
+        },
+        {
+        "question": "Is MSG91 Hello secure for Spanish businesses, and where is customer data stored?",
+        "answer": "<ul class=\"list-disc\"><li>Yes. MSG91 Hello provides security controls, encryption, and role-based permissions to help businesses protect customer conversations and support information. MSG91 has undergone a <strong>SOC 2 Type II audit</strong> and holds <strong>ISO 27001 certification</strong>, demonstrating its focus on information security.</li><li>MSG91 stores customer data for Spanish businesses in European data centers, ensuring compliance with EU data protection regulations and GDPR.</li><li><a class=\"text-link active-link\" href=\"https://msg91.com/certificates\">View MSG91 Security Certificates</a></li></ul>"
+        },
+        {
+        "question": "Does MSG91 Hello offer a free customer support plan for startups in Spain?",
+        "answer": "<ul class=\"list-disc\"><li>Yes. MSG91 offers a <strong>Hello Free for Startups</strong> programme for eligible early-stage Spanish businesses that need customer support software without an initial software subscription fee.</li><li>Registered startups with annual revenue below US$50,000 or the applicable local equivalent can apply for complimentary access, subject to verification.</li><li>The programme includes up to 1,000 support tickets per month, 50 agents, 2 inboxes and AI chatbot usage under a fair-use policy.</li><li>For example, a new e-commerce business in Madrid can manage WhatsApp and website chat inquiries, automate questions about deliveries, and assign return requests to support agents.</li><li>Applicants must provide business registration and financial documentation. Programme limits and separate communication charges apply.</li><li><a class=\"text-link active-link\" href=\"https://msg91.com/es/hello-for-startups\">Apply for Hello Free for Startups in Spain</a></li></ul>"
+        },
+        {
+        "question": "Can Spanish businesses reduce customer support software costs by almost 95% with MSG91 Hello?",
+        "answer": "<ul class=\"list-disc\"><li>MSG91 Hello can offer <strong>approximately 95% lower estimated costs in selected comparisons</strong> with other customer support platforms, helping Spanish businesses manage growing teams without additional per-agent licence fees.</li><li>For example, with 3,000 monthly tickets, 12 agents and 50% AI resolution:<ul class=\"list-disc\"><li><strong>MSG91 Hello:</strong> £59/month</li><li><strong>Freshdesk:</strong> £915/month</li><li><strong>Estimated savings:</strong> £856/month — <strong>94% lower costs</strong></li></ul></li><li>Spanish businesses can compare MSG91 Hello with Zendesk, Freshdesk, Zoho Desk, Intercom and other providers using the cost comparison calculator.</li><li>The tool supports GBP, USD, INR and AED. EUR is not currently listed, so GBP can be used to compare amounts displayed on the Spain Hello pricing page.</li><li>Results are estimates based on the selected plans and assumptions.</li><li><a class=\"text-link active-link\" href=\"https://msg91.com/cost-comparision\">Calculate Your Customer Support Savings</a></li></ul>"
+        }
+    ]
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
         }
     }
 }

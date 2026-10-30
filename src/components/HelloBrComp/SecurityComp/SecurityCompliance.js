@@ -7,9 +7,13 @@ const icons = {
     vapt: MdScience,
 };
 
-export default function SecurityCompliance({ data }) {
+export default function SecurityCompliance({ data, pageInfo }) {
     const { label, heading, items = [], video, videoAlt, videoPoster } = data ?? {};
     if (!items.length) return null;
+
+    const isHello =
+        ['hello', 'hello-contact-center'].includes(pageInfo?.page) &&
+        !['br', 'br-pt'].includes(pageInfo?.country?.toLowerCase());
 
     return (
         <section className='bg-white'>
@@ -17,7 +21,9 @@ export default function SecurityCompliance({ data }) {
                 <div className='cont py-10'>
                     <header className='text-center'>
                         {label && (
-                            <p className='py-2 text-xs font-semibold uppercase tracking-[0.2em] text-indigo-300'>
+                            <p
+                                className={`py-2 text-xs font-semibold uppercase tracking-[0.2em] ${isHello ? 'text-yellow-700' : 'text-indigo-300'}`}
+                            >
                                 {label}
                             </p>
                         )}
@@ -47,7 +53,9 @@ export default function SecurityCompliance({ data }) {
                                 className='flex flex-col rounded-lg border border-gray-200/90 bg-white p-6 '
                             >
                                 <span
-                                    className='mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600'
+                                    className={`mb-5 flex h-12 w-12 items-center justify-center rounded-lg ${
+                                        isHello ? 'hello_gradient_bg text-hello' : 'bg-indigo-50 text-indigo-600'
+                                    }`}
                                     aria-hidden
                                 >
                                     {React.createElement(icons[item.icon], {
