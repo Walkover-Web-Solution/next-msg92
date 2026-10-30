@@ -104,6 +104,10 @@ function FeatureCard({ feature, index, featureKey, total, openedFeatures, setOpe
                 >
                     <source src={feature?.video} type='video/webm' />
                 </video>
+            ) : feature?.lottie ? (
+                <div className='w-full xl:max-w-[600px] lg:max-w-[400px] max-w-[300px] md:mx-6 mx-2'>
+                    <LottiePlayer lottie={feature?.lottie} />
+                </div>
             ) : (
                 feature?.img &&
                 (feature?.img.endsWith('.json') ? (

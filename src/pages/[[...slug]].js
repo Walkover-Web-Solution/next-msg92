@@ -90,6 +90,7 @@ import FileHostingUseCasesComp from '@/components/FileHostingComp/UseCasesComp/U
 import FileHostingFormatsComp from '@/components/FileHostingComp/FormatsComp/FormatsComp';
 import BenefitSection from '@/components/OneApiBenefitComp/BenefitSection';
 import ExperienceComp from '@/components/ExperienceComp/ExperienceComp';
+import StartupSection from '@/components/StartupSectionComp/StartupSection';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -200,6 +201,12 @@ const Components = {
     FileHostingUseCasesComp,
     FileHostingComparisonComp: FileHostingFeatureHighlightComp,
     FileHostingFormatsComp,
+    WhatsAppProblemSolutionComp,
+    WhatsAppStepsComp,
+    WhatsAppComparisonComp,
+    WhatsAppWhyComp,
+    WhatsAppCTAComp,
+    StartupSection,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
