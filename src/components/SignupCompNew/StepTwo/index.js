@@ -137,17 +137,13 @@ export default function StepTwo({ data }) {
     useEffect(() => {
         const fetchDataIfNeeded = async () => {
             if (state.geoAutoPopulated) return;
-            // Fallback: If user navigates directly to StepTwo, fetch countries and auto-populate
             if (!state.countries) {
                 const countriesData = await fetchCountries(dispatch);
-                // After countries are fetched, auto-populate from IP
                 if (countriesData?.length > 0) {
-                    // Pass existing ipData if available to avoid redundant API call
                     await autoPopulateFromIP(dispatch, countriesData, state.ipData);
                     dispatch({ type: 'SET_GEO_AUTO_POPULATED', payload: true });
                 }
             } else if (!state.ipData && !state.selectedCountry) {
-                // If countries exist but no IP data and no country selected, run auto-populate
                 await autoPopulateFromIP(dispatch, state.countries, state.ipData);
                 dispatch({ type: 'SET_GEO_AUTO_POPULATED', payload: true });
             }
@@ -237,7 +233,6 @@ export default function StepTwo({ data }) {
         });
     };
 
-    // Validation: service, source, full name, company name, country
     const isFormValid = () => {
         const hasService = selectedServices.length > 0;
         const finalSource = source === 'other' ? otherSource.trim() : source;
