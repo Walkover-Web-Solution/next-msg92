@@ -2,6 +2,13 @@
 
 This is the public marketing site for MSG91, a CPaaS. It serves msg91.com. It explains MSG91's messaging products (SMS, OTP, WhatsApp, Voice, Email, RCS, Hello…) to developers and businesses, shows country-specific pricing, and turns visitors into sign-ups. It runs on Next.js 16 with the pages router and React 19, in plain JavaScript, styled with Tailwind + DaisyUI + SCSS. Most pages are ordered lists of section components declared in JSON under `src/data/`. The MSG91 product itself (dashboard, messaging APIs, billing) lives elsewhere.
 
+<!-- middleware:guidance:start -->
+## Guidance for this kind of repository
+
+Kept by the middleware (version c133f420d8b7). Read these before changing anything here:
+- [docs/guidance/website.md](docs/guidance/website.md)
+<!-- middleware:guidance:end -->
+
 ## Commands
 
 | Task                                 | Command                                                                        |
