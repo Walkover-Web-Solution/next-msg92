@@ -12,7 +12,7 @@
         },
         "tagline": "Cloud-Based na Sentro ng Serbisyo sa Customer",
         "heading": "Software para sa Customer Support sa Pilipinas",
-        "subheading": "Pagsamahin ang WhatsApp, tawag, email, chat sa website, RCS, SMS, Apple Messages for Business, Instagram, Facebook Messenger at X (Twitter) sa iisang workspace. Gamit ang MSG91 Hello, mas madaling sagutin ang mga tanong ng customers, i-automate ang suporta gamit ang AI chatbots at subaybayan ang bawat kahilingan nang hindi nagpapalipat-lipat sa iba't ibang sistema.",
+        "subheading": "Pamahalaan ang WhatsApp, tawag, email, chat sa website, RCS, SMS, Apple Messages for Business, Instagram, Facebook Messenger at X (Twitter) sa iisang lugar. Gamit ang MSG91 Hello, i-automate ang mga tanong gamit ang AI chatbots, ayusin ang tickets at pabilisin ang customer support.",
         "lottie": "/assets/global/hello/new_webp/hello_hero.json",
         "getstarted_btn": "Magsimula Na",
         "schedule_meet": "Mag-book ng Libreng Demo",
@@ -78,7 +78,7 @@
                 "Kontroladong access para sa mga empleyado at manager"
               ]
             },
-            "img": "/assets/global/hello/new_webp/unify_every_conversation_empower_every_team.webp"
+            "img": "/assets/global/hello-chatbot/whatsapp_bot.webp"
           },
           {
             "name": "Mga AI Chatbot – Isang Bot na Pinagsasama ang Rules at AI",
@@ -148,7 +148,7 @@
                 "Mga mensahe at suportadong voice-assistance options"
               ]
             },
-            "img": "/assets/global/hello/new_webp/connect_engage_and_convert_instantly.webp",
+            "img": "/assets/chatbot/banner.png",
             "button": {
               "name": "Alamin Pa",
               "link": "https://msg91.com/guide/how-customer-support-changes-with-msg91-chat-window"
@@ -255,7 +255,7 @@
                 "Suporta sa mga angkop na voice-based enquiries"
               ]
             },
-            "img": "/assets/global/hello/new_webp/smartcue_ai.json",
+            "img": "/assets/global/hello-chatbot/voice_bot.webp",
             "button": {
               "name": "Alamin Pa",
               "link": "https://msg91.com/help/hello-contact-center/voice-bot"
@@ -325,7 +325,7 @@
                 "Nako-configure na mga patakaran para sa iba't ibang concern"
               ]
             },
-            "img": "/assets/global/hello/new_webp/workflow_automation.json"
+            "img": "/assets/global/hello/new_webp/chatbot.webp"
           },
           {
             "name": "Suporta sa Iba't Ibang Wika – Mas Madaling Makipag-usap sa mga Customer",
@@ -559,7 +559,7 @@
                 "Mga automated action sa pamamagitan ng integrations"
               ]
             },
-            "img": "/assets/global/hello/new_webp/workflow_automation.json"
+            "lottie": "/assets/global/hello-chatbot/lottie/plugin_and_integrations.json"
           }
         ]
       },
@@ -568,14 +568,14 @@
         "heading": "Mas Maayos na Usapan. Mas Kaunting Mano-manong Trabaho.",
         "description": "Pagsamahin ang customer conversations, AI automation at suporta ng iyong team sa iisang software para sa customer service sa Pilipinas na ginawa para gawing mas madali ang pang-araw-araw na operasyon.",
         "primaryLabel": "Magsimula Na",
-        "primaryHref": "https://calendly.com/d/y3n-29s-29h?back=1",
+        "primaryHref": "https://msg91.com/signup",
         "secondaryLabel": "Mag-iskedyul ng Meeting",
         "secondaryHref": "/contact-us"
     },
     "WhatsAppOverview": {
         "heading": "Tingnan Kung Paano Gumagana ang MSG91 Hello sa Bawat Conversation",
         "paragraphs": [
-            "Alamin kung paano nagtutulungan ang customer communication, AI automation at reporting tools upang matulungan ang iyong team mula sa unang mensahe hanggang sa paglutas ng problema."
+            "Alamin kung paano pinagsasama ng MSG91 Hello ang customer communication, AI automation, smart ticket management at reporting tools sa iisang workspace. Mula sa pagsagot sa customer inquiries at pag-automate ng paulit-ulit na tasks hanggang sa pag-assign ng tickets, pagsubaybay sa conversations at pagsusuri ng team performance, tuklasin kung paano pinapadali ng Hello ang araw-araw na customer support, pinapataas ang productivity ng agents at pinapabilis ang paglutas ng customer concerns."
         ],
         "cta": {
             "text": "Tuklasin ang Hello"
@@ -606,7 +606,7 @@
     "CompareTableComp": {
         "type": "customer-support-software",
         "heading": "Ano ang Naiiba sa MSG91 Hello?",
-        "tableHeading": "MSG91 Hello Kumpara sa Ibang Software para sa Customer Support",
+        "tableHeading": "Sa pagpili ng software para sa customer support sa Pilipinas, hindi lamang presyo ang dapat tingnan. Mahalaga rin ang bilang ng agents, suportadong channels, automation at kakayahang lumago ng negosyo nang hindi nagdaragdag ng maraming hiwa-hiwalay na tools.Pinagsasama ng MSG91 Hello ang omnichannel support, AI chatbots, ticket management at workflow automation habang nagbibigay ng walang limitasyong agents at walang hiwalay na lisensya para sa bawat agent.",
         "featureLabel": "Kakayahan",
         "columns": [
             {
@@ -689,14 +689,16 @@
             "hello": "Walang bayad, may 2 inbox at 50 tickets bawat buwan",
             "other": "Hindi lahat ay may libreng plano"
             }
-        ],
-        "summary": "Pinagsasama ng MSG91 Hello ang omnichannel support, AI chatbots, ticket management at workflow automation sa iisang platform, na may walang limitasyong agents at walang hiwalay na bayad sa bawat lisensya ng agent.",
-        "pricingNote": "May libre at may bayad na mga plano ang MSG91 Hello. Nakasalalay sa napiling plano ang inbox limits, ticket allowances, paggamit ng bot at communication charges. Tingnan ang kasalukuyang presyo at currency sa pricing page ng Pilipinas bago mag-publish ng partikular na halaga. Tingnan ang presyo: https://msg91.com/fil-ph/pricing/hello"
+        ],  
+        "pricingNote": "May libre at may bayad na mga plano ang MSG91 Hello. Nakasalalay sa napiling plano ang inbox limits, ticket allowances, paggamit ng bot at communication charges. Tingnan ang kasalukuyang presyo at currency sa pricing page ng Pilipinas bago mag-publish ng partikular na halaga. Tingnan ang presyo: ",
+        "pricingLink": {
+    "text": "Mga Presyo ng MSG91 Hello sa Pilipinas",
+    "url": "https://msg91.com/ae/pricing/hello"
+}
     },
     "WhatsAppWhyChoose": {
   "heading": "Isang Platform para sa Mas Organisadong Customer Service",
-  "tagline": "BAKIT PILIIN ANG MSG91 HELLO?",
-  "description": "Hindi sapat ang pagkakaroon lamang ng isa pang inbox o chatbot. Kailangan ng negosyo ng sistemang nag-uugnay sa customer conversations, automation at mga empleyado nang hindi ginagawang mas komplikado ang trabaho. Ang MSG91 Hello ay isang platform ng suporta sa customer na tumutulong sa mga negosyong Pilipino na pamahalaan ang iba't ibang communication channels, AI chatbots at support teams sa iisang lugar.",
+  "description": "BAKIT PILIIN ANG MSG91 HELLO? Hindi sapat ang pagkakaroon lamang ng isa pang inbox o chatbot. Kailangan ng negosyo ng sistemang nag-uugnay sa customer conversations, automation at mga empleyado nang hindi ginagawang mas komplikado ang trabaho. Ang MSG91 Hello ay isang platform ng suporta sa customer na tumutulong sa mga negosyong Pilipino na pamahalaan ang iba't ibang communication channels, AI chatbots at support teams sa iisang lugar.",
   "reasons": [
     {
       "title": "Walang Limitasyon sa Agents. Walang Bayad sa Bawat Lisensya.",
@@ -724,11 +726,19 @@
     },
     {
       "title": "Seguridad na Sinusuportahan ng SOC 2 Type II.",
-      "description": "Ang MSG91 ay may SOC 2 Type II-audited security practices, ISO 27001 certification at vulnerability assessment and penetration testing (VAPT). May role-based permissions at inbox access controls din ang Hello upang matulungan ang mga negosyo na pamahalaan kung sino ang maaaring makakita ng customer conversations. Seguridad at Certifications: https://msg91.com/certificates"
+      "description": "Ang MSG91 ay may SOC 2 Type II-audited security practices, ISO 27001 certification at vulnerability assessment and penetration testing (VAPT). May role-based permissions at inbox access controls din ang Hello upang matulungan ang mga negosyo na pamahalaan kung sino ang maaaring makakita ng customer conversations. Seguridad at Certifications:",
+      "link": {
+          "name": "MSG91 Certificates",
+          "url": "https://msg91.com/certificates"
+      }
     },
     {
       "title": "Platform na Pinagkakatiwalaan ng mga Negosyo.",
-      "description": "Ang MSG91 ay nakatanggap ng mahigit 200 reviews sa iba't ibang produkto nito sa G2 platform, na nagpapakita ng feedback at karanasan ng mga negosyong gumagamit ng communication at customer engagement solutions nito. G2 Reviews: https://www.g2.com/products/msg91/reviews"
+      "description": "Ang MSG91 ay nakatanggap ng mahigit 200 reviews sa iba't ibang produkto nito sa G2 platform, na nagpapakita ng feedback at karanasan ng mga negosyong gumagamit ng communication at customer engagement solutions nito. G2 Reviews:",
+      "link": {
+          "name": "MSG91 sa G2",
+          "url": "https://www.g2.com/products/msg91/reviews"
+      }
     }
   ]
     },
@@ -831,42 +841,42 @@
         {
           "number": "01",
           "title": "Online Shopping at Social Commerce",
-          "description": "Gawing mas madali ang pagtulong sa mga online shopper. Pagsamahin ang customer enquiries mula sa WhatsApp, website chat at suportadong social messaging channels. Tulungan ang shoppers sa product information, order updates, cash-on-delivery concerns, returns at exchanges. Sa panahon ng malalaking sale, maaaring sagutin ng chatbot ang mga karaniwang tanong habang ang agents ay nag-iimbestiga ng missing o incorrect deliveries."
+          "description": "Pagsamahin ang customer enquiries mula sa WhatsApp, website chat at suportadong social messaging channels. Tulungan ang shoppers sa product information, order updates, cash-on-delivery concerns, returns at exchanges. Sa panahon ng malalaking sale, maaaring sagutin ng chatbot ang mga karaniwang tanong habang ang agents ay nag-iimbestiga ng missing o incorrect deliveries."
         },
         {
           "number": "02",
           "title": "Pangangalagang Pangkalusugan at Diagnostics",
-          "description": "Mas organisadong suporta para sa mga pasyente. Tumulong sa appointment enquiries, clinic hours, routine test preparation at administrative concerns. Maaaring paghiwalayin ng isang medical center ang registration questions at billing issues habang nililimitahan ang access sa sensitibong impormasyon sa mga awtorisadong empleyado."
+          "description": "Tumulong sa appointment enquiries, clinic hours, routine test preparation at administrative concerns. Maaaring paghiwalayin ng isang medical center ang registration questions at billing issues habang nililimitahan ang access sa sensitibong impormasyon sa mga awtorisadong empleyado."
         },
         {
           "number": "03",
           "title": "Edukasyon at Online Learning",
-          "description": "Tulungan ang mga estudyante sa bawat hakbang. Magbigay ng impormasyon tungkol sa admissions, enrolment, course schedules, tuition documents at technical access sa learning platforms. Maaaring i-automate ng paaralan ang general enquiries habang ang staff ang humahawak ng concerns na nangangailangan ng personal na pagsusuri."
+          "description": "Magbigay ng impormasyon tungkol sa admissions, enrolment, course schedules, tuition documents at technical access sa learning platforms. Maaaring i-automate ng paaralan ang general enquiries habang ang staff ang humahawak ng concerns na nangangailangan ng personal na pagsusuri."
         },
         {
           "number": "04",
           "title": "Banking, Fintech at Remittance Services",
-          "description": "Mas malinaw na proseso para sa mga financial enquiries. Pamahalaan ang mga tanong tungkol sa general account procedures, remittance requirements, transaction status at dokumento. Sa pamamagitan ng awtorisadong integrations, maaaring kunin ang available payment information mula sa konektadong sistema, habang ang mga kasong nangangailangan ng account-specific decisions ay nananatili sa responsableng team."
+          "description": "Pamahalaan ang mga tanong tungkol sa general account procedures, remittance requirements, transaction status at dokumento. Sa pamamagitan ng awtorisadong integrations, maaaring kunin ang available payment information mula sa konektadong sistema, habang ang mga kasong nangangailangan ng account-specific decisions ay nananatili sa responsableng team."
         },
         {
           "number": "05",
           "title": "Real Estate at Property Management",
-          "description": "Ayusin ang komunikasyon mula sa property enquiry hanggang after-sales support. Pamahalaan ang viewing requests, property availability questions, turnover issues at maintenance complaints. Maaaring italaga ng property developer ang sales enquiries sa advisers habang ang after-sales team ay sumusubaybay sa mga problemang nai-report pagkatapos ng unit turnover."
+          "description": "Pamahalaan ang viewing requests, property availability questions, turnover issues at maintenance complaints. Maaaring italaga ng property developer ang sales enquiries sa advisers habang ang after-sales team ay sumusubaybay sa mga problemang nai-report pagkatapos ng unit turnover."
         },
         {
           "number": "06",
           "title": "BPO, Shared Services at Technology",
-          "description": "Pagsamahin ang mga usapan at proseso ng support teams. Ayusin ang client-service conversations, technical issues, ticket assignments at team permissions sa iisang workspace. Maaaring pamahalaan ng BPO providers ang mga awtorisadong client inboxes, habang ang software companies ay gumagamit ng live chat at visual troubleshooting para sa technical assistance."
+          "description": "Ayusin ang client-service conversations, technical issues, ticket assignments at team permissions sa iisang workspace. Maaaring pamahalaan ng BPO providers ang mga awtorisadong client inboxes, habang ang software companies ay gumagamit ng live chat at visual troubleshooting para sa technical assistance."
         },
         {
           "number": "07",
           "title": "Turismo, Hotel at Paglalakbay",
-          "description": "Tulungan ang mga bisita bago, habang at pagkatapos ng kanilang biyahe. Pamahalaan ang hotel enquiries, reservation changes, tour information, ferry schedules at guest assistance. Maaaring sagutin ng chatbot ang mga karaniwang tanong tungkol sa package inclusions at departure points habang ang reservation team ang humahawak ng individual booking changes."
+          "description": "Pamahalaan ang hotel enquiries, reservation changes, tour information, ferry schedules at guest assistance. Maaaring sagutin ng chatbot ang mga karaniwang tanong tungkol sa package inclusions at departure points habang ang reservation team ang humahawak ng individual booking changes."
         },
         {
           "number": "08",
           "title": "Logistics, Courier at Delivery Services",
-          "description": "Mas madaling subaybayan ang mga problema sa paghahatid. Ayusin ang tracking enquiries, failed delivery attempts, damaged parcels at pickup requests. Kapag may koneksyon sa logistics system, maaaring kunin ng chatbot o agent ang available shipment information habang ang mga hindi pa nalulutas na delivery concerns ay nananatili sa responsableng support team."
+          "description": "Ayusin ang tracking enquiries, failed delivery attempts, damaged parcels at pickup requests. Kapag may koneksyon sa logistics system, maaaring kunin ng chatbot o agent ang available shipment information habang ang mga hindi pa nalulutas na delivery concerns ay nananatili sa responsableng support team."
         }
       ]
     },
@@ -962,176 +972,6 @@
         "heading": "Pinagkakatiwalaan ng Customers. Kinikilala ng mga Eksperto.",
         "description": "Ang pagkilala sa MSG91 sa G2 ay nagpapakita ng feedback ng customers tungkol sa performance, implementation, customer relationships at support, na nakakatulong sa mga negosyong Pilipino na pumili ng customer support software."
       }
-    },
-    "FeatureWithBulletGroup": {
-        "heading": "Mga Tampok",
-        "iconColor": "text-campaign",
-        "features": [
-            {
-                "name": "Pagsamahin ang Bawat Usapan, Palakasin ang Bawat Team",
-                "subtitle": "Maginhawang Multichannel Inbox para sa Iyong Negosyo",
-                "content": "Pagsama-samahin ang lahat ng usapan ng iyong customer — mula WhatsApp, Email, Instagram, Facebook, Website, at iba pa — sa isang madaling gamitin at sentralisadong platform. Hindi mo na kailangang lumipat-lipat ng tab, mag-forward ng mensahe, o makaligtaan ang tanong ng customer. Sa Hello, madali nang makipag-collaborate ang iyong mga team (mula sales hanggang customer service), sabay-sabay na humahawak ng bawat lead, support request, o feedback — at hindi kailanman mawawala ang kasaysayan ng isang customer.",
-                "more_content": {
-                    "features": [
-                        "Masiyahan sa isang all-in-one na view ng mensahe para sa lahat ng channel na gamit mo, kasama ang chatbot sa isang click.",
-                        "Mag-assign at mag-prioritize ng mga usapan sa tamang miyembro ng team nang madali.",
-                        "Maghanap, mag-filter, at maglagay ng tag sa komunikasyon para sa instant na konteksto gamit ang intelligent chatbots.",
-                        "Panatilihing nasa kamay mo ang buong history ng customer."
-                    ]
-                },
-                "footer": "Abutin ang susunod na level ng collaboration at customer visibility — pinagsasama-sama ang lahat ng channel para sa tuloy-tuloy na serbisyo. Gagana bilang isang unit ang iyong mga team, may instant na access sa mayamang konteksto ng customer — pinapalakas ang proaktibong suporta at makabuluhang engagement sa malaking scale.",
-                "img": "/assets/global/hello/new_webp/unify_every_conversation_empower_every_team.webp"
-            },
-            {
-                "name": "Kumonekta, Makipag-Engage, at Mag-convert Agad",
-                "subtitle": "Chat Widget na Nagko-convert — Mula Unang Hello hanggang Loyalidad",
-                "content": "Nakaupo ang live chat widget ng Hello sa iyong website, nagiging tulay sa pagitan ng iyong negosyo at ng mga bisita. Puwedeng makipag-chat ang mga customer, magpadala ng file, voice note, o lumipat sa voice call — lahat ito nang hindi umaalis sa iyong page, gamit ang AI.",
-                "more_content": {
-                    "features": [
-                        "Makapagsimula ng chat o tawag ang bisita ng site sa isang click",
-                        "Maaari mong i-escalate ang mga komplikadong tanong mula chat papuntang voice call gamit ang AI Voice Agent",
-                        "Fully customizable ang widget para bumagay sa iyong brand at workflow para sa bawat AI Chatbot journey",
-                        "Bawasan ang bounce rate, makakuha ng mas maraming lead, at mag-iwan ng magandang first impression"
-                    ]
-                },
-                "img": "/assets/global/hello/new_webp/connect_engage_and_convert_instantly.webp"
-            },
-            {
-                "name": "Kaya ang Pinakamahirap na Tawag",
-                "subtitle": "Voice Bot at IVR Automation na Laging Gising",
-                "content": "Maghatid ng world-class na telephony at voice support. Sa advanced na AI Voice Agent ng Hello, bawat caller ay sasalubungin, gagabayan, at tutulungan — walang waiting time at walang maling paglipat ng tawag.",
-                "more_content": {
-                    "features": [
-                        "Multi-level na menu at custom call flows para sa tamang ahente o departamento",
-                        "Mag-play ng personalized na pagbati at kolektahin ang mahahalagang detalye agad",
-                        "I-record ang mga tawag para sa training, compliance, o quality assurance",
-                        "Madaling i-integrate sa CRM at helpdesk para sa mas mayamang konteksto ng pag-uusap",
-                        "Lubos na mababawasan ang hold time habang pinapanatiling mainit at branded ang experience"
-                    ]
-                },
-                "img": "/assets/global/hello/new_webp/handle_even_the_toughest_calls_with_ease.webp"
-            },
-            {
-                "name": "Maging Mas Matalino at Mas Mabilis Sumagot — Sa Bawat Oras",
-                "subtitle": "AI-Powered Smart Suggestions para sa Human-Like Support",
-                "content": "Sa tulong ng AI, tataas ang kalidad ng bawat customer interaction. Agad na makakatanggap ang mga ahente ng context-aware na mga suhestiyon ng sagot na propesyonal, may empatiya, at akma sa bawat chat. Mapapabilis nito ang response time at masisiguro ang consistent, on-brand na komunikasyon — kahit para sa bagong team members.",
-                "more_content": {
-                    "features": [
-                        "Matalinong mga sagot na handa nang ipadala",
-                        "Bawasan ang pagod sa pagta-type at training time ng bagong ahente",
-                        "Natukoy ang mga problema sa kalinawan ng mensahe para sa mas perpektong sagot"
-                    ]
-                },
-                "footer": "Nagiging super-agents ang iyong mga ahente — naghahatid ng mabilis, pare-parehong customer care sa tulong ng matatalinong chatbots.",
-                "lottie": "/assets/global/hello/new_webp/smartcue_ai.json"
-            },
-            {
-                "name": "Magsalita sa Kanilang Wika — Alisin ang Hadlang, Bumuo ng Tiwala",
-                "subtitle": "Global Multilingual Messaging na Walang Hirap",
-                "content": "Huwag hayaang pigilan ka ng wika. Ang multilingual messaging ng Hello ay awtomatikong isinasalin ang bawat chat in real time — para makasagot ang iyong team sa anumang wika nang walang kahirap-hirap.",
-                "more_content": {
-                    "features": [
-                        "Bi-directional na pagsasalin sa higit 100 wika",
-                        "Makakapag-chat at makakabili ang customer sa kanilang paboritong wika",
-                        "Palawakin ang iyong team nang hindi nadaragdagan ng staff o language training"
-                    ]
-                },
-                "img": "/assets/global/hello/new_webp/multilingual_capabilities.webp"
-            },
-            {
-                "name": "Panatilihing Tuloy-tuloy ang Suporta, Kahit Malaki ang Volume",
-                "subtitle": "Advanced Ticket Management at Madaling Automation",
-                "content": "Bawat ticket ay pagkakataon para humanga ang customer. Sa Hello, awtomatikong na-aayos ang mga query ayon sa urgency, topic, o customer profile. Ang mga karaniwang issue ay auto-solved ng bots; ang mas komplikadong kaso ay na-e-escalate agad ng automation system.",
-                "more_content": {
-                    "features": [
-                        "I-route ang mga ticket base sa skill, departamento, o VIP status",
-                        "Auto-resolve ng paulit-ulit na issue gamit ang chatbots",
-                        "Trigger ng escalations at actions gamit ang custom logic",
-                        "Kayang mag-scale mula dose-dosenang request hanggang libo-libo kada araw"
-                    ]
-                },
-                "img": "/assets/global/hello/new_webp/keep_support_flowing.webp"
-            },
-            {
-                "name": "Makita ang Buong Larawan Agad",
-                "subtitle": "Advanced Analytics Dashboard para sa Mas Matalinong Desisyon",
-                "content": "Makakuha ng actionable insights mula sa lahat ng channel. Ang analytics dashboard ng Hello ay nagbibigay ng real-time stats tungkol sa volume ng mensahe, performance ng agent, chatbot involvement sa ticket resolution, peak days analytics, tickets per channel, at marami pa. I-visualize ang buong operasyon gamit ang graphs at dynamic reports na sinusuportahan ng AI.",
-                "more_content": {
-                    "features": [
-                        "Subaybayan ang sentiment scores at productivity ng agents",
-                        "Tukuyin ang problema, top performers, at oportunidad para lumago",
-                        "I-export at i-share ang actionable insights sa buong negosyo"
-                    ]
-                },
-                "img": "/assets/global/hello/new_webp/analytics.webp"
-            },
-            {
-                "name": "Trabaho Kahit Saan, Kahit Kailan",
-                "subtitle": "Mobile App na Naglalagay ng Usapan sa Iyong Bulsa",
-                "content": "Huwag palampasin ang customer kahit on the go. Sa full-featured mobile app ng Hello (iOS at Android), makakatanggap ang iyong team ng push notifications, makakasagot ng chat, makakapag-assign ng kaso, at makakatawag — ligtas at kasing-lakas ng main platform.",
-                "more_content": {
-                    "features": [
-                        "Real-time push alerts para sa bawat bagong mensahe",
-                        "Access sa lahat ng feature — chat, tawag, assignment, history — saanman",
-                        "Secure at maaasahan, para sa mobile workforce",
-                        "Perpekto para sa mga reps na naglalakbay, remote agents, at business owners on the go"
-                    ]
-                },
-                "img": "/assets/global/hello/new_webp/mobile.webp"
-            },
-            {
-                "name": "Gawing Sales Opportunity ang Bawat Usapan",
-                "subtitle": "Chat-to-Checkout: Diretso ang Kita mula sa Chat",
-                "content": "Gawing sales ang bawat chat! Sa Hello, makakakita, makakapili, at makakabili ang customer direkta sa WhatsApp. Ipakita ang interactive product cards, real-time inventory, at instant na add-to-cart o payment buttons — para ang bawat tanong ay maging benta.",
-                "more_content": {
-                    "features": [
-                        "Ipakita ang produkto at variants na may live inventory",
-                        "Integrated payment gateway para sa smooth at secure checkout",
-                        "Subaybayan ang order mula chat hanggang delivery",
-                        "Walang links, walang redirects — puro conversion"
-                    ]
-                },
-                "lottie": "/assets/global/hello/new_webp/chat_to_checkout.json"
-            },
-            {
-                "name": "Tamang Agent, Tamang Mensahe",
-                "content": "Binibigyan ka ng Hello ng full control sa iyong customer support process. Bilang admin, maaari kang mag-set ng custom roles at permissions — para ang bawat agent ay nakatutok sa kanilang expertise, tulad ng sales, support, o operations. Tumatama ang bawat message sa tamang tao, at makikita mo ang bawat action para sa accountability.",
-                "more_content": {
-                    "features": [
-                        "Mag-set ng roles at permissions kada team o user",
-                        "Limitahan ang access ng agent base sa function",
-                        "Smart assignment — by channel, expertise, o round robin"
-                    ]
-                },
-                "lottie": "/assets/global/hello/new_webp/workflow_automation.json"
-            },
-            {
-                "name": "Laging Available na Support na Kayang Mag-Scale",
-                "subtitle": "No-Code AI Chatbot Solution para sa Lahat ng Channel",
-                "content": "Bigyan ng kapangyarihan ang iyong brand na magbigay ng instant support, araw at gabi. Ang drag-and-drop chatbot builder ng Hello ay madaling gamitin para gumawa at mag-launch ng bots sa WhatsApp, Instagram, Facebook, website at iba pa. Makakakuha ng leads, makakasagot ng FAQs, makakapag-process ng orders, at makakapag-handoff sa tao kung kailangan.",
-                "more_content": {
-                    "features": [
-                        "Visual bot builder: Gumawa ng flow nang walang coding",
-                        "Mabilis na deployment sa maraming channel",
-                        "Multilingual support at seamless escalation",
-                        "Available 24/7 — nagbibigay ng sagot at leads palagi"
-                    ]
-                },
-                "img": "/assets/global/hello/new_webp/chatbot.webp"
-            },
-            {
-                "name": "Pabilisin ang Ticket Handoffs",
-                "subtitle": "Gawing mabilis at madali ang paglipat ng ticket.",
-                "content": "Kapag lumipat ang ticket mula isang agent papunta sa iba, awtomatikong gumagawa ang Hello ng maikling buod ng buong usapan. Hindi na kailangang basahin ang mahabang history — agad naiintindihan ng bagong agent ang problema, ano ang nagawa na, at ano ang susunod na hakbang. Pinapabilis nito ang sagot at pinipigilan ang paulit-ulit na tanong.",
-                "lottie": "/assets/global/hello/new_webp/summarization.json"
-            },
-            {
-                "name": "Ayusin ang Komplikadong Problema Agad",
-                "subtitle": "Bigyan ng kakayahan ang agents na kontrolin ang screen ng customer para masolusyonan agad ang isyu.",
-                "content": "Sa halip na paulit-ulit na screenshots at instructions, maaaring direktang ma-access ng agent ang screen ng customer (may pahintulot) at ayusin ang problema parang nandoon sila. Makakapag-navigate sila, magagamit ang mouse at keyboard, at maayos ang error on the spot. Pinapabilis nito ang resolution time at tinatanggal ang kalituhan.",
-                "img": "/assets/global/hello/new_webp/screen_control.webp"
-            }
-        ]
     },
     "FaqsComp": {
       "heading": "Mga Madalas Itanong Tungkol sa MSG91 Hello sa Pilipinas",

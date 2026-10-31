@@ -17,8 +17,21 @@ export default function FormatsComp({ data, pageInfo }) {
                             {data.tagline}
                         </span>
                     )}
-                    {data?.heading && <h2 className='heading'>{data?.heading}</h2>}
-                    {data?.subheading && <p className='subheading max-w-3xl mx-auto'>{data?.subheading}</p>}
+                    {data?.heading && (
+                        <h2
+                            className={`heading ${pageInfo?.page === 'hello' ? 'max-w-6xl mx-auto font-semibold' : ''}`}
+                        >
+                            {data.heading}
+                        </h2>
+                    )}
+
+                    {data?.subheading && (
+                        <p
+                            className={`${pageInfo?.page === 'hello' ? 'text-xl max-w-5xl mx-auto' : 'subheading max-w-3xl mx-auto'}`}
+                        >
+                            {data.subheading}
+                        </p>
+                    )}
                 </div>
 
                 <div

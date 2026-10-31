@@ -5,6 +5,7 @@
     },
     "BannerComp": {
         "slug": "hello",
+        "not_absolute": true,
         "product": {
             "subname": "introducing",
             "name": "Hello",
@@ -12,8 +13,8 @@
         },
         "tagline": "AI-Powered Cloud Contact Center Software",
         "heading": "Smarter Customer Support for Every US Business",
-        "subheading": "Bring WhatsApp customer support, calls, email, website live chat, RCS, SMS, Apple Messages for Business, Instagram, Facebook Messenger and X (Twitter) into one connected workspace. MSG91 Hello is customer support software for US businesses that combines AI chatbots, smart ticketing and workflow automation to help teams resolve customer inquiries faster with less manual effort.",
-        "banner_img": "/assets/global/hello/new/hero.svg",
+        "subheading": "Connect WhatsApp customer support, calls, email, website live chat, RCS, SMS, Apple Messages for Business, Instagram, Facebook Messenger and X (Twitter) in one place. MSG91 Hello helps US businesses automate inquiries with AI chatbots, organize tickets and deliver faster customer support.",
+        "lottie": "/assets/global/hello/new_webp/hello_hero.json",
         "getstarted_btn": "Get Started",
         "schedule_meet": "Book a Free Demo",
         "trustedByComp": {
@@ -148,7 +149,7 @@
         "Text and voice-assistance options"
         ]
         },
-        "img": "/assets/global/hello/new/ai-enabled-chat.svg",
+        "img": "/assets/chatbot/banner.png",
         "button": {
         "name": "Learn More",
         "link": "https://msg91.com/guide/how-customer-support-changes-with-msg91-chat-window"
@@ -185,7 +186,7 @@
         "Shopify chat widget with AI-powered order, return, and exchange assistance"
         ]
         },
-        "img": "/assets/global/hello/new/workflow.svg",
+        "img": "/assets/global/hello/new_webp/connect_engage_and_convert_instantly.webp",
         "button": {
         "name": "Learn More",
         "link": "https://msg91.com/help/hello-contact-center/integrate-channels-in-hello/chat-widget-integration"
@@ -222,7 +223,7 @@
         "Outbound support calling from the Hello mobile app"
         ]
         },
-        "img": "/assets/global/hello/new/video-call.svg",
+        "img": "/assets/global/hello/new_webp/handle_even_the_toughest_calls_with_ease.webp",
         "note": "Calling services and phone-number availability depend on the configured provider and applicable US telecommunications requirements."
         },
         {
@@ -256,7 +257,7 @@
         "Hands-free assistance for suitable website inquiries"
         ]
         },
-        "img": "/assets/global/hello/new/ai-enabled-chat.svg",
+        "img": "/assets/global/hello-chatbot/voice_bot.webp",
         "button": {
         "name": "Learn More",
         "link": "https://msg91.com/help/hello-contact-center/voice-bot"
@@ -293,7 +294,7 @@
         "Spam and blocked-contact controls"
         ]
         },
-        "img": "/assets/global/hello/new/workflow.svg"
+        "img": "/assets/global/hello/new_webp/keep_support_flowing.webp"
         },
         {
         "name": "Automated Workflows – Route Inquiries Without Manual Back-and-Forth",
@@ -326,7 +327,7 @@
         "Department-specific support workflows"
         ]
         },
-        "img": "/assets/global/hello/new/workflow.svg"
+        "img": "/assets/global/hello/new_webp/chatbot.webp"
         },
         {
         "name": "Multilingual Support – Make Communication Easier Across Languages",
@@ -429,7 +430,7 @@
         "Guided application configuration"
         ]
         },
-        "img": "/assets/global/hello/new/screen-sharing.svg"
+        "img": "/assets/global/hello/new_webp/screen_control.webp"
         },
         {
         "name": "Team Collaboration – Keep Every Department on the Same Page",
@@ -462,7 +463,7 @@
         "Support coordination across business locations"
         ]
         },
-        "img": "/assets/global/hello/new/unlimited-agents.svg"
+        "img": "/assets/global/hello/new_webp/unify_every_conversation_empower_every_team.webp"
         },
         {
         "name": "Support Analytics & Feedback – Understand What Your Customers Need Most",
@@ -561,7 +562,7 @@
         "Configurable automated actions across business systems"
         ]
         },
-        "img": "/assets/global/hello/new_webp/screen_control.webp"
+        "lottie": "/assets/global/hello-chatbot/lottie/plugin_and_integrations.json"
         }
         ]
     },
@@ -570,7 +571,7 @@
     "heading": "Fewer Tools to Manage. More Customer Problems Solved.",
     "description": "Give your team a connected workspace for conversations, AI assistance and customer service workflows with a customer engagement platform for US businesses.",
     "primaryLabel": "Get Started",
-    "primaryHref": "https://calendly.com/d/y3n-29s-29h?back=1",
+    "primaryHref": "https://msg91.com/signup",
     "secondaryLabel": "Schedule a Meeting",
     "secondaryHref": "/contact-us",
     "btn_class": "btn btn-hello btn-md"
@@ -578,7 +579,7 @@
     "WhatsAppOverview": {
     "heading": "See How MSG91 Hello Works Behind Every Support Conversation",
     "paragraphs": [
-        "From the first inquiry to the final resolution, Hello connects customer communication, intelligent automation and support analytics."
+        "Discover how MSG91 Hello brings customer conversations, AI-powered automation, smart ticket management, and support analytics together in one workspace. From answering customer inquiries and automating routine tasks to assigning tickets, tracking interactions, and monitoring team performance, see how Hello simplifies daily support operations, reduces manual work, and helps US businesses resolve customer issues faster."
     ],
     "cta": {
         "text": "Explore Hello"
@@ -609,7 +610,7 @@
     "CompareTableComp": {
     "type": "customer-support-software",
     "heading": "What Makes MSG91 Hello Different?",
-    "tableHeading": "MSG91 Hello vs Other Customer Support Software",
+    "tableHeading": "When comparing customer service software in the United States, businesses need more than a list of channels. They need clear pricing, useful automation, ticket visibility and the flexibility to grow without increasing per-agent license costs. MSG91 Hello combines communication, customer support workflows and AI assistance in one environment, allowing businesses to add unlimited agents without individual seat-license fees.",
     "featureLabel": "Feature",
     "columns": [
         {
@@ -694,13 +695,15 @@
         "other": "Availability varies"
         }
     ],
-    "summary": "MSG91 Hello combines messaging, AI chatbots, ticket management, calling and support analytics in one platform, with unlimited agents and no separate per-agent license fees.",
-    "pricingNote": "The official US pricing page lists the Free plan at $0/month, Basic at $40/month and Premium at $80/month. Additional inboxes, tickets, bot usage and communication services may incur charges. A separate Live Chat plan is also listed at $0/month with one inbox and unlimited tickets for that plan's eligible chat functionality. View pricing: https://msg91.com/us/pricing/hello"
+    "pricingNote": "The official US pricing page lists the Free plan at $0/month, Basic at $40/month and Premium at $80/month. Additional inboxes, tickets, bot usage and communication services may incur charges. A separate Live Chat plan is also listed at $0/month with one inbox and unlimited tickets for that plan's eligible chat functionality. View pricing: ",
+    "pricingLink": {
+    "text": "MSG91 Hello US Pricing",
+    "url": "https://msg91.com/ae/pricing/hello"
+}
     },
     "WhatsAppWhyChoose": {
     "heading": "A Customer Support Software for US Businesses",
-    "tagline": "Your Business Needs More Than Another Inbox or Chatbot.",
-    "description": "Customer service becomes difficult when conversations, ticket updates and team responsibilities live in separate tools. MSG91 Hello helps bring support operations together, connecting AI assistance, communication channels and ticket management in one system.",
+    "description": "Your Business Needs More Than Another Inbox or Chatbot. Customer service becomes difficult when conversations, ticket updates and team responsibilities live in separate tools. MSG91 Hello helps bring support operations together, connecting AI assistance, communication channels and ticket management in one system.",
     "reasons": [
         {
         "title": "Unlimited Agents. No Per-Agent License Fees.",
@@ -728,11 +731,19 @@
         },
         {
         "title": "Security Backed by SOC 2 Type II.",
-        "description": "MSG91 publishes security credentials including SOC 2 Type II, ISO 27001 and vulnerability assessment and penetration testing documentation. Hello also includes role-based permissions and inbox access controls to help teams manage access to customer conversations. Security & Certifications: https://msg91.com/certificates"
+        "description": "MSG91 publishes security credentials including SOC 2 Type II, ISO 27001 and vulnerability assessment and penetration testing documentation. Hello also includes role-based permissions and inbox access controls to help teams manage access to customer conversations. Security & Certifications:",
+        "link": {
+            "name": "MSG91 Certificates",
+            "url": "https://msg91.com/certificates"
+        }
         },
         {
         "title": "Customer Reviews Across MSG91 Products.",
-        "description": "MSG91's product portfolio has received 200+ reviews on G2, including reviews for HELLO by MSG91. These provide prospective customers with independent user experiences across the company's communication solutions. G2 Reviews: https://www.g2.com/sellers/msg91"
+        "description": "MSG91's product portfolio has received 200+ reviews on G2, including reviews for HELLO by MSG91. These provide prospective customers with independent user experiences across the company's communication solutions. G2 Reviews:",
+        "link": {
+            "name": "MSG91 on G2",
+            "url": "https://www.g2.com/sellers/msg91"
+        }
         }
     ]
     },
@@ -836,42 +847,42 @@
         {
         "number": "01",
         "title": "E-commerce & Fashion Retail",
-        "description": "Make customer support part of a better shopping experience. Manage questions about product availability, sizes, deliveries, exchanges and returns across connected communication channels. During seasonal sales, chatbots can answer routine policy questions while agents investigate missing parcels, damaged products and refund requests."
+        "description": "Manage questions about product availability, sizes, deliveries, exchanges and returns across connected communication channels. During seasonal sales, chatbots can answer routine policy questions while agents investigate missing parcels, damaged products and refund requests."
         },
         {
         "number": "02",
         "title": "Travel, Tourism & Hospitality",
-        "description": "Support travellers when plans change. Organise reservation questions, arrival instructions, package details, booking modifications and guest assistance. A hotel or tour operator can automate general service information while its reservations team manages individual changes and special requests."
+        "description": "Organise reservation questions, arrival instructions, package details, booking modifications and guest assistance. A hotel or tour operator can automate general service information while its reservations team manages individual changes and special requests."
         },
         {
         "number": "03",
         "title": "Healthcare & Private Clinics",
-        "description": "Keep administrative patient enquiries organised. Support questions about appointments, consultation schedules, routine preparation instructions and billing. A clinic can direct scheduling requests to reception while authorised administrative employees handle payment-related questions."
+        "description": "Support questions about appointments, consultation schedules, routine preparation instructions and billing. A clinic can direct scheduling requests to reception while authorised administrative employees handle payment-related questions."
         },
         {
         "number": "04",
         "title": "Education & Training",
-        "description": "Give students clearer information throughout enrolment. Manage course enquiries, admission documents, class schedules and student-service requests. A training centre can use a chatbot for general course information while admissions advisers manage individual programme selection and enrolment concerns."
+        "description": "Manage course enquiries, admission documents, class schedules and student-service requests. A training centre can use a chatbot for general course information while admissions advisers manage individual programme selection and enrolment concerns."
         },
         {
         "number": "05",
         "title": "Banking, Fintech & Insurance",
-        "description": "Organise service enquiries that require reliable follow-up. Handle general questions about documentation, service procedures, payment-status enquiries and claim-related processes. With authorised integrations, available transaction information can be retrieved from connected systems while sensitive decisions remain with appropriate specialists."
+        "description": "Handle general questions about documentation, service procedures, payment-status enquiries and claim-related processes. With authorised integrations, available transaction information can be retrieved from connected systems while sensitive decisions remain with appropriate specialists."
         },
         {
         "number": "06",
         "title": "Real Estate & Property Management",
-        "description": "Keep property enquiries and after-sales issues connected. Manage property viewings, rental questions, maintenance requests and resident complaints. Property companies can assign leasing enquiries to commercial teams while maintenance employees track reported faults and repairs."
+        "description": "Manage property viewings, rental questions, maintenance requests and resident complaints. Property companies can assign leasing enquiries to commercial teams while maintenance employees track reported faults and repairs."
         },
         {
         "number": "07",
         "title": "SaaS & Technology",
-        "description": "Help users resolve technical issues more efficiently. Connect website chat, AI assistance, support tickets and visual troubleshooting. A software company can use screen sharing to guide a customer through configuration problems and retain the relevant details in the support ticket."
+        "description": "Connect website chat, AI assistance, support tickets and visual troubleshooting. A software company can use screen sharing to guide a customer through configuration problems and retain the relevant details in the support ticket."
         },
         {
         "number": "08",
         "title": "Manufacturing, Logistics & Distribution",
-        "description": "Give order and shipment enquiries a clearer process. Organise purchase-order questions, spare-parts requests, cargo updates and delivery complaints. With an appropriate system integration, agents and chatbots can retrieve available order or shipment information while unresolved problems remain assigned to the responsible team."
+        "description": "Organise purchase-order questions, spare-parts requests, cargo updates and delivery complaints. With an appropriate system integration, agents and chatbots can retrieve available order or shipment information while unresolved problems remain assigned to the responsible team."
         }
     ]
     },

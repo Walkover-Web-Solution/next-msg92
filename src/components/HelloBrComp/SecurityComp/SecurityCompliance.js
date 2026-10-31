@@ -16,7 +16,7 @@ export default function SecurityCompliance({ data, pageInfo }) {
         !['br', 'br-pt'].includes(pageInfo?.country?.toLowerCase());
 
     return (
-        <section className='bg-white'>
+        <section className={isHello ? 'hello_gradient_bg' : 'bg-white'}>
             <div className='container py-16'>
                 <div className='cont py-10'>
                     <header className='text-center'>
