@@ -21,7 +21,11 @@ export default class MyDocument extends Document {
     render() {
         return (
             <Html lang={this.props.lang} data-theme='light'>
-                <Head />
+                <Head>
+                    <link rel='icon' type='image/png' sizes='192x192' href='/assets/brand/favicon-192.png' />
+                    <link rel='icon' href='/assets/brand/favicon.svg' type='image/svg+xml' />
+                    <link rel='apple-touch-icon' href='/assets/brand/apple-touch-icon.png' />
+                </Head>
                 <body>
                     <Main />
                     <NextScript />

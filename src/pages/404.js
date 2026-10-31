@@ -51,7 +51,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     content="Sorry, the page you're looking for doesn't exist. It may have been moved or deleted. Go back to the homepage or explore other content on MSG91."
                 />
                 <meta property='og:image' content={'/assets/brand/favicon.svg'} />
-                <link rel='icon' href='/assets/brand/favicon.svg' />
                 <meta name='msvalidate.01' content='38DA8FFFF9D52A1C9236A51CEFEE7542' />
                 <meta
                     name='viewport'
