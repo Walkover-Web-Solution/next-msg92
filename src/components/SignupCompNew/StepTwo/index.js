@@ -11,20 +11,10 @@ import { GST_STATE_CODE_MAP } from '../SignupUtils/gstUtils';
 import { setSharedCookie } from '@/utils/utilis';
 import CountrySearchSelect from '../components/CountrySearchSelect';
 
-const sourceData = [
-    { value: 'search_engine', label: 'Search engine (Google, Bing, Yahoo, etc)' },
-    { value: 'recommended_by_friend', label: 'Recommended by friend or colleague' },
-    { value: 'social_media', label: 'Social Media' },
-    { value: 'blog', label: 'Blog or Publication' },
-    { value: 'advertisement', label: 'Advertisement' },
-    { value: 'event', label: 'Event' },
-    { value: 'tiedelhincr', label: 'TiEDelhiNCR' },
-    { value: 'other', label: 'Other' },
-];
-
 export default function StepTwo({ data }) {
     const { state, dispatch } = useSignup();
-    const optionKeys = sourceData.map((opt) => opt.value);
+    const sourceData = data?.source_options;
+    const optionKeys = sourceData.map((opt) => opt?.value);
     const storedSource = state?.source || '';
 
     const getInitialSource = () => {

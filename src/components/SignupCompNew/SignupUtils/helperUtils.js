@@ -50,7 +50,7 @@ export function setInitialStates(dispatch, state, urlParams) {
                 ad: urlParams?.ad,
                 adposition: urlParams?.adposition,
                 reference: urlParams?.reference,
-                activeStep: 2,
+                activeStep: 1,
             },
         });
         if (signupByGitHub && githubCode && githubState) {

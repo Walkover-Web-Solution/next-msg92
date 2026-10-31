@@ -267,11 +267,7 @@ export default function StepOne() {
         validateSignUp(dispatch, state);
     };
 
-    const verifiedEmailLabel = signupByGitHub
-        ? 'Verified via GitHub'
-        : signupByGoogle
-          ? 'Verified via Gmail'
-          : email || state.emailIdentifier;
+    const verifiedEmailLabel = signupByGitHub ? 'Verified via GitHub' : signupByGoogle ? 'Verified via Gmail' : email;
 
     return (
         <div className='cont cont_gap w-full max-w-[500px]'>
@@ -303,17 +299,16 @@ export default function StepOne() {
                 </p>
             </div>
 
-            {/* Email section — always on page */}
             {emailVerified ? (
                 <div className='cont gap-2'>
                     <p className='text-gray-500 text-sm sm:text-base'>Email Address</p>
                     <div className='flex flex-col sm:flex-row items-stretch sm:items-center gap-3'>
                         <div className='relative flex-1 min-w-0 max-w-[420px]'>
-                            <div className='input input-bordered text-base p-3 h-fit w-full bg-gray-50 pr-10'>
+                            <div className='input input-bordered text-base p-3 h-fit w-full bg-gray-50 '>
                                 <span className='text-sm sm:text-base truncate block'>{verifiedEmailLabel}</span>
                             </div>
                             <MdCheckCircle
-                                className='absolute right-3 top-1/2 -translate-y-1/2 text-green-600 text-xl z-10'
+                                className='absolute right-3 top-1/2 -translate-y-1/2 text-green-600 text-xl'
                                 aria-label='Email verified'
                             />
                         </div>
@@ -328,7 +323,7 @@ export default function StepOne() {
                 <div className='cont gap-3'>
                     <div className='flex items-center gap-2 flex-wrap'>
                         <p className='text-gray-500 text-sm sm:text-base'>
-                            OTP sent to <strong className='break-all'>{email || state.emailIdentifier}</strong>
+                            OTP sent to <strong className='break-all'>{state.emailIdentifier}</strong>
                         </p>
                         <MdEdit
                             className='text-gray-500 hover:text-accent cursor-pointer shrink-0'
@@ -397,12 +392,11 @@ export default function StepOne() {
                 </div>
             )}
 
-            {/* Phone section — always on same page */}
             {phoneOtpPending && otpLength ? (
                 <div className='cont gap-3'>
                     <div className='flex items-center gap-2 flex-wrap'>
                         <p className='text-gray-500 text-sm sm:text-base'>
-                            OTP sent to <strong>{phone || state.mobileIdentifier}</strong>
+                            OTP sent to <strong>{state.mobileIdentifier}</strong>
                         </p>
                         <MdEdit
                             className='text-gray-500 hover:text-accent cursor-pointer shrink-0'

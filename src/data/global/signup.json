@@ -13,6 +13,16 @@
             "Automated user segmentation",
             "OTP invisible verification"
         ],
-        "trusted": "Trusted by 30000+ startups and enterprises"
+        "trusted": "Trusted by 30000+ startups and enterprises",
+        "source_options": [
+            { "value": "search_engine", "label": "Search engine (Google, Bing, Yahoo, etc)" },
+            { "value": "recommended_by_friend", "label": "Recommended by friend or colleague" },
+            { "value": "social_media", "label": "Social Media" },
+            { "value": "blog", "label": "Blog or Publication" },
+            { "value": "advertisement", "label": "Advertisement" },
+            { "value": "event", "label": "Event" },
+            { "value": "tiedelhincr", "label": "TiEDelhiNCR" },
+            { "value": "other", "label": "Other" }
+        ]
     }
 }
