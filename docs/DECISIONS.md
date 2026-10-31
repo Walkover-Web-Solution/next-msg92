@@ -8,6 +8,8 @@ verified_on: 2026-10-22
 
 These records are reconstructed from git history. Commit messages in this repo rarely give reasons, so each **Context** says whether the rationale is recorded or inferred. Check the relevant ADR before you undo a pattern. Unexplained choices are listed in [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md).
 
+The README version note in ADR-006 was rechecked at `98fefc31` (2026-10-29). No new architectural decision was found in the commits after `701fd33a`. The WhatsApp landing aliases added in that range follow ADR-001.
+
 ## Decision Index
 
 | Date       | Decision Record                                                                                                                                        | Status                   | Area Affected         | Key Rationale                                                          |
@@ -169,7 +171,7 @@ Commit `8da32c8e` ("081225 | nextjs update", 2025-12-08, branch `081225-nextjs-u
 
 ### Consequences & Trade-offs
 
-- **Negative / Constraints:** Next.js 16 removed `next lint`, so `npm run lint` now fails (see [DEVELOPMENT.md](DEVELOPMENT.md)). The minimum Node version is 20.9. `README.md` still says Next.js 14, React 18 and Node 18.
+- **Negative / Constraints:** Next.js 16 removed `next lint`, so `npm run lint` now fails (see [DEVELOPMENT.md](DEVELOPMENT.md)). The lockfile pins `next` at 16.0.7, whose `engines.node` is `>=20.9.0`. `README.md`, checked at `98fefc31`, states Next.js 16, React 19 and Node.js ≥ 20.9. `package.json` still has no `engines` field.
 
 ---
 

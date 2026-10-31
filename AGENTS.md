@@ -13,7 +13,7 @@ This is the public marketing site for MSG91, a CPaaS. It serves msg91.com. It ex
 | Check page JSON ↔ component registry | `node scripts/check-page-data.mjs`                                             |
 | Format                               | `npx prettier --write <files>` (the pre-commit hook does this on staged files) |
 
-There is no typecheck and there are no tests. `npm run lint` is broken: Next.js 16 removed `next lint` ([OPEN_QUESTIONS.md Q-016](docs/OPEN_QUESTIONS.md)). Env vars are listed in [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md).
+There is no typecheck and there are no tests. `npm run lint` is broken: Next.js 16 removed `next lint` ([OPEN_QUESTIONS.md Q-016](docs/OPEN_QUESTIONS.md)). Every setting and environment variable, with no secret values, is in [docs/CONFIGURATION.md](docs/CONFIGURATION.md). Setup and the PR flow stay in [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md).
 
 ## Reading Order Before You Change Code
 
@@ -22,9 +22,10 @@ There is no typecheck and there are no tests. `npm run lint` is broken: Next.js 
 3. **User Journey Context:** [docs/FLOWS.md](docs/FLOWS.md). Landing, sign-up, pricing, contact/events and the free tools.
 4. **Visual & UI Standards:** [docs/DESIGN.md](docs/DESIGN.md). Tokens, the section-component prop contract, shared components, SEO via `HeadComp`.
 5. **API & Persistence:** [docs/CONTRACTS.md](docs/CONTRACTS.md). Internal `/api/*` routes, MSG91 backend calls, page-JSON shapes, cookies, analytics.
-6. **Environment & Verification:** [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md). Setup, env vars, the checklist, the PR flow.
-7. **Lessons & Past Choices:** [docs/DECISIONS.md](docs/DECISIONS.md). Read it before you undo a pattern.
-8. **Known Ambiguities:** [docs/OPEN_QUESTIONS.md](docs/OPEN_QUESTIONS.md). Open security items, unknowns and the cleanup log.
+6. **Settings:** [docs/CONFIGURATION.md](docs/CONFIGURATION.md). Every environment variable and repo setting, named without secret values.
+7. **Environment & Verification:** [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md). Setup, the checklist, the PR flow.
+8. **Lessons & Past Choices:** [docs/DECISIONS.md](docs/DECISIONS.md). Read it before you undo a pattern.
+9. **Known Ambiguities:** [docs/OPEN_QUESTIONS.md](docs/OPEN_QUESTIONS.md). Open security items, unknowns and the cleanup log.
 
 ## Project Rules & Boundaries
 
