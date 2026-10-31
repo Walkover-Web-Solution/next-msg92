@@ -71,12 +71,7 @@ export default function CompareTableComp({ data }) {
                     <p className='text-sm italic'>
                         {data.pricingNote}{' '}
                         {data?.pricingLink?.url && (
-                            <a
-                                href={data.pricingLink.url}
-                                target='_blank'
-                                rel='noopener noreferrer'
-                                className='text-accent underline'
-                            >
+                            <a href={data.pricingLink.url} target='_blank' className='text-accent underline'>
                                 {data.pricingLink.text}
                             </a>
                         )}

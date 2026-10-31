@@ -109,9 +109,7 @@ export default function ProcessSteps({ data, pageInfo }) {
                                     <a href={getURL('signup', pageInfo?.page, pageInfo)} target='_blank'>
                                         <button
                                             className={`btn btn-md w-full text-white md:w-auto ${
-                                                pageInfo?.page === 'hello'
-                                                    ? 'bg-[var(--hello-dark-color)]'
-                                                    : 'whatsapp_bg'
+                                                pageInfo?.page === 'hello' ? 'hello_dark_bg' : 'whatsapp_bg'
                                             }`}
                                         >
                                             {data.cta.text}
