@@ -11,6 +11,8 @@ This is the public marketing site for MSG91, a CPaaS. It serves msg91.com. It ex
 | Build for production                 | `BASE_URL=http://localhost:3030 npm run build`                                 |
 | Preview production build             | `BASE_URL=http://localhost:3030 npm start`                                     |
 | Check page JSON ↔ component registry | `node scripts/check-page-data.mjs`                                             |
+| Check internal API reference         | `node mcp/api-reference/check.mjs`                                             |
+| Run internal API MCP server          | `npm run mcp:api-docs` (http://127.0.0.1:8787/mcp)                             |
 | Format                               | `npx prettier --write <files>` (the pre-commit hook does this on staged files) |
 
 There is no typecheck and there are no tests. `npm run lint` is broken: Next.js 16 removed `next lint` ([OPEN_QUESTIONS.md Q-016](docs/OPEN_QUESTIONS.md)). Env vars are listed in [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md).
@@ -21,7 +23,7 @@ There is no typecheck and there are no tests. `npm run lint` is broken: Next.js 
 2. **Mental Model & Data Flow:** [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md). Read this before adding a page or a section component: it covers the JSON-driven page composition, routing, country folders and pricing routes.
 3. **User Journey Context:** [docs/FLOWS.md](docs/FLOWS.md). Landing, sign-up, pricing, contact/events and the free tools.
 4. **Visual & UI Standards:** [docs/DESIGN.md](docs/DESIGN.md). Tokens, the section-component prop contract, shared components, SEO via `HeadComp`.
-5. **API & Persistence:** [docs/CONTRACTS.md](docs/CONTRACTS.md). Internal `/api/*` routes, MSG91 backend calls, page-JSON shapes, cookies, analytics.
+5. **API & Persistence:** [docs/CONTRACTS.md](docs/CONTRACTS.md). Internal `/api/*` routes, MSG91 backend calls, page-JSON shapes, cookies, analytics. One entry per internal route is in [docs/INTERNAL_API.md](docs/INTERNAL_API.md).
 6. **Environment & Verification:** [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md). Setup, env vars, the checklist, the PR flow.
 7. **Lessons & Past Choices:** [docs/DECISIONS.md](docs/DECISIONS.md). Read it before you undo a pattern.
 8. **Known Ambiguities:** [docs/OPEN_QUESTIONS.md](docs/OPEN_QUESTIONS.md). Open security items, unknowns and the cleanup log.
@@ -48,7 +50,8 @@ There is no typecheck and there are no tests. `npm run lint` is broken: Next.js 
 - `src/pages/[[...slug]].js`: the catch-all route and the component registry. Most pages render here.
 - `src/data/<country>/` and `src/data/global/`: page JSON per country. `common.json` holds the menu, footer and notification bar. `availableCountries.json` lists the supported countries.
 - `src/components/`: section components (`*Comp`), shared pieces in `src/components/Shared/` and `src/components/UIComponent/`, pricing UI in `src/components/PricingComp/`, sign-up in `src/components/signupComp/`.
-- `src/pages/api/`: server routes for page data, pricing proxies, the curl converter, the Apple Messages link and the summit WhatsApp sender.
+- `src/pages/api/`: server routes for page data, pricing proxies, the curl converter, the Apple Messages link and the summit WhatsApp sender. The reference is [docs/INTERNAL_API.md](docs/INTERNAL_API.md).
+- `mcp/api-reference/`: read-only MCP server for that reference. It is not part of the website process. Connect on `/mcp`.
 - `src/utils/`: URL/country parsing, cookies, pricing fetchers (`src/utils/pricing/`), widget helpers.
 - `src/pages/guide/` and `_posts/blog/`: about 280 MDX blog posts served at `/guide`.
 - `src/styles/`, `tailwind.config.js`: SCSS partials and the DaisyUI `msg91` theme.

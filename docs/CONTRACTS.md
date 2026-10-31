@@ -108,6 +108,8 @@ A product slug that is missing from `products.*[].slug` returns 404 on the prici
 
 ### Internal Next API routes (`src/pages/api/`)
 
+The field-by-field reference (method, path, authentication, parameters, body, response, errors) is [INTERNAL_API.md](INTERNAL_API.md), rendered from [internal-api.json](internal-api.json). The read-only MCP server in `mcp/api-reference/` serves that JSON and does not call these routes. How to run it is in [DEVELOPMENT.md](DEVELOPMENT.md#internal-api-mcp-server).
+
 These routes are public. None of them check auth, origin or rate limits.
 
 | Method          | Endpoint Path                    | Request                                                                  | Response (200)                                                                 | Errors                                                                                       | Env / upstream                                                                                   | Caller                                                               |
@@ -192,7 +194,8 @@ Sign-up request bodies sent to `API_BASE_URL` (UTM keys are spread in from the `
 The site has no shared envelope. Each source uses its own shape:
 
 ```jsonc
-{ "error": "Only POST method allowed" }                 // curlConvert, send-summit-whatsapp, pricing/hello (405)
+{ "error": "Only POST method allowed" }                 // curlConvert (405)
+{ "error": "Method not allowed" }                       // send-summit-whatsapp (405), pricing/hello (405, Allow: GET)
 { "success": false, "message": "Business ID is required" } // apple-messages/url (400 and all upstream errors, as 200)
 { "pricingData": [], "currency": "USD" }               // pricing/hello: failure is silent, 200
 { "status": "success" | …, "hasError": true, "errors": ["…"] | "…" }   // MSG91 nexus APIs; UI toasts errors[0] ?? errors
