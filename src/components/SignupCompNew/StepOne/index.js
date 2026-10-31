@@ -14,13 +14,10 @@ import {
 import { getAvailableOtpMethods } from '../SignupUtils/otpUtils';
 import { useEffect, useState, useRef, useMemo, useCallback } from 'react';
 import { useGoogleLogin } from '@react-oauth/google';
-import { MdCheckCircle, MdEdit } from 'react-icons/md';
-import OTPInput from '../components/OTPInput';
-import ResendOTP from '../components/ResendOTP';
-import PhoneInput from '../components/PhoneInput';
 import { fetchCountries, autoPopulateFromIP } from '../SignupUtils/apiUtils';
 import { appendMsg91QueryToUrl } from '../SignupUtils/cookieUtils';
 import GmailWarningModal from '@/components/signupComp/utils/GmailWarningModal';
+import EmailPhoneVerify from './EmailPhoneVerify';
 
 function getGoogleOAuthRedirectUri() {
     return typeof window !== 'undefined' ? window.location.origin : process.env.REDIRECT_URL;
@@ -49,7 +46,7 @@ export default function StepOne() {
     const emailOtpPending = !emailVerified && !!state.emailRequestId;
     const phoneOtpPending = !mobileOtpVerified && !!state.mobileRequestId;
 
-    const emailSecondaryChannels = state?.allowedRetry?.email?.secondary || [];
+    const emailSecondaryChannels = state?.allowedRetry?.email?.secondary;
     const mobileSecondaryChannels = useMemo(
         () => getAvailableOtpMethods(state?.allowedRetry?.mobile?.secondary, phoneCountry),
         [state?.allowedRetry?.mobile?.secondary, phoneCountry]
@@ -112,7 +109,7 @@ export default function StepOne() {
                 type: 'SET_GOOGLE_EMAIL_VERIFIED',
                 payload: {
                     code: response.code,
-                    redirectUrl: redirectUri || getGoogleOAuthRedirectUri(),
+                    redirectUrl: redirectUri,
                 },
             });
         },
@@ -178,8 +175,7 @@ export default function StepOne() {
             return;
         }
         setPendingOtpFor('email');
-        const channel = emailSecondaryChannels[0]?.channel || 'email';
-        retryOtp(channel, requestId, dispatch);
+        retryOtp(emailSecondaryChannels?.[0]?.channel, requestId, dispatch);
     };
 
     const handleSendPhoneOtp = () => {
@@ -228,9 +224,14 @@ export default function StepOne() {
         dispatch({ type: 'SET_PHONE_EDIT_FROM_VERIFIED' });
     };
 
+    const handlePhoneBlur = () => {
+        if (phone?.trim()) {
+            setDetails('phone', dispatch, phone);
+        }
+    };
+
     const handleResendPhoneOtp = () => {
-        const channel = mobileSecondaryChannels[0]?.channel || null;
-        handleResendPhoneWithChannel(channel);
+        handleResendPhoneWithChannel(mobileSecondaryChannels?.[0]?.channel);
     };
 
     const socialIcons = [
@@ -299,173 +300,43 @@ export default function StepOne() {
                 </p>
             </div>
 
-            {emailVerified ? (
-                <div className='cont gap-2'>
-                    <p className='text-gray-500 text-sm sm:text-base'>Email Address</p>
-                    <div className='flex flex-col sm:flex-row items-stretch sm:items-center gap-3'>
-                        <div className='relative flex-1 min-w-0 max-w-[420px]'>
-                            <div className='input input-bordered text-base p-3 h-fit w-full bg-gray-50 '>
-                                <span className='text-sm sm:text-base truncate block'>{verifiedEmailLabel}</span>
-                            </div>
-                            <MdCheckCircle
-                                className='absolute right-3 top-1/2 -translate-y-1/2 text-green-600 text-xl'
-                                aria-label='Email verified'
-                            />
-                        </div>
-                        <MdEdit
-                            className='text-gray-500 hover:text-accent cursor-pointer text-xl self-center'
-                            onClick={handleEditVerifiedEmail}
-                            aria-label='Edit email'
-                        />
-                    </div>
-                </div>
-            ) : emailOtpPending && otpLength ? (
-                <div className='cont gap-3'>
-                    <div className='flex items-center gap-2 flex-wrap'>
-                        <p className='text-gray-500 text-sm sm:text-base'>
-                            OTP sent to <strong className='break-all'>{state.emailIdentifier}</strong>
-                        </p>
-                        <MdEdit
-                            className='text-gray-500 hover:text-accent cursor-pointer shrink-0'
-                            onClick={handleEditEmail}
-                            aria-label='Edit email'
-                        />
-                    </div>
-                    <div className='flex flex-wrap items-center gap-4'>
-                        <OTPInput
-                            ref={emailOtpInputRef}
-                            length={otpLength}
-                            onComplete={handleVerifyEmailOtp}
-                            onVerify={handleVerifyEmailOtp}
-                            showVerifyButton={true}
-                            autoFocus={true}
-                            disabled={state.loadingType === 'verify' && pendingOtpFor === 'email'}
-                        />
-                        {emailLoading && (
-                            <div className='flex items-center gap-2 text-accent text-sm'>
-                                <div className='loading loading-spinner loading-sm'></div>
-                                {state.loadingType === 'send' ? 'Sending OTP...' : 'Verifying OTP...'}
-                            </div>
-                        )}
-                    </div>
-                    <ResendOTP
-                        onResend={handleResendEmailOtp}
-                        onReset={() => emailOtpInputRef.current?.resetOtp()}
-                        secondaryChannels={emailSecondaryChannels}
-                        initialTime={30}
-                        autoStart={true}
-                    />
-                </div>
-            ) : (
-                <div className='cont gap-2'>
-                    <p className='text-gray-500 text-sm sm:text-base'>Email ID</p>
-                    <div className='flex flex-col sm:flex-row items-stretch sm:items-center gap-3'>
-                        <input
-                            ref={emailInputRef}
-                            maxLength={244}
-                            className='input input-bordered text-base p-3 h-fit w-full max-w-[420px] outline-none focus-within:outline'
-                            name='email'
-                            type='email'
-                            required
-                            placeholder='support@msg91.com'
-                            pattern='^[^\s@]+@[^\s@]+\.[^\s@]+$'
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            onKeyDown={(e) => e.key === 'Enter' && handleSendEmailOtp()}
-                            aria-label='Email address'
-                        />
-                        {emailLoading ? (
-                            <div className='flex items-center justify-center gap-2 text-accent'>
-                                <div className='loading loading-spinner loading-sm'></div>
-                                Sending OTP...
-                            </div>
-                        ) : (
-                            <button
-                                onClick={handleSendEmailOtp}
-                                className='btn btn-accent font-normal w-full sm:w-auto'
-                                disabled={!email?.trim()}
-                            >
-                                Verify
-                            </button>
-                        )}
-                    </div>
-                </div>
-            )}
-
-            {phoneOtpPending && otpLength ? (
-                <div className='cont gap-3'>
-                    <div className='flex items-center gap-2 flex-wrap'>
-                        <p className='text-gray-500 text-sm sm:text-base'>
-                            OTP sent to <strong>{state.mobileIdentifier}</strong>
-                        </p>
-                        <MdEdit
-                            className='text-gray-500 hover:text-accent cursor-pointer shrink-0'
-                            onClick={handleEditPhone}
-                            aria-label='Edit phone'
-                        />
-                    </div>
-                    <div className='flex flex-wrap items-center gap-4'>
-                        <OTPInput
-                            ref={phoneOtpInputRef}
-                            length={otpLength}
-                            onComplete={handleVerifyPhoneOtp}
-                            onVerify={handleVerifyPhoneOtp}
-                            showVerifyButton={true}
-                            autoFocus={true}
-                            disabled={state.loadingType === 'verify' && pendingOtpFor === 'mobile'}
-                        />
-                        {phoneLoading && (
-                            <div className='flex items-center gap-2 text-accent text-sm'>
-                                <div className='loading loading-spinner loading-sm'></div>
-                                {state.loadingType === 'send' ? 'Sending OTP...' : 'Verifying OTP...'}
-                            </div>
-                        )}
-                    </div>
-                    <ResendOTP
-                        onResend={handleResendPhoneOtp}
-                        onResendWithChannel={handleResendPhoneWithChannel}
-                        onReset={() => phoneOtpInputRef.current?.resetOtp()}
-                        secondaryChannels={mobileSecondaryChannels}
-                        initialTime={30}
-                        autoStart={true}
-                    />
-                </div>
-            ) : (
-                <div className='cont gap-2'>
-                    <p className='text-gray-500 text-sm sm:text-base'>Phone Number</p>
-                    <div className='flex flex-col sm:flex-row items-stretch sm:items-center gap-3'>
-                        <PhoneInput
-                            value={phone}
-                            onChange={setPhone}
-                            onCountryChange={setPhoneCountry}
-                            onBlur={() => phone?.trim() && setDetails('phone', dispatch, phone)}
-                            defaultCountry={state.selectedCountry}
-                            verified={mobileOtpVerified}
-                            placeholder='9876543210'
-                        />
-                        {mobileOtpVerified ? (
-                            <MdEdit
-                                className='text-gray-500 hover:text-accent cursor-pointer text-xl self-center'
-                                onClick={handleEditVerifiedPhone}
-                                aria-label='Edit phone number'
-                            />
-                        ) : phoneLoading ? (
-                            <div className='flex items-center justify-center gap-2 text-accent'>
-                                <div className='loading loading-spinner loading-sm'></div>
-                                Sending OTP...
-                            </div>
-                        ) : (
-                            <button
-                                onClick={handleSendPhoneOtp}
-                                className='btn btn-accent font-normal w-full sm:w-auto'
-                                disabled={!phone?.trim()}
-                            >
-                                Verify
-                            </button>
-                        )}
-                    </div>
-                </div>
-            )}
+            <EmailPhoneVerify
+                email={email}
+                setEmail={setEmail}
+                phone={phone}
+                setPhone={setPhone}
+                setPhoneCountry={setPhoneCountry}
+                emailInputRef={emailInputRef}
+                emailOtpInputRef={emailOtpInputRef}
+                phoneOtpInputRef={phoneOtpInputRef}
+                otpLength={otpLength}
+                emailVerified={emailVerified}
+                mobileOtpVerified={mobileOtpVerified}
+                emailOtpPending={emailOtpPending}
+                phoneOtpPending={phoneOtpPending}
+                emailLoading={emailLoading}
+                phoneLoading={phoneLoading}
+                loadingType={state.loadingType}
+                pendingOtpFor={pendingOtpFor}
+                emailIdentifier={state.emailIdentifier}
+                mobileIdentifier={state.mobileIdentifier}
+                verifiedEmailLabel={verifiedEmailLabel}
+                selectedCountry={state.selectedCountry}
+                emailSecondaryChannels={emailSecondaryChannels}
+                mobileSecondaryChannels={mobileSecondaryChannels}
+                handleSendEmailOtp={handleSendEmailOtp}
+                handleVerifyEmailOtp={handleVerifyEmailOtp}
+                handleEditEmail={handleEditEmail}
+                handleEditVerifiedEmail={handleEditVerifiedEmail}
+                handleResendEmailOtp={handleResendEmailOtp}
+                handleSendPhoneOtp={handleSendPhoneOtp}
+                handleVerifyPhoneOtp={handleVerifyPhoneOtp}
+                handleEditPhone={handleEditPhone}
+                handleEditVerifiedPhone={handleEditVerifiedPhone}
+                handleResendPhoneOtp={handleResendPhoneOtp}
+                handleResendPhoneWithChannel={handleResendPhoneWithChannel}
+                handlePhoneBlur={handlePhoneBlur}
+            />
 
             <button
                 onClick={handleContinue}
@@ -482,7 +353,7 @@ export default function StepOne() {
                 )}
             </button>
 
-            <p className='text-[12px] w-full text-gray-700'>
+            <p className='text-xs text-gray-700'>
                 <span className='font-bold'>Note:</span> We recommend signing up using your private domain to get quick
                 assistance.
             </p>
@@ -493,7 +364,7 @@ export default function StepOne() {
                     {socialIcons.map((icon) => (
                         <button
                             key={icon.id}
-                            className='btn bg-white border border-black hover:bg-gray-100 hover:border-black'
+                            className='btn bg-white border border-black hover:bg-gray-100'
                             onClick={() => handleSocialSignup(icon.id)}
                             aria-label={`Sign up with ${icon.name}`}
                         >
