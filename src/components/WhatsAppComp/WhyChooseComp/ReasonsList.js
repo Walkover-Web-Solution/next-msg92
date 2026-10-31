@@ -41,12 +41,7 @@ export default function ReasonsList({ data, pageInfo }) {
                                 <p className='text-base leading-relaxed text-gray-600'>
                                     {reason.description}{' '}
                                     {reason?.link?.url && (
-                                        <a
-                                            href={reason.link.url}
-                                            target='_blank'
-                                            rel='noopener noreferrer'
-                                            className='active-link text-link'
-                                        >
+                                        <a href={reason.link.url} target='_blank' className='active-link text-link'>
                                             {reason.link.name}
                                         </a>
                                     )}
