@@ -16,7 +16,7 @@ export default function ProcessSteps({ data, pageInfo }) {
     return (
         <section>
             <div className='container cont cont_p cont_gap'>
-                <header className='cont cont_gap items-center text-center'>
+                <header className='cont gap-3 items-center text-center'>
                     {data?.kicker && <h2 className='whatsapp__heading text-primary'>{data?.kicker}</h2>}
                     {data?.heading && (
                         <p
@@ -100,32 +100,31 @@ export default function ProcessSteps({ data, pageInfo }) {
                                 {paragraph}
                             </p>
                         ))}
-                    </div>
-                )}
 
-                {(data?.note || data?.cta?.text) && (
-                    <div
-                        className={`flex w-full flex-col cont_gap rounded-xl p-6 md:flex-row md:items-center md:justify-between md:p-8 ${
-                            pageInfo?.page === 'hello'
-                                ? 'bg-[color-mix(in_srgb,var(--hello-color)_15%,white)]'
-                                : 'whatsapp_lite_bg'
-                        }`}
-                    >
-                        {data?.note && <p className='flex-1 text-base text-gray-600'>{data?.note}</p>}
-                        {data?.cta?.text && (
-                            <a href={getURL('signup', pageInfo?.page, pageInfo)} target='_blank'>
-                                <button
-                                    className={`btn btn-md w-full text-white md:w-auto ${pageInfo?.page === 'hello' ? 'bg-[var(--hello-dark-color)]' : 'whatsapp_bg'}`}
-                                >
-                                    {data?.cta?.text}
-                                </button>
-                            </a>
+                        {(data?.note || data?.cta?.text) && (
+                            <div className='flex flex-col cont_gap md:flex-row md:items-center md:justify-between'>
+                                {data?.note && <p className='flex-1 text-base text-gray-600'>{data.note}</p>}
+
+                                {data?.cta?.text && (
+                                    <a href={getURL('signup', pageInfo?.page, pageInfo)} target='_blank'>
+                                        <button
+                                            className={`btn btn-md w-full text-white md:w-auto ${
+                                                pageInfo?.page === 'hello'
+                                                    ? 'bg-[var(--hello-dark-color)]'
+                                                    : 'whatsapp_bg'
+                                            }`}
+                                        >
+                                            {data.cta.text}
+                                        </button>
+                                    </a>
+                                )}
+                            </div>
                         )}
                     </div>
                 )}
                 {data?.G2Badges?.badges?.length > 0 && (
                     <div className='cont cont_gap'>
-                        <div className='grid grid-cols-2 items-center justify-items-center gap-6 sm:grid-cols-3 lg:grid-cols-4'>
+                        <div className='flex flex-wrap items-center justify-center gap-6 md:gap-8'>
                             {data.G2Badges.badges.map((badge, index) => (
                                 <div key={index} className='flex items-center justify-center'>
                                     <Image
@@ -139,7 +138,7 @@ export default function ProcessSteps({ data, pageInfo }) {
                             ))}
                         </div>
 
-                        <div className='cont cont_gap rounded-xl border border-gray-200 bg-white p-6 md:p-8'>
+                        <div className='cont gap-2 rounded-xl border border-gray-200 bg-white p-6 md:p-8'>
                             {data.G2Badges.heading && (
                                 <h3 className='text-xl font-bold text-primary'>{data.G2Badges.heading}</h3>
                             )}

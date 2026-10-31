@@ -12,7 +12,7 @@
   },
   "tagline": "Cloud Contact Centre Software",
   "heading": "AI Customer Support Software in Singapore",
-  "subheading": "Bring WhatsApp, calls, email, website chat, RCS, SMS, Apple Messages for Business, Instagram, Facebook Messenger and X (Twitter) into one intelligent workspace. MSG91 Hello is customer support software for Singapore businesses, helping teams automate enquiries with AI chatbots, manage support tickets and deliver more organised customer service.",
+  "subheading": "Manage WhatsApp, calls, email, website chat, RCS, SMS, Apple Messages for Business, Instagram, Facebook Messenger and X (Twitter) in one place. MSG91 Hello helps Singapore businesses automate enquiries with AI chatbots, manage tickets and deliver faster customer support.",
   "lottie": "/assets/global/hello/new_webp/hello_hero.json",
   "getstarted_btn": "Get Started",
   "schedule_meet": "Book a Free Demo",
@@ -78,7 +78,7 @@
             "Role-based access for support teams and managers"
           ]
         },
-        "img": "/assets/global/hello/new_webp/unify_every_conversation_empower_every_team.webp"
+        "img": "/assets/global/hello-chatbot/whatsapp_bot.webp"
       },
       {
         "name": "AI Chatbots – One Bot for Rules, AI and Complex Customer Questions",
@@ -111,7 +111,7 @@
             "24/7 automated assistance with human-agent handover"
           ]
         },
-        "img": "/assets/global/hello/new_webp/chatbot.webp",
+        "img": "/assets/global/hello/new/ai-enabled-chat.svg",
         "button": {
           "name": "Learn More",
           "link": "https://msg91.com/help/hello-contact-center/chatbots-in-hello"
@@ -148,7 +148,7 @@
             "Available text and voice-assistance capabilities"
           ]
         },
-        "img": "/assets/global/hello/new_webp/connect_engage_and_convert_instantly.webp",
+        "img": "/assets/chatbot/banner.png",
         "button": {
           "name": "Learn More",
           "link": "https://msg91.com/guide/how-customer-support-changes-with-msg91-chat-window"
@@ -256,7 +256,7 @@
             "Voice-based support for eligible customer enquiries"
           ]
         },
-        "img": "/assets/global/hello/new_webp/handle_even_the_toughest_calls_with_ease.webp",
+        "img": "/assets/global/hello-chatbot/voice_bot.webp",
         "button": {
           "name": "Learn More",
           "link": "https://msg91.com/help/hello-contact-center/voice-bot"
@@ -326,7 +326,7 @@
             "Configurable team assignments for different service categories"
           ]
         },
-        "lottie": "/assets/global/hello/new_webp/workflow_automation.json"
+        "img": "/assets/global/hello/new_webp/chatbot.webp"
       },
       {
         "name": "Multilingual Support – Communicate Across Singapore's Languages",
@@ -561,7 +561,7 @@
             "Automated actions using configured business systems"
           ]
         },
-        "lottie": "/assets/global/hello/new_webp/workflow_automation.json"
+        "lottie": "/assets/global/hello-chatbot/lottie/plugin_and_integrations.json"
       }
     ]
     },
@@ -570,7 +570,7 @@
       "heading": "Less Time Switching Tools. More Time Helping Customers.",
       "description": "Bring conversations, AI assistance and team collaboration together with a customer support software for Singapore businesses that makes support easier to manage.",
       "primaryLabel": "Get Started",
-      "primaryHref": "https://calendly.com/d/y3n-29s-29h?back=1",
+      "primaryHref": "https://msg91.com/signup",
       "secondaryLabel": "Schedule a Meeting",
       "secondaryHref": "/contact-us",
       "btn_class": "btn btn-hello btn-md"
@@ -578,7 +578,7 @@
     "WhatsAppOverview": {
       "heading": "See How MSG91 Hello Works Behind Every Customer Conversation",
       "paragraphs": [
-        "Explore how conversations, automation and support reporting work together in one workspace."
+        "Explore how MSG91 Hello brings customer conversations, AI automation, smart ticket management and support reporting together in one workspace. From handling enquiries and automating repetitive tasks to assigning tickets, tracking customer interactions and monitoring team performance, discover how Hello simplifies daily support operations, improves agent productivity and helps businesses resolve customer issues faster."
       ],
       "cta": {
         "text": "Explore Hello"
@@ -609,7 +609,7 @@
     "CompareTableComp": {
       "type": "customer-support-software",
       "heading": "What Makes MSG91 Hello Different?",
-      "tableHeading": "MSG91 Hello vs Other Customer Support Software",
+      "tableHeading": "When comparing customer service software in Singapore, businesses need to consider how channels connect, how automation works and whether the platform can support more employees without additional per-agent licence costs. MSG91 Hello combines messaging, AI chatbots, ticket management, calling and support analytics in one platform while offering unlimited agents without separate per-agent licence fees.",
       "featureLabel": "Feature",
       "columns": [
         {
@@ -693,13 +693,15 @@
           "other": "Free plan availability varies"
         }
       ],
-      "summary": "MSG91 Hello combines messaging, AI chatbots, ticket management, calling and support analytics in one platform while offering unlimited agents without separate per-agent licence fees.",
-      "pricingNote": "MSG91 Hello offers free and paid plans. Inbox allowances, tickets, BOT usage and communication charges depend on the selected plan. Review the applicable currency and charges on the Singapore pricing page before subscribing. View pricing: https://msg91.com/sg/pricing/hello"
+      "pricingNote": "MSG91 Hello offers free and paid plans. Inbox allowances, tickets, BOT usage and communication charges depend on the selected plan. Review the applicable currency and charges on the Singapore pricing page before subscribing. View pricing: ",
+      "pricingLink": {
+    "text": "MSG91 Hello Singapore Pricing",
+    "url": "https://msg91.com/ae/pricing/hello"
+}
     },
     "WhatsAppWhyChoose": {
       "heading": "A Customer Support Software for Singapore Businesses",
-      "tagline": "Your Business Needs More Than Another Inbox or Chatbot.",
-      "description": "Your company needs more than another inbox or chatbot. It needs a support system that connects customer conversations, people and automated workflows without creating unnecessary operational complexity. MSG91 Hello brings AI-powered support, omnichannel communication and team collaboration together, giving growing businesses a practical way to manage service operations.",
+      "description": "Your Business Needs More Than Another Inbox or Chatbot. Your company needs more than another inbox or chatbot. It needs a support system that connects customer conversations, people and automated workflows without creating unnecessary operational complexity. MSG91 Hello brings AI-powered support, omnichannel communication and team collaboration together, giving growing businesses a practical way to manage service operations.",
       "reasons": [
         {
           "title": "Unlimited Agents. No Per-Seat Licence Fees.",
@@ -727,11 +729,19 @@
         },
         {
           "title": "Security Backed by SOC 2 Type II.",
-          "description": "MSG91 follows independently audited security practices, including SOC 2 Type II auditing, ISO 27001 certification and vulnerability assessment and penetration testing (VAPT). Hello also provides role-based permissions and inbox access controls to help businesses manage access to customer conversations. Security & Certifications: https://msg91.com/certificates"
+          "description": "MSG91 follows independently audited security practices, including SOC 2 Type II auditing, ISO 27001 certification and vulnerability assessment and penetration testing (VAPT). Hello also provides role-based permissions and inbox access controls to help businesses manage access to customer conversations. Security & Certifications:",
+          "link": {
+              "name": "MSG91 Certificates",
+              "url": "https://msg91.com/certificates"
+          }
         },
         {
           "title": "A Platform Trusted by Businesses Worldwide.",
-          "description": "MSG91 has received 200+ reviews across its products on the G2 platform, reflecting experiences shared by businesses using its communication and customer engagement solutions. G2 Reviews: https://www.g2.com/products/msg91/reviews"
+          "description": "MSG91 has received 200+ reviews across its products on the G2 platform, reflecting experiences shared by businesses using its communication and customer engagement solutions. G2 Reviews:",
+          "link": {
+              "name": "MSG91 on G2",
+              "url": "https://www.g2.com/products/msg91/reviews"
+          }
         }
       ]
     },
@@ -834,42 +844,42 @@
         {
           "number": "01",
           "title": "E-commerce & Retail",
-          "description": "Keep shoppers supported from product discovery to after-sales assistance. Manage product questions, delivery enquiries, exchanges and return requests through connected channels. During major retail campaigns, chatbots can handle routine product and policy questions while agents focus on missing deliveries, damaged items and cases requiring approval."
+          "description": "Manage product questions, delivery enquiries, exchanges and return requests through connected channels. During major retail campaigns, chatbots can handle routine product and policy questions while agents focus on missing deliveries, damaged items and cases requiring approval."
         },
         {
           "number": "02",
           "title": "Healthcare & Specialist Clinics",
-          "description": "Make administrative patient support more organised. Manage appointment enquiries, consultation schedules, general preparation information and billing requests. A specialist clinic can route scheduling enquiries separately from administrative finance questions, with access to sensitive information limited to authorised staff."
+          "description": "Manage appointment enquiries, consultation schedules, general preparation information and billing requests. A specialist clinic can route scheduling enquiries separately from administrative finance questions, with access to sensitive information limited to authorised staff."
         },
         {
           "number": "03",
           "title": "Education, Tuition & Professional Training",
-          "description": "Support parents, students and professionals with clearer information. Handle enquiries about enrolment, class schedules, course requirements, assessments and administrative documents. Tuition centres can automate general programme questions while education advisers manage individual placement and learning concerns."
+          "description": "Handle enquiries about enrolment, class schedules, course requirements, assessments and administrative documents. Tuition centres can automate general programme questions while education advisers manage individual placement and learning concerns."
         },
         {
           "number": "04",
           "title": "Banking, Fintech & Insurance",
-          "description": "Organise service requests that need careful handling. Provide assistance with general procedures, documentation and transaction-status enquiries. With authorised integrations, support workflows can retrieve available information from connected financial systems, while sensitive cases and individual decisions remain with appropriate personnel."
+          "description": "Provide assistance with general procedures, documentation and transaction-status enquiries. With authorised integrations, support workflows can retrieve available information from connected financial systems, while sensitive cases and individual decisions remain with appropriate personnel."
         },
         {
           "number": "05",
           "title": "Real Estate & Property Management",
-          "description": "Manage enquiries throughout the property journey. Organise property viewings, leasing questions, maintenance complaints and resident support requests. Managing agents can assign issues to the appropriate maintenance teams while keeping service tickets visible until follow-up is completed."
+          "description": "Organise property viewings, leasing questions, maintenance complaints and resident support requests. Managing agents can assign issues to the appropriate maintenance teams while keeping service tickets visible until follow-up is completed."
         },
         {
           "number": "06",
           "title": "SaaS & Technology",
-          "description": "Connect technical support with practical troubleshooting tools. Bring together website chat, AI assistance, support tickets and screen sharing. A SaaS provider can guide users through configuration problems and keep the relevant troubleshooting history in the support ticket."
+          "description": "Bring together website chat, AI assistance, support tickets and screen sharing. A SaaS provider can guide users through configuration problems and keep the relevant troubleshooting history in the support ticket."
         },
         {
           "number": "07",
           "title": "Tourism, Hospitality & Attractions",
-          "description": "Help visitors plan, book and adjust their experiences. Support accommodation enquiries, reservations, ticketing questions, attraction information and booking changes. Hospitality teams can automate general questions while customer service employees handle individual reservations and special requests."
+          "description": "Support accommodation enquiries, reservations, ticketing questions, attraction information and booking changes. Hospitality teams can automate general questions while customer service employees handle individual reservations and special requests."
         },
         {
           "number": "08",
           "title": "Logistics, Freight & Distribution",
-          "description": "Keep shipment enquiries easier to manage. Organise cargo-status questions, delivery exceptions, warehouse collection enquiries and damaged-goods complaints. With appropriate integrations, support agents and chatbots can access available logistics information while unresolved issues remain assigned to the responsible team."
+          "description": "Organise cargo-status questions, delivery exceptions, warehouse collection enquiries and damaged-goods complaints. With appropriate integrations, support agents and chatbots can access available logistics information while unresolved issues remain assigned to the responsible team."
         }
       ]
     },
