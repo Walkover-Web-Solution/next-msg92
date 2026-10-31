@@ -8,7 +8,7 @@ export default function RoiStats({ data, pageInfo }) {
         !['br', 'br-pt'].includes(pageInfo?.country?.toLowerCase());
 
     return (
-        <section className={isHello ? 'border-t border-yellow-500 hello_gradient_bg' : 'bg-slate-950'}>
+        <section className={isHello ? 'border-t border-yellow-500' : 'bg-slate-950'}>
             <div className='container py-16'>
                 <div className='cont'>
                     <header className='text-center py-16'>

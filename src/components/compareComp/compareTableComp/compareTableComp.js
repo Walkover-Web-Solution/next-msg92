@@ -19,19 +19,19 @@ export default function CompareTableComp({ data }) {
             <div className='container cont cont_p gap-6'>
                 <h2 className='heading font-semibold'>{data.heading}</h2>
 
-                {data.tableHeading && <h3 className='text-xl font-bold'>{data.tableHeading}</h3>}
+                {data.tableHeading && <p className='text-xl'>{data.tableHeading}</p>}
 
                 <div className='block w-full mx-auto w-full rounded-lg border border-gray-200 bg-base-100 overflow-hidden'>
                     <div className='overflow-x-auto'>
                         <table className='table w-full w-2/3'>
                             <thead>
                                 <tr>
-                                    <th className='w-1/4 py-6 px-4'>{data.featureLabel}</th>
+                                    <th className='w-1/4 py-6 px-4 text-xl'>{data.featureLabel}</th>
 
                                     {data.columns?.map((col, index) => (
                                         <th
                                             key={col.key}
-                                            className={`py-6 px-4 text-black ${
+                                            className={`py-6 px-4 text-black text-xl ${
                                                 index === 0 ? 'rounded-t-lg bg-secondary' : ''
                                             }`}
                                         >
@@ -67,7 +67,16 @@ export default function CompareTableComp({ data }) {
 
                 {data.summary && <p>{data.summary}</p>}
 
-                {data.pricingNote && <p className='text-sm italic'>{data.pricingNote}</p>}
+                {data?.pricingNote && (
+                    <p className='text-sm italic'>
+                        {data.pricingNote}{' '}
+                        {data?.pricingLink?.url && (
+                            <a href={data.pricingLink.url} target='_blank' className='text-accent underline'>
+                                {data.pricingLink.text}
+                            </a>
+                        )}
+                    </p>
+                )}
             </div>
         );
     }
