@@ -4,6 +4,8 @@ import { ToastContainer } from 'react-toastify';
 import handleBrawserCookies from '@/utils/setCookies';
 import { useRouter } from 'next/router';
 import SummitBanner from '@/components/SummitBanner/SummitBanner';
+// Loads the experiment helpers once for every page. Nothing is assigned or sent here.
+import '@/utils/experiments';
 
 export default function App({ Component, pageProps }) {
     // Manage browser cookies to send to signup page

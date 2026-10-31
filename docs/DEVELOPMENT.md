@@ -73,9 +73,11 @@ All variables are declared in the `env` block of `next.config.mjs`. Next.js inli
 | `WHATSAPP_AUTHKEY`            | Optional (events) | No (secret)    | —             | MSG91 auth key for event WhatsApp messages (`src/pages/api/send-summit-whatsapp.js`). Never reference it outside `src/pages/api/`                                               |
 | `SUMMIT_WA_INTEGRATED_NUMBER` | Optional (events) | No             | —             | Same API route                                                                                                                                                                  |
 | `SUMMIT_WA_API_URL`           | Optional (events) | No             | —             | Same API route                                                                                                                                                                  |
+| `MW_EVENTS_URL`               | Optional          | Yes            | —             | A/B experiment events endpoint (`src/utils/experiments.js`). Unset: the control is shown and nothing is sent. Inlined at build time, like every other `env` key                 |
+| `MW_KEY`                      | Optional          | Yes            | —             | Publishable key for that endpoint (it can only append events). Same file. It is meant to be in the client bundle. Do not put a secret in this name                              |
 
 > [!WARNING]
-> Because of the `env` block, referencing `process.env.WHATSAPP_AUTHKEY` (or any future secret) from a component would publish it in the client bundle. Read secrets only inside `src/pages/api/*`.
+> Because of the `env` block, referencing `process.env.WHATSAPP_AUTHKEY` (or any future secret) from a component would publish it in the client bundle. Read secrets only inside `src/pages/api/*`. `MW_KEY` is the exception that is supposed to be public: `src/utils/experiments.js` reads it in the browser, and it can only append events.
 
 ## Build & Preview Verification
 
