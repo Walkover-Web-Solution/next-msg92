@@ -348,7 +348,7 @@ export default function MenuBarComp({ componentData, notificationData, pageInfo 
                             </a>
                         </div>
 
-                        <div className='z-[1000] flex items-center justify-end gap-2 xl:gap-4'>
+                        <div className='flex items-center justify-end gap-2 xl:gap-4'>
                             {notificationData && !notificationHidden && (
                                 <>
                                     {currentCountry?.languages && (
@@ -365,7 +365,7 @@ export default function MenuBarComp({ componentData, notificationData, pageInfo 
 
                                             <div
                                                 tabIndex={0}
-                                                className='dropdown-content bg-neutral z-[9999] w-32 rounded shadow'
+                                                className='dropdown-content bg-neutral w-32 rounded shadow'
                                             >
                                                 <ul>
                                                     {currentCountry.languages.map((language, index) => (
@@ -407,7 +407,7 @@ export default function MenuBarComp({ componentData, notificationData, pageInfo 
                                                 )}
 
                                                 {!useIconOnlyControls && (
-                                                    <span className='hidden min-[1200px]:inline'>
+                                                    <span className='hidden xl:inline'>
                                                         {currentCountry?.name || 'Global'}
                                                     </span>
                                                 )}
@@ -416,7 +416,7 @@ export default function MenuBarComp({ componentData, notificationData, pageInfo 
 
                                             <div
                                                 tabIndex={0}
-                                                className='dropdown-content bg-neutral z-[9999] w-60 rounded shadow'
+                                                className='dropdown-content bg-neutral w-60 rounded shadow'
                                             >
                                                 <ul>
                                                     <li
