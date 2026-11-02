@@ -3,6 +3,13 @@ import dotenv from 'dotenv';
 
 const customEnvConfig = dotenv.config().parsed || {};
 const getEnvValue = (key) => process.env?.[key] || customEnvConfig?.[key];
+const chatWidgetOrigin = (() => {
+    try {
+        return new URL(getEnvValue('CHAT_WIDGET_URL')).origin;
+    } catch {
+        return 'https://ctest.msg91.com';
+    }
+})();
 
 // --- Security Headers ---
 const securityHeaders = [
@@ -35,6 +42,22 @@ const securityHeaders = [
     },
 ];
 
+const embeddableSecurityHeaders = securityHeaders.map((header) =>
+    header.key === 'X-Frame-Options' ? { ...header, value: 'SAMEORIGIN' } : header
+);
+embeddableSecurityHeaders.push({
+    key: 'Content-Security-Policy',
+    value: [
+        "default-src 'self'",
+        `script-src 'self' 'unsafe-inline' 'unsafe-eval' ${chatWidgetOrigin} https://js.cobrowse.io`,
+        `style-src 'self' 'unsafe-inline' ${chatWidgetOrigin}`,
+        `frame-src ${chatWidgetOrigin}`,
+        "connect-src 'self' https: wss: http://127.0.0.1:7257",
+        "img-src 'self' data: blob: https:",
+        "font-src 'self' data: https:",
+    ].join('; '),
+});
+
 const nextConfig = {
     trailingSlash: false,
     reactStrictMode: false,
@@ -56,7 +79,11 @@ const nextConfig = {
     async headers() {
         return [
             {
-                source: '/(.*)',
+                source: '/whatsapp-chat-window-widget',
+                headers: embeddableSecurityHeaders,
+            },
+            {
+                source: '/((?!whatsapp-chat-window-widget).*)',
                 headers: securityHeaders,
             },
             {
@@ -76,10 +103,7 @@ const nextConfig = {
         SUBSCRIPTION_PRICING_URL: getEnvValue('SUBSCRIPTION_PRICING_URL'),
         VOICE_API_URL: getEnvValue('VOICE_API_URL'),
         LOGIN_URL: getEnvValue('LOGIN_URL'),
-        CHATBOT_BASE_URL: getEnvValue('CHATBOT_BASE_URL'),
         HELLO_API_URL: getEnvValue('HELLO_API_URL'),
-        CHATBOT_TEMPLATE_TEST_URL: getEnvValue('CHATBOT_TEMPLATE_TEST_URL'),
-        WHATSAPP_PRICING_URL: getEnvValue('WHATSAPP_PRICING_URL'),
         IMESSAGE_URL: getEnvValue('IMESSAGE_URL'),
 
         // Client IDs
@@ -102,6 +126,7 @@ const nextConfig = {
         // Chat Widget Config
         CHAT_WIDGET_TOKEN: getEnvValue('CHAT_WIDGET_TOKEN'),
         ECOMMERCE_WIDGET_TOKEN: getEnvValue('ECOMMERCE_WIDGET_TOKEN'),
+        WHATSAPP_CHAT_WIDGET_TOKEN: getEnvValue('WHATSAPP_CHAT_WIDGET_TOKEN'),
         CHAT_WIDGET_URL: getEnvValue('CHAT_WIDGET_URL'),
 
         // WhatsApp Outbound Config

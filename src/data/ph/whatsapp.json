@@ -1,7 +1,7 @@
 {
     "HeadComp": {
-        "title": "WhatsApp API for businesses | MSG91-Philippines",
-        "description": "Provide instant notifications and real-time customer support with MSG91’s WhatsApp API. Connect with your audience on their favorite chat platform seamlessly."
+        "title": "WhatsApp Business Platform in the Philippines | MSG91",
+        "description": "Connect with customers across the Philippines using the WhatsApp Business Platform. Automate conversations, send notifications, and improve customer engagement."
     },
     "BannerComp": {
         "slug": "whatsapp",
@@ -9,14 +9,14 @@
             "name": "WhatsApp",
             "icon": "/assets/icons/products/whatsapp.svg"
         },
-        "tagline": "WhatsApp Business Solutions",
-        "heading": "Seamless Global messaging and communications.",
-        "subheading": "Use Developer Friendly API to ensure smooth, real-time communication with your customers globally, enhancing engagement and satisfaction.",
+        "tagline": "WhatsApp marketing, automation and customer support",
+        "heading": "WhatsApp Business Platform for businesses in the Philippines",
+        "subheading": "Send WhatsApp campaigns, order updates and OTPs. Automate customer replies with no-code AI chatbots and give personalized support. MSG91 keeps all your marketing, sales and customer support conversations in one easy platform.",
         "lottie": "/assets/lotties/global-whatsapp.json",
-        "getstarted_btn": "Get Started",
-        "schedule_meet": "Schedule a Meeting",
+        "getstarted_btn": "Get Started With MSG91",
+        "schedule_meet": "Book a Free Demo",
         "trustedByComp": {
-            "heading": "Trusted by 30,000+ global businesses",
+            "heading": "Trusted by 30,000+ Businesses Worldwide | Official WhatsApp Business Platform | AI-Powered Automation",
             "logos": [
                 {
                     "name": "Xiaomi",
@@ -41,526 +41,914 @@
             ]
         }
     },
-    "WhyChooseMSG91": {
-        "heading": "Why Choose MSG91 for WhatsApp Business?",
-        "subheading": "MSG91 makes WhatsApp your most powerful communication channel — for marketing, support, sales, and everything in between. Reach customers where they actually respond.",
-        "content": [
-            {
-                "title": "Promotional Bulk WhatsApp Messaging via CSV",
-                "subtitle": "Turn Offers into Orders — Instantly",
-                "description": "Send personalized promotional messages via CSV straight to your customers’ WhatsApp inboxes — where they actually read and click.",
-                "img": "/assets/us/whatsapp/promotional_bulk_whatsapp_messaging_via_csv.json",
-                "highlights": [
-                    "Flash Sales & Limited-Time Discounts",
-                    "New Product Launches",
-                    "Festive & Seasonal Campaigns",
-                    "Win-back & Re-engagement Messages",
-                    "Upsell & Cross-sell Offers"
-                ],
-                "footer": "Reach thousands. Get instant clicks. Drive real sales. No spam folder. Just results.",
-                "schedule_meet": "Talk to Us"
-            },
-            {
-                "title": "Transactional WhatsApp Messaging",
-                "subtitle": "Messages That Matter — Delivered Fast",
-                "description": "Keep customers informed with real-time, automated updates on WhatsApp.",
-                "img": "/assets/us/whatsapp/transactional_whatsapp_messaging.json",
-                "highlights": [
-                    "Order & Payment Notifications",
-                    "OTPs, Login Alerts & Password Resets",
-                    "Appointment, Renewal & Payment Reminders",
-                    "Invoices, Tickets & Documents",
-                    "Delivery Status & Service Updates"
-                ],
-                "footer": "Reliable. Timely. Expected. Exactly what transactional messaging should be.",
-                "schedule_meet": "Book A Demo"
-            },
-            {
-                "title": "Customer Support on WhatsApp",
-                "subtitle": "Support That Feels Like a Conversation",
-                "description": "No more waiting. No more forms. Just real-time reply to your customers via WhatsApp — from bots or human agents.",
-                "img": "/assets/us/whatsapp/customer_support_on_whatsapp.json",
-                "highlights": [
-                    "Smart Chatbots for Instant Replies ",
-                    "Seamless Handoff to Human Agents",
-                    "Inbound Calling on WhatsApp",
-                    "One Unified Inbox for All Chats- Instagram, Emails, Webchat",
-                    "Real-Time Customer Updates"
-                ],
-                "cta": {
-                    "text": "Try WhatsApp Support in Action",
-                    "link": "https://wa.me/917316914306"
-                }
-            }
+    "WhatsAppOverview": {
+        "heading": "Too Many Customer Messages? There's a Better Way.",
+        "paragraphs": [
+            "\"Available pa po?\"",
+            "\"Pwede COD?\"",
+            "\"Nasaan na yung order ko?\"",
+            "These are everyday questions for many businesses in the Philippines.",
+            "When your team handles every enquiry manually, the messages keep coming, but important sales conversations can get buried.",
+            "MSG91 brings marketing, notifications, sales, and customer support into one connected WhatsApp experience. Let automation handle predictable tasks, and give your team more time for customers who need personal attention."
         ],
-        "WhatsAppDriveSales": {
-            "heading": "Drive Sales Directly on WhatsApp",
-            "subheading": "Sell Smarter — Where Customers Already Are.",
-            "description": "Showcase products, run ads, take orders — all inside a WhatsApp chat.",
-            "content": [
-                {
-                    "title": "Click-to-WhatsApp Ads",
-                    "description": "Use Instagram & Facebook to drive leads straight to chat."
-                },
-                {
-                    "title": "Make shopping easy on WhatsApp",
-                    "description": "Let customers browse, chat, and order with catalogs and payments."
-                },
-                {
-                    "title": "Customize Sales Journeys via WhatsApp",
-                    "description": "Send bulk offers, upsell intelligently, and close deals faster — all from one panel."
-                }
-            ],
-            "img": "/assets/us/whatsapp/drive_sales_directly_on_whatsapp.json",
-            "schedule_meet": "Book a Meeting"
-        }
+        "cta": {
+            "text": "Get Started With MSG91"
+        },
+        "ways_heading": "Everything Your Customer Communication Needs",
+        "ways": [
+            {
+                "icon": "MdCampaign",
+                "title": "Marketing",
+                "description": "Reach opted-in shoppers with relevant campaigns and product announcements."
+            },
+            {
+                "icon": "MdNotificationsActive",
+                "title": "Notifications",
+                "description": "Send timely order confirmations, COD verification requests, reminders, and delivery updates."
+            },
+            {
+                "icon": "MdSupportAgent",
+                "title": "Customer Support",
+                "description": "Answer enquiries through AI chatbots and connect customers with your team."
+            },
+            {
+                "icon": "MdShoppingCart",
+                "title": "Sales",
+                "description": "Help interested buyers explore products, ask questions, and complete the next step."
+            }
+        ]
     },
     "FeatureComp": {
-        "heading": "",
+        "heading": "MSG91 WhatsApp Business Platform Features",
+        "subheading": "One Platform for Every Stage of the Customer Journey. From the first promotional message to the final customer-support reply, MSG91 gives businesses the tools to manage WhatsApp communication without complicated manual processes.",
         "iconColor": "text-campaign",
         "features": [
             {
-                "name": "WhatsApp ChatBot: Instant Support, Anytime",
-                "content": "Transform your customer service experience with a WhatsApp ChatBot that delivers instant, accurate, and personalized responses. Automate routine queries, provide 24/7 support, and enhance customer satisfaction without human intervention just with another WhatsApp marketing tool.",
+                "name": "Promotional Bulk WhatsApp Messaging via CSV",
+                "content": "Planning an 11.11 sale or announcing a new product collection? Sending promotional messages individually can quickly become overwhelming. MSG91 WhatsApp marketing software helps Philippine businesses upload opted-in contacts through CSV files, personalise approved messages, and schedule promotional outreach directly from the dashboard. You can manage large customer lists without developing your own bulk-sending system.",
                 "more_content": {
                     "usecases": [
                         {
-                            "name": "FAQs and Queries",
-                            "description": "Automate WhatsApp template responses to frequently asked questions."
+                            "name": "Home Essentials",
+                            "description": "A Quezon City homeware store announces its 11.11 deals on kitchen organisers and storage products to subscribed shoppers."
                         },
                         {
-                            "name": "Order Tracking",
-                            "description": "Provide real-time updates on order status with WhatsApp business API."
+                            "name": "Beauty Retail",
+                            "description": "A Cebu cosmetics shop sends a payday-exclusive skincare bundle offer to customers who signed up for promotions."
                         },
                         {
-                            "name": "Appointment Booking",
-                            "description": "Let customers schedule appointments effortlessly with Interactive WhatsApp messages."
+                            "name": "Footwear",
+                            "description": "A Marikina shoe brand shares the launch of its new locally made sneaker collection."
                         },
                         {
-                            "name": "Lead Generation",
-                            "description": "Engage potential customers with instant replies with WhatsApp AI Chatbot."
-                        },
-                        {
-                            "name": "Feedback Collection",
-                            "description": "Gather customer feedback through automated WhatsApp survey template."
+                            "name": "Gift Shops",
+                            "description": "A Davao gift store sends Christmas gift-box offers to customers who requested seasonal updates."
                         }
                     ],
                     "features": [
-                        "24/7 availability for uninterrupted support.",
-                        "Instant responses on WhatsApp Chats to improve customer satisfaction.",
-                        "Customizable WhatsApp botflows for specific business needs.",
-                        "Integration with CRM tools for better data management."
-                    ]
-                },
-
-                "img": "/assets/global/whatsapp/whatsapp-revolutionize-customer-support-with-whatsapp-chatbot.svg",
-                "button": {
-                    "name": "ChatBot",
-                    "link": "/chatbot"
-                }
-            },
-            {
-                "name": "Click-to-WhatsApp Ads: Drive Engagement with Zero Costs",
-                "content": "Maximize your marketing efforts with Click-to-WhatsApp Ads, a powerful solution to connect with customers instantly. This feature allows businesses to drive traffic from online advertisements directly to WhatsApp conversations, creating a seamless transition from discovery to engagement.",
-                "more_content": {
-                    "usecases": [
-                        {
-                            "name": "Lead Generation",
-                            "description": "Drive potential customers from ads to WhatsApp for instant engagement."
-                        },
-                        {
-                            "name": "Customer Support",
-                            "description": "Allow users to connect with support teams directly from ads."
-                        },
-                        {
-                            "name": "Product Inquiries",
-                            "description": "Enable customers to ask questions about products or services."
-                        },
-                        {
-                            "name": "Event Registrations",
-                            "description": "Use ads to promote events and collect RSVPs via WhatsApp."
-                        },
-                        {
-                            "name": "Exclusive Offers",
-                            "description": "Advertise limited-time deals and redirect users to WhatsApp for redemption."
-                        }
-                    ],
-                    "features": [
-                        "Zero panel fees and no hidden costs.",
-                        "Seamless transition from ads to WhatsApp chats.",
-                        "Instant responses using AI-powered WhatsApp chatbots and bulk messaging.",
-                        "Cost-effective advertising with full ROI transparency.",
-                        "Enhanced WhatsApp lead generation capabilities."
-                    ]
-                },
-                "img": "/assets/global/whatsapp/whatsapp-click-to-whatsapp-ads-boost-engagement-with-zero-margin-costs.svg"
-            },
-            {
-                "name": "Bulk Sending Through CSV: Scale Your WhatsApp Marketing Effortlessly",
-                "content": "Simplify your communication strategy with bulk WhatsApp messaging through CSV uploads. Engage thousands of users simultaneously while maintaining a personalized touch for each recipient. Our WhatsApp Business API solution ensures high delivery rates and advanced analytics to optimize your campaigns.",
-                "more_content": {
-                    "usecases": [
-                        {
-                            "name": "Product Launches",
-                            "description": "Share new product details with thousands of customers instantly with WhatsApp catalog and carousel."
-                        },
-                        {
-                            "name": "Exclusive Offers",
-                            "description": "Send personalized discount codes or limited time offers to drive sales through WhatsApp Interactive templates."
-                        },
-                        {
-                            "name": "Critical Alerts",
-                            "description": "Notify customers about urgent updates, such as service disruptions or security alerts through WhatsApp API."
-                        },
-                        {
-                            "name": "Event Invitations",
-                            "description": "Invite customers to webinars, workshops, or sales events with WhatsApp campaign."
-                        },
-                        {
-                            "name": "Customer Updates",
-                            "description": "Share important updates like order confirmations, shipping details, or policy changes through WhatsApp API."
-                        }
-                    ],
-                    "features": [
-                        "Schedule campaigns for optimal timing.",
-                        "Automate followups to improve engagement.",
-                        "Use CSV uploads for seamless bulk WhatsApp messaging.",
-                        "Track delivery rates and optimize campaigns.",
-                        "Gain insights through WhatsApp analytics and reporting."
+                        "Bulk WhatsApp sending through CSV uploads.",
+                        "Personalised messages using customer details and template variables.",
+                        "Approved marketing templates with images, links, and buttons.",
+                        "Scheduled promotional sends with delivery-status monitoring."
                     ]
                 },
                 "img": "/assets/global/whatsapp/whatsapp-send-bulk-whatsapp-messages-effortlessly.svg"
             },
             {
-                "name": "OptOut Feature: Ensure Compliance in WhatsApp Marketing Automation",
-                "content": "Give your customers the power to control their communication preferences with the OptOut feature. This functionality ensures that recipients can unsubscribe from WhatsApp messages easily, maintaining a positive and respectful relationship with your brand. Transparency builds trust, creating a loyal and engaged audience.",
+                "name": "Transactional WhatsApp Messaging",
+                "content": "Customers shouldn't have to message your business repeatedly just to confirm an order or check an important transaction. Using the WhatsApp Cloud API, MSG91 helps businesses automate approved transactional messages based on activities in connected systems. From order confirmations to collection notices, important updates can reach customers without requiring manual follow-ups.",
                 "more_content": {
                     "usecases": [
                         {
-                            "name": "Compliance with Regulations",
-                            "description": "Ensure adherence to global communication laws."
+                            "name": "Online Grocery",
+                            "description": "A grocery service in Pasig confirms when a prepaid order is ready for scheduled delivery."
                         },
                         {
-                            "name": "List Hygiene",
-                            "description": "Maintain a clean and engaged customer list by removing uninterested users."
+                            "name": "Provincial Bus Services",
+                            "description": "A transport operator sends ticket confirmations with departure details for passengers travelling between Manila and Baguio."
                         },
                         {
-                            "name": "Customer Trust",
-                            "description": "Build transparency and trust by allowing users to control their preferences."
+                            "name": "Pharmacy Retail",
+                            "description": "A pharmacy notifies customers when their reserved over-the-counter products are ready for pickup."
                         },
                         {
-                            "name": "Reduced Spam",
-                            "description": "Minimize spam complaints and improve sender reputation of your WhatsApp number."
-                        },
-                        {
-                            "name": "Personalized Journeys",
-                            "description": "Focus on engaged customers for more effective WhatsApp communication."
+                            "name": "Water Utilities",
+                            "description": "A local water provider sends a confirmation after a customer's bill payment is successfully recorded."
                         }
                     ],
                     "features": [
-                        "Easy optout option for customers.",
-                        "Automated list updates to remove unsubscribed users.",
-                        "Compliance with legal requirements.",
-                        "Improved WhatsApp customer engagement and loyalty.",
-                        "Enhanced WhatsApp marketing strategies for better targeting."
-                    ]
-                },
-                "img": "/assets/global/whatsapp/whatsapp-opt-out-feature-for-better-customer-experience.svg"
-            },
-            {
-                "name": "Interactive Product Catalogs & WhatsApp Payments",
-                "content": "Transform WhatsApp into your onestop sales channel by sharing interactive product catalogs. Let your customers browse products, explore categories, and discover their preferences within a familiar chat environment. Enable WhatsApp payment solutions for instant, secure transactions, simplifying the buyer journey and reducing dropoff rates.",
-                "more_content": {
-                    "usecases": [
-                        {
-                            "name": "E-commerce Sales",
-                            "description": "Showcase products directly on WhatsApp for seamless shopping with the help of WhatsApp catalog templates."
-                        },
-                        {
-                            "name": "DirecttoConsumer (D2C)",
-                            "description": "Enable customers to browse and buy without leaving the app with instant WhatsApp payments."
-                        },
-                        {
-                            "name": "Instant Checkout",
-                            "description": "Reduce cart abandonment with WhatsApp payment solutions."
-                        },
-                        {
-                            "name": "Product Discovery",
-                            "description": "Help customers explore categories and find their preferences with WhatsApp Chatbot flows."
-                        },
-                        {
-                            "name": "Upselling and CrossSelling",
-                            "description": "Recommend related products through interactive catalogs."
-                        }
-                    ],
-                    "features": [
-                        "Interactive product catalogs with images and descriptions.",
-                        "Secure WhatsApp payment solutions for instant transactions.",
-                        "Faster checkout process to boost sales.",
-                        "Frictionless shopping experience for customers.",
-                        "Integration with WhatsApp for ecommerce platforms."
-                    ]
-                },
-                "img": "/assets/global/whatsapp/whatsapp-share-product-catalogs-and-enable-whatsapp-payments.svg"
-            },
-            {
-                "name": "Instant Template Creation",
-                "content": "Save time and effort by creating and approving WhatsApp templates instantly. Whether you're designing templates for automated WhatsApp campaigns, order updates, or personalized product recommendations, our platform allows you to build them effortlessly.",
-                "more_content": {
-                    "usecases": [
-                        {
-                            "name": "Marketing Campaigns",
-                            "description": "Design templates for promotions, discounts, and offers."
-                        },
-                        {
-                            "name": "Order Updates",
-                            "description": "Notify customers about order status, shipping, and delivery instantly through WhatsApp business API."
-                        },
-                        {
-                            "name": "Personalized Recommendations",
-                            "description": "Send tailored product suggestions based on user behavior."
-                        },
-                        {
-                            "name": "Event Reminders",
-                            "description": "Create WhatsApp templates for event invitations and followups."
-                        },
-                        {
-                            "name": "Customer Support",
-                            "description": "Use templates for FAQs and support queries with WhatsApp AI Assistance."
-                        }
-                    ],
-                    "features": [
-                        "Instant template creation and Metacompliant approvals.",
-                        "Customizable templates with buttons, images, and text.",
-                        "Centralized template management for easy access.",
-                        "Integration with WhatsApp marketing automation tools."
-                    ]
-                },
-                "img": "/assets/global/whatsapp/whatsapp-create-and-approve-templates-instantly.svg"
-            },
-            {
-                "name": "Seamless Integrations, Connect Tools, Simplify Workflows",
-                "content": "Integrate seamlessly with a wide range of powerful tools such as <strong>Zoho, Freshworks, WebEngage, MoEngage, CleverTap, Shopify, Wix, Google Sheets, Tally, and GIDDH.</strong> Our WhatsApp Business API solution allows you to connect these platforms directly to your messaging system, automating workflows and improving data flow across applications.",
-                "more_content": {
-                    "usecases": [
-                        {
-                            "name": "CRM Integration",
-                            "description": "Sync customer data from Zoho, Freshworks, or other CRMs and create personalized WhatsApp journeys."
-                        },
-                        {
-                            "name": "E-commerce Automation",
-                            "description": "Connect Shopify or Wix for order updates and promotions and send instant order notifications through WhatsApp business API solutions."
-                        },
-                        {
-                            "name": "Marketing Analytics",
-                            "description": "Use WebEngage or CleverTap for campaign tracking and plan your marketing automations accordingly."
-                        },
-                        {
-                            "name": "Workflow Automation",
-                            "description": "Integrate Google Sheets or Tally for data management and sending the Invoices through WhatsApp templates."
-                        },
-                        {
-                            "name": "Unified Communication",
-                            "description": "Manage all customer interactions from one platform."
-                        }
-                    ],
-                    "features": [
-                        "Integration with popular tools like Zoho, Shopify, and Google Sheets.",
-                        "Automated workflows for better efficiency.",
-                        "Centralized data flow across applications.",
-                        "Improved productivity and customer satisfaction.",
-                        "Enhanced WhatsApp CRM integration for seamless operations."
-                    ]
-                },
-                "img": "/assets/global/whatsapp/whatsapp-powerful-plugins-and-seamless-integrations.svg"
-            },
-            {
-                "name": "Scalable WhatsApp Business API",
-                "content": "Achieve seamless communication scalability with our robust WhatsApp Business API solution. Integrate messaging capabilities directly into your existing systems to create a unified customer experience. Whether it's sending notifications, handling support queries, or managing automated workflows, the API adapts to your business needs.",
-                "more_content": {
-                    "usecases": [
-                        {
-                            "name": "Order Updates & Tracking",
-                            "description": "Send realtime order confirmations, shipping updates, and delivery notifications directly to customers with WhatsApp API."
-                        },
-                        {
-                            "name": "24/7 Customer Support",
-                            "description": "Automate responses to FAQs, troubleshoot issues, and provide instant support using AIpowered WhatsApp chatbots."
-                        },
-                        {
-                            "name": "Appointment Scheduling",
-                            "description": "Allow customers to book, reschedule, or cancel appointments seamlessly through WhatsApp."
-                        },
-                        {
-                            "name": "Payment Notifications & Reminders",
-                            "description": "Notify customers about pending payments, subscription renewals, or transaction confirmations."
-                        },
-                        {
-                            "name": "Feedback Collection",
-                            "description": "Automate postpurchase or postservice feedback requests to improve customer satisfaction with AI Assistance."
-                        }
-                    ],
-                    "features": [
-                        "Scalable and secure WhatsApp Business API.",
-                        "Customizable solutions for unique business processes.",
-                        "Highspeed performance during hightraffic scenarios.",
-                        "Unified customer experience across platforms.",
-                        "Integration with WhatsApp automation tools for efficiency."
+                        "Event-triggered WhatsApp utility messages.",
+                        "Approved templates for transactions and service notifications.",
+                        "Personalised booking, order, and payment-reference information.",
+                        "API-based delivery with messaging-status tracking."
                     ]
                 },
                 "img": "/assets/global/whatsapp/whatsapp-robust-whatsapp-api-for-business-scalability.svg"
             },
             {
-                "name": "Automated Reminders: Never Miss an Opportunity",
-                "content": "Never miss an opportunity to engage your customers with automated WhatsApp reminders for birthdays, anniversaries, class schedules, and more. Strengthen customer relationships by sending personalized messages that make them feel valued and appreciated.",
+                "name": "Automated WhatsApp Reminders",
+                "content": "A forgotten appointment or missed deadline doesn't always mean the customer has lost interest. Sometimes they simply need a reminder. MSG91 helps Philippine businesses schedule WhatsApp messages around important appointments, due dates, and upcoming activities, reducing manual follow-up work while keeping customers informed.",
                 "more_content": {
                     "usecases": [
                         {
-                            "name": "Birthday Wishes",
-                            "description": "Send personalized birthday whatsapp messages to customers."
+                            "name": "Board Exam Review Centres",
+                            "description": "A review centre reminds enrolled students about an upcoming mock examination."
                         },
                         {
-                            "name": "Anniversary Reminders",
-                            "description": "Celebrate customer milestones with special offers WhatsApp automations."
+                            "name": "Dental Clinics",
+                            "description": "A dental clinic in Iloilo sends reminders before scheduled cleaning appointments."
                         },
                         {
-                            "name": "Class Schedules",
-                            "description": "Notify students or participants about upcoming sessions through WhatsApp business API."
+                            "name": "Condominium Administration",
+                            "description": "A property-management office reminds residents about upcoming association-dues deadlines."
                         },
                         {
-                            "name": "Appointment Reminders",
-                            "description": "Reduce noshows for appointments or consultations with WhatsApp campaigns."
-                        },
-                        {
-                            "name": "Subscription Renewals",
-                            "description": "Remind customers about upcoming renewals with WhatsApp AI Chatbots."
+                            "name": "Motorcycle Service Centres",
+                            "description": "A workshop reminds customers when their next preventive-maintenance appointment is due."
                         }
                     ],
                     "features": [
-                        "Automated recurring reminders.",
-                        "Personalized messages for better engagement.",
-                        "Timely updates to improve attendance and conversions.",
-                        "Enhanced customer relationships through thoughtful communication.",
-                        "Integration with WhatsApp for appointment scheduling."
+                        "Scheduled reminders through connected workflows.",
+                        "Personalised date, time, and appointment information.",
+                        "Integration with compatible booking, billing, and CRM systems.",
+                        "Approved reminder templates with supported response buttons."
                     ]
                 },
                 "img": "/assets/global/whatsapp/whatsapp-audience-segmentation-and-automated-reminders-through-whatsapp.svg"
             },
             {
-                "name": "Audience Segmentation: Deliver Targeted Campaigns",
-                "content": "Unlock the power of WhatsApp audience segmentation to send tailored messages to specific customer groups. Whether targeting premium clients, firsttime buyers, or repeat customers, segmentation helps deliver highly relevant campaigns that drive engagement and conversions.",
+                "name": "Two-Way WhatsApp Customer Support",
+                "content": "Customers don't always want an automated update. Sometimes they need to explain what went wrong or ask another question. With WhatsApp Business Platform in the Philippines, MSG91 supports two-way conversations that teams can manage through MSG91 Hello. Agents can review previous messages, coordinate with teammates, and follow up without losing the customer's context.",
                 "more_content": {
                     "usecases": [
                         {
-                            "name": "Premium Clients",
-                            "description": "Send exclusive offers to highvalue customers with our simplified WhatsApp marketing automation tools."
+                            "name": "Internet Service Providers",
+                            "description": "A regional ISP helps subscribers troubleshoot intermittent connectivity."
                         },
                         {
-                            "name": "FirstTime Buyers",
-                            "description": "Welcome new customers with special discounts through WhatsApp Chatbots."
+                            "name": "University Administration",
+                            "description": "A university in Cebu answers student requests about transcripts and certification documents."
                         },
                         {
-                            "name": "Repeat Customers",
-                            "description": "Reward loyal customers with personalized deals with Coupons through WhatsApp Business API."
+                            "name": "Water Refilling Stations",
+                            "description": "A delivery-based water station resolves complaints about missed container pickups."
                         },
                         {
-                            "name": "Location Based Campaigns",
-                            "description": "Target users based on their geographic location and create Personalized customer journey."
-                        },
-                        {
-                            "name": "Behavioral Segmentation",
-                            "description": "Send tailored WhatsApp messages based on user engagement or purchase history with the help of WhatsApp marketing tools."
+                            "name": "Building Management",
+                            "description": "A residential property team assists tenants with access-card and facilities enquiries."
                         }
                     ],
                     "features": [
-                        "Automated segmentation for precise targeting and WhatsApp campaigns.",
-                        "Personalized customer journeys for better engagement.",
-                        "Relevant offers and updates based on user data with WhatsApp marketing automations.",
-                        "Improved WhatsApp campaign effectiveness and ROI.",
-                        "WhatsApp Integration for lead nurturing."
+                        "Two-way communication for eligible customer conversations.",
+                        "Shared inbox with customer history through Hello.",
+                        "Conversation assignments and ticket management.",
+                        "Human-agent responses through desktop and supported mobile access."
+                    ]
+                },
+                "img": "/assets/in/whatsapp/whatsapp-2way-communication.svg"
+            },
+            {
+                "name": "WhatsApp AI Chatbot for 24/7 Customer Assistance",
+                "content": "Customers may message in Filipino, English, or a mix of both. MSG91 lets businesses configure AI-powered WhatsApp chatbots for Filipino and English conversations, making support more natural for local customers. Bots can answer common questions, use connected information for complicated enquiries, and hand over conversations through Hello when a human agent is needed.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Appliance Retail",
+                            "description": "A store helps customers compare inverter air conditioners based on room size and energy requirements."
+                        },
+                        {
+                            "name": "Island Tourism",
+                            "description": "A Palawan travel agency answers questions about tour inclusions, weather-dependent schedules, and booking conditions."
+                        },
+                        {
+                            "name": "Agricultural Supplies",
+                            "description": "A seed supplier helps customers understand product specifications and suitable planting applications."
+                        },
+                        {
+                            "name": "Prepaid Internet Services",
+                            "description": "A provider explains available data packages and checks coverage through connected service information."
+                        }
+                    ],
+                    "features": [
+                        "AI conversations configurable in Filipino and English.",
+                        "Rule-based flows combined with contextual AI responses.",
+                        "Answers informed by connected business data and supported APIs.",
+                        "Human-agent handover through MSG91 Hello."
+                    ]
+                },
+                "img": "/assets/global/whatsapp/whatsapp-revolutionize-customer-support-with-whatsapp-chatbot.svg",
+                "button": {
+                    "name": "Explore MSG91 WhatsApp AI Chatbots.",
+                    "link": "/ph/whatsapp/chatbot"
+                }
+            },
+            {
+                "name": "Drive Sales Directly Through WhatsApp Conversations",
+                "content": "A customer is interested in buying, but they still have questions about product options, requirements, or availability. Instead of sending them through several forms, MSG91 helps businesses continue the sales journey inside WhatsApp. Interactive messages and guided workflows let teams collect the right information and connect customers with salespeople when needed.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Bridal Wear",
+                            "description": "A bridal studio collects gown preferences, fitting dates, and budget ranges before booking a consultation."
+                        },
+                        {
+                            "name": "Motorcycle Dealerships",
+                            "description": "A dealership helps customers compare available models and request financing information."
+                        },
+                        {
+                            "name": "Packaging Suppliers",
+                            "description": "A packaging manufacturer collects box dimensions, order quantities, and printing requirements before preparing a quotation."
+                        },
+                        {
+                            "name": "Residential Lots",
+                            "description": "A property agency guides interested buyers through lot-size preferences and viewing requests."
+                        }
+                    ],
+                    "features": [
+                        "Interactive buttons and list messages.",
+                        "Guided enquiries using supported WhatsApp Flows.",
+                        "Automated collection of sales requirements.",
+                        "CRM-connected lead follow-up through supported integrations."
+                    ]
+                },
+                "img": "/assets/us/whatsapp/drive_sales_directly_on_whatsapp.json"
+            },
+            {
+                "name": "Click-to-WhatsApp Ads for Lead Generation",
+                "content": "Someone sees your Facebook ad and wants to ask about the offer before signing up. Why make them fill out a long form first? Click-to-WhatsApp Ads let interested customers open a WhatsApp conversation directly from eligible Facebook and Instagram advertisements. MSG91 helps teams respond quickly, qualify enquiries, and connect promising leads with the right salesperson.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Preselling Condominiums",
+                            "description": "A Metro Manila developer collects enquiries about unit sizes, payment terms, and viewing schedules."
+                        },
+                        {
+                            "name": "Solar Energy",
+                            "description": "A residential solar installer asks homeowners about average electricity consumption and roof suitability."
+                        },
+                        {
+                            "name": "Tutorial Centres",
+                            "description": "A tutorial service collects children's grade levels and preferred subjects from parents responding to ads."
+                        },
+                        {
+                            "name": "Aesthetic Clinics",
+                            "description": "A clinic gathers consultation requests and preferred treatment categories from Instagram enquiries."
+                        }
+                    ],
+                    "features": [
+                        "Customer-initiated chats from eligible Facebook and Instagram ads.",
+                        "Automated initial replies to advertising enquiries.",
+                        "Chatbot-based lead qualification.",
+                        "Conversation routing to appropriate sales agents."
+                    ]
+                },
+                "img": "/assets/global/whatsapp/whatsapp-click-to-whatsapp-ads-boost-engagement-with-zero-margin-costs.svg",
+                "button": {
+                    "name": "Explore MSG91 Click-to-WhatsApp Ads.",
+                    "link": "https://msg91.com/help/whatsapp/click-to-whatsapp-ads"
+                }
+            },
+            {
+                "name": "WhatsApp Product Catalogue",
+                "content": "Online shoppers often want to compare products before placing an order. Instead of repeatedly sending individual photos and descriptions, businesses can use WhatsApp catalogue messages to present product information in one conversation. MSG91 supports product catalogue messaging through compatible WhatsApp APIs, making product discovery easier for customers.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Local Snacks",
+                            "description": "A pasalubong business in Iloilo displays gift packs of regional delicacies with prices and sizes."
+                        },
+                        {
+                            "name": "Footwear Accessories",
+                            "description": "A retailer shows different shoe-care products and available variants."
+                        },
+                        {
+                            "name": "Indoor Plants",
+                            "description": "A plant nursery helps customers browse low-maintenance plants and pot combinations."
+                        },
+                        {
+                            "name": "Office Furniture",
+                            "description": "An office-supply store presents desk and ergonomic-chair options to interested buyers."
+                        }
+                    ],
+                    "features": [
+                        "Single-product and multi-product catalogue messages.",
+                        "Product images, descriptions, and pricing information.",
+                        "Interactive product exploration through WhatsApp.",
+                        "Compatible Meta catalogue and API integrations."
+                    ]
+                },
+                "img": "/assets/global/whatsapp/whatsapp-share-product-catalogs-and-enable-whatsapp-payments.svg"
+            },
+            {
+                "name": "WhatsApp Broadcast and Campaign Management",
+                "content": "A single promotional message is easy to plan. Running campaigns throughout the year is more complicated. From summer travel promotions to holiday campaigns, MSG91 helps Philippine businesses organise broadcasts, schedule communication, and review performance through a central dashboard rather than manually managing each promotional activity.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Hotel Groups",
+                            "description": "A domestic hotel chain schedules summer staycation campaigns for opted-in past guests."
+                        },
+                        {
+                            "name": "Fitness Chains",
+                            "description": "A gym group coordinates a new-year membership campaign across participating branches."
+                        },
+                        {
+                            "name": "Bakeries",
+                            "description": "A bakery chain manages pre-order announcements ahead of Valentine's Day."
+                        },
+                        {
+                            "name": "Department Stores",
+                            "description": "A retailer coordinates a multi-branch loyalty campaign during a major shopping period."
+                        }
+                    ],
+                    "features": [
+                        "Centralised campaign and broadcast management.",
+                        "Scheduling and campaign-launch controls.",
+                        "Audience selection with personalised approved templates.",
+                        "Campaign-level performance tracking."
+                    ]
+                },
+                "img": "/assets/global/whatsapp/whatsapp-drive-engagement-with-whatsapp-broadcast-and-campaigns.svg",
+                "button": {
+                    "name": "Explore MSG91 Campaign.",
+                    "link": "/ph/campaign"
+                }
+            },
+            {
+                "name": "WhatsApp Click Count Tracking",
+                "content": "How do you know whether customers are actually interested in the links you share? MSG91 supports click tracking for properly configured WhatsApp template website buttons, giving businesses a clearer view of link engagement. Instead of relying only on message delivery and read statuses, marketers can check whether customers opened specific pages.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Skills Training",
+                            "description": "A TESDA-accredited training provider, where applicable, checks interest in a course-information link."
+                        },
+                        {
+                            "name": "Used Car Retail",
+                            "description": "A dealership tracks clicks on its updated vehicle-inventory page."
+                        },
+                        {
+                            "name": "Music Events",
+                            "description": "A concert organiser reviews clicks on the seating-plan page shared with ticket subscribers."
+                        },
+                        {
+                            "name": "Equipment Rental",
+                            "description": "A supplier measures interest in a rental-equipment specification page."
+                        }
+                    ],
+                    "features": [
+                        "Click counting for configured WhatsApp template URL buttons.",
+                        "Eligible static and dynamic website links.",
+                        "Click information visible through supported logs.",
+                        "Additional template click reporting where available."
+                    ]
+                },
+                "button": {
+                    "name": "Explore MSG91 WhatsApp Click Count Tracking.",
+                    "link": "https://msg91.com/help/whatsapp"
+                },
+                "img": "/assets/in/whatsapp/whatsapp-click-counts.svg"
+            },
+            {
+                "name": "Base64 Media Support for WhatsApp API",
+                "content": "Some businesses generate customer documents automatically and need to send them without manually uploading each file. MSG91 supports compatible Base64 media attachments through its WhatsApp APIs, helping developers integrate document delivery into existing applications. This is especially useful for files generated dynamically from business systems.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Commercial Billing",
+                            "description": "A billing application sends generated PDF statements to business clients."
+                        },
+                        {
+                            "name": "Event Registration",
+                            "description": "A ticketing platform delivers digital admission passes to registered attendees."
+                        },
+                        {
+                            "name": "Equipment Inspection",
+                            "description": "A maintenance company shares a completed inspection report with its client."
+                        },
+                        {
+                            "name": "Product Warranties",
+                            "description": "An electronics distributor sends a digital warranty document after registration."
+                        }
+                    ],
+                    "features": [
+                        "Support for compatible Base64 media attachments.",
+                        "JSON-based media payloads through supported APIs.",
+                        "Integration with dynamically generated business documents.",
+                        "File handling within WhatsApp-supported format and size restrictions."
+                    ]
+                },
+                "img": "/assets/in/whatsapp/whatsapp-support-base64.svg"
+            },
+            {
+                "name": "Create and Manage WhatsApp Templates Inside the Panel",
+                "content": "Businesses send recurring messages every day, but preparing and approving templates shouldn't require unnecessary switching between tools. Through the WhatsApp Business Platform, MSG91 lets teams create, organise, and manage templates directly from the dashboard. Its template library also helps businesses prepare common message formats and submit them for Meta approval.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Private Schools",
+                            "description": "A school prepares standard messages for unexpected class-suspension announcements."
+                        },
+                        {
+                            "name": "Condominium Developers",
+                            "description": "A developer creates templates for scheduled unit-turnover appointments."
+                        },
+                        {
+                            "name": "Laundry Services",
+                            "description": "A laundry business sets up consistent garment-collection notices."
+                        },
+                        {
+                            "name": "Cooperative Organisations",
+                            "description": "A cooperative creates standardised acknowledgements for eligible member transactions."
+                        }
+                    ],
+                    "features": [
+                        "Template creation and management inside MSG91.",
+                        "Template library with suitable message structures.",
+                        "Meta approval-status tracking.",
+                        "Custom variables, supported media, and interactive buttons."
+                    ]
+                },
+                "img": "/assets/global/whatsapp/whatsapp-create-and-approve-templates-instantly.svg",
+                "button": {
+                    "name": "Explore the MSG91 WhatsApp Template Library.",
+                    "link": "https://msg91.com/help/whatsapp"
+                }
+            },
+            {
+                "name": "WhatsApp Analytics and Campaign Performance",
+                "content": "Sending thousands of messages is useful only when you understand the results. MSG91 provides WhatsApp analytics that help businesses examine available delivery, read, and failure information. Marketing teams can review campaigns while operations teams identify communication problems and opportunities for improvement.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Regional Retail",
+                            "description": "A Mindanao retailer compares message engagement across two seasonal product campaigns."
+                        },
+                        {
+                            "name": "Courier Operations",
+                            "description": "A delivery company monitors which service notifications are failing during peak-volume periods."
+                        },
+                        {
+                            "name": "Membership Services",
+                            "description": "A subscription business reviews the reach of its renewal communications."
+                        },
+                        {
+                            "name": "Hospitality",
+                            "description": "A resort group compares engagement with promotional messages across its properties."
+                        }
+                    ],
+                    "features": [
+                        "Graphical WhatsApp message analytics.",
+                        "Sent, delivered, read, and failed-message information.",
+                        "Date and other supported reporting filters.",
+                        "Campaign and template performance views where available."
+                    ]
+                },
+                "img": "/assets/in/whatsapp/whatsapp-analytics.svg"
+            },
+            {
+                "name": "Export WhatsApp Message Logs",
+                "content": "Sometimes a customer says they never received an important message. Rather than guessing what went wrong, your team needs detailed sending records. MSG91 allows businesses to filter and export WhatsApp reports, making it easier to investigate delivery failures, review message activity, and prepare internal reports.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "BPO Operations",
+                            "description": "A customer-service outsourcing team reviews outbound message delivery records for a client account."
+                        },
+                        {
+                            "name": "Warehouse Management",
+                            "description": "A distribution centre investigates failed pickup-readiness notifications."
+                        },
+                        {
+                            "name": "Insurance Administration",
+                            "description": "An insurer exports claim-status notification records for internal reconciliation."
+                        },
+                        {
+                            "name": "Event Operations",
+                            "description": "A ticketing team checks which registered attendees did not receive venue-change notices."
+                        }
+                    ],
+                    "features": [
+                        "Exportable WhatsApp delivery reports.",
+                        "Filters for date, status, number, and direction.",
+                        "Available timestamps, request IDs, and failure reasons.",
+                        "Downloadable Excel reports for operational reviews."
+                    ]
+                },
+                "img": "/assets/global/whatsapp/whatsapp-simplify-reporting-with-whatsapp-export-logs.svg",
+                "button": {
+                    "name": "Explore the MSG91 WhatsApp Reports Guide.",
+                    "link": "/ph/reports"
+                }
+            },
+            {
+                "name": "WhatsApp Payments and Payment Links",
+                "content": "A customer may be ready to pay but still needs a convenient checkout option. MSG91 supports payment-related messaging and API workflows that can connect customers to compatible payment providers. Philippine businesses can share suitable external checkout or payment links, including GCash or Maya payment options where their chosen payment provider supports them, without claiming that native WhatsApp payments are universally available.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Home Bakeries",
+                            "description": "A cake business shares an external deposit-payment link after confirming a customised order."
+                        },
+                        {
+                            "name": "Pottery Workshops",
+                            "description": "A studio sends a payment link for a reserved workshop slot."
+                        },
+                        {
+                            "name": "Water Delivery",
+                            "description": "A water-supply service shares a compatible checkout link for a business customer's monthly delivery plan."
+                        },
+                        {
+                            "name": "Private Music Lessons",
+                            "description": "A music teacher sends a payment link after agreeing on a lesson package."
+                        }
+                    ],
+                    "features": [
+                        "Payment-link messaging through compatible workflows.",
+                        "Integration possibilities with supported external payment providers.",
+                        "Payment requests linked to customer conversations.",
+                        "External checkout methods based on provider and market availability."
+                    ]
+                },
+                "img": "/assets/lotties/global-whatsapp.json"
+            },
+            {
+                "name": "WhatsApp Opt-Out and Blacklist Management",
+                "content": "Not everyone wants promotional messages forever. MSG91 helps businesses respect customer preferences through configurable opt-out keywords, message rules, and blocked-contact controls. These features support responsible communication and help businesses meet applicable requirements under the Philippines' Data Privacy Act of 2012.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Property Newsletters",
+                            "description": "A real-estate agency removes people who no longer want residential-project promotions."
+                        },
+                        {
+                            "name": "Skincare Brands",
+                            "description": "A beauty company stops marketing messages when a subscriber opts out."
+                        },
+                        {
+                            "name": "Fundraising Organisations",
+                            "description": "A nonprofit respects a donor's request to stop campaign appeals."
+                        },
+                        {
+                            "name": "Health Clubs",
+                            "description": "A membership business removes former members from promotional upgrade announcements when requested."
+                        }
+                    ],
+                    "features": [
+                        "Configurable opt-out keywords such as STOP.",
+                        "Rules for relevant message categories and templates.",
+                        "Blacklisted-number management.",
+                        "Supported contact exclusions across selected messaging workflows."
+                    ]
+                },
+                "img": "/assets/global/whatsapp/whatsapp-opt-out-feature-for-better-customer-experience.svg",
+                "button": {
+                    "name": "Explore MSG91 WhatsApp Opt-Out Rules.",
+                    "link": "https://msg91.com/help/whatsapp"
+                }
+            },
+            {
+                "name": "Audience Segmentation for Relevant Campaigns",
+                "content": "A college student shopping for a laptop doesn't need the same offer as a parent looking for school supplies. MSG91 helps businesses organise audiences using available preferences, purchase information, and compatible segmentation workflows. This makes communication more relevant without treating an entire customer database as one identical audience.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "School Supplies",
+                            "description": "A retailer separates preschool parents from customers shopping for senior-high-school materials."
+                        },
+                        {
+                            "name": "Motorcycle Accessories",
+                            "description": "A parts store groups customers by compatible motorcycle categories."
+                        },
+                        {
+                            "name": "Pet Retail",
+                            "description": "A shop sends different updates to dog owners and aquarium hobbyists."
+                        },
+                        {
+                            "name": "Career Education",
+                            "description": "A learning provider separates working professionals from recent graduates interested in different programmes."
+                        }
+                    ],
+                    "features": [
+                        "Contact groups based on imported or connected data.",
+                        "Segmentation using available customer attributes.",
+                        "Relevant approved templates for different audiences.",
+                        "Supported campaign selection based on customer preferences."
                     ]
                 },
                 "img": "/assets/global/whatsapp/whatsapp-audience-segmentation-for-targeted-campaigns-and-customer-journeys.svg"
             },
             {
-                "name": "Broadcast and Campaign Management: Engage at Scale",
-                "content": "Leverage the power of WhatsApp Broadcast and Campaigns to reach your audience with personalized messages at scale. Whether it's promoting a new product, sharing exclusive offers, or sending event invitations, WhatsApp campaigns ensure your message lands directly in your customers' inboxes.",
+                "name": "WhatsApp Integrations, APIs, and Webhooks",
+                "content": "Your WhatsApp messages shouldn't operate separately from your store, CRM, or internal software. When comparing WhatsApp Business service provider in the Philippines, integration flexibility matters. MSG91 provides messaging APIs, supported integrations, and webhooks that help businesses connect WhatsApp communication with operational events instead of manually transferring information between systems.",
                 "more_content": {
                     "usecases": [
                         {
-                            "name": "Product Launches",
-                            "description": "Announce new products to your entire customer base with WhatsApp campaigns."
+                            "name": "Shopify E-commerce",
+                            "description": "An online store triggers a fulfilment notification when a Shopify order is dispatched."
                         },
                         {
-                            "name": "Festive Offers",
-                            "description": "Share seasonal discounts and promotions with interactive WhatsApp catalogs and templates."
+                            "name": "Wholesale Distribution",
+                            "description": "A supplier creates a sales follow-up after a quotation advances to a defined CRM stage."
                         },
                         {
-                            "name": "Event Invitations",
-                            "description": "Send invites to webinars, workshops, or sales events with WhatsApp API."
+                            "name": "Appointment Software",
+                            "description": "A service business connects confirmed booking changes to an automated messaging workflow."
                         },
                         {
-                            "name": "Customer Updates",
-                            "description": "Notify users about policy changes or service updates with WhatsApp utility templates at very affordable pricing."
-                        },
-                        {
-                            "name": "Personalized Offers",
-                            "description": "Deliver tailored deals based on user behavior and WhatsApp marketing automations."
+                            "name": "Last-Mile Delivery",
+                            "description": "A logistics provider updates customers when its connected delivery system records a delivery attempt."
                         }
                     ],
                     "features": [
-                        "Bulk WhatsApp messaging with CSV uploads for seamless campaigns.",
-                        "Advanced audience segmentation for targeted WhatsApp campaigns.",
-                        "Scheduled campaigns for optimal timing with WhatsApp marketing tools.",
-                        "Realtime analytics to track WhatsApp campaign performance.",
-                        "High engagement rates with personalized messaging."
+                        "Supported Shopify and CRM integrations.",
+                        "Custom messaging APIs for business applications.",
+                        "Webhooks for incoming messages and supported events.",
+                        "Delivery-status callbacks for connected workflows."
                     ]
                 },
-                "img": "/assets/global/whatsapp/whatsapp-drive-engagement-with-whatsapp-broadcast-and-campaigns.svg"
+                "img": "/assets/global/whatsapp/whatsapp-powerful-plugins-and-seamless-integrations.svg",
+                "button": {
+                    "name": "Explore the MSG91 Shopify Integration Guide.",
+                    "link": "https://msg91.com/help/hello-contact-center/hello-faqs/hello-chat-widget-in-your-shopify-store"
+                }
             },
             {
-                "name": "Export Logs: Simplify Reporting and Compliance",
-                "content": "Streamline your reporting and analysis process with WhatsApp Export Logs. Export detailed logs of all your WhatsApp interactions, including messages sent, delivered, read, click counts and responded to. Use this data to analyze campaign performance, track customer behavior, and ensure compliance with communication regulations.",
+                "name": "WhatsApp OTPs With Multi-Channel Fallback",
+                "content": "Customers trying to sign in or verify an account don't want to restart the entire process when an OTP fails to arrive. MSG91 supports WhatsApp authentication templates and configurable verification workflows. With the OTP Widget, businesses can provide alternative channels where supported, making verification more convenient for users.",
                 "more_content": {
                     "usecases": [
                         {
-                            "name": "WhatsApp Campaign Analysis",
-                            "description": "Evaluate the success of WhatsApp marketing campaigns including messages sent, delivered, read, click counts and responded to."
+                            "name": "Food Delivery Apps",
+                            "description": "A delivery platform verifies new customer registrations."
                         },
                         {
-                            "name": "Customer Insights",
-                            "description": "Analyze interaction patterns for better targeting and WhatsApp campaign planning."
+                            "name": "Online Ticketing",
+                            "description": "A booking website authenticates users accessing their ticket accounts."
                         },
                         {
-                            "name": "Click Count Performance",
-                            "description": "Track how many users have clicked on the provided link in the WhatsApp template and analyze the performance of the template."
+                            "name": "Digital Wallet Services",
+                            "description": "A financial application verifies eligible account sign-ins."
+                        },
+                        {
+                            "name": "Community-Service Portals",
+                            "description": "A local service application confirms account access before users update important details."
                         }
                     ],
                     "features": [
-                        "Easy export of WhatsApp message logs in CSV format.",
-                        "Detailed insights into message delivery and engagement.",
-                        "Compliance with data protection and communication laws.",
-                        "Improved decisionmaking with actionable WhatsApp analytics data."
+                        "Approved WhatsApp authentication templates.",
+                        "Configurable OTP resend workflows.",
+                        "Supported SMS, voice, and email fallback channels.",
+                        "OTP Widget and API integration options."
                     ]
                 },
-                "img": "/assets/global/whatsapp/whatsapp-simplify-reporting-with-whatsapp-export-logs.svg"
+                "button": {
+                    "name": "Explore MSG91 OTP.",
+                    "link": "/ph/otp"
+                },
+                "img": "/assets/global/otp/lotties/multi_channel_otp_delivery.json"
+            },
+            {
+                "name": "WhatsApp Voice Calling and Voice AI",
+                "content": "Sometimes customers can explain a problem faster by talking than by typing several messages. MSG91 supports WhatsApp Voice Calling for eligible Cloud API numbers and offers Voice AI capabilities in supported configurations. Businesses can combine voice assistance with messaging and route conversations to human agents when necessary.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Plumbing Services",
+                            "description": "A homeowner explains the location and urgency of a water-leak problem."
+                        },
+                        {
+                            "name": "Water-Dispenser Maintenance",
+                            "description": "A technician guides a customer through basic dispenser troubleshooting."
+                        },
+                        {
+                            "name": "Commercial Logistics",
+                            "description": "A delivery coordinator clarifies a difficult warehouse-access instruction."
+                        },
+                        {
+                            "name": "Resort Transfers",
+                            "description": "A resort team assists a guest with last-minute pier pickup directions."
+                        }
+                    ],
+                    "features": [
+                        "WhatsApp calling for eligible business numbers.",
+                        "Configurable inbound voice workflows.",
+                        "Voice AI assistance where supported.",
+                        "Human-agent routing based on the selected configuration."
+                    ]
+                },
+                "button": {
+                    "name": "Explore MSG91 WhatsApp Voice Calling.",
+                    "link": "https://msg91.com/help/whatsapp/whatsapp-voice-calling-voice-chatbot"
+                },
+                "img": "/assets/global/hello-chatbot/voice_bot.webp"
+            },
+            {
+                "name": "MSG91 Chat Window for Longer Customer Conversations",
+                "content": "Some customer requests need several messages, explanations, and follow-ups. MSG91 Chat Window lets businesses move eligible WhatsApp conversations into a dedicated chat experience while continuing assistance through Hello. Rather than sending every reply through WhatsApp, teams can handle extended conversations through a connected support environment.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "School Admissions",
+                            "description": "An admissions officer explains several application-document corrections to a parent."
+                        },
+                        {
+                            "name": "Technical Support",
+                            "description": "A software provider guides a customer through multiple troubleshooting steps."
+                        },
+                        {
+                            "name": "Travel Changes",
+                            "description": "A travel agency works with a passenger to revise a multi-stop domestic itinerary."
+                        },
+                        {
+                            "name": "Property Handover",
+                            "description": "A developer assists a new homeowner with a list of reported unit defects before inspection."
+                        }
+                    ],
+                    "features": [
+                        "WhatsApp-to-Chat Window conversation continuation.",
+                        "Connected chatbot and human-agent support through Hello.",
+                        "Dedicated chat environment for extended requests.",
+                        "No Meta WhatsApp messaging charges for messages exchanged inside Chat Window."
+                    ]
+                },
+                "button": {
+                    "name": "Explore the MSG91 Chat Window Setup Guide.",
+                    "link": "https://msg91.com/help/whatsapp/how-"
+                },
+                "video": "/assets/global/whatsapp/hero_section.webm"
+            }
+        ]
+    },
+    "FooterCta": {
+        "bg": true,
+        "heading": "Stop Managing Chats. Start Moving Business Forward.",
+        "description": "Whether it's an order question, a sales enquiry, or a support request, MSG91 helps your business respond without getting overwhelmed. Bring your WhatsApp communication together and see how much easier customer engagement can be.",
+        "primaryLabel": "Book a Free Demo",
+        "primaryHref": "https://calendly.com/d/y3n-29s-29h?back=1"
+    },
+    "WhatsAppWhyChoose": {
+        "heading": "Why Choose MSG91 for WhatsApp Business API in the Philippines?",
+        "tagline": "One Connected Platform. More Control Over Every Conversation.",
+        "description": "Your business doesn't need another tool that only sends messages. It needs a platform that helps you reach customers, manage replies, connect existing systems, and understand what happens after every interaction. MSG91 combines official WhatsApp Business Platform access with practical automation and customer-support tools, helping businesses in the Philippines communicate more efficiently.",
+        "reasons": [
+            {
+                "title": "Campaigns Without Complicated Development",
+                "description": "Upload opted-in contacts, personalise approved templates, schedule messages, and monitor campaign activity without building every workflow from scratch."
+            },
+            {
+                "title": "More Than Just WhatsApp",
+                "description": "Connect communication across WhatsApp, SMS, RCS, email, and voice through MSG91's multi-channel tools and supported integrations."
+            },
+            {
+                "title": "Customer Support in Filipino and English",
+                "description": "Use configurable AI chatbots to answer common questions and support complex enquiries, with human-agent handover through MSG91 Hello."
+            },
+            {
+                "title": "A Shared Workspace for Your Team",
+                "description": "Bring conversations, agent assignments, support tickets, and performance information into a central customer-service platform."
+            },
+            {
+                "title": "Integrations That Fit Your Business",
+                "description": "Connect compatible Shopify stores, CRMs, and internal applications using supported APIs and webhooks."
+            },
+            {
+                "title": "Assistance From Initial Setup to Daily Operations",
+                "description": "The MSG91 team can assist with account setup, Meta verification, number registration, template configuration, integrations, and technical questions through supported support channels."
+            },
+            {
+                "title": "Protect Customer Communication with Trusted Security",
+                "description": "MSG91 follows SOC 2 Type II-audited security practices, helping businesses in the Philippines manage customer communication with greater confidence through independently assessed security controls."
+            },
+            {
+                "title": "Choose a Platform Trusted by Businesses",
+                "description": "MSG91 has received 200+ reviews across its products on the G2 platform, reflecting customer experiences with its messaging and communication solutions."
+            }
+        ]
+    },
+    "BenefitSection": {
+        "heading": "Benefits of MSG91 WhatsApp Business API for Philippine Businesses",
+        "subheading": "Better Conversations Without More Manual Work",
+        "cards": [
+            {
+                "icon": "MdNotificationsActive",
+                "heading": "Give Customers Faster Answers",
+                "description": "Use AI chatbots and guided workflows for suitable enquiries, so customers don't need to wait for every simple question."
+            },
+            {
+                "icon": "MdPower",
+                "heading": "Make Buying Easier",
+                "description": "Help interested shoppers explore products, ask questions, request quotations, and move towards a purchase through familiar conversations."
+            },
+            {
+                "icon": "MdTune",
+                "heading": "Keep Customers Informed",
+                "description": "Automate important confirmations, updates, and reminders using connected business information."
+            },
+            {
+                "icon": "MdLogin",
+                "heading": "Reach the Right Audience",
+                "description": "Create more relevant campaigns based on available customer interests and communication preferences."
+            },
+            {
+                "icon": "MdPeople",
+                "heading": "Keep Every Team on the Same Page",
+                "description": "Help agents collaborate through shared inboxes, customer histories, and organised support tickets."
+            },
+            {
+                "icon": "MdSecurity",
+                "heading": "Make Communication Performance Visible",
+                "description": "Use delivery reports, campaign analytics, and support information to understand what needs improvement."
+            }
+        ]
+    },
+    "WhatsAppGetStarted": {
+        "kicker": "How to Get Started With MSG91 WhatsApp Business Platform in the Philippines",
+        "heading": "Four Steps to Better Customer Communication",
+        "steps": [
+            {
+                "number": "1",
+                "icon": "MdEditNote",
+                "title": "Create Your MSG91 Account",
+                "description": "<a href='https://msg91.com/signup' target='_blank' class='text-accent hover:underline'>Sign up</a> for MSG91 and open the WhatsApp channel in your dashboard."
+            },
+            {
+                "number": "2",
+                "icon": "MdLink",
+                "title": "Connect Your Business",
+                "description": "<a href='https://msg91.com/help/whatsapp/how-to-begin-with-whatsapp' target='_blank' class='text-accent hover:underline'>Connect your Meta Business Portfolio</a>, add an eligible number, and complete the required <a href='https://msg91.com/help/whatsapp/how-to-get-your-business-account-verified-on-whatsapp' target='_blank' class='text-accent hover:underline'>verification</a>. Meta may ask for additional business information, including DTI or SEC documents where applicable."
+            },
+            {
+                "number": "3",
+                "icon": "MdSettings",
+                "title": "Configure Your Messaging",
+                "description": "<a href='https://msg91.com/help/whatsapp/step-by-step-process-to-configure-whatsapp-api-in-msg91' target='_blank' class='text-accent hover:underline'>Create approved WhatsApp templates</a>, set up campaigns, configure chatbots, and connect compatible business systems."
+            },
+            {
+                "number": "4",
+                "icon": "MdChatBubbleOutline",
+                "title": "Start Communicating",
+                "description": "<a href='https://msg91.com/help/whatsapp/send-whatsapp' target='_blank' class='text-accent hover:underline'>Send eligible messages</a>, manage replies through Hello, and review results through MSG91 reports."
+            }
+        ],
+        "note": "Already using a WhatsApp Business number? An eligible number may be migrated to the API according to Meta's onboarding requirements. WhatsApp Coexistence—the feature that allows simultaneous Business App and API use on the same number—is not currently supported under MSG91's published guidelines. Need help getting started? The MSG91 onboarding team can guide you through setup, number verification, templates, and integration requirements.",
+        "cta": {
+            "text": "Get Started With MSG91"
+        }
+    },
+    "FaqsComp": {
+        "heading": "Frequently Asked Questions",
+        "faqs": [
+            {
+                "question": "What is WhatsApp Business API in the Philippines, and how can businesses use it?",
+                "answer": "<ul class='list-disc'><li>WhatsApp Business API helps growing businesses in the Philippines communicate with customers without handling every conversation manually. It supports bulk messaging, AI chatbots, CRM integrations, automated notifications, and customer support with multiple agents.</li><li>Businesses in Metro Manila, Cebu, Davao, and across the Philippines can use it for order updates, marketing campaigns, appointment reminders, and customer enquiries.</li><li>And you don't need to be a developer to get started. With MSG91, businesses can connect WhatsApp, launch campaigns, create chatbots, and manage conversations through a simple, no-code dashboard.</li><li>Less technical work. More time to focus on your customers.</li></ul>"
+            },
+            {
+                "question": "Why should businesses in the Philippines choose MSG91 as their WhatsApp Business API provider?",
+                "answer": "<ul class='list-disc'><li>Managing customer conversations shouldn't require complicated software or technical expertise. MSG91 brings WhatsApp campaigns, AI chatbots, and customer support together in one easy-to-use platform.</li><li>MSG91 offers competitive WhatsApp messaging rates, positioned below Meta's standard pricing, along with a no-code dashboard for bulk campaigns and AI chatbots.</li><li>And it goes beyond WhatsApp. With <a class='text-link active-link' href='/ph/one-api'>MSG91 One API</a>, businesses can connect SMS, RCS, email, WhatsApp, and voice through unified communication workflows.</li><li>You also get <a class='text-link active-link' href='/ph/hello'>MSG91 Hello</a>, an AI-powered customer support platform with a shared inbox for managing conversations across teams.</li><li>Trusted by 30,000+ businesses globally, MSG91 helps companies simplify communication without juggling multiple tools.</li></ul>"
+            },
+            {
+                "question": "What is the pricing of WhatsApp Business API in the Philippines?",
+                "answer": "<ul class='list-disc'><li>WhatsApp Business API pricing in the Philippines includes messaging charges and a platform subscription. MSG91 offers messaging rates approximately 10% lower than Meta's standard GBP pricing, helping businesses reduce communication expenses.</li><li>MSG91's rates for Philippine numbers (+63), in GBP, are: <br/> <ul class='list-disc'><li><strong>Marketing:</strong> £0.05488 per message</li><li><strong>Utility:</strong> £0.00736 per message</li><li><strong>Authentication:</strong> £0.00736 per message</li><li><strong>Service:</strong> £0.00736 per billable message after the free allowance</li></ul></li><li>The MSG91 Titan plan costs £6/month, with the first two months free. Messaging charges and applicable taxes are separate.</li><li>For example, sending 10,000 billable marketing messages costs £548.80 with MSG91 compared with £607 at Meta's standard rate, saving £58.20 before subscription fees and taxes.</li><li>For a detailed breakdown, explore <a class='text-link active-link' target='_blank' href='https://msg91.com/ph/pricing/whatsapp'>MSG91 WhatsApp Business API Pricing in the Philippines</a> and <a class='text-link active-link' target='_blank' href='https://developers.facebook.com/docs/whatsapp/pricing'>Meta's WhatsApp Business Platform Pricing</a>.</li></ul>"
+            },
+            {
+                "question": "Is MSG91 a secure and trusted WhatsApp Business API provider in the Philippines?",
+                "answer": "<ul class='list-disc'><li>Yes. When your business handles customer conversations and personal information, security and reliability matter.</li><li>MSG91 is <a class='text-link active-link' target='_blank' href='https://msg91.com/certificates'>SOC 2 Type II</a> audited, demonstrating that its security controls have undergone independent assessment.</li><li>MSG91 stores customer data for Philippine businesses in regional Asia-Pacific data centres, supporting secure data management and regional data protection needs.</li><li>MSG91 is also trusted by 30,000+ leading brands and businesses across 192+ countries, with 200+ reviews on the <a class='text-link active-link' target='_blank' href='https://www.g2.com/products/msg91/reviews'>G2</a> platform.</li><li>By combining documented security controls with Meta's official WhatsApp Business Platform infrastructure, MSG91 helps Philippine businesses manage messaging, automation, and customer support with confidence.</li><li>Explore MSG91's <a class='text-link active-link' target='_blank' href='https://msg91.com/certificates'>security certifications</a> and <a class='text-link active-link' target='_blank' href='https://www.g2.com/products/msg91/reviews'>MSG91 reviews on G2</a>.</li></ul>"
+            },
+            {
+                "question": "Can Philippine businesses run WhatsApp campaigns for 11.11, 12.12, and generate leads through ads?",
+                "answer": "<ul class='list-disc'><li>Yes. MSG91 enables businesses in the Philippines to run 11.11, 12.12, payday, Christmas, and product-launch campaigns without developing custom messaging tools.</li><li>Upload opted-in contacts using CSV files, personalise approved templates, schedule promotional messages, and track delivery performance.</li><li>To attract new customers, businesses can also use <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/click-to-whatsapp-ads'>Click-to-WhatsApp Ads</a> on Facebook and Instagram. Interested shoppers can start a WhatsApp conversation directly from an advertisement, where an AI chatbot collects their requirements, answers product questions, and guides them through the initial buying process.</li><li>For example, an online furniture store in Manila can promote its 12.12 collection through Instagram. The chatbot helps customers choose suitable items, confirm delivery locations, and understand payment options. If someone needs a quotation or wants to speak with the sales team, the conversation moves to <a class='text-link active-link' href='/ph/hello'>MSG91 Hello</a>. An agent can then reply through WhatsApp or call the customer to complete the enquiry.</li><li>MSG91 supports opt-out management. Promotional messaging must follow Meta's policies, appropriate consent requirements, and the Philippines' Data Privacy Act of 2012.</li><li>Explore <a class='text-link active-link' href='/ph/campaign'>MSG91 Campaign</a> and the <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/click-to-whatsapp-ads'>Click-to-WhatsApp Ads guide</a>.</li></ul>"
+            },
+            {
+                "question": "Can MSG91 AI WhatsApp chatbots communicate in Filipino and English and handle complex enquiries?",
+                "answer": "<ul class='list-disc'><li>Yes. MSG91 AI chatbots can communicate in Filipino and English while combining rule-based steps and AI-powered responses within one chatbot.</li><li>The chatbot can integrate with 2,000+ applications, make API calls, and access connected business information to handle FAQs, COD confirmations, product recommendations, delivery tracking, returns, and more complicated customer requests.</li><li>Businesses can choose multiple AI models and configure backup models to help prevent interruptions when the primary model is unavailable.</li><li>For example, a Cebu-based online retailer can use a chatbot to answer product enquiries, check connected inventory information, and assist with delivery updates. When customers need personal assistance, conversations transfer to human agents through <a class='text-link active-link' href='/ph/hello'>MSG91 Hello</a>, where teams can continue from a shared inbox or mobile app.</li><li>MSG91 also offers 24/7 customer assistance, combining AI available at any time for routine and complex technical questions with expert human support through email, WhatsApp messaging and calls, voice calls, and scheduled meetings.</li><li>Explore <a class='text-link active-link' href='/ph/whatsapp/chatbot'>MSG91 WhatsApp AI Chatbots</a> and the <a class='text-link active-link' target='_blank' href='https://msg91.com/help/hello-contact-center/integrate-channels-in-hello/chat-widget-integration/integrate-hello-chat-widget-into-mobile'>Hello mobile application</a>.</li></ul>"
+            },
+            {
+                "question": "How can businesses in the Philippines reduce WhatsApp support costs after Meta's October 2026 pricing changes?",
+                "answer": "<ul class='list-disc'><li>Since October 1, 2026, Meta has charged for WhatsApp service messages beyond the monthly free allowance. The first 1,000 service messages per business phone number remain free each month, while additional billable messages cost £0.00736 each with MSG91 in the Philippines.</li><li>Utility templates sent within an active customer service window also became chargeable, subject to applicable exceptions.</li><li>For businesses handling hundreds of customer enquiries daily, these costs can add up.</li><li><a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/how-'>MSG91 Chat Window</a> helps reduce expenses through a simple process: WhatsApp → Chat Window → Hello.</li><li>Customers start on WhatsApp and continue conversations through a dedicated Chat Window. AI chatbots and human agents can then assist through Hello without sending every reply over WhatsApp.</li><li>Messages exchanged inside Chat Window don't incur Meta's WhatsApp messaging charges. Messages sent through WhatsApp remain chargeable.</li><li>Follow the <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/how-'>MSG91 Chat Window setup guide</a>.</li></ul>"
+            },
+            {
+                "question": "Can Philippine businesses send WhatsApp OTPs, use WhatsApp Flows, and configure fallback messaging?",
+                "answer": "<ul class='list-disc'><li>Yes. MSG91 supports WhatsApp OTPs for account verification, customer login, and other eligible authentication workflows.</li><li>WhatsApp authentication messages to Philippine numbers cost £0.00736 per message, based on the supplied pricing.</li><li>If a verification code does not arrive, the <a class='text-link active-link' href='/ph/otp'>MSG91 OTP Widget</a> offers configurable retries and supported alternatives through SMS, voice, and email. Additional channel or Widget charges may apply.</li><li>Businesses can also use <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/whatsapp-flows-via-msg91'>WhatsApp Flows</a> to let customers complete tasks without leaving the chat, including appointment bookings, event registrations, lead enquiries, application forms, and feedback collection.</li><li>For important operational notifications, supported MSG91 workflows can use SMS, RCS, email, or voice as fallback options when WhatsApp delivery fails.</li><li>This is useful for Philippine online stores, fintech applications, clinics, and digital services that need dependable communication across customer journeys.</li><li>Explore the <a class='text-link active-link' target='_blank' href='https://msg91.com/help/sendotp/how-to-integrate-the-new-login-with-otp-widget'>OTP Widget integration guide</a>.</li></ul>"
+            },
+            {
+                "question": "Which businesses in the Philippines can benefit most from WhatsApp automation?",
+                "answer": "<ul class='list-disc'><li>From online retailers and BPO companies to travel agencies and healthcare clinics, businesses handling frequent customer enquiries, bookings, and transaction updates can save time with WhatsApp automation.</li><li>Some relevant industries in the Philippines include: <br/> <ul class='list-disc'><li><strong>E-commerce and Online Retail:</strong> Automate COD confirmations, abandoned cart reminders, order updates, and customer support.</li><li><strong>BPO and Customer Service:</strong> Manage customer enquiries, automate initial responses, and route conversations to agents.</li><li><strong>Travel and Hospitality:</strong> Handle tour enquiries, hotel reservations, booking confirmations, and guest assistance.</li><li><strong>Fintech and Digital Services:</strong> Send OTPs, account notifications, and payment reminders.</li><li><strong>Education and Training:</strong> Manage enrolment enquiries, class reminders, and student support.</li><li><strong>Healthcare and Clinics:</strong> Automate appointment confirmations and routine administrative enquiries.</li></ul></li><li>For Shopify stores, <a class='text-link active-link' target='_blank' href='https://msg91.com/help/hello-contact-center/hello-faqs/hello-chat-widget-in-your-shopify-store'>MSG91's Shopify integration</a> connects messaging with everyday e-commerce activities. Businesses can use AI chatbots, multichannel verification through WhatsApp, SMS, email, and voice, COD-to-prepaid conversion workflows, and automated customer notifications covering order confirmation, tracking, and 12+ supported events.</li><li>For example, a Davao-based online store can automate COD verification, update customers about dispatch, and allow a chatbot to answer delivery-related questions.</li><li>With <a class='text-link active-link' href='/ph/hello'>MSG91 Hello</a>, human agents can manage conversations from a shared inbox whenever personalised assistance is needed.</li></ul>"
+            },
+            {
+                "question": "WhatsApp Cloud API Setup Without Developers: How easy is it to get started with MSG91 in the Philippines?",
+                "answer": "<ul class='list-disc'><li>Getting started with WhatsApp automation shouldn't require coding skills. MSG91 makes WhatsApp Cloud API setup simple, even for business owners and teams without technical experience.</li><li>You can connect your WhatsApp number, launch campaigns, create approved message templates, and configure supported chatbots through a user-friendly dashboard.</li><li>Get started in four steps: <br/> <ul class='list-disc'><li><strong>1:</strong> <a class='text-link active-link' target='_blank' href='https://control.msg91.com/signup/'>Create your MSG91 account</a>.</li><li><strong>2:</strong> Connect your Meta Business Portfolio.</li><li><strong>3:</strong> Add an eligible number.</li><li><strong>4:</strong> Complete verification and configure your messages.</li></ul></li><li>That's it! Once connected, you can start managing everyday WhatsApp communication without writing code. Advanced custom integrations may require technical configuration, and additional Meta verification can affect activation time.</li><li>Do I need DTI or SEC registration, and can I keep my +63 number? DTI registration for sole proprietorships or SEC documents for corporations may be requested during Meta business verification, but they aren't mandatory for every initial setup.</li><li>Already using WhatsApp Business on your +63 number? You may be able to migrate an eligible number to MSG91. However, WhatsApp Coexistence isn't currently supported for Philippine numbers, so simultaneous use of the Business App and API on the same number isn't available through that feature.</li><li>Need help? MSG91 offers 24/7 customer assistance, combining expert human support through email, WhatsApp, calls, and scheduled Google Meet sessions with round-the-clock AI that handles both routine questions and complex technical enquiries.</li><li>Human expertise when you need it. Intelligent AI whenever you need answers.</li><li>You can also use <a class='text-link active-link' href='/ph/hello'>MSG91 Hello</a> to offer your customers AI-powered conversations, a shared inbox, and seamless handover to human agents.</li><li>From your first WhatsApp setup to everyday customer communication, MSG91 keeps your business connected and supported.</li><li>Explore the <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/whatsapp-number-integration---onboarding'>MSG91 WhatsApp onboarding guide</a>, <a class='text-link active-link' href='/ph/hello'>MSG91 Hello</a>, or contact our support team.</li></ul>"
             }
         ]
     },
     "PreFooterComp": {
-        "content": "Start building your ideal customer engagement experience",
+        "content": "Every Customer Message Is a Chance to Do Business Better.",
+        "description": "From 11.11 campaigns and COD-related communication to AI chatbots and customer support, MSG91 gives your business the tools to stay connected. Make marketing, sales, automation, and customer service work together with MSG91 WhatsApp Business Platform in the Philippines.",
+        "fullWidth": true,
         "buttons": {
             "contactSales": {
-                "text": "Contact sales",
-                "link": "/contact-us"
-            },
-            "pricing": {
-                "text": "Pricing",
-                "link": "/pricing/"
-            },
-            "getStarted": {
-                "text": "Get started",
-                "link": "https://control.msg91.com/signup/"
+                "text": "Book a Free Demo",
+                "link": "https://calendly.com/d/y3n-29s-29h?back=1"
             }
         }
     }

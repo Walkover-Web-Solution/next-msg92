@@ -164,7 +164,7 @@
         "services": [
             {
                 "icon": "/assets/icons/products/shorturl.svg",
-                "name": "URL Shortner",
+                "name": "URL Shortener",
                 "img": "/assets/global/index/services/shorturl.svg",
                 "heading": "Make your long URLs short",
                 "description": "Automatically shortens URL and tracks your success, one click at a time. Turn your long, messy links into short, memorable branded links",
@@ -237,7 +237,7 @@
             },
             {
                 "question": "Is MSG91 secure?",
-                "answer": "Security is a top priority at MSG91 <a href='/assets/brand/favicon.svg'>hello</a> We implement industry-standard protocols and encryption techniques to ensure the confidentiality and integrity of your data. Our enterprise cloud communications platform offers features like two-factor authentication and OTP verification to enhance security and protect sensitive information."
+                "answer": "Security is a top priority at MSG91. We implement industry-standard protocols and encryption techniques to ensure the confidentiality and integrity of your data. Our enterprise cloud communications platform offers features like two-factor authentication and OTP verification to enhance security and protect sensitive information."
             },
             {
                 "question": "Can I integrate MSG91 with my existing systems or applications?",

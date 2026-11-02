@@ -89,6 +89,13 @@
                 color: var(--#{$name}-dark-color) !important;
             }
         }
+
+        &_gradient {
+            &_bg {
+                background: linear-gradient(180deg, var(--#{$name}-lite-color) 0%, #ffffff 100%) !important;
+                border-top: 1px solid var(--#{$name}-lite-color);
+            }
+        }
     }
 }
 
@@ -100,6 +107,15 @@
 @include product-color('rcs');
 @include product-color('email');
 @include product-color('whatsapp');
+
+.whatsapp_hover_lite:hover {
+    background-color: var(--whatsapp-lite-color) !important;
+}
+
+.hello_hover_lite:hover {
+    background-color: var(--hello-lite-color);
+}
+
 @include product-color('voice');
 @include product-color('numbers');
 @include product-color('shorturl');
@@ -109,4 +125,8 @@
 
 .hello_analytics_bg {
     background-color: var(--hello-analytics-bg) !important;
+}
+
+.hello_gradient_bg {
+    background-image: linear-gradient(to bottom, var(--hello-lite-color), #fff);
 }

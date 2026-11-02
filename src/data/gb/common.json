@@ -403,10 +403,6 @@
                     "link": "privacy-policy"
                 },
                 {
-                    "name": "GDPR",
-                    "link": "gdpr"
-                },
-                {
                     "name": "Refund policy",
                     "link": "refund-policy"
                 },
@@ -467,6 +463,10 @@
                     "link": "https://www.youtube.com/@WalkoverWS"
                 }
             ]
+        },
+        "address": {
+            "name": "MSG91 LTD",
+            "address": "71-75 Shelton Street, Covent Garden,<br/>London, England, WC2H 9JQ"
         }
     }
 }

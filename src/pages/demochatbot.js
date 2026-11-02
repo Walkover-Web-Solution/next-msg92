@@ -391,10 +391,6 @@ export default function demochatbot({ pageInfo, templateList, totalPages, curren
                                 'link': 'privacy-policy',
                             },
                             {
-                                'name': 'GDPR',
-                                'link': 'gdpr',
-                            },
-                            {
                                 'name': 'Refund policy',
                                 'link': 'refund-policy',
                             },

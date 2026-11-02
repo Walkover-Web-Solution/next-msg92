@@ -1,0 +1,616 @@
+import { useState, useEffect, useRef } from 'react';
+import { MdCheckCircle, MdRefresh, MdArrowBack, MdVideocam, MdCall, MdMoreVert } from 'react-icons/md';
+
+const sendWidgetDebugLog = (hypothesisId, location, message, data = {}) => {
+    fetch('http://127.0.0.1:7257/ingest/b793e390-f4eb-4a66-a46a-52f4889d25bd', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-Debug-Session-Id': 'ea2c69' },
+        body: JSON.stringify({
+            sessionId: 'ea2c69',
+            runId: 'pre-fix',
+            hypothesisId,
+            location,
+            message,
+            data,
+            timestamp: Date.now(),
+        }),
+    }).catch(() => {});
+};
+
+export default function WhatsAppStepsComp({ pageInfo, data }) {
+    const conversationStages = data?.conversation_stages;
+    const activeMeta = conversationStages?.[0];
+
+    const [currentStage, setCurrentStage] = useState(1);
+    const [isTyping, setIsTyping] = useState(false);
+    const [visibleMessages, setVisibleMessages] = useState([]);
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [isChatModalOpen, setIsChatModalOpen] = useState(false);
+
+    const sectionRef = useRef(null);
+    const scrollRef = useRef(null);
+    const phoneMockupRef = useRef(null);
+    const timersRef = useRef([]);
+    const isChatModalOpenRef = useRef(false);
+    const relevantMutationCountRef = useRef(0);
+
+    const firstStageMessage = conversationStages?.[0]?.messages?.[0];
+    const secondStageMessage = conversationStages?.[1]?.messages?.[0];
+
+    const clearAllTimers = () => {
+        timersRef.current.forEach(clearTimeout);
+        timersRef.current = [];
+    };
+
+    const closeChatWidget = () => {
+        const container = document.getElementById('whatsappChatDemoWidget');
+        // #region agent log
+        sendWidgetDebugLog('A', 'StepsComp.js:closeChatWidget', 'Parent close handler invoked', {
+            containerConnected: Boolean(container?.isConnected),
+            containerChildren: container?.childElementCount ?? -1,
+        });
+        // #endregion
+        isChatModalOpenRef.current = false;
+        setIsChatModalOpen(false);
+    };
+
+    const openChatWidget = () => {
+        // #region agent log
+        sendWidgetDebugLog('A', 'StepsComp.js:openChatWidget', 'Parent open handler invoked', {
+            modalAlreadyOpen: isChatModalOpenRef.current,
+        });
+        // #endregion
+        clearAllTimers();
+        setIsTyping(false);
+        setIsPlaying(false);
+        setCurrentStage(3);
+        setVisibleMessages([firstStageMessage, secondStageMessage].filter(Boolean));
+        isChatModalOpenRef.current = true;
+        setIsChatModalOpen(true);
+    };
+
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+
+        // #region agent log
+        sendWidgetDebugLog('A,C', 'StepsComp.js:mount', 'WhatsApp steps component mounted', {
+            pathname: window.location.pathname,
+            chatWidgetScripts: Array.from(document.querySelectorAll('script[src*="chat-widget"]')).map((script) => {
+                try {
+                    return new URL(script.src).origin;
+                } catch {
+                    return 'invalid-url';
+                }
+            }),
+        });
+        // #endregion
+
+        // Soft-nav from other pages can leave the global Hello launcher alive
+        window.helloConfig = undefined;
+        document
+            .querySelectorAll(
+                '#hello-chat-widget, #hello-chatbot-iframe-container, iframe[src*="msg91.com/chatbot"], iframe[src*="phone91.com"]'
+            )
+            .forEach((node) => {
+                if (node.closest('#whatsappChatDemoWidget')) return;
+                node.remove();
+            });
+
+        return () => {
+            // #region agent log
+            sendWidgetDebugLog('A', 'StepsComp.js:unmount', 'WhatsApp steps component unmounted', {
+                modalOpenRef: isChatModalOpenRef.current,
+            });
+            // #endregion
+        };
+    }, []);
+
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+
+        const handleWidgetMessage = (event) => {
+            if (!event.origin.includes('msg91.com') && !event.origin.includes('phone91.com')) return;
+            const eventData = event.data;
+            // #region agent log
+            sendWidgetDebugLog('D', 'StepsComp.js:message', 'Widget postMessage received', {
+                origin: event.origin,
+                dataType: typeof eventData,
+                action:
+                    eventData && typeof eventData === 'object'
+                        ? eventData.type || eventData.action || eventData.event || null
+                        : null,
+                keys:
+                    eventData && typeof eventData === 'object'
+                        ? Object.keys(eventData)
+                              .filter((key) => !/message|text|name|email|phone|token/i.test(key))
+                              .slice(0, 10)
+                        : [],
+            });
+            // #endregion
+        };
+
+        window.addEventListener('message', handleWidgetMessage);
+        return () => window.removeEventListener('message', handleWidgetMessage);
+    }, []);
+
+    useEffect(() => {
+        if (typeof window === 'undefined' || !isChatModalOpen) return;
+
+        const observer = new MutationObserver((mutations) => {
+            const relevantMutation = mutations.some((mutation) => {
+                const nodes = [...mutation.addedNodes, ...mutation.removedNodes];
+                return (
+                    mutation.target?.id === 'whatsappChatDemoWidget' ||
+                    mutation.target?.id === 'hello-chatbot-iframe-container' ||
+                    nodes.some(
+                        (node) =>
+                            node.nodeType === Node.ELEMENT_NODE &&
+                            (node.id === 'whatsappChatDemoWidget' ||
+                                node.id === 'hello-chatbot-iframe-container' ||
+                                node.tagName === 'IFRAME' ||
+                                node.querySelector?.('#hello-chatbot-iframe-container, iframe'))
+                    )
+                );
+            });
+            if (!relevantMutation || relevantMutationCountRef.current >= 8) return;
+            relevantMutationCountRef.current += 1;
+
+            const container = document.getElementById('whatsappChatDemoWidget');
+            const iframe = container?.querySelector('iframe');
+            // #region agent log
+            sendWidgetDebugLog('B,C', 'StepsComp.js:mutation', 'Relevant widget DOM mutation', {
+                mutationNumber: relevantMutationCountRef.current,
+                containerConnected: Boolean(container?.isConnected),
+                containerChildren: container?.childElementCount ?? -1,
+                iframeConnected: Boolean(iframe?.isConnected),
+                iframeDisplay: iframe ? getComputedStyle(iframe).display : null,
+                iframeVisibility: iframe ? getComputedStyle(iframe).visibility : null,
+                iframeOrigin: (() => {
+                    try {
+                        return iframe?.src ? new URL(iframe.src).origin : null;
+                    } catch {
+                        return 'invalid-url';
+                    }
+                })(),
+            });
+            // #endregion
+        });
+
+        observer.observe(document.body, { childList: true, subtree: true });
+        return () => observer.disconnect();
+    }, [isChatModalOpen]);
+
+    useEffect(() => {
+        // #region agent log
+        sendWidgetDebugLog('A', 'StepsComp.js:modalState', 'Parent modal state changed', {
+            isChatModalOpen,
+            modalOpenRef: isChatModalOpenRef.current,
+            dialogPresent: Boolean(document.querySelector('dialog[open] #whatsappChatDemoWidget')),
+        });
+        // #endregion
+    }, [isChatModalOpen]);
+
+    const runAutomatedConversation = () => {
+        if (isChatModalOpenRef.current) return;
+
+        clearAllTimers();
+        setIsPlaying(true);
+        setCurrentStage(1);
+        setVisibleMessages([]);
+        setIsTyping(true);
+
+        timersRef.current.push(
+            setTimeout(() => {
+                setIsTyping(false);
+                if (firstStageMessage) setVisibleMessages([firstStageMessage]);
+            }, 500)
+        );
+
+        timersRef.current.push(setTimeout(() => setIsTyping(true), 1200));
+
+        timersRef.current.push(
+            setTimeout(() => {
+                setIsTyping(false);
+                setVisibleMessages([firstStageMessage, secondStageMessage].filter(Boolean));
+                setCurrentStage(2);
+                setIsPlaying(false);
+            }, 2000)
+        );
+    };
+
+    const handleSelectStage = (stageNumber) => {
+        if (stageNumber === 3) {
+            openChatWidget();
+            return;
+        }
+
+        clearAllTimers();
+        setIsTyping(false);
+        setIsPlaying(false);
+
+        setCurrentStage(stageNumber);
+        setVisibleMessages(
+            stageNumber === 1
+                ? [firstStageMessage].filter(Boolean)
+                : [firstStageMessage, secondStageMessage].filter(Boolean)
+        );
+
+        if (typeof window !== 'undefined' && window.innerWidth < 1024 && stageNumber === 2) {
+            phoneMockupRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    };
+
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        const sectionElement = sectionRef.current;
+        if (!sectionElement) return;
+
+        const observer = new IntersectionObserver(
+            ([intersectionEntry]) => {
+                if (isChatModalOpenRef.current) return;
+
+                if (intersectionEntry.isIntersecting) {
+                    runAutomatedConversation();
+                } else {
+                    clearAllTimers();
+                    setIsPlaying(false);
+                    setIsTyping(false);
+                }
+            },
+            { threshold: 0.25 }
+        );
+
+        observer.observe(sectionElement);
+
+        return () => {
+            observer.disconnect();
+            clearAllTimers();
+        };
+    }, []);
+
+    useEffect(() => {
+        if (isChatModalOpen || !scrollRef.current) return;
+
+        scrollRef.current.scrollTo({
+            top: scrollRef.current.scrollHeight,
+            behavior: 'smooth',
+        });
+    }, [visibleMessages, isTyping, isChatModalOpen]);
+
+    if (!data) return null;
+
+    return (
+        <section id='how-it-works' ref={sectionRef} className='bg-slate-50 border-t border-slate-200 overflow-hidden'>
+            <div className='container cont_p flex flex-col gap-10'>
+                <div className='text-center flex flex-col gap-3'>
+                    <h2 className='heading font-semibold text-3xl md:text-4xl'>
+                        {data?.heading_prefix}
+                        <span className='text-whatsappChat-primary'>{data?.heading_accent}</span>
+                        {data?.heading_suffix}
+                    </h2>
+
+                    {data?.subheading && <p className='subheading max-w-2xl mx-auto'>{data?.subheading}</p>}
+                </div>
+
+                <div className='grid grid-cols-1 lg:grid-cols-12 gap-8 items-center max-w-6xl mx-auto'>
+                    <div className='lg:col-span-6 flex flex-col gap-6'>
+                        <div className='flex flex-col gap-4'>
+                            {data?.steps?.map((step, index) => {
+                                const stepNumber = index + 1;
+                                const isCurrent = currentStage === stepNumber;
+                                const isCompleted = currentStage > stepNumber;
+
+                                return (
+                                    <div
+                                        key={step?.n || index}
+                                        role='button'
+                                        tabIndex={0}
+                                        onClick={() => handleSelectStage(stepNumber)}
+                                        onKeyDown={(event) => {
+                                            if (event.key === 'Enter' || event.key === ' ') {
+                                                event.preventDefault();
+                                                handleSelectStage(stepNumber);
+                                            }
+                                        }}
+                                        className={`text-left rounded-xl p-4 border flex gap-3 ${
+                                            isCurrent
+                                                ? 'bg-white border-whatsappChat-primary shadow-md'
+                                                : isCompleted
+                                                  ? 'bg-slate-50 border-slate-200'
+                                                  : 'bg-white border-slate-200'
+                                        }`}
+                                    >
+                                        <div
+                                            className={`w-8 h-8 rounded-lg font-bold text-xs flex items-center justify-center shrink-0 ${
+                                                isCurrent
+                                                    ? 'bg-whatsappChat-primary text-white'
+                                                    : isCompleted
+                                                      ? 'bg-whatsappChat-light text-whatsappChat-dark'
+                                                      : 'bg-slate-100 text-slate-500'
+                                            }`}
+                                        >
+                                            {step?.n}
+                                        </div>
+
+                                        <div className='flex-1 flex flex-col gap-1'>
+                                            <div className='flex items-center justify-between gap-2'>
+                                                <h3
+                                                    className={`font-semibold text-base ${isCurrent ? 'font-bold' : ''}`}
+                                                >
+                                                    {step?.title}
+                                                </h3>
+
+                                                {isCompleted ? (
+                                                    <span className='text-xs font-semibold text-whatsappChat-dark flex items-center gap-1 bg-whatsappChat-light border border-whatsappChat-primary/30 px-2.5 py-0.5 rounded-full'>
+                                                        <MdCheckCircle className='w-3.5 h-3.5' />
+                                                        <span>{data?.done_text}</span>
+                                                    </span>
+                                                ) : isCurrent ? (
+                                                    <span className='text-xs font-semibold text-whatsappChat-dark flex items-center gap-1 bg-whatsappChat-light border border-whatsappChat-primary/40 px-2.5 py-0.5 rounded-full'>
+                                                        <span className='w-1.5 h-1.5 rounded-full bg-whatsappChat-primary animate-pulse' />
+                                                        <span>{data?.live_text}</span>
+                                                    </span>
+                                                ) : (
+                                                    <span className='text-xs text-slate-400 font-medium'>
+                                                        {data?.click_to_view}
+                                                    </span>
+                                                )}
+                                            </div>
+
+                                            <p className='text-xs text-slate-600'>{step?.desc}</p>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+
+                        <div className='flex flex-col items-start gap-2'>
+                            <button
+                                type='button'
+                                onClick={runAutomatedConversation}
+                                className='btn btn-whatsapp-chat btn-md gap-2'
+                            >
+                                <MdRefresh className={`w-5 h-5 ${isPlaying ? 'animate-spin' : ''}`} />
+                                <span>{data?.replay_text}</span>
+                            </button>
+                            {data?.replay_subtext && <p className='text-xs text-slate-500'>{data?.replay_subtext}</p>}
+                        </div>
+                    </div>
+
+                    <div className='lg:col-span-6 flex flex-col items-center justify-center gap-4 w-full'>
+                        <div
+                            ref={phoneMockupRef}
+                            className='relative w-full bg-slate-900 p-1.5 rounded-[40px] shadow-2xl max-w-[310px]'
+                        >
+                            <div className='relative w-full rounded-[34px] overflow-hidden flex flex-col h-[600px]'>
+                                <div className='absolute top-2.5 left-1/2 -translate-x-1/2 w-24 h-4.5 bg-black rounded-full z-50 flex items-center justify-between px-2.5 pointer-events-none'>
+                                    <div className='w-2 h-2 rounded-full bg-black/90 border border-gray-800' />
+                                    <div className='w-2 h-2 rounded-full bg-slate-950' />
+                                </div>
+
+                                <div className='flex flex-col h-full w-full'>
+                                    <div className='bg-whatsappChat-teal py-2 px-5 flex items-center justify-between text-white text-xs font-semibold'>
+                                        <span>{data?.status_time}</span>
+                                        <div className='flex items-center gap-1.5 text-xs'>
+                                            <svg className='w-3.5 h-3.5 fill-current' viewBox='0 0 24 24'>
+                                                <rect x='1' y='14' width='3' height='7' rx='0.5' />
+                                                <rect x='6' y='10' width='3' height='11' rx='0.5' />
+                                                <rect x='11' y='6' width='3' height='15' rx='0.5' />
+                                                <rect x='16' y='2' width='3' height='19' rx='0.5' />
+                                            </svg>
+                                            <svg className='w-3.5 h-3.5 fill-current' viewBox='0 0 24 24'>
+                                                <path d='M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4zm0 3.5c3.5 0 6.67 1.34 9.07 3.53L12 19.88 2.93 11.03C5.33 8.84 8.5 7.5 12 7.5z' />
+                                            </svg>
+                                            <div className='flex items-center gap-0.5'>
+                                                <div className='w-5 h-2.5 rounded-xs border border-white/90 p-0.5 flex items-center'>
+                                                    <div className='w-full h-full bg-white rounded-xs' />
+                                                </div>
+                                                <div className='w-0.5 h-1 bg-white/90 rounded-r-xs' />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className='bg-whatsappChat-teal px-3 py-2 flex items-center justify-between text-white'>
+                                        <div className='flex items-center gap-2'>
+                                            <MdArrowBack className='w-4.5 h-4.5 text-white/90 cursor-pointer hover:text-white' />
+                                            <div className='w-8 h-8 rounded-full bg-whatsappChat-dark flex items-center justify-center'>
+                                                <div className='text-xs'>{activeMeta?.avatar}</div>
+                                            </div>
+                                            <div>
+                                                <p className='font-bold text-xs text-white flex items-center gap-1'>
+                                                    <span>{activeMeta?.name}</span>
+                                                    <span className='text-xs text-sky-400 font-bold'>
+                                                        {data?.verified_badge}
+                                                    </span>
+                                                </p>
+                                                <p className='text-whatsappChat-light text-xs flex items-center gap-1'>
+                                                    <span className='w-1.5 h-1.5 rounded-full bg-whatsappChat-accent' />
+                                                    <span>{activeMeta?.status}</span>
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div className='flex items-center gap-1 text-white/90'>
+                                            <MdVideocam className='w-4.5 h-4.5 cursor-pointer hover:text-white' />
+                                            <MdCall className='w-4 h-4 cursor-pointer hover:text-white' />
+                                            <MdMoreVert className='w-4.5 h-4.5 cursor-pointer hover:text-white' />
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        ref={scrollRef}
+                                        className='flex-1 overflow-y-auto p-3 flex flex-col gap-3 relative wa-chat-bg'
+                                    >
+                                        <div className='flex justify-center'>
+                                            <span className='bg-white text-slate-500 text-xs font-semibold px-2.5 py-0.5 rounded shadow-xs border border-gray-100 uppercase'>
+                                                {data?.date_badge}
+                                            </span>
+                                        </div>
+
+                                        <div className='flex justify-center'>
+                                            <span className='bg-amber-100 text-slate-700 text-xs px-3 py-1.5 rounded-lg text-center max-w-[94%] border border-amber-200 flex items-center gap-1'>
+                                                <span>🔒</span>
+                                                <span>{data?.encryption_notice}</span>
+                                            </span>
+                                        </div>
+
+                                        {visibleMessages.map((message) => {
+                                            const isCustomer = message?.role === 'customer';
+
+                                            return (
+                                                <div key={message?.id || message?.text} className='flex flex-col gap-2'>
+                                                    <div
+                                                        className={`flex ${isCustomer ? 'justify-end' : 'justify-start'}`}
+                                                    >
+                                                        <div
+                                                            className={`relative p-2.5 text-xs text-slate-900 flex flex-col gap-1.5 ${
+                                                                isCustomer
+                                                                    ? 'bg-whatsappChat-bubble rounded-2xl rounded-tr-none border border-whatsappChat-accent/20 max-w-[88%]'
+                                                                    : 'bg-white rounded-2xl rounded-tl-none border border-gray-200 max-w-[94%]'
+                                                            }`}
+                                                        >
+                                                            {isCustomer && (
+                                                                <div className='absolute -right-1.5 top-0 w-0 h-0 border-t-[7px] border-t-whatsappChat-bubble border-r-[7px] border-r-transparent' />
+                                                            )}
+
+                                                            {!isCustomer && (
+                                                                <p className='text-xs font-bold uppercase text-whatsappChat-dark'>
+                                                                    {message?.label || activeMeta?.name?.toUpperCase()}
+                                                                </p>
+                                                            )}
+
+                                                            {message?.isLink ? (
+                                                                <div className='flex flex-col gap-2'>
+                                                                    <p className='text-xs text-slate-900'>
+                                                                        {message?.text}
+                                                                    </p>
+
+                                                                    <div
+                                                                        onClick={openChatWidget}
+                                                                        className='p-2.5 rounded-xl border border-whatsappChat-primary/20 bg-whatsappChat-light hover:bg-whatsappChat-light/70 cursor-pointer flex flex-col gap-2'
+                                                                    >
+                                                                        <div className='flex items-center justify-between gap-1'>
+                                                                            <span className='font-bold text-xs text-whatsappChat-dark flex items-center gap-1'>
+                                                                                {data?.link_preview_title}
+                                                                            </span>
+                                                                        </div>
+
+                                                                        <div className='flex items-center justify-between border-t border-whatsappChat-primary/10 py-1 text-xs'>
+                                                                            <span className='text-whatsappChat-dark font-semibold'>
+                                                                                {data?.link_preview_url}
+                                                                            </span>
+                                                                            <span className='text-slate-400'>
+                                                                                {data?.link_preview_size}
+                                                                            </span>
+                                                                        </div>
+
+                                                                        <div className='relative'>
+                                                                            <div className='text-white text-xs font-bold py-2 rounded-lg flex items-center justify-center gap-1 bg-whatsappChat-primary hover:bg-whatsappChat-hover'>
+                                                                                <span>{data?.lets_chat_btn}</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            ) : (
+                                                                <p className='pr-11'>{message?.text}</p>
+                                                            )}
+
+                                                            <div className='absolute right-2 bottom-1 flex items-center gap-1 text-xs text-slate-400'>
+                                                                <span>{message?.time}</span>
+                                                                {isCustomer && (
+                                                                    <span className='text-sky-500 font-bold text-xs'>
+                                                                        ✓✓
+                                                                    </span>
+                                                                )}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    {message?.isLink && data?.hint_desktop && (
+                                                        <div
+                                                            onClick={openChatWidget}
+                                                            className='flex justify-center cursor-pointer my-1'
+                                                        >
+                                                            <div className='bg-white text-whatsappChat-dark border border-whatsappChat-primary/40 text-xs font-semibold px-3 py-1 rounded-full shadow-sm flex items-center gap-1.5 hover:bg-whatsappChat-light transition-colors animate-bounce'>
+                                                                <span>{data?.hint_desktop}</span>
+                                                            </div>
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            );
+                                        })}
+
+                                        {isTyping && (
+                                            <div className='flex justify-start relative z-10'>
+                                                <div className='bg-white px-3 py-1.5 flex gap-1 items-center rounded-2xl rounded-tl-none border border-gray-100'>
+                                                    <span className='text-xs text-slate-400'>{data?.store_typing}</span>
+                                                    <span className='w-1.5 h-1.5 rounded-full bg-whatsappChat-teal animate-bounce' />
+                                                    <span className='w-1.5 h-1.5 rounded-full bg-whatsappChat-teal animate-bounce' />
+                                                    <span className='w-1.5 h-1.5 rounded-full bg-whatsappChat-teal animate-bounce' />
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    <div className='bg-slate-100 px-2.5 py-2 flex items-center gap-2 border-t border-slate-200'>
+                                        <div className='flex-1 bg-white rounded-full px-3 py-1.5 flex items-center gap-1.5 border border-slate-200'>
+                                            <span className='text-xs text-gray-400 cursor-pointer'>😊</span>
+                                            <input
+                                                type='text'
+                                                disabled
+                                                placeholder={data?.input_placeholder}
+                                                className='flex-1 text-xs text-slate-700 bg-transparent outline-none'
+                                            />
+                                            <span className='text-xs text-gray-400 cursor-pointer'>📎</span>
+                                        </div>
+                                        <div className='w-7 h-7 rounded-full bg-whatsappChat-teal flex items-center justify-center text-white text-xs cursor-pointer'>
+                                            🎙️
+                                        </div>
+                                    </div>
+
+                                    <div className='bg-slate-100 py-1 flex justify-center items-center'>
+                                        <div className='w-28 h-1 bg-slate-900 rounded-full' />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {isChatModalOpen && (
+                <dialog
+                    className='modal z-[1001]'
+                    open
+                    onCancel={(event) => {
+                        event.preventDefault();
+                        closeChatWidget();
+                    }}
+                >
+                    <div className='modal-box relative p-0 overflow-hidden max-w-4xl w-full'>
+                        <button
+                            type='button'
+                            onClick={closeChatWidget}
+                            className='btn btn-sm btn-circle btn-ghost absolute right-3 top-3 z-50 bg-white/90'
+                        >
+                            ✕
+                        </button>
+                        <div id='whatsappChatDemoWidget' className='w-full h-[680px]'>
+                            <iframe
+                                title='MSG91 WhatsApp chat window demo'
+                                src='/whatsapp-chat-window-widget'
+                                allow='microphone'
+                                className='w-full h-full border-0'
+                            />
+                        </div>
+                    </div>
+                    <form method='dialog' className='modal-backdrop'>
+                        <button type='button' onClick={closeChatWidget}>
+                            close
+                        </button>
+                    </form>
+                </dialog>
+            )}
+        </section>
+    );
+}

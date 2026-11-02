@@ -71,27 +71,15 @@ class StepThree extends React.Component {
     };
 
     getCountries = async () => {
-        const response = await axios.get(`${process.env.API_BASE_URL}/api/v5/web/getCountries`, {
-            headers: {
-                Cookie: 'HELLO_APP_HASH=aHBVU0doU1NwRktBUDVkVndNSndUUVY3N1lmcWxzZVV2b01LcEkvR2ViST0%3D; PHPSESSID=8611kbh15da1ecpqeb712qlusj; PROXY_APP_HASH=YnB6Vm92ejVEYkgxSFR1bUxkNWFVMm9uYXUra1JzYk5QNEFyRVRKQXJiMD0%3D',
-            },
-        });
+        const response = await axios.get(`${process.env.API_BASE_URL}/api/v5/web/getCountries`);
         return response;
     };
     fetchServices = async () => {
-        const response = await axios.get(`${process.env.API_BASE_URL}/api/v5/web/getAllServices`, {
-            headers: {
-                Cookie: 'HELLO_APP_HASH=aHBVU0doU1NwRktBUDVkVndNSndUUVY3N1lmcWxzZVV2b01LcEkvR2ViST0%3D; PHPSESSID=8611kbh15da1ecpqeb712qlusj; PROXY_APP_HASH=YnB6Vm92ejVEYkgxSFR1bUxkNWFVMm9uYXUra1JzYk5QNEFyRVRKQXJiMD0%3D',
-            },
-        });
+        const response = await axios.get(`${process.env.API_BASE_URL}/api/v5/web/getAllServices`);
         return response;
     };
     fetchIndustry = async () => {
-        const response = await axios.get(`${process.env.API_BASE_URL}/api/v5/web/getIndustry`, {
-            headers: {
-                Cookie: 'HELLO_APP_HASH=aHBVU0doU1NwRktBUDVkVndNSndUUVY3N1lmcWxzZVV2b01LcEkvR2ViST0%3D; PHPSESSID=8611kbh15da1ecpqeb712qlusj; PROXY_APP_HASH=YnB6Vm92ejVEYkgxSFR1bUxkNWFVMm9uYXUra1JzYk5QNEFyRVRKQXJiMD0%3D',
-            },
-        });
+        const response = await axios.get(`${process.env.API_BASE_URL}/api/v5/web/getIndustry`);
         return response;
     };
 
@@ -162,12 +150,7 @@ class StepThree extends React.Component {
         const countryName = this.state.countryNames.find((e) => +e.id === +this.state.formData.country)?.name;
         try {
             const response = await axios.get(
-                `${process.env.API_BASE_URL}/api/v5/web/getStatesByCountryId/${selectedCountry}`,
-                {
-                    headers: {
-                        Cookie: 'HELLO_APP_HASH=aHBVU0doU1NwRktBUDVkVndNSndUUVY3N1lmcWxzZVV2b01LcEkvR2ViST0%3D; PHPSESSID=8611kbh15da1ecpqeb712qlusj; PROXY_APP_HASH=YnB6Vm92ejVEYkgxSFR1bUxkNWFVMm9uYXUra1JzYk5QNEFyRVRKQXJiMD0%3D',
-                    },
-                }
+                `${process.env.API_BASE_URL}/api/v5/web/getStatesByCountryId/${selectedCountry}`
             );
             this.setState({
                 countryData: response.data,
@@ -190,12 +173,7 @@ class StepThree extends React.Component {
         const stateName = this.state?.countryData?.data?.find((e) => +e.id === +selectedstateProvince)?.name;
         try {
             const response = await axios.get(
-                `${process.env.API_BASE_URL}/api/v5/web/getCitiesByStateId/${selectedstateProvince}`,
-                {
-                    headers: {
-                        Cookie: 'HELLO_APP_HASH=aHBVU0doU1NwRktBUDVkVndNSndUUVY3N1lmcWxzZVV2b01LcEkvR2ViST0%3D; PHPSESSID=8611kbh15da1ecpqeb712qlusj; PROXY_APP_HASH=YnB6Vm92ejVEYkgxSFR1bUxkNWFVMm9uYXUra1JzYk5QNEFyRVRKQXJiMD0%3D',
-                    },
-                }
+                `${process.env.API_BASE_URL}/api/v5/web/getCitiesByStateId/${selectedstateProvince}`
             );
             this.setState({
                 stateData: response.data,

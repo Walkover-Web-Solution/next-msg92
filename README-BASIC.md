@@ -15,7 +15,7 @@ This is MSG91's main website built with Next.js (a React framework). It has:
 
 Make sure you have:
 
-- Node.js installed (version 18 or newer)
+- Node.js installed (version 20.9 or newer)
 - A code editor like VS Code
 - Basic knowledge of HTML, CSS, and JavaScript
 
@@ -86,7 +86,7 @@ The website will open at: http://localhost:3030
 - `npm run dev` - Start the development server (port 3030)
 - `npm run build` - Build the project for production
 - `npm start` - Start the production server (port 3030)
-- `npm run lint` - Check for code errors
+- `npm run lint` - Check for code errors (currently broken on Next.js 16)
 - `npm install` - Install all project dependencies
 
 ## Ports and URLs
@@ -126,7 +126,7 @@ The website will open at: http://localhost:3030
 
 - **Module not found**: Run `npm install`
 - **Syntax error**: Check for typos in your code
-- **Build failed**: Run `npm run lint` to find issues
+- **Build failed**: Read the error in the terminal (`npm run lint` no longer works with Next.js 16)
 
 ### Working with components
 
@@ -194,7 +194,7 @@ The website will open at: http://localhost:3030
 
 - `npm run dev` - Start working on the website
 - `npm run build` - Check if everything works for production
-- `npm run lint` - Check for code problems
+- `npm run lint` - Check for code problems (currently broken on Next.js 16)
 
 ## Getting help
 
