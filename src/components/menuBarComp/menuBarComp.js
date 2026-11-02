@@ -323,7 +323,6 @@ export default function MenuBarComp({ componentData, notificationData, pageInfo 
                                     }}
                                     href='https://docs.msg91.com/overview'
                                     target='_blank'
-                                    rel='noopener noreferrer'
                                     className='text-link'
                                 >
                                     {componentData?.apidocs}
@@ -520,18 +519,17 @@ export default function MenuBarComp({ componentData, notificationData, pageInfo 
                                 className='btn btn-primary btn-sm uppercase whitespace-nowrap'
                                 href={getURL('signup', pageInfo?.page)}
                                 target='_blank'
-                                rel='noopener noreferrer'
                             >
                                 {componentData?.signup_btn}
                             </a>
                         </div>
                     </div>
                     <div
-                        className={`container z-[1000] flex lg:hidden py-5 ${
+                        className={`container flex lg:hidden py-5 ${
                             nav === 'show' ? 'fixed inset-x-0 top-0 bg-white' : ''
                         }`}
                     >
-                        <div className='w-full z-[1000] flex items-center gap-3'>
+                        <div className='w-full flex items-center gap-3'>
                             <a
                                 href={pageInfo?.country === 'global' ? '/' : `/${pageInfo?.country}`}
                                 className='shrink-0'
@@ -562,7 +560,7 @@ export default function MenuBarComp({ componentData, notificationData, pageInfo 
                                                     <MdArrowDropDown fontSize={16} />
                                                 </div>
 
-                                                <div className='dropdown-content bg-neutral z-[9999] w-32 rounded shadow'>
+                                                <div className='dropdown-content bg-neutral w-32 rounded shadow'>
                                                     <ul>
                                                         {currentCountry.languages.map((language, index) => (
                                                             <li
@@ -604,7 +602,7 @@ export default function MenuBarComp({ componentData, notificationData, pageInfo 
                                                     <MdArrowDropDown fontSize={16} />
                                                 </div>
 
-                                                <div className='dropdown-content bg-neutral z-[9999] w-60 rounded shadow'>
+                                                <div className='dropdown-content bg-neutral w-60 rounded shadow'>
                                                     <ul>
                                                         <li
                                                             onClick={() => handleCookies('global')}
