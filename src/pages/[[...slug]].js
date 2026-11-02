@@ -201,11 +201,6 @@ const Components = {
     FileHostingUseCasesComp,
     FileHostingComparisonComp: FileHostingFeatureHighlightComp,
     FileHostingFormatsComp,
-    WhatsAppProblemSolutionComp,
-    WhatsAppStepsComp,
-    WhatsAppComparisonComp,
-    WhatsAppWhyComp,
-    WhatsAppCTAComp,
     StartupSection,
 };
 
