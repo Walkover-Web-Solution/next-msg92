@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+const MAX_MINUTES = 100_000_000;
+
 export default function CalculateVoicePricing({ plans, currency, symbol }) {
     const [selectedNetwork, setSelectedNetwork] = useState();
     const [minutes, setMinutes] = useState(1000);
@@ -62,9 +64,23 @@ export default function CalculateVoicePricing({ plans, currency, symbol }) {
                         <input
                             value={minutes}
                             type='number'
+                            min={0}
+                            max={MAX_MINUTES}
+                            step='any'
                             placeholder='Total No. of Minutes'
                             className='input input-bordered w-full max-w-xs select-md'
-                            onChange={(e) => setMinutes(e.target.value)}
+                            onChange={(e) => {
+                                const value = e.target.value;
+                                if (value === '') {
+                                    setMinutes('');
+                                    return;
+                                }
+
+                                const parsedMinutes = Number(value);
+                                if (Number.isFinite(parsedMinutes)) {
+                                    setMinutes(Math.min(MAX_MINUTES, Math.max(0, parsedMinutes)));
+                                }
+                            }}
                         />
                     </label>
                 </div>
