@@ -18,7 +18,7 @@
         "getstarted_btn": "Get Started",
         "schedule_meet": "Book a Free Demo",
         "trustedByComp": {
-            "heading": "Working with some of the best",
+            "heading": "Trusted by Industry Leaders Worldwide.",
             "logos": [
             {
                 "name": "Xiaomi",
@@ -698,7 +698,7 @@
     "pricingNote": "The official US pricing page lists the Free plan at $0/month, Basic at $40/month and Premium at $80/month. Additional inboxes, tickets, bot usage and communication services may incur charges. A separate Live Chat plan is also listed at $0/month with one inbox and unlimited tickets for that plan's eligible chat functionality. View pricing: ",
     "pricingLink": {
     "text": "MSG91 Hello US Pricing",
-    "url": "https://msg91.com/ae/pricing/hello"
+    "url": "https://msg91.com/us/pricing/hello"
 }
     },
     "WhatsAppWhyChoose": {
