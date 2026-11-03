@@ -227,7 +227,6 @@ const WhatsappLinkComp = ({ data }) => {
                 badge={data?.tagline}
                 title={data?.product?.name}
                 subtitle={data?.heading}
-                description='Simple tool to create WhatsApp click to chat QR code/Widget/Link for your website or landing pages.'
                 buttonText={data?.getstarted_btn}
                 buttonAction={() => document.getElementById('generate')?.scrollIntoView({ behavior: 'smooth' })}
                 themeColor='green'
