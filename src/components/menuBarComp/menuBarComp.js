@@ -415,7 +415,7 @@ export default function MenuBarComp({ componentData, notificationData, pageInfo 
 
                                             <div
                                                 tabIndex={0}
-                                                className='dropdown-content bg-neutral w-60 rounded shadow'
+                                                className='dropdown-content bg-neutral w-60 rounded shadow z-[1000]'
                                             >
                                                 <ul>
                                                     <li
