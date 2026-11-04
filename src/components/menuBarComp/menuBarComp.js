@@ -18,9 +18,11 @@ export default function MenuBarComp({ componentData, notificationData, pageInfo 
     const router = useRouter();
 
     const currentCountry = availableCountries.find((country) => country.shortname.toLowerCase() === pageInfo?.country);
-    const iconOnlyCountries = ['br', 'br-pt', 'ph', 'fil-ph'];
+    const iconOnlyCountries = ['ph', 'fil-ph'];
 
     const useIconOnlyControls = iconOnlyCountries.includes(pageInfo?.country);
+
+    const hideLanguageLabel = ['br', 'br-pt'].includes(pageInfo?.country);
 
     const showCountrySelector = !specialPages?.global?.some((page) => router.asPath.startsWith(`/${page}`));
 
@@ -358,7 +360,7 @@ export default function MenuBarComp({ componentData, notificationData, pageInfo 
                                                 className='flex items-center gap-1 text-link'
                                             >
                                                 <MdTranslate fontSize={16} />
-                                                {!useIconOnlyControls && currentCountry?.language}
+                                                {!useIconOnlyControls && !hideLanguageLabel && currentCountry?.language}
                                                 <MdArrowDropDown fontSize={16} />
                                             </div>
 
@@ -406,7 +408,7 @@ export default function MenuBarComp({ componentData, notificationData, pageInfo 
                                                 )}
 
                                                 {!useIconOnlyControls && (
-                                                    <span className='hidden xl:inline'>
+                                                    <span className='hidden lg:inline'>
                                                         {currentCountry?.name || 'Global'}
                                                     </span>
                                                 )}
