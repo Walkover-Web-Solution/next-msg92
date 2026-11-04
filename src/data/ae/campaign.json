@@ -5,7 +5,6 @@
     },
     "BannerComp": {
         "slug": "campaign",
-        "not_absolute": true,
         "product": {
             "name": "Campaign",
             "icon": "/assets/icons/products/campaign.svg"

@@ -3,7 +3,7 @@
     @apply overflow-hidden lg:w-1/2;
 }
 .img {
-    @apply w-full lg:w-[1000px] lg:absolute;
+    @apply w-full max-w-full h-auto;
     @media (min-width: 1024px) {
         margin: 0 auto;
     }

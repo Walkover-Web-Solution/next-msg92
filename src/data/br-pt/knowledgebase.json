@@ -5,7 +5,6 @@
     },
     "BannerComp": {
         "slug": "knowledgebase",
-        "not_absolute": true,
         "product": {
             "name": "KnowledgeBase",
             "icon": "/assets/icons/products/knowledgebase.svg"

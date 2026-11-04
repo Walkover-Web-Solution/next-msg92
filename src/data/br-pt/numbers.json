@@ -5,7 +5,6 @@
     },
     "BannerComp": {
         "slug": "numbers",
-        "not_absolute": true,
         "product": {
             "name": "Numbers",
             "icon": "/assets/icons/products/numbers.svg"
