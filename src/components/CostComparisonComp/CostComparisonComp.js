@@ -11,7 +11,7 @@ import getSubscriptions from '@/utils/pricing/getSubscription';
 import handlePlanStructure from '@/utils/pricing/handlePlanStructure';
 import { HELLO_PLANS, ALL_COMPETITORS, CURRENCY_RATES, HELLO_MS_ID } from './constants';
 import { calculatePlatformCosts, formatCurrencyAmount, resolveApiPlan } from './helpers';
-export default function CostComparisionComp({ data, pageInfo }) {
+export default function CostComparisonComp({ data, pageInfo }) {
     const [tickets, setTickets] = useState(
         data?.defaults?.tickets !== undefined ? Number(data.defaults.tickets) : 3000
     );
