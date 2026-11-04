@@ -19,7 +19,7 @@ export default function FaqsComp({ data, notCont }) {
                                     className={`collapse collapse-plus ${isOpen ? 'collapse-open border rounded' : 'border-b rounded-none'}`}
                                 >
                                     <h3
-                                        className={`collapse-title text-xl font-medium ${isOpen ? 'bg-[var(--secandary-color)]' : ''}`}
+                                        className={`collapse-title text-xl font-medium ${isOpen ? 'bg-secondary' : ''}`}
                                     >
                                         <button
                                             type='button'
