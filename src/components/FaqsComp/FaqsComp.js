@@ -1,4 +1,8 @@
+import { useState } from 'react';
+
 export default function FaqsComp({ data, notCont }) {
+    const [openIndex, setOpenIndex] = useState(0);
+
     if (data?.faqs && data?.faqs?.length > 0) {
         return (
             <>
@@ -7,20 +11,28 @@ export default function FaqsComp({ data, notCont }) {
                     {data?.subheading && <p className='text-lg text-gray-600'> {data.subheading} </p>}
                     <div className='flex flex-col'>
                         {data?.faqs.map((faq, index) => {
+                            const isOpen = openIndex === index;
+
                             return (
-                                <div key={index} className='collapse collapse-plus  border-b rounded-none'>
-                                    <input
-                                        type='radio'
-                                        name='my-accordion-3'
-                                        defaultChecked={index === 0}
-                                        aria-label={faq?.question}
-                                    />
-                                    <h3 className='collapse-title text-xl font-medium'>
-                                        <button className='text-start'>{faq?.question}</button>
+                                <div
+                                    key={index}
+                                    className={`collapse collapse-plus ${isOpen ? 'collapse-open border rounded' : 'border-b rounded-none'}`}
+                                >
+                                    <h3
+                                        className={`collapse-title text-xl font-medium ${isOpen ? 'bg-[var(--secandary-color)]' : ''}`}
+                                    >
+                                        <button
+                                            type='button'
+                                            className='text-start select-text'
+                                            aria-expanded={isOpen}
+                                            onClick={() => setOpenIndex(index)}
+                                        >
+                                            {faq?.question}
+                                        </button>
                                     </h3>
                                     <div className='collapse-content '>
                                         <div
-                                            className=' pt-3 text-lg'
+                                            className=' pt-3 text-lg '
                                             dangerouslySetInnerHTML={{ __html: faq?.answer }}
                                         ></div>
                                     </div>
