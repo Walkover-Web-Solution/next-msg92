@@ -4,6 +4,7 @@
 }, 
        "BannerComp": {
         "slug": "segmento",
+        "not_absolute": true,
         "product": {
             "name": "Segmento",
             "icon": "/assets/icons/products/segmento.svg"

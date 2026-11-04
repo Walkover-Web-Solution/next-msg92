@@ -5,6 +5,7 @@
     },
     "BannerComp": {
         "slug": "shorturl",
+        "not_absolute": true,
         "product": {
             "name": "URL Shortener",
             "icon": "/assets/icons/products/shorturl.svg"
