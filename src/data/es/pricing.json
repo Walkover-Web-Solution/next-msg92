@@ -388,6 +388,47 @@
                 "heading": "<h2 class='text-xl md:text-3xl font-bold'>Up to <span class='text-green-600 font-bold text-2xl lg:text-3xl'>10% Lower</span> Than Meta Pricing.</h2>",
                 "sub_heading": "Predictable pricing. No markup. Built for long-term growth."
             },
+            "faqComp": {
+                "heading": "Frequently Asked Questions",
+                "faqs": [
+                {
+                    "question": "What is the MSG91 WhatsApp Business API pricing in Spain?",
+                    "answer": "<p>MSG91 WhatsApp Business API comes with <strong>no platform subscription fee for the initial two months</strong>. After that, the cost is <strong>£6 per month for each WhatsApp number</strong>.</p><p>Messaging charges are separate and billed in GBP. The amount depends on your customer's country and whether you send a Marketing, Utility, Authentication or Service message.</p><p>MSG91's rates for Spain are lower than Meta's standard pricing. Check the rate table above to estimate your costs based on monthly message volume. Applicable taxes are additional.</p>"
+                },
+                {
+                    "question": "How does MSG91 offer WhatsApp messaging below Meta's standard prices in Spain?",
+                    "answer": "<p>MSG91 is a Meta partner and offers businesses access to WhatsApp messaging at discounted rates through its commercial arrangements.</p><p>These savings are reflected in the messaging prices you pay, while MSG91 charges a separate monthly subscription for the platform.</p><p>Your business can also bring WhatsApp, SMS, Email, Voice and AI chatbots together through MSG91. Each service follows its own pricing, so you can choose the communication channels that suit your customers and budget.</p>"
+                },
+                {
+                    "question": "Will I pay extra for WhatsApp templates, media attachments or API access?",
+                    "answer": "<p>No. Creating approved templates, sending supported media, using WhatsApp APIs and configuring webhooks do not attract additional feature fees from MSG91.</p><p>If your number is eligible for <strong>WhatsApp Coexistence</strong>, you can also connect it to the API while continuing to use the WhatsApp Business app.</p><p>MSG91 provides <strong>100 days of message logs at no cost</strong>. Historical logs covering up to one year are available for an additional fee.</p><p>Standard message charges, the monthly platform subscription and any separately billed services still apply. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/help/whatsapp/how-to-check-whatsapp-logs-message-status'>Learn how to access WhatsApp message logs</a>.</p>"
+                },
+                {
+                    "question": "How has WhatsApp billing changed for Spanish businesses since October 1, 2026?",
+                    "answer": "<p>Since October 1, 2026, Meta has charged for billable business replies sent after customers contact a business on WhatsApp.</p><p>This affects agent responses, chatbot messages and Utility updates that previously had no charge in these circumstances. Messages sent by customers to your business remain free.</p><p>For teams handling lengthy enquiries, <strong>MSG91 Chat Window</strong> offers another way to manage costs. Customers can continue their support conversations in a dedicated chat experience, reducing the need to send every reply as a separate WhatsApp message. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/guide/how-much-will-october-1-2026-actually-cost-you-and-how-msg91-keeps-it-lower-anywhere-in-the-world'>Understand the October 2026 WhatsApp pricing update</a>.</p>"
+                },
+                {
+                    "question": "Does MSG91 have special WhatsApp messaging pricing for high-volume businesses in Spain?",
+                    "answer": "<p>Yes. Companies regularly sending thousands or millions of WhatsApp messages can discuss <strong>custom enterprise pricing</strong> with MSG91.</p><p>High-volume Utility and Authentication messaging may qualify for Meta's volume-based discounts, subject to its eligibility requirements.</p><p>Whether you're sending appointment reminders, e-commerce updates or nationwide promotional campaigns, MSG91 can help you plan a suitable messaging arrangement.</p><p><a class='text-link active-link' target='_blank' href='/contact-us'>Contact MSG91 Sales</a> to discuss your requirements.</p>"
+                },
+                {
+                    "question": "Are unsuccessful WhatsApp messages, retries and backup notifications charged?",
+                    "answer": "<p>If a WhatsApp message fails to deliver, you aren't charged for that failed delivery. When MSG91 automatically retries the message and successfully delivers it, the applicable WhatsApp rate is charged.</p><p>For important notifications such as OTPs, purchase confirmations or delivery updates, you can use <strong>SMS or Email fallback</strong>.</p><p>Messages sent through these backup channels are billed separately according to their respective pricing.</p>"
+                },
+                {
+                    "question": "How can I keep WhatsApp costs under control across different teams or locations?",
+                    "answer": "<p>MSG91 gives you a single account to manage WhatsApp spending across multiple numbers, shops or departments.</p><p>You can assign prepaid balances, set monthly spending limits and activate automatic recharge to help maintain sufficient funds for messaging.</p><p>The platform subscription is <strong>£6 per number each month after the initial two months</strong>, with message usage billed separately.</p><p>Unused prepaid funds remain available in the following month as long as the subscription stays active. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/help/whatsapp/prepaid-balance-and-auto-renew'>See how prepaid billing works</a>.</p>"
+                },
+                {
+                    "question": "Can Spanish businesses use MSG91 WhatsApp chatbots for free?",
+                    "answer": "<p>Yes. The <a class='text-link active-link' target='_blank' href='/es/pricing/hello'>MSG91 Hello Free plan</a> lets you get started with <strong>50 tickets per month and 2 inboxes</strong>, without a Hello subscription fee.</p><p>For businesses needing higher ticket limits, Hello offers: <strong>Basic:</strong> £35/month, including 1,000 tickets, 2 inboxes and a £35 BOT wallet. <strong>Premium:</strong> £65/month, including 2,000 tickets, 3 inboxes and a £65 BOT wallet.</p><p>Additional tickets cost £0.012 on Basic and £0.025 on Premium. Extra inboxes cost £9 each on paid plans.</p><p>Custom rule-based bots do not have a separate bot-message fee. AI chatbot usage follows the applicable bot rate card and is deducted from the available BOT wallet.</p><p><strong>WhatsApp messaging fees are charged independently of Hello.</strong></p>"
+                },
+                {
+                    "question": "Can I choose the maximum amount to pay for WhatsApp Marketing messages in Spain?",
+                    "answer": "<p>Yes. MSG91's <strong>Set Max Price</strong> feature allows you to control the highest price you're willing to pay per WhatsApp Marketing message.</p><p>Open an approved Marketing template, select <strong>Set Max Price</strong> under Template Pricing and enter your preferred limit. You can choose different limits for different recipient countries.</p><p>The final charge may be lower than your limit, but delivery isn't guaranteed. You can update your price or return to Standard pricing whenever needed. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/guide/reduce-your-whatsapp-business-api-cost'>Learn how WhatsApp bidding works</a>.</p>"
+                }
+                ]
+            },
             "connectComp": {
                 "content": "Connect with our team for Personalized Pricing .",
                 "sales_btn": "Talk to Sales",

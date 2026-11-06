@@ -110,6 +110,7 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                         country={pageInfo?.country}
                     />
                 </div>
+                <FaqsComp data={pageData?.faqComp} notCont={true} />
                 {pageData?.connectComp && (
                     <ConnectWithTeam
                         product={pageInfo?.product}
@@ -118,7 +119,6 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                         isPlan={true}
                     />
                 )}
-                <FaqsComp data={pageData?.faqComp} notCont={true} />
             </div>
 
             <dialog ref={calculateModalRef} className='modal'>

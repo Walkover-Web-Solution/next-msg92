@@ -388,6 +388,47 @@
                 "heading": "<h2 class='text-xl md:text-3xl font-bold'>Lower Than Meta Pricing. <span class='text-green-600 font-bold text-2xl lg:text-3xl'>Guaranteed</span></h2>",
                 "sub_heading": "No markups. No hidden costs. Just better pricing."
             },
+            "faqComp": {
+                "heading": "Frequently Asked Questions",
+                "faqs": [
+                {
+                    "question": "What is the MSG91 WhatsApp Business API pricing in the Philippines?",
+                    "answer": "<p>With MSG91, the WhatsApp platform subscription is <strong>free for the initial two months</strong>. After that, you pay just <strong>£6/month for each WhatsApp number</strong>.</p><p>WhatsApp messages are charged separately in GBP, at rates lower than Meta's standard pricing for the Philippines. The rate depends on the recipient's country and message category: Marketing, Utility, Authentication or Service.</p><p>Check the messaging rates in the pricing table above to calculate your monthly costs. MSG91 does not charge additional VAT on Philippines billing.</p>"
+                },
+                {
+                    "question": "Why does MSG91 charge less than Meta for WhatsApp in the Philippines?",
+                    "answer": "<p>MSG91 is an official Meta partner. Through its partner pricing arrangements, MSG91 offers WhatsApp messaging rates lower than Meta's standard prices and passes those savings on to businesses in the Philippines.</p><p>MSG91 earns through its monthly platform subscription rather than adding extra markup to WhatsApp messages.</p><p>Businesses can also use MSG91 for AI chatbots, SMS, Email and Voice, with each service billed separately. This helps you manage customer communication from one platform while keeping messaging costs low.</p>"
+                },
+                {
+                    "question": "Are there extra charges for WhatsApp templates, integrations or existing numbers?",
+                    "answer": "<p>No. MSG91 does not charge extra for creating WhatsApp templates, sending supported images or documents, using APIs and webhooks, or enabling WhatsApp Coexistence for eligible numbers.</p><p>Coexistence allows eligible businesses to continue using the WhatsApp Business app and API on the same number.</p><p>WhatsApp message logs for the <strong>last 100 days are free</strong>. Older logs, available for up to one year, can be requested at an additional cost.</p><p>You only pay the applicable messaging charges, platform subscription and any separately billed services. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/help/whatsapp/how-to-check-whatsapp-logs-message-status'>Check WhatsApp message logs</a>.</p>"
+                },
+                {
+                    "question": "What changed in WhatsApp pricing in the Philippines from October 1, 2026?",
+                    "answer": "<p>From October 1, 2026, Meta charges for billable WhatsApp replies sent after a customer messages your business. This includes agent replies, chatbot responses, order confirmations and delivery updates that were previously free in these situations.</p><p>Incoming customer messages remain free. MSG91 offers messaging rates lower than Meta's standard Philippines pricing.</p><p>MSG91 Chat Window can also help reduce costs by continuing longer customer conversations without sending every reply as a separate WhatsApp message. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/guide/how-much-will-october-1-2026-actually-cost-you-and-how-msg91-keeps-it-lower-anywhere-in-the-world'>See how MSG91 helps lower WhatsApp costs</a>.</p>"
+                },
+                {
+                    "question": "Does MSG91 offer special pricing for businesses sending millions of WhatsApp messages?",
+                    "answer": "<p>Yes. MSG91 offers <strong>custom enterprise pricing</strong> for businesses in the Philippines sending thousands or millions of WhatsApp messages every month.</p><p>Businesses sending large volumes of Utility and Authentication messages may qualify for Meta's volume-based discounts. MSG91 also offers customized commercial plans based on messaging volume and business requirements.</p><p>Whether you're managing nationwide retail campaigns, banking notifications or e-commerce updates, our team can help you find a suitable plan.</p><p><a class='text-link active-link' target='_blank' href='/contact-us'>Contact MSG91 Sales</a> for enterprise WhatsApp pricing.</p>"
+                },
+                {
+                    "question": "Are failed WhatsApp messages, automatic retries and SMS or Email fallback charged separately?",
+                    "answer": "<p>With MSG91, failed WhatsApp messages are not charged. If MSG91 automatically retries a failed message and the retry is successfully delivered, the applicable WhatsApp messaging rate applies.</p><p>If an OTP, payment alert or delivery notification is sent through <strong>SMS or Email fallback</strong>, the respective channel charges apply separately based on the applicable SMS or Email pricing.</p>"
+                },
+                {
+                    "question": "Can Philippine businesses control WhatsApp spending across multiple branches or numbers?",
+                    "answer": "<p>Yes. MSG91 lets you manage WhatsApp costs for different branches, stores or departments from one account. You can add prepaid balances, set monthly spending limits and enable auto-recharge to help avoid interruptions.</p><p>Each WhatsApp number costs <strong>£6/month after the initial two months</strong>, plus messaging charges.</p><p>Unused prepaid balance carries forward to the next month while your subscription remains active. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/help/whatsapp/prepaid-balance-and-auto-renew'>Learn about prepaid billing and auto-recharge</a>.</p>"
+                },
+                {
+                    "question": "Is the WhatsApp chatbot free with MSG91 in the Philippines?",
+                    "answer": "<p>Yes, you can get started with the <a class='text-link active-link' target='_blank' href='/ph/pricing/hello'>MSG91 Hello Free plan</a>, which includes <strong>50 tickets per month and 2 inboxes</strong>.</p><p>For growing businesses, Hello offers: <strong>Basic:</strong> £35/month with 1,000 tickets, 2 inboxes and a £35 BOT wallet. <strong>Premium:</strong> £65/month with 2,000 tickets, 3 inboxes and a £65 BOT wallet.</p><p>Extra tickets cost £0.012 each on Basic and £0.025 each on Premium. Additional inboxes cost £9 each on paid plans.</p><p>Custom rule-based chatbots do not have separate bot-message charges. AI chatbot usage is deducted from the BOT wallet according to the applicable bot rate card.</p><p>WhatsApp messaging charges are billed separately.</p>"
+                },
+                {
+                    "question": "Can businesses in the Philippines set a maximum price for WhatsApp Marketing messages?",
+                    "answer": "<p>Yes. MSG91's <strong>Set Max Price</strong> feature lets you choose the maximum amount you're willing to pay per WhatsApp Marketing message.</p><p>Open an approved Marketing template, select <strong>Set Max Price</strong> under Template Pricing, and enter your limit. You can also set different limits for different countries.</p><p>You may pay less than your limit, but delivery isn't guaranteed. You can change your price or return to Standard pricing anytime. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/guide/reduce-your-whatsapp-business-api-cost'>Learn how WhatsApp bidding works</a>.</p>"
+                }
+                ]
+            },
             "connectComp": {
                 "content": "Connect with our team for Personalized Pricing .",
                 "sales_btn": "Talk to Sales",
