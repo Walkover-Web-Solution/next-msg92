@@ -391,6 +391,47 @@
             },
             "tax": "Since we do not impose any service charge, GST will be applied to WhatsApp API pricing",
             "adds": "Zero Whatsapp cloud API pricing for Click to WhatsApp Ads.",
+            "faqComp": {
+                "heading": "Frequently Asked Questions",
+                "faqs": [
+                {
+                    "question": "What is the MSG91 WhatsApp Business API pricing in India?",
+                    "answer": "<p>MSG91 WhatsApp Business API platform starts with a ₹0 subscription fee for the initial two months. After that, you pay just ₹500 a month for each WhatsApp number.</p><p>WhatsApp messages are charged separately, at the same price Meta charges. MSG91 adds nothing on top. WhatsApp messaging charges are based on the recipient’s country and message category, including Marketing, Utility, Authentication, Service, and Authentication International. 18% GST applies.</p>"
+                },
+                {
+                    "question": "Does MSG91 charge extra for WhatsApp templates, media, APIs, or other features?",
+                    "answer": "<p>No. With MSG91, there is no extra charge for creating templates, sending images or documents, using APIs and webhooks, or turning on WhatsApp Coexistence for eligible numbers.</p><p>WhatsApp message logs for the last 100 days are free. If you need older logs, up to one year, you can ask for them at an extra cost. You only pay the normal message charges, the platform fee and taxes. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/help/whatsapp/how-to-check-whatsapp-logs-message-status'>Check WhatsApp message logs</a>.</p>"
+                },
+                {
+                    "question": "What changed in WhatsApp Business pricing from October 1, 2026?",
+                    "answer": "<p>From October 1, 2026, Meta charges for replies you send on WhatsApp after a customer messages you. This includes agent replies, chatbot answers and Utility messages. Before this, they were free. Messages your customers send you are still free. MSG91 charges the same rate as Meta, with no markup.</p><p>MSG91 also helps you pay less. With MSG91 Chat Window, the chat goes on in one chat window, not as separate WhatsApp messages. So you pay for fewer messages. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/guide/how-much-will-october-1-2026-actually-cost-you-and-how-msg91-keeps-it-lower-anywhere-in-the-world'>See how MSG91 lowers your cost</a>.</p>"
+                },
+                {
+                    "question": "Is there special pricing for sending millions of WhatsApp messages?",
+                    "answer": "<p>Yes. MSG91 offers enterprise pricing for businesses that send thousands &amp; millions of WhatsApp messages every month. This covers Marketing, Utility, Authentication and Service messages. When you send a high volume of Utility and Authentication messages, Meta’s rates for those messages may drop. MSG91 passes this on to you with no extra markup.</p><p>For very high volumes, our sales team can build a custom plan around your messages and needs. <a class='text-link active-link' target='_blank' href='/contact-us'>Contact MSG91 Sales</a> to get your enterprise WhatsApp price.</p>"
+                },
+                {
+                    "question": "Are failed WhatsApp messages, automatic retries, and SMS or RCS fallback charged separately?",
+                    "answer": "<p>With MSG91, failed WhatsApp messages are not charged. You pay only for messages that are successfully sent, and incoming WhatsApp messages are free.</p><p>When MSG91 automatically retries a failed message, you pay only if the retry is successfully sent, at the normal WhatsApp rate.</p><p>If you use RCS as a fallback, you pay only when the RCS message is successfully sent. Failed RCS messages are not charged. SMS fallback is charged at the normal SMS rate for every message sent.</p>"
+                },
+                {
+                    "question": "Can I control my WhatsApp spend so it never goes over budget?",
+                    "answer": "<p>Yes. With MSG91, you can control WhatsApp costs for every number from one account. Add a prepaid balance to each number, set a monthly spending limit, and turn on auto-recharge so messages never stop. Each number costs ₹500 a month after the initial two months, plus message charges and 18% GST. So every team knows exactly what it spends. Any unused prepaid balance carries forward to the next month, as long as your subscription is active. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/help/whatsapp/prepaid-balance-and-auto-renew'>Learn about prepaid billing</a>.</p>"
+                },
+                {
+                    "question": "Is the WhatsApp chatbot free with MSG91?",
+                    "answer": "<p>Yes, to start. MSG91 gives you a WhatsApp chatbot at no extra cost on the <a class='text-link active-link' target='_blank' href='/in/pricing/hello'>Hello Free plan</a>, for up to 50 tickets. MSG91 Hello is a customer support platform where your chatbots and agents handle every chat in one inbox. For more tickets, choose a paid plan: Basic at ₹1,500 a month with a ₹1,500 bot wallet, or Premium at ₹3,000 a month with a ₹3,000 bot wallet.</p><p>Rule-based bots do not use the bot wallet. AI chatbots use money from the bot wallet, billed as per the bot rate card. 18% GST and WhatsApp message charges are extra.</p>"
+                },
+                {
+                    "question": "What is the WhatsApp Authentication International rate in India?",
+                    "answer": "<p>It is a higher price Meta charges for WhatsApp OTPs sent to Indian (+91) numbers by some businesses based outside India.</p><p>Normal OTP rate: ₹0.115 per message. International OTP rate: ₹2.4971 per message.</p><p>You pay the higher rate only if both are true: your business is based outside India, and in 30 days, you send more than 7.5 lakh messages that you start (not replies), to countries with this rate, from all your WhatsApp accounts together.</p><p>Meta tells you 30 days before it starts. After that, all your OTPs cost the higher rate, even if you send fewer messages later. Businesses based in India always pay the normal rate.</p><p><a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/authentication-international-rates#markets-with-authentication-international-rates'>See the countries on Meta's website</a> | <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/in/pricing/whatsapp'>Check MSG91 WhatsApp pricing</a>.</p>"
+                },
+                {
+                    "question": "Can businesses set a maximum price for WhatsApp marketing messages?",
+                    "answer": "<p>Yes. With MSG91’s Set Max Price feature, you choose the most you want to pay for each WhatsApp Marketing message. You can set a different limit for each country. To use it, open an approved Marketing template, choose Set Max Price under Template Pricing, and enter your limit. You may pay less than your limit. But if your limit is too low, some messages may not be delivered. You can change your limit or go back to Standard pricing at any time. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/guide/reduce-your-whatsapp-business-api-cost'>Learn how WhatsApp bidding works</a>.</p>"
+                }
+                ]
+            },
             "connectComp": {
                 "content": "Connect with our team for Personalized Pricing .",
                 "sales_btn": "Talk to Sales",

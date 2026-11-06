@@ -7,7 +7,7 @@ export default function FaqsComp({ data, notCont }) {
         return (
             <>
                 <div className={`my-20 flex flex-col gap-6 ${!notCont && 'container'}`}>
-                    <h2 className='text-3xl font-bold'>{data?.heading || 'Frequently Asked Questions'}</h2>
+                    <h2 className='text-3xl font-semibold'>{data?.heading || 'Frequently Asked Questions'}</h2>
                     {data?.subheading && <p className='text-lg text-gray-600'> {data.subheading} </p>}
                     <div className='flex flex-col'>
                         {data?.faqs.map((faq, index) => {
