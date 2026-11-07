@@ -1,15 +1,10 @@
 import getURL from '@/utils/getURL';
 import { useState } from 'react';
-import Script from 'next/script';
 import { MdLaunch } from 'react-icons/md';
 import BookingModal from '@/components/ContactUs/BookingModal';
 
-const CHAT_WIDGET_SCRIPT = 'https://blacksea.msg91.com/chat-widget.js';
-const SALES_BOT_TOKEN = '8e51b';
-
 export default function ConnectWithTeam({ product, isPlan, pageData, href, per }) {
     const [isSalesModalOpen, setIsSalesModalOpen] = useState(false);
-    const [widgetScriptLoaded, setWidgetScriptLoaded] = useState(false);
 
     const handleOpenModal = () => setIsSalesModalOpen(true);
     const handleCloseModal = () => setIsSalesModalOpen(false);
@@ -55,13 +50,7 @@ export default function ConnectWithTeam({ product, isPlan, pageData, href, per }
                     {`${knowMoreText} ${product}`}
                 </a>
             </div>
-            <Script strategy='afterInteractive' src={CHAT_WIDGET_SCRIPT} onLoad={() => setWidgetScriptLoaded(true)} />
-            <BookingModal
-                isOpen={isSalesModalOpen}
-                onClose={handleCloseModal}
-                widgetToken={SALES_BOT_TOKEN}
-                widgetScriptLoaded={widgetScriptLoaded}
-            />
+            <BookingModal isOpen={isSalesModalOpen} onClose={handleCloseModal} />
         </div>
     );
 }
