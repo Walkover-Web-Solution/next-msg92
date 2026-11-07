@@ -402,42 +402,50 @@
         ]
     },
     "FaqsComp": {
-    "heading": "Frequently Asked Questions",
-    "faqs": [
-      {
-        "question": "Can MSG91 handle millions of WhatsApp messages at peak times?",
-        "answer": "<p>Yes. MSG91 has been sending business messages for 18 years. During festive seasons and big sales, it delivers millions of WhatsApp messages a day for large brands. Your OTPs, offers and order updates go out on time, even at peak traffic.</p>"
-      },
-      {
-        "question": "What uptime and support do the customers get?",
-        "answer": "<p>MSG91 WhatsApp messaging runs at 99.9% uptime, so your messages keep flowing. Support is available 24/7 by email, WhatsApp, phone call, website chat and scheduled meetings. Real people and AI agents are ready to help with any query.</p>"
-      },
-      {
-        "question": "Is my WhatsApp data safe with MSG91, and is it stored in India?",
-        "answer": "<p>Yes. MSG91 stores data for Indian businesses in its data centre in India, so your customer data stays in the country. MSG91 is SOC 2 Type II certified and compliant with India’s DPDP Act, so your data is protected to global and Indian standards. Your legal and security teams can review and approve MSG91 with confidence.</p>"
-      },
-      {
-        "question": "What if a critical message fails on WhatsApp?",
-        "answer": "<p>MSG91 sends it through a fallback channel, so it still reaches your customer. As an omnichannel platform, MSG91 lets you set SMS, Email, RCS or Voice as a backup for each message. Say, if a WhatsApp OTP fails, it goes out on the backup channel automatically. Failed WhatsApp messages are also retried on their own.</p>"
-      },
-      {
-        "question": "Can MSG91 WhatsApp integrate with CRM, ecommerce and MarTech tools like WebEngage, MoEngage, CleverTap and Shopify?",
-        "answer": "<p>Yes. MSG91 WhatsApp integrates with CRM, ecommerce and MarTech tools, including WebEngage, MoEngage, CleverTap, Shopify and Zoho CRM. It offers integrations and connects with 2,000+ apps. See all <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/partners-and-integrations'>MSG91 integrations</a>. For in-house systems, use the <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://docs.msg91.com/whatsapp'>MSG91 WhatsApp API</a> and webhooks to send messages and get real-time updates.</p>"
-      },
-      {
-        "question": "Can we manage multiple WhatsApp numbers and teams from one account?",
-        "answer": "<p>Yes. You can add multiple WhatsApp numbers to one MSG91 account, for example one for each brand, region or department. All your agents and teams work from the same shared inbox, so you never have to switch between accounts.</p>"
-      },
-      {
-        "question": "Can multiple agents reply to WhatsApp chats from one number?",
-        "answer": "<p>Yes. With <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/in/hello'>MSG91 Hello</a>, your whole team can reply to customers from one WhatsApp number. All chats come into one shared inbox and are assigned to the right agent automatically. You can also automate support with MSG91’s AI agent. It answers customer queries first, and when a customer asks for a person, the chat passes smoothly to a human agent. Add as many agents as you need, with no per-agent charge.</p>"
-      },
-      {
-        "question": "How fast can we go live with MSG91 WhatsApp?",
-        "answer": "<p>If your Meta business account is verified and your WhatsApp number is ready, you can connect it to MSG91 in about 10 minutes. A step-by-step <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/help/whatsapp/whatsapp-number-integration---onboarding'>help doc and video guide</a> walk you through it. If you get stuck, the MSG91 onboarding team helps you finish the setup. Once your template gets approved, you can start sending messages.</p>"
-      }
-    ]
-  },
+        "heading": "Frequently Asked Questions",
+        "faqs": [
+            {
+            "question": "Can MSG91 handle millions of WhatsApp messages at peak times?",
+            "answer": "<p>Yes. MSG91 has been sending business messages for 18 years. During festive seasons and big sales, it delivers millions of WhatsApp messages a day for large brands. Your OTPs, offers and order updates go out on time, even at peak traffic. Big launches and sale days run smoothly. You don't need to slow down or split your campaigns when traffic spikes. You can schedule big sends in advance and track every message with detailed delivery reports.</p>"
+            },
+            {
+            "question": "What uptime and support do the customers get?",
+            "answer": "<p>MSG91 WhatsApp messaging runs at 99.9% uptime, so your messages keep flowing. Support is available 24/7 by email, WhatsApp, phone call, website chat and scheduled meetings. Real people and AI agents are ready to help with any query. You get help the moment you need it, whether it is a setup question, a template issue or a delivery problem. For bigger needs, you can book a meeting with the team and get a clear solution.</p>"
+            },
+            {
+            "question": "Is my WhatsApp data safe with MSG91, and is it stored in India?",
+            "answer": "<p>Yes. MSG91 stores data for Indian businesses in its data centre in India, so your customer data stays in the country. MSG91 is SOC 2 Type II certified and compliant with India's DPDP Act, so your data is protected to global and Indian standards. It is also GDPR compliant and an official Meta partner. Your chats and business data are kept safe at every step. Your legal and security teams can review and approve MSG91 with confidence.</p>"
+            },
+            {
+            "question": "What if a critical message fails on WhatsApp?",
+            "answer": "<p>MSG91 sends it through a fallback channel, so it still reaches your customer. As an omnichannel platform, MSG91 lets you set SMS, Email, RCS or Voice as a backup for each message. If a WhatsApp OTP fails, it goes out on the backup channel automatically. Failed WhatsApp messages are also retried on their own. You set the backup once, and MSG91 handles the rest. Important messages like OTPs and alerts always get through.</p>"
+            },
+            {
+            "question": "Can MSG91 WhatsApp integrate with CRM, ecommerce and MarTech tools like WebEngage, MoEngage, CleverTap and Shopify?",
+            "answer": "<p>Yes. MSG91 WhatsApp integrates with CRM, ecommerce and MarTech tools, including WebEngage, MoEngage, CleverTap, Shopify and Zoho CRM. It connects with 2,000+ apps. See all <a class='text-link active-link' target='_blank' href='/partners-and-integrations'>MSG91 integrations</a>. Your team can send WhatsApp messages from the tools they already use, without switching screens. Your customer data, orders and campaigns stay in sync, with no manual work. For in-house systems, use the <a class='text-link active-link' target='_blank' href='https://docs.msg91.com/whatsapp'>MSG91 WhatsApp API</a> and webhooks to send messages and get real-time updates.</p>"
+            },
+            {
+            "question": "Can we manage multiple WhatsApp numbers and teams from one account?",
+            "answer": "<p>Yes. You can add multiple WhatsApp numbers to one MSG91 account, for example one for each brand, region or department. All your agents and teams work from the same shared inbox, so you never have to switch between accounts. You can see chats and reports for every number in one place, which keeps things simple. This saves time and keeps every team on the same page. As your business grows, you can add more numbers anytime.</p>"
+            },
+            {
+            "question": "Can multiple agents reply to WhatsApp chats from one number?",
+            "answer": "<p>Yes. With <a class='text-link active-link' target='_blank' href='/in/hello'>MSG91 Hello</a>, your whole team can reply to customers from one WhatsApp number. All chats come into one shared inbox and are assigned to the right agent automatically. You can also automate support with MSG91's AI agent. It answers customer queries first, and when a customer asks for a person, the chat passes smoothly to a human agent. Add as many agents as you need, with no per-agent charge.</p>"
+            },
+            {
+            "question": "Can I move my WhatsApp API number from another provider to MSG91?",
+            "answer": "<p>Yes, you can move your WhatsApp API number to MSG91 from any provider. Your number, business name and quality rating stay the same. Your approved templates sync over in one click, so you don’t have to create them again or wait for new approvals. You don’t need to change your number on your website, ads or packaging either. Your customers keep chatting with the same number they have saved, so the move feels seamless for them. See the <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/help/whatsapp/how-to-migrate-your-whatsapp-number'>step-by-step migration guide</a>.</p>"
+            },
+            {
+            "question": "Why use MSG91 instead of buying WhatsApp API directly from Meta?",
+            "answer": "<p>Meta gives you the API, but not the tools around it. You need developers to build a dashboard, reports and retries yourself. With MSG91, everything is ready to use from day one. You pay Meta’s per-message rate plus a flat ₹500 platform fee. In return, you get an easy dashboard, reports on every message and auto-retry for failed messages. Help is available 24/7 from both people and AI. You can also add an AI chatbot, SMS, RCS, Email, Voice and Apple Messages, all from one account.</p>"
+            },
+            {
+            "question": "How fast can we go live with MSG91 WhatsApp?",
+            "answer": "<p>If your Meta business account is verified and your WhatsApp number is ready, you can connect it to MSG91 in about 10 minutes. A step-by-step <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/help/whatsapp/whatsapp-number-integration---onboarding'>help doc and video guide</a> walk you through it. If you get stuck, the MSG91 onboarding team helps you finish the setup. Once your template gets approved, you can start sending messages. Meta usually reviews templates within 24 hours, so many businesses go live the same day.</p>"
+            }
+        ]
+        },
     "WhatsAppChatWindowCTA": {
         "heading_prefix": "WhatsApp Chat Window for",
         "heading_accent": "Cost-Effective Customer Conversations.",
