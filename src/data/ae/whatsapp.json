@@ -160,7 +160,7 @@
                 ]
             }
         ]
-    },   
+    },
     "FileHostingFormatsComp": {
         "heading": "How UAE businesses use WhatsApp automation with MSG91",
         "subheading": "UAE businesses use MSG91 WhatsApp Business Platform to reply to leads fast, confirm orders, send OTPs and support customers in Arabic and English. Here are 8 common ways, by industry.",
@@ -253,34 +253,6 @@
             "link": "https://www.g2.com/products/msg91/reviews"
         }
     },
-    "WhatsAppGetStarted": {
-        "kicker": "How to Get WhatsApp Business API in the UAE in 3 Steps",
-        "heading": "Sign up, connect your verified Meta business account and number, and start sending once Meta approves your templates. The connection takes about 10 minutes.",
-        "steps": [
-            {
-            "number": "1",
-            "icon": "MdEditNote",
-            "title": "Sign Up Free",
-            "description": "Create your <a href='/signup' target='_blank' class='text-accent hover:underline'>MSG91 account</a> in a minute."
-            },
-            {
-            "number": "2",
-            "icon": "MdLink",
-            "title": "Connect Your Number",
-            "description": "Link your Meta business account and WhatsApp number in about 10 minutes. Already using the WhatsApp Business app? <a href='https://msg91.com/help/whatsapp/whatsapp-coexistence' target='_blank' class='text-accent hover:underline'>Keep using it with the same number</a> through WhatsApp Coexistence."
-            },
-            {
-            "number": "3",
-            "icon": "MdChatBubbleOutline",
-            "title": "Send Your First Message",
-            "description": "Get your WhatsApp templates approved and <a href='https://msg91.com/help/whatsapp/send-whatsapp' target='_blank' class='text-accent hover:underline'>start sending messages</a>. Our onboarding team helps you at every step."
-            }
-        ],
-        "note": "Sign up, connect your verified Meta business account and number, and start sending once Meta approves your templates. The connection takes about 10 minutes. Already using the WhatsApp Business app? Eligible businesses can keep using the same number through WhatsApp Coexistence.",
-        "cta": {
-            "text": "Start Free"
-        }
-    },   
     "CompareTableComp": {
         "type": "whatsapp-api",
         "heading": "Why UAE businesses pick MSG91 as their WhatsApp API provider",
@@ -372,6 +344,34 @@
         "pricingLink": {
             "text": "UAE WhatsApp pricing page",
             "url": "/ae/pricing/whatsapp"
+        }
+    },
+    "WhatsAppGetStarted": {
+        "kicker": "How to Get WhatsApp Business API in the UAE in 3 Steps",
+        "heading": "Sign up, connect your verified Meta business account and number, and start sending once Meta approves your templates. The connection takes about 10 minutes.",
+        "steps": [
+            {
+            "number": "1",
+            "icon": "MdEditNote",
+            "title": "Sign Up Free",
+            "description": "Create your <a href='/signup' target='_blank' class='text-accent hover:underline'>MSG91 account</a> in a minute."
+            },
+            {
+            "number": "2",
+            "icon": "MdLink",
+            "title": "Connect Your Number",
+            "description": "Link your Meta business account and WhatsApp number in about 10 minutes. Already using the WhatsApp Business app? <a href='https://msg91.com/help/whatsapp/whatsapp-coexistence' target='_blank' class='text-accent hover:underline'>Keep using it with the same number</a> through WhatsApp Coexistence."
+            },
+            {
+            "number": "3",
+            "icon": "MdChatBubbleOutline",
+            "title": "Send Your First Message",
+            "description": "Get your WhatsApp templates approved and <a href='https://msg91.com/help/whatsapp/send-whatsapp' target='_blank' class='text-accent hover:underline'>start sending messages</a>. Our onboarding team helps you at every step."
+            }
+        ],
+        "note": "Sign up, connect your verified Meta business account and number, and start sending once Meta approves your templates. The connection takes about 10 minutes. Already using the WhatsApp Business app? Eligible businesses can keep using the same number through WhatsApp Coexistence.",
+        "cta": {
+            "text": "Start Free"
         }
     },
     "FaqsComp": {
