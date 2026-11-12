@@ -68,15 +68,12 @@ export default function FormatsComp({ data, pageInfo }) {
                                 </span>
                                 <div className='flex flex-col gap-1'>
                                     <h3 className='text-lg font-bold text-gray-900'>{step?.title}</h3>
-                                    {step?.description &&
-                                        (/<\s*(ul|li)\b/i.test(step.description) ? (
-                                            <div
-                                                className='text-sm text-gray-600 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1 [&_li]:pl-1'
-                                                dangerouslySetInnerHTML={{ __html: step.description }}
-                                            />
-                                        ) : (
-                                            <p className='text-sm text-gray-600'>{step.description}</p>
-                                        ))}
+                                    {step?.description && (
+                                        <div
+                                            className='text-sm text-gray-600'
+                                            dangerouslySetInnerHTML={{ __html: step.description }}
+                                        />
+                                    )}
                                 </div>
                             </div>
                         ))}

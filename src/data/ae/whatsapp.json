@@ -353,7 +353,7 @@
         "pricingNote": "*See current rates on the UAE WhatsApp pricing page.",
         "pricingLink": {
             "text": "UAE WhatsApp Pricing",
-            "url": "https://msg91.com/ae/pricing/whatsapp"
+            "url": "/ae/pricing/whatsapp"
         }
     },
     "FaqsComp": {
