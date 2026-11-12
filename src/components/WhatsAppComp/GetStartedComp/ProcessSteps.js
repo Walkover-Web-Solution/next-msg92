@@ -31,7 +31,11 @@ export default function ProcessSteps({ data, pageInfo }) {
                 </header>
 
                 {data?.steps?.length > 0 && (
-                    <ul className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 cont_gap'>
+                    <ul
+                        className={`grid grid-cols-1 sm:grid-cols-2 cont_gap ${
+                            data.steps.length === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-4'
+                        }`}
+                    >
                         {data?.steps?.map((step, index) => {
                             const Icon = iconMap[step?.icon];
 

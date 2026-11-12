@@ -54,6 +54,7 @@ export default function Testimonials({ data }) {
                             {data.heading && (
                                 <h2 className='text-4xl font-bold text-gray-900'>{renderHeading(data.heading)}</h2>
                             )}
+                            {data.subheading && <p className='mt-4 text-base text-gray-600'>{data.subheading}</p>}
                         </header>
                     )}
                 </div>
@@ -88,6 +89,13 @@ export default function Testimonials({ data }) {
                     />
                 </div>
             </div>
+            {data.button?.text && data.button?.link && (
+                <div className='flex justify-center py-10'>
+                    <a href={data.button.link} target='_blank' className='btn btn-primary'>
+                        {data.button.text} <span aria-hidden>→</span>
+                    </a>
+                </div>
+            )}
         </section>
     );
 }

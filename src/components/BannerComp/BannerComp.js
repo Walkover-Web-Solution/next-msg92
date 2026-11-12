@@ -121,6 +121,7 @@ export default function BannerComp({ pageInfo, data }) {
                             </a>
                         )} */}
                     </div>
+                    {data?.button_note && <p className='text-lg'>{data.button_note}</p>}
 
                     {data?.trust_highlights ? (
                         <div className='flex flex-col gap-1'>
