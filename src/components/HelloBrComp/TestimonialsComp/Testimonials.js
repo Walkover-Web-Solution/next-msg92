@@ -111,7 +111,10 @@ function TestimonialCard({ item }) {
                     <MdStar key={j} className='h-4 w-4 shrink-0 text-[#5850EC]' aria-hidden />
                 ))}
             </div>
-            <p className='mb-6 text-base leading-relaxed text-gray-600'>{item.quote}</p>
+            <p
+                className='mb-6 text-base leading-relaxed text-gray-600'
+                dangerouslySetInnerHTML={{ __html: item.quote }}
+            />
             <div className='border-t border-gray-100 pt-5'>
                 <div className='flex items-center gap-3'>
                     <div

@@ -10,19 +10,39 @@ export default function RoiStats({ data, pageInfo }) {
 
     return (
         <section className={isHello ? 'border-t border-yellow-500' : isWhatsApp ? 'bg-white' : 'bg-slate-950'}>
-            <div className='container py-16'>
+            <div className={`container ${isWhatsApp ? '' : 'py-16'}`}>
                 <div className='cont'>
                     {(data?.label || data?.heading || data?.subheading) && (
-                        <header className='text-center py-16'>
+                        <header className={`text-center ${isWhatsApp ? 'py-8' : 'py-16'}`}>
                             {data?.label && (
-                                <p className='py-2 text-xs font-semibold uppercase tracking-[0.2em] text-indigo-300'>
+                                <p
+                                    className={`py-2 text-xs font-semibold uppercase tracking-[0.2em] ${
+                                        isHello ? 'text-hello' : isWhatsApp ? 'text-indigo-600' : 'text-indigo-300'
+                                    }`}
+                                >
                                     {data.label}
                                 </p>
                             )}
 
-                            {data?.heading && <h2 className='py-3 text-4xl font-bold text-white'>{data.heading}</h2>}
+                            {data?.heading && (
+                                <h2
+                                    className={`py-3 text-4xl font-bold ${
+                                        isHello ? 'text-hello' : isWhatsApp ? 'text-black' : 'text-white'
+                                    }`}
+                                >
+                                    {data.heading}
+                                </h2>
+                            )}
 
-                            {data?.subheading && <p className='text-2xl text-slate-400'>{data.subheading}</p>}
+                            {data?.subheading && (
+                                <p
+                                    className={`text-2xl ${
+                                        isHello ? 'text-gray-700' : isWhatsApp ? 'text-slate-600' : 'text-slate-400'
+                                    }`}
+                                >
+                                    {data.subheading}
+                                </p>
+                            )}
                         </header>
                     )}
 

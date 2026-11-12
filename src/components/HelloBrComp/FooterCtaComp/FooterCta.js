@@ -49,9 +49,8 @@ export default function FooterCta({ data, pageInfo }) {
                             className={`mx-auto mb-10 w-full ${
                                 pageInfo?.page === 'whatsapp' ? '' : 'max-w-[min(42rem,60vw)]'
                             } text-base md:text-lg lg:mb-12 ${isLight ? 'text-gray-600' : 'text-gray-400'}`}
-                        >
-                            {data.description}
-                        </p>
+                            dangerouslySetInnerHTML={{ __html: data.description }}
+                        />
                     )}
                     <div className='flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap'>
                         {data?.primaryLabel && data?.primaryHref && (

@@ -11,13 +11,13 @@
         },
         "tagline": "WhatsApp marketing and customer service",
         "heading": "WhatsApp Business API in the UAE, Priced Lower Than Meta",
-        "subheading": "Pay about 13% less than Meta's rates on every message. Send campaigns, OTPs and order updates, and let an Arabic and English AI chatbot handle replies. All from one easy platform. Failed messages are never charged.",
+        "subheading": "For businesses in Dubai and across the UAE, pay about 10% less than Meta's rates. Send campaigns, OTPs and order updates, and let an Arabic and English AI chatbot handle replies. All from one easy platform. Failed messages are never charged.",
         "lottie": "/assets/lotties/global-whatsapp.json",
         "getstarted_btn": "Start Free",
         "schedule_meet": "See UAE Prices",
-        "button_note": "Data centre in the Gulf · SOC 2 Type II · GDPR . 4.5/5 on G2",
+        "schedule_meet_link": "/ae/pricing/whatsapp",
         "trustedByComp": {
-            "heading": "Trusted by 30,000+ global businesses",
+            "heading": "Official Meta Business Partner · Gulf data centre · SOC 2 Type II · GDPR compliant",
             "logos": [
             {
                 "name": "Xiaomi",
@@ -76,140 +76,182 @@
     },
     "FeatureComp": {
         "heading": "What can you do with MSG91 WhatsApp Business API?",
-        "subheading": "MSG91 WhatsApp Business API helps UAE businesses use WhatsApp for five jobs: marketing, sales, transactional updates, authentication (OTPs) and customer support. You run all of them from one account and one number. The features below are grouped by what you want to get done.",
+        "subheading": "MSG91 WhatsApp Business Platform helps UAE businesses use WhatsApp for five jobs: marketing, sales, transactional updates, authentication (OTPs) and customer support. You run all of them from one account with one or more connected numbers. The features below are grouped by what you want to get done.",
         "iconColor": "text-campaign",
         "groups": [
-        {
-            "heading": "Grow sales on WhatsApp",
-            "features": [
             {
-                "name": "Bulk campaigns to the right people",
-                "content": "<p>Send offers, launches and seasonal deals to thousands of opted-in customers in one go. Filter your audience by city, language, last purchase or interest, so each person gets a message that fits. Schedule campaigns for the hour your customers are most active, and track delivery, reads and clicks live.</p>",
-                "img": "/assets/global/whatsapp/whatsapp-send-bulk-whatsapp-messages-effortlessly.svg"
+                "heading": "Grow sales on WhatsApp",
+                "features": [
+                    {
+                        "name": "Bulk campaigns to the right people",
+                        "content": "<p>Send offers, launches and seasonal deals to thousands of opted-in customers in one go. Filter your audience by city, language, last purchase or interest, so each person gets a message that fits. Schedule campaigns for the hour your customers are most active, and track delivery, reads and clicks live.</p>",
+                        "img": "/assets/global/whatsapp/whatsapp-send-bulk-whatsapp-messages-effortlessly.svg"
+                    },
+                    {
+                        "name": "Journeys that follow up for you",
+                        "content": "<p>Build a chain of messages that reacts to what each customer does. If they click, send the next offer. If they stay silent, send a reminder after a set time. Use a different template at each step. The journey runs on its own, so your team doesn't chase every lead by hand.</p>",
+                        "img": "/assets/global/whatsapp/whatsapp-audience-segmentation-and-automated-reminders-through-whatsapp.svg"
+                    },
+                    {
+                        "name": "Click-to-WhatsApp ads",
+                        "content": "<p>Run Instagram and Facebook ads that open a WhatsApp chat in one tap using <a href=\"https://msg91.com/help/whatsapp/click-to-whatsapp-ads\" class=\"text-link active-link\" target=\"_blank\">Click-to-WhatsApp Ads</a>. Each new lead gets an instant reply from your chatbot or team, and you can see which ad they came from. Qualify the lead, share a brochure and book a call before the lead goes cold.</p>",
+                        "img": "/assets/global/whatsapp/whatsapp-click-to-whatsapp-ads-boost-engagement-with-zero-margin-costs.svg"
+                    },
+                    {
+                        "name": "Catalogue and payment links",
+                        "content": "<p>Show your products inside WhatsApp, with photos, prices and details. Customers browse and pick items without leaving the chat. Send a payment link from your payment gateway and close the sale in the same conversation. The order confirmation then goes out automatically.</p>",
+                        "img": "/assets/global/whatsapp/whatsapp-share-product-catalogs-and-enable-whatsapp-payments.svg"
+                    }
+                ]
             },
             {
-                "name": "Journeys that follow up for you",
-                "content": "<p>Build a chain of messages that reacts to what each customer does. If they click, send the next offer. If they stay silent, send a reminder after a set time. Use a different template at each step. The journey runs on its own, so your team doesn't chase every lead by hand.</p>",
-                "img": "/assets/global/whatsapp/whatsapp-audience-segmentation-and-automated-reminders-through-whatsapp.svg"
+                "heading": "Make sure every message arrives",
+                "features": [
+                    {
+                        "name": "Up to 10 fallback templates",
+                        "content": "<p>Meta can pause a template if its quality drops, or block it after review. With MSG91, you line up to 10 <a href=\"https://msg91.com/help/whatsapp/how-to-set-up-a-fallback-template-for-whatsapp\" class=\"text-link active-link\" target=\"_blank\">backup templates</a> for each message. If one is paused or blocked, the next one sends straight away. Your campaign keeps running, and you don't lose sales while you fix the template.</p>",
+                        "img": "/assets/global/whatsapp/whatsapp-create-and-approve-templates-instantly.svg"
+                    },
+                    {
+                        "name": "Auto-retry, and no charge for failures",
+                        "content": "<p>Messages can fail for temporary reasons, such as a network error. <a href=\"https://msg91.com/help/whatsapp/auto--disable-feature-in-whatsapp-template-\" class=\"text-link active-link\" target=\"_blank\">MSG91 retries failed messages</a> on its own. You only pay for messages that are sent successfully, including the ones that go through on retry. Failed messages are never charged, so your budget goes only on messages that arrive.</p>",
+                        "img": "/assets/global/whatsapp/whatsapp-robust-whatsapp-api-for-business-scalability.svg"
+                    },
+                    {
+                        "name": "Backup channels for critical messages",
+                        "content": "<p>Some messages can't wait, like OTPs and payment alerts. Set <a href=\"/ae/sms\" class=\"text-link active-link\" target=\"_blank\">SMS</a>, <a href=\"/ae/email\" class=\"text-link active-link\" target=\"_blank\">email</a> or <a href=\"/ae/voice\" class=\"text-link active-link\" target=\"_blank\">voice</a> as the backup for these. If the WhatsApp message fails, the backup goes out automatically, with no manual work. You choose which messages get a backup, so you pay for it only where it matters.</p>",
+                        "img": "/assets/global/otp/lotties/multi_channel_otp_delivery.json"
+                    }
+                ]
             },
             {
-                "name": "Click-to-WhatsApp ads",
-                "content": "<p>Run Instagram and Facebook ads that open a WhatsApp chat in one tap. Each new lead gets an instant reply from your chatbot or team, and you can see which ad they came from. Qualify the lead, share a brochure and book a call before the lead goes cold.</p>",
-                "img": "/assets/global/whatsapp/whatsapp-click-to-whatsapp-ads-boost-engagement-with-zero-margin-costs.svg"
+                "heading": "Serve every customer, fast",
+                "features": [
+                    {
+                        "name": "AI chatbot in Arabic and English",
+                        "content": "<p>Reply to customers any time, in their language and your brand's tone. The <a href=\"/chatbot\" class=\"text-link active-link\" target=\"_blank\">chatbot</a> mixes fixed rule-based flows with AI in one bot, so key answers stay exact. It checks order status in your systems, books appointments and hands the chat to a person when needed. It solves up to 70% of chats on its own. <em>(Needs a <a href=\"https://msg91.com/ae/pricing/hello\" class=\"text-link active-link\" target=\"_blank\">Hello plan</a>.)</em></p>",
+                        "img": "/assets/global/whatsapp/whatsapp-revolutionize-customer-support-with-whatsapp-chatbot.svg"
+                    },
+                    {
+                        "name": "One inbox for every team and number",
+                        "content": "<p>Add WhatsApp numbers for each brand, branch or emirate to one account. Every chat lands in <a href=\"/ae/hello\" class=\"text-link active-link\" target=\"_blank\">one shared inbox</a> and goes to the right agent or team automatically. Agents see the full chat history and customer details. Add unlimited agents with no per-agent fee. <em>(<a href=\"/ae/pricing/hello\" class=\"text-link active-link\" target=\"_blank\">Hello plans</a>.)</em></p>",
+                        "img": "/assets/in/whatsapp/whatsapp-2way-communication.svg"
+                    },
+                    {
+                        "name": "Keep your WhatsApp Business app",
+                        "content": "<p>Already using the WhatsApp Business app? Keep it. MSG91 connects the same number to the API, so the app and the API work together. Your team chats on the app as usual, while campaigns, OTPs and alerts go out through the API. Customers keep the number they already know.</p>",
+                        "video": "/assets/global/whatsapp/hero_section.webm"
+                    }
+                ]
             },
             {
-                "name": "Catalogue and payment links",
-                "content": "<p>Show your products inside WhatsApp, with photos, prices and details. Customers browse and pick items without leaving the chat. Send a payment link from your payment gateway and close the sale in the same conversation. The order confirmation then goes out automatically.</p>",
-                "img": "/assets/global/whatsapp/whatsapp-share-product-catalogs-and-enable-whatsapp-payments.svg"
+                "heading": "Stay in control",
+                "features": [
+                    {
+                        "name": "Auto-blacklist that protects your number",
+                        "content": "<p>Too many blocks and reports can lower your number's quality with Meta. To reduce this risk, send messages only to customers who have agreed to receive them and keep promotions relevant. When a customer replies \"Stop\", MSG91 adds them to a blacklist and stops sending them promotions. Their OTPs, order updates and other important messages still go through. Your number stays healthy and your customers stay happy.</p>",
+                        "img": "/assets/global/whatsapp/whatsapp-opt-out-feature-for-better-customer-experience.svg"
+                    },
+                    {
+                        "name": "Reports on every message",
+                        "content": "<p>Track every message with detailed <a href=\"https://msg91.com/help/whatsapp/how-to-get-whatsapp-reports\" class=\"text-link active-link\" target=\"_blank\">reports</a> on sent, delivered, read, and clicked statuses. Compare templates to see which ones bring the most replies and sales. Export full message logs any time for your records or audits. Use the numbers to plan your next campaign with confidence.</p>",
+                        "img": "/assets/in/whatsapp/whatsapp-analytics.svg"
+                    }
+                ]
             }
-            ]
-        },
-        {
-            "heading": "Make sure every message arrives",
-            "features": [
-            {
-                "name": "Up to 10 fallback templates",
-                "content": "<p>Meta can pause a template if its quality drops, or block it after review. With MSG91, you line up to 10 backup templates for each message. If one is paused or blocked, the next one sends straight away. Your campaign keeps running, and you don't lose sales while you fix the template.</p>",
-                "img": "/assets/global/whatsapp/whatsapp-create-and-approve-templates-instantly.svg"
-            },
-            {
-                "name": "Auto-retry, and no charge for failures",
-                "content": "<p>Messages can fail for many reasons, like a phone being switched off. MSG91 retries failed messages on its own. You only pay for messages that are sent successfully, including the ones that go through on retry. Failed messages are never charged, so your budget goes only on messages that arrive.</p>",
-                "img": "/assets/global/whatsapp/whatsapp-robust-whatsapp-api-for-business-scalability.svg"
-            },
-            {
-                "name": "Backup channels for critical messages",
-                "content": "<p>Some messages can't wait, like OTPs and payment alerts. Set SMS, email or voice as the backup for these. If the WhatsApp message fails, the backup goes out automatically, with no manual work. You choose which messages get a backup, so you pay for it only where it matters.</p>",
-                "img": "/assets/global/otp/lotties/multi_channel_otp_delivery.json"
-            }
-            ]
-        },
-        {
-            "heading": "Serve every customer, fast",
-            "features": [
-            {
-                "name": "AI chatbot in Arabic and English",
-                "content": "<p>Reply to customers any time, in their language and your brand's tone. The chatbot mixes fixed rule-based flows with AI in one bot, so key answers stay exact. It checks order status in your systems, books appointments and hands the chat to a person when needed. It solves up to 70% of chats on its own. <em>(Needs a Hello plan.)</em></p>",
-                "img": "/assets/global/whatsapp/whatsapp-revolutionize-customer-support-with-whatsapp-chatbot.svg"
-            },
-            {
-                "name": "One inbox for every team and number",
-                "content": "<p>Add WhatsApp numbers for each brand, branch or emirate to one account. Every chat lands in one shared inbox and goes to the right agent or team automatically. Agents see the full chat history and customer details. Add unlimited agents with no per-agent fee. <em>(Hello plans.)</em></p>",
-                "img": "/assets/in/whatsapp/whatsapp-2way-communication.svg"
-            },
-            {
-                "name": "Keep your WhatsApp Business app",
-                "content": "<p>Already using the WhatsApp Business app? Keep it. MSG91 connects the same number to the API, so the app and the API work together. Your team chats on the app as usual, while campaigns, OTPs and alerts go out through the API. Customers keep the number they already know.</p>"
-            }
-            ]
-        },
-        {
-            "heading": "Stay in control",
-            "features": [
-            {
-                "name": "Auto-blacklist that protects your number",
-                "content": "<p>Too many blocks and reports can lower your number's quality with Meta. When a customer replies \"Stop\", MSG91 adds them to a blacklist and stops sending them promotions. Their OTPs, order updates and other important messages still go through. Your number stays healthy and your customers stay happy.</p>",
-                "img": "/assets/global/whatsapp/whatsapp-opt-out-feature-for-better-customer-experience.svg"
-            },
-            {
-                "name": "Reports on every message",
-                "content": "<p>See sent, delivered, read and clicked for every message, template and campaign. Compare templates to see which ones bring the most replies and sales. Export full message logs any time for your records or audits. Use the numbers to plan your next campaign with confidence.</p>",
-                "img": "/assets/in/whatsapp/whatsapp-analytics.svg"
-            }
-            ]
-        }
         ]
-    },
+    },   
     "FileHostingFormatsComp": {
-        "heading": "How UAE Businesses Use WhatsApp with MSG91",
-        "subheading": "UAE businesses use WhatsApp Business API to reply to leads fast, confirm orders, send OTPs and support customers in Arabic and English. Here are 8 common ways, by industry.",
+        "heading": "How UAE businesses use WhatsApp automation with MSG91",
+        "subheading": "UAE businesses use MSG91 WhatsApp Business Platform to reply to leads fast, confirm orders, send OTPs and support customers in Arabic and English. Here are 8 common ways, by industry.",
         "steps": [
             {
-            "number": "01",
-            "title": "Real Estate",
-            "description": "<ul class='list-disc'><li><strong>Problem:</strong> Leads from property portals and ads go cold within hours.</li><li><strong>On WhatsApp:</strong> Every lead gets a reply in seconds, with brochures, floor plans and a link to book a viewing.</li><li><strong>MSG91 feature:</strong> Click-to-WhatsApp ads, AI chatbot and shared inbox.</li><li><strong>Result:</strong> Agents spend time on ready buyers, and fewer leads slip away.</li></ul>"
+                "number": "01",
+                "title": "Real Estate",
+                "description": "<ul class='list-disc'><li><strong>Problem:</strong> Leads from property portals and ads go cold within hours.</li><li><strong>On WhatsApp:</strong> Every lead from your ads gets an instant reply from the AI chatbot, with brochures, floor plans and a link to book a viewing. Hot leads go straight to agents in the shared inbox.</li><li><strong>Result:</strong> Agents spend time on ready buyers, and fewer leads slip away.</li></ul>"
             },
             {
-            "number": "02",
-            "title": "Retail and E-commerce",
-            "description": "<ul class='list-disc'><li><strong>Problem:</strong> Shoppers leave carts behind and many COD orders get returned.</li><li><strong>On WhatsApp:</strong> Send cart reminders, opt-in offers and COD confirmations customers approve in one tap.</li><li><strong>MSG91 feature:</strong> Bulk campaigns, journeys and fallback templates.</li><li><strong>Result:</strong> More carts recovered and fewer failed COD deliveries.</li></ul>"
+                "number": "02",
+                "title": "Retail and E-commerce",
+                "description": "<ul class='list-disc'><li><strong>Problem:</strong> Shoppers leave carts behind and many COD orders get returned.</li><li><strong>On WhatsApp:</strong> Send cart reminders, opt-in offers and COD confirmations customers approve in one tap. The AI chatbot answers product and order questions, and fallback templates keep campaigns running.</li><li><strong>Result:</strong> More carts recovered and fewer failed COD deliveries.</li></ul>"
             },
             {
-            "number": "03",
-            "title": "Banking, Fintech and Insurance",
-            "description": "<ul class='list-disc'><li><strong>Problem:</strong> OTPs and alerts must arrive in seconds, every time.</li><li><strong>On WhatsApp:</strong> Send OTPs, payment alerts and renewal reminders in Arabic or English.</li><li><strong>MSG91 feature:</strong> Authentication templates, auto-retry and SMS backup.</li><li><strong>Result:</strong> Customers log in and pay without delays, and fewer OTP support calls.</li></ul>"
+                "number": "03",
+                "title": "Banking, Fintech and Insurance",
+                "description": "<ul class='list-disc'><li><strong>Problem:</strong> OTPs and alerts must arrive in seconds, every time.</li><li><strong>On WhatsApp:</strong> Send OTPs, payment alerts and renewal reminders in Arabic or English. If WhatsApp fails, auto-retry and SMS backup make sure the OTP still arrives.</li><li><strong>Result:</strong> Customers log in and pay without delays, and fewer OTP support calls.</li></ul>"
             },
             {
-            "number": "04",
-            "title": "Hospitality and Travel",
-            "description": "<ul class='list-disc'><li><strong>Problem:</strong> Guests want quick answers before and during their stay.</li><li><strong>On WhatsApp:</strong> Send booking confirmations, check-in details and tour updates, and answer questions any time.</li><li><strong>MSG91 feature:</strong> Utility templates, AI chatbot and shared inbox.</li><li><strong>Result:</strong> Fewer calls to the front desk and happier guests.</li></ul>"
+                "number": "04",
+                "title": "Hospitality and Travel",
+                "description": "<ul class='list-disc'><li><strong>Problem:</strong> Guests want quick answers before and during their stay.</li><li><strong>On WhatsApp:</strong> Send booking confirmations, check-in details and tour updates. The AI chatbot answers guest questions any time, in their language.</li><li><strong>Result:</strong> Fewer calls to the front desk and happier guests.</li></ul>"
             },
             {
-            "number": "05",
-            "title": "Clinics and Healthcare",
-            "description": "<ul class='list-disc'><li><strong>Problem:</strong> Missed appointments waste doctors' time.</li><li><strong>On WhatsApp:</strong> Send appointment reminders with one-tap confirm or reschedule, and let patients know when their report is ready to view in your own patient portal.</li><li><strong>MSG91 feature:</strong> Utility templates, journeys and data stored in the Gulf region.</li><li><strong>Result:</strong> Fewer no-shows and less time on reminder calls.</li></ul>"
+                "number": "05",
+                "title": "Clinics and Healthcare",
+                "description": "<ul class='list-disc'><li><strong>Problem:</strong> Missed appointments waste doctors' time.</li><li><strong>On WhatsApp:</strong> Send appointment reminders with one-tap confirm or reschedule, and let patients know when their report is ready to view in your own patient portal. The AI chatbot handles bookings and changes.</li><li><strong>Result:</strong> Fewer no-shows and less time on reminder calls.</li></ul>"
             },
             {
-            "number": "06",
-            "title": "Education and Training",
-            "description": "<ul class='list-disc'><li><strong>Problem:</strong> Parents and students miss calls and emails about admissions and fees.</li><li><strong>On WhatsApp:</strong> Send admission updates, fee reminders with payment links and class changes.</li><li><strong>MSG91 feature:</strong> Bulk campaigns, payment links and AI chatbot for course questions.</li><li><strong>Result:</strong> Fees paid on time, and your team only handles serious enquiries.</li></ul>"
+                "number": "06",
+                "title": "Education and Training",
+                "description": "<ul class='list-disc'><li><strong>Problem:</strong> Parents and students miss calls and emails about admissions and fees.</li><li><strong>On WhatsApp:</strong> Send admission updates, fee reminders with payment links and class changes as campaigns. The AI chatbot answers course questions.</li><li><strong>Result:</strong> Fees paid on time, and your team only handles serious enquiries.</li></ul>"
             },
             {
-            "number": "07",
-            "title": "Automotive",
-            "description": "<ul class='list-disc'><li><strong>Problem:</strong> Car buyers want fast answers, and service customers forget their dates.</li><li><strong>On WhatsApp:</strong> Reply to test-drive leads, share price lists and send service reminders with one-tap booking.</li><li><strong>MSG91 feature:</strong> Click-to-WhatsApp ads, journeys and shared inbox.</li><li><strong>Result:</strong> More test drives booked and more repeat service visits.</li></ul>"
+                "number": "07",
+                "title": "Automotive",
+                "description": "<ul class='list-disc'><li><strong>Problem:</strong> Car buyers want fast answers, and service customers forget their dates.</li><li><strong>On WhatsApp:</strong> Reply to test-drive leads from Click-to-WhatsApp ads, share price lists, and send service reminders with one-tap booking through automated journeys.</li><li><strong>Result:</strong> More test drives booked and more repeat service visits.</li></ul>"
             },
             {
-            "number": "08",
-            "title": "Logistics and Delivery",
-            "description": "<ul class='list-disc'><li><strong>Problem:</strong> Failed deliveries cost time and fuel.</li><li><strong>On WhatsApp:</strong> Ask customers to confirm their address and pick a delivery slot, then send live updates.</li><li><strong>MSG91 feature:</strong> Utility templates, auto-retry and API with webhooks.</li><li><strong>Result:</strong> More deliveries done on the first try.</li></ul>"
+                "number": "08",
+                "title": "Logistics and Delivery",
+                "description": "<ul class='list-disc'><li><strong>Problem:</strong> Failed deliveries cost time and fuel.</li><li><strong>On WhatsApp:</strong> Ask customers to confirm their address and pick a delivery slot, then send live updates. The AI chatbot answers \"Where is my order?\" questions.</li><li><strong>Result:</strong> More deliveries done on the first try.</li></ul>"
             }
         ]
     },
     "FooterCta": {
         "bg": true,
         "heading": "Connect WhatsApp to the tools you already use",
-        "description": "MSG91 connects with Zoho CRM, Shopify, WooCommerce, Magento, Freshworks, WebEngage, MoEngage, CleverTap and 2,300+ more apps. For your own systems, use the WhatsApp API and webhooks to send messages and get delivery updates in real time."
+        "description": "MSG91 connects with Zoho CRM, Shopify, WooCommerce, Magento, Freshworks, WebEngage, MoEngage, CleverTap and <a href=\"/partners-and-integrations\" class=\"text-link active-link\" target=\"_blank\">2,300+ more apps</a>. For your own systems, use the WhatsApp API and webhooks to send messages and get delivery updates in real time."
+    },
+    "Testimonials": {
+        "heading": "What businesses say about MSG91 WhatsApp Business Platform",
+        "subheading": "MSG91 is rated 4.5 out of 5 on G2, from 199 reviews.",
+        "badge": "G2",
+        "items": [
+            {
+                "quote": "MSG91 has been very dependable for our day-to-day communication needs. SMS and WhatsApp delivery are fast, and the APIs were straightforward to integrate with our existing systems. I also appreciate that everything is available in one place, so we’re not juggling multiple tools. The dashboard is simple and intuitive enough for non-technical team members to use without much guidance. <a href=\"https://www.g2.com/products/msg91/reviews/msg91-review-12604095\" class=\"text-link active-link\" target=\"_blank\">Read full review on G2</a>",
+                "name": "Amber J.",
+                "role": "Operations Manager",
+                "rating": 5,
+                "date": "8 Apr 2026",
+                "initials": "AJ",
+                "avatar": "emerald",
+                "source": "G2"
+            },
+            {
+                "quote": "Having SMS, email, and WhatsApp all in one platform makes it much easier to plan and run campaigns. The analytics provide a clear view of engagement across each channel, which helps me understand what’s working. I also like the flexibility to create targeted campaigns based on what I need. On top of that, the usage-based pricing is a helpful option. <a href=\"https://www.g2.com/products/msg91/reviews/msg91-review-12577881\" class=\"text-link active-link\" target=\"_blank\">Read full review on G2</a>",
+                "name": "Isabella H.",
+                "role": "Growth Marketing Lead",
+                "rating": 5,
+                "date": "2 Apr 2026",
+                "initials": "IH",
+                "avatar": "orange",
+                "source": "G2"
+            },
+            {
+                "quote": "MSG91 allows us to automate order confirmations, shipping updates, and post-purchase follow-ups via SMS and WhatsApp. The automation flows are flexible, and delivery tracking gives our operations team confidence. Integration with our backend system was smooth, and scaling campaigns during peak sales periods was effortless. <a href=\"https://www.g2.com/products/msg91/reviews/msg91-review-12355892\" class=\"text-link active-link\" target=\"_blank\">Read full review on G2</a>",
+                "name": "Ayunita T.",
+                "role": "Employee Communications Software",
+                "rating": 4,
+                "date": "30 Mar 2026",
+                "initials": "AT",
+                "avatar": "blue",
+                "source": "G2"
+            }
+        ],
+        "button": {
+            "text": "See all reviews on G2",
+            "link": "https://www.g2.com/products/msg91/reviews"
+        }
     },
     "WhatsAppGetStarted": {
         "kicker": "How to Get WhatsApp Business API in the UAE in 3 Steps",
@@ -238,177 +280,157 @@
         "cta": {
             "text": "Start Free"
         }
-    },
-    "Testimonials": {
-        "heading": "What businesses say about MSG91",
-        "subheading": "MSG91 is rated 4.5 out of 5 on G2, from 199 reviews.",
-        "items": [
-            {
-            "quote": "MSG91 has been very dependable for our day-to-day communication needs. SMS and WhatsApp delivery are fast, and the APIs were straightforward to integrate with our existing systems. I also appreciate that everything is available in one place, so we’re not juggling multiple tools. The dashboard is simple and intuitive enough for non-technical team members to use without much guidance.",
-            "name": "Amber J.",
-            "role": "Operations Manager",
-            "rating": 5,
-            "initials": "AJ",
-            "avatar": "emerald"
-            },
-            {
-            "quote": "Having SMS, email, and WhatsApp all in one platform makes it much easier to plan and run campaigns. The analytics provide a clear view of engagement across each channel, which helps me understand what’s working. I also like the flexibility to create targeted campaigns based on what I need. On top of that, the usage-based pricing is a helpful option.",
-            "name": "Isabella H.",
-            "role": "Growth Marketing Lead",
-            "rating": 5,
-            "initials": "IH",
-            "avatar": "orange"
-            },
-            {
-            "quote": "MSG91 allows us to automate order confirmations, shipping updates, and post-purchase follow-ups via SMS and WhatsApp. The automation flows are flexible, and delivery tracking gives our operations team confidence. Integration with our backend system was smooth, and scaling campaigns during peak sales periods was effortless.",
-            "name": "Ayunita T.",
-            "role": "Employee Communications Software",
-            "rating": 4,
-            "initials": "AT",
-            "avatar": "blue"
-            }
-        ],
-        "button": {
-            "text": "See all reviews on G2",
-            "link": "https://www.g2.com/products/msg91/reviews"
-            }
-    },
+    },   
     "CompareTableComp": {
         "type": "whatsapp-api",
         "heading": "Why UAE businesses pick MSG91 as their WhatsApp API provider",
         "tableHeading": "MSG91 runs on Meta's Cloud API. Meta provides the messaging network, the rules and the per-message rates. MSG91 adds ready tools to run campaigns, protect delivery and support customers, and charges less per message in the UAE.",
+        "definitions": [
+            {
+                "term": "Meta Cloud API",
+                "description": "WhatsApp's own API. It sends and receives messages. Businesses build their own tools on top of it."
+            },
+            {
+                "term": "MSG91",
+                "description": "An official Meta partner platform built on the Cloud API."
+            }
+        ],
         "featureLabel": "Feature",
         "columns": [
             {
-            "key": "msg91",
-            "label": "MSG91"
+                "key": "msg91",
+                "label": "MSG91"
             },
             {
-            "key": "meta",
-            "label": "Meta Cloud API (direct)"
+                "key": "meta",
+                "label": "Meta Cloud API (direct)"
             }
         ],
         "rows": [
             {
-            "feature": "Messaging network and template rules",
-            "msg91": "Meta Cloud API",
-            "meta": "Meta Cloud API"
+                "feature": "Messaging network and template rules",
+                "msg91": "Meta Cloud API",
+                "meta": "Meta Cloud API"
             },
             {
-            "feature": "Charged only for delivered messages",
-            "msg91": "Yes",
-            "meta": "Yes"
+                "feature": "Charged only for delivered messages",
+                "msg91": "Yes",
+                "meta": "Yes"
             },
             {
-            "feature": "Per-message price in the UAE",
-            "msg91": "About 13% below Meta's AED list rate*",
-            "meta": "Meta's AED list rate"
+                "feature": "Per-message price in the UAE",
+                "msg91": "10% below Meta's AED list rate",
+                "meta": "Meta's AED list rate"
             },
             {
-            "feature": "Delivery retries while a phone is offline",
-            "msg91": "Yes, through Meta",
-            "meta": "Yes, for up to 30 days (10 minutes by default for OTPs)"
+                "feature": "Delivery retries while a phone is offline",
+                "msg91": "Yes, through Meta",
+                "meta": "Yes, for up to 30 days (10 minutes by default for OTPs)"
             },
             {
-            "feature": "Re-sending messages that fail",
-            "msg91": "Built-in auto-retry",
-            "meta": "No"
+                "feature": "Re-sending messages that fail",
+                "msg91": "Built-in auto-retry",
+                "meta": "No"
             },
             {
-            "feature": "When a template is paused or disabled",
-            "msg91": "Next of up to 10 fallback templates sends",
-            "meta": "Template stops sending; no automatic fallback"
+                "feature": "When a template is paused or disabled",
+                "msg91": "Next of up to 10 fallback templates sends",
+                "meta": "Template stops sending; no automatic fallback"
             },
             {
-            "feature": "Marketing opt-outs",
-            "msg91": "\"Stop\" auto-blacklist; OTPs and important updates still deliver",
-            "meta": "Business must honour opt-outs; users can also turn off marketing from a business"
+                "feature": "Marketing opt-outs",
+                "msg91": "\"Stop\" auto-blacklist; OTPs and important updates still deliver",
+                "meta": "Business must honour opt-outs; users can also turn off marketing from a business"
             },
             {
-            "feature": "Campaigns, segments and scheduling",
-            "msg91": "Ready dashboard",
-            "meta": "Built by the business through API calls"
+                "feature": "Campaigns, segments and scheduling",
+                "msg91": "Ready dashboard",
+                "meta": "Built by the business through API calls"
             },
             {
-            "feature": "Analytics",
-            "msg91": "Dashboard reports and log export",
-            "meta": "Analytics API (data through API calls)"
+                "feature": "Analytics",
+                "msg91": "Dashboard reports and log export",
+                "meta": "Analytics API (data through API calls)"
             },
             {
-            "feature": "AI agent",
-            "msg91": "AI chatbot, rule-based + AI, Arabic, English and many languages (Hello plan)",
-            "meta": "Meta Business Agent, $2 per 1M tokens (about 4–5 US cents per message)"
+                "feature": "AI agent",
+                "msg91": "AI chatbot, rule-based + AI, Arabic, English and many other languages (Hello plan)",
+                "meta": "Meta Business Agent, $2 per 1M tokens (about 4–5 US cents per message)"
             },
             {
-            "feature": "WhatsApp Business app and API on one number",
-            "msg91": "Yes",
-            "meta": "Yes, through partner onboarding"
+                "feature": "WhatsApp Business app and API on one number",
+                "msg91": "Yes",
+                "meta": "Yes, through partner onboarding"
             },
             {
-            "feature": "Data storage in the UAE",
-            "msg91": "MSG91 data centre in the Gulf region",
-            "meta": "Optional local storage, UAE supported"
+                "feature": "Data storage in the region",
+                "msg91": "MSG91 data centre in the Gulf region",
+                "meta": "Optional local storage, UAE supported"
             }
         ],
-        "pricingNote": "*See current rates on the UAE WhatsApp pricing page.",
+        "pricingNote": "See current rates on the UAE WhatsApp pricing page.",
         "pricingLink": {
-            "text": "UAE WhatsApp Pricing",
+            "text": "UAE WhatsApp pricing page",
             "url": "/ae/pricing/whatsapp"
         }
     },
     "FaqsComp": {
-        "heading": "Frequently Asked Questions",
+        "heading": "Frequently Asked Questions About WhatsApp Business API in the UAE",
         "faqs": [
             {
-            "question": "Who is the best WhatsApp Business API provider in the UAE?",
-            "answer": "<p>The best provider gives you lower prices, messages that always deliver, and local support. MSG91 is an official Meta Business Partner that does all three, and is trusted by 30,000+ businesses worldwide.</p><p>In the UAE, MSG91 charges about 13% less than Meta's AED rates. It adds up to 10 fallback templates, auto-retry and auto-blacklist, so campaigns keep running and your number stays safe.</p><p>You also get an Arabic and English AI chatbot, a shared team inbox, data stored in the Gulf region, a UAE team, AED billing and 24/7 support.</p>"
+                "question": "Who is the best WhatsApp Business API provider in the UAE?",
+                "answer": "<p>The best provider gives you lower prices, messages that always deliver, and reliable local support. As an official Meta Business Partner, MSG91 brings these benefits together, offering approximately 10% lower pricing than Meta to help businesses communicate with their customers more effectively while saving more.</p><p>In the UAE, MSG91 charges less than Meta's AED rates. It adds up to 10 fallback templates, auto-retry and auto-blacklist, so campaigns keep running and your number stays safe.</p><p>You also get an Arabic and English <a href=\"/chatbot\" class=\"text-link active-link\" target=\"_blank\">AI chatbot</a>, a <a href=\"/ae/hello\" class=\"text-link active-link\" target=\"_blank\">shared team inbox</a>, data stored in the Gulf region, a UAE team, AED billing and 24/7 support.</p>"
             },
             {
-            "question": "How much does WhatsApp Business API cost in the UAE?",
-            "answer": "<p>WhatsApp charges per message, and the price depends on the type: marketing, utility, authentication or service. With MSG91, UAE businesses pay about 13% less than Meta's own AED rate for each message.</p><p>You pay only for messages that are sent. Failed messages are never charged, and that includes the ones MSG91 retries for you. MSG91 bills UAE clients in AED, and VAT applies.</p><p>See the latest rates on the <a class='text-link active-link' target='_blank' href='/ae/pricing/whatsapp'>MSG91 WhatsApp pricing page</a>. If you send steady, high volumes every month, talk to our team about custom pricing.</p>"
+                "question": "How much does WhatsApp Business API cost in the UAE?",
+                "answer": "<p>WhatsApp charges per message, and the price depends on the type: marketing, utility, authentication or service. With MSG91, UAE businesses pay 10% less than Meta's own AED rate for each message.</p><p>You pay only for messages that are sent. Failed messages are never charged, and that includes the ones MSG91 retries for you. MSG91 bills UAE clients in AED, and VAT applies.</p><p>See the latest rates on the <a href=\"/ae/pricing/whatsapp\" class=\"text-link active-link\" target=\"_blank\">MSG91 WhatsApp pricing page</a>. If you send steady, high volumes every month, talk to our team about custom pricing.</p>"
             },
             {
-            "question": "Why use MSG91 instead of buying WhatsApp API directly from Meta?",
-            "answer": "<p>Meta gives you the API, but not the tools around it. You would need to build your own dashboard, reports, retries and inbox. With MSG91, everything is ready from day one.</p><p>And you pay less. MSG91's per-message rates in the UAE are about 13% below Meta's own. You get an easy dashboard, reports on every message, auto-retry for failed messages and up to 10 backup templates.</p><p>Help is there 24/7 from people and AI. You can also add an AI chatbot, SMS, email, voice and Apple Messages, all from the same account.</p>"
+                "question": "Why use MSG91 instead of buying WhatsApp API directly from Meta?",
+                "answer": "<p>Meta gives you the API, but not the tools around it. You would need to build your own dashboard, reports, retries and inbox. With MSG91, everything is ready from day one.</p><p>And you pay less. MSG91's per-message rates in the UAE are below Meta's own. You get an easy dashboard, reports on every message, auto-retry for failed messages and up to 10 backup templates.</p><p>Help is there 24/7 from people and AI. You can also add an <a href=\"/chatbot\" class=\"text-link active-link\" target=\"_blank\">AI chatbot</a>, <a href=\"/ae/sms\" class=\"text-link active-link\" target=\"_blank\">SMS</a>, <a href=\"/ae/email\" class=\"text-link active-link\" target=\"_blank\">email</a>, <a href=\"/ae/voice\" class=\"text-link active-link\" target=\"_blank\">voice</a> and Apple Messages, all from the same account.</p>"
             },
             {
-            "question": "Can I keep my WhatsApp Business app and use the API on the same number?",
-            "answer": "<p>Yes. MSG91 supports coexistence, so the WhatsApp Business app and the API work together on one number. Your team keeps chatting with customers on the app, just like today.</p><p>At the same time, MSG91 sends your bulk and automated messages through the API. This includes campaigns, OTPs, order updates and reminders.</p><p>Your customers keep messaging the number they already know and trust. You keep your chat history, and you don't have to choose between the app and the API.</p>"
+                "question": "Can I keep my WhatsApp Business app and use the API on the same number?",
+                "answer": "<p>Yes. MSG91 supports coexistence, so the WhatsApp Business app and the API work together on one number. Your team keeps chatting with customers on the app, just like today.</p><p>At the same time, MSG91 sends your bulk and automated messages through the API. This includes campaigns, OTPs, order updates and reminders.</p><p>Your customers keep messaging the number they already know and trust. You keep your chat history, and you don't have to choose between the app and the API.</p>"
             },
             {
-            "question": "How fast can we go live with MSG91 WhatsApp in the UAE?",
-            "answer": "<p>If your Meta business account is verified and your number is ready, you can connect it to MSG91 in about 10 minutes. A <a class='text-link active-link' target='_blank' href='https://msg91.com/help/whatsapp/whatsapp-number-integration---onboarding'>step-by-step help doc and video</a> shows you each step.</p><p>Keep your trade licence ready, as Meta may ask for it during business verification. You can start sending as soon as Meta approves your message templates.</p><p>If you get stuck, the MSG91 onboarding team helps you finish the setup. After you go live, support is there 24/7 by chat, email, WhatsApp and phone.</p>"
+                "question": "How fast can we go live with MSG91 WhatsApp in the UAE?",
+                "answer": "<p>If your Meta business account is verified and your number is ready, you can connect it to MSG91 in about 10 minutes. A <a href=\"https://msg91.com/help/whatsapp/whatsapp-number-integration---onboarding\" class=\"text-link active-link\" target=\"_blank\">step-by-step help doc and video</a> show you each step.</p><p>Keep your trade licence ready, as Meta may ask for it during business verification. You can start sending as soon as Meta approves your message templates.</p><p>If you get stuck, the MSG91 onboarding team helps you finish the setup. After you go live, <a href=\"/ae/contact-us\" class=\"text-link active-link\" target=\"_blank\">support</a> is there 24/7 by chat, email, WhatsApp and phone.</p>"
             },
             {
-            "question": "Where does MSG91 store data for UAE businesses?",
-            "answer": "<p>MSG91 stores data for UAE businesses in data centres in the Gulf region. Your customer data stays close to home.</p><p>MSG91 is SOC 2 Type II certified and GDPR compliant. This means your data is protected by global security standards, with strict checks on who can access it.</p><p>MSG91 also has a registered office and a local team in the UAE. UAE clients are billed in AED with VAT invoices, which keeps your accounts simple. If your security or legal team has questions, our team can share the details they need.</p>"
+                "question": "Where does MSG91 store data for UAE businesses?",
+                "answer": "<p>MSG91 stores data for UAE businesses in data centres in the Gulf region. Your customer data stays close to home.</p><p>MSG91 is SOC 2 Type II certified and GDPR compliant. This means your data is protected by global security standards, with strict checks on who can access it.</p><p>MSG91 also has a registered office and a <a href=\"/ae/contact-us\" class=\"text-link active-link\" target=\"_blank\">local team</a> in the UAE. UAE clients are billed in AED with VAT invoices, which keeps your accounts simple. If your security or legal team has questions, our team can share the details they need.</p>"
             },
             {
-            "question": "What happens if an important WhatsApp message fails?",
-            "answer": "<p>MSG91 tries again on its own. If it still fails, MSG91 can send it on a backup channel, so it still reaches your customer.</p><p>You can set SMS, email or voice as the backup for each message type. For example, if a WhatsApp OTP fails, it goes out as an SMS automatically, with no manual work. You choose which messages need a backup, so you use it only where it matters.</p><p>You never pay for failed WhatsApp messages. Your OTPs, payment alerts and order updates reach customers, and your costs stay under control.</p>"
+                "question": "What happens if an important WhatsApp message fails?",
+                "answer": "<p>MSG91 tries again on its own. If it still fails, MSG91 can send it on a backup channel, so it still reaches your customer.</p><p>You can set SMS, email or voice as the backup for each message type. For example, if a WhatsApp OTP fails, it goes out as an SMS automatically, with no manual work. You choose which messages need a backup, so you use it only where it matters.</p><p>You never pay for failed WhatsApp messages. Your OTPs, payment alerts and order updates reach customers, and your costs stay under control.</p>"
             },
             {
-            "question": "Can many agents and teams use one WhatsApp number?",
-            "answer": "<p>Yes. With MSG91 Hello, your whole team replies from one WhatsApp number. All chats land in one shared inbox and go to the right agent automatically. You can also add more numbers, for example one for each brand, branch or emirate.</p><p>An AI agent can answer common questions in Arabic and English. When a customer asks for a person, the chat moves to a human agent with the full history.</p><p>Hello plans include unlimited agents with no per-agent charge. So your support costs don't rise as your team grows.</p>"
+                "question": "Can many agents and teams use one WhatsApp number?",
+                "answer": "<p>Yes. With <a href=\"/ae/hello\" class=\"text-link active-link\" target=\"_blank\">MSG91 Hello</a>, your whole team replies from one WhatsApp number. All chats land in one shared inbox and go to the right agent automatically. You can also add more numbers, for example one for each brand, branch or emirate.</p><p>An AI agent can answer common questions in Arabic and English. When a customer asks for a person, the chat moves to a human agent with the full history.</p><p>Hello plans include unlimited agents with no per-agent charge. So your support costs don't rise as your team grows.</p>"
             },
             {
-            "question": "Can I use WhatsApp Business API for both marketing and transactional messages?",
-            "answer": "<p>Yes. WhatsApp Business API has four message types: marketing, utility, authentication and service. With MSG91, you send all of them from one account and one number.</p><p>Use marketing messages for opt-in offers and campaigns. Use utility messages for order updates, payment reminders and booking confirmations, and authentication messages for login codes. Meta prices each type differently, and MSG91 is about 13% below Meta's AED rate for each one.</p><p>MSG91 keeps them apart where it matters. When a customer replies \"Stop\", promotions stop, but their OTPs and order updates still arrive. So important messages always get through.</p>"
+                "question": "Can I use WhatsApp Business API for both marketing and transactional messages?",
+                "answer": "<p>Yes. WhatsApp Business Platform has four message types: marketing, utility, authentication and service. With MSG91, you send all of them from one account and one number.</p><p>Use marketing messages for opt-in offers and campaigns. Use utility messages for order updates, payment reminders, and booking confirmations. Use authentication messages for login codes. Meta prices each message type differently, while MSG91 offers lower rates across all categories.</p><p>MSG91 keeps them apart where it matters. When a customer replies \"Stop\", promotions stop, but their OTPs and order updates still arrive. Helping important messages reach customers.</p>"
             },
             {
-            "question": "Can MSG91 handle millions of WhatsApp messages at peak times?",
-            "answer": "<p>Yes. MSG91 has 18 years of business messaging experience and sends millions of messages during peak periods like big sales and festive seasons. Messaging runs at 99.9% uptime, so OTPs, offers and order updates go out on time.</p><p>If a message fails, MSG91 retries it on its own. Up to 10 fallback templates keep big campaigns running, even if Meta pauses a template.</p><p>Support is open 24/7 by email, WhatsApp, phone, website chat and scheduled calls. Real people and AI agents help with everything from setup to daily use.</p>"
+                "question": "Can MSG91 handle millions of WhatsApp messages at peak times?",
+                "answer": "<p>Yes. MSG91 has 18 years of business messaging experience and sends millions of messages during peak periods like big sales and festive seasons. Messaging runs at 99.9% uptime, so OTPs, offers and order updates go out on time.</p><p>If a message fails, MSG91 retries it on its own. Multiple fallback templates keep big campaigns running, even if Meta pauses a template.</p><p>Support is open 24/7 by email, WhatsApp, phone, website chat and scheduled calls. Real people and AI agents help with everything from setup to daily use.</p>"
             }
         ]
     },
     "PreFooterComp": {
-        "content": "Your Customers Are Already on WhatsApp. Make Every Conversation Count.",
+        "content": "Your customers are already on WhatsApp. Start talking to them today.",
         "description": "Lower than Meta pricing, messages that keep moving, and a UAE team ready to help, 24/7.",
         "fullWidth": true,
         "buttons": {
             "getStarted": {
                 "text": "Get Started",
                 "link": "https://control.msg91.com/signup/"
+            },
+            "pricing": {
+                "text": "Talk to Our UAE Team",
+                "link": "/ae/contact-us"
             }
         }
     }
