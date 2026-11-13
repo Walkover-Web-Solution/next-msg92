@@ -11,8 +11,8 @@ export default function WhyChooseMSG91({ data, pageInfo }) {
 
     return (
         <div className={bgClass}>
-            <div className='container cont cont_p cont_gap'>
-                <div className='cont cont_w gap-2 '>
+            <div className={`container cont cont_p cont_gap ${!data?.content?.length ? 'items-center' : ''}`}>
+                <div className={`cont cont_w gap-2 ${!data?.content?.length ? 'items-center text-center' : ''}`}>
                     <h2 className='text-3xl font-bold'>{data?.heading}</h2>
                     <p>{data?.subheading}</p>
                 </div>

@@ -54,6 +54,7 @@ export default function Testimonials({ data }) {
                             {data.heading && (
                                 <h2 className='text-4xl font-bold text-gray-900'>{renderHeading(data.heading)}</h2>
                             )}
+                            {data.subheading && <p className='mt-4 text-base text-gray-600'>{data.subheading}</p>}
                         </header>
                     )}
                 </div>
@@ -88,6 +89,13 @@ export default function Testimonials({ data }) {
                     />
                 </div>
             </div>
+            {data.button?.text && data.button?.link && (
+                <div className='flex justify-center py-10'>
+                    <a href={data.button.link} target='_blank' className='btn btn-primary'>
+                        {data.button.text} <span aria-hidden>→</span>
+                    </a>
+                </div>
+            )}
         </section>
     );
 }
@@ -103,7 +111,10 @@ function TestimonialCard({ item }) {
                     <MdStar key={j} className='h-4 w-4 shrink-0 text-[#5850EC]' aria-hidden />
                 ))}
             </div>
-            <p className='mb-6 text-base leading-relaxed text-gray-600'>{item.quote}</p>
+            <p
+                className='mb-6 text-base leading-relaxed text-gray-600'
+                dangerouslySetInnerHTML={{ __html: item.quote }}
+            />
             <div className='border-t border-gray-100 pt-5'>
                 <div className='flex items-center gap-3'>
                     <div
