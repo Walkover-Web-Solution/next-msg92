@@ -388,6 +388,51 @@
                 "heading": "<h2 class='text-xl md:text-3xl font-bold'>Up to <span class='text-green-600 font-bold text-2xl lg:text-3xl'>10% Lower</span> Than Meta Pricing.</h2>",
                 "sub_heading": "Clear pricing. No markup. Built for growing businesses."
             },
+            "faqComp": {
+                "heading": "Frequently Asked Questions",
+                "faqs": [
+                {
+                    "question": "What is the MSG91 WhatsApp Business API pricing in the UAE?",
+                    "answer": "<p>With MSG91, the WhatsApp platform is free for the initial two months. After that, you pay just AED 20 a month for each WhatsApp number.</p><p>WhatsApp messages are charged separately, in AED, at rates lower than Meta’s own UAE price. The rate depends on the recipient’s country and the message type: Marketing, Utility, Authentication, Authentication International or Service.</p><p>Check every rate in the pricing table on this page to plan your monthly cost. 5% VAT applies.</p>"
+                },
+                {
+                    "question": "Why does MSG91 charge less than Meta for WhatsApp in the UAE?",
+                    "answer": "<p>MSG91 is an official Meta partner. As a partner, MSG91 gets a discount from Meta on WhatsApp message rates, and we pass this discount on to you. That is why your price per message in the UAE is lower than buying directly from Meta.</p><p>MSG91 earns from the monthly platform fee, not from your WhatsApp messages.</p><p>MSG91 is also a complete communication platform. Many businesses use our AI chatbots, SMS, Email and Voice too, each billed on its own. Our aim is simple: give you every channel in one platform, starting with low-cost WhatsApp.</p>"
+                },
+                {
+                    "question": "Are there extra charges for templates, integrations or my existing number?",
+                    "answer": "<p>No. With MSG91, there is no extra charge for creating templates, sending images or documents, using APIs and webhooks, or turning on WhatsApp Coexistence. Coexistence lets you keep using the WhatsApp Business app on the same number.</p><p>WhatsApp message Delivery logs and analytics for the last 100 days are free. Older logs/analytics, up to one year, are available on request at an extra cost.</p><p>You only pay the platform fee, message charges and 5% VAT. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/help/whatsapp/how-to-check-whatsapp-logs-message-status'>Check WhatsApp message logs</a>.</p>"
+                },
+                {
+                    "question": "What changed in WhatsApp pricing in the UAE from October 1, 2026?",
+                    "answer": "<p>From October 1, 2026, Meta charges for replies you send on WhatsApp after a customer messages you. This includes agent replies, chatbot answers, order confirmations and delivery updates. Before this, they were free.</p><p>Messages your customers send you are still free. With MSG91, these replies cost less than Meta’s own UAE rate.</p><p>MSG91 also helps you pay less. With MSG91 Chat Window, the chat goes on in one chat window, not as separate WhatsApp messages. So you pay for fewer messages. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/guide/how-much-will-october-1-2026-actually-cost-you-and-how-msg91-keeps-it-lower-anywhere-in-the-world'>See how MSG91 lowers your cost</a>.</p>"
+                },
+                {
+                    "question": "Is there special pricing for enterprises sending millions of WhatsApp messages?",
+                    "answer": "<p>Yes. MSG91 offers enterprise pricing for UAE businesses that send millions of WhatsApp messages every month, on a regular basis.</p><p>When you send a high volume of Utility and Authentication messages, Meta’s rates for those messages may drop. MSG91 passes this on to you, on top of our lower-than-Meta pricing.</p><p>For very high volumes, our sales team can build a custom plan around your needs. <a class='text-link active-link' target='_blank' href='/contact-us'>Contact MSG91 Sales</a> to get your enterprise WhatsApp price.</p>"
+                },
+                {
+                    "question": "Are failed messages, retries and SMS or Email fallback charged?",
+                    "answer": "<p>With MSG91, failed WhatsApp messages are not charged. You pay only for messages that are successfully sent, and incoming messages are free.</p><p>When MSG91 automatically retries a failed message, you pay only if the retry is successfully sent, at the normal WhatsApp rate.</p><p>If an OTP, booking or order update goes out by SMS or Email as a backup, you pay that channel’s normal rate. So your important messages still reach customers.</p>"
+                },
+                {
+                    "question": "Can I control WhatsApp spend across branches and departments?",
+                    "answer": "<p>Yes. With MSG91, UAE businesses can control WhatsApp costs for every number from one account. Add a prepaid balance to each number, set a monthly spending limit, and turn on auto-recharge so messages never stop.</p><p>Each number costs AED 20 a month after the initial two months, plus message charges and 5% VAT. So every branch knows exactly what it spends.</p><p>Unused prepaid balance carries forward while your subscription is active. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/help/whatsapp/prepaid-balance-and-auto-renew'>Learn about prepaid billing</a>.</p>"
+                },
+                {
+                    "question": "Is the WhatsApp chatbot free with MSG91?",
+                    "answer": "<p>Yes, to start. MSG91 gives you a WhatsApp chatbot at no extra cost on the <a class='text-link active-link' target='_blank' href='/ae/pricing/hello'>Hello Free plan</a>, for up to 50 tickets. MSG91 Hello is a customer support platform where chatbots and unlimited agents handle every chat in one inbox.</p><p>For more, choose a paid plan. Basic is AED 70 a month with 1,000 tickets, 2 inboxes and an AED 70 bot wallet. Extra tickets cost AED 0.06 each, and extra inboxes cost AED 45 each.</p><p>Rule-based bots do not use the bot wallet. AI chatbots use money from the bot wallet, as per the bot rate card. WhatsApp charges and VAT are extra.</p>"
+                },
+                {
+                    "question": "What is the WhatsApp Authentication International rate for the UAE?",
+                    "answer": "<p>It is a higher price Meta charges for WhatsApp OTPs sent to UAE (+971) numbers by some businesses based outside the UAE.</p><p>You pay the higher rate only if both are true: your business is based outside the UAE, and in 30 days, you send more than 750,000 messages that you start (not replies), to countries with this rate, from all your WhatsApp accounts together.</p><p>Meta tells you 30 days before it starts, and the higher rate then stays even if your volume drops. Businesses based in the UAE always pay the normal rate. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing/authentication-international-rates#markets-with-authentication-international-rates'>See the countries on Meta's website</a>.</p>"
+                },
+                {
+                    "question": "Can UAE businesses set a maximum price for WhatsApp Marketing messages?",
+                    "answer": "<p>Yes. MSG91's <strong>Set Max Price</strong> feature lets you set the maximum amount you're willing to pay per WhatsApp Marketing message.</p><p>Open an approved Marketing template, select <strong>Set Max Price</strong> under Template Pricing, and enter your limit.</p><p>You may pay less than your limit, but delivery isn't guaranteed. You can change your price or return to Standard pricing anytime. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/guide/reduce-your-whatsapp-business-api-cost'>Learn how WhatsApp bidding works</a>.</p>"
+                }
+                ]
+            },
             "connectComp": {
                 "content": "Connect with our team for Personalized Pricing .",
                 "sales_btn": "Talk to Sales",
