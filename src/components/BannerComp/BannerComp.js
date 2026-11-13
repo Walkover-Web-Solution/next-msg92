@@ -87,19 +87,23 @@ export default function BannerComp({ pageInfo, data }) {
                         )}
 
                         {data?.schedule_meet &&
-                            (pageInfo?.page === 'reports' || pageInfo?.page === 'file-hosting' ? (
+                            (data?.schedule_meet_link ? (
+                                <a href={data.schedule_meet_link} className='btn btn-md btn-primary btn-outline'>
+                                    {data.schedule_meet}
+                                </a>
+                            ) : pageInfo?.page === 'reports' || pageInfo?.page === 'file-hosting' ? (
                                 <a
                                     href={getURL('contact-us', pageInfo?.page, pageInfo)}
                                     className='btn btn-md btn-primary btn-outline'
                                 >
-                                    {data?.schedule_meet}
+                                    {data.schedule_meet}
                                 </a>
                             ) : (
                                 <button
                                     className='btn btn-md btn-primary btn-outline'
                                     onClick={() => setIsModalOpen(true)}
                                 >
-                                    {data?.schedule_meet}
+                                    {data.schedule_meet}
                                 </button>
                             ))}
                         {/* {pageInfo?.page === 'hello' && (
@@ -121,6 +125,7 @@ export default function BannerComp({ pageInfo, data }) {
                             </a>
                         )} */}
                     </div>
+                    {data?.button_note && <p className='text-lg'>{data.button_note}</p>}
 
                     {data?.trust_highlights ? (
                         <div className='flex flex-col gap-1'>

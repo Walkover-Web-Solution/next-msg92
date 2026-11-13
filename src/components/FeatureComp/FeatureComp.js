@@ -6,6 +6,7 @@ import LottiePlayer from '../LottiePlayer/LottiePlayer';
 
 function FeatureCard({ feature, index, featureKey, total, openedFeatures, setOpenedFeatures, pageInfo, readMore }) {
     const Icon = GetMdIcons(feature?.icon);
+    const isWhatsApp = pageInfo?.page === 'whatsapp';
     const isWide = (index + 1) % 3 === 0 || (index === total - 1 && total % 3 === 1);
     const isOpen = openedFeatures.includes(featureKey);
     const isRcs = pageInfo?.page === 'rcs';
@@ -134,6 +135,30 @@ export default function FeatureComp({ data, pageInfo }) {
     const [openedFeatures, setOpenedFeatures] = useState([]);
     const features = data?.features || [];
     const isRcs = pageInfo?.page === 'rcs';
+    const groups = data?.groups || [];
+    const isWhatsApp = pageInfo?.page === 'whatsapp';
+
+    const renderFeatures = (items, groupIndex = null) => (
+        <div className='grid grid-cols-2 md:gap-12 gap-6'>
+            {items.map((feature, index) => {
+                const featureKey = groupIndex !== null ? `${groupIndex}-${index}` : index;
+
+                return (
+                    <FeatureCard
+                        key={featureKey}
+                        feature={feature}
+                        index={index}
+                        featureKey={featureKey}
+                        total={items.length}
+                        openedFeatures={openedFeatures}
+                        setOpenedFeatures={setOpenedFeatures}
+                        pageInfo={pageInfo}
+                        readMore={data?.read_more}
+                    />
+                );
+            })}
+        </div>
+    );
 
     return (
         <div className={data?.bg || 'bg-neutral'}>
@@ -146,21 +171,49 @@ export default function FeatureComp({ data, pageInfo }) {
                         {data.subheading}
                     </p>
                 )}
-                <div className='grid grid-cols-2 md:gap-12 gap-6'>
-                    {features.map((feature, index) => (
-                        <FeatureCard
-                            key={index}
-                            feature={feature}
-                            index={index}
-                            featureKey={index}
-                            total={features.length}
-                            openedFeatures={openedFeatures}
-                            setOpenedFeatures={setOpenedFeatures}
-                            pageInfo={pageInfo}
-                            readMore={data?.read_more}
-                        />
-                    ))}
-                </div>
+                {isWhatsApp && groups.length > 0 ? (
+                    groups.map((group, groupIndex) => (
+                        <div key={groupIndex} className='flex flex-col gap-6'>
+                            {group?.heading && <h3 className='text-2xl font-bold'>{group.heading}</h3>}
+
+                            <div className='grid grid-cols-2 md:gap-12 gap-6'>
+                                {group?.features?.map((feature, index) => {
+                                    const featureKey = `${groupIndex}-${index}`;
+
+                                    return (
+                                        <FeatureCard
+                                            key={featureKey}
+                                            feature={feature}
+                                            index={index}
+                                            featureKey={featureKey}
+                                            total={group.features.length}
+                                            openedFeatures={openedFeatures}
+                                            setOpenedFeatures={setOpenedFeatures}
+                                            pageInfo={pageInfo}
+                                            readMore={data?.read_more}
+                                        />
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    ))
+                ) : (
+                    <div className='grid grid-cols-2 md:gap-12 gap-6'>
+                        {features.map((feature, index) => (
+                            <FeatureCard
+                                key={index}
+                                feature={feature}
+                                index={index}
+                                featureKey={index}
+                                total={features.length}
+                                openedFeatures={openedFeatures}
+                                setOpenedFeatures={setOpenedFeatures}
+                                pageInfo={pageInfo}
+                                readMore={data?.read_more}
+                            />
+                        ))}
+                    </div>
+                )}
             </div>
         </div>
     );

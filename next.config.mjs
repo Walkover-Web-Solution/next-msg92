@@ -10,6 +10,14 @@ const chatWidgetOrigin = (() => {
         return 'https://ctest.msg91.com';
     }
 })();
+const bookingChatWidgetOrigin = (() => {
+    try {
+        return new URL(getEnvValue('BOOKING_CHAT_WIDGET_URL')).origin;
+    } catch {
+        return chatWidgetOrigin;
+    }
+})();
+const chatWidgetOrigins = [...new Set([chatWidgetOrigin, bookingChatWidgetOrigin])].join(' ');
 
 // --- Security Headers ---
 const securityHeaders = [
@@ -49,9 +57,9 @@ embeddableSecurityHeaders.push({
     key: 'Content-Security-Policy',
     value: [
         "default-src 'self'",
-        `script-src 'self' 'unsafe-inline' 'unsafe-eval' ${chatWidgetOrigin} https://js.cobrowse.io`,
-        `style-src 'self' 'unsafe-inline' ${chatWidgetOrigin}`,
-        `frame-src ${chatWidgetOrigin}`,
+        `script-src 'self' 'unsafe-inline' 'unsafe-eval' ${chatWidgetOrigins} https://js.cobrowse.io`,
+        `style-src 'self' 'unsafe-inline' ${chatWidgetOrigins}`,
+        `frame-src ${chatWidgetOrigins}`,
         "connect-src 'self' https: wss: http://127.0.0.1:7257",
         "img-src 'self' data: blob: https:",
         "font-src 'self' data: https:",
@@ -79,11 +87,11 @@ const nextConfig = {
     async headers() {
         return [
             {
-                source: '/whatsapp-chat-window-widget',
+                source: '/(whatsapp-chat-window-widget|booking-chat-widget)',
                 headers: embeddableSecurityHeaders,
             },
             {
-                source: '/((?!whatsapp-chat-window-widget).*)',
+                source: '/((?!whatsapp-chat-window-widget|booking-chat-widget).*)',
                 headers: securityHeaders,
             },
             {
@@ -128,6 +136,8 @@ const nextConfig = {
         ECOMMERCE_WIDGET_TOKEN: getEnvValue('ECOMMERCE_WIDGET_TOKEN'),
         WHATSAPP_CHAT_WIDGET_TOKEN: getEnvValue('WHATSAPP_CHAT_WIDGET_TOKEN'),
         CHAT_WIDGET_URL: getEnvValue('CHAT_WIDGET_URL'),
+        BOOKING_CHAT_WIDGET_TOKEN: getEnvValue('BOOKING_CHAT_WIDGET_TOKEN'),
+        BOOKING_CHAT_WIDGET_URL: getEnvValue('BOOKING_CHAT_WIDGET_URL'),
 
         // WhatsApp Outbound Config
         WHATSAPP_AUTHKEY: getEnvValue('WHATSAPP_AUTHKEY'),
