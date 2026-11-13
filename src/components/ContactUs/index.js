@@ -1,14 +1,10 @@
 import { useState } from 'react';
-import Script from 'next/script';
 import { MdOutlineLocalMall, MdOutlineSupportAgent } from 'react-icons/md';
 import BookingModal from './BookingModal';
 import ContactCard from './ContactCard';
 import ContactHeader from './ContactHeader';
 import MeetingCard from './MeetingCard';
 import QrWithImageCard from './QrWithImageCard';
-
-const CHAT_WIDGET_SCRIPT = 'https://blacksea.msg91.com/chat-widget.js';
-const DEFAULT_CHAT_WIDGET_TOKEN = '8e51b';
 
 const SECTION_STYLE = {
     backgroundImage:
@@ -18,17 +14,13 @@ const SECTION_STYLE = {
 
 export default function ContactUsComp({ data, pageInfo }) {
     const [isBookingOpen, setIsBookingOpen] = useState(false);
-    const [widgetScriptLoaded, setWidgetScriptLoaded] = useState(false);
 
     const salesCard = data?.cards?.find((card) => card?.key === 'sales');
     const supportCard = data?.cards?.find((card) => card?.key === 'support');
     const meetingCard = data?.cards?.find((card) => card?.key === 'schedule-a-meeting');
-    const widgetToken = meetingCard?.widgetToken || DEFAULT_CHAT_WIDGET_TOKEN;
 
     return (
         <section className='py-16 sm:py-20' style={SECTION_STYLE}>
-            <Script strategy='afterInteractive' src={CHAT_WIDGET_SCRIPT} onLoad={() => setWidgetScriptLoaded(true)} />
-
             <div className='container cont flex flex-col gap-12 items-center'>
                 <ContactHeader badge={data?.badge} heading={data?.heading} subheading={data?.subheading} />
 
@@ -41,12 +33,7 @@ export default function ContactUsComp({ data, pageInfo }) {
                 {pageInfo?.country === 'in' && data?.rcs && <QrWithImageCard data={data?.rcs} />}
             </div>
 
-            <BookingModal
-                isOpen={isBookingOpen}
-                onClose={() => setIsBookingOpen(false)}
-                widgetToken={widgetToken}
-                widgetScriptLoaded={widgetScriptLoaded}
-            />
+            <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
         </section>
     );
 }
