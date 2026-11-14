@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import { MdCalendarToday } from 'react-icons/md';
 
@@ -44,6 +45,18 @@ export default function FooterCta({ data, pageInfo }) {
                     >
                         {data.heading}
                     </h2>
+                    {data?.img && (
+                        <div className='mx-auto mb-8 flex max-w-xl justify-center'>
+                            <Image
+                                src={data.img}
+                                alt=''
+                                width={1080}
+                                height={1080}
+                                className='w-full max-w-md object-contain'
+                                loading='lazy'
+                            />
+                        </div>
+                    )}
                     {data?.description && (
                         <p
                             className={`mx-auto mb-10 w-full ${
