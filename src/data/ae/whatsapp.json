@@ -9,36 +9,42 @@
             "name": "WhatsApp",
             "icon": "/assets/icons/products/whatsapp.svg"
         },
-        "tagline": "WhatsApp marketing and customer service",
-        "heading": "WhatsApp Business API in the UAE, Priced Lower Than Meta",
-        "subheading": "For businesses in Dubai and across the UAE, pay about 10% less than Meta's rates. Send campaigns, OTPs and order updates, and let an Arabic and English AI chatbot handle replies. All from one easy platform. Failed messages are never charged.",
+        "tagline": "WhatsApp Business Platform · UAE",
+        "heading": "WhatsApp Business API for UAE businesses",
+        "subheading": "Official Meta Business Partner with Gulf-region data hosting. Run campaigns, OTPs and support from one platform—at roughly 10% below Meta's AED rates.",
+        "highlights": [
+            "Campaigns, OTPs and order updates in one dashboard",
+            "Arabic and English AI chatbot with Hello",
+            "Up to 10 fallback templates and free auto-retry",
+            "You are never charged for failed messages"
+        ],
         "lottie": "/assets/lotties/global-whatsapp.json",
         "getstarted_btn": "Start Free",
         "schedule_meet": "See UAE Prices",
         "schedule_meet_link": "/ae/pricing/whatsapp",
         "trustedByComp": {
-            "heading": "Official Meta Business Partner · Gulf data centre · SOC 2 Type II · GDPR compliant",
+            "heading": "Trusted by 30,000+ businesses worldwide",
             "logos": [
-            {
-                "name": "Xiaomi",
-                "url": "/assets/trusted_by/xiaomi.svg"
-            },
-            {
-                "name": "Unacademy",
-                "url": "/assets/trusted_by/unacademy.svg"
-            },
-            {
-                "name": "Dream11",
-                "url": "/assets/trusted_by/dream11.svg"
-            },
-            {
-                "name": "Indeed",
-                "url": "/assets/trusted_by/indeed.svg"
-            },
-            {
-                "name": "Ixigo",
-                "url": "/assets/trusted_by/ixigo.svg"
-            }
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
             ]
         }
     },
@@ -49,38 +55,39 @@
     "RoiStats": {
         "stats": [
             {
-            "value": "30,000+",
-            "label": "businesses trust MSG91"
+                "value": "30,000+",
+                "label": "businesses trust MSG91"
             },
             {
-            "value": "99.9%",
-            "label": "WhatsApp messaging uptime"
+                "value": "99.9%",
+                "label": "WhatsApp messaging uptime"
             },
             {
-            "value": "18 years",
-            "label": "of business messaging"
+                "value": "18 years",
+                "label": "of business messaging"
             },
             {
-            "value": "192",
-            "label": "countries served"
+                "value": "192",
+                "label": "countries served"
             },
             {
-            "value": "Up to 70%",
-            "label": "of chats solved by the AI chatbot"
+                "value": "Up to 70%",
+                "label": "of chats solved by the AI chatbot"
             },
             {
-            "value": "2,300+",
-            "label": "app integrations"
+                "value": "2,300+",
+                "label": "app integrations"
             }
         ]
     },
     "FeatureComp": {
-        "heading": "What can you do with MSG91 WhatsApp Business API?",
-        "subheading": "MSG91 WhatsApp Business Platform helps UAE businesses use WhatsApp for five jobs: marketing, sales, transactional updates, authentication (OTPs) and customer support. You run all of them from one account with one or more connected numbers. The features below are grouped by what you want to get done.",
+        "heading": "WhatsApp features built for how UAE teams work",
+        "subheading": "Pick the job you care about—marketing, delivery, support or oversight. Each group lists the MSG91 tools behind it.",
         "iconColor": "text-campaign",
         "groups": [
             {
-                "heading": "Grow sales on WhatsApp",
+                "heading": "Marketing and sales",
+                "subheading": "Reach opted-in customers, retarget ad leads and close orders inside WhatsApp.",
                 "features": [
                     {
                         "name": "Bulk campaigns to the right people",
@@ -105,7 +112,8 @@
                 ]
             },
             {
-                "heading": "Make sure every message arrives",
+                "heading": "Transactional delivery",
+                "subheading": "OTPs, payment alerts and order updates—with backups when WhatsApp cannot deliver.",
                 "features": [
                     {
                         "name": "Up to 10 fallback templates",
@@ -125,7 +133,8 @@
                 ]
             },
             {
-                "heading": "Serve every customer, fast",
+                "heading": "Customer support",
+                "subheading": "One inbox for your team, AI in Arabic and English, and the WhatsApp Business app on the same number.",
                 "features": [
                     {
                         "name": "AI chatbot in Arabic and English",
@@ -145,7 +154,8 @@
                 ]
             },
             {
-                "heading": "Stay in control",
+                "heading": "Reporting and number health",
+                "subheading": "Honour opt-outs without blocking OTPs, and see which templates perform.",
                 "features": [
                     {
                         "name": "Auto-blacklist that protects your number",
@@ -351,22 +361,22 @@
         "heading": "Sign up, connect your verified Meta business account and number, and start sending once Meta approves your templates. The connection takes about 10 minutes.",
         "steps": [
             {
-            "number": "1",
-            "icon": "MdEditNote",
-            "title": "Sign Up Free",
-            "description": "Create your <a href='/signup' target='_blank' class='text-accent hover:underline'>MSG91 account</a> in a minute."
+                "number": "1",
+                "icon": "MdEditNote",
+                "title": "Sign Up Free",
+                "description": "Create your <a href='/signup' target='_blank' class='text-accent hover:underline'>MSG91 account</a> in a minute."
             },
             {
-            "number": "2",
-            "icon": "MdLink",
-            "title": "Connect Your Number",
-            "description": "Link your Meta business account and WhatsApp number in about 10 minutes. Already using the WhatsApp Business app? <a href='https://msg91.com/help/whatsapp/whatsapp-coexistence' target='_blank' class='text-accent hover:underline'>Keep using it with the same number</a> through WhatsApp Coexistence."
+                "number": "2",
+                "icon": "MdLink",
+                "title": "Connect Your Number",
+                "description": "Link your Meta business account and WhatsApp number in about 10 minutes. Already using the WhatsApp Business app? <a href='https://msg91.com/help/whatsapp/whatsapp-coexistence' target='_blank' class='text-accent hover:underline'>Keep using it with the same number</a> through WhatsApp Coexistence."
             },
             {
-            "number": "3",
-            "icon": "MdChatBubbleOutline",
-            "title": "Send Your First Message",
-            "description": "Get your WhatsApp templates approved and <a href='https://msg91.com/help/whatsapp/send-whatsapp' target='_blank' class='text-accent hover:underline'>start sending messages</a>. Our onboarding team helps you at every step."
+                "number": "3",
+                "icon": "MdChatBubbleOutline",
+                "title": "Send Your First Message",
+                "description": "Get your WhatsApp templates approved and <a href='https://msg91.com/help/whatsapp/send-whatsapp' target='_blank' class='text-accent hover:underline'>start sending messages</a>. Our onboarding team helps you at every step."
             }
         ],
         "note": "Sign up, connect your verified Meta business account and number, and start sending once Meta approves your templates. The connection takes about 10 minutes. Already using the WhatsApp Business app? Eligible businesses can keep using the same number through WhatsApp Coexistence.",
