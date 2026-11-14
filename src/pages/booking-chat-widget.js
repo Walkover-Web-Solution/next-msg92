@@ -3,25 +3,15 @@ import Script from 'next/script';
 
 export default function BookingChatWidget() {
     const initializedRef = useRef(false);
-    const [widgetError, setWidgetError] = useState('');
     const widgetScriptUrl = process.env.BOOKING_CHAT_WIDGET_URL;
 
     const initializeWidget = () => {
-        if (initializedRef.current) return;
-
-        if (typeof window.initChatWidget !== 'function') {
-            setWidgetError('The booking assistant could not be loaded. Please try again later.');
-            return;
-        }
+        if (initializedRef.current || typeof window.initChatWidget !== 'function') return;
 
         const container = document.getElementById('isolatedBookingChatWidget');
-        const widgetToken =
-            new URLSearchParams(window.location.search).get('widgetToken') || process.env.BOOKING_CHAT_WIDGET_TOKEN;
+        const widgetToken = process.env.BOOKING_CHAT_WIDGET_TOKEN;
 
-        if (!container || !widgetToken) {
-            setWidgetError('The booking assistant could not be started. Please try again later.');
-            return;
-        }
+        if (!container || !widgetToken) return;
         initializedRef.current = true;
 
         window.initChatWidget(
@@ -46,15 +36,9 @@ export default function BookingChatWidget() {
                     strategy='afterInteractive'
                     src={widgetScriptUrl}
                     onLoad={initializeWidget}
-                    onError={() => setWidgetError('The booking assistant could not be loaded. Please try again later.')}
                 />
             )}
             <div id='isolatedBookingChatWidget' className='w-full h-full' />
-            {(!widgetScriptUrl || widgetError) && (
-                <p role='alert' className='absolute inset-0 flex items-center justify-center p-4 text-center text-sm'>
-                    {widgetError || 'The booking assistant is not configured for this environment.'}
-                </p>
-            )}
         </main>
     );
 }
