@@ -10,6 +10,42 @@ import { GST_STATE_CODE_MAP } from '../SignupUtils/gstUtils';
 import { setSharedCookie } from '@/utils/utilis';
 import WelcomeDetailsForm from './WelcomeDetailsForm';
 
+function normalizeCityName(name) {
+    return String(name || '')
+        .split('(')[0]
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, ' ')
+        .trim();
+}
+
+function normalizeStateName(name) {
+    return String(name || '')
+        .toLowerCase()
+        .replace(/&/g, 'and')
+        .replace(/[^a-z0-9]+/g, ' ')
+        .trim();
+}
+
+function findGstCityMatch(cities, cityNames) {
+    for (const cityName of cityNames) {
+        const exactMatch = cities.find((cityOption) => normalizeCityName(cityOption?.name) === cityName);
+        if (exactMatch) return exactMatch;
+    }
+
+    for (const cityName of cityNames) {
+        if (cityName.length < 3) continue;
+
+        const partialMatches = cities.filter((cityOption) => {
+            const optionName = normalizeCityName(cityOption?.name);
+            return optionName.length >= 3 && (optionName.includes(cityName) || cityName.includes(optionName));
+        });
+
+        if (partialMatches.length === 1) return partialMatches[0];
+    }
+
+    return null;
+}
+
 export default function StepTwo({ data }) {
     const { state, dispatch } = useSignup();
     const sourceData = data?.source_options;
@@ -61,9 +97,19 @@ export default function StepTwo({ data }) {
     } = useCountrySelector();
 
     const prefillGstCountryData = useCallback(
-        async (gstStateNameOrCode, gstCityName) => {
-            const normalizedGstState = String(gstStateNameOrCode || '').trim();
-            const normalizedGstCity = String(gstCityName || '').trim();
+        async (gstStateNameOrCode, gstStateCode, gstCityNames) => {
+            const stateValue = String(gstStateNameOrCode || '').trim();
+            const normalizedGstState = normalizeStateName(stateValue);
+            const resolvedStateName =
+                GST_STATE_CODE_MAP[stateValue] ||
+                Object.values(GST_STATE_CODE_MAP).find(
+                    (stateName) => normalizeStateName(stateName) === normalizedGstState
+                ) ||
+                GST_STATE_CODE_MAP[String(gstStateCode || '').trim()];
+            const cityNames = (Array.isArray(gstCityNames) ? gstCityNames : [gstCityNames])
+                .filter(Boolean)
+                .map(normalizeCityName)
+                .filter(Boolean);
 
             const indiaCountry = countries.find((country) => country?.shortName?.toLowerCase() === 'in');
 
@@ -74,21 +120,19 @@ export default function StepTwo({ data }) {
             }
 
             const states = await fetchStatesByCountry(indiaCountry.id);
-            const resolvedStateName = GST_STATE_CODE_MAP[normalizedGstState];
             if (!resolvedStateName) return;
             const matchedState = states.find(
-                (stateOption) => stateOption?.name?.trim().toLowerCase() === resolvedStateName.trim().toLowerCase()
+                (stateOption) => normalizeStateName(stateOption?.name) === normalizeStateName(resolvedStateName)
             );
 
             if (!matchedState) return;
 
             await handleStateChange([matchedState]);
 
-            if (!normalizedGstCity) return;
+            if (cityNames.length === 0) return;
 
             const cities = await fetchCitiesByState(matchedState.id);
-            const normalizedCity = normalizedGstCity.split('(')[0].trim().toLowerCase();
-            const matchedCity = cities.find((cityOption) => cityOption?.name?.trim().toLowerCase() === normalizedCity);
+            const matchedCity = findGstCityMatch(cities, cityNames);
 
             if (!matchedCity) return;
 
