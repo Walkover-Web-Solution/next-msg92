@@ -355,7 +355,7 @@
                 "number": "1",
                 "icon": "MdEditNote",
                 "title": "Sign Up Free",
-                "description": "Create your <a href='/signup' target='_blank' class='text-accent hover:underline'>MSG91 account</a> in a minute."
+                "description": "Create your MSG91 account in a minute."
             },
             {
                 "number": "2",
@@ -367,7 +367,7 @@
                 "number": "3",
                 "icon": "MdChatBubbleOutline",
                 "title": "Send Your First Message",
-                "description": "Get your WhatsApp templates approved and <a href='https://msg91.com/help/whatsapp/send-whatsapp' target='_blank' class='text-accent hover:underline'>start sending messages</a>. Our onboarding team helps you at every step."
+                "description": "Get your WhatsApp templates approved and start sending. Our onboarding team helps at every step."
             }
         ],
         "note": "Already on the WhatsApp Business app? Keep it and connect the same number while campaigns, OTPs and alerts run through the API.",
