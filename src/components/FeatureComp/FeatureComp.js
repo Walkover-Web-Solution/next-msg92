@@ -173,8 +173,14 @@ export default function FeatureComp({ data, pageInfo }) {
                 )}
                 {isWhatsApp && groups.length > 0 ? (
                     groups.map((group, groupIndex) => (
-                        <div key={groupIndex} className='flex flex-col gap-6'>
+                        <div
+                            key={groupIndex}
+                            className={`flex flex-col gap-6 ${groupIndex > 0 ? 'pt-6 border-t border-gray-200' : ''}`}
+                        >
                             {group?.heading && <h3 className='text-2xl font-bold'>{group.heading}</h3>}
+                            {group?.subheading && (
+                                <p className='text-lg text-gray-600 max-w-3xl -mt-2'>{group.subheading}</p>
+                            )}
 
                             <div className='grid grid-cols-2 md:gap-12 gap-6'>
                                 {group?.features?.map((feature, index) => {
