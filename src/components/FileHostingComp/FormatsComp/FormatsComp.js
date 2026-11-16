@@ -3,15 +3,17 @@ import React from 'react';
 
 export default function FormatsComp({ data, pageInfo }) {
     if (!data) return null;
+    const isHello = pageInfo?.page === 'hello';
+    const isWhatsApp = pageInfo?.page === 'whatsapp';
 
     return (
         <section className='bg-white'>
             <div className='container cont_p cont_gap flex flex-col'>
-                <div className='flex flex-col gap-4 text-center max-w-5xl mx-auto'>
+                <div className='flex flex-col gap-4 text-center max-w-6xl mx-auto'>
                     {data?.tagline && (
                         <span
                             className={`text-xs font-semibold sm:text-sm ${
-                                pageInfo?.page === 'hello' ? 'text-hello' : 'text-fh'
+                                isHello ? 'text-hello' : isWhatsApp ? 'text-whatsapp' : 'text-fh'
                             }`}
                         >
                             {data.tagline}
@@ -27,7 +29,13 @@ export default function FormatsComp({ data, pageInfo }) {
 
                     {data?.subheading && (
                         <p
-                            className={`${pageInfo?.page === 'hello' ? 'text-xl max-w-5xl mx-auto' : 'subheading max-w-3xl mx-auto'}`}
+                            className={`${
+                                pageInfo?.page === 'hello'
+                                    ? 'text-xl max-w-5xl mx-auto'
+                                    : pageInfo?.page === 'whatsapp'
+                                      ? 'subheading max-w-6xl mx-auto'
+                                      : 'subheading max-w-3xl mx-auto'
+                            }`}
                         >
                             {data.subheading}
                         </p>
@@ -48,15 +56,24 @@ export default function FormatsComp({ data, pageInfo }) {
                                 className='flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm'
                             >
                                 <span
-                                    className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl font-bold text-white ${
-                                        pageInfo?.page === 'hello' ? 'hello_bg' : 'bg-fh'
+                                    className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl font-bold ${
+                                        isHello
+                                            ? 'hello_bg text-white'
+                                            : isWhatsApp
+                                              ? 'whatsapp_lite_bg text-whatsapp'
+                                              : 'bg-fh text-white'
                                     }`}
                                 >
                                     {step?.number}
                                 </span>
                                 <div className='flex flex-col gap-1'>
                                     <h3 className='text-lg font-bold text-gray-900'>{step?.title}</h3>
-                                    <p className='text-sm text-gray-600'>{step?.description}</p>
+                                    {step?.description && (
+                                        <div
+                                            className='text-sm text-gray-600'
+                                            dangerouslySetInnerHTML={{ __html: step.description }}
+                                        />
+                                    )}
                                 </div>
                             </div>
                         ))}

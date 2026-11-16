@@ -388,6 +388,47 @@
                 "heading": "<h2 class='text-xl md:text-3xl font-bold'>Up to 10% Lower Than Meta Pricing.</h2>",
                 "sub_heading": "Simple, predictable pricing with built-in savings."
             },
+            "faqComp": {
+                "heading": "Frequently Asked Questions",
+                "faqs": [
+                {
+                    "question": "What is the MSG91 WhatsApp Business API pricing in the United Kingdom?",
+                    "answer": "<p>MSG91 WhatsApp Business API comes with <strong>no platform subscription fee for the initial two months</strong>. Once that period ends, you pay <strong>£6 per month for each connected WhatsApp number</strong>.</p><p>Message charges are calculated separately in GBP according to the recipient's country and message category: Marketing, Utility, Authentication or Service.</p><p>For customers in the UK, MSG91 offers messaging rates below Meta's standard pricing. The pricing table above shows the rates you can use to estimate your monthly bill. <strong>UK VAT at 20% applies where applicable.</strong></p>"
+                },
+                {
+                    "question": "Why is MSG91's WhatsApp pricing lower than Meta's standard UK rates?",
+                    "answer": "<p>MSG91 works with Meta as a partner and offers businesses competitive WhatsApp messaging rates through its pricing arrangements. These savings are reflected in the rates available to UK customers.</p><p>Rather than adding a separate markup to every WhatsApp message, MSG91 charges a monthly platform subscription.</p><p>You can also manage SMS, Email, Voice and AI chatbot services through MSG91. Each channel has its own pricing, giving businesses more flexibility over how they communicate with customers.</p>"
+                },
+                {
+                    "question": "Are WhatsApp templates, API integrations and media messages included in the pricing?",
+                    "answer": "<p>Yes. There are <strong>no additional MSG91 feature fees</strong> for creating WhatsApp templates, sending supported images or documents, accessing APIs, setting up webhooks or enabling WhatsApp Coexistence on eligible numbers.</p><p>With Coexistence, you can continue using the WhatsApp Business app while connecting the same number to the API.</p><p>MSG91 also provides <strong>100 days of WhatsApp message logs free of charge</strong>. If your business needs records going back up to one year, these can be requested as a paid add-on.</p><p>Regular messaging charges, the platform subscription and separately billed services still apply. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/help/whatsapp/how-to-check-whatsapp-logs-message-status'>Learn how to check WhatsApp message logs</a>.</p>"
+                },
+                {
+                    "question": "What changed in WhatsApp messaging charges on October 1, 2026?",
+                    "answer": "<p>Since October 1, 2026, businesses have been charged for billable WhatsApp replies sent after a customer contacts them. This includes replies from support agents, chatbot responses and Utility messages that were previously unbilled in these situations.</p><p><strong>Messages received from customers remain free.</strong></p><p>For organisations dealing with lengthy customer enquiries, MSG91 Chat Window offers a way to manage ongoing conversations without sending every response as an individual WhatsApp message. This can help reduce the number of billable messages. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/guide/how-much-will-october-1-2026-actually-cost-you-and-how-msg91-keeps-it-lower-anywhere-in-the-world'>See how MSG91 helps reduce WhatsApp costs</a>.</p>"
+                },
+                {
+                    "question": "Does MSG91 provide enterprise WhatsApp messaging pricing for large UK businesses?",
+                    "answer": "<p>Yes. Companies sending thousands or millions of WhatsApp messages each month can request <strong>customised enterprise pricing</strong> based on their communication needs.</p><p>Businesses with substantial Utility and Authentication message volumes may also qualify for Meta's volume-based pricing discounts.</p><p>Whether you manage retail promotions, financial notifications or customer communications across multiple locations, MSG91 can help you plan for higher messaging volumes.</p><p><a class='text-link active-link' target='_blank' href='/contact-us'>Speak to MSG91 Sales</a> about enterprise WhatsApp pricing.</p>"
+                },
+                {
+                    "question": "Will I be charged for failed WhatsApp messages, automatic retries or SMS and Email fallback?",
+                    "answer": "<p>Messages that fail to reach customers are not charged. If MSG91 automatically retries an unsuccessful WhatsApp message and it is successfully delivered, the relevant WhatsApp messaging rate applies.</p><p>For important communications such as OTPs, appointment reminders or payment notifications, businesses can use <strong>SMS or Email fallback</strong>.</p><p>These backup messages are charged independently at the applicable SMS or Email rates.</p>"
+                },
+                {
+                    "question": "How can UK businesses manage WhatsApp spending across multiple numbers?",
+                    "answer": "<p>MSG91 provides a central account where you can track messaging expenses for different offices, departments or business numbers.</p><p>You can assign prepaid balances, introduce monthly spending limits and enable automatic top-ups to help maintain sufficient funds for messaging.</p><p>After the initial two months, each WhatsApp number has a <strong>£6 monthly subscription</strong>, alongside its message usage charges and applicable taxes.</p><p>Any remaining prepaid balance carries forward while the subscription stays active. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/help/whatsapp/prepaid-balance-and-auto-renew'>Find out how prepaid billing works</a>.</p>"
+                },
+                {
+                    "question": "How much does it cost to use WhatsApp chatbots with MSG91 in the UK?",
+                    "answer": "<p>You can start with the <a class='text-link active-link' target='_blank' href='/gb/pricing/hello'>MSG91 Hello Free plan</a>, which includes <strong>50 monthly tickets and 2 inboxes</strong> without a subscription fee.</p><p>For businesses managing more customer conversations, Hello offers: <strong>Basic:</strong> £35/month with 1,000 tickets, 2 inboxes and a £35 BOT wallet. <strong>Premium:</strong> £65/month with 2,000 tickets, 3 inboxes and a £65 BOT wallet.</p><p>Additional tickets cost £0.012 each on Basic and £0.025 each on Premium. Extra inboxes are available for £9 each on paid plans.</p><p>Custom rule-based chatbots have no separate bot-message fee. AI chatbot usage is billed according to the bot rate card and deducted from the available BOT wallet.</p><p><strong>WhatsApp messaging fees and applicable VAT are separate.</strong></p>"
+                },
+                {
+                    "question": "Can UK businesses set a maximum price for WhatsApp Marketing messages?",
+                    "answer": "<p>Yes. MSG91's <strong>Set Max Price</strong> feature allows you to choose the most you're willing to pay for each WhatsApp Marketing message.</p><p>Open an approved Marketing template, choose <strong>Set Max Price</strong> under Template Pricing and enter your price limit. You can also set different limits for different countries.</p><p>The actual charge may be lower than your limit, but message delivery isn't guaranteed. You can adjust your limit or switch back to Standard pricing whenever needed. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/guide/reduce-your-whatsapp-business-api-cost'>Learn how WhatsApp bidding works</a>.</p>"
+                }
+                ]
+            },
             "connectComp": {
                 "content": "Connect with our team for Personalized Pricing .",
                 "sales_btn": "Talk to Sales",

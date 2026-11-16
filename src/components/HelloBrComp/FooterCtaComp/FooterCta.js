@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import { MdCalendarToday } from 'react-icons/md';
 
@@ -14,10 +15,21 @@ export default function FooterCta({ data, pageInfo }) {
               ? 'bg-accent hover:opacity-90'
               : 'whatsapp_bg hover:opacity-90'
           : 'bg-indigo-600 shadow-xl shadow-indigo-600/40 hover:bg-indigo-500';
+    const isUaeWhatsApp = pageInfo?.page === 'whatsapp' && pageInfo?.country === 'ae';
 
     return (
         <section
-            className={`py-20 lg:py-28 ${isHello ? 'hello_gradient_bg' : isRcs && data?.theme ? 'bg-gradient-to-br from-blue-100 via-indigo-20 to-violet-10' : isLight ? 'bg-white' : 'bg-slate-950'}`}
+            className={`py-20 lg:py-28 ${
+                isUaeWhatsApp
+                    ? 'whatsapp_lite_bg'
+                    : isHello
+                      ? 'hello_gradient_bg'
+                      : isRcs && data?.theme
+                        ? 'bg-gradient-to-br from-blue-100 via-indigo-20 to-violet-10'
+                        : isLight
+                          ? 'bg-white'
+                          : 'bg-slate-950'
+            }`}
         >
             <div className='container cont _p'>
                 <div className='cont text-center'>
@@ -33,14 +45,25 @@ export default function FooterCta({ data, pageInfo }) {
                     >
                         {data.heading}
                     </h2>
+                    {data?.img && (
+                        <div className='mx-auto mb-8 flex max-w-xl justify-center'>
+                            <Image
+                                src={data.img}
+                                alt=''
+                                width={1080}
+                                height={1080}
+                                className='w-full max-w-md object-contain'
+                                loading='lazy'
+                            />
+                        </div>
+                    )}
                     {data?.description && (
                         <p
-                            className={`mx-auto mb-10 w-full max-w-[min(42rem,60vw)] text-base md:text-lg lg:mb-12 ${
-                                isLight ? 'text-gray-600' : 'text-gray-400'
-                            }`}
-                        >
-                            {data.description}
-                        </p>
+                            className={`mx-auto mb-10 w-full ${
+                                pageInfo?.page === 'whatsapp' ? '' : 'max-w-[min(42rem,60vw)]'
+                            } text-base md:text-lg lg:mb-12 ${isLight ? 'text-gray-600' : 'text-gray-400'}`}
+                            dangerouslySetInnerHTML={{ __html: data.description }}
+                        />
                     )}
                     <div className='flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap'>
                         {data?.primaryLabel && data?.primaryHref && (
