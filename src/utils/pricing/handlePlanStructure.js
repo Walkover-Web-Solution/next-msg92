@@ -20,6 +20,8 @@ function handleFeatures(features) {
         .map((feature) => ({
             name: feature?.feature?.name,
             included: feature?.feature?.is_included === 1,
+            hasCustomValue: feature?.feature?.has_custom_value === true || feature?.feature?.has_custom_value == 1,
+            customValue: feature?.feature?.custom_value ?? null,
         }));
 }
 

@@ -196,7 +196,7 @@ export default function BannerComp({ pageInfo, data }) {
                             ✕
                         </button>
                         <InlineWidget
-                            url='https://calendly.com/d/y3n-29s-29h?back=1'
+                            url='https://calendly.com/revenue-squad/solutions-meet'
                             styles={{ height: '680px', width: 'auto' }}
                         />
                     </div>

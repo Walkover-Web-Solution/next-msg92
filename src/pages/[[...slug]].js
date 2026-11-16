@@ -14,7 +14,6 @@ import SEOComp from '@/components/SEOComp/SEOComp';
 import TrustedByComp from '@/components/TrustedByComp/TrustedByComp';
 import HeadComp from '@/components/HeadComp/HeadComp';
 import FeatureComp from '@/components/FeatureComp/FeatureComp';
-import PricingComp from '@/components/PricingComp';
 import AboutUsComp from '@/components/AboutUsComp/AboutUsComp';
 import DevelopersComp from '@/components/DevelopersComp/DevelopersComp';
 import StartupComp from '@/components/StartupComp/StartupComp';
@@ -36,20 +35,20 @@ import IntegrationAppComp from '@/components/IntegrationsComp/IntegrationAppComp
 import ThankYouComp from '@/components/ThankYouComp/ThankYouComp';
 import StartupFormsComp from '@/components/StartupFormsComp/StartupFormsComp';
 import CaseStudyPageCompOld from '@/components/CaseStudyComp/CaseStudyPageCompOld/CaseStudyPageCompOld';
-import ChatBotDemoComp from '@/components/ChatBotDemoComp/ChatBotDemoComp';
 import AsSeenComp from '@/components/AsSeenComp/AsSeenComp';
 import ProductStatsComp from '@/components/ProductStatsComp/ProductStatsComp';
 import CompareBannerComp from '@/components/compareComp/compareBannerComp/compareBannerComp';
 import CompareGridComp from '@/components/compareComp/compareGridComp/compareGridComp';
 import CompareTableComp from '@/components/compareComp/compareTableComp/compareTableComp';
 import SLAComp from '@/components/SLAComp/SLAComp';
-import DemoChatBotComp from '@/components/DemoChatBotComp/DemoChatBotComp';
 import EcommerceStoreComp from '@/components/EcommerceStoreComp/EcommerceStore';
 import CaseStudyPageComp from '@/components/CaseStudyComp/CaseStudyPageComp/CaseStudyPageComp';
 import WhyChooseMSG91 from '@/components/WhyChooseMSG91/WhyChooseMSG91';
+import WhatsAppReasonsList from '@/components/WhatsAppComp/WhyChooseComp/ReasonsList';
+import WhatsAppSplitColumns from '@/components/WhatsAppComp/OverviewComp/SplitColumns';
+import WhatsAppProcessSteps from '@/components/WhatsAppComp/GetStartedComp/ProcessSteps';
 import MigrateFromTextlocal from '@/components/migrateFromTextlocal/migrateFromTextlocal';
 import WhatsAppIntegrations from '@/components/WhatsAppIntegrations';
-import WhatsAppAccountVerification from '@/components/WhatsAppAccountVerification';
 import FeatureWithBulletGroup from '@/components/FeatureWithBulletGroup';
 import FeatureSliderComp from '@/components/FeatureSliderComp/FeatureSliderComp';
 import Hero from '@/components/IntegrationComp/Hero/Hero';
@@ -90,6 +89,8 @@ import FileHostingStepsComp from '@/components/FileHostingComp/StepsComp/StepsCo
 import FileHostingUseCasesComp from '@/components/FileHostingComp/UseCasesComp/UseCasesComp';
 import FileHostingFormatsComp from '@/components/FileHostingComp/FormatsComp/FormatsComp';
 import BenefitSection from '@/components/OneApiBenefitComp/BenefitSection';
+import ExperienceComp from '@/components/ExperienceComp/ExperienceComp';
+import StartupSection from '@/components/StartupSectionComp/StartupSection';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -107,10 +108,8 @@ const Components = {
     FactsComp,
     FaqsComp,
     FooterComp,
-    MenuBarComp,
     MoreServicesComp,
     NotFoundComp,
-    NotificationBarComp,
     PreFooterComp,
     ProductsComp,
     SEOComp,
@@ -119,7 +118,7 @@ const Components = {
     FeatureComp,
     BenefitSection,
     IndustryFeatureComp: FeatureComp,
-    PricingComp,
+    ExperienceComp,
     AboutUsComp,
     DevelopersComp,
     StartupComp,
@@ -146,24 +145,13 @@ const Components = {
     HowItWorks,
     CTA,
     SEOFooter,
-    IntegrationBanner: Hero,
-    IntegrationResponseSection: ProblemSolution,
-    IntegrationInstantReplySection: Benefits,
-    IntegrationInstantReplySectionComparison: Benefits,
-    IntegrationFeatureBulletSection: IntegrationFeatures,
-    IntegrationSolutionsGrid: UseCases,
-    IntegrationStepsStrip: HowItWorks,
-    IntegrationCtaBand: CTA,
-    IntegrationSeoFooter: SEOFooter,
     CaseStudyPageCompOld,
-    ChatBotDemoComp,
     AsSeenComp,
     ProductStatsComp,
     CompareBannerComp,
     CompareGridComp,
     CompareTableComp,
     SLAComp,
-    DemoChatBotComp,
     EcommerceStoreComp,
     MigrateFromTextlocal,
     PreFooterMFTL,
@@ -171,11 +159,15 @@ const Components = {
     CaseStudyPageComp,
     ChatBotPageComp,
     WhyChooseMSG91,
+    WhatsAppReasonsList,
+    WhatsAppWhyChoose: WhatsAppReasonsList,
+    WhatsAppSplitColumns,
+    WhatsAppOverview: WhatsAppSplitColumns,
+    WhatsAppProcessSteps,
+    WhatsAppGetStarted: WhatsAppProcessSteps,
     WhatsAppIntegrations,
-    WhatsAppAccountVerification,
     FeatureWithBulletGroup,
     FeatureBulletGroup: FeatureWithBulletGroup,
-    ReportsChannels: FeatureWithBulletGroup,
     FeatureSliderComp,
 
     // New Components
@@ -186,6 +178,7 @@ const Components = {
     Steps,
     Testimonials,
     FooterCta,
+    FooterCtaAfterBenefits: FooterCta,
     Faqs,
     G2Badges,
     Pricing,
@@ -208,6 +201,7 @@ const Components = {
     FileHostingUseCasesComp,
     FileHostingComparisonComp: FileHostingFeatureHighlightComp,
     FileHostingFormatsComp,
+    StartupSection,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
@@ -225,7 +219,6 @@ export default function Page({ data, commonData, pageInfo }) {
     }
     return (
         <>
-            {pageInfo?.page !== ''}
             <NotificationBarComp
                 componentData={commonData?.notification}
                 country={pageInfo?.country}
