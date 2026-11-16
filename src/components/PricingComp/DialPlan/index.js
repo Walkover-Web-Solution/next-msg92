@@ -41,7 +41,7 @@ function findActivePlan(pricingData, selection) {
     return null;
 }
 
-async function fetchDialPlanData({ serviceId, dialPlanId, currency, offset, search }) {
+async function fetchDialPlanData({ serviceId, dialPlanId, currency, offset, search, priorityCountry }) {
     const params = new URLSearchParams({
         service_id: String(serviceId),
         dial_plan_id: String(dialPlanId),
@@ -51,6 +51,7 @@ async function fetchDialPlanData({ serviceId, dialPlanId, currency, offset, sear
         ui_friendly: '1',
     });
     if (search) params.set('search', search);
+    if (priorityCountry) params.set('priority_country', priorityCountry);
 
     const res = await fetch(`/api/pricing/fetchDialPlanInfo?${params}`);
     const json = await res.json();
@@ -306,17 +307,13 @@ export default function DialPlan({ pricingData, selection, pageData, currency, c
             currency,
             offset,
             search: searchQuery,
+            priorityCountry: currentCountryName,
         })
             .then((json) => {
                 if (cancelled) return;
                 const normalized = normalizeDialPlanInfo(json.data);
-                const rows = [...normalized.data].sort(
-                    (a, b) =>
-                        (b.country_name?.toLowerCase() === currentCountryName?.toLowerCase()) -
-                        (a.country_name?.toLowerCase() === currentCountryName?.toLowerCase())
-                );
                 setColumns(normalized.columns);
-                setData(rows);
+                setData(normalized.data);
                 setPagination(json.data.metadata);
                 setLoaded(true);
             })
