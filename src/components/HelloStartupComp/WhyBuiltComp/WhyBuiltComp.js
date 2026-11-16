@@ -5,13 +5,27 @@ export default function WhyBuiltComp({ data }) {
         <section>
             <div className='container cont_p flex flex-col gap-8 py-14 md:py-40'>
                 <header className='flex flex-col gap-2'>
-                    {data?.kicker && <p className='text-xs font-semibold text-accent'>{data?.kicker}</p>}
-                    <div className='flex flex-col md:flex-row md:items-end justify-between gap-6'>
+                    {data?.kicker && (
+                        <p className={`text-xs font-semibold text-accent ${data?.centered ? 'text-center' : ''}`}>
+                            {data.kicker}
+                        </p>
+                    )}
+
+                    <div
+                        className={`flex flex-col gap-6 ${
+                            data?.centered ? 'items-center text-center' : 'md:flex-row md:items-end justify-between'
+                        }`}
+                    >
                         <h2 className='text-3xl sm:text-4xl lg:text-5xl font-bold whitespace-pre-line leading-tight'>
                             {data?.heading}
                         </h2>
+
                         {data?.description && (
-                            <p className='max-w-xs md:max-w-sm lg:max-w-md text-base text-gray-600 md:text-right'>
+                            <p
+                                className={`max-w-6xl text-base text-gray-600 ${
+                                    data?.centered ? 'mx-auto' : 'md:text-right'
+                                }`}
+                            >
                                 {data?.description}
                             </p>
                         )}
@@ -33,7 +47,10 @@ export default function WhyBuiltComp({ data }) {
                                     )}
                                     <h3 className='subheading font-bold'>{card?.title}</h3>
                                     {card?.description && (
-                                        <p className='text-sm text-gray-600 whitespace-pre-line'>{card?.description}</p>
+                                        <div
+                                            className='text-sm text-gray-600 whitespace-pre-line'
+                                            dangerouslySetInnerHTML={{ __html: card.description }}
+                                        />
                                     )}
                                 </div>
 

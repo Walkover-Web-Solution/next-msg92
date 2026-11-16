@@ -1,81 +1,7 @@
 {
     "HeadComp": {
-        "title": "WhatsApp API for businesses | MSG91-United Arab Emirates",
-        "description": "Deliver instant notifications and customer support with MSG91’s WhatsApp API. Connect with your audience in real time through the world’s leading chat platform."
-    },
-    "WhyChooseMSG91": {
-        "heading": "Why Choose MSG91 for WhatsApp Business?",
-        "subheading": "MSG91 makes WhatsApp your most powerful communication channel — for marketing, support, sales, and everything in between. Reach customers where they actually respond.",
-        "content": [
-            {
-                "title": "Promotional Bulk WhatsApp Messaging via CSV",
-                "subtitle": "Turn Offers into Orders — Instantly",
-                "description": "Send personalized promotional messages via CSV straight to your customers’ WhatsApp inboxes — where they actually read and click.",
-                "img": "/assets/us/whatsapp/promotional_bulk_whatsapp_messaging_via_csv.json",
-                "highlights": [
-                    "Flash Sales & Limited-Time Discounts",
-                    "New Product Launches",
-                    "Festive & Seasonal Campaigns",
-                    "Win-back & Re-engagement Messages",
-                    "Upsell & Cross-sell Offers"
-                ],
-                "footer": "Reach thousands. Get instant clicks. Drive real sales. No spam folder. Just results.",
-                "schedule_meet": "Talk to Us"
-            },
-            {
-                "title": "Transactional WhatsApp Messaging",
-                "subtitle": "Messages That Matter — Delivered Fast",
-                "description": "Keep customers informed with real-time, automated updates on WhatsApp.",
-                "img": "/assets/us/whatsapp/transactional_whatsapp_messaging.json",
-                "highlights": [
-                    "Order & Payment Notifications",
-                    "OTPs, Login Alerts & Password Resets",
-                    "Appointment, Renewal & Payment Reminders",
-                    "Invoices, Tickets & Documents",
-                    "Delivery Status & Service Updates"
-                ],
-                "footer": "Reliable. Timely. Expected. Exactly what transactional messaging should be.",
-                "schedule_meet": "Book A Demo"
-            },
-            {
-                "title": "Customer Support on WhatsApp",
-                "subtitle": "Support That Feels Like a Conversation",
-                "description": "No more waiting. No more forms. Just real-time reply to your customers via WhatsApp — from bots or human agents.",
-                "img": "/assets/us/whatsapp/customer_support_on_whatsapp.json",
-                "highlights": [
-                    "Smart Chatbots for Instant Replies ",
-                    "Seamless Handoff to Human Agents",
-                    "Inbound Calling on WhatsApp",
-                    "One Unified Inbox for All Chats- Instagram, Emails, Webchat",
-                    "Real-Time Customer Updates"
-                ],
-                "cta": {
-                    "text": "Try WhatsApp Support in Action",
-                    "link": "https://wa.me/917316914306"
-                }
-            }
-        ],
-        "WhatsAppDriveSales": {
-            "heading": "Drive Sales Directly on WhatsApp",
-            "subheading": "Sell Smarter — Where Customers Already Are.",
-            "description": "Showcase products, run ads, take orders — all inside a WhatsApp chat.",
-            "content": [
-                {
-                    "title": "Click-to-WhatsApp Ads",
-                    "description": "Use Instagram & Facebook to drive leads straight to chat."
-                },
-                {
-                    "title": "Make shopping easy on WhatsApp",
-                    "description": "Let customers browse, chat, and order with catalogs and payments."
-                },
-                {
-                    "title": "Customize Sales Journeys via WhatsApp",
-                    "description": "Send bulk offers, upsell intelligently, and close deals faster — all from one panel."
-                }
-            ],
-            "img": "/assets/us/whatsapp/drive_sales_directly_on_whatsapp.json",
-            "schedule_meet": "Book a Meeting"
-        }
+        "title": "WhatsApp Business API in UAE — Lower Than Meta | MSG91",
+        "description": "Official WhatsApp Business API in the UAE at rates below Meta. Fallback templates, auto-retry, Arabic AI chatbot, team inbox and 24/7 support."
     },
     "BannerComp": {
         "slug": "whatsapp",
@@ -83,14 +9,15 @@
             "name": "WhatsApp",
             "icon": "/assets/icons/products/whatsapp.svg"
         },
-        "tagline": "WhatsApp Business Solutions",
-        "heading": "Seamless Global messaging and communications.",
-        "subheading": "Use Developer Friendly API to ensure smooth, real-time communication with your customers globally, enhancing engagement and satisfaction.",
+        "tagline": "WhatsApp marketing and customer service",
+        "heading": "WhatsApp Business API in the UAE, Priced Lower Than Meta",
+        "subheading": "For businesses across the UAE, pay about 10% less than Meta's rates. Send campaigns, OTPs and order updates, and let a Multilingual AI chatbot handle replies. All from one easy platform. Failed messages are never charged.",
         "lottie": "/assets/lotties/global-whatsapp.json",
-        "getstarted_btn": "Get Started",
-        "schedule_meet": "Schedule a Meeting",
+        "getstarted_btn": "Start Free",
+        "schedule_meet": "See UAE Prices",
+        "schedule_meet_link": "/ae/pricing/whatsapp",
         "trustedByComp": {
-            "heading": "Trusted by 30,000+ global businesses",
+            "heading": "Official Meta Business Partner · Gulf data centre · SOC 2 Type II · GDPR compliant",
             "logos": [
                 {
                     "name": "Xiaomi",
@@ -115,460 +42,396 @@
             ]
         }
     },
-    "FeatureComp": {
-        "heading": "",
-        "iconColor": "text-campaign",
-        "features": [
+    "WhyChooseMSG91": {
+        "heading": "Your customers are on WhatsApp. Is your business keeping up?",
+        "paragraphs": [
+            "In the UAE, customers expect a fast reply on WhatsApp, in Arabic or English. But a single phone can't handle hundreds of chats. Templates get paused, numbers get blocked, and important messages fail without anyone noticing.",
+            "WhatsApp for business works best when every message is sent on time, every chat reaches the right person, and every reply sounds like your brand. That is what MSG91 is built for."
+        ]
+    },
+    "RoiStats": {
+        "stats": [
             {
-                "name": "WhatsApp ChatBot: Instant Support, Anytime",
-                "content": "Transform your customer service experience with a WhatsApp ChatBot that delivers instant, accurate, and personalized responses. Automate routine queries, provide 24/7 support, and enhance customer satisfaction without human intervention just with another WhatsApp marketing tool.",
-                "more_content": {
-                    "usecases": [
-                        {
-                            "name": "FAQs and Queries",
-                            "description": "Automate WhatsApp template responses to frequently asked questions."
-                        },
-                        {
-                            "name": "Order Tracking",
-                            "description": "Provide real-time updates on order status with WhatsApp business API."
-                        },
-                        {
-                            "name": "Appointment Booking",
-                            "description": "Let customers schedule appointments effortlessly with Interactive WhatsApp messages."
-                        },
-                        {
-                            "name": "Lead Generation",
-                            "description": "Engage potential customers with instant replies with WhatsApp AI Chatbot."
-                        },
-                        {
-                            "name": "Feedback Collection",
-                            "description": "Gather customer feedback through automated WhatsApp survey template."
-                        }
-                    ],
-                    "features": [
-                        "24/7 availability for uninterrupted support.",
-                        "Instant responses on WhatsApp Chats to improve customer satisfaction.",
-                        "Customizable WhatsApp botflows for specific business needs.",
-                        "Integration with CRM tools for better data management."
-                    ]
-                },
-
-                "img": "/assets/global/whatsapp/whatsapp-revolutionize-customer-support-with-whatsapp-chatbot.svg",
-                "button": {
-                    "name": "ChatBot",
-                    "link": "/chatbot"
-                }
+                "value": "99.9%",
+                "label": "WhatsApp messaging uptime"
             },
             {
-                "name": "Click-to-WhatsApp Ads: Drive Engagement with Zero Costs",
-                "content": "Maximize your marketing efforts with Click-to-WhatsApp Ads, a powerful solution to connect with customers instantly. This feature allows businesses to drive traffic from online advertisements directly to WhatsApp conversations, creating a seamless transition from discovery to engagement.",
-                "more_content": {
-                    "usecases": [
-                        {
-                            "name": "Lead Generation",
-                            "description": "Drive potential customers from ads to WhatsApp for instant engagement."
-                        },
-                        {
-                            "name": "Customer Support",
-                            "description": "Allow users to connect with support teams directly from ads."
-                        },
-                        {
-                            "name": "Product Inquiries",
-                            "description": "Enable customers to ask questions about products or services."
-                        },
-                        {
-                            "name": "Event Registrations",
-                            "description": "Use ads to promote events and collect RSVPs via WhatsApp."
-                        },
-                        {
-                            "name": "Exclusive Offers",
-                            "description": "Advertise limited-time deals and redirect users to WhatsApp for redemption."
-                        }
-                    ],
-                    "features": [
-                        "Zero panel fees and no hidden costs.",
-                        "Seamless transition from ads to WhatsApp chats.",
-                        "Instant responses using AI-powered WhatsApp chatbots and bulk messaging.",
-                        "Cost-effective advertising with full ROI transparency.",
-                        "Enhanced WhatsApp lead generation capabilities."
-                    ]
-                },
-                "img": "/assets/global/whatsapp/whatsapp-click-to-whatsapp-ads-boost-engagement-with-zero-margin-costs.svg"
+                "value": "18 years",
+                "label": "of business messaging"
             },
             {
-                "name": "Bulk Sending Through CSV: Scale Your WhatsApp Marketing Effortlessly",
-                "content": "Simplify your communication strategy with bulk WhatsApp messaging through CSV uploads. Engage thousands of users simultaneously while maintaining a personalized touch for each recipient. Our WhatsApp Business API solution ensures high delivery rates and advanced analytics to optimize your campaigns.",
-                "more_content": {
-                    "usecases": [
-                        {
-                            "name": "Product Launches",
-                            "description": "Share new product details with thousands of customers instantly with WhatsApp catalog and carousel."
-                        },
-                        {
-                            "name": "Exclusive Offers",
-                            "description": "Send personalized discount codes or limited time offers to drive sales through WhatsApp Interactive templates."
-                        },
-                        {
-                            "name": "Critical Alerts",
-                            "description": "Notify customers about urgent updates, such as service disruptions or security alerts through WhatsApp API."
-                        },
-                        {
-                            "name": "Event Invitations",
-                            "description": "Invite customers to webinars, workshops, or sales events with WhatsApp campaign."
-                        },
-                        {
-                            "name": "Customer Updates",
-                            "description": "Share important updates like order confirmations, shipping details, or policy changes through WhatsApp API."
-                        }
-                    ],
-                    "features": [
-                        "Schedule campaigns for optimal timing.",
-                        "Automate followups to improve engagement.",
-                        "Use CSV uploads for seamless bulk WhatsApp messaging.",
-                        "Track delivery rates and optimize campaigns.",
-                        "Gain insights through WhatsApp analytics and reporting."
-                    ]
-                },
-                "img": "/assets/global/whatsapp/whatsapp-send-bulk-whatsapp-messages-effortlessly.svg"
+                "value": "192",
+                "label": "countries served"
             },
             {
-                "name": "OptOut Feature: Ensure Compliance in WhatsApp Marketing Automation",
-                "content": "Give your customers the power to control their communication preferences with the OptOut feature. This functionality ensures that recipients can unsubscribe from WhatsApp messages easily, maintaining a positive and respectful relationship with your brand. Transparency builds trust, creating a loyal and engaged audience.",
-                "more_content": {
-                    "usecases": [
-                        {
-                            "name": "Compliance with Regulations",
-                            "description": "Ensure adherence to global communication laws."
-                        },
-                        {
-                            "name": "List Hygiene",
-                            "description": "Maintain a clean and engaged customer list by removing uninterested users."
-                        },
-                        {
-                            "name": "Customer Trust",
-                            "description": "Build transparency and trust by allowing users to control their preferences."
-                        },
-                        {
-                            "name": "Reduced Spam",
-                            "description": "Minimize spam complaints and improve sender reputation of your WhatsApp number."
-                        },
-                        {
-                            "name": "Personalized Journeys",
-                            "description": "Focus on engaged customers for more effective WhatsApp communication."
-                        }
-                    ],
-                    "features": [
-                        "Easy optout option for customers.",
-                        "Automated list updates to remove unsubscribed users.",
-                        "Compliance with legal requirements.",
-                        "Improved WhatsApp customer engagement and loyalty.",
-                        "Enhanced WhatsApp marketing strategies for better targeting."
-                    ]
-                },
-                "img": "/assets/global/whatsapp/whatsapp-opt-out-feature-for-better-customer-experience.svg"
+                "value": "Up to 70%",
+                "label": "of chats solved by the AI chatbot"
             },
             {
-                "name": "Interactive Product Catalogs & WhatsApp Payments",
-                "content": "Transform WhatsApp into your onestop sales channel by sharing interactive product catalogs. Let your customers browse products, explore categories, and discover their preferences within a familiar chat environment. Enable WhatsApp payment solutions for instant, secure transactions, simplifying the buyer journey and reducing dropoff rates.",
-                "more_content": {
-                    "usecases": [
-                        {
-                            "name": "E-commerce Sales",
-                            "description": "Showcase products directly on WhatsApp for seamless shopping with the help of WhatsApp catalog templates."
-                        },
-                        {
-                            "name": "DirecttoConsumer (D2C)",
-                            "description": "Enable customers to browse and buy without leaving the app with instant WhatsApp payments."
-                        },
-                        {
-                            "name": "Instant Checkout",
-                            "description": "Reduce cart abandonment with WhatsApp payment solutions."
-                        },
-                        {
-                            "name": "Product Discovery",
-                            "description": "Help customers explore categories and find their preferences with WhatsApp Chatbot flows."
-                        },
-                        {
-                            "name": "Upselling and CrossSelling",
-                            "description": "Recommend related products through interactive catalogs."
-                        }
-                    ],
-                    "features": [
-                        "Interactive product catalogs with images and descriptions.",
-                        "Secure WhatsApp payment solutions for instant transactions.",
-                        "Faster checkout process to boost sales.",
-                        "Frictionless shopping experience for customers.",
-                        "Integration with WhatsApp for ecommerce platforms."
-                    ]
-                },
-                "img": "/assets/global/whatsapp/whatsapp-share-product-catalogs-and-enable-whatsapp-payments.svg"
-            },
-            {
-                "name": "Instant Template Creation",
-                "content": "Save time and effort by creating and approving WhatsApp templates instantly. Whether you're designing templates for automated WhatsApp campaigns, order updates, or personalized product recommendations, our platform allows you to build them effortlessly.",
-                "more_content": {
-                    "usecases": [
-                        {
-                            "name": "Marketing Campaigns",
-                            "description": "Design templates for promotions, discounts, and offers."
-                        },
-                        {
-                            "name": "Order Updates",
-                            "description": "Notify customers about order status, shipping, and delivery instantly through WhatsApp business API."
-                        },
-                        {
-                            "name": "Personalized Recommendations",
-                            "description": "Send tailored product suggestions based on user behavior."
-                        },
-                        {
-                            "name": "Event Reminders",
-                            "description": "Create WhatsApp templates for event invitations and followups."
-                        },
-                        {
-                            "name": "Customer Support",
-                            "description": "Use templates for FAQs and support queries with WhatsApp AI Assistance."
-                        }
-                    ],
-                    "features": [
-                        "Instant template creation and Metacompliant approvals.",
-                        "Customizable templates with buttons, images, and text.",
-                        "Centralized template management for easy access.",
-                        "Integration with WhatsApp marketing automation tools."
-                    ]
-                },
-                "img": "/assets/global/whatsapp/whatsapp-create-and-approve-templates-instantly.svg"
-            },
-            {
-                "name": "Seamless Integrations, Connect Tools, Simplify Workflows",
-                "content": "Integrate seamlessly with a wide range of powerful tools such as <strong>Zoho, Freshworks, WebEngage, MoEngage, CleverTap, Shopify, Wix, Google Sheets, Tally, and GIDDH.</strong> Our WhatsApp Business API solution allows you to connect these platforms directly to your messaging system, automating workflows and improving data flow across applications.",
-                "more_content": {
-                    "usecases": [
-                        {
-                            "name": "CRM Integration",
-                            "description": "Sync customer data from Zoho, Freshworks, or other CRMs and create personalized WhatsApp journeys."
-                        },
-                        {
-                            "name": "E-commerce Automation",
-                            "description": "Connect Shopify or Wix for order updates and promotions and send instant order notifications through WhatsApp business API solutions."
-                        },
-                        {
-                            "name": "Marketing Analytics",
-                            "description": "Use WebEngage or CleverTap for campaign tracking and plan your marketing automations accordingly."
-                        },
-                        {
-                            "name": "Workflow Automation",
-                            "description": "Integrate Google Sheets or Tally for data management and sending the Invoices through WhatsApp templates."
-                        },
-                        {
-                            "name": "Unified Communication",
-                            "description": "Manage all customer interactions from one platform."
-                        }
-                    ],
-                    "features": [
-                        "Integration with popular tools like Zoho, Shopify, and Google Sheets.",
-                        "Automated workflows for better efficiency.",
-                        "Centralized data flow across applications.",
-                        "Improved productivity and customer satisfaction.",
-                        "Enhanced WhatsApp CRM integration for seamless operations."
-                    ]
-                },
-                "img": "/assets/global/whatsapp/whatsapp-powerful-plugins-and-seamless-integrations.svg"
-            },
-            {
-                "name": "Scalable WhatsApp Business API",
-                "content": "Achieve seamless communication scalability with our robust WhatsApp Business API solution. Integrate messaging capabilities directly into your existing systems to create a unified customer experience. Whether it's sending notifications, handling support queries, or managing automated workflows, the API adapts to your business needs.",
-                "more_content": {
-                    "usecases": [
-                        {
-                            "name": "Order Updates & Tracking",
-                            "description": "Send realtime order confirmations, shipping updates, and delivery notifications directly to customers with WhatsApp API."
-                        },
-                        {
-                            "name": "24/7 Customer Support",
-                            "description": "Automate responses to FAQs, troubleshoot issues, and provide instant support using AIpowered WhatsApp chatbots."
-                        },
-                        {
-                            "name": "Appointment Scheduling",
-                            "description": "Allow customers to book, reschedule, or cancel appointments seamlessly through WhatsApp."
-                        },
-                        {
-                            "name": "Payment Notifications & Reminders",
-                            "description": "Notify customers about pending payments, subscription renewals, or transaction confirmations."
-                        },
-                        {
-                            "name": "Feedback Collection",
-                            "description": "Automate postpurchase or postservice feedback requests to improve customer satisfaction with AI Assistance."
-                        }
-                    ],
-                    "features": [
-                        "Scalable and secure WhatsApp Business API.",
-                        "Customizable solutions for unique business processes.",
-                        "Highspeed performance during hightraffic scenarios.",
-                        "Unified customer experience across platforms.",
-                        "Integration with WhatsApp automation tools for efficiency."
-                    ]
-                },
-                "img": "/assets/global/whatsapp/whatsapp-robust-whatsapp-api-for-business-scalability.svg"
-            },
-            {
-                "name": "Automated Reminders: Never Miss an Opportunity",
-                "content": "Never miss an opportunity to engage your customers with automated WhatsApp reminders for birthdays, anniversaries, class schedules, and more. Strengthen customer relationships by sending personalized messages that make them feel valued and appreciated.",
-                "more_content": {
-                    "usecases": [
-                        {
-                            "name": "Birthday Wishes",
-                            "description": "Send personalized birthday whatsapp messages to customers."
-                        },
-                        {
-                            "name": "Anniversary Reminders",
-                            "description": "Celebrate customer milestones with special offers WhatsApp automations."
-                        },
-                        {
-                            "name": "Class Schedules",
-                            "description": "Notify students or participants about upcoming sessions through WhatsApp business API."
-                        },
-                        {
-                            "name": "Appointment Reminders",
-                            "description": "Reduce noshows for appointments or consultations with WhatsApp campaigns."
-                        },
-                        {
-                            "name": "Subscription Renewals",
-                            "description": "Remind customers about upcoming renewals with WhatsApp AI Chatbots."
-                        }
-                    ],
-                    "features": [
-                        "Automated recurring reminders.",
-                        "Personalized messages for better engagement.",
-                        "Timely updates to improve attendance and conversions.",
-                        "Enhanced customer relationships through thoughtful communication.",
-                        "Integration with WhatsApp for appointment scheduling."
-                    ]
-                },
-                "img": "/assets/global/whatsapp/whatsapp-audience-segmentation-and-automated-reminders-through-whatsapp.svg"
-            },
-            {
-                "name": "Audience Segmentation: Deliver Targeted Campaigns",
-                "content": "Unlock the power of WhatsApp audience segmentation to send tailored messages to specific customer groups. Whether targeting premium clients, firsttime buyers, or repeat customers, segmentation helps deliver highly relevant campaigns that drive engagement and conversions.",
-                "more_content": {
-                    "usecases": [
-                        {
-                            "name": "Premium Clients",
-                            "description": "Send exclusive offers to highvalue customers with our simplified WhatsApp marketing automation tools."
-                        },
-                        {
-                            "name": "FirstTime Buyers",
-                            "description": "Welcome new customers with special discounts through WhatsApp Chatbots."
-                        },
-                        {
-                            "name": "Repeat Customers",
-                            "description": "Reward loyal customers with personalized deals with Coupons through WhatsApp Business API."
-                        },
-                        {
-                            "name": "Location Based Campaigns",
-                            "description": "Target users based on their geographic location and create Personalized customer journey."
-                        },
-                        {
-                            "name": "Behavioral Segmentation",
-                            "description": "Send tailored WhatsApp messages based on user engagement or purchase history with the help of WhatsApp marketing tools."
-                        }
-                    ],
-                    "features": [
-                        "Automated segmentation for precise targeting and WhatsApp campaigns.",
-                        "Personalized customer journeys for better engagement.",
-                        "Relevant offers and updates based on user data with WhatsApp marketing automations.",
-                        "Improved WhatsApp campaign effectiveness and ROI.",
-                        "WhatsApp Integration for lead nurturing."
-                    ]
-                },
-                "img": "/assets/global/whatsapp/whatsapp-audience-segmentation-for-targeted-campaigns-and-customer-journeys.svg"
-            },
-            {
-                "name": "Broadcast and Campaign Management: Engage at Scale",
-                "content": "Leverage the power of WhatsApp Broadcast and Campaigns to reach your audience with personalized messages at scale. Whether it's promoting a new product, sharing exclusive offers, or sending event invitations, WhatsApp campaigns ensure your message lands directly in your customers' inboxes.",
-                "more_content": {
-                    "usecases": [
-                        {
-                            "name": "Product Launches",
-                            "description": "Announce new products to your entire customer base with WhatsApp campaigns."
-                        },
-                        {
-                            "name": "Festive Offers",
-                            "description": "Share seasonal discounts and promotions with interactive WhatsApp catalogs and templates."
-                        },
-                        {
-                            "name": "Event Invitations",
-                            "description": "Send invites to webinars, workshops, or sales events with WhatsApp API."
-                        },
-                        {
-                            "name": "Customer Updates",
-                            "description": "Notify users about policy changes or service updates with WhatsApp utility templates at very affordable pricing."
-                        },
-                        {
-                            "name": "Personalized Offers",
-                            "description": "Deliver tailored deals based on user behavior and WhatsApp marketing automations."
-                        }
-                    ],
-                    "features": [
-                        "Bulk WhatsApp messaging with CSV uploads for seamless campaigns.",
-                        "Advanced audience segmentation for targeted WhatsApp campaigns.",
-                        "Scheduled campaigns for optimal timing with WhatsApp marketing tools.",
-                        "Realtime analytics to track WhatsApp campaign performance.",
-                        "High engagement rates with personalized messaging."
-                    ]
-                },
-                "img": "/assets/global/whatsapp/whatsapp-drive-engagement-with-whatsapp-broadcast-and-campaigns.svg"
-            },
-            {
-                "name": "Export Logs: Simplify Reporting and Compliance",
-                "content": "Streamline your reporting and analysis process with WhatsApp Export Logs. Export detailed logs of all your WhatsApp interactions, including messages sent, delivered, read, click counts and responded to. Use this data to analyze campaign performance, track customer behavior, and ensure compliance with communication regulations.",
-                "more_content": {
-                    "usecases": [
-                        {
-                            "name": "WhatsApp Campaign Analysis",
-                            "description": "Evaluate the success of WhatsApp marketing campaigns including messages sent, delivered, read, click counts and responded to."
-                        },
-                        {
-                            "name": "Customer Insights",
-                            "description": "Analyze interaction patterns for better targeting and WhatsApp campaign planning."
-                        },
-                        {
-                            "name": "Click Count Performance",
-                            "description": "Track how many users have clicked on the provided link in the WhatsApp template and analyze the performance of the template."
-                        }
-                    ],
-                    "features": [
-                        "Easy export of WhatsApp message logs in CSV format.",
-                        "Detailed insights into message delivery and engagement.",
-                        "Compliance with data protection and communication laws.",
-                        "Improved decisionmaking with actionable WhatsApp analytics data."
-                    ]
-                },
-                "img": "/assets/global/whatsapp/whatsapp-simplify-reporting-with-whatsapp-export-logs.svg"
+                "value": "2,300+",
+                "label": "app integrations"
             }
         ]
     },
-    "WhatsAppChatWindowCTA": {
-        "heading_prefix": "WhatsApp Chat Window for",
-        "heading_accent": "Cost-Effective Customer Conversations.",
-        "heading": "WhatsApp Chat Window for Cost-Effective Customer Conversations.",
-        "subheading": "Engage customers in real-time, resolve queries faster, and reduce communication costs within the 24-hour service window.",
-        "btn_text": "WhatsApp Chat Window",
-        "btn_link": "/whatsapp-chat-window"
+    "FeatureComp": {
+        "heading": "What can you do with MSG91 WhatsApp Business API?",
+        "subheading": "MSG91 WhatsApp Business Platform helps UAE businesses use WhatsApp for five jobs: marketing, sales, transactional updates, authentication (OTPs) and customer support. You run all of them from one account with one or more connected numbers. The features below are grouped by what you want to get done.",
+        "iconColor": "text-campaign",
+        "groups": [
+            {
+                "heading": "Grow sales on WhatsApp",
+                "features": [
+                    {
+                        "name": "Bulk campaigns to the right people",
+                        "content": "<p>Send offers, launches and seasonal deals to thousands of opted-in customers in one go. Filter your audience by city, language, last purchase or interest, so each person gets a message that fits. Schedule campaigns for the hour your customers are most active, and track delivery, reads and clicks live.</p>",
+                        "img": "/assets/global/whatsapp/whatsapp-send-bulk-whatsapp-messages-effortlessly.svg"
+                    },
+                    {
+                        "name": "Journeys that follow up for you",
+                        "content": "<p>Build a chain of messages that reacts to what each customer does. If they click, send the next offer. If they stay silent, send a reminder after a set time. Use a different template at each step. The journey runs on its own, so your team doesn't chase every lead by hand.</p>",
+                        "img": "/assets/global/whatsapp/whatsapp-audience-segmentation-for-targeted-campaigns-and-customer-journeys.svg"
+                    },
+                    {
+                        "name": "Click-to-WhatsApp ads",
+                        "content": "<p>Run Instagram and Facebook ads that open a WhatsApp chat in one tap using Click-to-WhatsApp Ads. Each new lead gets an instant reply from your chatbot or team, and you can see which ad they came from. Qualify the lead, share a brochure and book a call before the lead goes cold.</p>",
+                        "img": "/assets/global/whatsapp/whatsapp-click-to-whatsapp-ads-boost-engagement-with-zero-margin-costs.svg"
+                    },
+                    {
+                        "name": "Catalogue and payment links",
+                        "content": "<p>Show your products inside WhatsApp, with photos, prices and details. Customers browse and pick items without leaving the chat. Send a payment link from your payment gateway and close the sale in the same conversation. The order confirmation then goes out automatically.</p>",
+                        "img": "/assets/global/whatsapp/whatsapp-share-product-catalogs-and-enable-whatsapp-payments.svg"
+                    }
+                ]
+            },
+            {
+                "heading": "Make sure every message arrives",
+                "features": [
+                    {
+                        "name": "Up to 10 fallback templates",
+                        "content": "<p>Meta can pause a template if its quality drops, or block it after review. With MSG91, you line up to 10 backup templates for each message. If one is paused or blocked, the next one sends straight away. Your campaign keeps running, and you don't lose sales while you fix the template.</p>",
+                        "img": "/assets/global/whatsapp/whatsapp-create-and-approve-templates-instantly.svg"
+                    },
+                    {
+                        "name": "Auto-retry, and no charge for failures",
+                        "content": "<p>Messages can fail for temporary reasons, such as a network error. MSG91 retries failed messages on its own. You only pay for messages that are sent successfully, including the ones that go through on retry. Failed messages are never charged, so your budget goes only on messages that arrive.</p>",
+                        "img": "/assets/global/whatsapp/whatsapp-robust-whatsapp-api-for-business-scalability.svg"
+                    },
+                    {
+                        "name": "Backup channels for critical messages",
+                        "content": "<p>Some messages can't wait, like OTPs and payment alerts. Set SMS, email or voice as the backup for these. If the WhatsApp message fails, the backup goes out automatically, with no manual work. You choose which messages get a backup, so you pay for it only where it matters.</p>",
+                        "img": "/assets/global/otp/lotties/multi_channel_otp_delivery.json"
+                    }
+                ]
+            },
+            {
+                "heading": "Serve every customer, fast",
+                "features": [
+                    {
+                        "name": "AI chatbot in your customer's language",
+                        "content": "<p>Reply to customers any time, in their language and your brand's tone. The chatbot mixes fixed rule-based flows with AI in one bot, so key answers stay exact. It checks order status in your systems, books appointments and hands the chat to a person when needed. It solves up to 70% of chats on its own. <em>(Needs a Hello plan.)</em></p>",
+                        "img": "/assets/global/whatsapp/whatsapp-revolutionize-customer-support-with-whatsapp-chatbot.svg"
+                    },
+                    {
+                        "name": "One inbox for every team and number",
+                        "content": "<p>Add WhatsApp numbers for each brand, branch or emirate to one account. Every chat lands in one shared inbox and goes to the right agent or team automatically. Agents see the full chat history and customer details. Add unlimited agents with no per-agent fee.</p>",
+                        "img": "/assets/global/whatsapp/whatsapp-enhance-interaction-with-2-way-communication-on-whatsapp.svg"
+                    },
+                    {
+                        "name": "Keep your WhatsApp Business app",
+                        "content": "<p>Already using the WhatsApp Business app? Keep it. MSG91 connects the same number to the API, so the app and the API work together. Your team chats on the app as usual, while campaigns, OTPs and alerts go out through the API. Customers keep the number they already know.</p>",
+                        "video": "/assets/global/whatsapp/hero_section.webm"
+                    }
+                ]
+            },
+            {
+                "heading": "Stay in control",
+                "features": [
+                    {
+                        "name": "Auto-blacklist that protects your number",
+                        "content": "<p>Too many blocks and reports can lower your number's quality with Meta. To reduce this risk, send messages only to customers who have agreed to receive them and keep promotions relevant. When a customer replies \"Stop\", MSG91 adds them to a blacklist and stops sending them promotions. Their OTPs, order updates and other important messages still go through. Your number stays healthy and your customers stay happy.</p>",
+                        "img": "/assets/global/whatsapp/whatsapp-opt-out-feature-for-better-customer-experience.svg"
+                    },
+                    {
+                        "name": "Reports on every message",
+                        "content": "<p>Track every message with detailed reports on sent, delivered, read, and clicked statuses. Compare templates to see which ones bring the most replies and sales. Export full message logs any time for your records or audits. Use the numbers to plan your next campaign with confidence.</p>",
+                        "img": "/assets/global/whatsapp/whatsapp-simplify-reporting-with-whatsapp-export-logs.svg"
+                    }
+                ]
+            }
+        ]
+    },
+    "FileHostingFormatsComp": {
+        "heading": "How UAE businesses use WhatsApp automation with MSG91",
+        "subheading": "UAE businesses use MSG91 WhatsApp Business Platform to reply to leads fast, confirm orders, send OTPs and support customers in every language. Here are 8 common ways, by industry.",
+        "img": "/assets/global/whatsapp/whatsapp-drive-engagement-with-whatsapp-broadcast-and-campaigns.svg",
+        "steps": [
+            {
+                "number": "01",
+                "title": "Real estate",
+                "description": "<ul class='list-disc'><li><strong>Problem:</strong> Leads from property portals and ads go cold within hours.</li><li><strong>On WhatsApp:</strong> Every lead from your ads gets an instant reply from the AI chatbot, with brochures, floor plans and a link to book a viewing. Hot leads go straight to agents in the shared inbox.</li><li><strong>Result:</strong> Agents spend time on ready buyers, and fewer leads slip away.</li></ul>"
+            },
+            {
+                "number": "02",
+                "title": "Retail and e-commerce",
+                "description": "<ul class='list-disc'><li><strong>Problem:</strong> Shoppers leave carts behind and many COD orders get returned.</li><li><strong>On WhatsApp:</strong> Send cart reminders, opt-in offers and COD confirmations customers approve in one tap. The AI chatbot answers product and order questions, and fallback templates keep campaigns running.</li><li><strong>Result:</strong> More carts recovered and fewer failed COD deliveries.</li></ul>"
+            },
+            {
+                "number": "03",
+                "title": "Banking, Fintech and Insurance",
+                "description": "<ul class='list-disc'><li><strong>Problem:</strong> OTPs and alerts must arrive in seconds, every time.</li><li><strong>On WhatsApp:</strong> Send OTPs, payment alerts and renewal reminders in Arabic or English. If WhatsApp fails, auto-retry and SMS backup make sure the OTP still arrives.</li><li><strong>Result:</strong> Customers log in and pay without delays, and fewer OTP support calls.</li></ul>"
+            },
+            {
+                "number": "04",
+                "title": "Hospitality and Travel",
+                "description": "<ul class='list-disc'><li><strong>Problem:</strong> Guests want quick answers before and during their stay.</li><li><strong>On WhatsApp:</strong> Send booking confirmations, check-in details and tour updates. The AI chatbot answers guest questions any time, in their language.</li><li><strong>Result:</strong> Fewer calls to the front desk and happier guests.</li></ul>"
+            },
+            {
+                "number": "05",
+                "title": "Clinics and Healthcare",
+                "description": "<ul class='list-disc'><li><strong>Problem:</strong> Missed appointments waste doctors' time.</li><li><strong>On WhatsApp:</strong> Send appointment reminders with one-tap confirm or reschedule, and let patients know when their report is ready to view in your own patient portal. The AI chatbot handles bookings and changes.</li><li><strong>Result:</strong> Fewer no-shows and less time on reminder calls.</li></ul>"
+            },
+            {
+                "number": "06",
+                "title": "Education and Training",
+                "description": "<ul class='list-disc'><li><strong>Problem:</strong> Parents and students miss calls and emails about admissions and fees.</li><li><strong>On WhatsApp:</strong> Send admission updates, fee reminders with payment links and class changes as campaigns. The AI chatbot answers course questions.</li><li><strong>Result:</strong> Fees paid on time, and your team only handles serious enquiries.</li></ul>"
+            },
+            {
+                "number": "07",
+                "title": "Automotive",
+                "description": "<ul class='list-disc'><li><strong>Problem:</strong> Car buyers want fast answers, and service customers forget their dates.</li><li><strong>On WhatsApp:</strong> Reply to test-drive leads from Click-to-WhatsApp ads, share price lists, and send service reminders with one-tap booking through automated journeys.</li><li><strong>Result:</strong> More test drives booked and more repeat service visits.</li></ul>"
+            },
+            {
+                "number": "08",
+                "title": "Logistics and Delivery",
+                "description": "<ul class='list-disc'><li><strong>Problem:</strong> Failed deliveries cost time and fuel.</li><li><strong>On WhatsApp:</strong> Ask customers to confirm their address and pick a delivery slot, then send live updates. The AI chatbot answers \"Where is my order?\" questions.</li><li><strong>Result:</strong> More deliveries done on the first try.</li></ul>"
+            }
+        ]
+    },
+    "FooterCta": {
+        "bg": true,
+        "heading": "Connect WhatsApp to the tools you already use",
+        "img": "/assets/global/whatsapp/whatsapp-powerful-plugins-and-seamless-integrations.svg",
+        "description": "MSG91 connects with Zoho CRM, Shopify, WooCommerce, Magento, Freshworks, WebEngage, MoEngage, CleverTap and <a href=\"/partners-and-integrations\" class=\"text-link active-link\" target=\"_blank\">2,300+ more apps</a>. For your own systems, use the WhatsApp API and webhooks to send messages and get delivery updates in real time."
+    },
+    "Testimonials": {
+        "heading": "What businesses say about MSG91 WhatsApp Business Platform",
+        "subheading": "MSG91 is rated 4.5 out of 5 on G2, from 199 reviews (checked 11 Nov 2026).",
+        "badge": "G2",
+        "items": [
+            {
+                "quote": "MSG91 has been very dependable for our day-to-day communication needs. SMS and WhatsApp delivery are fast, and the APIs were straightforward to integrate with our existing systems. I also appreciate that everything is available in one place, so we’re not juggling multiple tools. The dashboard is simple and intuitive enough for non-technical team members to use without much guidance. <a href=\"https://www.g2.com/products/msg91/reviews/msg91-review-12604095\" class=\"text-link active-link\" target=\"_blank\">Read full review on G2</a>",
+                "name": "Amber J.",
+                "role": "Operations Manager",
+                "rating": 5,
+                "date": "8 Apr 2026",
+                "initials": "AJ",
+                "avatar": "emerald",
+                "source": "G2"
+            },
+            {
+                "quote": "Having SMS, email, and WhatsApp all in one platform makes it much easier to plan and run campaigns. The analytics provide a clear view of engagement across each channel, which helps me understand what’s working. I also like the flexibility to create targeted campaigns based on what I need. On top of that, the usage-based pricing is a helpful option. <a href=\"https://www.g2.com/products/msg91/reviews/msg91-review-12577881\" class=\"text-link active-link\" target=\"_blank\">Read full review on G2</a>",
+                "name": "Isabella H.",
+                "role": "Growth Marketing Lead",
+                "rating": 5,
+                "date": "2 Apr 2026",
+                "initials": "IH",
+                "avatar": "orange",
+                "source": "G2"
+            },
+            {
+                "quote": "MSG91 allows us to automate order confirmations, shipping updates, and post-purchase follow-ups via SMS and WhatsApp. The automation flows are flexible, and delivery tracking gives our operations team confidence. Integration with our backend system was smooth, and scaling campaigns during peak sales periods was effortless. <a href=\"https://www.g2.com/products/msg91/reviews/msg91-review-12355892\" class=\"text-link active-link\" target=\"_blank\">Read full review on G2</a>",
+                "name": "Ayunita T.",
+                "role": "Employee Communications Software",
+                "rating": 4,
+                "date": "30 Mar 2026",
+                "initials": "AT",
+                "avatar": "blue",
+                "source": "G2"
+            }
+        ],
+        "button": {
+            "text": "See all reviews on G2",
+            "link": "https://www.g2.com/products/msg91/reviews"
+        }
+    },
+    "CompareTableComp": {
+        "type": "whatsapp-api",
+        "heading": "Why UAE businesses pick MSG91 as their WhatsApp API provider",
+        "tableHeading": "MSG91 runs on Meta's Cloud API. Meta provides the messaging network, the rules and the per-message rates. MSG91 adds ready tools to run campaigns, protect delivery and support customers, and charges less per message in the UAE.",
+        "definitions": [
+            {
+                "term": "Meta Cloud API",
+                "description": "WhatsApp's own API. It sends and receives messages. Businesses build their own tools on top of it."
+            },
+            {
+                "term": "MSG91",
+                "description": "An official Meta partner platform built on the Cloud API."
+            }
+        ],
+        "featureLabel": "Feature",
+        "columns": [
+            {
+                "key": "msg91",
+                "label": "MSG91"
+            },
+            {
+                "key": "meta",
+                "label": "Meta Cloud API (direct)"
+            }
+        ],
+        "rows": [
+            {
+                "feature": "Messaging network and template rules",
+                "msg91": "Meta Cloud API",
+                "meta": "Meta Cloud API"
+            },
+            {
+                "feature": "Charged only for delivered messages",
+                "msg91": "Yes",
+                "meta": "Yes"
+            },
+            {
+                "feature": "Per-message price in the UAE",
+                "msg91": "10% below Meta's AED list rate",
+                "meta": "Meta's AED list rate"
+            },
+            {
+                "feature": "Delivery retries while a phone is offline",
+                "msg91": "Yes, through Meta",
+                "meta": "Yes, for up to 30 days (10 minutes by default for OTPs)"
+            },
+            {
+                "feature": "Re-sending messages that fail",
+                "msg91": "Built-in auto-retry",
+                "meta": "No"
+            },
+            {
+                "feature": "When a template is paused or disabled",
+                "msg91": "Next of up to 10 fallback templates sends",
+                "meta": "Template stops sending; no automatic fallback"
+            },
+            {
+                "feature": "Marketing opt-outs",
+                "msg91": "\"Stop\" auto-blacklist; OTPs and important updates still deliver",
+                "meta": "Business must honour opt-outs; users can also turn off marketing from a business"
+            },
+            {
+                "feature": "Campaigns, segments and scheduling",
+                "msg91": "Ready dashboard",
+                "meta": "Built by the business through API calls"
+            },
+            {
+                "feature": "Analytics",
+                "msg91": "Dashboard reports and log export",
+                "meta": "Analytics API (data through API calls)"
+            },
+            {
+                "feature": "AI agent",
+                "msg91": "AI chatbot, rule-based + AI, Arabic, English and many other languages (Hello plan)",
+                "meta": "Meta Business Agent, $2 per 1M tokens (about 4–5 US cents per message)"
+            },
+            {
+                "feature": "WhatsApp Business app and API on one number",
+                "msg91": "Yes",
+                "meta": "Yes, through partner onboarding"
+            },
+            {
+                "feature": "Data storage in the region",
+                "msg91": "MSG91 data centre in the Gulf region",
+                "meta": "Optional local storage, UAE supported"
+            }
+        ],
+        "pricingNote": "See current rates on the UAE WhatsApp pricing page.",
+        "pricingLink": {
+            "text": "UAE WhatsApp pricing page",
+            "url": "/ae/pricing/whatsapp"
+        }
+    },
+    "WhatsAppGetStarted": {
+        "kicker": "How to get WhatsApp Business API in the UAE in 3 steps",
+        "heading": "Sign up, connect your verified Meta business account and number, and start sending once Meta approves your templates. The connection takes about 10 minutes.",
+        "steps": [
+            {
+                "number": "1",
+                "icon": "MdEditNote",
+                "title": "Sign Up Free",
+                "description": "Create your MSG91 account in a minute."
+            },
+            {
+                "number": "2",
+                "icon": "MdLink",
+                "title": "Connect Your Number",
+                "description": "Link your Meta business account and WhatsApp number in about 10 minutes. Already on the WhatsApp Business app? Keep it and connect the same number."
+            },
+            {
+                "number": "3",
+                "icon": "MdChatBubbleOutline",
+                "title": "Send Your First Message",
+                "description": "Get your WhatsApp templates approved and start sending. Our onboarding team helps at every step."
+            }
+        ],
+        "note": "Already on the WhatsApp Business app? Keep it and connect the same number while campaigns, OTPs and alerts run through the API.",
+        "cta": {
+            "text": "Start Free"
+        }
+    },
+    "FaqsComp": {
+        "heading": "Frequently Asked Questions About WhatsApp Business API in the UAE",
+        "faqs": [
+            {
+                "question": "Who is the best WhatsApp Business API provider in the UAE?",
+                "answer": "<p>The best provider gives you lower prices, messages that always deliver, and reliable local support. As an official Meta Business Partner, MSG91 brings these benefits together, offering approximately 10% lower pricing than Meta to help businesses communicate with their customers more effectively while saving more.</p><p>In the UAE, MSG91 charges less than Meta's AED rates. It adds up to 10 fallback templates, auto-retry and auto-blacklist, so campaigns keep running and your number stays safe.</p><p>You also get an Arabic and English <a href=\"/chatbot\" class=\"text-link active-link\" target=\"_blank\">AI chatbot</a>, a <a href=\"/ae/hello\" class=\"text-link active-link\" target=\"_blank\">shared team inbox</a>, data stored in the Gulf region, a UAE team, AED billing and 24/7 support.</p>"
+            },
+            {
+                "question": "How much does WhatsApp Business API cost in the UAE?",
+                "answer": "<p>WhatsApp charges per message, and the price depends on the type: marketing, utility, authentication or service. With MSG91, UAE businesses pay 10% less than Meta's own AED rate for each message.</p><p>You pay only for messages that are sent. Failed messages are never charged, and that includes the ones MSG91 retries for you. MSG91 bills UAE clients in AED, and VAT applies.</p><p>See the latest rates on the <a href=\"/ae/pricing/whatsapp\" class=\"text-link active-link\" target=\"_blank\">MSG91 WhatsApp pricing page</a>. If you send steady, high volumes every month, talk to our team about custom pricing.</p>"
+            },
+            {
+                "question": "Why use MSG91 instead of buying WhatsApp API directly from Meta?",
+                "answer": "<p>Meta gives you the API, but not the tools around it. You would need to build your own dashboard, reports, retries and inbox. With MSG91, everything is ready from day one.</p><p>And you pay less. MSG91's per-message rates in the UAE are below Meta's own. You get an easy dashboard, reports on every message, auto-retry for failed messages and up to 10 backup templates.</p><p>Help is there 24/7 from people and AI. You can also add an <a href=\"/chatbot\" class=\"text-link active-link\" target=\"_blank\">AI chatbot</a>, <a href=\"/ae/sms\" class=\"text-link active-link\" target=\"_blank\">SMS</a>, <a href=\"/ae/email\" class=\"text-link active-link\" target=\"_blank\">email</a>, <a href=\"/ae/voice\" class=\"text-link active-link\" target=\"_blank\">voice</a> and Apple Messages, all from the same account.</p>"
+            },
+            {
+                "question": "Can I keep my WhatsApp Business app and use the API on the same number?",
+                "answer": "<p>Yes. MSG91 supports coexistence, so the WhatsApp Business app and the API work together on one number. Your team keeps chatting with customers on the app, just like today.</p><p>At the same time, MSG91 sends your bulk and automated messages through the API. This includes campaigns, OTPs, order updates and reminders.</p><p>Your customers keep messaging the number they already know and trust. You keep your chat history, and you don't have to choose between the app and the API.</p>"
+            },
+            {
+                "question": "How fast can we go live with MSG91 WhatsApp in the UAE?",
+                "answer": "<p>If your Meta business account is verified and your number is ready, you can connect it to MSG91 in about 10 minutes. A <a href=\"https://msg91.com/help/whatsapp/whatsapp-number-integration---onboarding\" class=\"text-link active-link\" target=\"_blank\">step-by-step help doc and video</a> show you each step.</p><p>Keep your trade licence ready, as Meta may ask for it during business verification. You can start sending as soon as Meta approves your message templates.</p><p>If you get stuck, the MSG91 onboarding team helps you finish the setup. After you go live, <a href=\"/ae/contact-us\" class=\"text-link active-link\" target=\"_blank\">support</a> is there 24/7 by chat, email, WhatsApp and phone.</p>"
+            },
+            {
+                "question": "Where does MSG91 store data for UAE businesses?",
+                "answer": "<p>MSG91 stores data for UAE businesses in data centres in the Gulf region. Your customer data stays close to home.</p><p>MSG91 is SOC 2 Type II certified and GDPR compliant. This means your data is protected by global security standards, with strict checks on who can access it.</p><p>MSG91 also has a registered office and a <a href=\"/ae/contact-us\" class=\"text-link active-link\" target=\"_blank\">local team</a> in the UAE. UAE clients are billed in AED with VAT invoices, which keeps your accounts simple. If your security or legal team has questions, our team can share the details they need.</p>"
+            },
+            {
+                "question": "What happens if an important WhatsApp message fails?",
+                "answer": "<p>MSG91 tries again on its own. If it still fails, MSG91 can send it on a backup channel, so it still reaches your customer.</p><p>You can set SMS, email or voice as the backup for each message type. For example, if a WhatsApp OTP fails, it goes out as an SMS automatically, with no manual work. You choose which messages need a backup, so you use it only where it matters.</p><p>You never pay for failed WhatsApp messages. Your OTPs, payment alerts and order updates reach customers, and your costs stay under control.</p>"
+            },
+            {
+                "question": "Can many agents and teams use one WhatsApp number?",
+                "answer": "<p>Yes. With <a href=\"/ae/hello\" class=\"text-link active-link\" target=\"_blank\">MSG91 Hello</a>, your whole team replies from one WhatsApp number. All chats land in one shared inbox and go to the right agent automatically. You can also add more numbers, for example one for each brand, branch or emirate.</p><p>An AI agent can answer common questions in Arabic and English. When a customer asks for a person, the chat moves to a human agent with the full history.</p><p>Hello plans include unlimited agents with no per-agent charge. So your support costs don't rise as your team grows.</p>"
+            },
+            {
+                "question": "Can I use WhatsApp Business API for both marketing and transactional messages?",
+                "answer": "<p>Yes. WhatsApp Business Platform has four message types: marketing, utility, authentication and service. With MSG91, you send all of them from one account and one number.</p><p>Use marketing messages for opt-in offers and campaigns. Use utility messages for order updates, payment reminders, and booking confirmations. Use authentication messages for login codes. Meta prices each message type differently, while MSG91 offers lower rates across all categories.</p><p>MSG91 keeps them apart where it matters. When a customer replies \"Stop\", promotions stop, but their OTPs and order updates still arrive. Helping important messages reach customers.</p>"
+            },
+            {
+                "question": "Can MSG91 handle millions of WhatsApp messages at peak times?",
+                "answer": "<p>Yes. MSG91 has 18 years of business messaging experience and sends millions of messages during peak periods like big sales and festive seasons. Messaging runs at 99.9% uptime, so OTPs, offers and order updates go out on time.</p><p>If a message fails, MSG91 retries it on its own. Multiple fallback templates keep big campaigns running, even if Meta pauses a template.</p><p>Support is open 24/7 by email, WhatsApp, phone, website chat and scheduled calls. Real people and AI agents help with everything from setup to daily use.</p>"
+            }
+        ]
     },
     "PreFooterComp": {
-        "content": "Start building your ideal customer engagement experience",
+        "content": "Your customers are already on WhatsApp. Start talking to them today.",
+        "description": "Lower than Meta pricing, messages that keep moving, and a UAE team ready to help, 24/7.",
+        "fullWidth": true,
         "buttons": {
-            "contactSales": {
-                "text": "Contact sales",
-                "link": "/contact-us"
+            "getStarted": {
+                "text": "Start Free",
+                "link": "https://control.msg91.com/signup/"
             },
             "pricing": {
-                "text": "Pricing",
-                "link": "/pricing/"
-            },
-            "getStarted": {
-                "text": "Get started",
-                "link": "https://control.msg91.com/signup/"
+                "text": "Talk to Our UAE Team",
+                "link": "/ae/contact-us"
             }
         }
     }

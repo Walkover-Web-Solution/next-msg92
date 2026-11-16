@@ -4,7 +4,6 @@ import PricingSMSOTP from './PricingSMS/PricingSMSOTP';
 import PricingVoice from './PricingVoice/PricingVoice';
 import NotFoundComp from '../NotFoundComp/NotFoundComp';
 import HeadComp from '../HeadComp/HeadComp';
-import NotificationBarComp from '../notificationBarComp/notificationBarComp';
 import MenuBarComp from '../menuBarComp/menuBarComp';
 import FooterComp from '../FooterComp/FooterComp';
 import PricingSubscription from './PricingSubscription';
@@ -15,13 +14,16 @@ export default function PricingComp({ pricingData, pageInfo, pageData, products,
         return (
             <>
                 <HeadComp data={pageData?.HeadComp} pageInfo={pageInfo} />
-                <NotificationBarComp
-                    componentData={commonData?.notification}
-                    country={pageInfo?.country}
-                    pageInfo={{ country: country, page: 'pricing' }}
-                />
 
-                <MenuBarComp componentData={commonData?.menu} pageInfo={pageInfo} />
+                <MenuBarComp
+                    componentData={commonData?.menu}
+                    notificationData={commonData?.notification}
+                    pageInfo={{
+                        ...pageInfo,
+                        country: country || pageInfo?.country,
+                        page: 'pricing',
+                    }}
+                />
                 <div className='bg-white'>
                     <div className='container'>
                         <PricingNav products={products} page={pageInfo?.product} />

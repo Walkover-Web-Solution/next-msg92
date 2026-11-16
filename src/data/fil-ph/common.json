@@ -388,7 +388,7 @@
                 },
                 {
                     "name": "Cost comparison",
-                    "link": "cost-comparision"
+                    "link": "cost-comparison"
                 }
             ]
         },
@@ -401,10 +401,6 @@
                 {
                     "name": "Patakaran sa Privacy",
                     "link": "privacy-policy"
-                },
-                {
-                    "name": "GDPR",
-                    "link": "gdpr"
                 },
                 {
                     "name": "Patakaran sa Refund",

@@ -7,14 +7,18 @@ import getURL from '@/utils/getURL';
 
 export default function WhyChooseMSG91({ data, pageInfo }) {
     const isReports = pageInfo?.page === 'reports';
-    const bgClass = data?.bg || (isReports ? 'reports_lite_bg' : 'bg-[#ecf7ec]');
+    const bgClass = data?.bg || (isReports ? 'reports_lite_bg' : 'whatsapp_lite_bg');
 
     return (
         <div className={bgClass}>
-            <div className='container cont cont_p cont_gap'>
-                <div className='cont cont_w gap-2 '>
+            <div className={`container cont cont_p cont_gap ${!data?.content?.length ? 'items-center' : ''}`}>
+                <div
+                    className={`cont cont_w ${data?.paragraphs?.length ? 'gap-4' : 'gap-2'} ${!data?.content?.length ? 'items-center text-center' : ''}`}
+                >
                     <h2 className='text-3xl font-bold'>{data?.heading}</h2>
-                    <p>{data?.subheading}</p>
+                    {data?.paragraphs?.length
+                        ? data.paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)
+                        : data?.subheading && <p>{data.subheading}</p>}
                 </div>
                 {data?.content?.map((item, index) => (
                     <div

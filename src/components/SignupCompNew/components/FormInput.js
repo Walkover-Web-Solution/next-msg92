@@ -25,7 +25,12 @@ export default function FormInput({
 }) {
     return (
         <div className='cont gap-1'>
-            {label && <p className='text-gray-500'>{label}</p>}
+            {label && (
+                <p className='text-gray-500'>
+                    {label}
+                    {required ? <span className='text-red-500'> *</span> : null}
+                </p>
+            )}
             <input
                 maxLength={maxLength}
                 className={`input input-bordered text-base p-3 h-fit w-full max-w-[420px] outline-none focus-within:outline-none ${className}`}

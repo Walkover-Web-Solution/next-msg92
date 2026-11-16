@@ -61,13 +61,14 @@ export function validateSignUp(dispatch, state) {
     }
 
     const isGithubFlow = state?.githubCode && state?.signupByGitHub;
+    const isGoogleFlow = state?.googleCode && state?.signupByGoogle;
 
     if (!state?.mobileToken) {
         dispatch({ type: 'SET_ERROR', payload: 'Email and Mobile should be verified.' });
         return;
     }
 
-    if (!isGithubFlow && !state?.emailToken) {
+    if (!isGithubFlow && !isGoogleFlow && !state?.emailToken) {
         dispatch({ type: 'SET_ERROR', payload: 'Email and Mobile should be verified.' });
         return;
     }
@@ -90,6 +91,14 @@ export function validateSignUp(dispatch, state) {
         payload.code = state.githubCode;
         payload.state = state.githubState;
         url = process.env.API_BASE_URL + '/api/v5/nexus/validateGithubSignUp';
+        const sessionFromCookie = getCookie('sessionId');
+        if (sessionFromCookie) {
+            payload.session = sessionFromCookie;
+        }
+    } else if (isGoogleFlow) {
+        payload.code = state.googleCode;
+        payload.redirectUrl = state.googleRedirectUrl;
+        url = process.env.API_BASE_URL + '/api/v5/nexus/validateGoogleSignUp';
         const sessionFromCookie = getCookie('sessionId');
         if (sessionFromCookie) {
             payload.session = sessionFromCookie;
@@ -150,10 +159,13 @@ export function validateSignUp(dispatch, state) {
                 if (isGithubFlow) {
                     dispatch({ type: 'RESET_GITHUB_SIGNUP' });
                 }
+                if (isGoogleFlow) {
+                    dispatch({ type: 'RESET_GOOGLE_SIGNUP' });
+                }
 
                 dispatch({
                     type: 'SET_SESSION',
-                    payload: { session: sid, step: 3 },
+                    payload: { session: sid, step: 2 },
                 });
                 dispatch({ type: 'SET_INVITES', payload: result?.data?.data?.invitations });
             } else if (result?.hasError) {
@@ -163,6 +175,10 @@ export function validateSignUp(dispatch, state) {
                 });
                 if (isGithubFlow) {
                     dispatch({ type: 'RESET_GITHUB_SIGNUP' });
+                    dispatch({ type: 'SET_ACTIVE_STEP', payload: 1 });
+                }
+                if (isGoogleFlow) {
+                    dispatch({ type: 'RESET_GOOGLE_SIGNUP' });
                     dispatch({ type: 'SET_ACTIVE_STEP', payload: 1 });
                 }
             } else {

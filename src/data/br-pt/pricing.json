@@ -395,6 +395,47 @@
                     "Preços após Dezembro: Chamadas de Entrada: $0.01/min"
                 ]
             },
+            "faqComp": {
+                "heading": "Perguntas frequentes",
+                "faqs": [
+                {
+                    "question": "Qual é o preço da API do WhatsApp Business da MSG91 no Brasil?",
+                    "answer": "<p>Com a MSG91, você começa com <strong>dois meses sem mensalidade da plataforma</strong>. Após esse período, a assinatura custa <strong>US$ 7 por mês para cada número de WhatsApp</strong>.</p><p>O envio de mensagens é cobrado separadamente, em dólares americanos, conforme o país do destinatário e a categoria da mensagem: Marketing, Utilidade, Autenticação ou Serviço.</p><p>A MSG91 oferece tarifas de mensagens inferiores aos preços padrão da Meta no Brasil. Para calcular seus custos, consulte os valores de cada categoria na tabela de preços acima.</p>"
+                },
+                {
+                    "question": "Por que o WhatsApp da MSG91 custa menos que os preços da Meta no Brasil?",
+                    "answer": "<p>A MSG91 é parceira oficial da Meta e recebe condições comerciais diferenciadas para o envio de mensagens pelo WhatsApp. Essa vantagem é repassada aos clientes, permitindo que empresas brasileiras paguem menos por mensagem do que pagariam diretamente à Meta.</p><p>A MSG91 obtém sua receita com a assinatura mensal da plataforma, sem acrescentar uma margem extra sobre o valor das mensagens.</p><p>Além do WhatsApp, sua empresa pode gerenciar chatbots com IA, SMS, Email e chamadas de voz em uma única plataforma. Cada serviço tem sua própria cobrança, de acordo com o uso.</p>"
+                },
+                {
+                    "question": "A MSG91 cobra a mais por templates, arquivos, APIs ou outras funcionalidades do WhatsApp?",
+                    "answer": "<p>Não. Você não paga taxas adicionais para criar templates de WhatsApp, enviar imagens e documentos compatíveis, integrar APIs, configurar webhooks ou ativar o WhatsApp Coexistence em números elegíveis.</p><p>O histórico de mensagens dos <strong>últimos 100 dias fica disponível gratuitamente</strong>. Se precisar consultar registros mais antigos, é possível solicitar o histórico de até um ano mediante pagamento adicional.</p><p>Você paga apenas as tarifas aplicáveis às mensagens, a assinatura da plataforma e os serviços adicionais que contratar. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/help/whatsapp/how-to-check-whatsapp-logs-message-status'>Saiba como consultar o histórico de mensagens do WhatsApp</a>.</p>"
+                },
+                {
+                    "question": "O que mudou na cobrança do WhatsApp a partir de 1º de outubro de 2026?",
+                    "answer": "<p>Desde 1º de outubro de 2026, a Meta passou a cobrar por respostas comerciais faturáveis enviadas após o contato de um cliente. Isso inclui respostas de atendentes, mensagens de chatbots e mensagens de Utilidade que antes não geravam cobrança nessas situações.</p><p>As mensagens recebidas dos clientes continuam gratuitas. Com a MSG91, sua empresa ainda conta com tarifas inferiores aos preços padrão da Meta para o Brasil.</p><p>Outra forma de controlar os gastos é utilizar o <strong>MSG91 Chat Window</strong>, que permite dar continuidade ao atendimento em uma janela de conversa, sem precisar enviar cada resposta como uma mensagem individual pelo WhatsApp. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/guide/how-much-will-october-1-2026-actually-cost-you-and-how-msg91-keeps-it-lower-anywhere-in-the-world'>Entenda as mudanças na cobrança e como reduzir seus custos</a>.</p>"
+                },
+                {
+                    "question": "A MSG91 oferece condições especiais para empresas que enviam milhões de mensagens pelo WhatsApp?",
+                    "answer": "<p>Sim. Empresas que enviam milhares ou milhões de mensagens por mês podem solicitar <strong>condições comerciais personalizadas</strong>, conforme o volume de mensagens de Marketing, Utilidade, Autenticação e Serviço.</p><p>Operações com grandes volumes de mensagens de Utilidade e Autenticação também podem se beneficiar dos descontos progressivos da Meta, quando atendem aos critérios de elegibilidade.</p><p>Se sua empresa realiza campanhas de grande escala, como Black Friday Brasil, Dia das Mães ou Natal, a MSG91 pode avaliar um plano adequado ao seu volume e às suas necessidades.</p><p><a class='text-link active-link' target='_blank' href='/contact-us'>Fale com a equipe comercial da MSG91</a> para conhecer as opções de preços corporativos no Brasil.</p>"
+                },
+                {
+                    "question": "Mensagens do WhatsApp que falham, tentativas de reenvio e canais alternativos são cobrados separadamente?",
+                    "answer": "<p>Mensagens do WhatsApp que não são entregues não geram cobrança. Se a MSG91 tentar reenviar uma mensagem automaticamente e ela for entregue com sucesso, será aplicada a tarifa correspondente à categoria da mensagem.</p><p>Caso sua empresa utilize <strong>SMS ou Email como alternativa de envio</strong> para códigos de verificação (OTP), avisos de pagamento ou notificações de entrega, haverá uma cobrança separada, conforme a tarifa do canal utilizado.</p><p>Assim, você consegue acompanhar os custos de cada canal de comunicação.</p>"
+                },
+                {
+                    "question": "É possível controlar os gastos com WhatsApp de diferentes lojas, marcas ou números?",
+                    "answer": "<p>Sim. A MSG91 permite administrar os custos de vários números de WhatsApp em uma única conta, facilitando a gestão de unidades, franquias, marcas e equipes de atendimento.</p><p>Você pode adicionar saldo pré-pago, definir limites mensais de gastos e ativar a recarga automática para reduzir o risco de interrupções no envio.</p><p>Cada número tem uma assinatura de <strong>US$ 7 por mês após os dois meses iniciais</strong>, além das tarifas de mensagens.</p><p>O saldo pré-pago que não for utilizado permanece disponível no mês seguinte, desde que a assinatura continue ativa. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/help/whatsapp/prepaid-balance-and-auto-renew'>Saiba como funcionam o saldo pré-pago e a recarga automática</a>.</p>"
+                },
+                {
+                    "question": "O chatbot para WhatsApp da MSG91 é gratuito no Brasil?",
+                    "answer": "<p>Você pode começar com o <a class='text-link active-link' target='_blank' href='/br/pricing/hello'>plano gratuito do MSG91 Hello</a>, que inclui <strong>50 tickets por mês e 2 caixas de entrada</strong>.</p><p>Para empresas que precisam de maior capacidade de atendimento, estão disponíveis os seguintes planos: <strong>Basic:</strong> US$ 40/mês, com 1.000 tickets, 2 caixas de entrada e US$ 40 de crédito na carteira BOT. <strong>Premium:</strong> US$ 80/mês, com 2.000 tickets, 3 caixas de entrada e US$ 80 de crédito na carteira BOT.</p><p>Os chatbots personalizados baseados em regras não têm cobrança adicional por mensagem do bot. Já o uso de chatbots com inteligência artificial é descontado da carteira BOT, conforme a tabela de tarifas aplicável.</p><p><strong>As tarifas de mensagens do WhatsApp são cobradas separadamente.</strong></p>"
+                },
+                {
+                    "question": "Posso definir quanto quero pagar, no máximo, por uma mensagem de Marketing no WhatsApp?",
+                    "answer": "<p>Sim. Com o recurso <strong>Set Max Price</strong> da MSG91, sua empresa pode estabelecer o valor máximo que deseja pagar por cada mensagem de Marketing enviada pelo WhatsApp.</p><p>Para configurar, abra um template de Marketing já aprovado, acesse <strong>Template Pricing</strong>, selecione <strong>Set Max Price</strong> e informe o limite desejado. É possível definir valores diferentes para cada país.</p><p>O preço efetivamente cobrado pode ser menor que o limite escolhido, mas a entrega das mensagens não é garantida. Você também pode ajustar o valor máximo ou voltar à precificação padrão quando quiser. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/guide/reduce-your-whatsapp-business-api-cost'>Entenda como definir o preço máximo das mensagens de Marketing</a>.</p>"
+                }
+                ]
+            },
             "connectComp": {
                 "content": "Connect with our team for Personalized Pricing .",
                 "sales_btn": "Talk to Sales",

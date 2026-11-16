@@ -33,7 +33,11 @@ export default function ContactUsComp({ data, pageInfo }) {
                 {pageInfo?.country === 'in' && data?.rcs && <QrWithImageCard data={data?.rcs} />}
             </div>
 
-            <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
+            <BookingModal
+                isOpen={isBookingOpen}
+                onClose={() => setIsBookingOpen(false)}
+                widgetToken={meetingCard?.widgetToken}
+            />
         </section>
     );
 }

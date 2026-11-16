@@ -9,9 +9,9 @@
             "name": "WhatsApp API",
             "icon": "/assets/icons/products/whatsapp.svg"
         },
-        "tagline": "WhatsApp Business Solutions",
-        "heading": "Seamless Global messaging and communications.",
-        "subheading": "Use Developer Friendly API to ensure smooth, real-time communication with your customers globally, enhancing engagement and satisfaction.",
+        "tagline": "WhatsApp Business Platform in India",
+        "heading": "Make WhatsApp the place where business happens",
+        "subheading": "MSG91 is a no-code WhatsApp Business Platform for Indian businesses. Reach customers, run targeted WhatsApp marketing campaigns, automate replies with AI chatbots and give personalised support. Keep your marketing, sales and support chats together in one place.",
         "lottie": "/assets/lotties/in-whatsapp.json",
         "getstarted_btn": "Get Started",
         "schedule_meet": "Schedule a Meeting"
@@ -402,70 +402,42 @@
         ]
     },
     "FaqsComp": {
-        "heading": "FAQ for Marketing Automation:",
-        "faqs": [
-            {
-                "question": "What is WhatsApp Business API?",
-                "answer": "<ul class='list-disc'><li>The WhatsApp Business API is a tool offered by WhatsApp that enables businesses to integrate WhatsApp messaging into their customer service, marketing, and engagement strategies.</li><li>It is particularly designed for medium and large enterprises to automate interactions and send messages from the official WhatsApp app to customers.</li><li>Through this API, businesses can enhance customer experiences by enabling chat services on their websites or applications.</li></ul>"
-            },
-            {
-                "question": "How can businesses use AI for WhatsApp chat?",
-                "answer": "<ul class='list-disc'><li>By integrating AI with WhatsApp Business API, businesses can create automated chatbots that provide instant replies to customer inquiries.</li><li>AI-based solutions can analyze incoming messages and respond appropriately, increasing efficiency in customer service without the need for human intervention.</li><li>Popular AI platforms can be integrated with WhatsApp via API to deliver seamless AI-driven chat experiences.</li></ul>"
-            },
-            {
-                "question": "Can WhatsApp messages be sent via API for free?",
-                "answer": "<ul class='list-disc'><li>WhatsApp Business API does require a subscription or payment depending on the service plan.</li><li>However, Facebook offers some pricing flexibility for click-to-WhatsApp ads, where businesses may avoid session charges.</li><li>It's best to review the latest pricing on the official Facebook or WhatsApp developer website.</li></ul>"
-            },
-            {
-                "question": "How does WhatsApp API integration work?",
-                "answer": "<ul class='list-disc'><li>WhatsApp API integration involves setting up the API to work with your website or application.</li><li>This enables your business to send messages from WhatsApp to users directly on their phones, facilitating real-time engagement.</li><li>Integration requires a WhatsApp Business account and an MSG91 account for developers to set up.</li></ul>"
-            },
-            {
-                "question": "How can I use WhatsApp Business API with my website/CRM?",
-                "answer": "<ul class='list-disc'><li>You can integrate WhatsApp Business API with your website to allow customers to reach you via click-to-chat links or automated response buttons.</li><li>Using HTML, JavaScript, and the API documentation, developers can configure 'Send WhatsApp Message' buttons on a website.</li><li>Integration can be done through your WhatsApp Business account setup and by following the instructions on the official WhatsApp developer site.</li></ul>"
-            },
-            {
-                "question": "What do I need to start using WhatsApp Business API?",
-                "answer": "To begin using WhatsApp Business API, you need: <br/> <ul class='list-disc'><li>WhatsApp Business Account</li><li>A phone number dedicated to the business account</li><li>Access to Facebook's developer platform at <a class='text-link active-link' target='_blank' href='https://developers.facebook.com/'>https://developers.facebook.com/</a></li><li>API credentials for integration</li><li>MSG91 Account <a class='text-link active-link' target='_blank' href='https://msg91.com/signup?utm_source=msg91Website&source=msg91Whatsapp'>(click here to register)</a></li></ul>"
-            },
-            {
-                "question": "Can WhatsApp Business API be used for enterprises?",
-                "answer": "<ul class='list-disc'><li>Yes, the WhatsApp Business API is ideal for enterprises looking to implement robust customer service and engagement solutions.</li><li>It provides a scalable solution that can support high message volumes, perfect for enterprises handling multiple customer inquiries daily.</li><li>Enterprises can also benefit from automated AI chatbots integrated with the API.</li></ul>"
-            },
-            {
-                "question": "Is there a web interface for WhatsApp Business API?",
-                "answer": "<ul class='list-disc'><li>Yes, MSG91 offers a web-based panel for easy understanding and implementation.</li><li>The WhatsApp Web API does not have a direct, visual interface like the regular WhatsApp Web. However, messages can be sent and received via API requests programmatically, which developers can configure using code or cloud-hosted solutions.</li></ul>"
-            },
-            {
-                "question": "How is the WhatsApp Business API different from the regular WhatsApp app?",
-                "answer": "<ul class='list-disc'><li>Unlike the WhatsApp app used for personal messaging, the WhatsApp Business API is designed specifically for businesses.</li><li>The API allows for automated messaging, integration with other software solutions, and bulk messaging while adhering to WhatsApp’s policies.</li><li>It is intended for use through programmatic integration rather than a direct user interface.</li></ul>"
-            },
-            {
-                "question": "What is required to set up the WhatsApp API with a cloud account?",
-                "answer": "<ul class='list-disc'><li>Registering your WhatsApp Business Account</li><li>Securing API credentials from Facebook's developer portal</li></ul>"
-            },
-            {
-                "question": "How does WhatsApp API help with customer service?",
-                "answer": "<ul class='list-disc'><li>WhatsApp API is highly beneficial for customer service as it enables quick responses and easy follow-up with customers.</li><li>With AI chatbot integration, businesses can automate frequent queries, freeing up customer service representatives to handle more complex cases.</li><li>The API supports two-way communication, ensuring customers get real-time updates on their inquiries.</li></ul>"
-            },
-            {
-                "question": "Can I integrate WhatsApp API with existing business applications?",
-                "answer": "<ul class='list-disc'><li>Yes, the WhatsApp API can be integrated with various applications, including CRM systems and e-commerce platforms.</li><li>Developers can set up API calls to trigger messages based on user actions, such as order confirmations, shipping updates, or customer service inquiries.</li><li>Custom integration solutions can be built for your business needs with the help of a developer.</li></ul>"
-            },
-            {
-                "question": "What phone number should be used for WhatsApp Business API?",
-                "answer": "<ul class='list-disc'><li>A dedicated business phone number is required for the WhatsApp Business API.</li><li>This number must not be linked to a personal WhatsApp account; it will be verified and registered through the API setup process on the Facebook developer platform.</li></ul>"
-            },
-            {
-                "question": "Can I manage WhatsApp API messages on the web?",
-                "answer": "Yes, you can manage WhatsApp for sending and receiving messages using MSG91 HELLO (Web-based dashboards developed to provide real-time monitoring of conversations)."
-            },
-            {
-                "question": "Are there free options available for WhatsApp API?",
-                "answer": "<ul class='list-disc'><li>The WhatsApp API itself is not free for most business functions, as costs may be associated with sending and receiving messages.</li><li>However, Click-to-WhatsApp ads provide a budget-friendly way to initiate conversations without incurring session charges for specific interactions.</li></ul>"
-            }
-        ]
-    },
+    "heading": "Frequently Asked Questions",
+    "faqs": [
+      {
+        "question": "Can MSG91 handle millions of WhatsApp messages at peak times?",
+        "answer": "<p>Yes. MSG91 has been sending business messages for 18 years. During festive seasons and big sales, it delivers millions of WhatsApp messages a day for large brands. Your OTPs, offers and order updates go out on time, even at peak traffic.</p>"
+      },
+      {
+        "question": "What uptime and support do the customers get?",
+        "answer": "<p>MSG91 WhatsApp messaging runs at 99.9% uptime, so your messages keep flowing. Support is available 24/7 by email, WhatsApp, phone call, website chat and scheduled meetings. Real people and AI agents are ready to help with any query.</p>"
+      },
+      {
+        "question": "Is my WhatsApp data safe with MSG91, and is it stored in India?",
+        "answer": "<p>Yes. MSG91 stores data for Indian businesses in its data centre in India, so your customer data stays in the country. MSG91 is SOC 2 Type II certified and compliant with India’s DPDP Act, so your data is protected to global and Indian standards. Your legal and security teams can review and approve MSG91 with confidence.</p>"
+      },
+      {
+        "question": "What if a critical message fails on WhatsApp?",
+        "answer": "<p>MSG91 sends it through a fallback channel, so it still reaches your customer. As an omnichannel platform, MSG91 lets you set SMS, Email, RCS or Voice as a backup for each message. Say, if a WhatsApp OTP fails, it goes out on the backup channel automatically. Failed WhatsApp messages are also retried on their own.</p>"
+      },
+      {
+        "question": "Can MSG91 WhatsApp integrate with CRM, ecommerce and MarTech tools like WebEngage, MoEngage, CleverTap and Shopify?",
+        "answer": "<p>Yes. MSG91 WhatsApp integrates with CRM, ecommerce and MarTech tools, including WebEngage, MoEngage, CleverTap, Shopify and Zoho CRM. It offers integrations and connects with 2,000+ apps. See all <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/partners-and-integrations'>MSG91 integrations</a>. For in-house systems, use the <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://docs.msg91.com/whatsapp'>MSG91 WhatsApp API</a> and webhooks to send messages and get real-time updates.</p>"
+      },
+      {
+        "question": "Can we manage multiple WhatsApp numbers and teams from one account?",
+        "answer": "<p>Yes. You can add multiple WhatsApp numbers to one MSG91 account, for example one for each brand, region or department. All your agents and teams work from the same shared inbox, so you never have to switch between accounts.</p>"
+      },
+      {
+        "question": "Can multiple agents reply to WhatsApp chats from one number?",
+        "answer": "<p>Yes. With <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/in/hello'>MSG91 Hello</a>, your whole team can reply to customers from one WhatsApp number. All chats come into one shared inbox and are assigned to the right agent automatically. You can also automate support with MSG91’s AI agent. It answers customer queries first, and when a customer asks for a person, the chat passes smoothly to a human agent. Add as many agents as you need, with no per-agent charge.</p>"
+      },
+      {
+        "question": "How fast can we go live with MSG91 WhatsApp?",
+        "answer": "<p>If your Meta business account is verified and your WhatsApp number is ready, you can connect it to MSG91 in about 10 minutes. A step-by-step <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/help/whatsapp/whatsapp-number-integration---onboarding'>help doc and video guide</a> walk you through it. If you get stuck, the MSG91 onboarding team helps you finish the setup. Once your template gets approved, you can start sending messages.</p>"
+      }
+    ]
+  },
     "WhatsAppChatWindowCTA": {
         "heading_prefix": "WhatsApp Chat Window for",
         "heading_accent": "Cost-Effective Customer Conversations.",

@@ -388,6 +388,47 @@
                 "heading": "<h2 class='text-xl md:text-3xl font-bold'>Up to <span class='text-green-600 font-bold text-2xl lg:text-3xl'>10% Lower</span> Than Meta Pricing.</h2>",
                 "sub_heading": "Predictable pricing. No markup. Built for long-term growth."
             },
+            "faqComp": {
+                "heading": "Frequently Asked Questions",
+                "faqs": [
+                {
+                    "question": "What is the MSG91 WhatsApp Business API pricing in Brazil?",
+                    "answer": "<p>MSG91 WhatsApp Business API starts with a <strong>$0 platform subscription for the initial two months</strong>. After that, you pay <strong>$7/month per WhatsApp number</strong>.</p><p>WhatsApp messages are charged separately in USD, based on the recipient's country and message category, including Marketing, Utility, Authentication and Service.</p><p>MSG91 offers messaging rates lower than Meta's standard pricing in Brazil. You can check the WhatsApp messaging rates in the pricing table above to calculate your costs.</p>"
+                },
+                {
+                    "question": "Why does MSG91 charge less than Meta for WhatsApp in Brazil?",
+                    "answer": "<p>MSG91 is an official Meta partner. As a partner, MSG91 gets a discount from Meta on WhatsApp message rates, and we pass this discount on to you. That is why your price per message in Brazil is lower than buying directly from Meta.</p><p>MSG91 earns from the monthly platform fee, not from your WhatsApp messages.</p><p>MSG91 is also a complete communication platform. Many businesses use our AI chatbots, SMS, Email and Voice too, each billed on its own. Our aim is simple: give you every channel in one platform, starting with low-cost WhatsApp.</p>"
+                },
+                {
+                    "question": "Does MSG91 charge extra for WhatsApp templates, media, APIs or other features?",
+                    "answer": "<p>No. MSG91 does not charge extra for creating WhatsApp templates, attaching supported images or documents, using APIs and webhooks, or enabling WhatsApp Coexistence for eligible numbers.</p><p>WhatsApp message logs for the <strong>last 100 days are free</strong>. Older logs, available for up to one year, can be requested at an additional cost.</p><p>You only pay the applicable messaging charges, platform subscription and any separately billed services. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/help/whatsapp/how-to-check-whatsapp-logs-message-status'>Check WhatsApp message logs</a>.</p>"
+                },
+                {
+                    "question": "What changed in WhatsApp Business API pricing from October 1, 2026?",
+                    "answer": "<p>From October 1, 2026, Meta charges for billable WhatsApp replies sent after a customer messages your business. This includes agent replies, chatbot responses and Utility messages that were previously unbilled in these situations.</p><p>Incoming customer messages remain free. MSG91 offers messaging rates lower than Meta's standard Brazil pricing.</p><p>MSG91 Chat Window can also help reduce costs by continuing longer customer conversations without sending every reply as a separate WhatsApp message. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/guide/how-much-will-october-1-2026-actually-cost-you-and-how-msg91-keeps-it-lower-anywhere-in-the-world'>See how MSG91 helps lower WhatsApp costs</a>.</p>"
+                },
+                {
+                    "question": "Does MSG91 offer special pricing for businesses sending millions of WhatsApp messages?",
+                    "answer": "<p>Yes. MSG91 offers <strong>customized enterprise pricing</strong> for businesses sending thousands or millions of WhatsApp messages each month, including Marketing, Utility, Authentication and Service messages.</p><p>High-volume Utility and Authentication messages may qualify for Meta's volume-based discounts. MSG91 also offers personalised commercial arrangements based on your messaging needs.</p><p><a class='text-link active-link' target='_blank' href='/contact-us'>Contact MSG91 Sales</a> to discuss enterprise WhatsApp pricing in Brazil.</p>"
+                },
+                {
+                    "question": "Are failed WhatsApp messages, automatic retries and fallback messages charged separately?",
+                    "answer": "<p>With MSG91, failed WhatsApp messages are not charged. If MSG91 automatically retries a failed message and the retry is successfully delivered, the applicable WhatsApp messaging rate applies.</p><p>If you use <strong>SMS or Email as a fallback</strong> for OTPs, payment alerts or delivery notifications, the respective channel charges apply separately based on the applicable SMS or Email pricing.</p>"
+                },
+                {
+                    "question": "Can Brazilian businesses control WhatsApp spending across multiple numbers?",
+                    "answer": "<p>Yes. MSG91 lets you manage WhatsApp costs for different stores, brands or departments from one account. You can add prepaid balances, set monthly spending limits and enable auto-recharge to help prevent interruptions.</p><p>Each WhatsApp number costs <strong>$7/month after the initial two months</strong>, plus messaging charges.</p><p>Unused prepaid balance carries forward to the next month while your subscription remains active. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/help/whatsapp/prepaid-balance-and-auto-renew'>Learn about prepaid billing and auto-recharge</a>.</p>"
+                },
+                {
+                    "question": "Is the WhatsApp chatbot free with MSG91 in Brazil?",
+                    "answer": "<p>You can get started with the <a class='text-link active-link' target='_blank' href='/br/pricing/hello'>MSG91 Hello Free plan</a>, which includes <strong>50 tickets per month and 2 inboxes</strong>.</p><p>For growing teams, Hello offers <strong>Basic:</strong> $40/month with 1,000 tickets, 2 inboxes and a $40 BOT wallet. <strong>Premium:</strong> $80/month with 2,000 tickets, 3 inboxes and an $80 BOT wallet.</p><p>MSG91 does not charge a separate bot-message fee for custom rule-based chatbots. AI chatbot usage is billed according to the bot rate card and deducted from the available BOT wallet.</p><p>WhatsApp messaging charges are separate.</p>"
+                },
+                {
+                    "question": "Can I set my own maximum price for WhatsApp Marketing messages?",
+                    "answer": "<p>Yes. MSG91's <strong>Set Max Price</strong> feature lets you decide the maximum amount you're willing to pay for each WhatsApp Marketing message.</p><p>Simply open an approved Marketing template, select <strong>Set Max Price</strong> under Template Pricing, and enter your preferred amount. You can set different price limits for different countries.</p><p>Your actual charge may be lower than your selected limit, but message delivery is not guaranteed. You can update your maximum price or switch back to Standard pricing whenever needed. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/guide/reduce-your-whatsapp-business-api-cost'>Learn how WhatsApp bidding works</a>.</p>"
+                }
+                ]
+            },
             "connectComp": {
                 "content": "Connect with our team for Personalized Pricing .",
                 "sales_btn": "Talk to Sales",

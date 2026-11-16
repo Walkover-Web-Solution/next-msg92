@@ -1,4 +1,4 @@
-export default function BookingModal({ isOpen, onClose }) {
+export default function BookingModal({ isOpen, onClose, widgetToken }) {
     if (!isOpen) return null;
 
     return (
@@ -14,7 +14,11 @@ export default function BookingModal({ isOpen, onClose }) {
                 <div id='contactChatWidget' className='w-full h-[680px]'>
                     <iframe
                         title='MSG91 booking assistant'
-                        src='/booking-chat-widget'
+                        src={
+                            widgetToken
+                                ? `/booking-chat-widget?widgetToken=${encodeURIComponent(widgetToken)}`
+                                : '/booking-chat-widget'
+                        }
                         allow='microphone'
                         className='w-full h-full border-0'
                     />

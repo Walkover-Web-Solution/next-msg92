@@ -5,6 +5,9 @@ function getGithubResetFields() {
         signupByGitHub: false,
         githubCode: null,
         githubState: null,
+        signupByGoogle: false,
+        googleCode: null,
+        googleRedirectUrl: null,
         emailVerified: false,
     };
 }
@@ -93,8 +96,29 @@ export function reducer(state, action) {
                 emailVerified: true,
                 isLoading: false,
                 loadingType: null,
-                activeStep: 2,
                 otpSent: false,
+            };
+
+        case 'SET_GOOGLE_EMAIL_VERIFIED':
+            return {
+                ...state,
+                signupByGoogle: true,
+                googleCode: action.payload.code,
+                googleRedirectUrl: action.payload.redirectUrl,
+                emailVerified: true,
+                emailRequestId: null,
+                emailToken: null,
+                otpSent: false,
+                isLoading: false,
+                loadingType: null,
+            };
+
+        case 'RESET_GOOGLE_SIGNUP':
+            return {
+                ...state,
+                signupByGoogle: false,
+                googleCode: null,
+                googleRedirectUrl: null,
             };
 
         case 'SET_EMAIL_EDIT':

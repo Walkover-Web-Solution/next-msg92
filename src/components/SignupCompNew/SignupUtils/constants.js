@@ -34,6 +34,10 @@ export const initialState = {
     githubCode: null,
     githubState: null,
 
+    signupByGoogle: false,
+    googleCode: null,
+    googleRedirectUrl: null,
+
     mobileIdentifier: null,
     mobileRequestId: null,
     mobileToken: null,

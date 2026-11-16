@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import Script from 'next/script';
 
 const CHAT_WIDGET_SCRIPT = 'https://blacksea.msg91.com/chat-widget.js';
@@ -6,13 +6,15 @@ const CHAT_WIDGET_TOKEN = '8e51b';
 
 export default function BookingChatWidget() {
     const initializedRef = useRef(false);
+    const widgetScriptUrl = process.env.BOOKING_CHAT_WIDGET_URL;
 
     const initializeWidget = () => {
         if (initializedRef.current || typeof window.initChatWidget !== 'function') return;
 
         const container = document.getElementById('isolatedBookingChatWidget');
-        if (!container) return;
+        const widgetToken = process.env.BOOKING_CHAT_WIDGET_TOKEN;
 
+        if (!container || !widgetToken) return;
         initializedRef.current = true;
 
         window.initChatWidget(

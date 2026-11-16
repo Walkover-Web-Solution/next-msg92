@@ -392,6 +392,47 @@
                 "heading": "<h2 class='text-xl md:text-3xl font-bold'>Mas Mababa sa Presyo ng Meta. <span class='text-green-600 font-bold text-2xl lg:text-3xl'>Garantisado</span></h2>",
                 "sub_heading": "Walang dagdag na singil. Walang nakatagong bayad. Mas magandang presyo lamang."
             },
+            "faqComp": {
+                "heading": "Mga Madalas Itanong (FAQs)",
+                "faqs": [
+                {
+                    "question": "Magkano ang presyo ng MSG91 WhatsApp Business API sa Pilipinas?",
+                    "answer": "<p>Sa MSG91, <strong>walang subscription fee sa unang dalawang buwan</strong> para sa WhatsApp platform. Pagkatapos nito, <strong>£6 kada buwan ang bayad sa bawat WhatsApp number</strong>.</p><p>Hiwalay ang singil sa mga WhatsApp message at nakabase ito sa bansang padadalhan at uri ng mensahe: Marketing, Utility, Authentication, o Service. Mas mababa ang messaging rates ng MSG91 kumpara sa standard pricing ng Meta sa Pilipinas.</p><p>Makikita ang lahat ng rate sa pricing table sa itaas para mas madaling makalkula ang buwanang gastos. <strong>Walang karagdagang VAT na sinisingil ang MSG91 para sa billing sa Pilipinas.</strong></p>"
+                },
+                {
+                    "question": "Bakit mas mababa ang WhatsApp pricing ng MSG91 kaysa sa Meta sa Pilipinas?",
+                    "answer": "<p>Ang MSG91 ay isang opisyal na Meta partner. Dahil sa partner pricing arrangements nito, nakakakuha ang MSG91 ng mas mababang WhatsApp messaging rates at ipinapasa ang benepisyong ito sa mga negosyo sa Pilipinas.</p><p>Kumikita ang MSG91 sa buwanang platform subscription sa halip na magdagdag ng markup sa bawat WhatsApp message.</p><p>Bukod sa WhatsApp, puwede ring gamitin ang MSG91 para sa AI chatbots, SMS, Email, at Voice. May hiwalay na singil ang bawat serbisyo, kaya mas madaling pamahalaan ang iba't ibang customer communication channel sa iisang platform.</p>"
+                },
+                {
+                    "question": "May dagdag bang bayad sa WhatsApp templates, integrations, o paggamit ng kasalukuyang number?",
+                    "answer": "<p>Wala. Walang karagdagang bayad ang MSG91 sa paggawa ng WhatsApp templates, pagpapadala ng supported images at documents, paggamit ng APIs at webhooks, o pag-activate ng WhatsApp Coexistence para sa mga eligible number.</p><p>Sa WhatsApp Coexistence, maaaring patuloy na gamitin ang WhatsApp Business app at API sa iisang number kung kwalipikado ang negosyo.</p><p><strong>Libre ang WhatsApp message logs sa nakaraang 100 araw.</strong> Kung kailangan ng mas lumang records, puwedeng humiling ng logs hanggang isang taon, na may karagdagang bayad.</p><p>Ang babayaran mo lang ay ang applicable messaging charges, platform subscription, at anumang hiwalay na serbisyong gagamitin. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/help/whatsapp/how-to-check-whatsapp-logs-message-status'>Tingnan kung paano i-check ang WhatsApp message logs</a>.</p>"
+                },
+                {
+                    "question": "Ano ang nagbago sa WhatsApp pricing simula October 1, 2026?",
+                    "answer": "<p>Simula October 1, 2026, naniningil na ang Meta para sa mga billable WhatsApp reply na ipinapadala pagkatapos mag-message ang customer sa negosyo. Kabilang dito ang agent replies, chatbot responses, order confirmations, at delivery updates na dati ay walang bayad sa ganitong sitwasyon.</p><p><strong>Libre pa rin ang mga mensaheng ipinapadala ng customers sa iyong negosyo.</strong> Sa MSG91, mas mababa ang messaging rates kumpara sa standard pricing ng Meta sa Pilipinas.</p><p>Makakatulong din ang MSG91 Chat Window na mabawasan ang gastos dahil maaaring magpatuloy ang mas mahabang customer conversation nang hindi kailangang magpadala ng bawat reply bilang hiwalay na WhatsApp message. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/guide/how-much-will-october-1-2026-actually-cost-you-and-how-msg91-keeps-it-lower-anywhere-in-the-world'>Alamin kung paano makakatipid sa bagong WhatsApp pricing</a>.</p>"
+                },
+                {
+                    "question": "May special pricing ba para sa mga negosyong nagpapadala ng milyun-milyong WhatsApp messages?",
+                    "answer": "<p>Oo. Nag-aalok ang MSG91 ng <strong>custom enterprise pricing</strong> para sa mga negosyong nagpapadala ng libo-libo o milyun-milyong WhatsApp messages bawat buwan.</p><p>Ang malalaking volume ng Utility at Authentication messages ay maaaring maging eligible sa volume-based discounts ng Meta. Maaari ring gumawa ang MSG91 ng custom pricing plan batay sa dami ng mensahe at pangangailangan ng negosyo.</p><p>Para sa retail campaigns, banking notifications, at e-commerce updates sa buong Pilipinas, maaaring makipag-usap sa aming sales team para sa angkop na plano.</p><p><a class='text-link active-link' target='_blank' href='/contact-us'>Makipag-ugnayan sa MSG91 Sales</a> para sa enterprise WhatsApp pricing.</p>"
+                },
+                {
+                    "question": "May bayad ba ang failed WhatsApp messages, automatic retries, at SMS o Email fallback?",
+                    "answer": "<p><strong>Walang bayad ang mga WhatsApp message na hindi naihatid.</strong> Kung awtomatikong muling ipadala ng MSG91 ang isang failed message at matagumpay itong maihatid, sisingilin ito ayon sa naaangkop na WhatsApp messaging rate.</p><p>Kung gagamit ng <strong>SMS o Email bilang fallback</strong> para sa OTP, payment alerts, o delivery notifications, may hiwalay na singil batay sa presyo ng SMS o Email channel na ginamit.</p>"
+                },
+                {
+                    "question": "Puwede bang kontrolin ang WhatsApp expenses ng iba't ibang branch o number?",
+                    "answer": "<p>Oo. Sa MSG91, puwede mong pamahalaan ang WhatsApp expenses ng iba't ibang branch, tindahan, o departamento gamit ang iisang account.</p><p>Maaari kang maglagay ng prepaid balance, magtakda ng monthly spending limits, at mag-activate ng auto-recharge para makatulong na maiwasan ang pagkaantala ng messaging services.</p><p>Ang subscription ay <strong>£6 kada buwan sa bawat WhatsApp number pagkatapos ng unang dalawang buwan</strong>, bukod pa sa messaging charges.</p><p>Ang hindi nagamit na prepaid balance ay madadala sa susunod na buwan hangga't active ang subscription. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/help/whatsapp/prepaid-balance-and-auto-renew'>Alamin kung paano gumagana ang prepaid billing at auto-recharge</a>.</p>"
+                },
+                {
+                    "question": "Libre ba ang WhatsApp chatbot ng MSG91 sa Pilipinas?",
+                    "answer": "<p>Oo, maaari kang magsimula sa <a class='text-link active-link' target='_blank' href='/fil-ph/pricing/hello'>MSG91 Hello Free plan</a>, na may kasamang <strong>50 tickets bawat buwan at 2 inboxes</strong>.</p><p>Para sa lumalaking negosyo, may dalawang paid plans: <strong>Basic:</strong> £35/buwan, may 1,000 tickets, 2 inboxes, at £35 BOT wallet. <strong>Premium:</strong> £65/buwan, may 2,000 tickets, 3 inboxes, at £65 BOT wallet.</p><p>Ang dagdag na tickets ay £0.012 bawat isa sa Basic at £0.025 bawat isa sa Premium. Ang additional inboxes ay £9 bawat isa sa mga paid plan.</p><p>Walang hiwalay na bot-message fee para sa custom rule-based chatbots. Ang AI chatbot usage ay ibinabawas sa BOT wallet ayon sa naaangkop na bot rate card.</p><p><strong>Hiwalay pa rin ang singil sa WhatsApp messages.</strong></p>"
+                },
+                {
+                    "question": "Puwede bang magtakda ng maximum price para sa WhatsApp Marketing messages?",
+                    "answer": "<p>Oo. Sa <strong>Set Max Price</strong> feature ng MSG91, maaari mong piliin ang pinakamataas na halagang handa mong bayaran para sa bawat WhatsApp Marketing message.</p><p>Buksan ang isang approved Marketing template, piliin ang <strong>Set Max Price</strong> sa ilalim ng Template Pricing, at ilagay ang iyong price limit. Maaari ka ring magtakda ng magkakaibang limit para sa bawat bansa.</p><p>Maaaring mas mababa ang aktuwal na singil kaysa sa itinakda mong limit, pero hindi garantisado ang delivery. Maaari mong baguhin ang limit o bumalik sa Standard pricing anumang oras. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/guide/reduce-your-whatsapp-business-api-cost'>Alamin kung paano gumagana ang WhatsApp bidding</a>.</p>"
+                }
+                ]
+            },
             "connectComp": {
                 "content": "Makipag-ugnayan sa aming team para sa presyo.",
                 "sales_btn": "Makipag-usap sa Sales",

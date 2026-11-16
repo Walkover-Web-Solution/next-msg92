@@ -13,8 +13,16 @@ import style from './OTPInput.module.scss';
  */
 const OTPInput = forwardRef(
     ({ length = 6, onComplete, onVerify, showVerifyButton = false, autoFocus = false, disabled = false }, ref) => {
-        const { otp, otpInputRefs, handleOtpChange, handleOtpKeyDown, isOtpComplete, getOtpValue, resetOtp } =
-            useOTPInput(length, autoFocus);
+        const {
+            otp,
+            otpInputRefs,
+            handleOtpChange,
+            handleOtpKeyDown,
+            handleOtpPaste,
+            isOtpComplete,
+            getOtpValue,
+            resetOtp,
+        } = useOTPInput(length, autoFocus);
 
         // Expose resetOtp to parent component
         useImperativeHandle(ref, () => ({
@@ -47,6 +55,13 @@ const OTPInput = forwardRef(
             });
         };
 
+        const handlePaste = (e) => {
+            const pastedValue = handleOtpPaste(e);
+            if (onComplete && pastedValue?.length === length) {
+                setTimeout(() => onComplete(pastedValue), 100);
+            }
+        };
+
         return (
             <div className='flex flex-wrap items-center gap-2' role='group' aria-label='OTP Input'>
                 {otp.map((digit, index) => (
@@ -61,6 +76,7 @@ const OTPInput = forwardRef(
                         value={digit}
                         onChange={(e) => handleChange(index, e.target.value.replace(/\D/g, ''))}
                         onKeyDown={(e) => handleKeyDown(index, e)}
+                        onPaste={handlePaste}
                         placeholder='*'
                         autoComplete='one-time-code'
                         disabled={disabled}

@@ -383,7 +383,7 @@
                 },
                 {
                     "name": "Cost comparison",
-                    "link": "cost-comparision"
+                    "link": "cost-comparison"
                 }
             ]
         },
@@ -396,10 +396,6 @@
                 {
                     "name": "Privacy policy",
                     "link": "privacy-policy"
-                },
-                {
-                    "name": "GDPR",
-                    "link": "gdpr"
                 },
                 {
                     "name": "Refund policy",
