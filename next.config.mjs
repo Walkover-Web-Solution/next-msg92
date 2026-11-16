@@ -10,13 +10,7 @@ const chatWidgetOrigin = (() => {
         return 'https://ctest.msg91.com';
     }
 })();
-const bookingChatWidgetOrigin = (() => {
-    try {
-        return new URL(getEnvValue('BOOKING_CHAT_WIDGET_URL')).origin;
-    } catch {
-        return chatWidgetOrigin;
-    }
-})();
+const bookingChatWidgetOrigin = 'https://blacksea.msg91.com';
 const chatWidgetOrigins = [...new Set([chatWidgetOrigin, bookingChatWidgetOrigin])].join(' ');
 
 // --- Security Headers ---
@@ -136,8 +130,6 @@ const nextConfig = {
         ECOMMERCE_WIDGET_TOKEN: getEnvValue('ECOMMERCE_WIDGET_TOKEN'),
         WHATSAPP_CHAT_WIDGET_TOKEN: getEnvValue('WHATSAPP_CHAT_WIDGET_TOKEN'),
         CHAT_WIDGET_URL: getEnvValue('CHAT_WIDGET_URL'),
-        BOOKING_CHAT_WIDGET_TOKEN: getEnvValue('BOOKING_CHAT_WIDGET_TOKEN'),
-        BOOKING_CHAT_WIDGET_URL: getEnvValue('BOOKING_CHAT_WIDGET_URL'),
 
         // WhatsApp Outbound Config
         WHATSAPP_AUTHKEY: getEnvValue('WHATSAPP_AUTHKEY'),
