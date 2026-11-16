@@ -6,8 +6,8 @@ import { normalizeGstin, parseGstLookupResponse, validateGstinFormat } from '../
 /**
  * @typedef {Object} UseGstLookupOptions
  * @property {Function} dispatch - signup context dispatch
- * @property {Function} onAutofill - ({ address, postalCode, stateName, cityName, gstNo, companyName }) => void
- * @property {Function} [prefillGstCountryData] - async (stateName, stateCode, cityNames) => void
+ * @property {Function} onAutofill - ({ address, postalCode, gstNo, companyName }) => void
+ * @property {Function} [prefillGstCountryData] - async (stateName, cityNames) => void
  * @property {string} [initialGstNo]
  */
 
@@ -53,15 +53,8 @@ export function useGstLookup({ dispatch, onAutofill, prefillGstCountryData, init
                 },
             });
 
-            if (
-                prefillGstCountryData &&
-                (data.stateName || data.stateCode || data.cityNames?.length || data.cityName)
-            ) {
-                await prefillGstCountryData(
-                    data.stateName,
-                    data.stateCode,
-                    data.cityNames?.length ? data.cityNames : [data.cityName]
-                );
+            if (prefillGstCountryData && (data.stateName || data.cityNames.length)) {
+                await prefillGstCountryData(data.stateName, data.cityNames);
             }
         },
         [dispatch, onAutofill, prefillGstCountryData]
