@@ -173,6 +173,7 @@ export function validateSignUp(dispatch, state) {
                     type: 'SET_ERROR',
                     payload: result?.errors?.[0] ?? result?.errors ?? 'Failed to validate signup',
                 });
+                dispatch({ type: 'RESET_CONTACT_VERIFICATION' });
                 if (isGithubFlow) {
                     dispatch({ type: 'RESET_GITHUB_SIGNUP' });
                     dispatch({ type: 'SET_ACTIVE_STEP', payload: 1 });
@@ -183,6 +184,7 @@ export function validateSignUp(dispatch, state) {
                 }
             } else {
                 dispatch({ type: 'SET_ERROR', payload: result?.errors || 'Failed to validate signup' });
+                dispatch({ type: 'RESET_CONTACT_VERIFICATION' });
             }
         })
         .catch((error) => {
@@ -190,6 +192,7 @@ export function validateSignUp(dispatch, state) {
                 type: 'SET_ERROR',
                 payload: error?.message || 'Failed to validate signup',
             });
+            dispatch({ type: 'RESET_CONTACT_VERIFICATION' });
         });
 }
 
