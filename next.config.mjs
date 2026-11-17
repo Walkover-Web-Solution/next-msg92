@@ -3,7 +3,6 @@ import dotenv from 'dotenv';
 
 const customEnvConfig = dotenv.config().parsed || {};
 const getEnvValue = (key) => process.env?.[key] || customEnvConfig?.[key];
-
 // --- Security Headers ---
 const securityHeaders = [
     // 1️⃣ Force HTTPS on all subdomains and preload for browsers
@@ -35,6 +34,10 @@ const securityHeaders = [
     },
 ];
 
+const embeddableSecurityHeaders = securityHeaders.map((header) =>
+    header.key === 'X-Frame-Options' ? { ...header, value: 'SAMEORIGIN' } : header
+);
+
 const nextConfig = {
     trailingSlash: false,
     reactStrictMode: false,
@@ -56,7 +59,11 @@ const nextConfig = {
     async headers() {
         return [
             {
-                source: '/(.*)',
+                source: '/(whatsapp-chat-window-widget|booking-chat-widget)',
+                headers: embeddableSecurityHeaders,
+            },
+            {
+                source: '/((?!whatsapp-chat-window-widget|booking-chat-widget).*)',
                 headers: securityHeaders,
             },
             {

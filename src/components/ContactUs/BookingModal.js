@@ -1,31 +1,4 @@
-import { useEffect } from 'react';
-
-export default function BookingModal({ isOpen, onClose, widgetToken, widgetScriptLoaded }) {
-    useEffect(() => {
-        if (!isOpen || !widgetScriptLoaded || !window.initChatWidget) return;
-
-        const container = document.getElementById('contactChatWidget');
-        if (!container) return;
-
-        container.innerHTML = '';
-        window.initChatWidget(
-            {
-                widgetToken,
-                hide_launcher: true,
-                launch_widget: true,
-                show_close_button: false,
-                show_widget_form: false,
-                parentId: 'contactChatWidget',
-                fullScreen: true,
-            },
-            0
-        );
-
-        return () => {
-            container.innerHTML = '';
-        };
-    }, [isOpen, widgetScriptLoaded, widgetToken]);
-
+export default function BookingModal({ isOpen, onClose }) {
     if (!isOpen) return null;
 
     return (
@@ -38,7 +11,14 @@ export default function BookingModal({ isOpen, onClose, widgetToken, widgetScrip
                 >
                     ✕
                 </button>
-                <div id='contactChatWidget' className='w-full' style={{ minHeight: '680px' }} />
+                <div id='contactChatWidget' className='w-full h-[680px]'>
+                    <iframe
+                        title='MSG91 booking assistant'
+                        src='/booking-chat-widget'
+                        allow='microphone'
+                        className='w-full h-full border-0'
+                    />
+                </div>
             </div>
             <form method='dialog' className='modal-backdrop'>
                 <button type='button' onClick={onClose}>
