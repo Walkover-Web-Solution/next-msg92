@@ -6,7 +6,7 @@ import { useCountrySelector } from '../hooks/useCountrySelector';
 import { useGstLookup } from '../hooks/useGstLookup';
 import { fetchCitiesByState, fetchCountries, fetchStatesByCountry, autoPopulateFromIP } from '../SignupUtils/apiUtils';
 import { updateSourceInUrlAndCookie } from '../SignupUtils/cookieUtils';
-import { GST_STATE_CODE_MAP } from '../SignupUtils/gstUtils';
+import { GST_STATE_CODE_MAP, matchCityFromGstNames } from '../SignupUtils/gstUtils';
 import { setSharedCookie } from '@/utils/utilis';
 import WelcomeDetailsForm from './WelcomeDetailsForm';
 
@@ -61,9 +61,11 @@ export default function StepTwo({ data }) {
     } = useCountrySelector();
 
     const prefillGstCountryData = useCallback(
-        async (gstStateNameOrCode, gstCityName) => {
+        async (gstStateNameOrCode, gstCityNames) => {
             const normalizedGstState = String(gstStateNameOrCode || '').trim();
-            const normalizedGstCity = String(gstCityName || '').trim();
+            const cityNameList = (Array.isArray(gstCityNames) ? gstCityNames : [gstCityNames])
+                .map((name) => String(name || '').trim())
+                .filter(Boolean);
 
             const indiaCountry = countries.find((country) => country?.shortName?.toLowerCase() === 'in');
 
@@ -74,7 +76,7 @@ export default function StepTwo({ data }) {
             }
 
             const states = await fetchStatesByCountry(indiaCountry.id);
-            const resolvedStateName = GST_STATE_CODE_MAP[normalizedGstState];
+            const resolvedStateName = GST_STATE_CODE_MAP[normalizedGstState] || normalizedGstState;
             if (!resolvedStateName) return;
             const matchedState = states.find(
                 (stateOption) => stateOption?.name?.trim().toLowerCase() === resolvedStateName.trim().toLowerCase()
@@ -84,11 +86,10 @@ export default function StepTwo({ data }) {
 
             await handleStateChange([matchedState]);
 
-            if (!normalizedGstCity) return;
+            if (!cityNameList.length) return;
 
             const cities = await fetchCitiesByState(matchedState.id);
-            const normalizedCity = normalizedGstCity.split('(')[0].trim().toLowerCase();
-            const matchedCity = cities.find((cityOption) => cityOption?.name?.trim().toLowerCase() === normalizedCity);
+            const matchedCity = matchCityFromGstNames(cities, cityNameList);
 
             if (!matchedCity) return;
 

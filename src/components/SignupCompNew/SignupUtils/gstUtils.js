@@ -42,6 +42,71 @@ export const GST_STATE_CODE_MAP = {
 };
 
 /**
+ * @param {string} name
+ * @returns {string}
+ */
+function normalizeGstCityToken(name) {
+    return String(name || '')
+        .toLowerCase()
+        .split('(')[0]
+        .replace(/\b(district|mandal|urban|rural|suburban|city)\b/g, '')
+        .replace(/[^a-z0-9]/g, '');
+}
+
+function editDistance(a, b) {
+    const row = Array.from({ length: b.length + 1 }, (_, i) => i);
+    for (let i = 1; i <= a.length; i++) {
+        let prev = row[0];
+        row[0] = i;
+        for (let j = 1; j <= b.length; j++) {
+            const cur = row[j];
+            const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+            row[j] = Math.min(row[j] + 1, row[j - 1] + 1, prev + cost);
+            prev = cur;
+        }
+    }
+    return row[b.length];
+}
+
+function sharedPrefixLength(a, b) {
+    let i = 0;
+    while (i < a.length && i < b.length && a[i] === b[i]) i += 1;
+    return i;
+}
+
+function isCloseCityToken(a, b) {
+    if (!a || !b) return false;
+    if (a === b || a.startsWith(b) || b.startsWith(a)) return true;
+
+    const minLen = Math.min(a.length, b.length);
+    const maxLen = Math.max(a.length, b.length);
+    if (minLen < 6) return false;
+
+    const distance = editDistance(a, b);
+    if (distance <= 2) return true;
+    return sharedPrefixLength(a, b) >= 3 && minLen / maxLen >= 0.75 && distance <= Math.floor(maxLen * 0.5);
+}
+
+/**
+ * @param {Array<{id: number|string, name: string}>} cities
+ * @param {string[]} gstCityNames
+ * @returns {{id: number|string, name: string}|null}
+ */
+export function matchCityFromGstNames(cities, gstCityNames) {
+    if (!cities?.length || !gstCityNames?.length) return null;
+
+    const tokens = gstCityNames.map(normalizeGstCityToken).filter(Boolean);
+    if (!tokens.length) return null;
+
+    return (
+        cities.find((cityOption) => {
+            const cityToken = normalizeGstCityToken(cityOption?.name);
+            return tokens.some((token) => isCloseCityToken(token, cityToken));
+        }) || null
+    );
+}
+
+/**
  * @typedef {Object} GstinValidationResult
  * @property {boolean} valid
  * @property {string} message
@@ -113,6 +178,7 @@ export function formatAddressFromGstAddr(addr) {
  * @property {string} postalCode
  * @property {string} stateName
  * @property {string} cityName
+ * @property {string[]} cityNames - loc + dst candidates for city matching
  * @property {string} [companyName] - legal name (lgnm) from GST API
  */
 
@@ -176,7 +242,10 @@ export function parseGstLookupResponse(apiBody, gstin) {
 
     const addr = gstData.pradr?.addr;
     const stateName = addr?.stcd ? String(addr.stcd).trim() : '';
-    const cityName = addr?.loc || addr?.dst ? String(addr.loc || addr.dst).trim() : '';
+    const loc = addr?.loc ? String(addr.loc).trim() : '';
+    const dst = addr?.dst ? String(addr.dst).trim() : '';
+    const cityNames = [...new Set([loc, dst].filter(Boolean))];
+    const cityName = cityNames[0] || '';
     const companyName = gstData.lgnm ? String(gstData.lgnm).trim() : '';
 
     return {
@@ -187,6 +256,7 @@ export function parseGstLookupResponse(apiBody, gstin) {
             postalCode: addr?.pncd ? String(addr.pncd).trim() : '',
             stateName,
             cityName,
+            cityNames,
             ...(companyName ? { companyName } : {}),
         },
     };
