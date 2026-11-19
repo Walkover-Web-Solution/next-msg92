@@ -30,6 +30,18 @@ function getStepTwoResetFields(state) {
     };
 }
 
+function getContactVerificationResetFields() {
+    return {
+        emailRequestId: null,
+        emailToken: null,
+        emailVerified: false,
+        mobileRequestId: null,
+        mobileToken: null,
+        mobileOtpVerified: false,
+        otpSent: false,
+    };
+}
+
 export function reducer(state, action) {
     switch (action.type) {
         case 'SET_INITIAL_STATES':
@@ -180,6 +192,14 @@ export function reducer(state, action) {
                 isLoading: false,
                 loadingType: null,
                 otpSent: false,
+            };
+
+        case 'RESET_CONTACT_VERIFICATION':
+            return {
+                ...state,
+                ...getContactVerificationResetFields(),
+                isLoading: false,
+                loadingType: null,
             };
 
         case 'SET_USER_DETAILS':
