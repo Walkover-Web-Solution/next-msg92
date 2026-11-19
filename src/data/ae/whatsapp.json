@@ -419,7 +419,7 @@
                 "answer": "<p>Yes. MSG91 has 18 years of business messaging experience and sends millions of messages during peak periods like big sales and festive seasons. Messaging runs at 99.9% uptime, so OTPs, offers and order updates go out on time.</p><p>If a message fails, MSG91 retries it on its own. Multiple fallback templates keep big campaigns running, even if Meta pauses a template.</p><p>Support is open 24/7 by email, WhatsApp, phone, website chat and scheduled calls. Real people and AI agents help with everything from setup to daily use.</p>"
             }
         ]
-    },
+        },
     "PreFooterComp": {
         "content": "Your customers are already on WhatsApp. Start talking to them today.",
         "description": "Lower than Meta pricing, messages that keep moving, and a UAE team ready to help, 24/7.",
