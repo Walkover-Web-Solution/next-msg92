@@ -6,7 +6,7 @@ import { useCountrySelector } from '../hooks/useCountrySelector';
 import { useGstLookup } from '../hooks/useGstLookup';
 import { fetchCitiesByState, fetchCountries, fetchStatesByCountry, autoPopulateFromIP } from '../SignupUtils/apiUtils';
 import { updateSourceInUrlAndCookie } from '../SignupUtils/cookieUtils';
-import { GST_STATE_CODE_MAP, matchCityFromGstNames } from '../SignupUtils/gstUtils';
+import { GST_STATE_CODE_MAP } from '../SignupUtils/gstUtils';
 import { setSharedCookie } from '@/utils/utilis';
 import WelcomeDetailsForm from './WelcomeDetailsForm';
 
@@ -89,7 +89,11 @@ export default function StepTwo({ data }) {
             if (!cityNameList.length) return;
 
             const cities = await fetchCitiesByState(matchedState.id);
-            const matchedCity = matchCityFromGstNames(cities, cityNameList);
+            const matchedCity = cityNameList
+                .map((cityName) =>
+                    cities.find((cityOption) => cityOption?.name?.trim().toLowerCase() === cityName.toLowerCase())
+                )
+                .find(Boolean);
 
             if (!matchedCity) return;
 
