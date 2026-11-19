@@ -53,8 +53,8 @@ export function useGstLookup({ dispatch, onAutofill, prefillGstCountryData, init
                 },
             });
 
-            if (prefillGstCountryData && (data.stateName || data.cityName)) {
-                await prefillGstCountryData(data.stateName, data.cityName);
+            if (prefillGstCountryData && (data.stateName || data.cityName || data.cityNames?.length)) {
+                await prefillGstCountryData(data.stateName, data.cityNames?.length ? data.cityNames : data.cityName);
             }
         },
         [dispatch, onAutofill, prefillGstCountryData]

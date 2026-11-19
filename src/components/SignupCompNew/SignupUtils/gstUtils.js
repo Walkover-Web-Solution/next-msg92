@@ -113,6 +113,7 @@ export function formatAddressFromGstAddr(addr) {
  * @property {string} postalCode
  * @property {string} stateName
  * @property {string} cityName
+ * @property {string[]} [cityNames] - loc then dst for exact autofill lookup
  * @property {string} [companyName] - legal name (lgnm) from GST API
  */
 
@@ -176,7 +177,10 @@ export function parseGstLookupResponse(apiBody, gstin) {
 
     const addr = gstData.pradr?.addr;
     const stateName = addr?.stcd ? String(addr.stcd).trim() : '';
-    const cityName = addr?.loc || addr?.dst ? String(addr.loc || addr.dst).trim() : '';
+    const loc = addr?.loc ? String(addr.loc).trim() : '';
+    const dst = addr?.dst ? String(addr.dst).trim() : '';
+    const cityNames = [...new Set([loc, dst].filter(Boolean))];
+    const cityName = cityNames[0] || '';
     const companyName = gstData.lgnm ? String(gstData.lgnm).trim() : '';
 
     return {
@@ -187,6 +191,7 @@ export function parseGstLookupResponse(apiBody, gstin) {
             postalCode: addr?.pncd ? String(addr.pncd).trim() : '',
             stateName,
             cityName,
+            cityNames,
             ...(companyName ? { companyName } : {}),
         },
     };
