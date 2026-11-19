@@ -124,17 +124,21 @@ const WhatsappLinkComp = ({ data }) => {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
+        if (name === 'phoneNumber') {
+            setHasGenerated(false);
+        }
         setFormData((prev) => ({
             ...prev,
-            [name]: value,
+            [name]: name === 'phoneNumber' ? value.replace(/\D/g, '').slice(0, 15) : value,
         }));
     };
 
     const generateLink = (e) => {
         e.preventDefault();
 
-        if (!formData.phoneNumber.trim()) {
-            alert('Please enter a phone number.');
+        const phoneNumber = formData.phoneNumber;
+        if (!/^\d{7,15}$/.test(phoneNumber)) {
+            alert('Enter a valid phone number with country code using 7–15 digits only.');
             return;
         }
 
