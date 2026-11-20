@@ -388,6 +388,47 @@
                 "heading": "<h2 class='text-xl md:text-3xl font-bold'>Lower Than Meta Pricing. <span class='text-green-600 font-bold text-2xl lg:text-3xl'>Guaranteed</span></h2>",
                 "sub_heading": "No markups. No hidden costs. Just better pricing."
             },
+            "faqComp": {
+                "heading": "Frequently Asked Questions",
+                "faqs": [
+                {
+                    "question": "What is the MSG91 WhatsApp Business API pricing in the United States?",
+                    "answer": "<p>MSG91 WhatsApp Business API starts with a <strong>$0 platform subscription for the initial two months</strong>. After that, you pay <strong>$7/month per WhatsApp number</strong>.</p><p>WhatsApp messages are billed separately in USD based on the recipient's country and message category, including Utility, Authentication, Service and Marketing, where permitted.</p><p>MSG91 offers messaging rates lower than Meta's standard US pricing. You can review the rates in the pricing table above to estimate your monthly expenses.</p><p>There is <strong>no federal sales tax in the United States</strong>, although applicable state or local taxes may vary.</p>"
+                },
+                {
+                    "question": "Why does MSG91 offer lower WhatsApp rates than Meta in the USA?",
+                    "answer": "<p>MSG91 is an official Meta partner and offers WhatsApp messaging at rates below Meta's standard pricing through its commercial arrangements.</p><p>Rather than adding extra markup to each WhatsApp message, MSG91 charges a separate monthly platform subscription.</p><p>Businesses can also use MSG91 for customer support, AI chatbots, SMS, Email and Voice. Each service has its own pricing, allowing you to manage multiple communication channels from one platform.</p>"
+                },
+                {
+                    "question": "Does MSG91 charge separately for WhatsApp templates, APIs or media messages?",
+                    "answer": "<p>No. MSG91 does not add feature fees for creating WhatsApp templates, sending supported images or documents, connecting APIs, using webhooks or enabling WhatsApp Coexistence for eligible business numbers.</p><p>WhatsApp Coexistence allows eligible businesses to use the WhatsApp Business app and API with the same number.</p><p><strong>Message logs for the last 100 days are free.</strong> If you need historical records covering up to one year, they are available as a paid add-on.</p><p>Regular messaging charges, platform subscription fees and any separately billed services still apply. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/help/whatsapp/how-to-check-whatsapp-logs-message-status'>Learn how to check WhatsApp message logs</a>.</p>"
+                },
+                {
+                    "question": "How did the October 1, 2026 WhatsApp pricing changes affect US businesses?",
+                    "answer": "<p>From October 1, 2026, Meta began charging for billable replies sent after customers contact a business on WhatsApp. This includes support agent messages, chatbot responses and Utility updates that were previously unbilled in these situations.</p><p>Messages received from customers remain free.</p><p>For businesses handling lengthy support conversations, <strong>MSG91 Chat Window</strong> can help reduce costs by letting customers continue a conversation without sending every reply as a separate WhatsApp message. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/guide/how-much-will-october-1-2026-actually-cost-you-and-how-msg91-keeps-it-lower-anywhere-in-the-world'>Understand the October 2026 WhatsApp pricing changes</a>.</p>"
+                },
+                {
+                    "question": "Does MSG91 offer custom pricing for WhatsApp messaging to US enterprises?",
+                    "answer": "<p>Yes. MSG91 offers <strong>enterprise pricing for businesses sending thousands or millions of WhatsApp messages each month</strong>.</p><p>Companies with high volumes of Utility and Authentication messages may qualify for Meta's volume-based discounts. MSG91 can also discuss personalised pricing based on your messaging needs.</p><p>Whether you're managing healthcare appointment reminders, financial notifications or e-commerce order updates, our team can help you plan your messaging costs.</p><p><a class='text-link active-link' target='_blank' href='/contact-us'>Contact MSG91 Sales</a> to discuss enterprise WhatsApp pricing.</p>"
+                },
+                {
+                    "question": "Will failed WhatsApp messages, automatic retries or SMS and Email fallback cost extra?",
+                    "answer": "<p>WhatsApp messages that fail to deliver are not charged. If MSG91 automatically retries a failed message and the retry is successfully delivered, the applicable WhatsApp messaging rate applies.</p><p>For important communications such as OTPs, payment reminders or delivery updates, you can use <strong>SMS or Email fallback</strong>.</p><p>These backup messages are billed separately according to the SMS or Email rates.</p>"
+                },
+                {
+                    "question": "Can US businesses set monthly WhatsApp spending limits for different numbers?",
+                    "answer": "<p>Yes. MSG91 lets you oversee WhatsApp expenses for multiple branches, teams or business numbers from one account.</p><p>You can add prepaid balances, configure monthly spending limits and enable auto-recharge to help avoid messaging interruptions.</p><p>Each connected number costs <strong>$7/month after the initial two months</strong>, plus the applicable message charges.</p><p>Unused prepaid funds carry forward while your subscription remains active. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/help/whatsapp/prepaid-balance-and-auto-renew'>Learn about prepaid billing and auto-recharge</a>.</p>"
+                },
+                {
+                    "question": "Is there a free WhatsApp chatbot plan with MSG91 in the United States?",
+                    "answer": "<p>Yes. The <a class='text-link active-link' target='_blank' href='/us/pricing/hello'>MSG91 Hello Free plan</a> includes <strong>50 monthly tickets and 2 inboxes</strong>, allowing you to get started without a Hello subscription fee.</p><p>For businesses managing more customer enquiries, Hello offers: <strong>Basic:</strong> $40/month with 1,000 tickets, 2 inboxes and a $40 BOT wallet. <strong>Premium:</strong> $80/month with 2,000 tickets, 3 inboxes and an $80 BOT wallet.</p><p>Additional tickets cost $0.015 each on Basic and $0.03 each on Premium. Extra inboxes cost $10 each on paid plans.</p><p>Custom rule-based bots do not have a separate bot-message fee. AI chatbot usage is charged according to the applicable bot rate card and deducted from your BOT wallet.</p><p><strong>WhatsApp messaging charges are separate from Hello subscriptions.</strong></p>"
+                },
+                {
+                    "question": "Can US businesses use Set Max Price for WhatsApp Marketing messages?",
+                    "answer": "<p>Yes, but only for <strong>eligible Marketing messages sent to customers outside the United States</strong>. Meta currently blocks WhatsApp Marketing templates sent to US phone numbers.</p><p>For eligible international campaigns, MSG91's <strong>Set Max Price</strong> feature lets you choose the maximum amount you're willing to pay per Marketing message.</p><p>Open an approved Marketing template, select <strong>Set Max Price</strong> under Template Pricing and enter your limit for the destination country.</p><p>Your actual charge may be lower than the limit, but delivery is not guaranteed. You can change the price or switch back to Standard pricing anytime. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/guide/reduce-your-whatsapp-business-api-cost'>Learn how WhatsApp bidding works</a>.</p>"
+                }
+                ]
+            },
             "connectComp": {
                 "content": "Connect with our team for Personalized Pricing .",
                 "sales_btn": "Talk to Sales",
