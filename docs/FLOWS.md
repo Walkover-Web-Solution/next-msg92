@@ -2,6 +2,7 @@
 covers:
     [
         'src/components/signupComp/**',
+        'src/components/SignupCompNew/**',
         'src/components/PricingComp/**',
         'src/components/ContactUs/**',
         'src/components/EventRegistrationComp/**',
@@ -10,8 +11,8 @@ covers:
         'src/utils/setCookies.js',
         'src/utils/generateWidgetScript.js',
     ]
-verified_at: 701fd33a
-verified_on: 2026-10-22
+verified_at: 71fc2742
+verified_on: 2026-11-22
 ---
 
 # User Flows & Critical Journeys
@@ -23,7 +24,8 @@ The site has one goal: turn a visitor on a country-localized page into an MSG91 
 | Flow Name                           | Trigger / Starting Route                                                                               | Target Outcome                                                                     | Primary Route & Component                                                                                                                                               |
 | ----------------------------------- | ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1. Land on a localized page         | Any URL, e.g. `/`, `/in/sms`, `/ae/whatsapp`                                                           | Country-specific page rendered; `country` and `msg91_query` cookies set            | `src/pages/[[...slug]].js:Page`                                                                                                                                         |
-| 2. Sign up                          | `/signup` (all "Sign up" CTAs go here via `src/utils/getURL.js:getURL`)                                | Account created; browser sent to the MSG91 app with a session                      | `src/components/signupComp/SignUp.js:SignUp`                                                                                                                            |
+| 2. Sign up                          | `/signup` (all "Sign up" CTAs go here via `src/utils/getURL.js:getURL`)                                | Account created; browser sent to the MSG91 app with a session                      | `SignupParentComp` → legacy `SignUp` or `SignupCompNew` when `?absignup=a` or `isAbSignupActive()` ([MAINTENANCE.md](MAINTENANCE.md#branch-vs-main-auth))               |
+| 2b. Sign in (`web` only)            | `/signin`, menu login when pointed here, OAuth return URLs                                             | Session cookie set; redirect to MSG91 app                                          | `src/pages/signin.js` (Google/Zoho/Microsoft/GitHub/OTP). On `main`, use `LOGIN_URL` ([ADR-005](DECISIONS.md#adr-005-no-sign-in-page-on-the-marketing-site))            |
 | 3. Check pricing                    | `/pricing/<product>`, `/<country>/pricing/<product>`                                                   | Plans, rate cards and calculators shown in the country's currency                  | `src/pages/[country]/pricing/[products].js:getServerSideProps` → `src/components/PricingComp/index.js:PricingComp`                                                      |
 | 4. Contact or register for an event | `/contact-us`, `/<country>/contact-us`, `/event-registration`                                          | Sales or support reached; event registration stored and WhatsApp confirmation sent | `src/components/ContactUs/index.js:ContactUsComp`, `src/components/EventRegistrationComp/RegistrationForm.js:RegistrationForm`                                          |
 | 5. Use a free tool                  | `/free-whatsapp-link-generator`, `/free-apple-messages-for-business-link-generator` (also per country) | Link, QR code and embeddable widget snippet generated                              | `src/components/WhatsappLinkComp/WhatsappLinkComp.js:WhatsappLinkComp`, `src/components/AppleMessagesLinkComp/AppleMessagesLinkComp.js:MSG91AppleMessagesLinkGenerator` |
@@ -134,7 +136,8 @@ sequenceDiagram
 
 1. **User Action & Route:**
     - URL: `/signup`, served by the catch-all from `src/data/global/signup.json`, whose keys are `HeadComp` and `SignUp`. There is no per-country sign-up page. `/in/signup` returns 404.
-    - Entry component: `src/components/signupComp/SignUp.js:SignUp`, a class component. Its state lives in `this.state` and nothing is shared.
+    - Entry component: `SignupParentComp` registers as `SignUp` in `[[...slug]].js`. When the A/B flag is off it renders only legacy `SignUp`; when on (`?absignup=a` or `isAbSignupActive()`), it also mounts `SignupCompNew`, which can call `GET /api/gst-details` for Indian GST autofill.
+    - Legacy flow: `src/components/signupComp/SignUp.js:SignUp`, a class component. Its state lives in `this.state` and nothing is shared.
     - Trigger: in `src/components/signupComp/StepOne/StepOne.js:StepOne`, the user clicks "Sign up with Email" (`setStep(2)`) or the GitHub button (`src/utils/utilis.js:loginWithGitHubAccount`).
 2. **State & Validation:**
     - On mount, `SignUp` does four things:
@@ -169,10 +172,14 @@ sequenceDiagram
     - `hasInvitations`: go to step 3 with an invitation list. The user must accept at least one invitation or create a company.
     - `loginIntoExistingAccount`: redirect straight to the app.
 - **Branch D (`?service=<x>` on the URL):** pre-selects that service in step 3.
-- **Branch E (Outlook):** `src/pages/outlook-token.js` forwards its query parameters to `REDIRECT_URL/signin?loginWithOutlook=true`. That is a login callback, not a sign-up, and `/signin` is not a route in this repo.
+- **Branch E (Outlook):** `src/pages/outlook-token.js` forwards its query parameters to `REDIRECT_URL/signin?loginWithOutlook=true`. On **`web`**, `/signin` handles `loginWithOutlook` via `outlookLogin`.
 
-> [!TODO]
-> Google, Zoho and Microsoft sign-up are not wired on this site. `src/components/signupComp/utils/GoogleLogin.js` is never imported. `ZOHO_CLIENT_ID` and `MSAL_CLIENT_ID` are exposed in `next.config.mjs` but no code here reads them. `src/utils/otpSigninWidget.js` is also not imported anywhere. They are used on the `web` branch alongside a new `SignupCompNew` sign-up flow, so they were kept. See [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) Q-009. <!-- verify:ignore -->
+### Sign-in (`web` branch)
+
+`src/pages/signin.js` loads the OTP login widget (`otpSigninWidget.js`) or handles OAuth return parameters (`githublogin`, `loginWithZoho`, `loginWithOutlook`). Successful logins POST to `API_BASE_URL/api/v5/nexus/*Login` or `mobileEmailLogin`, store `sessionId`, then redirect to `API_BASE_URL/api/nexusRedirection.php?session=…`. This path coexists with `LOGIN_URL` on other pages until product owners unify them ([OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) Q-009).
+
+> [!NOTE]
+> On **`main`**, the above may be absent; treat [ADR-005](DECISIONS.md#adr-005-no-sign-in-page-on-the-marketing-site) as authoritative until the `web` auth work merges.
 
 ### 4. Permissions, Roles & Guard Rails
 

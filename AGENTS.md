@@ -38,7 +38,7 @@ There is no typecheck and there are no tests. `npm run lint` is broken: Next.js 
 8. **Every page JSON needs a `HeadComp` block.** It supplies the title, description, canonical, hreflang, GTM, Clarity and chat widget ([DESIGN.md](docs/DESIGN.md)).
 9. **Unpublish a page with `"show": false`, and never name a section key `common`.** `src/pages/api/data.js` turns either one into a 404.
 10. **Pricing has two routes that must change together:** `src/pages/pricing/[products].js` and `src/pages/[country]/pricing/[products].js`. Test at least one non-USD country. Pricing changes have been reverted repeatedly ([ADR-003](docs/DECISIONS.md#adr-003-render-pricing-pages-on-the-server-with-live-prices)).
-11. **Sign-in lives in the MSG91 app (`LOGIN_URL`).** Don't add a sign-in page here without asking: it was tried and reverted four times ([ADR-005](docs/DECISIONS.md#adr-005-no-sign-in-page-on-the-marketing-site)). A sign-up rewrite (`SignupCompNew`) is in progress on `web`, so coordinate before editing `src/components/signupComp/`. <!-- verify:ignore -->
+11. **Sign-in on `main` uses `LOGIN_URL`; on `web` there is also `/signin`.** Don't merge or extend auth without asking: sign-in on this site was reverted four times on `main` ([ADR-005](docs/DECISIONS.md#adr-005-no-sign-in-page-on-the-marketing-site)). On `web`, `src/pages/signin.js` and the `SignupCompNew` A/B sign-up (`SignupParentComp`) are live—coordinate before editing `src/components/signupComp/`, `src/components/SignupCompNew/` or `src/pages/signin.js`. See [docs/MAINTENANCE.md](docs/MAINTENANCE.md#branch-vs-main-auth). <!-- verify:ignore -->
 12. **Cookie names are a contract with the sign-up backend.** `msg91_query`, the UTM cookies and `country` are written by `src/utils/setCookies.js` and `src/utils/utilis.js`. Don't rename them ([CONTRACTS.md](docs/CONTRACTS.md)).
 13. **Tailwind does not scan `src/data/` or `_posts/`.** A class used only in JSON or MDX is not generated. Use classes that already exist in components, or add the class to a scanned file.
 14. **Don't fabricate integrations.** If a feature needs a backend capability that doesn't exist, write the contract in [docs/CONTRACTS.md](docs/CONTRACTS.md) and stop.
@@ -53,7 +53,7 @@ There is no typecheck and there are no tests. `npm run lint` is broken: Next.js 
 - `src/pages/guide/` and `_posts/blog/`: about 280 MDX blog posts served at `/guide`.
 - `src/styles/`, `tailwind.config.js`: SCSS partials and the DaisyUI `msg91` theme.
 - `public/`: assets, sitemaps, `robots.txt`, `_redirects`, `_headers`, embeddable widget scripts.
-- `docs/`: this knowledge base. The index is [docs/README.md](docs/README.md).
+- `docs/`: this knowledge base. The index is [docs/README.md](docs/README.md). Weekly doc maintenance state: [docs/MAINTENANCE.md](docs/MAINTENANCE.md).
 
 ## PR & Deployment Flow
 

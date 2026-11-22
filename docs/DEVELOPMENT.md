@@ -10,13 +10,13 @@ covers:
         '.browserslistrc',
         'scripts/**',
     ]
-verified_at: 701fd33a
-verified_on: 2026-10-22
+verified_at: 71fc2742
+verified_on: 2026-11-22
 ---
 
 # Development & Verification Guide
 
-Commands below were run on 2026-10-22 against `701fd33a` (Node 25.9.0, npm 11.12.1) unless marked otherwise.
+Commands below were run on 2026-11-22 against `71fc2742` after `npm ci`, unless marked otherwise.
 
 ## Prerequisites & Runtime Environment
 
@@ -49,30 +49,36 @@ Commands below were run on 2026-10-22 against `701fd33a` (Node 25.9.0, npm 11.12
 
 All variables are declared in the `env` block of `next.config.mjs`. Next.js inlines `process.env.X` at build time wherever `X` is referenced, so **any variable referenced from a component ends up in the public JavaScript bundle**. Only variables read solely under `src/pages/api/` stay server-side. Values are never stored in the repo; get them from the team's secret store.
 
-| Variable Name                 | Required          | Client-Exposed | Default Value | Description / Where Read                                                                                                                                                        |
-| ----------------------------- | ----------------- | -------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `BASE_URL`                    | Yes               | Yes            | —             | This site's own origin. Used for `/api/data` fetches, canonical/hreflang URLs and the production `robots` switch (`src/components/HeadComp/HeadComp.js`, `src/utils/getURL.js`) |
-| `API_BASE_URL`                | Yes (sign-up)     | Yes            | —             | MSG91 backend for sign-up (`src/components/signupComp/SignUp.js`, `src/components/signupComp/StepThree/StepThree.js`)                                                           |
-| `REDIRECT_URL`                | Yes (OAuth)       | Yes            | —             | OAuth redirect base (`src/utils/utilis.js`, `src/pages/github-auth-token.js`, `src/pages/outlook-token.js`)                                                                     |
-| `LOGIN_URL`                   | Yes               | Yes            | —             | Dashboard login link (`src/components/notificationBarComp/notificationBarComp.js`, `src/components/ThankYouComp/ThankYouComp.js`)                                               |
-| `PRICING_URL`                 | Yes (pricing)     | Yes            | —             | SMS/OTP pricing API (`src/utils/pricing/getSmsOtpPricing.js`)                                                                                                                   |
-| `SUBSCRIPTION_PRICING_URL`    | Yes (pricing)     | Yes            | —             | Subscription plan API (`src/utils/pricing/getSubscription.js`, `src/pages/api/pricing/hello.js`)                                                                                |
-| `VOICE_API_URL`               | Yes (pricing)     | Yes            | —             | Voice pricing API (`src/utils/pricing/getVoicePricing.js`)                                                                                                                      |
-| `HELLO_API_URL`               | Optional          | Yes            | —             | Chatbot templates (`src/utils/getBotTemplates.js`)                                                                                                                              |
-| `IMESSAGE_URL`                | Optional          | No             | —             | Apple Messages link API (`src/pages/api/apple-messages/url.js`)                                                                                                                 |
-| `GITHUB_CLIENT_ID`            | Yes (OAuth)       | Yes            | —             | GitHub OAuth (`src/utils/utilis.js`)                                                                                                                                            |
-| `OTP_WIDGET_TOKEN`            | Yes (sign-up)     | Yes            | —             | MSG91 OTP widget for sign-up (`src/components/signupComp/SignUp.js`)                                                                                                            |
-| `WIDGET_AUTH_TOKEN`           | Yes (sign-up)     | Yes            | —             | OTP widget auth token (`src/components/signupComp/SignUp.js`)                                                                                                                   |
-| `WIDGET_SCRIPT`               | Yes (sign-up)     | Yes            | —             | OTP widget script URL (`src/utils/otpSigninWidget.js`)                                                                                                                          |
-| `SUMMIT_OTP_WIDGET_TOKEN`     | Optional (events) | Yes            | —             | OTP widget for event registration (`src/components/EventRegistrationComp/MobileOtpField.js`)                                                                                    |
-| `SUMMIT_WIDGET_AUTH_TOKEN`    | Optional (events) | Yes            | —             | Same file                                                                                                                                                                       |
-| `SUMMIT_WIDGET_SCRIPT`        | Optional (events) | Yes            | —             | Same file                                                                                                                                                                       |
-| `CHAT_WIDGET_TOKEN`           | Optional          | Yes            | —             | Hello chat widget (`src/components/HeadComp/HeadComp.js`, `src/pages/404.js`)                                                                                                   |
-| `ECOMMERCE_WIDGET_TOKEN`      | Optional          | Yes            | —             | Chat widget on the e-commerce page (`src/components/HeadComp/HeadComp.js`)                                                                                                      |
-| `CHAT_WIDGET_URL`             | Optional          | Yes            | —             | Chat widget script URL (`src/components/HeadComp/HeadComp.js`, `src/components/ChatBotDemoComp/ChatBotDemoComp.js`)                                                             |
-| `WHATSAPP_AUTHKEY`            | Optional (events) | No (secret)    | —             | MSG91 auth key for event WhatsApp messages (`src/pages/api/send-summit-whatsapp.js`). Never reference it outside `src/pages/api/`                                               |
-| `SUMMIT_WA_INTEGRATED_NUMBER` | Optional (events) | No             | —             | Same API route                                                                                                                                                                  |
-| `SUMMIT_WA_API_URL`           | Optional (events) | No             | —             | Same API route                                                                                                                                                                  |
+| Variable Name                 | Required             | Client-Exposed | Default Value | Description / Where Read                                                                                                                                                        |
+| ----------------------------- | -------------------- | -------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `BASE_URL`                    | Yes                  | Yes            | —             | This site's own origin. Used for `/api/data` fetches, canonical/hreflang URLs and the production `robots` switch (`src/components/HeadComp/HeadComp.js`, `src/utils/getURL.js`) |
+| `API_BASE_URL`                | Yes (sign-up)        | Yes            | —             | MSG91 backend for sign-up (`src/components/signupComp/SignUp.js`, `src/components/signupComp/StepThree/StepThree.js`)                                                           |
+| `REDIRECT_URL`                | Yes (OAuth)          | Yes            | —             | OAuth redirect base (`src/utils/utilis.js`, `src/pages/github-auth-token.js`, `src/pages/outlook-token.js`)                                                                     |
+| `LOGIN_URL`                   | Yes                  | Yes            | —             | Dashboard login link (`src/components/notificationBarComp/notificationBarComp.js`, `src/components/ThankYouComp/ThankYouComp.js`)                                               |
+| `PRICING_URL`                 | Yes (pricing)        | Yes            | —             | SMS/OTP pricing API (`src/utils/pricing/getSmsOtpPricing.js`)                                                                                                                   |
+| `SUBSCRIPTION_PRICING_URL`    | Yes (pricing)        | Yes            | —             | Subscription plan API (`src/utils/pricing/getSubscription.js`, `src/pages/api/pricing/hello.js`)                                                                                |
+| `VOICE_API_URL`               | Yes (pricing)        | Yes            | —             | Voice pricing API (`src/utils/pricing/getVoicePricing.js`)                                                                                                                      |
+| `HELLO_API_URL`               | Optional             | Yes            | —             | Chatbot templates (`src/utils/getBotTemplates.js`)                                                                                                                              |
+| `IMESSAGE_URL`                | Optional             | No             | —             | Apple Messages link API (`src/pages/api/apple-messages/url.js`)                                                                                                                 |
+| `GITHUB_CLIENT_ID`            | Yes (OAuth)          | Yes            | —             | GitHub OAuth (`src/utils/utilis.js`)                                                                                                                                            |
+| `OTP_WIDGET_TOKEN`            | Yes (sign-up)        | Yes            | —             | MSG91 OTP widget for sign-up (`src/components/signupComp/SignUp.js`)                                                                                                            |
+| `WIDGET_AUTH_TOKEN`           | Yes (sign-up)        | Yes            | —             | OTP widget auth token (`src/components/signupComp/SignUp.js`)                                                                                                                   |
+| `WIDGET_SCRIPT`               | Yes (sign-up)        | Yes            | —             | OTP widget script URL (`src/utils/otpSigninWidget.js`)                                                                                                                          |
+| `SUMMIT_OTP_WIDGET_TOKEN`     | Optional (events)    | Yes            | —             | OTP widget for event registration (`src/components/EventRegistrationComp/MobileOtpField.js`)                                                                                    |
+| `SUMMIT_WIDGET_AUTH_TOKEN`    | Optional (events)    | Yes            | —             | Same file                                                                                                                                                                       |
+| `SUMMIT_WIDGET_SCRIPT`        | Optional (events)    | Yes            | —             | Same file                                                                                                                                                                       |
+| `CHAT_WIDGET_TOKEN`           | Optional             | Yes            | —             | Hello chat widget (`src/components/HeadComp/HeadComp.js`, `src/pages/404.js`)                                                                                                   |
+| `ECOMMERCE_WIDGET_TOKEN`      | Optional             | Yes            | —             | Chat widget on the e-commerce page (`src/components/HeadComp/HeadComp.js`)                                                                                                      |
+| `CHAT_WIDGET_URL`             | Optional             | Yes            | —             | Chat widget script URL (`src/components/HeadComp/HeadComp.js`, `src/components/ChatBotDemoComp/ChatBotDemoComp.js`)                                                             |
+| `WHATSAPP_AUTHKEY`            | Optional (events)    | No (secret)    | —             | MSG91 auth key for event WhatsApp messages (`src/pages/api/send-summit-whatsapp.js`). Never reference it outside `src/pages/api/`                                               |
+| `SUMMIT_WA_INTEGRATED_NUMBER` | Optional (events)    | No             | —             | Same API route                                                                                                                                                                  |
+| `SUMMIT_WA_API_URL`           | Optional (events)    | No             | —             | Same API route                                                                                                                                                                  |
+| `GST_JWT_COMPANY_ID`          | Optional (sign-up)   | No (secret)    | —             | HS256 JWT payload for GST lookup (`src/lib/gst/jwtUtils.js`). **Not** in `next.config.mjs` `env`—server-only                                                                    |
+| `GST_JWT_SECRET`              | Optional (sign-up)   | No (secret)    | —             | Signs the GST JWT. Required with `GST_JWT_COMPANY_ID` when `SignupCompNew` GST autofill is enabled                                                                              |
+| `GOOGLE_CLIENT_ID`            | Yes on `web` sign-in | Yes            | —             | `src/pages/signin.js`, `GoogleLogin.js` (`web`). Unused on `main` until Q-009                                                                                                   |
+| `ZOHO_CLIENT_ID`              | Yes on `web` sign-in | Yes            | —             | `src/pages/signin.js`                                                                                                                                                           |
+| `MSAL_CLIENT_ID`              | Yes on `web` sign-in | Yes            | —             | `src/pages/signin.js`                                                                                                                                                           |
+| `OTP_WIDGET_TOKEN_LOGIN`      | Yes on `web` sign-in | Yes            | —             | OTP widget on `src/pages/signin.js`                                                                                                                                             |
 
 > [!WARNING]
 > Because of the `env` block, referencing `process.env.WHATSAPP_AUTHKEY` (or any future secret) from a component would publish it in the client bundle. Read secrets only inside `src/pages/api/*`.
@@ -84,7 +90,7 @@ BASE_URL=http://localhost:3030 npm run build
 BASE_URL=http://localhost:3030 npm start
 ```
 
-The build passes at `701fd33a` and prerenders 285 pages, most of them `/guide/[slug]` blog posts. Pages served by the catch-all `/[[...slug]]` are rendered on first request (`fallback: 'blocking'`), so open them in a browser or with `curl` after `npm start`.
+The build passes at `71fc2742` and prerenders the `/guide/[slug]` blog posts (280 MDX files) plus static routes including `/signin` on `web`. Pages served by the catch-all `/[[...slug]]` are rendered on first request (`fallback: 'blocking'`), so open them in a browser or with `curl` after `npm start`.
 
 ## Running Automated Checks & Tests
 

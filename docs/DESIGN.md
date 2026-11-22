@@ -10,8 +10,8 @@ covers:
         'src/components/HeadComp/**',
         'src/pages/_document.js',
     ]
-verified_at: 701fd33a
-verified_on: 2026-10-22
+verified_at: 71fc2742
+verified_on: 2026-11-22
 ---
 
 # Design System & UI Standards
@@ -213,6 +213,6 @@ All copy lives in page JSON (`src/data/<country>/<page>.json`), with one file pe
 
 - `public/robots.txt` allows everything except `/cgi-bin/` and one feed URL. It lists `sitemap.xml`, `sitemap_video.xml` and `sitemap_images.xml`.
 - `public/sitemap.xml` holds about 690 `<url>` entries, each with `xhtml:link` hreflang alternates. When you add or rename a page, add it here by hand with the same alternate set that `HreflangTagComp` emits.
-- `public/_redirects` (about 1,360 lines) and `public/_headers` use the Netlify / Cloudflare Pages format (`/from /to [status]`). Next.js itself does not read them. Whether the production host does is an open question (see [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md)). The security headers Next.js does apply are set in `next.config.mjs` `headers()`.
+- `public/_redirects` (1,362 lines at `71fc2742`) and `public/_headers` use the Netlify / Cloudflare Pages format (`/from /to [status]`). Next.js itself does not read them. Whether the production host does is an open question (see [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md)). The security headers Next.js does apply are set in `next.config.mjs` `headers()`.
 
 **SEOComp:** a visible "Read more" block of keyword copy. Its hidden content uses a fixed `id='dangerousContent'`, so only one `SEOComp` per page works. Its click handler reads the global `event`.
