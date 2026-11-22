@@ -1,6 +1,6 @@
 ---
-verified_at: 701fd33a
-verified_on: 2026-10-22
+verified_at: 71fc2742
+verified_on: 2026-11-22
 ---
 
 # Docs index
@@ -17,6 +17,7 @@ These docs are written for AI coding agents and new engineers. Every claim was c
 | [DEVELOPMENT.md](DEVELOPMENT.md)       | Setting up, verifying, opening a PR                     | Commands, env vars, verification checklist, PR flow                               |
 | [DECISIONS.md](DECISIONS.md)           | Before undoing an existing pattern                      | ADRs and lessons from reverts                                                     |
 | [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) | Something looks wrong or unexplained                    | Unknowns, security items, verification gaps, cleanup log                          |
+| [MAINTENANCE.md](MAINTENANCE.md)       | Extending weekly doc maintenance                        | Reviewed revision, coverage map, checks run, unfinished work for the next agent   |
 
 `README.md` and `README-BASIC.md` at the repo root are the original human-facing guides. The facts here win where they disagree.
 

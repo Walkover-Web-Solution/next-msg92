@@ -1,7 +1,7 @@
 ---
 covers: ['*']
-verified_at: 701fd33a
-verified_on: 2026-10-22
+verified_at: 71fc2742
+verified_on: 2026-11-22
 ---
 
 # Product Vision & Strategic Direction
@@ -11,7 +11,7 @@ This repository is the public marketing website for MSG91 (msg91.com), a cloud c
 ## Authoritative Sources & Status
 
 - **Approved Direction:** Confirmed by the user, 2026-10-22: the primary audience is developers and businesses buying CPaaS, and the site exists to convert them into sign-ups across country-localized pages. Changes flow feature branch → `web` (testing) → `main` (production). Everything else below is recovered from the code and the repository README and is labelled as such.
-- **Current Implementation:** As of `701fd33a`: product, pricing, comparison, case-study, policy and free-tool pages composed from JSON in `src/data/`, about 280 MDX blog posts under `/guide`, a multi-step sign-up flow, and country variants for IN, BR, BR-PT, AE, PH, FIL-PH, SG, ES, GB, US plus a `global` default (`src/data/availableCountries.json`). See [ARCHITECTURE.md](ARCHITECTURE.md).
+- **Current Implementation:** As of `71fc2742` on branch `web`: product, pricing, comparison, case-study, policy and free-tool pages composed from JSON in `src/data/`, 280 MDX blog posts under `/guide`, sign-up (legacy plus `SignupCompNew` A/B on `web`), a local `/signin` page on `web` (not on `main` per [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) Q-009), and country variants for IN, BR, BR-PT, AE, PH, FIL-PH, SG, ES, GB, US plus a `global` default (`src/data/availableCountries.json`). See [ARCHITECTURE.md](ARCHITECTURE.md).
 - **Proposals & Roadmaps:** None are recorded in the repository (no roadmap, PRD or issue templates). Feature work arrives as `WEBxxx-*` branches named after tickets in an external tracker.
 - **Unknowns & Ambiguities:** See [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md).
 
@@ -42,7 +42,7 @@ These are **inferred** from how the code is built. Confirm them before treating 
 
 1. **Content lives in data, not in code:** pages are ordered lists of section components declared in JSON (`src/data/<country>/<page>.json`), so marketing copy changes are JSON edits. Prefer reusing an existing section component over a page-specific one.
 2. **Localize per country:** each supported country has its own data folder, currency and `hreflang` (`src/data/availableCountries.json`). A page change usually needs the same change in every country folder that has that page.
-3. **SEO is a first-class requirement:** every page carries title/description metadata, hreflang tags and canonical URLs (`src/components/HeadComp/`), plus sitemaps and about 1,360 redirect rules (`public/_redirects`). Breaking a URL loses search traffic.
+3. **SEO is a first-class requirement:** every page carries title/description metadata, hreflang tags and canonical URLs (`src/components/HeadComp/`), plus sitemaps and 1,362 redirect rules (`public/_redirects` at `71fc2742`). Breaking a URL loses search traffic.
 4. **Every page leads to sign-up:** sign-up and login links appear in the menu, notification bar and pre-footer (`src/components/PreFooterComp/`, `src/components/notificationBarComp/`).
 
 ## Strategic Priorities & Success Measures

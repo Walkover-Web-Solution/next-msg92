@@ -1,7 +1,7 @@
 ---
 covers: ['*']
-verified_at: 701fd33a
-verified_on: 2026-10-22
+verified_at: 71fc2742
+verified_on: 2026-11-22
 ---
 
 # Architectural & Design Decisions (ADRs)
@@ -145,11 +145,11 @@ A `src/pages/signin.js` page was built, reverted and rebuilt several times: `863
 ### Decision & Implementation
 
 - Login links go to the MSG91 app via `LOGIN_URL` (`src/components/notificationBarComp/notificationBarComp.js`, `src/components/signupComp/StepOne/StepOne.js`, `src/components/ThankYouComp/ThankYouComp.js`).
-- The OAuth callback pages remain. `src/pages/github-auth-token.js` forwards to `REDIRECT_URL` + `/signup` or `/signin`, and `src/pages/outlook-token.js` forwards to `/signin`. That is a route of the app behind `REDIRECT_URL`, not of this site ([OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) Q-013).
+- The OAuth callback pages remain. `src/pages/github-auth-token.js` forwards to `REDIRECT_URL` + `/signup` or `/signin`, and `src/pages/outlook-token.js` forwards to `/signin`. On **`main`**, `/signin` on the marketing site was removed in June 2026. On **`web`** at `71fc2742`, `src/pages/signin.js` exists again, so callbacks may land on this repo depending on `REDIRECT_URL` ([OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) Q-013).
 
 ### Consequences & Trade-offs
 
-- Sign-in work continues on the `web` branch (`GoogleLogin.js`, `src/utils/otpSigninWidget.js`, `GOOGLE_CLIENT_ID`, `OTP_WIDGET_TOKEN_LOGIN` are used there), so those files and variables were kept on `main` during the 2026-10-22 cleanup. See [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) Q-009.
+- Sign-in and sign-up experiments on **`web`** (`signin.js`, `SignupCompNew`, OAuth env vars) are live but not merged to **`main`**. ADR-005 still applies to production until Q-009 is resolved. See [MAINTENANCE.md](MAINTENANCE.md#branch-vs-main-auth).
 
 ### Superseded / Rejected Alternatives
 
