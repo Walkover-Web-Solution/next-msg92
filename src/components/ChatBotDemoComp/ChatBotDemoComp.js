@@ -274,12 +274,12 @@ export default function ChatBotDemoComp({ templateList, totalPages, currentPage,
                 </>
             )}
 
-            <section className={`container cont_p cont cont_gap ${style.page}`}>
-                <div className={style.hero}>
-                    <div className={style.heroTop}>
-                        <p className={style.heroTagline}>{LABELS.heroTagline}</p>
-                        <div className={style.resultBadge}>
-                            <span className={style.resultDot}></span>
+            <section className='container cont_p cont cont_gap'>
+                <div className='cont gap-2'>
+                    <div className='flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-3'>
+                        <p className='text-xs sm:text-sm font-semibold text-accent'>{LABELS.heroTagline}</p>
+                        <div className='inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full w-fit bg-white text-accent border border-secondary'>
+                            <span className='w-2 h-2 rounded-full bg-accent'></span>
                             <span>
                                 {templateList?.length > 0
                                     ? `${LABELS.showingPrefix} ${templateList.length}${
@@ -291,10 +291,10 @@ export default function ChatBotDemoComp({ templateList, totalPages, currentPage,
                             </span>
                         </div>
                     </div>
-                    <h1 className={`heading ${style.heroTitle}`}>
-                        {LABELS.heroTitle} <span className={style.heroTitleAccent}>{LABELS.heroTitleAccent}</span>
+                    <h1 className='heading'>
+                        {LABELS.heroTitle} <span className='text-accent'>{LABELS.heroTitleAccent}</span>
                     </h1>
-                    <p className={style.heroSub}>{LABELS.heroSub}</p>
+                    <p className='text-sm max-w-2xl text-gray-500'>{LABELS.heroSub}</p>
                 </div>
 
                 <div className={style.filterBar}>
@@ -424,14 +424,17 @@ export default function ChatBotDemoComp({ templateList, totalPages, currentPage,
                     </div>
 
                     {activePills.length > 0 ? (
-                        <div className={style.filterBottom}>
-                            <div className={style.activeWrap}>
+                        <div className='flex flex-col gap-2 border-t border-gray-100 sm:flex-row sm:items-center sm:justify-between sm:gap-3'>
+                            <div className='flex flex-nowrap items-center gap-2 min-w-0 overflow-x-auto'>
                                 {activePills.map((pill) => (
-                                    <span key={pill.key} className={style.activePill}>
+                                    <span
+                                        key={pill.key}
+                                        className='inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium bg-gray-100 text-gray-700 border border-gray-300'
+                                    >
                                         {pill.label}
                                         <button
                                             type='button'
-                                            className={style.activePillBtn}
+                                            className='btn btn-ghost btn-xs btn-circle'
                                             onClick={() => removeFilter(pill.key)}
                                             aria-label={`${LABELS.clearAll} ${pill.key}`}
                                         >
@@ -444,7 +447,11 @@ export default function ChatBotDemoComp({ templateList, totalPages, currentPage,
                                     </span>
                                 ))}
                             </div>
-                            <button type='button' className={style.clearBtn} onClick={handleClearFilters}>
+                            <button
+                                type='button'
+                                className='btn btn-ghost btn-sm text-gray-500 self-start sm:self-auto'
+                                onClick={handleClearFilters}
+                            >
                                 {LABELS.clearAll}
                             </button>
                         </div>
@@ -455,27 +462,44 @@ export default function ChatBotDemoComp({ templateList, totalPages, currentPage,
                     {templateList?.length > 0 ? (
                         templateList.map((template) => (
                             <article key={template?.bot_id} className={style.botCard}>
-                                <div className={style.cardBody}>
-                                    <div className={style.cardMeta}>
-                                        <span className={style.typeBadge}>{getTypeLabel(template?.bot_type)}</span>
-                                        <span className={style.categoryLabel}>{getCategoryLabel(template)}</span>
+                                <div className='cont gap-2'>
+                                    <div className='flex items-center justify-between gap-2'>
+                                        <span className='px-2 py-0.5 rounded text-xs font-semibold bg-gray-100 text-gray-600 border border-gray-300'>
+                                            {getTypeLabel(template?.bot_type)}
+                                        </span>
+                                        <span className='text-xs font-medium text-right truncate flex-1 min-w-0 text-gray-500'>
+                                            {getCategoryLabel(template)}
+                                        </span>
                                     </div>
-                                    <h3 className={style.cardTitle}>{template?.display_name}</h3>
+                                    <h3 className='font-semibold text-sm text-primary break-words'>
+                                        {template?.display_name}
+                                    </h3>
                                     {template?.description ? (
-                                        <p className={style.cardDesc}>{template.description}</p>
+                                        <p className='text-xs break-words text-gray-500 line-clamp-2'>
+                                            {template.description}
+                                        </p>
                                     ) : null}
                                 </div>
-                                <div className={style.cardFooter}>
-                                    <span className={style.cardTypeHint}>{getTypeLabel(template?.bot_type)}</span>
-                                    <button
-                                        type='button'
-                                        className={style.tryBtn}
-                                        onClick={() => openDemo(template)}
-                                        disabled={!template?.token}
-                                    >
-                                        <span>{LABELS.tryDemo}</span>
-                                        <FilterIcon name={ICON_KEYS.tryDemo} size={ICON_SIZES.tryDemo} wrap={false} />
-                                    </button>
+                                <div className='cont gap-3'>
+                                    <div className='border-t border-gray-200' aria-hidden='true' />
+                                    <div className='flex items-center justify-between gap-2'>
+                                        <span className='text-xs font-semibold text-gray-500'>
+                                            {getTypeLabel(template?.bot_type)}
+                                        </span>
+                                        <button
+                                            type='button'
+                                            className='btn btn-accent btn-sm gap-1.5'
+                                            onClick={() => openDemo(template)}
+                                            disabled={!template?.token}
+                                        >
+                                            <span>{LABELS.tryDemo}</span>
+                                            <FilterIcon
+                                                name={ICON_KEYS.tryDemo}
+                                                size={ICON_SIZES.tryDemo}
+                                                wrap={false}
+                                            />
+                                        </button>
+                                    </div>
                                 </div>
                             </article>
                         ))
@@ -502,7 +526,7 @@ export default function ChatBotDemoComp({ templateList, totalPages, currentPage,
                         aria-label={LABELS.closeDemoBackdrop}
                     />
                     <div className={style.chatModalBox}>
-                        <div className={style.chatModalHeader}>
+                        <div className='flex items-center justify-between gap-3 px-4 py-3 bg-gray-50 border-b border-gray-200'>
                             <div className='min-w-0'>
                                 <p className='text-sm font-semibold truncate'>{selectedTemplate?.display_name}</p>
                                 <p className='text-xs text-gray-500'>
@@ -526,7 +550,9 @@ export default function ChatBotDemoComp({ templateList, totalPages, currentPage,
                                 id={CONFIG.chatParentId}
                             ></div>
                         ) : (
-                            <div className={style.noToken}>{LABELS.noToken}</div>
+                            <div className='flex items-center justify-center text-sm text-gray-500 p-4'>
+                                {LABELS.noToken}
+                            </div>
                         )}
                     </div>
                 </div>

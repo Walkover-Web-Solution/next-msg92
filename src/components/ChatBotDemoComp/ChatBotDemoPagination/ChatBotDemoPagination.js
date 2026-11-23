@@ -1,5 +1,4 @@
 import botTemplateFilters from '@/data/botTemplateFilters.json';
-import style from '../ChatBotDemoComp.module.scss';
 
 const LABELS = botTemplateFilters.labels;
 const PAGINATION = botTemplateFilters.config.pagination;
@@ -26,16 +25,16 @@ export default function ChatBotDemoPagination({ currentPage, totalPages, onPageC
     const visiblePages = getVisiblePages(currentPage, totalPages);
 
     return (
-        <div className={style.pagination}>
-            <p className={style.paginationInfo}>
+        <div className='flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between'>
+            <p className='text-sm text-gray-500 text-center sm:text-left'>
                 {LABELS.pageOf} <span className='font-semibold text-primary'>{currentPage}</span> {LABELS.of}{' '}
                 <span className='font-semibold text-primary'>{totalPages}</span>
             </p>
 
-            <div className={style.paginationControls}>
+            <div className='flex items-center justify-center sm:justify-end gap-1 flex-wrap'>
                 <button
                     type='button'
-                    className={`${style.paginationBtn} ${style.paginationBtnPrev}`}
+                    className='btn btn-ghost btn-sm'
                     disabled={!canGoPrev}
                     onClick={() => onPageChange(currentPage - 1)}
                     aria-label={LABELS.previous}
@@ -46,7 +45,7 @@ export default function ChatBotDemoPagination({ currentPage, totalPages, onPageC
                 {visiblePages.map((page, index) => {
                     if (page === PAGINATION.ellipsis) {
                         return (
-                            <span key={`${PAGINATION.ellipsis}-${index}`} className={style.paginationEllipsis}>
+                            <span key={`${PAGINATION.ellipsis}-${index}`} className='px-1.5 text-sm text-gray-400'>
                                 {PAGINATION.ellipsisChar}
                             </span>
                         );
@@ -58,7 +57,7 @@ export default function ChatBotDemoPagination({ currentPage, totalPages, onPageC
                         <button
                             key={page}
                             type='button'
-                            className={`${style.paginationPage} ${isActive ? style.paginationPageActive : ''}`}
+                            className={`btn btn-sm btn-circle ${isActive ? 'btn-primary' : 'btn-ghost'}`}
                             onClick={() => onPageChange(page)}
                             aria-label={`${LABELS.pageOf} ${page}`}
                             aria-current={isActive ? 'page' : undefined}
@@ -70,7 +69,7 @@ export default function ChatBotDemoPagination({ currentPage, totalPages, onPageC
 
                 <button
                     type='button'
-                    className={`${style.paginationBtn} ${style.paginationBtnNext}`}
+                    className='btn btn-ghost btn-sm'
                     disabled={!canGoNext}
                     onClick={() => onPageChange(currentPage + 1)}
                     aria-label={LABELS.next}
