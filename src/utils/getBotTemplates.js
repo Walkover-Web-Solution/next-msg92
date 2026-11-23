@@ -1,16 +1,53 @@
 import axios from 'axios';
 
-export default async function getBotTemplates(page) {
-    try {
-        const response = await axios.get(
-            `${process.env.HELLO_API_URL}/public/bot/template?with_widget=true&page=${page}`
-        );
-        if (response?.data?.success) {
-            return response.data.data;
-        } else {
-            console.log('Failed to fetch templates');
-        }
-    } catch (error) {
-        console.log('Error fetching templates');
+import botTemplateFilters from '@/data/botTemplateFilters.json';
+
+const defaults = botTemplateFilters.defaults;
+const apiConfig = botTemplateFilters.config.api;
+
+export default async function getBotTemplates({
+    page = defaults.page,
+    limit = defaults.limit,
+    search = defaults.search,
+    sortBy = defaults.sortBy,
+    sortOrder = defaults.sortOrder,
+    type = defaults.type,
+    category = defaults.category,
+} = {}) {
+    const filters = {
+        search,
+        type,
+        sortBy,
+        sortOrder,
+        limit: String(limit),
+        category,
+    };
+
+    const params = {
+        page,
+        limit,
+        sortBy,
+        sortOrder,
+        type,
+    };
+
+    if (search) {
+        params.search = search;
     }
+    if (category) {
+        params.filter = JSON.stringify({ [apiConfig.filterCategoryKey]: category });
+    }
+
+    const response = await axios.get(`${process.env.HELLO_API_URL}/public/bot/template/`, {
+        params,
+    });
+
+    if (response?.data?.success) {
+        return {
+            ...response.data.data,
+            filters,
+        };
+    }
+
+    throw new Error(apiConfig.errorMessage);
 }

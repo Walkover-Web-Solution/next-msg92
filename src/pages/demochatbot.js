@@ -4,9 +4,10 @@ import HeadComp from '@/components/HeadComp/HeadComp';
 import MenuBarComp from '@/components/menuBarComp/menuBarComp';
 import NotificationBarComp from '@/components/notificationBarComp/notificationBarComp';
 import PreFooterComp from '@/components/PreFooterComp/PreFooterComp';
+import botTemplateFilters from '@/data/botTemplateFilters.json';
 import getBotTemplates from '@/utils/getBotTemplates';
 
-export default function demochatbot({ pageInfo, templateList, totalPages, currentPage }) {
+export default function demochatbot({ pageInfo, templateList, totalPages, currentPage, filters }) {
     return (
         <div>
             <HeadComp
@@ -223,6 +224,7 @@ export default function demochatbot({ pageInfo, templateList, totalPages, curren
                 templateList={templateList}
                 totalPages={totalPages}
                 currentPage={currentPage}
+                filters={filters}
             />
             <PreFooterComp
                 data={{
@@ -460,22 +462,26 @@ export default function demochatbot({ pageInfo, templateList, totalPages, curren
 }
 
 export const getServerSideProps = async (context) => {
-    const currentPage = Number(context.query?.page) || 1;
-    const pageInfo = {
-        'country': 'global',
-        'page': 'demochatbot',
-        'pathArray': ['demochatbot'],
-        'pathURL': 'demochatbot',
-        'baseURL': 'demochatbot',
-    };
-    const templateData = await getBotTemplates(currentPage);
+    const { query } = context;
+    const queryKeys = botTemplateFilters.config.queryKeys;
+
+    const templateData = await getBotTemplates({
+        page: query[queryKeys.page] ? Number(query[queryKeys.page]) : undefined,
+        limit: query[queryKeys.limit] ? Number(query[queryKeys.limit]) : undefined,
+        search: query[queryKeys.search],
+        type: query[queryKeys.type],
+        sortBy: query[queryKeys.sortBy],
+        sortOrder: query[queryKeys.sortOrder],
+        category: query[queryKeys.category],
+    });
 
     return {
         props: {
-            pageInfo,
-            templateList: templateData?.templates || [],
-            totalPages: templateData?.last_page || 0,
-            currentPage: currentPage || 1,
+            pageInfo: botTemplateFilters.config.pageInfo,
+            templateList: templateData.templates,
+            totalPages: templateData.totalPages,
+            currentPage: templateData.page,
+            filters: templateData.filters,
         },
     };
 };
