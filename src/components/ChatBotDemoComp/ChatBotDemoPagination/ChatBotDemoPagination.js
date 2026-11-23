@@ -1,86 +1,83 @@
-import React from 'react';
+import botTemplateFilters from '@/data/botTemplateFilters.json';
+import style from '../ChatBotDemoComp.module.scss';
+
+const LABELS = botTemplateFilters.labels;
+const PAGINATION = botTemplateFilters.config.pagination;
+
+function getVisiblePages(currentPage, totalPages) {
+    if (totalPages <= PAGINATION.maxVisibleWithoutEllipsis) {
+        return Array.from({ length: totalPages }, (_, index) => index + 1);
+    }
+
+    if (currentPage <= PAGINATION.edgePageCount) {
+        return [1, 2, 3, PAGINATION.ellipsis, totalPages];
+    }
+
+    if (currentPage >= totalPages - PAGINATION.nearEndOffset) {
+        return [1, PAGINATION.ellipsis, totalPages - 2, totalPages - 1, totalPages];
+    }
+
+    return [1, PAGINATION.ellipsis, currentPage - 1, currentPage, currentPage + 1, PAGINATION.ellipsis, totalPages];
+}
 
 export default function ChatBotDemoPagination({ currentPage, totalPages, onPageChange }) {
-    const renderPaginationItems = () => {
-        let items = [];
-        const ellipsis = <span className='pagination-ellipsis'>...</span>;
-
-        // Always add the first page
-        items.push(
-            <div
-                key='page-1'
-                className={`w-[24px] h-[24px] flex items-center justify-center hover:bg-primary hover:text-white cursor-pointer rounded-sm ${
-                    currentPage === 1 ? 'bg-primary text-white' : ''
-                }`}
-                onClick={() => onPageChange(1)}
-            >
-                1
-            </div>
-        );
-
-        // Add ellipsis if needed after the first page
-        if (currentPage > 3) {
-            items.push(ellipsis);
-        }
-
-        // Calculate the range of pages to show around the current page
-        let startPage = Math.max(2, currentPage - 1);
-        let endPage = Math.min(totalPages - 1, currentPage + 1);
-
-        for (let i = startPage; i <= endPage; i++) {
-            items.push(
-                <div
-                    key={`page-${i}`}
-                    className={`w-[24px] h-[24px] flex items-center justify-center hover:bg-primary hover:text-white cursor-pointer rounded-sm ${
-                        currentPage === i ? 'bg-primary text-white' : ''
-                    }`}
-                    onClick={() => onPageChange(i)}
-                >
-                    {i}
-                </div>
-            );
-        }
-
-        // Add ellipsis if needed before the last page
-        if (currentPage < totalPages - 2) {
-            items.push(ellipsis);
-        }
-
-        // Always add the last page
-        items.push(
-            <div
-                key={`page-${totalPages}`}
-                className={`w-[24px] h-[24px] flex items-center justify-center hover:bg-primary hover:text-white cursor-pointer rounded-sm ${
-                    currentPage === totalPages ? 'bg-primary text-white' : ''
-                }`}
-                onClick={() => onPageChange(totalPages)}
-            >
-                {totalPages}
-            </div>
-        );
-
-        return items;
-    };
+    const canGoPrev = currentPage > 1;
+    const canGoNext = currentPage < totalPages;
+    const visiblePages = getVisiblePages(currentPage, totalPages);
 
     return (
-        <div className='flex gap-4'>
-            {1 != currentPage && (
-                <div
-                    className='w-fit h-[24px] px-1 flex items-center justify-center hover:bg-primary hover:text-white cursor-pointer rounded-sm'
-                    onClick={() => onPageChange(Math.max(1, currentPage - 1))}
+        <div className={style.pagination}>
+            <p className={style.paginationInfo}>
+                {LABELS.pageOf} <span className='font-semibold text-primary'>{currentPage}</span> {LABELS.of}{' '}
+                <span className='font-semibold text-primary'>{totalPages}</span>
+            </p>
+
+            <div className={style.paginationControls}>
+                <button
+                    type='button'
+                    className={`${style.paginationBtn} ${style.paginationBtnPrev}`}
+                    disabled={!canGoPrev}
+                    onClick={() => onPageChange(currentPage - 1)}
+                    aria-label={LABELS.previous}
                 >
-                    Prev
-                </div>
-            )}
-            {renderPaginationItems()}
-            {totalPages != currentPage && (
-                <div
-                    className='w-fit h-[24px] px-1 flex items-center justify-center hover:bg-primary hover:text-white cursor-pointer rounded-sm'
-                    onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
+                    {LABELS.previous}
+                </button>
+
+                {visiblePages.map((page, index) => {
+                    if (page === PAGINATION.ellipsis) {
+                        return (
+                            <span key={`${PAGINATION.ellipsis}-${index}`} className={style.paginationEllipsis}>
+                                {PAGINATION.ellipsisChar}
+                            </span>
+                        );
+                    }
+
+                    const isActive = page === currentPage;
+
+                    return (
+                        <button
+                            key={page}
+                            type='button'
+                            className={`${style.paginationPage} ${isActive ? style.paginationPageActive : ''}`}
+                            onClick={() => onPageChange(page)}
+                            aria-label={`${LABELS.pageOf} ${page}`}
+                            aria-current={isActive ? 'page' : undefined}
+                        >
+                            {page}
+                        </button>
+                    );
+                })}
+
+                <button
+                    type='button'
+                    className={`${style.paginationBtn} ${style.paginationBtnNext}`}
+                    disabled={!canGoNext}
+                    onClick={() => onPageChange(currentPage + 1)}
+                    aria-label={LABELS.next}
                 >
-                    Next
-                </div>
-            )}
+                    {LABELS.next}
+                </button>
+            </div>
         </div>
     );
 }
