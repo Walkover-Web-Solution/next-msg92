@@ -1,39 +1,3 @@
-.page {
-    @apply w-full;
-}
-
-.hero {
-    @apply flex flex-col gap-2;
-}
-
-.heroTop {
-    @apply flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-3;
-}
-
-.heroTagline {
-    @apply text-xs sm:text-sm uppercase tracking-widest font-semibold text-accent;
-}
-
-.heroTitle {
-    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight;
-}
-
-.heroTitleAccent {
-    @apply text-accent;
-}
-
-.heroSub {
-    @apply text-sm max-w-2xl text-gray-500;
-}
-
-.resultBadge {
-    @apply inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full w-fit shrink-0 bg-white text-accent border border-secondary;
-}
-
-.resultDot {
-    @apply w-2 h-2 rounded-full bg-accent;
-}
-
 .filterBar {
     @apply rounded-xl sm:rounded-2xl p-3 sm:p-4 flex flex-col gap-3 bg-white border border-gray-200;
 }
@@ -47,27 +11,19 @@
 }
 
 .searchIcon {
-    @apply absolute inset-y-0 left-0 pl-3 sm:pl-3.5 flex items-center pointer-events-none text-sm text-gray-400;
+    @apply absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400;
 }
 
 .searchInput {
-    @apply w-full h-11 pl-10 pr-10 text-sm text-primary rounded-xl outline-none transition-all bg-white border border-gray-200;
-}
-
-.searchInput:focus {
-    @apply border-gray-400 ring-4 ring-gray-100;
+    @apply w-full h-11 pl-10 pr-10 text-sm text-primary rounded-xl outline-none bg-white border border-gray-200;
 }
 
 .searchClear {
-    @apply absolute inset-y-0 right-0 pr-3 flex items-center text-xs cursor-pointer bg-transparent border-0 text-gray-400;
-}
-
-.searchClear:hover {
-    @apply text-primary;
+    @apply absolute inset-y-0 right-0 pr-3 flex items-center bg-transparent border-0 text-gray-400;
 }
 
 .compactField {
-    @apply inline-flex items-center gap-1.5 h-11 pl-2.5 pr-8 rounded-xl cursor-pointer relative w-full min-w-0 bg-white border border-gray-200 xl:w-auto xl:shrink-0;
+    @apply inline-flex items-center gap-1.5 h-11 pl-2.5 pr-8 rounded-xl relative w-full min-w-0 bg-white border border-gray-200 xl:w-auto;
 }
 
 .limitField {
@@ -79,15 +35,15 @@
 }
 
 .fieldIcon {
-    @apply flex items-center justify-center shrink-0 text-accent;
+    @apply flex items-center justify-center text-accent;
 }
 
 .fieldPrefix {
-    @apply hidden sm:inline text-sm text-gray-500 whitespace-nowrap;
+    @apply hidden sm:inline text-sm text-gray-500;
 }
 
 .compactSelect {
-    @apply appearance-none bg-transparent border-0 outline-none text-sm font-semibold text-primary cursor-pointer p-0 min-w-0 flex-1 truncate xl:flex-none xl:max-w-36;
+    @apply appearance-none bg-transparent border-0 outline-none text-sm font-semibold text-primary p-0 min-w-0 flex-1 truncate xl:flex-none xl:max-w-36;
 }
 
 .compactChevron {
@@ -95,39 +51,7 @@
 }
 
 .orderToggle {
-    @apply w-11 h-11 rounded-xl shrink-0 cursor-pointer transition-all flex items-center justify-center bg-secondary text-accent border border-secondary col-span-2 sm:col-span-1 justify-self-start xl:col-auto;
-}
-
-.orderToggle:hover {
-    @apply border-accent text-accent;
-}
-
-.filterBottom {
-    @apply flex flex-col gap-2 border-t border-gray-100 sm:flex-row sm:items-center sm:justify-between sm:gap-3;
-}
-
-.activeWrap {
-    @apply flex flex-nowrap items-center gap-2 min-w-0 overflow-x-auto;
-}
-
-.activePill {
-    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium whitespace-nowrap shrink-0 bg-gray-100 text-gray-700 border border-gray-300;
-}
-
-.activePillBtn {
-    @apply cursor-pointer bg-transparent border-0 p-0 leading-none text-xs text-gray-500;
-}
-
-.activePillBtn:hover {
-    @apply text-primary;
-}
-
-.clearBtn {
-    @apply px-2 py-1 text-sm font-medium cursor-pointer border-0 bg-transparent shrink-0 whitespace-nowrap text-gray-500 self-start sm:self-auto;
-}
-
-.clearBtn:hover {
-    @apply text-primary;
+    @apply w-11 h-11 rounded-xl flex items-center justify-center bg-secondary text-accent border border-secondary col-span-2 sm:col-span-1 justify-self-start xl:col-auto;
 }
 
 .botGrid {
@@ -135,57 +59,7 @@
 }
 
 .botCard {
-    @apply bg-white rounded-xl p-4 sm:p-5 flex flex-col justify-between gap-3 cursor-default border border-gray-300 min-h-52 sm:min-h-60 transition-shadow;
-}
-
-.botCard:hover {
-    @apply border-gray-400 shadow-md;
-}
-
-.cardBody {
-    @apply flex flex-col gap-2;
-}
-
-.cardMeta {
-    @apply flex items-center justify-between gap-2;
-}
-
-.typeBadge {
-    @apply px-2 py-0.5 rounded text-xs font-semibold tracking-wide uppercase bg-gray-100 text-gray-600 border border-gray-300 shrink-0;
-}
-
-.categoryLabel {
-    @apply text-xs font-medium text-right truncate flex-1 min-w-0 text-gray-500;
-}
-
-.cardTitle {
-    @apply font-semibold text-sm text-primary tracking-tight break-words;
-}
-
-.cardDesc {
-    @apply text-xs leading-relaxed break-words text-gray-500 line-clamp-2;
-}
-
-.cardFooter {
-    @apply flex items-center justify-between gap-2 border-t border-gray-200;
-}
-
-.cardTypeHint {
-    @apply text-xs font-semibold uppercase tracking-wide shrink-0 text-gray-500;
-}
-
-.tryBtn {
-    @apply py-1.5 px-3 text-xs font-semibold rounded-lg transition-colors inline-flex items-center gap-1.5 cursor-pointer border-0 text-white shrink-0;
-    background-color: var(--accent-color);
-}
-
-.tryBtn:hover {
-    @apply text-white;
-    background-color: var(--otp-dark-color);
-}
-
-.tryBtn:disabled {
-    @apply opacity-50 cursor-not-allowed;
+    @apply bg-white rounded-xl p-4 sm:p-5 flex flex-col justify-between gap-3 border border-gray-300 min-h-52 sm:min-h-60;
 }
 
 .chatOverlay {
@@ -193,57 +67,13 @@
 }
 
 .chatBackdrop {
-    @apply absolute inset-0 border-0 cursor-pointer bg-primary/60;
+    @apply absolute inset-0 border-0 bg-primary/60;
 }
 
 .chatModalBox {
     @apply relative z-10 overflow-hidden w-full max-w-lg max-h-[90vh] bg-white border border-gray-300 rounded-t-2xl sm:rounded-xl;
 }
 
-.chatModalHeader {
-    @apply flex items-center justify-between gap-3 px-4 py-3 bg-gray-50 border-b border-gray-200;
-}
-
-.noToken {
-    @apply flex items-center justify-center text-sm text-gray-500 p-4;
-}
-
 .chatbotwrapper {
     @apply w-full flex flex-col overflow-hidden bg-neutral h-[70vh] min-h-96 sm:h-[40rem] sm:min-h-[40rem];
-}
-
-.pagination {
-    @apply flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between;
-}
-
-.paginationInfo {
-    @apply text-sm text-gray-500 text-center sm:text-left;
-}
-
-.paginationControls {
-    @apply flex items-center justify-center sm:justify-end gap-1 flex-wrap;
-}
-
-.paginationBtn {
-    @apply px-2 py-1.5 text-sm font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed;
-}
-
-.paginationBtnPrev {
-    @apply text-gray-500 hover:text-primary;
-}
-
-.paginationBtnNext {
-    @apply text-primary hover:text-accent;
-}
-
-.paginationEllipsis {
-    @apply px-1.5 text-sm text-gray-400;
-}
-
-.paginationPage {
-    @apply w-8 h-8 sm:w-9 sm:h-9 rounded-full text-sm font-semibold transition-colors text-primary hover:bg-neutral;
-}
-
-.paginationPageActive {
-    @apply bg-primary text-white;
 }
