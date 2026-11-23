@@ -1,15 +1,79 @@
-.chatbotwrapper {
-    min-height: 650px;
-    max-height: 650px;
-    min-width: 380px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: center;
-    justify-items: center;
-    overflow: visible;
-    position: sticky;
-    top: 20px;
-    @apply lg:mt-20 mt-5 sm:border p-3 rounded bg-red-50;
+.filterBar {
+    @apply rounded-xl sm:rounded-2xl p-3 sm:p-4 flex flex-col gap-3 bg-white border border-gray-200;
+}
 
+.filterTop {
+    @apply grid grid-cols-2 gap-2 md:grid-cols-3 xl:flex xl:flex-nowrap xl:items-center xl:overflow-x-auto;
+}
+
+.searchWrap {
+    @apply relative col-span-2 md:col-span-3 xl:col-auto xl:flex-1 xl:min-w-44;
+}
+
+.searchIcon {
+    @apply absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400;
+}
+
+.searchInput {
+    @apply w-full h-11 pl-10 pr-10 text-sm text-primary rounded-xl outline-none bg-white border border-gray-200;
+}
+
+.searchClear {
+    @apply absolute inset-y-0 right-0 pr-3 flex items-center bg-transparent border-0 text-gray-400;
+}
+
+.compactField {
+    @apply inline-flex items-center gap-1.5 h-11 pl-2.5 pr-8 rounded-xl relative w-full min-w-0 bg-white border border-gray-200 xl:w-auto;
+}
+
+.limitField {
+    @apply xl:min-w-32;
+}
+
+.listField {
+    @apply xl:min-w-36;
+}
+
+.fieldIcon {
+    @apply flex items-center justify-center text-accent;
+}
+
+.fieldPrefix {
+    @apply hidden sm:inline text-sm text-gray-500;
+}
+
+.compactSelect {
+    @apply appearance-none bg-transparent border-0 outline-none text-sm font-semibold text-primary p-0 min-w-0 flex-1 truncate xl:flex-none xl:max-w-36;
+}
+
+.compactChevron {
+    @apply pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 flex items-center justify-center text-gray-500 w-4 h-4;
+}
+
+.orderToggle {
+    @apply w-11 h-11 rounded-xl flex items-center justify-center bg-secondary text-accent border border-secondary col-span-2 sm:col-span-1 justify-self-start xl:col-auto;
+}
+
+.botGrid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-5;
+}
+
+.botCard {
+    @apply bg-white rounded-xl p-4 sm:p-5 flex flex-col justify-between gap-3 border border-gray-300 min-h-52 sm:min-h-60;
+}
+
+.chatOverlay {
+    @apply fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4;
+}
+
+.chatBackdrop {
+    @apply absolute inset-0 border-0 bg-primary/60;
+}
+
+.chatModalBox {
+    @apply relative z-10 overflow-hidden w-full max-w-lg max-h-[90vh] bg-white border border-gray-300 rounded-t-2xl sm:rounded-xl;
+}
+
+.chatbotwrapper {
+    @apply w-full flex flex-col overflow-hidden bg-neutral h-[70vh] min-h-96 sm:h-[40rem] sm:min-h-[40rem];
 }
