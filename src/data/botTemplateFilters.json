@@ -1,7 +1,7 @@
 {
   "defaults": {
     "page": 1,
-    "limit": 10,
+    "limit": 12,
     "sortBy": "name",
     "sortOrder": "asc",
     "type": "all",
@@ -48,20 +48,16 @@
   ],
   "limitOptions": [
     {
-      "value": "10",
-      "label": "10"
+      "value": "12",
+      "label": "12"
     },
     {
-      "value": "20",
-      "label": "20"
+      "value": "24",
+      "label": "24"
     },
     {
-      "value": "50",
-      "label": "50"
-    },
-    {
-      "value": "100",
-      "label": "100"
+      "value": "36",
+      "label": "36"
     }
   ],
   "allOption": {
