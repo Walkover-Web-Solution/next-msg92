@@ -45,7 +45,7 @@ export default function EmailPhoneVerify({
             {emailVerified ? (
                 <div className='cont gap-2'>
                     <p className='text-gray-500 text-sm sm:text-base'>Email Address</p>
-                    <div className='flex flex-col sm:flex-row items-stretch sm:items-center gap-3'>
+                    <div className='flex flex-row items-center gap-3'>
                         <div className='relative flex-1 min-w-0 max-w-[420px]'>
                             <div className='input input-bordered text-base p-3 h-fit w-full bg-gray-50'>
                                 <span className='text-sm sm:text-base truncate block'>{verifiedEmailLabel}</span>
@@ -56,7 +56,7 @@ export default function EmailPhoneVerify({
                             />
                         </div>
                         <MdEdit
-                            className='text-gray-500 hover:text-accent cursor-pointer text-xl self-center'
+                            className='text-gray-500 hover:text-accent cursor-pointer text-xl shrink-0'
                             onClick={handleEditVerifiedEmail}
                             aria-label='Edit email'
                         />
@@ -102,11 +102,11 @@ export default function EmailPhoneVerify({
             ) : (
                 <div className='cont gap-2'>
                     <p className='text-gray-500 text-sm sm:text-base'>Email ID</p>
-                    <div className='flex flex-col sm:flex-row items-stretch sm:items-center gap-3'>
+                    <div className='flex flex-row items-center gap-3'>
                         <input
                             ref={emailInputRef}
                             maxLength={244}
-                            className='input input-bordered text-base p-3 h-fit w-full max-w-[420px]'
+                            className='input input-bordered text-base p-3 h-fit flex-1 min-w-0 max-w-[420px]'
                             name='email'
                             type='email'
                             required
@@ -118,14 +118,14 @@ export default function EmailPhoneVerify({
                             aria-label='Email address'
                         />
                         {emailLoading ? (
-                            <div className='flex items-center justify-center gap-2 text-accent'>
+                            <div className='flex items-center justify-center gap-2 text-accent shrink-0'>
                                 <div className='loading loading-spinner loading-sm'></div>
                                 Sending OTP...
                             </div>
                         ) : (
                             <button
                                 onClick={handleSendEmailOtp}
-                                className='btn btn-accent font-normal w-full sm:w-auto'
+                                className='btn btn-accent font-normal shrink-0 w-auto'
                                 disabled={!email?.trim()}
                             >
                                 Verify
@@ -176,7 +176,7 @@ export default function EmailPhoneVerify({
             ) : (
                 <div className='cont gap-2'>
                     <p className='text-gray-500 text-sm sm:text-base'>Phone Number</p>
-                    <div className='flex flex-col sm:flex-row items-stretch sm:items-center gap-3'>
+                    <div className='flex flex-row items-center gap-3'>
                         <PhoneInput
                             value={phone}
                             onChange={setPhone}
@@ -188,19 +188,19 @@ export default function EmailPhoneVerify({
                         />
                         {mobileOtpVerified ? (
                             <MdEdit
-                                className='text-gray-500 hover:text-accent cursor-pointer text-xl self-center'
+                                className='text-gray-500 hover:text-accent cursor-pointer text-xl shrink-0'
                                 onClick={handleEditVerifiedPhone}
                                 aria-label='Edit phone number'
                             />
                         ) : phoneLoading ? (
-                            <div className='flex items-center justify-center gap-2 text-accent'>
+                            <div className='flex items-center justify-center gap-2 text-accent shrink-0'>
                                 <div className='loading loading-spinner loading-sm'></div>
                                 Sending OTP...
                             </div>
                         ) : (
                             <button
                                 onClick={handleSendPhoneOtp}
-                                className='btn btn-accent font-normal w-full sm:w-auto'
+                                className='btn btn-accent font-normal shrink-0 w-auto'
                                 disabled={!phone?.trim()}
                             >
                                 Verify
