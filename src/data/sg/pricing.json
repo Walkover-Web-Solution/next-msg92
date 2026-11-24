@@ -388,6 +388,47 @@
                 "heading": "<h2 class='text-xl md:text-3xl font-bold'>Up to <span class='text-green-600 font-bold text-2xl lg:text-3xl'>10% Lower</span> Than Meta Pricing.</h2>",
                 "sub_heading": "Simple, predictable pricing with built-in savings."
             },
+            "faqComp": {
+                "heading": "Frequently Asked Questions",
+                "faqs": [
+                {
+                    "question": "What is the MSG91 WhatsApp Business API pricing in Singapore?",
+                    "answer": "<p>MSG91 offers a free platform subscription for the initial two months. After that, the subscription costs £6/month per WhatsApp number.</p><p>WhatsApp messaging is billed separately in GBP, with rates lower than Meta's standard pricing for Singapore. Charges depend on where your customers are located and the message category: Marketing, Utility, Authentication or Service.</p><p>You can find the applicable message rates in the pricing table above to estimate your monthly expenses. Taxes may apply depending on your billing arrangement.</p>"
+                },
+                {
+                    "question": "Why is MSG91 WhatsApp messaging cheaper than Meta's standard rates in Singapore?",
+                    "answer": "<p>As a Meta partner, MSG91 offers businesses WhatsApp messaging at rates below Meta's standard pricing through its commercial and operational arrangements.</p><p>Instead of adding a separate markup to every message, MSG91 earns through its monthly platform subscription.</p><p>Singapore businesses can also manage SMS, Email, Voice and AI chatbots through MSG91. These services have their own usage charges, making it easier to manage customer communication without switching between multiple providers.</p>"
+                },
+                {
+                    "question": "Do WhatsApp templates, media messages and API integrations cost extra?",
+                    "answer": "<p>No. MSG91 does not charge additional fees for creating WhatsApp templates, sharing supported images or documents, accessing APIs and webhooks, or enabling WhatsApp Coexistence for eligible numbers.</p><p>Coexistence lets you use the WhatsApp Business app alongside the API on the same number.</p><p>You also get 100 days of WhatsApp message logs for free. Historical logs covering up to one year are available as a paid add-on.</p><p>Standard messaging fees and the platform subscription still apply. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/help/whatsapp/how-to-check-whatsapp-logs-message-status'>Learn how to view WhatsApp message logs</a>.</p>"
+                },
+                {
+                    "question": "How did the October 1, 2026 WhatsApp pricing update affect Singapore businesses?",
+                    "answer": "<p>From October 1, 2026, Meta started charging for billable replies businesses send after receiving a customer message. This includes support agent responses, chatbot replies and Utility notifications that previously had no charge in those situations.</p><p>Messages received from customers remain free.</p><p>For businesses handling frequent enquiries, <strong>MSG91 Chat Window</strong> can help reduce the number of billable WhatsApp messages by continuing detailed customer conversations in a separate chat experience. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/guide/how-much-will-october-1-2026-actually-cost-you-and-how-msg91-keeps-it-lower-anywhere-in-the-world'>Understand the October 2026 pricing changes</a>.</p>"
+                },
+                {
+                    "question": "Can Singapore enterprises get better pricing for high-volume WhatsApp messaging?",
+                    "answer": "<p>Yes. MSG91 provides tailored enterprise plans for companies sending thousands or millions of WhatsApp messages regularly.</p><p>Businesses with high volumes of Utility and Authentication messages may qualify for Meta's volume-based discounts. Additional commercial arrangements can be discussed based on messaging requirements.</p><p>Whether you're sending banking alerts, travel booking updates or retail campaigns, our sales team can help you choose a suitable plan.</p><p><a class='text-link active-link' target='_blank' href='/contact-us'>Contact MSG91 Sales</a> for enterprise pricing.</p>"
+                },
+                {
+                    "question": "What happens to charges when WhatsApp messages fail or need SMS or Email fallback?",
+                    "answer": "<p>Failed WhatsApp deliveries are not charged. If MSG91 retries a message automatically and the retry is successfully delivered, the applicable WhatsApp rate applies.</p><p>When an OTP, transaction confirmation or delivery alert is sent through <strong>SMS or Email fallback</strong>, the alternative channel is billed separately at its respective rate.</p><p>This allows businesses to use backup channels for important notifications while tracking their messaging expenses.</p>"
+                },
+                {
+                    "question": "Can I manage WhatsApp budgets for multiple business locations in Singapore?",
+                    "answer": "<p>Yes. MSG91 allows you to monitor WhatsApp spending across different outlets, teams or brands from a single account.</p><p>You can allocate prepaid balances, define monthly spending limits and enable auto-recharge to reduce the risk of messaging interruptions.</p><p>The subscription is <strong>£6 per number each month after the initial two months</strong>, excluding message usage charges.</p><p>Unused prepaid funds carry forward while the subscription remains active. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/help/whatsapp/prepaid-balance-and-auto-renew'>Explore prepaid billing and auto-recharge</a>.</p>"
+                },
+                {
+                    "question": "Is there a free WhatsApp chatbot plan for Singapore businesses?",
+                    "answer": "<p>Yes. The <a class='text-link active-link' target='_blank' href='/sg/pricing/hello'>MSG91 Hello Free plan</a> includes <strong>50 monthly tickets and 2 inboxes</strong>, allowing businesses to start managing WhatsApp conversations without a Hello subscription fee.</p><p>For larger customer support teams, two paid plans are available: <strong>Basic:</strong> £35/month with 1,000 tickets, 2 inboxes and a £35 BOT wallet. <strong>Premium:</strong> £65/month with 2,000 tickets, 3 inboxes and a £65 BOT wallet.</p><p>Additional tickets cost £0.012 each on Basic and £0.025 each on Premium. Extra inboxes cost £9 each on paid plans.</p><p>Custom rule-based bots have no separate bot-message fee. AI chatbot usage is deducted from the BOT wallet according to the applicable rate card.</p><p>WhatsApp message charges are billed separately.</p>"
+                },
+                {
+                    "question": "Can Singapore businesses set their own maximum price for WhatsApp Marketing messages?",
+                    "answer": "<p>Yes. MSG91's <strong>Set Max Price</strong> feature allows you to decide the highest amount you're willing to pay for a WhatsApp Marketing message.</p><p>Open an approved Marketing template, choose <strong>Set Max Price</strong> under Template Pricing, and enter your limit. Different countries can have different price limits.</p><p>Your actual cost may be lower, although delivery isn't guaranteed. You can revise your limit or return to Standard pricing anytime. <a class='text-link active-link' target='_blank' rel='noopener noreferrer' href='https://msg91.com/guide/reduce-your-whatsapp-business-api-cost'>Learn how WhatsApp bidding works</a>.</p>"
+                }
+                ]
+            },
             "connectComp": {
                 "content": "Connect with our team for Personalized Pricing .",
                 "sales_btn": "Talk to Sales",
