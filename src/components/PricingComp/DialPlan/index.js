@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState, useRef, useCallback } from 'react';
-import { toast } from 'react-toastify';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import normalizeDialPlanInfo from '@/utils/pricing/normalizeDialPlanInfo';
 import GetCountryDetails from '@/utils/getCurrentCountry';
@@ -56,11 +55,6 @@ async function fetchDialPlanData({ serviceId, dialPlanId, currency, offset, sear
     const json = await res.json();
     if (!res.ok || json.hasError) throw json;
     return json;
-}
-
-function getDialPlanErrorMessage(err) {
-    if (err?.message) return err.message;
-    return Object.values(err?.errors ?? {}).flat()[0];
 }
 
 function formatCellValue(col, row, currency) {
@@ -285,6 +279,9 @@ export default function DialPlan({ pricingData, selection, pageData, currency, c
         setSearch('');
         setSearchQuery('');
         setOffset(0);
+        setColumns(EMPTY_ARRAY);
+        setData(EMPTY_ARRAY);
+        setPagination(null);
         setLoaded(false);
         lastNonSearchOffsetRef.current = 0;
     }, [selection]);
@@ -320,10 +317,11 @@ export default function DialPlan({ pricingData, selection, pageData, currency, c
                 setPagination(json.data.metadata);
                 setLoaded(true);
             })
-            .catch((err) => {
+            .catch(() => {
                 if (!cancelled) {
-                    toast.error(getDialPlanErrorMessage(err));
+                    setColumns(EMPTY_ARRAY);
                     setData(EMPTY_ARRAY);
+                    setPagination(null);
                     setLoaded(true);
                 }
             })
