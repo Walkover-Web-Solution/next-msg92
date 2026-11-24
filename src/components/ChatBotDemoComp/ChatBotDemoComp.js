@@ -12,6 +12,7 @@ const SORT_BY_OPTIONS = botTemplateFilters.sortByOptions;
 const SORT_ORDER_OPTIONS = botTemplateFilters.sortOrderOptions;
 const LIMIT_OPTIONS = botTemplateFilters.limitOptions;
 const CATEGORY_OPTIONS = [botTemplateFilters.allOption, ...botTemplateFilters.categories];
+const TAG_OPTIONS = [botTemplateFilters.allOption, ...botTemplateFilters.tags];
 const FIELD_ICONS = botTemplateFilters.fieldIcons;
 const LABELS = botTemplateFilters.labels;
 const CONFIG = botTemplateFilters.config;
@@ -43,6 +44,9 @@ function buildDemoChatbotUrl(page, filters) {
     }
     if (filters?.category) {
         params.set(QUERY_KEYS.category, filters.category);
+    }
+    if (filters?.tags) {
+        params.set(QUERY_KEYS.tags, filters.tags);
     }
 
     return `${CONFIG.basePath}?${params.toString()}`;
@@ -111,6 +115,12 @@ export default function ChatBotDemoComp({ templateList, totalPages, currentPage,
             label: `${LABELS.pillCategory} ${getOptionLabel(CATEGORY_OPTIONS, appliedFilters.category)}`,
         });
     }
+    if (appliedFilters?.tags) {
+        activePills.push({
+            key: FILTER_KEYS.tags,
+            label: `${LABELS.pillTags} ${getOptionLabel(TAG_OPTIONS, appliedFilters.tags)}`,
+        });
+    }
     if (appliedFilters?.sortBy !== FILTER_DEFAULTS.sortBy || appliedFilters?.sortOrder !== FILTER_DEFAULTS.sortOrder) {
         activePills.push({
             key: FILTER_KEYS.sort,
@@ -136,7 +146,7 @@ export default function ChatBotDemoComp({ templateList, totalPages, currentPage,
             ...overrides,
         };
 
-        if (nextFilters.category && nextFilters.type === FILTER_DEFAULTS.type && GTWY_TYPE) {
+        if ((nextFilters.category || nextFilters.tags) && nextFilters.type === FILTER_DEFAULTS.type && GTWY_TYPE) {
             nextFilters.type = GTWY_TYPE;
         }
 
@@ -159,6 +169,9 @@ export default function ChatBotDemoComp({ templateList, totalPages, currentPage,
         }
         if (key === FILTER_KEYS.category) {
             nextFilters.category = FILTER_DEFAULTS.category;
+        }
+        if (key === FILTER_KEYS.tags) {
+            nextFilters.tags = FILTER_DEFAULTS.tags;
         }
         if (key === FILTER_KEYS.sort) {
             nextFilters.sortBy = FILTER_DEFAULTS.sortBy;
@@ -354,6 +367,26 @@ export default function ChatBotDemoComp({ templateList, totalPages, currentPage,
                                                 ? CONFIG.allCategoriesKey
                                                 : option.value
                                         }
+                                        value={option.value}
+                                    >
+                                        {option.label}
+                                    </option>
+                                ))}
+                            </select>
+                            <FilterIcon name={ICON_KEYS.chevron} />
+                        </label>
+
+                        <label className={`${style.compactField} ${style.listField}`}>
+                            <FilterIcon name={ICON_KEYS.tags} />
+                            <span className={style.fieldPrefix}>{LABELS.tagsPrefix}</span>
+                            <select
+                                className={style.compactSelect}
+                                value={appliedFilters?.tags}
+                                onChange={(event) => applyFilterChange({ tags: event.target.value })}
+                            >
+                                {TAG_OPTIONS.map((option) => (
+                                    <option
+                                        key={option.value === FILTER_DEFAULTS.tags ? CONFIG.allTagsKey : option.value}
                                         value={option.value}
                                     >
                                         {option.label}

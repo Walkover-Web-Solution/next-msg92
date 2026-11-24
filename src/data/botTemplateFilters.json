@@ -6,7 +6,8 @@
     "sortOrder": "asc",
     "type": "all",
     "search": "",
-    "category": ""
+    "category": "",
+    "tags": ""
   },
   "types": [
     {
@@ -74,7 +75,8 @@
     "chevron": "MdExpandMore",
     "sortAsc": "MdArrowUpward",
     "sortDesc": "MdArrowDownward",
-    "tryDemo": "MdArrowForward"
+    "tryDemo": "MdArrowForward",
+    "tags": "MdLabel"
   },
   "categories": [
     {
@@ -515,7 +517,9 @@
     "closeDemoBackdrop": "Close demo backdrop",
     "resultSeparator": " · ",
     "sortPillOpen": " (",
-    "sortPillClose": ")"
+    "sortPillClose": ")",
+    "tagsPrefix": "Tags:",
+    "pillTags": "Tags:"
   },
   "config": {
     "basePath": "/demochatbot",
@@ -526,14 +530,16 @@
       "sortBy": "sortBy",
       "sortOrder": "sortOrder",
       "limit": "limit",
-      "category": "category"
+      "category": "category",
+      "tags": "tags"
     },
     "filterKeys": {
       "search": "search",
       "type": "type",
       "category": "category",
       "sort": "sort",
-      "limit": "limit"
+      "limit": "limit",
+      "tags": "tags"
     },
     "gtwyTypeValue": "gtwy_ai",
     "allCategoriesKey": "all-categories",
@@ -557,7 +563,8 @@
       "chevron": "chevron",
       "sortAsc": "sortAsc",
       "sortDesc": "sortDesc",
-      "tryDemo": "tryDemo"
+      "tryDemo": "tryDemo",
+      "tags": "tags"
     },
     "widget": {
       "hide_launcher": false,
@@ -576,7 +583,8 @@
     },
     "api": {
       "filterCategoryKey": "category",
-      "errorMessage": "Failed to fetch bot templates"
+      "errorMessage": "Failed to fetch bot templates",
+      "filterTagsKey": "tags"
     },
     "pageInfo": {
       "country": "global",
@@ -586,6 +594,259 @@
       ],
       "pathURL": "demochatbot",
       "baseURL": "demochatbot"
+    },
+    "allTagsKey": "all-tags"
+  },
+  "tags": [
+    {
+      "value": "data-privacy",
+      "label": "data-privacy",
+      "count": 112
+    },
+    {
+      "value": "data-collection",
+      "label": "data-collection",
+      "count": 112
+    },
+    {
+      "value": "data privacy",
+      "label": "data privacy",
+      "count": 103
+    },
+    {
+      "value": "placeholder",
+      "label": "placeholder",
+      "count": 92
+    },
+    {
+      "value": "empty-input",
+      "label": "empty-input",
+      "count": 72
+    },
+    {
+      "value": "privacy",
+      "label": "privacy",
+      "count": 65
+    },
+    {
+      "value": "consent-management",
+      "label": "consent-management",
+      "count": 64
+    },
+    {
+      "value": "onboarding",
+      "label": "onboarding",
+      "count": 54
+    },
+    {
+      "value": "privacy-first",
+      "label": "privacy-first",
+      "count": 54
+    },
+    {
+      "value": "template",
+      "label": "template",
+      "count": 54
+    },
+    {
+      "value": "escalation",
+      "label": "escalation",
+      "count": 51
+    },
+    {
+      "value": "privacy-compliance",
+      "label": "privacy-compliance",
+      "count": 49
+    },
+    {
+      "value": "consent management",
+      "label": "consent management",
+      "count": 47
+    },
+    {
+      "value": "human-escalation",
+      "label": "human-escalation",
+      "count": 45
+    },
+    {
+      "value": "privacy-protection",
+      "label": "privacy-protection",
+      "count": 42
+    },
+    {
+      "value": "data collection",
+      "label": "data collection",
+      "count": 39
+    },
+    {
+      "value": "consent",
+      "label": "consent",
+      "count": 39
+    },
+    {
+      "value": "privacy-by-design",
+      "label": "privacy-by-design",
+      "count": 37
+    },
+    {
+      "value": "conversational-ai",
+      "label": "conversational-ai",
+      "count": 37
+    },
+    {
+      "value": "privacy-security",
+      "label": "privacy-security",
+      "count": 33
+    },
+    {
+      "value": "conversational AI",
+      "label": "conversational AI",
+      "count": 31
+    },
+    {
+      "value": "human escalation",
+      "label": "human escalation",
+      "count": 31
+    },
+    {
+      "value": "privacy-consent",
+      "label": "privacy-consent",
+      "count": 31
+    },
+    {
+      "value": "data-protection",
+      "label": "data-protection",
+      "count": 28
+    },
+    {
+      "value": "escalation-to-human",
+      "label": "escalation-to-human",
+      "count": 28
+    },
+    {
+      "value": "knowledge-base",
+      "label": "knowledge-base",
+      "count": 27
+    },
+    {
+      "value": "branding",
+      "label": "branding",
+      "count": 24
+    },
+    {
+      "value": "privacy protection",
+      "label": "privacy protection",
+      "count": 23
+    },
+    {
+      "value": "empty-prompt",
+      "label": "empty-prompt",
+      "count": 22
+    },
+    {
+      "value": "data-minimization",
+      "label": "data-minimization",
+      "count": 21
+    },
+    {
+      "value": "no-data",
+      "label": "no-data",
+      "count": 21
+    },
+    {
+      "value": "escalation to human",
+      "label": "escalation to human",
+      "count": 21
+    },
+    {
+      "value": "Data Privacy",
+      "label": "Data Privacy",
+      "count": 21
+    },
+    {
+      "value": "instructions",
+      "label": "instructions",
+      "count": 21
+    },
+    {
+      "value": "data-validation",
+      "label": "data-validation",
+      "count": 19
+    },
+    {
+      "value": "company-info",
+      "label": "company-info",
+      "count": 19
+    },
+    {
+      "value": "empty-fields",
+      "label": "empty-fields",
+      "count": 17
+    },
+    {
+      "value": "company-profile",
+      "label": "company-profile",
+      "count": 17
+    },
+    {
+      "value": "data_privacy",
+      "label": "data_privacy",
+      "count": 16
+    },
+    {
+      "value": "privacy-conscious",
+      "label": "privacy-conscious",
+      "count": 16
+    },
+    {
+      "value": "privacy by design",
+      "label": "privacy by design",
+      "count": 16
+    },
+    {
+      "value": "AI assistant",
+      "label": "AI assistant",
+      "count": 16
+    },
+    {
+      "value": "data-security",
+      "label": "data-security",
+      "count": 16
+    },
+    {
+      "value": "generic",
+      "label": "generic",
+      "count": 15
+    },
+    {
+      "value": "audit trail",
+      "label": "audit trail",
+      "count": 15
+    },
+    {
+      "value": "ai-assistant",
+      "label": "ai-assistant",
+      "count": 15
+    },
+    {
+      "value": "no-content",
+      "label": "no-content",
+      "count": 15
+    },
+    {
+      "value": "intake",
+      "label": "intake",
+      "count": 14
+    },
+    {
+      "value": "crm-integration",
+      "label": "crm-integration",
+      "count": 14
+    },
+    {
+      "value": "audit-trail",
+      "label": "audit-trail",
+      "count": 14
     }
-  }
+  ]
 }

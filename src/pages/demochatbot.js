@@ -473,6 +473,7 @@ export const getServerSideProps = async (context) => {
         sortBy: query[queryKeys.sortBy],
         sortOrder: query[queryKeys.sortOrder],
         category: query[queryKeys.category],
+        tags: query[queryKeys.tags],
     });
 
     return {

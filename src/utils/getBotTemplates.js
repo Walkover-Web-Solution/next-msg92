@@ -13,6 +13,7 @@ export default async function getBotTemplates({
     sortOrder = defaults.sortOrder,
     type = defaults.type,
     category = defaults.category,
+    tags = defaults.tags,
 } = {}) {
     const filters = {
         search,
@@ -21,6 +22,7 @@ export default async function getBotTemplates({
         sortOrder,
         limit: String(limit),
         category,
+        tags,
     };
 
     const params = {
@@ -34,8 +36,16 @@ export default async function getBotTemplates({
     if (search) {
         params.search = search;
     }
+
+    const filterObject = {};
     if (category) {
-        params.filter = JSON.stringify({ [apiConfig.filterCategoryKey]: category });
+        filterObject[apiConfig.filterCategoryKey] = category;
+    }
+    if (tags) {
+        filterObject[apiConfig.filterTagsKey] = tags;
+    }
+    if (Object.keys(filterObject).length > 0) {
+        params.filter = JSON.stringify(filterObject);
     }
 
     const response = await axios.get(`${process.env.HELLO_API_URL}/public/bot/template/`, {
