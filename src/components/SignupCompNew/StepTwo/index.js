@@ -1,6 +1,6 @@
 import getServices from '@/utils/getServices';
 import Image from 'next/image';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { setDetails, useSignup, finalRegistration } from '../SignupUtils';
 import { useCountrySelector } from '../hooks/useCountrySelector';
 import { useGstLookup } from '../hooks/useGstLookup';
@@ -12,6 +12,7 @@ import WelcomeDetailsForm from './WelcomeDetailsForm';
 
 export default function StepTwo({ data }) {
     const { state, dispatch } = useSignup();
+    const finalRegisterSubmitRef = useRef(false);
     const sourceData = data?.source_options;
     const optionKeys = sourceData?.map((opt) => opt?.value);
     const storedSource = state?.source;
@@ -217,6 +218,11 @@ export default function StepTwo({ data }) {
     }
 
     const handleFinalRegistration = () => {
+        if (finalRegisterSubmitRef.current || state.finalRegisterLocked || state.isLoading) {
+            return;
+        }
+        finalRegisterSubmitRef.current = true;
+
         if (fullName?.trim()) {
             setDetails('userDetails', dispatch, fullName.trim());
         }
@@ -237,6 +243,8 @@ export default function StepTwo({ data }) {
             },
         });
     };
+
+    const isSubmitLocked = state.isLoading || state.finalRegisterLocked;
 
     const isFormValid = () => {
         const hasService = selectedServices.length > 0;
@@ -304,20 +312,22 @@ export default function StepTwo({ data }) {
                 <button
                     className='btn btn-primary btn-outline btn-md'
                     onClick={() => dispatch({ type: 'SET_ACTIVE_STEP', payload: 1 })}
-                    disabled={state.isLoading}
+                    disabled={isSubmitLocked}
                 >
                     Back
                 </button>
                 <button
                     className='btn btn-accent btn-md'
                     onClick={handleFinalRegistration}
-                    disabled={!canProceed || state.isLoading}
+                    disabled={!canProceed || isSubmitLocked}
                 >
                     {state.isLoading ? (
                         <>
                             <span className='loading loading-spinner loading-sm'></span>
                             Processing...
                         </>
+                    ) : state.finalRegisterLocked ? (
+                        'Submitted'
                     ) : (
                         'Next'
                     )}
