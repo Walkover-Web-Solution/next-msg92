@@ -298,10 +298,6 @@ function extractFinalRegisterSessionId(apiBody) {
 }
 
 export function finalRegistration(dispatch, state) {
-    if (state?.finalRegisterLocked) {
-        return;
-    }
-
     const url = appendUseV2SignupQuery(process.env.API_BASE_URL + '/api/v5/nexus/finalRegister');
     const session = state?.session || getCookie('sessionId');
     const payload = {
@@ -314,7 +310,7 @@ export function finalRegistration(dispatch, state) {
         useV2signup: 'true',
     };
 
-    dispatch({ type: 'LOCK_FINAL_REGISTER' });
+    // Set loading state
     dispatch({ type: 'SET_LOADING', payload: true });
     dispatch({ type: 'CLEAR_ERROR' });
 
