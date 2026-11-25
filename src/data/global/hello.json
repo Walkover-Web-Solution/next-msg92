@@ -50,7 +50,7 @@
         "features": [
         {
         "name": "Omnichannel Inbox – Every Customer Conversation, One Shared Workspace",
-        "content": "Customers may contact your company through website chat, email, Facebook Messenger, Instagram, X/Twittercustomer support software or other connected messaging channels. MSG91 Hello brings these conversations together in a shared inbox, allowing agents to manage customer inquiries without switching between applications. Teams can review conversation histories, assign tickets and collaborate using internal notes. Multiple authorized agents can also handle a connected WhatsApp support inbox. For companies with multiple brands or business accounts, One Inbox provides access to different authorized workspaces from one place. With two-way RCS messaging, customers can reply directly to business messages, while an AI chatbot handles routine questions and transfers more complicated requests to your support team.",
+        "content": "Customers may contact your company through website chat, email, Facebook Messenger, Instagram, X/Twitter, customer support software or other connected messaging channels. MSG91 Hello brings these conversations together in a shared inbox, allowing agents to manage customer inquiries without switching between applications. Teams can review conversation histories, assign tickets and collaborate using internal notes. Multiple authorized agents can also handle a connected WhatsApp support inbox. For companies with multiple brands or business accounts, One Inbox provides access to different authorized workspaces from one place. With two-way RCS messaging, customers can reply directly to business messages, while an AI chatbot handles routine questions and transfers more complicated requests to your support team.",
         "more_content": {
         "usecases": [
         {
@@ -702,8 +702,8 @@
 }
     },
     "WhatsAppWhyChoose": {
-    "heading": "A Customer Support Software for US Businesses",
-    "description": "Your Business Needs More Than Another Inbox or Chatbot. Customer service becomes difficult when conversations, ticket updates and team responsibilities live in separate tools. MSG91 Hello helps bring support operations together, connecting AI assistance, communication channels and ticket management in one system.",
+    "heading": "A Customer Support Software for US Businesses That Need More Than an Inbox",
+    "description": "Customer service becomes difficult when conversations, ticket updates and team responsibilities live in separate tools. MSG91 Hello helps bring support operations together, connecting AI assistance, communication channels and ticket management in one system.",
     "reasons": [
         {
         "title": "Unlimited Agents. No Per-Agent License Fees.",
@@ -785,15 +785,15 @@
     },
     "FooterCtaAfterBenefits": {
     "bg": true,
-    "heading": "Give Every Customer a Better Way to Reach Your Team.",
-    "description": "Bring conversations, AI automation and customer support together with MSG91 Hello.",
+    "heading": "Every Customer Problem Deserves a Clear Next Step.",
+    "description": "Connect your support channels, AI automation and service teams with MSG91 Hello.",
     "primaryLabel": "Get Started",
     "primaryHref": "https://msg91.com/signup"
     },
     "RoiStats": {
     "label": "PERFORMANCE METRICS",
-    "heading": "Better Customer Service Starts with Better Efficiency.",
-    "subheading": "Reduce repetitive enquiries, improve response times and simplify daily support operations. MSG91 Hello brings AI automation, ticket management and customer conversations together to help Spanish businesses deliver more efficient service.",
+    "heading": "Make Customer Support Faster, Smarter, and More Efficient.",
+    "subheading": "Help your US support team resolve more customer inquiries without increasing manual workload. MSG91 Hello combines AI-powered automation, intelligent ticket routing, and omnichannel support to improve response times and team productivity.",
     "stats": [
         {
         "value": "65%",
@@ -812,77 +812,77 @@
         },
         {
         "value": "2X",
-        "label": "Faster customer query resolution",
+        "label": "Faster customer inquiry resolution",
         "accent": "amber"
         }
     ]
     },
     "Security": {
     "label": "ENTERPRISE SECURITY",
-    "heading": "Protect Customer Information with Confidence",
-    "description": "MSG91 Hello supports secure customer communication with information security standards, independent audits and ongoing security assessments, helping businesses manage customer data responsibly.",
+    "heading": "Enterprise-Grade Security for Every Customer Conversation.",
+    "description": "MSG91 Hello helps businesses safeguard customer information through international security standards, independent audits, and regular security assessments.",
     "items": [
         {
         "icon": "lock",
         "title": "ISO 27001 Certified",
-        "description": "International standard for information security management, risk assessment and access controls."
+        "description": "International standard supporting information security management, access controls, and risk management."
         },
         {
         "icon": "shield",
         "title": "SOC 2 Type II Audited",
-        "description": "Independent audit assessing the effectiveness of security controls over a defined period."
+        "description": "Independent audit assessing security controls and their effectiveness over a defined period."
         },
         {
         "icon": "vapt",
         "title": "VAPT Assessed",
-        "description": "Vulnerability assessments and penetration tests help detect and address potential security weaknesses."
+        "description": "Vulnerability assessments and penetration testing help detect potential risks and strengthen system protection."
         }
     ]
     },
     "FileHostingFormatsComp": {
     "tagline": "INDUSTRIES WE SERVE",
-    "heading": "One Support Platform. Different Business Needs Across Spain.",
-    "subheading": "From online retail and hospitality to healthcare, financial services and logistics, organisations face different customer service challenges. MSG91 Hello provides customer support software in Spain that helps businesses organise enquiries, automate suitable interactions and connect customers with the right support teams.",
+    "heading": "Customer Support Software for the Way US Businesses Operate",
+    "subheading": "Every industry has different service requirements. A healthcare practice must organize administrative inquiries, while a retailer manages order problems and a software company supports technical users. MSG91 Hello provides customer support software in the USA that helps businesses connect support channels, automate suitable requests and keep customer issues organized.",
     "steps": [
         {
         "number": "01",
-        "title": "E-commerce & Fashion Retail",
-        "description": "Manage questions about product availability, sizes, deliveries, exchanges and returns across connected communication channels. During seasonal sales, chatbots can answer routine policy questions while agents investigate missing parcels, damaged products and refund requests."
+        "title": "E-commerce & Online Retail",
+        "description": "Help customers after checkout and throughout the order journey. Manage questions about product use, order status, delivery problems, exchanges and returns. Online retailers can automate routine assistance while employees handle damaged items, incorrect deliveries and requests requiring investigation."
         },
         {
         "number": "02",
-        "title": "Travel, Tourism & Hospitality",
-        "description": "Organise reservation questions, arrival instructions, package details, booking modifications and guest assistance. A hotel or tour operator can automate general service information while its reservations team manages individual changes and special requests."
+        "title": "Healthcare & Private Practices",
+        "description": "Keep administrative patient inquiries more organized. Manage non-clinical questions about appointments, locations, office hours, general preparation instructions and administrative billing. Requests can be directed to appropriate staff, with access permissions configured for sensitive information. Clinical guidance and decisions remain with qualified professionals."
         },
         {
         "number": "03",
-        "title": "Healthcare & Private Clinics",
-        "description": "Support questions about appointments, consultation schedules, routine preparation instructions and billing. A clinic can direct scheduling requests to reception while authorised administrative employees handle payment-related questions."
+        "title": "Education & Professional Training",
+        "description": "Give learners answers without making admissions teams handle every basic question. Support inquiries about programs, course schedules, eligibility requirements, registration documents and student administration. AI chatbots can answer suitable questions while staff assist with individual enrollment or account issues."
         },
         {
         "number": "04",
-        "title": "Education & Training",
-        "description": "Manage course enquiries, admission documents, class schedules and student-service requests. A training centre can use a chatbot for general course information while admissions advisers manage individual programme selection and enrolment concerns."
+        "title": "Financial & Insurance Services",
+        "description": "Give service inquiries a clearer process for follow-up. Organize general documentation questions, account-administration inquiries, service appointments and support tickets. Connected systems can provide authorized information for assistance, while sensitive financial decisions and account-specific matters remain with appropriate representatives."
         },
         {
         "number": "05",
-        "title": "Banking, Fintech & Insurance",
-        "description": "Handle general questions about documentation, service procedures, payment-status enquiries and claim-related processes. With authorised integrations, available transaction information can be retrieved from connected systems while sensitive decisions remain with appropriate specialists."
+        "title": "Real Estate & Property Management",
+        "description": "Keep resident and property-service requests connected. Manage rental inquiries, property viewing requests, maintenance complaints and resident administration. Property managers can assign repair tickets to responsible employees while leasing teams handle questions from prospective tenants."
         },
         {
         "number": "06",
-        "title": "Real Estate & Property Management",
-        "description": "Manage property viewings, rental questions, maintenance requests and resident complaints. Property companies can assign leasing enquiries to commercial teams while maintenance employees track reported faults and repairs."
+        "title": "SaaS & Technology",
+        "description": "Connect AI assistance with hands-on technical troubleshooting. Bring together website chat, automated answers, ticketing and screen sharing. When a customer encounters a software configuration issue, support agents can review the available context and provide guided assistance."
         },
         {
         "number": "07",
-        "title": "SaaS & Technology",
-        "description": "Connect website chat, AI assistance, support tickets and visual troubleshooting. A software company can use screen sharing to guide a customer through configuration problems and retain the relevant details in the support ticket."
+        "title": "Travel & Hospitality",
+        "description": "Support guests when reservations or arrangements change. Manage accommodation questions, booking changes, check-in information and guest requests. Hotels and travel operators can automate general information while employees handle individual reservation concerns and exceptions."
         },
         {
         "number": "08",
-        "title": "Manufacturing, Logistics & Distribution",
-        "description": "Organise purchase-order questions, spare-parts requests, cargo updates and delivery complaints. With an appropriate system integration, agents and chatbots can retrieve available order or shipment information while unresolved problems remain assigned to the responsible team."
+        "title": "Logistics, Distribution & Field Services",
+        "description": "Make order tracking and service coordination easier. Organize delivery questions, damaged-goods complaints, service appointments and shipment-related support. With configured integrations, the team can retrieve available status information while unresolved issues remain assigned to appropriate employees."
         }
     ]
     },
@@ -892,7 +892,7 @@
         "description": "Your first customers deserve great support, even before you have a dedicated customer service department. MSG91 Hello for Startups gives eligible US businesses complimentary access to AI-powered customer support software. Bring email, website live chat and connected messaging channels into one workspace, automate common questions and manage every support ticket as your business grows.",
         "benefits_heading": "What your startup gets:",
         "benefits": [
-            "1,000 monthly support tickets",
+            "1,000 support tickets every month",
             "50 customer support agents",
             "2 communication inboxes",
             "AI chatbot access under the fair-use policy"
@@ -905,40 +905,41 @@
     },
     "WhatsAppGetStarted": {
     "kicker": "HOW MSG91 HELLO WORKS",
-    "heading": "Get Started with Hello in Four Simple Steps",
+    "heading": "Start Supporting Customers in Four Simple Steps",
     "steps": [
         {
         "number": "1",
         "icon": "MdLink",
         "title": "Connect Your Communication Channels",
-        "description": "Create inboxes and connect WhatsApp, email, website chat, social messaging and available calling services."
+        "description": "Create support inboxes and connect website chat, email, social messaging and other supported communication services."
         },
         {
         "number": "2",
         "icon": "MdSettings",
-        "title": "Set Up Teams, Chatbots and Workflows",
-        "description": "Add agents, assign permissions and create chatbots combining rule-based steps, agentic AI and API actions."
+        "title": "Configure Teams, Chatbots and Workflows",
+        "description": "Add agents, assign roles and permissions, build chatbot journeys and configure appropriate routing rules."
         },
         {
         "number": "3",
         "icon": "MdChatBubbleOutline",
         "title": "Manage Customer Conversations",
-        "description": "Receive enquiries, assign tickets and respond through connected channels. Customers can also continue suitable WhatsApp conversations through MSG91 Chat Window."
+        "description": "Receive inquiries, assign tickets, review customer context and respond through your connected support channels."
         },
         {
         "number": "4",
         "icon": "MdAnalytics",
-        "title": "Review Performance and Improve Support",
-        "description": "Use analytics, ticket reports and available feedback to understand recurring issues and improve customer service operations."
+        "title": "Track Activity and Improve Service",
+        "description": "Use ticket reports, channel analytics and available customer feedback to identify recurring problems and improve workload planning."
         }
     ],
     "practice": {
         "heading": "How It Works in Practice",
         "paragraphs": [
-        "A property maintenance company in Spain connects WhatsApp, email and website chat to MSG91 Hello.",
-        "It creates separate support teams for heating systems, plumbing, electrical problems and administrative enquiries. A chatbot collects the property reference, issue category and customer contact information before the workflow assigns the ticket to the relevant department.",
-        "If a tenant reports an unresolved heating problem, the maintenance team can review the ticket, record follow-up actions and coordinate a technician visit.",
-        "As the company manages more properties, managers use ticket and workload reports to identify recurring service requests and organise additional support resources."
+        "A residential property management company in the United States connects email, website chat and supported messaging channels to MSG91 Hello.",
+        "The company creates teams responsible for leasing questions, property maintenance and billing support.",
+        "When a tenant reports a plumbing issue, a chatbot collects the property reference, problem category and contact information. The configured workflow assigns the request to the maintenance team.",
+        "The assigned agent reviews the ticket and arranges the next step with the appropriate employee or contractor. If the repair requires a follow-up visit, the ticket remains available for tracking.",
+        "As the company expands to more properties, its support manager uses the analytics dashboard to understand recurring maintenance questions and organize service resources."
         ]
     },
     "cta": {
@@ -975,8 +976,8 @@
             "alt": "G2 Best Support — Transactional Email"
         }
         ],
-        "heading": "Appreciated by Customers. Recognised by Experts.",
-        "description": "MSG91's recognition on G2 highlights customer feedback across implementation, product performance, relationships and support, giving Spanish businesses greater confidence when evaluating customer support software."
+        "heading": "Customer-Approved. Recognized for Excellence.",
+        "description": "MSG91's G2 recognition highlights customer feedback across product performance, implementation, relationships, and support, helping US businesses evaluate customer support software with greater confidence."
     }
     },
     "FaqsComp": {
