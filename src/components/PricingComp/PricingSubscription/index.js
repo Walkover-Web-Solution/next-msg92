@@ -107,6 +107,7 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                         selection={selectedServiceName}
                         pageData={pageData?.dialPlan}
                         currency={currency}
+                        locale={locale}
                         country={pageInfo?.country}
                     />
                 </div>

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState, useRef, useCallback } from 'react';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import normalizeDialPlanInfo from '@/utils/pricing/normalizeDialPlanInfo';
+import { formatUnitPrice } from '@/utils/pricing/formatPrice';
 import GetCountryDetails from '@/utils/getCurrentCountry';
 import { DEBOUNCE_DELAY, DIAL_PLAN_PER_PAGE, EMPTY_ARRAY } from '../constants';
 
@@ -58,7 +59,7 @@ async function fetchDialPlanData({ serviceId, dialPlanId, currency, offset, sear
     return json;
 }
 
-function formatCellValue(col, row, currency) {
+function formatCellValue(col, row, currency, locale) {
     if (col.key === 'country_name' && (row['prefix'] || row['country_prefix'])) {
         return `${row[col.key] ?? '-'} (${row['prefix'] ?? row['country_prefix']})`;
     }
@@ -68,13 +69,33 @@ function formatCellValue(col, row, currency) {
     const num = Number(val);
 
     if (!Number.isNaN(num) && currency && !col.key.toLowerCase().includes('id')) {
-        return `${val} ${currency}`;
+        return formatUnitPrice(num, currency, locale);
     }
     return val;
 }
 
-function getVisibleColumns(columns) {
-    const filteredColumns = columns.filter((col) => col.key !== 'prefix' && col.key !== 'country_prefix');
+function getDialPlanRatesHeading(pageData, serviceName) {
+    const service = serviceName?.trim().toUpperCase();
+    if (service === 'BOT') {
+        return pageData?.botRatesHeading ?? 'BOT Rates';
+    }
+    return pageData?.dialplanRatesHeading ?? 'Dialplan Rates';
+}
+
+function columnHasDisplayValues(columnKey, rows) {
+    return rows.some((row) => {
+        const val = row[columnKey];
+        if (val == null || val === '' || val === '-') return false;
+        return !(typeof val === 'number' && Number.isNaN(val));
+    });
+}
+
+function getVisibleColumns(columns, rows = []) {
+    const filteredColumns = columns.filter((col) => {
+        if (col.key === 'prefix' || col.key === 'country_prefix') return false;
+        if (col.key === 'rates' && !columnHasDisplayValues(col.key, rows)) return false;
+        return true;
+    });
     const countryColumn = filteredColumns.find((col) => col.key === 'country_name');
 
     if (countryColumn) {
@@ -92,13 +113,14 @@ function DialPlanTable({
     onSearchChange,
     searchPlaceholder,
     currency,
+    locale,
     pagination,
     offset,
     onOffsetChange,
     loading,
     loaded,
 }) {
-    const visibleColumns = useMemo(() => getVisibleColumns(columns), [columns]);
+    const visibleColumns = useMemo(() => getVisibleColumns(columns, data), [columns, data]);
     const tableRef = useRef(null);
     const [hasOverflow, setHasOverflow] = useState(false);
     const { total_pages: totalPages } = pagination ?? {};
@@ -188,7 +210,7 @@ function DialPlanTable({
                                                             : ''
                                                     }`}
                                                 >
-                                                    {formatCellValue(col, row, currency)}
+                                                    {formatCellValue(col, row, currency, locale)}
                                                 </td>
                                             ))}
                                         </tr>
@@ -242,7 +264,7 @@ function DialPlanTable({
     );
 }
 
-export default function DialPlan({ pricingData, selection, pageData, currency, country }) {
+export default function DialPlan({ pricingData, selection, pageData, currency, locale = 'en-IN', country }) {
     const [search, setSearch] = useState('');
     const [searchQuery, setSearchQuery] = useState('');
     const [offset, setOffset] = useState(0);
@@ -338,7 +360,9 @@ export default function DialPlan({ pricingData, selection, pageData, currency, c
     return (
         <section className='w-full py-4 flex flex-col gap-4'>
             <div>
-                <h3 className='text-2xl font-semibold text-slate-900'>{pageData?.dialplanRatesHeading}</h3>
+                <h3 className='text-2xl font-semibold text-slate-900'>
+                    {getDialPlanRatesHeading(pageData, activePlan?.serviceName)}
+                </h3>
                 {activePlan?.serviceName && (
                     <p className='text-sm text-slate-500 mt-1'>
                         {pageData?.showingRatesFor}{' '}
@@ -356,6 +380,7 @@ export default function DialPlan({ pricingData, selection, pageData, currency, c
                 onSearchChange={handleSearchChange}
                 searchPlaceholder={pageData?.searchPlaceholder}
                 currency={currency}
+                locale={locale}
                 pagination={pagination}
                 offset={offset}
                 onOffsetChange={handleOffsetChange}
