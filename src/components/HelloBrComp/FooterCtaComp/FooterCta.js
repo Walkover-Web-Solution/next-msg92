@@ -5,7 +5,7 @@ export default function FooterCta({ data, pageInfo }) {
     if (!data?.heading) return null;
 
     const isRcs = pageInfo?.page === 'rcs';
-    const isHello = pageInfo?.page === 'hello';
+    const isHello = pageInfo?.page === 'hello' && !['br', 'br-pt'].includes(pageInfo?.country?.toLowerCase());
     const isLight = Boolean(data?.bg);
     const primaryBtnClass = isHello
         ? 'bg-yellow-500 hover:bg-yellow-600'
