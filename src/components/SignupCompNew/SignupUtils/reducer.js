@@ -73,9 +73,6 @@ export function reducer(state, action) {
             };
         }
 
-        case 'LOCK_FINAL_REGISTER':
-            return { ...state, finalRegisterLocked: true };
-
         case 'SET_OTP_ERROR':
             return { ...state, isLoading: false, loadingType: null, error: 'Failed to send OTP' };
 

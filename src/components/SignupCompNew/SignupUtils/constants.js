@@ -21,7 +21,6 @@ export const initialState = {
     allowedRetry: null,
     isLoading: false,
     loadingType: null, // 'send' | 'verify' | null
-    finalRegisterLocked: false,
     source: null,
     session: null,
     error: null,
