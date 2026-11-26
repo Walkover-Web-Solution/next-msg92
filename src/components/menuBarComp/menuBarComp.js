@@ -205,6 +205,7 @@ export default function MenuBarComp({ componentData, notificationData, pageInfo 
                                     <a
                                         href='https://docs.msg91.com/overview'
                                         target='_blank'
+                                        rel='noopener noreferrer'
                                         onClick={() => {
                                             setNav('hide');
                                             setType('products');
@@ -292,8 +293,8 @@ export default function MenuBarComp({ componentData, notificationData, pageInfo 
                                     </div>
                                 )}
                                 {type === 'integrations' && (
-                                    <div className='py-6 min-w-[640px] pb-8'>
-                                        <div className=' flex flex-col gap-2 h-fit w-[300px]'>
+                                    <div className='py-6 w-full max-w-full min-w-0 pb-8'>
+                                        <div className='flex flex-col gap-2 h-fit w-full max-w-[300px]'>
                                             {componentData?.integrations_list?.content?.length > 0 &&
                                                 componentData?.integrations_list?.content.map((integration, index) => {
                                                     return (
@@ -395,6 +396,7 @@ export default function MenuBarComp({ componentData, notificationData, pageInfo 
                                 onMouseEnter={closeMenu}
                                 href='https://docs.msg91.com/overview'
                                 target='_blank'
+                                rel='noopener noreferrer'
                                 className='text-link'
                             >
                                 {componentData?.apidocs}
