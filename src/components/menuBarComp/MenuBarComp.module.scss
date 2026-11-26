@@ -1,27 +1,26 @@
 .overlay {
     background: rgba(0, 0, 0, 0.2);
     @apply fixed hidden lg:flex left-0 z-[996] w-dvw pointer-events-auto;
-    top: var(--summit-banner-height, 0px);
-    height: calc(100dvh - var(--summit-banner-height, 0px));
+    top: var(--menubar-mega-top, var(--summit-banner-height, 0px));
+    height: calc(100dvh - var(--menubar-mega-top, var(--summit-banner-height, 0px)));
 }
 
 .background {
     @apply fixed hidden lg:flex bg-white lg:w-3/5 xl:w-1/2 w-3/4 z-[998];
-    top: var(--summit-banner-height, 0px);
-    height: calc(100dvh - var(--summit-banner-height, 0px));
+    top: var(--menubar-mega-top, var(--summit-banner-height, 0px));
+    height: calc(100dvh - var(--menubar-mega-top, var(--summit-banner-height, 0px)));
     transition: all 0.2s;
 }
 
 .cont {
     @apply fixed hidden lg:flex z-[999] w-dvw items-center justify-center overflow-hidden pointer-events-none;
-    top: var(--summit-banner-height, 0px);
-    height: calc(100dvh - var(--summit-banner-height, 0px));
+    top: var(--menubar-mega-top, var(--summit-banner-height, 0px));
+    height: calc(100dvh - var(--menubar-mega-top, var(--summit-banner-height, 0px)));
     transition: all 0.2s;
 }
 
-// Clears fixed header (notification + nav row); does not scroll with menu content
 .menuHeaderSpacer {
-    @apply shrink-0 h-32;
+    @apply shrink-0 h-0;
 }
 
 .menuPanel {
@@ -34,7 +33,9 @@
 }
 
 .minicont {
-    @apply fixed lg:hidden bg-white flex flex-col top-0 z-[999] h-dvh w-dvw overflow-hidden;
+    @apply fixed lg:hidden bg-white flex flex-col z-[998] w-dvw overflow-hidden;
+    top: var(--menubar-mega-top, var(--summit-banner-height, 0px));
+    height: calc(100dvh - var(--menubar-mega-top, var(--summit-banner-height, 0px)));
     transition: all 0.2s;
 }
 

@@ -158,7 +158,7 @@ Most pages render through `src/pages/[[...slug]].js`. Each top-level key in the 
     - **< md:** single column. `.container` gutter is `px-4`. Banner and pre-footer stack vertically, and CTA rows go `flex-col`.
     - **md–lg:** `.container` gutter becomes `px-10`. Desktop nav appears at `md` (`MenuBarComp`: `hidden md:flex` desktop bar, `flex md:hidden` mobile bar).
     - **≥ lg:** two-column banner (`lg:flex-row`, text `lg:w-1/2`, the image can go `lg:absolute` and bleed off the right edge). Feature grid cards switch from stacked to side-by-side. The pre-footer image appears only at `lg`.
-- **Mobile nav:** a full-height drawer slid in and out with the global `.nav-show` (`left-0`) and `.nav-hide` (`left-[-2600px]`) classes. Opening it sets `document.body.style.overflow = 'hidden'`.
+- **Mobile nav:** a full-height drawer slid in and out with the global `.nav-show` (`left-0`) and `.nav-hide` (`left-[-2600px]`) classes. Opening it sets `document.body.style.overflow = 'hidden'`. The drawer starts below the measured header chrome (`--menubar-mega-top`). Desktop **Products** and **Integrations** are `<button>` triggers with `aria-expanded` / `aria-controls`; Escape closes the mega menu; closed panels use `inert` so off-screen links are not tabbable.
 - **Overflow:** `body` and `#__next` have `overflow-x: hidden`. This hides horizontal-overflow bugs instead of fixing them, so test new wide elements at 375px.
 - The viewport meta (`width=device-width, initial-scale=1, maximum-scale=5`) is set in `HeadComp`. Pages that don't render `HeadComp` (guide, 404) set their own.
 

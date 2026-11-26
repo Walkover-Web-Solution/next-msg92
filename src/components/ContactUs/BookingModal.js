@@ -1,5 +1,32 @@
+import { useEffect, useState } from 'react';
+import BookingChatLoadingOverlay, { BOOKING_CHAT_READY_MESSAGE } from './BookingChatLoadingOverlay';
+
 export default function BookingModal({ isOpen, onClose, widgetToken }) {
+    const [isWidgetLoading, setIsWidgetLoading] = useState(true);
+
+    useEffect(() => {
+        if (!isOpen) return undefined;
+
+        setIsWidgetLoading(true);
+
+        const handleReadyMessage = (event) => {
+            if (event.origin !== window.location.origin) return;
+            if (event.data?.type !== BOOKING_CHAT_READY_MESSAGE) return;
+            setIsWidgetLoading(false);
+        };
+
+        window.addEventListener('message', handleReadyMessage);
+
+        return () => {
+            window.removeEventListener('message', handleReadyMessage);
+        };
+    }, [isOpen]);
+
     if (!isOpen) return null;
+
+    const iframeSrc = widgetToken
+        ? `/booking-chat-widget?widgetToken=${encodeURIComponent(widgetToken)}`
+        : '/booking-chat-widget';
 
     return (
         <dialog className='modal z-[1001]' open>
@@ -11,14 +38,11 @@ export default function BookingModal({ isOpen, onClose, widgetToken }) {
                 >
                     ✕
                 </button>
-                <div id='contactChatWidget' className='w-full h-[680px]'>
+                <div id='contactChatWidget' className='relative w-full h-[680px]'>
+                    {isWidgetLoading ? <BookingChatLoadingOverlay /> : null}
                     <iframe
                         title='MSG91 booking assistant'
-                        src={
-                            widgetToken
-                                ? `/booking-chat-widget?widgetToken=${encodeURIComponent(widgetToken)}`
-                                : '/booking-chat-widget'
-                        }
+                        src={iframeSrc}
                         allow='microphone'
                         className='w-full h-full border-0'
                     />

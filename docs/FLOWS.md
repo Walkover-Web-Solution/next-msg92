@@ -357,7 +357,7 @@ sequenceDiagram
 | Summit widget env vars missing                 | `MobileOtpField`                             | Toast `errors.widget`           | None. Fix the deploy env                |
 | `submit_url` not ok                            | `handleSubmit` `catch`                       | Toast `errors.submit`           | User resubmits; values are kept         |
 | WhatsApp API down or credentials missing       | `send-summit-whatsapp` (500) / `try` in form | None                            | Registration still counts as successful |
-| Chat widget script not loaded                  | `BookingModal` effect guard                  | Empty modal                     | User closes and retries                 |
+| Chat widget script not loaded                  | `BookingModal` + `booking-chat-widget.js`    | Skeleton until ready or timeout | User waits or closes and retries        |
 
 ---
 
