@@ -269,52 +269,31 @@ export default function PricingSMSOTP({ data, type, country, initialData }) {
                     )}
 
                     {noOfSmsArray.length > 0 && (
-                        <div className='w-full overflow-x-auto sr-only'>
-                            <div className='overflow-y-auto rounded-xl border border-slate-200 bg-white'>
-                                <table className='table-fixed min-w-max w-full border-collapse text-sm'>
-                                    <caption className='sr-only'>{`${type?.toUpperCase()} Pricing — ${origin} to ${destination}`}</caption>
-                                    <thead className='sticky top-0 z-30 bg-slate-50'>
-                                        <tr className='border-b border-slate-200'>
-                                            <th className='min-w-[200px] px-4 py-3 text-left text-[11px] font-semibold text-slate-400 uppercase tracking-wider sticky left-0 bg-slate-50 z-40 border-r border-slate-200'>
-                                                Count
-                                            </th>
-                                            <th className='min-w-[150px] px-4 py-3 text-left text-[11px] font-semibold text-slate-400 uppercase tracking-wider border-r border-slate-200'>
-                                                {`Rate per ${type?.toUpperCase()}`}
-                                            </th>
-                                            <th className='min-w-[150px] px-4 py-3 text-left text-[11px] font-semibold text-slate-400 uppercase tracking-wider'>
-                                                Total
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {noOfSmsArray.map((item, index) => {
-                                            const rowBg = index % 2 === 0 ? 'bg-white' : 'bg-slate-50';
-                                            const count = item[pricingEnv]?.totalNoOfSms;
-                                            const rate = item[pricingEnv]?.rate;
-                                            const total =
-                                                count && rate ? (Number(count) * Number(rate)).toFixed(3) : 'N/A';
-                                            return (
-                                                <tr
-                                                    key={index}
-                                                    className={`border-b border-slate-100 last:border-b-0 ${rowBg}`}
-                                                >
-                                                    <td
-                                                        className={`px-4 py-2.5 text-xs font-medium text-slate-700 sticky left-0 ${rowBg} z-20 border-r border-slate-100`}
-                                                    >
-                                                        {contvertToLocal(count)}
-                                                    </td>
-                                                    <td className='px-4 py-2.5 text-xs text-slate-600 border-r border-slate-100'>
-                                                        {rate ? `${symbol}${rate}` : 'N/A'}
-                                                    </td>
-                                                    <td className='px-4 py-2.5 text-xs text-slate-600'>
-                                                        {total !== 'N/A' ? `${symbol}${total}` : 'N/A'}
-                                                    </td>
-                                                </tr>
-                                            );
-                                        })}
-                                    </tbody>
-                                </table>
-                            </div>
+                        <div className='sr-only'>
+                            <table className='w-full border-collapse text-sm'>
+                                <caption>{`${type?.toUpperCase()} Pricing — ${origin} to ${destination}`}</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope='col'>Count</th>
+                                        <th scope='col'>{`Rate per ${type?.toUpperCase()}`}</th>
+                                        <th scope='col'>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {noOfSmsArray.map((item, index) => {
+                                        const count = item[pricingEnv]?.totalNoOfSms;
+                                        const rate = item[pricingEnv]?.rate;
+                                        const total = count && rate ? (Number(count) * Number(rate)).toFixed(3) : 'N/A';
+                                        return (
+                                            <tr key={index}>
+                                                <td>{contvertToLocal(count)}</td>
+                                                <td>{rate ? `${symbol}${rate}` : 'N/A'}</td>
+                                                <td>{total !== 'N/A' ? `${symbol}${total}` : 'N/A'}</td>
+                                            </tr>
+                                        );
+                                    })}
+                                </tbody>
+                            </table>
                         </div>
                     )}
                     <ConnectWithTeam
