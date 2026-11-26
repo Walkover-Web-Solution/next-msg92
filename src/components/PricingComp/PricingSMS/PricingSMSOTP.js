@@ -101,6 +101,16 @@ export default function PricingSMSOTP({ data, type, country, initialData }) {
         if (newDestination) loadPricingData(origin, newDestination);
     };
 
+    const countrySelection = (name) => {
+        const match = countries.find((item) => item.name === name);
+        return match ? [match] : [];
+    };
+
+    const typeaheadInputProps = {
+        autoComplete: 'off',
+        onFocus: (e) => e.target.select(),
+    };
+
     return (
         <>
             <div className='flex flex-col gap-3 w-full'>
@@ -118,12 +128,8 @@ export default function PricingSMSOTP({ data, type, country, initialData }) {
                                     handleOnSelectOrigin(selected);
                                 }}
                                 options={countries}
-                                defaultSelected={[
-                                    countries?.find((item) => item.shortname === currentCountry?.shortname),
-                                ]}
-                                inputProps={{
-                                    autoComplete: 'off',
-                                }}
+                                selected={countrySelection(origin)}
+                                inputProps={typeaheadInputProps}
                             />
                         </div>
                         <span>To</span>
@@ -137,12 +143,8 @@ export default function PricingSMSOTP({ data, type, country, initialData }) {
                                     handleOnSelectDestination(selected);
                                 }}
                                 options={countries}
-                                defaultSelected={[
-                                    countries?.find((item) => item.shortname === currentCountry?.shortname),
-                                ]}
-                                inputProps={{
-                                    autoComplete: 'off',
-                                }}
+                                selected={countrySelection(destination)}
+                                inputProps={typeaheadInputProps}
                             />
                         </div>
                     </div>
@@ -212,7 +214,9 @@ export default function PricingSMSOTP({ data, type, country, initialData }) {
                                 <p className='flex gap-1 text-2xl items-end flex-wrap '>
                                     <span className='text-3xl font-bold'>
                                         {noOfSmsArray[sliderValue] && noOfSmsArray[sliderValue][pricingEnv]
-                                            ? Number(noOfSmsArray[sliderValue][pricingEnv].totalNoOfSms)
+                                            ? contvertToLocal(
+                                                  noOfSmsArray[sliderValue][pricingEnv].totalNoOfSms
+                                              )
                                             : 'N/A'}
                                     </span>
 

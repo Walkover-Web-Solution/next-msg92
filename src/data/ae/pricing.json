@@ -20,7 +20,7 @@
                 "icon": "/assets/icons/products/segmento.svg"
             },
             {
-                "name": "OTP",
+                "name": "OTP Widget",
                 "slug": "otpwidget",
                 "description": "OTP widget SDK",
                 "icon": "/assets/icons/products/otp.svg"
@@ -33,7 +33,7 @@
                 "icon": "/assets/icons/products/sms.svg"
             },
             {
-                "name": "SendOTP",
+                "name": "Send OTP",
                 "slug": "otp",
                 "icon": "/assets/icons/products/otp.svg"
             },
