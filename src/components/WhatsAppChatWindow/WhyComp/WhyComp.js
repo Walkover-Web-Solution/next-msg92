@@ -35,7 +35,15 @@ export default function WhatsAppWhyComp({ pageInfo, data }) {
                         {data?.heading_suffix}
                     </h2>
 
-                    {data?.subheading && <p className='subheading max-w-xl mx-auto'>{data?.subheading}</p>}
+                    {data?.subheading && (
+                        <p
+                            className={`subheading mx-auto ${
+                                pageInfo?.baseURL === 'whatsapp/chatbot' ? '' : 'max-w-xl'
+                            }`}
+                        >
+                            {data?.subheading}
+                        </p>
+                    )}
                 </div>
 
                 <div className='flex flex-col gap-6'>
