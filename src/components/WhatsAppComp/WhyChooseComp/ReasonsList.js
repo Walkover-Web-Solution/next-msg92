@@ -15,7 +15,12 @@ export default function ReasonsList({ data, pageInfo }) {
                 <header className='cont cont_gap'>
                     <h2 className='whatsapp__heading'>{data?.heading}</h2>
                     {data?.tagline && <p className='whatsapp__subheading'>{data?.tagline}</p>}
-                    {data?.description && <p className='text-base md:text-lg text-gray-600'>{data?.description}</p>}
+                    {data?.description && (
+                        <p
+                            className='text-base md:text-lg text-gray-600'
+                            dangerouslySetInnerHTML={{ __html: data?.description }}
+                        />
+                    )}
                 </header>
 
                 <ul
@@ -39,7 +44,7 @@ export default function ReasonsList({ data, pageInfo }) {
                             )}
                             {reason?.description && (
                                 <p className='text-base leading-relaxed text-gray-600'>
-                                    {reason.description}{' '}
+                                    <span dangerouslySetInnerHTML={{ __html: reason.description }} />{' '}
                                     {reason?.link?.url && (
                                         <a href={reason.link.url} target='_blank' className='active-link text-link'>
                                             {reason.link.name}

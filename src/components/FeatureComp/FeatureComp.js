@@ -167,9 +167,10 @@ export default function FeatureComp({ data, pageInfo }) {
                     <h2 className={`text-3xl font-bold ${isRcs ? 'text-center' : ''}`}>{data.heading}</h2>
                 )}
                 {data?.subheading && (
-                    <p className={`text-lg text-gray-600 max-w-3xl ${isRcs ? 'text-center mx-auto' : ''}`}>
-                        {data.subheading}
-                    </p>
+                    <p
+                        className={`text-lg text-gray-600 max-w-3xl ${isRcs ? 'text-center mx-auto' : ''}`}
+                        dangerouslySetInnerHTML={{ __html: data.subheading }}
+                    />
                 )}
                 {isWhatsApp && groups.length > 0 ? (
                     groups.map((group, groupIndex) => (

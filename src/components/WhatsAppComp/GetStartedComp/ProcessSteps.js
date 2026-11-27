@@ -33,7 +33,11 @@ export default function ProcessSteps({ data, pageInfo }) {
                 {data?.steps?.length > 0 && (
                     <ul
                         className={`grid grid-cols-1 sm:grid-cols-2 cont_gap ${
-                            data.steps.length === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-4'
+                            data.steps.length === 3
+                                ? 'lg:grid-cols-3'
+                                : data.steps.length === 5
+                                  ? 'lg:grid-cols-5'
+                                  : 'lg:grid-cols-4'
                         }`}
                     >
                         {data?.steps?.map((step, index) => {
