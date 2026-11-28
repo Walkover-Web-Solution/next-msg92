@@ -9,6 +9,20 @@ import {
     sanitizeMsg91QuerySearch,
 } from '@/utils/utilis';
 
+function redirectToPanel(redirectUrl) {
+    try {
+        const backUrl = new URL(window.location.href);
+        const absignup = backUrl.searchParams.get('absignup');
+        backUrl.search = '';
+        if (absignup) backUrl.searchParams.set('absignup', absignup);
+        const cleanPath = backUrl.pathname + backUrl.search;
+        window.history.replaceState(null, '', cleanPath);
+        window.history.pushState(null, '', cleanPath);
+    } catch (_) {}
+    clearStaleSignupSessionCookies();
+    window.location.replace(redirectUrl);
+}
+
 /**
  * Check if user has an active session
  */
@@ -152,7 +166,7 @@ export function validateSignUp(dispatch, state) {
                             redirectUrl += `&${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
                         }
                     });
-                    window.location.href = redirectUrl;
+                    redirectToPanel(redirectUrl);
                     return;
                 }
 
@@ -357,7 +371,7 @@ export function finalRegistration(dispatch, state) {
                     }
                 });
 
-                window.location.href = redirectUrl;
+                redirectToPanel(redirectUrl);
             } else {
                 // Handle non-success response
                 const errorMessage =
