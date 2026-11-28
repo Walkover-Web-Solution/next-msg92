@@ -52,7 +52,7 @@ export default function checkSession() {
             .then((result) => {
                 if (result?.status === 'success') {
                     const baseUrl = process.env.REDIRECT_URL + `/api/nexusRedirection.php?session=${session}`;
-                    window.location.href = appendMsg91QueryToUrl(baseUrl);
+                    redirectToPanel(appendMsg91QueryToUrl(baseUrl));
                 }
             })
             .catch((error) => {});
