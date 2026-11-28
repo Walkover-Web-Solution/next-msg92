@@ -29,7 +29,7 @@ export default function PricingNav({ products, page }) {
             </div>
 
             {/* Desktop: horizontal tabs */}
-            <div className='hidden md:block w-full overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'>
+            <div className='hidden md:block w-full min-w-0 max-w-full overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'>
                 <div className='flex items-center gap-1 min-w-max border-b border-slate-100'>
                     {allProducts.map((product, index) => {
                         const isActive = page === product?.slug;

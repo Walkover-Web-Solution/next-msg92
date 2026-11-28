@@ -2,7 +2,7 @@
     "common": true,
     "notification": {
         "support": "Contact Us",
-        "login": "Login",
+        "login": "LOG IN",
         "hide": [
             "signup",
             "singin"

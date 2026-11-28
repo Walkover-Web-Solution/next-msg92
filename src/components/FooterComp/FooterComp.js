@@ -88,9 +88,16 @@ export default function FooterComp({ componentData, pageInfo }) {
                                     <span className='font-semibold'>{componentData?.resources?.name}</span>
                                     <ul className='flex flex-col gap-2'>
                                         {componentData?.resources?.links.map((link, index) => {
+                                            const isExternal = link?.link?.startsWith('http');
                                             return (
                                                 <li key={index} className='text-link-white'>
-                                                    <a href={link?.link} className='text-gray-200'>
+                                                    <a
+                                                        href={link?.link}
+                                                        className='text-gray-200'
+                                                        {...(isExternal
+                                                            ? { target: '_blank', rel: 'noopener noreferrer' }
+                                                            : {})}
+                                                    >
                                                         {link?.name}
                                                     </a>
                                                 </li>

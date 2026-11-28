@@ -9,6 +9,47 @@ const UNLIMITED_CREDIT_STRING = '-1';
 const INPUT_MIN = 0;
 const INPUT_MAX = 9999999999;
 const DEFAULT_FALLBACK_VALUE = 100;
+const DECIMAL_ROUNDED_MESSAGE = 'Decimal values are rounded to the nearest whole number.';
+const WHOLE_NUMBERS_MESSAGE = 'Enter whole numbers only, or use a decimal point to round (e.g. 1500.75 → 1501).';
+const MAX_FRACTION_DIGITS = 6;
+
+function clampUsageInteger(value) {
+    return Math.min(INPUT_MAX, Math.max(INPUT_MIN, value));
+}
+
+function parseRoundedUsageInput(raw) {
+    if (raw == null || String(raw).trim() === '') {
+        return { value: '', error: '' };
+    }
+    const normalized = String(raw).trim().replace(/,/g, '.');
+    if (!/^-?\d*\.?\d*$/.test(normalized)) {
+        return null;
+    }
+    const numValue = Number(normalized);
+    if (Number.isNaN(numValue)) {
+        return null;
+    }
+    const clamped = clampUsageInteger(Math.round(numValue));
+    const hadDecimal = /[.,]/.test(String(raw)) || !Number.isInteger(numValue);
+    return {
+        value: String(clamped),
+        error: hadDecimal ? DECIMAL_ROUNDED_MESSAGE : '',
+    };
+}
+
+function parseWholeNumberInput(raw) {
+    if (raw === '') {
+        return { value: '', error: '' };
+    }
+    if (!/^\d+$/.test(String(raw))) {
+        return null;
+    }
+    const numValue = Number(raw);
+    if (Number.isNaN(numValue) || numValue < INPUT_MIN || numValue > INPUT_MAX) {
+        return null;
+    }
+    return { value: String(numValue), error: '' };
+}
 
 const SERVICE_DEFAULTS = {
     'Inbox': 5,
@@ -25,19 +66,102 @@ export default function CalculatePricingModal({ plans, currency, tabtype, locale
 
     const [usageByService, setUsageByService] = useState(() => initializeUsageState(visibleServiceNames));
     const [validationError, setValidationError] = useState('');
+    const [decimalEntryByService, setDecimalEntryByService] = useState({});
 
-    const handleUsageChange = useCallback((serviceName, value) => {
-        if (value === '') {
-            setUsageByService((prev) => ({ ...prev, [serviceName]: value }));
-            setValidationError('');
-            return;
-        }
-        const numValue = Number(value);
-        if (!Number.isNaN(numValue) && numValue >= INPUT_MIN && numValue <= INPUT_MAX) {
-            setUsageByService((prev) => ({ ...prev, [serviceName]: value }));
-        }
-        setValidationError('');
+    const clearDecimalEntry = useCallback((serviceName) => {
+        setDecimalEntryByService((prev) => {
+            if (!prev[serviceName]) return prev;
+            const next = { ...prev };
+            delete next[serviceName];
+            return next;
+        });
     }, []);
+
+    const applyUsageValue = useCallback((serviceName, value, error = '') => {
+        setUsageByService((prev) => ({ ...prev, [serviceName]: value }));
+        setValidationError(error);
+    }, []);
+
+    const handleUsageChange = useCallback(
+        (serviceName, value) => {
+            clearDecimalEntry(serviceName);
+            if (value === '') {
+                applyUsageValue(serviceName, value, '');
+                return;
+            }
+            if (/[.,]/.test(value) || /e/i.test(value)) {
+                const rounded = parseRoundedUsageInput(value);
+                if (rounded) {
+                    applyUsageValue(serviceName, rounded.value, rounded.error);
+                }
+                return;
+            }
+            const whole = parseWholeNumberInput(value);
+            if (whole) {
+                applyUsageValue(serviceName, whole.value, '');
+            }
+        },
+        [applyUsageValue, clearDecimalEntry]
+    );
+
+    const handleUsagePaste = useCallback(
+        (serviceName, event) => {
+            const pasted = event.clipboardData?.getData('text') ?? '';
+            if (!/[.,]/.test(pasted)) {
+                return;
+            }
+            event.preventDefault();
+            clearDecimalEntry(serviceName);
+            const rounded = parseRoundedUsageInput(pasted);
+            if (rounded) {
+                applyUsageValue(serviceName, rounded.value, rounded.error);
+            }
+        },
+        [applyUsageValue, clearDecimalEntry]
+    );
+
+    const handleUsageKeyDown = useCallback(
+        (serviceName, event, currentValue) => {
+            const blockedKeys = ['-', 'e', 'E'];
+            const isDecimalKey = event.key === '.' || event.key === ',' || event.key === 'Decimal';
+
+            if (blockedKeys.includes(event.key)) {
+                event.preventDefault();
+                setValidationError(WHOLE_NUMBERS_MESSAGE);
+                return;
+            }
+
+            const pending = decimalEntryByService[serviceName];
+            if (pending && /^\d$/.test(event.key)) {
+                event.preventDefault();
+                const fraction = `${pending.fraction}${event.key}`.slice(0, MAX_FRACTION_DIGITS);
+                const numeric = pending.whole + Number(fraction) / 10 ** fraction.length;
+                const rounded = clampUsageInteger(Math.round(numeric));
+                applyUsageValue(serviceName, String(rounded), DECIMAL_ROUNDED_MESSAGE);
+                if (fraction.length >= 2) {
+                    clearDecimalEntry(serviceName);
+                } else {
+                    setDecimalEntryByService((prev) => ({
+                        ...prev,
+                        [serviceName]: { ...pending, fraction },
+                    }));
+                }
+                return;
+            }
+
+            if (isDecimalKey) {
+                event.preventDefault();
+                const wholeSource = currentValue === '' ? 0 : Number(currentValue);
+                const whole = Number.isNaN(wholeSource) ? 0 : clampUsageInteger(Math.floor(Math.max(0, wholeSource)));
+                setDecimalEntryByService((prev) => ({
+                    ...prev,
+                    [serviceName]: { whole, fraction: '' },
+                }));
+                setValidationError(DECIMAL_ROUNDED_MESSAGE);
+            }
+        },
+        [applyUsageValue, clearDecimalEntry, decimalEntryByService]
+    );
 
     const usageAsNumbers = useMemo(
         () => normalizeUsageToNumbers(visibleServiceNames, usageByService),
@@ -53,9 +177,25 @@ export default function CalculatePricingModal({ plans, currency, tabtype, locale
         }));
     }, [plansForTab, tabtype, usageAsNumbers]);
 
+    const handleUsageBlur = useCallback(
+        (serviceName) => {
+            const pending = decimalEntryByService[serviceName];
+            if (!pending) return;
+            if (pending.fraction) {
+                const numeric = pending.whole + Number(pending.fraction) / 10 ** pending.fraction.length;
+                applyUsageValue(serviceName, String(clampUsageInteger(Math.round(numeric))), DECIMAL_ROUNDED_MESSAGE);
+            } else {
+                applyUsageValue(serviceName, String(pending.whole), '');
+            }
+            clearDecimalEntry(serviceName);
+        },
+        [applyUsageValue, clearDecimalEntry, decimalEntryByService]
+    );
+
     const handleClose = useCallback(() => {
         setUsageByService(initializeUsageState(visibleServiceNames));
         setValidationError('');
+        setDecimalEntryByService({});
         onClose?.();
     }, [visibleServiceNames, onClose]);
 
@@ -87,19 +227,15 @@ export default function CalculatePricingModal({ plans, currency, tabtype, locale
                                     {serviceName}
                                 </span>
                                 <input
-                                    type='number'
-                                    min={INPUT_MIN}
-                                    max={INPUT_MAX}
-                                    step='1'
+                                    type='text'
+                                    inputMode='numeric'
+                                    pattern='[0-9]*'
                                     placeholder={serviceName}
                                     value={inputValue}
                                     onChange={(e) => handleUsageChange(serviceName, e.target.value)}
-                                    onKeyDown={(e) => {
-                                        // Prevent decimal point and minus sign
-                                        if (e.key === '.' || e.key === '-' || e.key === 'e' || e.key === 'E') {
-                                            e.preventDefault();
-                                        }
-                                    }}
+                                    onPaste={(e) => handleUsagePaste(serviceName, e)}
+                                    onKeyDown={(e) => handleUsageKeyDown(serviceName, e, inputValue)}
+                                    onBlur={() => handleUsageBlur(serviceName)}
                                     className={`input input-bordered h-9 text-sm focus:outline-none rounded-lg border-slate-200 focus:border-indigo-400 ${hasError ? 'border-red-400' : ''}`}
                                     aria-invalid={hasError}
                                     aria-label={`Enter usage for ${serviceName}`}

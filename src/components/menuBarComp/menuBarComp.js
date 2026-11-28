@@ -6,14 +6,22 @@ import specialPages from '@/data/specialPages.json';
 import { useRouter } from 'next/router';
 import styles from './MenuBarComp.module.scss';
 import { BtnWithHideIco, LinkText } from '../UIComponent/Buttons/LinkButton';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import getURL from '@/utils/getURL';
 import getPricingURL from '@/utils/pricing/getPricingURL';
+
+const MEGA_MENU_ID = 'msg91-header-mega-menu';
+const MOBILE_MENU_ID = 'msg91-mobile-menu';
 
 export default function MenuBarComp({ componentData, notificationData, pageInfo }) {
     const [nav, setNav] = useState('hide');
     const [type, setType] = useState('products');
     const pricingPath = getPricingURL(pageInfo);
+    const headerChromeRef = useRef(null);
+    const productsTriggerRef = useRef(null);
+    const integrationsTriggerRef = useRef(null);
+    const megaMenuRef = useRef(null);
+    const mobileMenuTriggerRef = useRef(null);
 
     const router = useRouter();
 
@@ -34,6 +42,43 @@ export default function MenuBarComp({ componentData, notificationData, pageInfo 
         }
     };
 
+    const closeMenu = useCallback(() => {
+        setNav('hide');
+        setType('products');
+    }, []);
+
+    const openMenu = useCallback((menuType) => {
+        setNav('show');
+        setType(menuType);
+    }, []);
+
+    const toggleMenu = useCallback(
+        (menuType) => {
+            if (nav === 'show' && type === menuType) {
+                closeMenu();
+            } else {
+                openMenu(menuType);
+            }
+        },
+        [nav, type, closeMenu, openMenu]
+    );
+
+    const updateMenubarMegaTop = useCallback(() => {
+        if (typeof document === 'undefined') return;
+        const summit = parseFloat(
+            getComputedStyle(document.documentElement).getPropertyValue('--summit-banner-height')
+        );
+        const summitPx = Number.isFinite(summit) ? summit : 0;
+        const chromePx = headerChromeRef.current?.offsetHeight ?? 0;
+        document.documentElement.style.setProperty('--menubar-mega-top', `${summitPx + chromePx}px`);
+    }, []);
+
+    useEffect(() => {
+        updateMenubarMegaTop();
+        window.addEventListener('resize', updateMenubarMegaTop);
+        return () => window.removeEventListener('resize', updateMenubarMegaTop);
+    }, [updateMenubarMegaTop, notificationHidden]);
+
     useEffect(() => {
         if (nav === 'show') {
             document.body.style.overflow = 'hidden';
@@ -42,20 +87,55 @@ export default function MenuBarComp({ componentData, notificationData, pageInfo 
         }
     }, [nav]);
 
+    useEffect(() => {
+        if (nav !== 'show') return;
+        const onKeyDown = (e) => {
+            if (e.key !== 'Escape') return;
+            e.preventDefault();
+            closeMenu();
+            if (typeof window !== 'undefined' && window.matchMedia('(min-width: 1024px)').matches) {
+                const triggerRef = type === 'integrations' ? integrationsTriggerRef : productsTriggerRef;
+                triggerRef.current?.focus();
+            } else {
+                mobileMenuTriggerRef.current?.focus();
+            }
+        };
+        document.addEventListener('keydown', onKeyDown);
+        return () => document.removeEventListener('keydown', onKeyDown);
+    }, [nav, type, closeMenu]);
+
     const hidden = componentData?.hide?.includes(pageInfo?.page);
 
     const handleMiniMenu = () => {
         if (nav === 'show') {
-            setNav('hide');
+            closeMenu();
         } else {
-            setNav('show');
+            openMenu('products');
         }
     };
+
+    const handleMegaTriggerKeyDown = (e, menuType) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleMenu(menuType);
+            return;
+        }
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            openMenu(menuType);
+            requestAnimationFrame(() => {
+                const firstLink = megaMenuRef.current?.querySelector('a, button');
+                firstLink?.focus();
+            });
+        }
+    };
+
+    const menuInert = nav === 'hide';
     if (componentData && !hidden) {
         return (
             <>
-                <div className={`${styles.minicont} nav-${nav}`}>
-                    <div className={`${styles.navigationMobile} container pt-28 w-full`}>
+                <div id={MOBILE_MENU_ID} className={`${styles.minicont} nav-${nav}`} inert={menuInert || undefined}>
+                    <div className={`${styles.navigationMobile} container pt-6 w-full`}>
                         <div className={styles.mobileMenuScroll}>
                             <div className='flex flex-col h-fit w-full '>
                                 {componentData?.products_list?.length > 0 &&
@@ -125,6 +205,7 @@ export default function MenuBarComp({ componentData, notificationData, pageInfo 
                                     <a
                                         href='https://docs.msg91.com/overview'
                                         target='_blank'
+                                        rel='noopener noreferrer'
                                         onClick={() => {
                                             setNav('hide');
                                             setType('products');
@@ -147,9 +228,15 @@ export default function MenuBarComp({ componentData, notificationData, pageInfo 
                         </div>
                     </div>
                 </div>
-                <div className={`${styles.cont} nav-${nav}`}>
+                <div className={`${styles.cont} nav-${nav}`} inert={menuInert || undefined}>
                     <div className={`${styles.navigationDesktop} container flex`}>
-                        <div className={styles.menuPanel}>
+                        <div
+                            id={MEGA_MENU_ID}
+                            ref={megaMenuRef}
+                            role='region'
+                            aria-label={type === 'products' ? 'Products menu' : 'Integrations menu'}
+                            className={styles.menuPanel}
+                        >
                             <div className={styles.menuHeaderSpacer} aria-hidden='true' />
                             <div className={styles.menuScroll}>
                                 {type === 'products' && (
@@ -206,8 +293,8 @@ export default function MenuBarComp({ componentData, notificationData, pageInfo 
                                     </div>
                                 )}
                                 {type === 'integrations' && (
-                                    <div className='py-6 min-w-[640px] pb-8'>
-                                        <div className=' flex flex-col gap-2 h-fit w-[300px]'>
+                                    <div className='py-6 w-full max-w-full min-w-0 pb-8'>
+                                        <div className='flex flex-col gap-2 h-fit w-full max-w-[300px]'>
                                             {componentData?.integrations_list?.content?.length > 0 &&
                                                 componentData?.integrations_list?.content.map((integration, index) => {
                                                     return (
@@ -268,69 +355,53 @@ export default function MenuBarComp({ componentData, notificationData, pageInfo 
                     </div>
                 </div>
                 <div className={`${styles.background} nav-${nav}`}></div>
-                {nav === 'show' && (
-                    <div
-                        role='presentation'
-                        onMouseEnter={() => {
-                            setNav('hide');
-                            setType('products');
-                        }}
-                        className={styles.overlay}
-                    ></div>
-                )}
+                {nav === 'show' && <div role='presentation' onMouseEnter={closeMenu} className={styles.overlay}></div>}
 
-                <div className='border-b border-slate-100'>
+                <div ref={headerChromeRef} className='relative z-[1001] border-b border-slate-100 bg-white'>
                     <div className='container hidden lg:grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-4 py-4'>
-                        <ul className='z-[1000] flex items-center gap-4'>
-                            <li
-                                onMouseEnter={() => {
-                                    setNav('show');
-                                    setType('products');
-                                }}
-                                className={`${nav === 'show' && type === 'products' ? 'active-link ' : ''}text-link`}
+                        <nav aria-label='Main' className='z-[1000] flex items-center gap-4'>
+                            <button
+                                type='button'
+                                ref={productsTriggerRef}
+                                onMouseEnter={() => openMenu('products')}
+                                onClick={() => toggleMenu('products')}
+                                onKeyDown={(e) => handleMegaTriggerKeyDown(e, 'products')}
+                                aria-expanded={nav === 'show' && type === 'products'}
+                                aria-controls={MEGA_MENU_ID}
+                                className={`${nav === 'show' && type === 'products' ? 'active-link ' : ''}text-link bg-transparent border-0 p-0 font-inherit cursor-pointer`}
                             >
                                 {componentData?.products}
-                            </li>
+                            </button>
 
-                            <li
-                                onMouseEnter={() => {
-                                    setNav('show');
-                                    setType('integrations');
-                                }}
+                            <button
+                                type='button'
+                                ref={integrationsTriggerRef}
+                                onMouseEnter={() => openMenu('integrations')}
+                                onClick={() => toggleMenu('integrations')}
+                                onKeyDown={(e) => handleMegaTriggerKeyDown(e, 'integrations')}
+                                aria-expanded={nav === 'show' && type === 'integrations'}
+                                aria-controls={MEGA_MENU_ID}
                                 className={`${
                                     nav === 'show' && type === 'integrations' ? 'active-link ' : ''
-                                }text-link`}
+                                }text-link bg-transparent border-0 p-0 font-inherit cursor-pointer`}
                             >
                                 {componentData?.integrations}
-                            </li>
+                            </button>
 
-                            <li>
-                                <a
-                                    onMouseEnter={() => {
-                                        setNav('hide');
-                                        setType('products');
-                                    }}
-                                    className='text-link'
-                                    href={pricingPath || '/pricing/sms'}
-                                >
-                                    {componentData?.pricing}
-                                </a>
-                            </li>
+                            <a onMouseEnter={closeMenu} className='text-link' href={pricingPath || '/pricing/sms'}>
+                                {componentData?.pricing}
+                            </a>
 
-                            <li>
-                                <a
-                                    onMouseEnter={() => {
-                                        setNav('hide');
-                                        setType('products');
-                                    }}
-                                    href='https://docs.msg91.com/overview'
-                                    target='_blank'
-                                    className='text-link'
-                                >
-                                    {componentData?.apidocs}
-                                </a>
-                            </li>
-                        </ul>
+                            <a
+                                onMouseEnter={closeMenu}
+                                href='https://docs.msg91.com/overview'
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                className='text-link'
+                            >
+                                {componentData?.apidocs}
+                            </a>
+                        </nav>
 
                         <div className='flex justify-center'>
                             <a
@@ -528,8 +599,9 @@ export default function MenuBarComp({ componentData, notificationData, pageInfo 
                     </div>
                     <div
                         className={`container flex lg:hidden py-5 ${
-                            nav === 'show' ? 'fixed inset-x-0 top-0 bg-white' : ''
+                            nav === 'show' ? 'fixed inset-x-0 bg-white shadow-sm z-[1002]' : ''
                         }`}
+                        style={nav === 'show' ? { top: 'var(--summit-banner-height, 0px)' } : undefined}
                     >
                         <div className='w-full flex items-center gap-3'>
                             <a
@@ -699,8 +771,12 @@ export default function MenuBarComp({ componentData, notificationData, pageInfo 
                                 )}
 
                                 <button
+                                    ref={mobileMenuTriggerRef}
+                                    type='button'
                                     className='btn btn-icon shrink-0'
                                     aria-label={nav === 'show' ? 'Close menu' : 'Open menu'}
+                                    aria-expanded={nav === 'show'}
+                                    aria-controls={MOBILE_MENU_ID}
                                     onClick={handleMiniMenu}
                                 >
                                     <MdMenu fontSize={24} />
