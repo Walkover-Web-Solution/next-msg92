@@ -1,0 +1,852 @@
+{
+  "defaults": {
+    "page": 1,
+    "limit": 12,
+    "sortBy": "name",
+    "sortOrder": "asc",
+    "type": "all",
+    "search": "",
+    "category": "",
+    "tags": ""
+  },
+  "types": [
+    {
+      "value": "all",
+      "label": "All"
+    },
+    {
+      "value": "gtwy_ai",
+      "label": "GTWY"
+    },
+    {
+      "value": "custom",
+      "label": "Agentic"
+    },
+    {
+      "value": "chatgpt",
+      "label": "ChatGPT"
+    }
+  ],
+  "sortByOptions": [
+    {
+      "value": "name",
+      "label": "Name"
+    },
+    {
+      "value": "created_at",
+      "label": "Created"
+    }
+  ],
+  "sortOrderOptions": [
+    {
+      "value": "asc",
+      "label": "Ascending"
+    },
+    {
+      "value": "desc",
+      "label": "Descending"
+    }
+  ],
+  "limitOptions": [
+    {
+      "value": "12",
+      "label": "12"
+    },
+    {
+      "value": "24",
+      "label": "24"
+    },
+    {
+      "value": "36",
+      "label": "36"
+    }
+  ],
+  "allOption": {
+    "value": "",
+    "label": "All"
+  },
+  "fieldIcons": {
+    "type": "MdCategory",
+    "category": "MdLocalOffer",
+    "sort": "MdSort",
+    "limit": "MdApps",
+    "search": "MdSearch",
+    "clear": "MdClose",
+    "chevron": "MdExpandMore",
+    "sortAsc": "MdArrowUpward",
+    "sortDesc": "MdArrowDownward",
+    "tryDemo": "MdArrowForward",
+    "tags": "MdLabel"
+  },
+  "categories": [
+    {
+      "value": "Privacy & Compliance",
+      "label": "Privacy & Compliance",
+      "count": 241
+    },
+    {
+      "value": "Data Privacy & Compliance",
+      "label": "Data Privacy & Compliance",
+      "count": 201
+    },
+    {
+      "value": "Customer Support",
+      "label": "Customer Support",
+      "count": 201
+    },
+    {
+      "value": "AI Assistant",
+      "label": "AI Assistant",
+      "count": 166
+    },
+    {
+      "value": "General",
+      "label": "General",
+      "count": 141
+    },
+    {
+      "value": "Workflow Automation",
+      "label": "Workflow Automation",
+      "count": 101
+    },
+    {
+      "value": "Data Privacy",
+      "label": "Data Privacy",
+      "count": 76
+    },
+    {
+      "value": "Data Privacy & Security",
+      "label": "Data Privacy & Security",
+      "count": 71
+    },
+    {
+      "value": "Healthcare",
+      "label": "Healthcare",
+      "count": 71
+    },
+    {
+      "value": "Template",
+      "label": "Template",
+      "count": 67
+    },
+    {
+      "value": "Education Technology",
+      "label": "Education Technology",
+      "count": 66
+    },
+    {
+      "value": "Conversational AI",
+      "label": "Conversational AI",
+      "count": 66
+    },
+    {
+      "value": "Customer Experience",
+      "label": "Customer Experience",
+      "count": 64
+    },
+    {
+      "value": "AI Chatbot",
+      "label": "AI Chatbot",
+      "count": 55
+    },
+    {
+      "value": "Onboarding",
+      "label": "Onboarding",
+      "count": 52
+    },
+    {
+      "value": "Event Management",
+      "label": "Event Management",
+      "count": 50
+    },
+    {
+      "value": "Education",
+      "label": "Education",
+      "count": 48
+    },
+    {
+      "value": "Data Collection",
+      "label": "Data Collection",
+      "count": 42
+    },
+    {
+      "value": "Human Resources",
+      "label": "Human Resources",
+      "count": 36
+    },
+    {
+      "value": "Privacy & Data Security",
+      "label": "Privacy & Data Security",
+      "count": 36
+    },
+    {
+      "value": "HR Tech",
+      "label": "HR Tech",
+      "count": 35
+    },
+    {
+      "value": "Privacy & Data Protection",
+      "label": "Privacy & Data Protection",
+      "count": 34
+    },
+    {
+      "value": "Compliance & Privacy",
+      "label": "Compliance & Privacy",
+      "count": 33
+    },
+    {
+      "value": "Market Research",
+      "label": "Market Research",
+      "count": 33
+    },
+    {
+      "value": "Business",
+      "label": "Business",
+      "count": 32
+    },
+    {
+      "value": "HR Technology",
+      "label": "HR Technology",
+      "count": 31
+    },
+    {
+      "value": "Event Planning",
+      "label": "Event Planning",
+      "count": 31
+    },
+    {
+      "value": "Customer Onboarding",
+      "label": "Customer Onboarding",
+      "count": 30
+    },
+    {
+      "value": "Consent Management",
+      "label": "Consent Management",
+      "count": 30
+    },
+    {
+      "value": "Customer Support Automation",
+      "label": "Customer Support Automation",
+      "count": 29
+    },
+    {
+      "value": "Documentation",
+      "label": "Documentation",
+      "count": 28
+    },
+    {
+      "value": "Startup",
+      "label": "Startup",
+      "count": 26
+    },
+    {
+      "value": "Survey Automation",
+      "label": "Survey Automation",
+      "count": 26
+    },
+    {
+      "value": "Company Profile",
+      "label": "Company Profile",
+      "count": 26
+    },
+    {
+      "value": "AI in Healthcare",
+      "label": "AI in Healthcare",
+      "count": 26
+    },
+    {
+      "value": "Technology",
+      "label": "Technology",
+      "count": 26
+    },
+    {
+      "value": "Candidate Experience",
+      "label": "Candidate Experience",
+      "count": 26
+    },
+    {
+      "value": "Customer Service",
+      "label": "Customer Service",
+      "count": 24
+    },
+    {
+      "value": "Healthcare Technology",
+      "label": "Healthcare Technology",
+      "count": 23
+    },
+    {
+      "value": "Event Registration",
+      "label": "Event Registration",
+      "count": 22
+    },
+    {
+      "value": "Client Onboarding",
+      "label": "Client Onboarding",
+      "count": 22
+    },
+    {
+      "value": "AI & Automation",
+      "label": "AI & Automation",
+      "count": 22
+    },
+    {
+      "value": "Appointment Scheduling",
+      "label": "Appointment Scheduling",
+      "count": 21
+    },
+    {
+      "value": "Patient Intake",
+      "label": "Patient Intake",
+      "count": 21
+    },
+    {
+      "value": "Placeholder",
+      "label": "Placeholder",
+      "count": 21
+    },
+    {
+      "value": "Marketing",
+      "label": "Marketing",
+      "count": 21
+    },
+    {
+      "value": "Student Services",
+      "label": "Student Services",
+      "count": 20
+    },
+    {
+      "value": "Privacy & Security",
+      "label": "Privacy & Security",
+      "count": 20
+    },
+    {
+      "value": "Client Intake",
+      "label": "Client Intake",
+      "count": 20
+    },
+    {
+      "value": "Company Setup",
+      "label": "Company Setup",
+      "count": 20
+    },
+    {
+      "value": "AI in Education",
+      "label": "AI in Education",
+      "count": 19
+    },
+    {
+      "value": "Branding",
+      "label": "Branding",
+      "count": 19
+    },
+    {
+      "value": "E-commerce",
+      "label": "E-commerce",
+      "count": 18
+    },
+    {
+      "value": "Recruitment Automation",
+      "label": "Recruitment Automation",
+      "count": 18
+    },
+    {
+      "value": "Compliance",
+      "label": "Compliance",
+      "count": 17
+    },
+    {
+      "value": "Safety & Compliance",
+      "label": "Safety & Compliance",
+      "count": 17
+    },
+    {
+      "value": "Privacy & Data Handling",
+      "label": "Privacy & Data Handling",
+      "count": 17
+    },
+    {
+      "value": "Company Information",
+      "label": "Company Information",
+      "count": 16
+    },
+    {
+      "value": "Regulatory Compliance",
+      "label": "Regulatory Compliance",
+      "count": 16
+    },
+    {
+      "value": "Operations",
+      "label": "Operations",
+      "count": 16
+    },
+    {
+      "value": "Educational Technology",
+      "label": "Educational Technology",
+      "count": 15
+    },
+    {
+      "value": "Knowledge Management",
+      "label": "Knowledge Management",
+      "count": 15
+    },
+    {
+      "value": "Recruitment",
+      "label": "Recruitment",
+      "count": 15
+    },
+    {
+      "value": "Order Management",
+      "label": "Order Management",
+      "count": 15
+    },
+    {
+      "value": "Customer Feedback",
+      "label": "Customer Feedback",
+      "count": 14
+    },
+    {
+      "value": "Finance",
+      "label": "Finance",
+      "count": 14
+    },
+    {
+      "value": "AI Concierge",
+      "label": "AI Concierge",
+      "count": 14
+    },
+    {
+      "value": "Real Estate",
+      "label": "Real Estate",
+      "count": 14
+    },
+    {
+      "value": "AI in HR",
+      "label": "AI in HR",
+      "count": 14
+    },
+    {
+      "value": "Customer Support & Escalation",
+      "label": "Customer Support & Escalation",
+      "count": 13
+    },
+    {
+      "value": "Mental Health",
+      "label": "Mental Health",
+      "count": 13
+    },
+    {
+      "value": "Scheduling",
+      "label": "Scheduling",
+      "count": 13
+    },
+    {
+      "value": "Sales Enablement",
+      "label": "Sales Enablement",
+      "count": 13
+    },
+    {
+      "value": "Unspecified",
+      "label": "Unspecified",
+      "count": 13
+    },
+    {
+      "value": "Lead Generation",
+      "label": "Lead Generation",
+      "count": 13
+    },
+    {
+      "value": "Incident Reporting",
+      "label": "Incident Reporting",
+      "count": 12
+    },
+    {
+      "value": "FinTech",
+      "label": "FinTech",
+      "count": 12
+    },
+    {
+      "value": "Healthcare AI",
+      "label": "Healthcare AI",
+      "count": 12
+    },
+    {
+      "value": "Conversational AI / Chatbot",
+      "label": "Conversational AI / Chatbot",
+      "count": 12
+    },
+    {
+      "value": "Feedback & Surveys",
+      "label": "Feedback & Surveys",
+      "count": 12
+    }
+  ],
+  "stats": {
+    "scrapedPages": 20,
+    "uniqueCategories": 3768,
+    "topCategories": 80
+  },
+  "generatedAt": "2026-11-23T10:47:12.586Z",
+  "source": "https://testapi.phone91.com/public/bot/template/",
+  "labels": {
+    "heroTagline": "AI Bot Templates",
+    "heroTitle": "AI Chatbot",
+    "heroTitleAccent": "Demo",
+    "heroSub": "Filter and explore production-ready AI agents and GTWY bots.",
+    "searchPlaceholder": "Search bots by name",
+    "clearSearch": "Clear search",
+    "typePrefix": "Type:",
+    "categoryPrefix": "Category:",
+    "sortPrefix": "Sort:",
+    "limitPrefix": "Per page:",
+    "clearAll": "Clear all",
+    "tryDemo": "Try Demo",
+    "emptyResults": "No chatbots found for these filters.",
+    "noBots": "No bots found",
+    "showingPrefix": "Showing",
+    "pageOf": "Page",
+    "of": "of",
+    "liveDemo": "Live demo",
+    "noToken": "Widget token is not available for this bot.",
+    "previous": "Previous",
+    "next": "Next",
+    "orderPrefix": "Order:",
+    "pillType": "Type:",
+    "pillCategory": "Category:",
+    "pillSort": "Sort:",
+    "perPageSuffix": "/ page",
+    "closeDemoBackdrop": "Close demo backdrop",
+    "resultSeparator": " · ",
+    "sortPillOpen": " (",
+    "sortPillClose": ")",
+    "tagsPrefix": "Tags:",
+    "pillTags": "Tags:"
+  },
+  "config": {
+    "basePath": "/demochatbot",
+    "queryKeys": {
+      "page": "page",
+      "search": "search",
+      "type": "type",
+      "sortBy": "sortBy",
+      "sortOrder": "sortOrder",
+      "limit": "limit",
+      "category": "category",
+      "tags": "tags"
+    },
+    "filterKeys": {
+      "search": "search",
+      "type": "type",
+      "category": "category",
+      "sort": "sort",
+      "limit": "limit",
+      "tags": "tags"
+    },
+    "gtwyTypeValue": "gtwy_ai",
+    "allCategoriesKey": "all-categories",
+    "searchDebounceMs": 400,
+    "widgetInitDelayMs": 100,
+    "chatParentId": "modalChatWrapper",
+    "chatWrapperClass": "chatbotwrapper",
+    "iconSizes": {
+      "default": 16,
+      "orderToggle": 18,
+      "pillClear": 12,
+      "tryDemo": 14
+    },
+    "iconKeys": {
+      "type": "type",
+      "category": "category",
+      "sort": "sort",
+      "limit": "limit",
+      "search": "search",
+      "clear": "clear",
+      "chevron": "chevron",
+      "sortAsc": "sortAsc",
+      "sortDesc": "sortDesc",
+      "tryDemo": "tryDemo",
+      "tags": "tags"
+    },
+    "widget": {
+      "hide_launcher": false,
+      "launch_widget": true,
+      "show_close_button": false,
+      "show_widget_form": false,
+      "hide_upload": true,
+      "initIndex": 0
+    },
+    "pagination": {
+      "maxVisibleWithoutEllipsis": 7,
+      "edgePageCount": 3,
+      "nearEndOffset": 2,
+      "ellipsis": "ellipsis",
+      "ellipsisChar": "…"
+    },
+    "api": {
+      "filterCategoryKey": "category",
+      "errorMessage": "Failed to fetch bot templates",
+      "filterTagsKey": "tags"
+    },
+    "pageInfo": {
+      "country": "global",
+      "page": "demochatbot",
+      "pathArray": [
+        "demochatbot"
+      ],
+      "pathURL": "demochatbot",
+      "baseURL": "demochatbot"
+    },
+    "allTagsKey": "all-tags"
+  },
+  "tags": [
+    {
+      "value": "data-privacy",
+      "label": "data-privacy",
+      "count": 112
+    },
+    {
+      "value": "data-collection",
+      "label": "data-collection",
+      "count": 112
+    },
+    {
+      "value": "data privacy",
+      "label": "data privacy",
+      "count": 103
+    },
+    {
+      "value": "placeholder",
+      "label": "placeholder",
+      "count": 92
+    },
+    {
+      "value": "empty-input",
+      "label": "empty-input",
+      "count": 72
+    },
+    {
+      "value": "privacy",
+      "label": "privacy",
+      "count": 65
+    },
+    {
+      "value": "consent-management",
+      "label": "consent-management",
+      "count": 64
+    },
+    {
+      "value": "onboarding",
+      "label": "onboarding",
+      "count": 54
+    },
+    {
+      "value": "privacy-first",
+      "label": "privacy-first",
+      "count": 54
+    },
+    {
+      "value": "template",
+      "label": "template",
+      "count": 54
+    },
+    {
+      "value": "escalation",
+      "label": "escalation",
+      "count": 51
+    },
+    {
+      "value": "privacy-compliance",
+      "label": "privacy-compliance",
+      "count": 49
+    },
+    {
+      "value": "consent management",
+      "label": "consent management",
+      "count": 47
+    },
+    {
+      "value": "human-escalation",
+      "label": "human-escalation",
+      "count": 45
+    },
+    {
+      "value": "privacy-protection",
+      "label": "privacy-protection",
+      "count": 42
+    },
+    {
+      "value": "data collection",
+      "label": "data collection",
+      "count": 39
+    },
+    {
+      "value": "consent",
+      "label": "consent",
+      "count": 39
+    },
+    {
+      "value": "privacy-by-design",
+      "label": "privacy-by-design",
+      "count": 37
+    },
+    {
+      "value": "conversational-ai",
+      "label": "conversational-ai",
+      "count": 37
+    },
+    {
+      "value": "privacy-security",
+      "label": "privacy-security",
+      "count": 33
+    },
+    {
+      "value": "conversational AI",
+      "label": "conversational AI",
+      "count": 31
+    },
+    {
+      "value": "human escalation",
+      "label": "human escalation",
+      "count": 31
+    },
+    {
+      "value": "privacy-consent",
+      "label": "privacy-consent",
+      "count": 31
+    },
+    {
+      "value": "data-protection",
+      "label": "data-protection",
+      "count": 28
+    },
+    {
+      "value": "escalation-to-human",
+      "label": "escalation-to-human",
+      "count": 28
+    },
+    {
+      "value": "knowledge-base",
+      "label": "knowledge-base",
+      "count": 27
+    },
+    {
+      "value": "branding",
+      "label": "branding",
+      "count": 24
+    },
+    {
+      "value": "privacy protection",
+      "label": "privacy protection",
+      "count": 23
+    },
+    {
+      "value": "empty-prompt",
+      "label": "empty-prompt",
+      "count": 22
+    },
+    {
+      "value": "data-minimization",
+      "label": "data-minimization",
+      "count": 21
+    },
+    {
+      "value": "no-data",
+      "label": "no-data",
+      "count": 21
+    },
+    {
+      "value": "escalation to human",
+      "label": "escalation to human",
+      "count": 21
+    },
+    {
+      "value": "Data Privacy",
+      "label": "Data Privacy",
+      "count": 21
+    },
+    {
+      "value": "instructions",
+      "label": "instructions",
+      "count": 21
+    },
+    {
+      "value": "data-validation",
+      "label": "data-validation",
+      "count": 19
+    },
+    {
+      "value": "company-info",
+      "label": "company-info",
+      "count": 19
+    },
+    {
+      "value": "empty-fields",
+      "label": "empty-fields",
+      "count": 17
+    },
+    {
+      "value": "company-profile",
+      "label": "company-profile",
+      "count": 17
+    },
+    {
+      "value": "data_privacy",
+      "label": "data_privacy",
+      "count": 16
+    },
+    {
+      "value": "privacy-conscious",
+      "label": "privacy-conscious",
+      "count": 16
+    },
+    {
+      "value": "privacy by design",
+      "label": "privacy by design",
+      "count": 16
+    },
+    {
+      "value": "AI assistant",
+      "label": "AI assistant",
+      "count": 16
+    },
+    {
+      "value": "data-security",
+      "label": "data-security",
+      "count": 16
+    },
+    {
+      "value": "generic",
+      "label": "generic",
+      "count": 15
+    },
+    {
+      "value": "audit trail",
+      "label": "audit trail",
+      "count": 15
+    },
+    {
+      "value": "ai-assistant",
+      "label": "ai-assistant",
+      "count": 15
+    },
+    {
+      "value": "no-content",
+      "label": "no-content",
+      "count": 15
+    },
+    {
+      "value": "intake",
+      "label": "intake",
+      "count": 14
+    },
+    {
+      "value": "crm-integration",
+      "label": "crm-integration",
+      "count": 14
+    },
+    {
+      "value": "audit-trail",
+      "label": "audit-trail",
+      "count": 14
+    }
+  ]
+}
